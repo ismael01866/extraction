@@ -68,7 +68,7 @@ The library uses:
 
 - **Vite** — Fast build tool and development server
 - **TypeScript** — Type safety
-- **Tailwind CSS v4** — Utility-first styling
+- **Tailwind CSS** — Utility-first styling
 - **Vitest** — Fast unit tests
 - **ESLint** — Code linting
 
@@ -84,4 +84,3 @@ import { Button, Card, Flex, ... } from 'extraction-ui'
 
 Extraction UI
 Copyright (c) 2026 Ismael Mariscal
-MIT Licensed
