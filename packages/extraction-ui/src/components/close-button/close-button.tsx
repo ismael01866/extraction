@@ -1,7 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { cn } from 'utils';
-
+import { cn } from '../../utils';
 import { Element } from '../element';
 import { CloseButtonProps } from './close-button.types';
 

@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 
 import { Select } from 'radix-ui';
-import { cn } from 'utils';
 
+import { cn } from '../../utils';
 import { Element } from '../element';
 import {
   SelectArrowProps,

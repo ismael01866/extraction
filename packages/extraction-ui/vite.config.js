@@ -32,7 +32,6 @@ export default defineConfig({
     lib: {
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),
-        client: path.resolve(__dirname, 'src/client.ts'),
         styles: path.resolve(__dirname, 'src/index.css'),
         inline: path.resolve(__dirname, 'src/css/inline.css'),
       },

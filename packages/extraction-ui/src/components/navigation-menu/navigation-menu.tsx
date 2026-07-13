@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 
 import { NavigationMenu } from 'radix-ui';
-import { cn } from 'utils';
 
+import { cn } from '../../utils';
 import { Element } from '../element';
 import {
   NavigationMenuContentProps,

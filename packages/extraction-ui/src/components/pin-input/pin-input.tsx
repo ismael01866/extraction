@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 
 import { unstable_OneTimePasswordField as PinInput } from 'radix-ui';
-import { cn } from 'utils';
 
+import { cn } from '../../utils';
 import { PinInputFieldProps, PinInputHiddenProps, PinInputProps } from './pin-input.types';
 
 export const PinInputRoot = <T extends ElementType = 'div'>(props: PinInputProps<T>) => {

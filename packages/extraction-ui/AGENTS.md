@@ -975,18 +975,6 @@ variant-plain {
 }
 ```
 
-### Variant Properties Reference
-
-| Property              | Description                         |
-| --------------------- | ----------------------------------- |
-| `--background`        | Base background color               |
-| `--background-dark`   | Dark mode background                |
-| `--hover-background`  | Background on hover                 |
-| `--active-background` | Background when active/pressed      |
-| `--border`            | Border color (default: transparent) |
-| `--text`              | Text color                          |
-| `--outline`           | Focus outline color                 |
-
 ## Common Utility Combinations
 
 ```tsx

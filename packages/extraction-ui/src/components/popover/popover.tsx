@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 
 import { Popover } from 'radix-ui';
-import { cn } from 'utils';
 
+import { cn } from '../../utils';
 import { CloseButton } from '../close-button';
 import { Element } from '../element';
 import {

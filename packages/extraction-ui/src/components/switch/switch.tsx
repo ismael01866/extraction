@@ -1,8 +1,8 @@
 import React, { ElementType } from 'react';
 
 import { Switch } from 'radix-ui';
-import { cn } from 'utils';
 
+import { cn } from '../../utils';
 import { Element } from '../element';
 import { SwitchProps, SwitchThumbProps } from './switch.types';
 
