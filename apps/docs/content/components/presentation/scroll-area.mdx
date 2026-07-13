@@ -1,0 +1,123 @@
+import { Description, ScrollArea } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  scrollAreaCfg,
+  scrollAreaContentCfg,
+  scrollAreaCornerCfg,
+  scrollAreaScrollbarCfg,
+  scrollAreaThumbCfg,
+  scrollAreaViewportCfg,
+} from './scroll-area';
+
+export const Component = (
+  <ScrollArea className='h-20 max-h-40 max-w-[40%]'>
+    <ScrollArea.Viewport tabIndex={0}>
+      <ScrollArea.Content className='pr-3 pb-3'>
+        <Description>
+          Alice was beginning to get very tired of sitting by her sister on the
+          bank, and of having nothing to do; once or twice she had peeped into
+          the book her sister was reading, but it had no pictures or
+          conversations in it, “and what is the use of a book,” thought Alice
+          ...
+        </Description>
+      </ScrollArea.Content>
+    </ScrollArea.Viewport>
+    <ScrollArea.Scrollbar orientation='vertical'>
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+    <ScrollArea.Scrollbar orientation='horizontal'>
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+    <ScrollArea.Corner />
+  </ScrollArea>
+);
+
+export const VariantComponent = (
+  <ScrollArea className='h-20 max-h-40 max-w-[40%]' type='auto'>
+    <ScrollArea.Viewport>
+      <ScrollArea.Content className='min-h-40' />
+    </ScrollArea.Viewport>
+    <ScrollArea.Scrollbar orientation='vertical'>
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+    <ScrollArea.Scrollbar orientation='horizontal'>
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+    <ScrollArea.Corner />
+  </ScrollArea>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Scroll Area
+
+{data['scroll-area'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/scroll-area)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-scroll-area-scrollbar-size-xs: calc(var(--spacing) * 0.5);
+  --ex-scroll-area-scrollbar-size-sm: calc(var(--spacing) * 1);
+  --ex-scroll-area-scrollbar-size-md: calc(var(--spacing) * 1.5);
+  --ex-scroll-area-scrollbar-size-lg: calc(var(--spacing) * 2);
+  --ex-scroll-area-scrollbar-size-xl: calc(var(--spacing) * 2.5);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/scroll-area#api-reference)
+
+### Scroll Area
+
+<Api config={scrollAreaCfg} />
+
+### Scroll Area Viewport
+
+<Api config={scrollAreaViewportCfg} />
+
+### Scroll Area Content
+
+<Api config={scrollAreaContentCfg} />
+
+### Scroll Area Scrollbar
+
+<Api config={scrollAreaScrollbarCfg} />
+
+### Scroll Area Thumb
+
+<Api config={scrollAreaThumbCfg} />
+
+### Scroll Area Corner
+
+<Api config={scrollAreaCornerCfg} />

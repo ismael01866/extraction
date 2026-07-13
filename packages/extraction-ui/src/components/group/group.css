@@ -1,0 +1,55 @@
+@layer components {
+  .ex-group {
+    @apply flex justify-start;
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-row;
+
+      > :is(:first-child:not(:only-child)) {
+        @apply rounded-e-none;
+      }
+
+      > :is(:not(:first-child, :last-child)) {
+        @apply rounded-none;
+      }
+
+      > :is(:last-child:not(:only-child)) {
+        @apply rounded-s-none;
+      }
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-col;
+
+      > :is(:first-child:not(:only-child)) {
+        @apply rounded-b-none;
+      }
+
+      > :is(:not(:first-child, :last-child)) {
+        @apply rounded-none;
+      }
+
+      > :is(:last-child:not(:only-child)) {
+        @apply rounded-t-none;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .ex-group {
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      > :not(:first-child) {
+        @apply border-s-0;
+      }
+    }
+
+    &:where([data-orientation='vertical']) {
+      > :not(:first-child) {
+        @apply border-bs-0;
+      }
+    }
+  }
+}

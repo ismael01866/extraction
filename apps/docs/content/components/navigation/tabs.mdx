@@ -1,0 +1,229 @@
+import { Box, Icon, Tabs } from 'extraction-ui';
+import { LuMail, LuSettings, LuUser } from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  cfg,
+  tabsCfg,
+  tabsContentCfg,
+  tabsListCfg,
+  tabsSectionCfg,
+  tabsTriggerCfg,
+} from './tabs';
+
+export const Component = (
+  <Tabs defaultValue={'tab1'}>
+    <Tabs.List>
+      <Tabs.Trigger value='tab1'>
+        <LuMail />
+        One
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab2'>
+        <LuUser />
+        Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab3'>
+        <LuSettings />
+        Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value='tab1'>
+      <Box>Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab2'>
+      <Box>Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab3'>
+      <Box>Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>
+);
+
+export const ComponentVertical = (
+  <Tabs orientation='vertical' defaultValue={'tab1'}>
+    <Tabs.List>
+      <Tabs.Trigger value='tab1'>
+        <Icon>
+          <LuMail />
+        </Icon>
+        One
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab2'>
+        <Icon>
+          <LuUser />
+        </Icon>
+        Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab3'>
+        <Icon>
+          <LuSettings />
+        </Icon>
+        Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value='tab1'>
+      <Box>Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab2'>
+      <Box>Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab3'>
+      <Box>Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>
+);
+
+export const ComponentDisabledItem = (
+  <Tabs>
+    <Tabs.List>
+      <Tabs.Trigger value='tab1' disabled>
+        <Icon>
+          <LuMail />
+        </Icon>
+        One
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab2'>
+        <Icon>
+          <LuUser />
+        </Icon>
+        Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value='tab3'>
+        <Icon>
+          <LuSettings />
+        </Icon>
+        Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value='tab1'>
+      <Box>Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab2'>
+      <Box>Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value='tab3'>
+      <Box>Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>
+);
+
+export const VariantComponent = (
+  <Tabs>
+    <Tabs.List>
+      <Tabs.Trigger value='tab1'>One</Tabs.Trigger>
+      <Tabs.Trigger value='tab2'>Two</Tabs.Trigger>
+    </Tabs.List>
+  </Tabs>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Tabs
+
+{data.tabs.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/tabs)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-tabs-trigger-cursor: default;
+
+  --ex-tabs-px-sm: calc(var(--spacing) * 2);
+  --ex-tabs-px-md: calc(var(--spacing) * 3);
+
+  --ex-tabs-py-sm: calc(var(--spacing) * 2);
+  --ex-tabs-py-md: calc(var(--spacing) * 3);
+
+  --ex-tabs-radius-sm: var(--radius-sm);
+  --ex-tabs-radius-md: var(--radius-sm);
+
+  --ex-tabs-trigger-font-family: var(--font-sans);
+  --ex-tabs-trigger-font-weight: var(--font-weight-normal);
+
+  --ex-tabs-trigger-font-size-sm: var(--text-xs);
+  --ex-tabs-trigger-font-size-md: var(--text-sm);
+
+  --ex-tabs-trigger-height-sm: calc(var(--spacing) * 9);
+  --ex-tabs-trigger-height-md: calc(var(--spacing) * 10);
+
+  --ex-tabs-trigger-gap-sm: calc(var(--spacing) * 1.75);
+  --ex-tabs-trigger-gap-md: calc(var(--spacing) * 2);
+
+  --ex-tabs-trigger-px-sm: calc(var(--spacing) * 3.5);
+  --ex-tabs-trigger-px-md: calc(var(--spacing) * 4);
+
+  --ex-tabs-trigger-radius-sm: var(--radius-sm);
+  --ex-tabs-trigger-radius-md: var(--radius-sm);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/tabs#api-reference)
+
+### Tabs
+
+<Api config={tabsCfg} />
+
+### Tabs List
+
+<Api config={tabsListCfg} />
+
+### Tabs Trigger
+
+<Api config={tabsTriggerCfg} />
+
+### Tabs Content
+
+<Api config={tabsContentCfg} />
+
+### Tabs Section
+
+<Api config={tabsSectionCfg} />

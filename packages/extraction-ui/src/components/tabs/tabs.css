@@ -1,0 +1,173 @@
+@utility tabs-sm {
+  --ex-px: var(--ex-tabs-px-sm, calc(var(--spacing) * 2));
+  --ex-py: var(--ex-tabs-py-sm, calc(var(--spacing) * 2));
+  --ex-radius: var(--ex-tabs-radius-sm, var(--radius-sm));
+
+  .ex-tabs-trigger {
+    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-xl));
+
+    --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3));
+    --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.5));
+
+    --ex-radius: var(--ex-tabs-trigger-radius-sm, var(--radius-sm));
+    --ex-font-size: var(--ex-tabs-trigger-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility tabs-md {
+  --ex-px: var(--ex-tabs-px-md, calc(var(--spacing) * 3));
+  --ex-py: var(--ex-tabs-py-md, calc(var(--spacing) * 3));
+  --ex-radius: var(--ex-tabs-radius-md, var(--radius-sm));
+
+  .ex-tabs-trigger {
+    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-2xl));
+
+    --ex-px: var(--ex-tabs-trigger-px-md, calc(var(--spacing) * 4));
+    --ex-gap-x: var(--ex-tabs-trigger-gap-x-md, calc(var(--spacing) * 2));
+
+    --ex-radius: var(--ex-tabs-trigger-radius-md, var(--radius-sm));
+    --ex-font-size: var(--ex-tabs-trigger-font-size-md, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-tabs {
+    @apply tabs-md;
+  }
+
+  .ex-tabs {
+    @apply palette-neutral variant-outline;
+    @apply border-transparent! bg-transparent! outline-transparent!;
+  }
+
+  .ex-tabs {
+    @apply flex;
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-col;
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-row;
+    }
+
+    &:where(:not([class*='variant'])) {
+      &:where(:not([data-orientation])),
+      &:where([data-orientation='horizontal']) {
+        .ex-tabs-list {
+          @apply mx-[var(--ex-px)] gap-x-0 border-0 border-be-1 px-0 py-0;
+        }
+
+        .ex-tabs-trigger {
+          @apply rounded-b-none;
+        }
+      }
+
+      &:where([data-orientation='vertical']) {
+        .ex-tabs-list {
+          @apply my-[var(--ex-py)] gap-y-1 border-0 border-e-1 px-0 py-0;
+        }
+
+        .ex-tabs-trigger {
+          @apply rounded-r-none;
+        }
+      }
+    }
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+    }
+
+    &:where(:not([class*='variant'])) {
+      .ex-tabs-list {
+        @apply rounded-none;
+      }
+    }
+  }
+
+  .ex-tabs-list {
+    @apply variant;
+  }
+
+  .ex-tabs-list {
+    @apply flex shrink-0 rounded-[var(--ex-radius)];
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-row gap-x-[0.25em] px-[var(--ex-px)] py-[var(--ex-py)];
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-col items-start gap-y-[0.25em] px-[var(--ex-py)] py-[var(--ex-px)];
+    }
+  }
+
+  .ex-tabs-trigger {
+    --ex-cursor: var(--ex-tabs-trigger-cursor, deault);
+    --ex-font-family: var(--ex-tabs-trigger-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-tabs-trigger-font-weight, var(--font-weight-normal));
+
+    @apply relative inline-flex items-center justify-center self-stretch leading-none outline-none select-none;
+    @apply h-[var(--ex-height)] cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    > svg {
+      @apply h-[1em] w-[1em];
+    }
+  }
+}
+
+@layer utilities {
+  .ex-tabs {
+    &:where(:not([class*='variant'])) {
+      &:where(:not([data-orientation])),
+      &:where([data-orientation='horizontal']) {
+        .ex-tabs-list {
+          @apply border-0 border-be-1;
+        }
+
+        .ex-tabs-trigger {
+          &:where([data-state='active']) {
+            @apply bg-transparent;
+
+            &::before {
+              content: '';
+              @apply absolute inset-x-0 bottom-[-1px] h-[2px] bg-[var(--outline)] dark:bg-[var(--outline-dark)];
+            }
+          }
+        }
+      }
+
+      &:where([data-orientation='vertical']) {
+        .ex-tabs-list {
+          @apply border-0 border-e-1;
+        }
+
+        .ex-tabs-trigger {
+          &:where([data-state='active']) {
+            @apply bg-transparent;
+
+            &::before {
+              content: '';
+              @apply absolute inset-y-0 right-[-1px] w-[2px] bg-[var(--outline)] dark:bg-[var(--outline-dark)];
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ex-tabs-trigger {
+    @apply interactive;
+
+    &:where([data-state='active']) {
+      @apply interactive-hover;
+    }
+  }
+
+  .ex-tabs-content {
+    &:where(:focus-visible) {
+      @apply outline-transparent;
+    }
+  }
+}

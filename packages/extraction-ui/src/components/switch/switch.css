@@ -1,0 +1,86 @@
+@utility switch-sm {
+  --ex-radius: var(--ex-switch-radius-sm, 9999px);
+  --ex-width: var(--ex-switch-width-sm, var(--ex-size-lg));
+  --ex-height: var(--ex-switch-height-sm, var(--ex-size-2xs));
+
+  .ex-switch-thumb {
+    --ex-size: var(--ex-switch-thumb-size-sm, var(--ex-size-4xs));
+    --ex-radius: var(--ex-switch-thumb-radius-sm, 9999px);
+  }
+}
+
+@utility switch-md {
+  --ex-radius: var(--ex-switch-radius-md, 9999px);
+  --ex-width: var(--ex-switch-width-md, var(--ex-size-2xl));
+  --ex-height: var(--ex-switch-height-md, var(--ex-size-xs));
+
+  .ex-switch-thumb {
+    --ex-size: var(--ex-switch-thumb-size-md, var(--ex-size-3xs));
+    --ex-radius: var(--ex-switch-thumb-radius-md, 9999px);
+  }
+}
+
+@utility switch-lg {
+  --ex-radius: var(--ex-switch-radius-lg, 9999px);
+  --ex-width: var(--ex-switch-width-lg, var(--ex-size-4xl));
+  --ex-height: var(--ex-switch-height-lg, var(--ex-size-sm));
+
+  .ex-switch-thumb {
+    --ex-size: var(--ex-switch-thumb-size-lg, var(--ex-size-2xs));
+    --ex-radius: var(--ex-switch-thumb-radius-lg, 9999px);
+  }
+}
+
+@layer components {
+  .ex-switch {
+    @apply switch-md;
+  }
+
+  .ex-switch {
+    @apply variant-solid;
+    @apply data-[state=checked]:palette-primary data-[state=unchecked]:palette-neutral;
+
+    &:where([data-state='unchecked']) {
+      @apply bg-[color-mix(in_srgb,_var(--background)_40%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_40%,_transparent)];
+    }
+
+    &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      @apply bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
+    }
+  }
+
+  .ex-switch {
+    --ex-cursor: var(--ex-switch-cursor, default);
+
+    @apply inline-flex shrink-0 [transform:translateZ(0)] items-center select-none;
+    @apply h-[var(--ex-height)] w-[var(--ex-width)] cursor-[var(--ex-cursor)] rounded-[var(--ex-radius)];
+  }
+}
+
+@layer components {
+  .ex-switch-thumb {
+    --ex-mx: var(--ex-switch-thumb-mx, calc(var(--spacing)));
+    --ex-translate-x: calc(var(--ex-width) - var(--ex-size) - (var(--ex-mx) * 2));
+  }
+
+  .ex-switch-thumb {
+    @apply inline-block [transform:translateZ(0)] bg-white align-middle dark:bg-black;
+    @apply mx-[var(--ex-mx)] size-[var(--ex-size)] rounded-[var(--ex-radius)] transition-transform;
+
+    &:where([data-state='checked']) {
+      transform: translateX(var(--ex-translate-x));
+    }
+
+    &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      @apply bg-white opacity-[unset] dark:bg-black;
+    }
+  }
+}
+
+@layer utilities {
+  .ex-switch {
+    &:where(:focus-visible) {
+      @apply interactive-focus;
+    }
+  }
+}

@@ -1,0 +1,404 @@
+@utility variant {
+  @apply border border-(--border) bg-(--background) text-(--text) outline-0 outline-(--outline) dark:border-(--border-dark) dark:bg-(--background-dark) dark:text-(--text-dark) dark:outline-(--outline-dark);
+}
+
+@utility variant-solid {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-solid-theme;
+}
+
+@utility variant-solid-theme {
+  :where(&) {
+    @apply shade-500;
+  }
+
+  --background: var(--shade-color);
+  --background-dark: var(--shade-color-dark);
+
+  --hover-background: var(--shade-raised);
+  --hover-background-dark: var(--shade-raised-dark);
+
+  --active-background: var(--shade-deep);
+  --active-background-dark: var(--shade-deep-dark);
+
+  --border: transparent;
+  --border-dark: transparent;
+
+  --hover-border: transparent;
+  --hover-border-dark: transparent;
+
+  --active-border: transparent;
+  --active-border-dark: transparent;
+
+  --text: var(--shade-foreground);
+  --text-dark: var(--shade-foreground-dark);
+
+  --hover-text: var(--shade-foreground);
+  --hover-text-dark: var(--shade-foreground-dark);
+
+  --active-text: var(--shade-foreground);
+  --active-text-dark: var(--shade-foreground-dark);
+
+  --outline: var(--shade-raised);
+  --outline-dark: var(--shade-raised-dark);
+}
+
+@utility variant-outline {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-outline-theme;
+}
+
+@utility variant-outline-theme {
+  :where(&) {
+    @apply shade-100;
+  }
+
+  --background: transparent;
+  --background-dark: transparent;
+
+  --hover-background: var(--shade-soft);
+  --hover-background-dark: var(--shade-soft-dark);
+
+  --active-background: var(--shade-color);
+  --active-background-dark: var(--shade-color-dark);
+
+  --border: var(--shade-raised);
+  --border-dark: var(--shade-raised-dark);
+
+  --hover-border: var(--shade-deep);
+  --hover-border-dark: var(--shade-deep-dark);
+
+  --active-border: var(--shade-strong);
+  --active-border-dark: var(--shade-strong-dark);
+
+  --text: var(--shade-text);
+  --text-dark: var(--shade-text-dark);
+
+  --hover-text: var(--shade-foreground);
+  --hover-text-dark: var(--shade-foreground-dark);
+
+  --active-text: var(--shade-foreground);
+  --active-text-dark: var(--shade-foreground-dark);
+
+  --outline: var(--shade-bold);
+  --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-surface {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-surface-theme;
+}
+
+@utility variant-surface-theme {
+  :where(&) {
+    @apply shade-100;
+  }
+
+  --background: var(--shade-soft);
+  --background-dark: var(--shade-soft-dark);
+
+  --hover-background: var(--shade-color);
+  --hover-background-dark: var(--shade-color-dark);
+
+  --active-background: var(--shade-raised);
+  --active-background-dark: var(--shade-raised-dark);
+
+  --border: var(--shade-raised);
+  --border-dark: var(--shade-raised-dark);
+
+  --hover-border: var(--shade-deep);
+  --hover-border-dark: var(--shade-deep-dark);
+
+  --active-border: var(--shade-strong);
+  --active-border-dark: var(--shade-strong-dark);
+
+  --text: var(--shade-foreground);
+  --text-dark: var(--shade-foreground-dark);
+
+  --hover-text: var(--shade-foreground);
+  --hover-text-dark: var(--shade-foreground-dark);
+
+  --active-text: var(--shade-foreground);
+  --active-text-dark: var(--shade-foreground-dark);
+
+  --outline: var(--shade-bold);
+  --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-subtle {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-subtle-theme;
+}
+
+@utility variant-subtle-theme {
+  :where(&) {
+    @apply shade-100;
+  }
+
+  --background: var(--shade-soft);
+  --background-dark: var(--shade-soft-dark);
+
+  --hover-background: var(--shade-color);
+  --hover-background-dark: var(--shade-color-dark);
+
+  --active-background: var(--shade-raised);
+  --active-background-dark: var(--shade-raised-dark);
+
+  --border: transparent;
+  --border-dark: transparent;
+
+  --hover-border: transparent;
+  --hover-border-dark: transparent;
+
+  --active-border: transparent;
+  --active-border-dark: transparent;
+
+  --text: var(--shade-foreground);
+  --text-dark: var(--shade-foreground-dark);
+
+  --hover-text: var(--shade-foreground);
+  --hover-text-dark: var(--shade-foreground-dark);
+
+  --active-text: var(--shade-foreground);
+  --active-text-dark: var(--shade-foreground-dark);
+
+  --outline: var(--shade-bold);
+  --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-ghost {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-ghost-theme;
+}
+
+@utility variant-ghost-theme {
+  :where(&) {
+    @apply shade-100;
+  }
+
+  --background: transparent;
+  --background-dark: transparent;
+
+  --hover-background: var(--shade-soft);
+  --hover-background-dark: var(--shade-soft-dark);
+
+  --active-background: var(--shade-color);
+  --active-background-dark: var(--shade-color-dark);
+
+  --border: transparent;
+  --border-dark: transparent;
+
+  --hover-border: transparent;
+  --hover-border-dark: transparent;
+
+  --active-border: transparent;
+  --active-border-dark: transparent;
+
+  --text: var(--shade-text);
+  --text-dark: var(--shade-text-dark);
+
+  --hover-text: var(--shade-foreground);
+  --hover-text-dark: var(--shade-foreground-dark);
+
+  --active-text: var(--shade-foreground);
+  --active-text-dark: var(--shade-foreground-dark);
+
+  --outline: var(--shade-bold);
+  --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-link {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-link-theme;
+}
+
+@utility variant-link-theme {
+  :where(&) {
+    @apply shade-500;
+  }
+
+  --background: transparent;
+  --background-dark: transparent;
+
+  --hover-background: transparent;
+  --hover-background-dark: transparent;
+
+  --active-background: transparent;
+  --active-background-dark: transparent;
+
+  --border: transparent;
+  --border-dark: transparent;
+
+  --hover-border: transparent;
+  --hover-border-dark: transparent;
+
+  --active-border: transparent;
+  --active-border-dark: transparent;
+
+  --text: var(--shade-color);
+  --text-dark: var(--shade-color-dark);
+
+  --hover-text: var(--shade-deep);
+  --hover-text-dark: var(--shade-deep-dark);
+
+  --active-text: var(--shade-bold);
+  --active-text-dark: var(--shade-bold-dark);
+
+  --outline: var(--shade-bold);
+  --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-plain {
+  :where(&) {
+    @apply variant;
+  }
+
+  @apply variant-plain-theme;
+}
+
+@utility variant-plain-theme {
+  --background: transparent;
+  --background-dark: transparent;
+
+  --hover-background: transparent;
+  --hover-background-dark: transparent;
+
+  --active-background: transparent;
+  --active-background-dark: transparent;
+
+  --border: transparent;
+  --border-dark: transparent;
+
+  --hover-border: transparent;
+  --hover-border-dark: transparent;
+
+  --active-border: transparent;
+  --active-border-dark: transparent;
+
+  --text: inherit;
+  --text-dark: inherit;
+
+  --hover-text: inherit;
+  --hover-text-dark: inherit;
+
+  --active-text: inherit;
+  --active-text-dark: inherit;
+
+  --outline: transparent;
+  --outline-dark: transparent;
+}
+
+@utility variant-inherit {
+  @apply variant-inherit-theme;
+}
+
+@utility variant-inherit-theme {
+  --background: inherit;
+  --background-dark: inherit;
+
+  --hover-background: inherit;
+  --hover-background-dark: inherit;
+
+  --active-background: inherit;
+  --active-background-dark: inherit;
+
+  --border: inherit;
+  --border-dark: inherit;
+
+  --hover-border: inherit;
+  --hover-border-dark: inherit;
+
+  --active-border: inherit;
+  --active-border-dark: inherit;
+
+  --text: inherit;
+  --text-dark: inherit;
+
+  --hover-text: inherit;
+  --hover-text-dark: inherit;
+
+  --active-text: inherit;
+  --active-text-dark: inherit;
+
+  --outline: inherit;
+  --outline-dark: inherit;
+}
+
+@utility component-variant-solid-contrast {
+  :where(&) {
+    [class*='ex-icon'],
+    [class*='ex-loader'] {
+      @apply [color:inherit];
+    }
+
+    [class*='ex-text'],
+    [class*='ex-link'],
+    [class*='ex-label'],
+    [class*='ex-title'],
+    [class*='ex-body'] {
+      @apply [color:inherit];
+    }
+
+    [class*='ex-'][class*='-label'],
+    [class*='ex-'][class*='-title'],
+    [class*='ex-'][class*='-description'] {
+      @apply [color:inherit];
+    }
+
+    [class*='ex-'][class*='-icon'],
+    [class*='ex-'][class*='-item'],
+    [class*='ex-'][class*='-trigger'],
+    [class*='ex-'][class*='-indicator'] {
+      @apply [color:inherit];
+    }
+
+    [class*='ex-close-button'] {
+      @apply [color:inherit];
+    }
+  }
+}
+
+@utility component-variant-panel {
+  --background: var(--ex-options-panel-background-default-color);
+  --background-dark: var(--ex-options-panel-background-default-color-dark);
+}
+
+@layer utilities {
+  .variant-solid .variant-inherit {
+    @apply variant-solid-theme;
+  }
+
+  .variant-outline .variant-inherit {
+    @apply variant-outline-theme;
+  }
+
+  .variant-subtle .variant-inherit {
+    @apply variant-subtle-theme;
+  }
+
+  .variant-surface .variant-inherit {
+    @apply variant-surface-theme;
+  }
+
+  .variant-ghost .variant-inherit {
+    @apply variant-ghost-theme;
+  }
+}

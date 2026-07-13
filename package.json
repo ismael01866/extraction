@@ -1,0 +1,29 @@
+{
+  "name": "extraction",
+  "private": true,
+  "packageManager": "pnpm@10.15.0",
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "@types/react-dom": "^19.2.3",
+    "turbo": "^2.8.2",
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint"
+  },
+  "workspaces": [
+    "apps/**",
+    "packages/**"
+  ],
+  "pnpm": {
+    "overrides": {
+      "zod": "4.3.6"
+    }
+  },
+  "dependencies": {
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  }
+}

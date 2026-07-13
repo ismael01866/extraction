@@ -1,0 +1,29 @@
+import { DecorativeBox } from '@/app/components';
+
+import { Grid } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './grid';
+
+export const Component = (
+  <Grid className='gap-2'>
+    <DecorativeBox className='w-auto' />
+    <DecorativeBox className='w-auto' />
+    <DecorativeBox className='w-auto' />
+  </Grid>
+);
+
+# Grid
+
+{data.grid.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## API
+
+<Api config={cfg} />

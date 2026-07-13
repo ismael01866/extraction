@@ -1,0 +1,117 @@
+@utility interactive-hover {
+  :where(&) {
+    &:where(
+      :not(
+        .disabled,
+        :disabled,
+        [disabled],
+        [data-disabled],
+        [aria-disabled='true'],
+        [data-loading]
+      )
+    ) {
+      @apply duration-normal;
+      @apply border-(--hover-border) bg-(--hover-background) text-(--hover-text) dark:border-(--hover-border-dark) dark:bg-(--hover-background-dark) dark:text-(--hover-text-dark);
+
+      transition-property:
+        background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+        transform, scale, blur;
+    }
+  }
+}
+
+@utility interactive-active {
+  :where(&) {
+    &:where(
+      :not(
+        .disabled,
+        :disabled,
+        [disabled],
+        [data-disabled],
+        [aria-disabled='true'],
+        [data-loading]
+      )
+    ) {
+      @apply duration-normal;
+      @apply border-(--active-border) bg-(--active-background) text-(--active-text) dark:border-(--active-border-dark) dark:bg-(--active-background-dark) dark:text-(--active-text-dark);
+
+      transition-property:
+        background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+        transform, scale, blur;
+    }
+  }
+}
+
+@utility interactive-focus {
+  :where(&) {
+    &:where(
+      :not(
+        .disabled,
+        :disabled,
+        [disabled],
+        [data-disabled],
+        [aria-disabled='true'],
+        [data-loading]
+      )
+    ) {
+      @apply duration-normal;
+      @apply outline-2 -outline-offset-1 outline-(--outline) outline-solid dark:outline-(--outline-dark);
+
+      transition-property:
+        background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+        transform, scale, blur;
+    }
+  }
+}
+
+@utility interactive {
+  :where(&) {
+    @apply duration-normal;
+
+    transition-property:
+      background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+      transform, scale, blur;
+  }
+
+  &:where(:hover) {
+    &:where(:not([class*='hover:variant-'])) {
+      @apply interactive-hover;
+    }
+  }
+
+  &:where(:active) {
+    &:where(:not([class*='active:variant-'])) {
+      @apply interactive-active;
+    }
+  }
+
+  &:where(:focus-visible) {
+    &:where(:not([class*='focus:variant-'])) {
+      @apply interactive-focus;
+    }
+  }
+}
+
+@utility interactive-form-control {
+  :where(&) {
+    @apply duration-normal;
+
+    transition-property:
+      background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+      transform, scale, blur;
+  }
+
+  &:where(:hover) {
+    &:where(:not([class*='hover:variant-'])) {
+      &:where(:not(:focus-visible)) {
+        @apply interactive-hover;
+      }
+    }
+  }
+
+  &:where(:focus-visible) {
+    &:where(:not([class*='focus:variant-'])) {
+      @apply interactive-focus;
+    }
+  }
+}

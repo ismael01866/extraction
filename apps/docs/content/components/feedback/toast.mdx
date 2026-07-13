@@ -1,0 +1,303 @@
+import data from '../data.json';
+import {
+  cfg,
+  toastActionCfg,
+  toastCfg,
+  toastCloseCfg,
+  toastContentCfg,
+  toastDescriptionCfg,
+  toastProviderCfg,
+  toastTitleCfg,
+  toastViewportCfg,
+} from './toast';
+
+import {
+  ToastExample,
+  ToastPlacementExample,
+  ToastSizeExample,
+  ToastVariantExample,
+  ToastWithAccentExample,
+} from './toast-example';
+
+export const Wrapper = ({ children }) => children;
+
+# Toast
+
+{data.toast.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toast)
+
+<Usage
+  config={cfg}
+  components={{
+    usage: <ToastExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`
+    const ToastExample = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <Toast.Provider>
+          <Button onClick={() => setOpen(true)}>Trigger</Button>
+          <Toast defaultOpen={false} open={open} onOpenChange={setOpen}>
+            <Toast.Indicator />
+            <Toast.Content>
+              <Toast.Title>
+                The quick brown fox
+              </Toast.Title>
+              <Toast.Description>
+                Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.
+              </Toast.Description>
+              <Toast.Action className="pt-2" altText="action">
+                <Button className='w-full'>Confirm</Button>
+              </Toast.Action>
+            </Toast.Content>
+            <Toast.Close aria-label="Close" />
+          </Toast>
+          <Toast.Viewport />
+        </Toast.Provider>
+      )
+    };
+  `}
+/>
+
+## Placement
+
+Use the `placement` prop on the `Toast.Provider` to set the placement of the Toast. Values can include `top-start`, `top`, `top-end`, `bottom-start`, `bottom`, `bottom-end`.
+
+{['top-start', 'top', 'top-end', 'bottom-start', 'bottom', 'bottom-end'].map((placement, index) => (
+
+  <div key={placement}>
+    { index > 0 ? <hr className='x:my-8 nextra-border' /> : <br /> }
+    <Usage
+      key={placement}
+      components={{
+        usage: <ToastPlacementExample placement={placement} />,
+        wrapper: Wrapper,
+      }}
+      serializedCode={`
+        const ToastExample = () => {
+          const [open, setOpen] = React.useState(false);
+          return (
+            <Toast.Provider placement="${placement}">
+              <Button onClick={() => setOpen(true)}>Trigger (${placement})</Button>
+              <Toast defaultOpen={false} open={open} onOpenChange={setOpen}>
+                <Toast.Indicator />
+                <Toast.Content>
+                  <Toast.Title>
+                    The quick brown fox
+                  </Toast.Title>
+                  <Toast.Description>
+                    Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.
+                  </Toast.Description>
+                </Toast.Content>
+                <Toast.Close aria-label="Close" />
+              </Toast>
+              <Toast.Viewport />
+            </Toast.Provider>
+          )
+        };
+      `}
+    />
+  </div>
+))}
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: ({ size }) => <ToastSizeExample size={size} />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={({ size }) => {
+    return `
+    const ToastExample = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <Toast.Provider>
+          <Button onClick={() => setOpen(true)}>Trigger ({size})</Button>
+          <Toast className="toast-${size}" defaultOpen={false} open={open} onOpenChange={setOpen} duration={2000}>
+            <Toast.Indicator />
+            <Toast.Content>
+              <Toast.Title>
+                The quick brown fox
+              </Toast.Title>
+              <Toast.Description>
+                Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.
+              </Toast.Description>
+            </Toast.Content>
+            <Toast.Close className="close-button-${size}" aria-label="Close" />
+          </Toast>
+          <Toast.Viewport />
+        </Toast.Provider>
+      )
+    };
+  `;
+  }}
+/>
+
+## With Accent
+
+<Usage
+  config={cfg}
+  components={{
+    usage: <ToastWithAccentExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`
+    const ToastExample = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <Toast.Provider>
+          <Button onClick={() => setOpen(true)}>Trigger</Button>
+          <Toast className="-start border-l-primary" defaultOpen={false} open={open} onOpenChange={setOpen}>
+            <Toast.Indicator />
+            <Toast.Content>
+              <Toast.Title>
+                The quick brown fox
+              </Toast.Title>
+              <Toast.Description>
+                Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.
+              </Toast.Description>
+              <Toast.Action className="pt-2" altText="action">
+                <Button className='w-full'>Confirm</Button>
+              </Toast.Action>
+            </Toast.Content>
+            <Toast.Close aria-label="Close" />
+          </Toast>
+          <Toast.Viewport />
+        </Toast.Provider>
+      )
+    };
+  `}
+  withAccent
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: ({ color, variant }) => (
+      <ToastVariantExample color={color} variant={variant} />
+    ),
+    wrapper: Wrapper,
+  }}
+  serializedCode={({ color, variant }) => {
+    return `
+    const ToastExample = () => {
+      const [open, setOpen] = React.useState(false);
+      return (
+        <Toast.Provider>
+          <Button className="palette-${color} variant-${variant}" onClick={() => setOpen(true)}>Trigger</Button>
+          <Toast className="palette-${color} variant-${variant}" defaultOpen={false} open={open} onOpenChange={setOpen} duration={2000}>
+            <Toast.Indicator />
+            <Toast.Content>
+              <Toast.Title>
+                The quick brown fox
+              </Toast.Title>
+              <Toast.Description>
+                Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.
+              </Toast.Description>
+            </Toast.Content>
+            <Toast.Close aria-label="Close" />
+          </Toast>
+          <Toast.Viewport />
+        </Toast.Provider>
+      )
+    };
+  `;
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-toast-viewport-px: calc(var(--spacing) * 6);
+  --ex-toast-viewport-py: calc(var(--spacing) * 6);
+
+  --ex-toast-z-index: 55;
+
+  --ex-toast-font-size-sm: var(--text-xs);
+  --ex-toast-font-size-md: var(--text-sm);
+
+  --ex-toast-max-w-sm: var(--container-3xs);
+  --ex-toast-max-w-md: var(--container-2xs);
+
+  --ex-toast-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-toast-gap-x-md: calc(var(--spacing) * 2.5);
+
+  --ex-toast-px-sm: calc(var(--spacing) * 3);
+  --ex-toast-px-md: calc(var(--spacing) * 4);
+
+  --ex-toast-py-sm: calc(var(--spacing) * 3);
+  --ex-toast-py-md: calc(var(--spacing) * 4);
+
+  --ex-toast-radius-sm: var(--radius-sm);
+  --ex-toast-radius-md: var(--radius-sm);
+
+  --ex-toast-shadow-sm: var(--shadow-sm);
+  --ex-toast-shadow-md: var(--shadow-sm);
+
+  --ex-toast-indicator-font-size-sm: var(--text-lg);
+  --ex-toast-indicator-font-size-md: var(--text-xl);
+
+  --ex-toast-content-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-toast-content-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-toast-content-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-toast-content-gap-y-md: calc(var(--spacing) * 2);
+
+  --ex-toast-title-font-family: var(--font-sans);
+  --ex-toast-title-font-weight: var(--font-weight-semibold);
+
+  --ex-toast-title-font-size-sm: var(--text-sm);
+  --ex-toast-title-font-size-md: var(--text-base);
+
+  --ex-toast-description-font-family: var(--font-sans);
+  --ex-toast-description-font-weight: var(--font-weight-normal);
+  --ex-toast-description-opacity: var(--ex-options-muted-opacity);
+
+  --ex-toast-description-font-size-sm: var(--text-xs);
+  --ex-toast-description-font-size-md: var(--text-sm);
+
+  --ex-toast-indicator-font-size-sm: var(--text-lg);
+  --ex-toast-indicator-font-size-md: var(--text-xl);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toast#api-reference)
+
+### Toast Provider
+
+<Api config={toastProviderCfg} />
+
+### Toast
+
+<Api config={toastCfg} />
+
+### Toast Viewport
+
+<Api config={toastViewportCfg} />
+
+### Toast Content
+
+<Api config={toastContentCfg} />
+
+### Toast Title
+
+<Api config={toastTitleCfg} />
+
+### Toast Description
+
+<Api config={toastDescriptionCfg} />
+
+### Toast Action
+
+<Api config={toastActionCfg} />
+
+### Toast Close
+
+<Api config={toastCloseCfg} />

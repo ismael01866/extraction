@@ -1,0 +1,55 @@
+import { Box } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './box';
+
+export const Component = (
+  <Box className='palette-primary variant-solid'>Box</Box>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Box
+
+{data.box.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-box-px-sm: calc(var(--spacing) * 3);
+  --ex-box-px-md: calc(var(--spacing) * 4);
+  --ex-box-px-lg: calc(var(--spacing) * 5);
+  --ex-box-px-xl: calc(var(--spacing) * 6);
+
+  --ex-box-py-sm: calc(var(--spacing) * 3);
+  --ex-box-py-md: calc(var(--spacing) * 4);
+  --ex-box-py-lg: calc(var(--spacing) * 5);
+  --ex-box-py-xl: calc(var(--spacing) * 6);
+
+  --ex-box-radius-sm: var(--radius-sm);
+  --ex-box-radius-md: var(--radius-sm);
+  --ex-box-radius-lg: var(--radius-sm);
+  --ex-box-radius-xl: var(--radius-sm);
+```
+
+## API
+
+<Api config={cfg} />

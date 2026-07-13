@@ -1,0 +1,58 @@
+import { IconButton, Toggle } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import { toggleCfg } from './toggle';
+
+export const Component = (
+  <Toggle asChild>
+    <IconButton
+      className={`variant-outline data-[state='on']:variant-solid`}
+      aria-label='toggle button'
+    >
+      <LuMail />
+    </IconButton>
+  </Toggle>
+);
+
+export const ComponentDisabled = (
+  <Toggle asChild disabled>
+    <IconButton
+      className={`variant-outline data-[state='on']:variant-solid`}
+      aria-label='toggle button'
+    >
+      <LuMail />
+    </IconButton>
+  </Toggle>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Toggle
+
+{data.toggle.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toggle)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toggle#api-reference)
+
+### Toggle
+
+<Api config={toggleCfg} />

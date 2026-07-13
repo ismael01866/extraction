@@ -1,0 +1,62 @@
+@source inline("{bg,text,palette}{-primary,-accent,-neutral,-error,-success,-info,-warning,-black,-white,-new}");
+
+@theme {
+  --color-new: oklch(0.5 0.22 35);
+  --color-new-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-50: color-mix(in oklch, var(--color-new) 10%, white);
+  --color-new-50-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+  --color-new-100: color-mix(in oklch, var(--color-new) 20%, white);
+  --color-new-100-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+  --color-new-200: color-mix(in oklch, var(--color-new) 35%, white);
+  --color-new-200-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+  --color-new-300: color-mix(in oklch, var(--color-new) 50%, white);
+  --color-new-300-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+  --color-new-400: color-mix(in oklch, var(--color-new) 75%, white);
+  --color-new-400-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-500: var(--color-new);
+  --color-new-500-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-600: color-mix(in oklch, var(--color-new) 85%, black);
+  --color-new-600-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-700: color-mix(in oklch, var(--color-new) 70%, black);
+  --color-new-700-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-800: color-mix(in oklch, var(--color-new) 55%, black);
+  --color-new-800-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-900: color-mix(in oklch, var(--color-new) 40%, black);
+  --color-new-900-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+  --color-new-950: color-mix(in oklch, var(--color-new) 30%, black);
+  --color-new-950-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+}
+
+@utility palette-new {
+  --palette: var(--color-new);
+  --palette-foreground: var(--color-new-foreground);
+
+  --palette-50: var(--color-new-50);
+  --palette-100: var(--color-new-100);
+  --palette-200: var(--color-new-200);
+  --palette-300: var(--color-new-300);
+  --palette-400: var(--color-new-400);
+  --palette-500: var(--color-new-500);
+  --palette-600: var(--color-new-600);
+  --palette-700: var(--color-new-700);
+  --palette-800: var(--color-new-800);
+  --palette-900: var(--color-new-900);
+  --palette-950: var(--color-new-950);
+
+  --palette-50-foreground: var(--color-new-50-foreground);
+  --palette-100-foreground: var(--color-new-100-foreground);
+  --palette-200-foreground: var(--color-new-200-foreground);
+  --palette-300-foreground: var(--color-new-300-foreground);
+  --palette-400-foreground: var(--color-new-400-foreground);
+  --palette-500-foreground: var(--color-new-500-foreground);
+  --palette-600-foreground: var(--color-new-600-foreground);
+  --palette-700-foreground: var(--color-new-700-foreground);
+  --palette-800-foreground: var(--color-new-800-foreground);
+  --palette-900-foreground: var(--color-new-900-foreground);
+  --palette-950-foreground: var(--color-new-950-foreground);
+}
+
+.primary-override {
+  --color-primary: oklch(0.5 0.14 35) !important;
+}

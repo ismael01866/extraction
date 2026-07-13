@@ -1,0 +1,50 @@
+import { Box, HStack, Stack } from 'extraction-ui';
+
+# Font Family
+
+Font family tokens control the default typeface.
+For more information on the default available fonts and utilities, visit [Tailwind](https://tailwindcss.com/docs/font-family)
+
+```css
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+}
+```
+
+<br />
+<br />
+<section>
+  <Stack className='gap-4 text-sm'>
+    {[
+      {
+        name: 'sans',
+        family:
+          "ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
+      },
+      {
+        name: 'serif',
+        family: "ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+      },
+      {
+        name: 'mono',
+        family:
+          "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+      },
+    ].map(({ name, family }) => (
+      <HStack key={name} className='items-baseline'>
+        <span className='w-16 shrink-0 font-normal'>{name}</span>
+        <Box className='variant-outline palette-neutral flex-1'>
+          <p style={{ fontFamily: family }} className='flex-1'>
+            {`The quick brown fox jumps over the lazy dog.`}
+          </p>
+        </Box>
+      </HStack>
+    ))}
+  </Stack>
+</section>

@@ -1,0 +1,51 @@
+@utility badge-sm {
+  --ex-height: var(--ex-badge-height-sm, var(--ex-size-2xs));
+
+  --ex-px: var(--ex-badge-px-sm, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-badge-gap-x-sm, calc(var(--spacing) * 0.75));
+
+  --ex-radius: var(--ex-badge-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-badge-font-size-sm, var(--text-2xs));
+}
+
+@utility badge-md {
+  --ex-height: var(--ex-badge-height-md, var(--ex-size-xs));
+
+  --ex-px: var(--ex-badge-px-md, calc(var(--spacing) * 1.5));
+  --ex-gap-x: var(--ex-badge-gap-x-md, calc(var(--spacing) * 1));
+
+  --ex-radius: var(--ex-badge-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-badge-font-size-md, var(--text-xs));
+}
+
+@utility badge-lg {
+  --ex-height: var(--ex-badge-height-lg, var(--ex-size-sm));
+
+  --ex-px: var(--ex-badge-px-lg, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-badge-gap-x-lg, calc(var(--spacing) * 1.25));
+
+  --ex-radius: var(--ex-badge-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-badge-font-size-lg, var(--text-sm));
+}
+
+@layer components {
+  .ex-badge {
+    --ex-font-family: var(--ex-badge-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-badge-font-weight, var(--font-weight-normal));
+
+    @apply badge-md;
+  }
+
+  .ex-badge {
+    @apply variant-solid palette-primary;
+  }
+
+  .ex-badge {
+    @apply inline-flex shrink-0 items-center justify-center select-none;
+    @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    > svg {
+      @apply relative h-[1em] w-[1em];
+    }
+  }
+}

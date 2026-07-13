@@ -1,0 +1,164 @@
+@utility alert-dialog-content-sm {
+  --ex-font-size: var(--ex-alert-dialog-font-size-sm, var(--text-sm));
+
+  --ex-w: var(--ex-alert-dialog-w-sm, var(--container-sm));
+  --ex-radius: var(--ex-alert-dialog-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-alert-dialog-shadow-sm, var(--shadow-xl));
+
+  .ex-alert-dialog-section {
+    --ex-px: var(--ex-alert-dialog-section-px-sm, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-alert-dialog-section-py-sm, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-alert-dialog-title {
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-sm, var(--text-base));
+  }
+
+  .ex-alert-dialog-description {
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-sm, var(--text-sm));
+  }
+}
+
+@utility alert-dialog-content-md {
+  --ex-font-size: var(--ex-alert-dialog-font-size-md, var(--text-sm));
+
+  --ex-w: var(--ex-alert-dialog-w-md, var(--container-md));
+  --ex-radius: var(--ex-alert-dialog-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-alert-dialog-shadow-md, var(--shadow-xl));
+
+  .ex-alert-dialog-section {
+    --ex-px: var(--ex-alert-dialog-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-alert-dialog-section-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-alert-dialog-title {
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-md, var(--text-base));
+  }
+
+  .ex-alert-dialog-description {
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-md, var(--text-sm));
+  }
+}
+
+@utility alert-dialog-content-lg {
+  --ex-font-size: var(--ex-alert-dialog-font-size-lg, var(--text-base));
+
+  --ex-w: var(--ex-alert-dialog-w-lg, var(--container-lg));
+  --ex-radius: var(--ex-alert-dialog-radius-lg, var(--radius-sm));
+  --ex-shadow: var(--ex-alert-dialog-shadow-lg, var(--shadow-xl));
+
+  .ex-alert-dialog-section {
+    --ex-px: var(--ex-alert-dialog-section-px-lg, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-alert-dialog-section-py-lg, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-lg, calc(var(--spacing) * 2));
+  }
+
+  .ex-alert-dialog-title {
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-lg, var(--text-base));
+  }
+
+  .ex-alert-dialog-description {
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-lg, var(--text-sm));
+  }
+}
+
+@utility alert-dialog-content-xl {
+  --ex-font-size: var(--ex-alert-dialog-font-size-xl, var(--text-base));
+
+  --ex-w: var(--ex-alert-dialog-w-xl, var(--container-xl));
+  --ex-radius: var(--ex-alert-dialog-radius-xl, var(--radius-sm));
+  --ex-shadow: var(--ex-alert-dialog-shadow-xl, var(--shadow-xl));
+
+  .ex-alert-dialog-section {
+    --ex-px: var(--ex-alert-dialog-section-px-xl, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-alert-dialog-section-py-xl, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-xl, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-xl, calc(var(--spacing) * 2));
+  }
+
+  .ex-alert-dialog-title {
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-xl, var(--text-base));
+  }
+
+  .ex-alert-dialog-description {
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-xl, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-alert-dialog-overlay {
+    --ex-z-index: var(--ex-alert-dialog-overlay-z-index, var(--ex-options-z-alert-dialog-overlay));
+
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply z-[var(--ex-z-index)];
+
+    &:where([data-state='open']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-state='closed']) {
+      @apply animate-out fade-out;
+    }
+  }
+
+  .ex-alert-dialog-content {
+    @apply alert-dialog-content-md;
+  }
+
+  .ex-alert-dialog-content {
+    --ex-z-index: var(--ex-alert-dialog-z-index, var(--ex-options-z-alert-dialog));
+
+    @apply palette-neutral variant-outline fixed top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
+    @apply z-[var(--ex-z-index)] w-[var(--ex-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+
+    &:where([data-state='open']) {
+      @apply animate-in fade-in scale-in-75;
+    }
+
+    &:where([data-state='closed']) {
+      @apply animate-out fade-out;
+    }
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+  }
+
+  .ex-alert-dialog-content {
+    @apply flex flex-1 flex-col;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-alert-dialog-section {
+    @apply flex flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-alert-dialog-title {
+    --ex-font-weight: var(--ex-alert-dialog-title-font-weight, var(--font-weight-semibold));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-alert-dialog-description {
+    --ex-font-weight: var(--ex-alert-dialog-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-alert-dialog-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-alert-dialog-content {
+    @apply component-variant-panel;
+  }
+}

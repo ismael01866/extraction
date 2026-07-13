@@ -1,0 +1,62 @@
+import { Display } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './display';
+
+export const Component = (
+  <Display>{`The quick brown fox jumps over the lazy dog`}</Display>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Display
+
+{data.display.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-display-font-size-sm: var(--text-6xl);
+  --ex-display-font-size-md: var(--text-7xl);
+  --ex-display-font-size-lg: var(--text-8xl);
+  --ex-display-font-size-xl: var(--text-9xl);
+
+  --ex-display-line-height-sm: var(--text-6xl-line-height);
+  --ex-display-line-height-md: var(--text-7xl-line-height);
+  --ex-display-line-height-lg: var(--text-8xl-line-height);
+  --ex-display-line-height-xl: var(--text-9xl-line-height);
+
+  --ex-display-font-family-sm: var(--font-sans);
+  --ex-display-font-family-md: var(--font-sans);
+  --ex-display-font-family-lg: var(--font-sans);
+  --ex-display-font-family-xl: var(--font-sans);
+
+  --ex-display-font-weight-sm: var(--font-weight-medium);
+  --ex-display-font-weight-md: var(--font-weight-medium);
+  --ex-display-font-weight-lg: var(--font-weight-medium);
+  --ex-display-font-weight-xl: var(--font-weight-medium);
+}
+```
+
+## API
+
+<Api config={cfg} />

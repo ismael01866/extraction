@@ -1,0 +1,179 @@
+import { Blockquote } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  blockquoteCaptionCfg,
+  blockquoteCfg,
+  blockquoteCiteCfg,
+  blockquoteContentCfg,
+  blockquoteDescriptionCfg,
+  blockquoteIconCfg,
+  cfg,
+} from './blockquote';
+
+export const Component = (
+  <Blockquote>
+    <Blockquote.Icon />
+    <Blockquote.Content>
+      <Blockquote.Description>
+        Good design is as little design as possible.
+      </Blockquote.Description>
+      <Blockquote.Caption>
+        <Blockquote.Cite>— Dieter Rams</Blockquote.Cite>
+      </Blockquote.Caption>
+    </Blockquote.Content>
+  </Blockquote>
+);
+
+export const ComponentWithAccent = (
+  <Blockquote className='accent-border-start'>
+    <Blockquote.Icon />
+    <Blockquote.Content>
+      <Blockquote.Description>
+        Good design is as little design as possible.
+      </Blockquote.Description>
+      <Blockquote.Caption>
+        <Blockquote.Cite>— Dieter Rams</Blockquote.Cite>
+      </Blockquote.Caption>
+    </Blockquote.Content>
+  </Blockquote>
+);
+
+export const VariantComponent = (
+  <Blockquote>
+    <Blockquote.Icon />
+    <Blockquote.Content>
+      <Blockquote.Description>
+        Good design is as little design as possible.
+      </Blockquote.Description>
+      <Blockquote.Caption>
+        <Blockquote.Cite>— Dieter Rams</Blockquote.Cite>
+      </Blockquote.Caption>
+    </Blockquote.Content>
+  </Blockquote>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Blockquote
+
+{data.blockquote.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Accent
+
+<Usage
+  components={{
+    usage: ComponentWithAccent,
+    wrapper: Wrapper,
+  }}
+  withAccent
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-blockquote-font-size-sm: var(--text-xs);
+  --ex-blockquote-font-size-md: var(--text-sm);
+  --ex-blockquote-font-size-lg: var(--text-base);
+
+  --ex-blockquote-font-family-sm: var(--font-sans);
+  --ex-blockquote-font-family-md: var(--font-sans);
+  --ex-blockquote-font-family-lg: var(--font-sans);
+
+  --ex-blockquote-font-weight-sm: var(--font-weight-normal);
+  --ex-blockquote-font-weight-md: var(--font-weight-normal);
+  --ex-blockquote-font-weight-lg: var(--font-weight-normal);
+
+  --ex-blockquote-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-blockquote-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-blockquote-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-blockquote-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-blockquote-gap-y-md: calc(var(--spacing) * 2);
+  --ex-blockquote-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-blockquote-px-sm: calc(var(--spacing) * 4);
+  --ex-blockquote-px-md: calc(var(--spacing) * 5);
+  --ex-blockquote-px-lg: calc(var(--spacing) * 6);
+
+  --ex-blockquote-py-sm: calc(var(--spacing) * 4);
+  --ex-blockquote-py-md: calc(var(--spacing) * 5);
+  --ex-blockquote-py-lg: calc(var(--spacing) * 6);
+
+  --ex-blockquote-radius-sm: var(--radius-sm);
+  --ex-blockquote-radius-md: var(--radius-sm);
+  --ex-blockquote-radius-lg: var(--radius-sm);
+
+  --ex-blockquote-cite-font-size-sm: var(--text-xs);
+  --ex-blockquote-cite-font-size-md: var(--text-sm);
+  --ex-blockquote-cite-font-size-lg: var(--text-base);
+
+  --ex-blockquote-cite-font-family-sm: var(--font-sans);
+  --ex-blockquote-cite-font-family-md: var(--font-sans);
+  --ex-blockquote-cite-font-family-lg: var(--font-sans);
+
+  --ex-blockquote-cite-font-weight-sm: var(--font-weight-medium)
+  --ex-blockquote-cite-font-weight-md: var(--font-weight-medium)
+  --ex-blockquote-cite-font-weight-lg: var(--font-weight-medium)
+
+  --ex-blockquote-cite-opacity: var(--ex-options-muted-opacity);
+
+  --ex-blockquote-icon-font-size-sm: var(--text-lg);
+  --ex-blockquote-icon-font-size-md: var(--text-xl);
+  --ex-blockquote-icon-font-size-lg: var(--text-2xl);
+}
+```
+
+## API
+
+### Blockquote
+
+<Api config={blockquoteCfg} />
+
+### Blockquote Content
+
+<Api config={blockquoteContentCfg} />
+
+### Blockquote Description
+
+<Api config={blockquoteDescriptionCfg} />
+
+### Blockquote Caption
+
+<Api config={blockquoteCaptionCfg} />
+
+### Blockquote Cite
+
+<Api config={blockquoteCiteCfg} />
+
+### Blockquote Icon
+
+<Api config={blockquoteIconCfg} />

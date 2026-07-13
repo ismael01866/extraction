@@ -1,0 +1,171 @@
+import { CheckboxCard } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  checkboxCardCfg,
+  checkboxCardContentCfg,
+  checkboxCardDescriptionCfg,
+  checkboxCardIndicatorCfg,
+  checkboxCardLabelCfg,
+} from './checkbox-card';
+
+export const Component = (
+  <CheckboxCard>
+    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Content>
+      <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+      <CheckboxCard.Description>
+        Agree to all terms and conditions
+      </CheckboxCard.Description>
+    </CheckboxCard.Content>
+  </CheckboxCard>
+);
+
+export const ComponentDisabled = (
+  <CheckboxCard className='disabled'>
+    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Content>
+      <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+      <CheckboxCard.Description>
+        Agree to all terms and conditions
+      </CheckboxCard.Description>
+    </CheckboxCard.Content>
+  </CheckboxCard>
+);
+
+export const VariantComponent = (
+  <CheckboxCard className='flex-1'>
+    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Content>
+      <CheckboxCard.Label>Accept</CheckboxCard.Label>
+      <CheckboxCard.Description>Agree terms</CheckboxCard.Description>
+    </CheckboxCard.Content>
+  </CheckboxCard>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Checkbox Card
+
+{data['checkbox-card'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/checkbox)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-checkbox-card-cursor: default;
+
+  --ex-checkbox-card-font-size-sm: var(--text-xs);
+  --ex-checkbox-card-font-size-md: var(--text-sm);
+  --ex-checkbox-card-font-size-lg: var(--text-base);
+
+  --ex-checkbox-card-gap-x-sm: calc(var(--spacing * 2));
+  --ex-checkbox-card-gap-x-md: calc(var(--spacing * 2.5));
+  --ex-checkbox-card-gap-x-lg: calc(var(--spacing * 3));
+
+  --ex-checkbox-card-px-sm: calc(var(--spacing * 4));
+  --ex-checkbox-card-px-md: calc(var(--spacing * 5));
+  --ex-checkbox-card-px-lg: calc(var(--spacing * 6));
+
+  --ex-checkbox-card-py-sm: calc(var(--spacing * 4));
+  --ex-checkbox-card-py-md: calc(var(--spacing * 5));
+  --ex-checkbox-card-py-lg: calc(var(--spacing * 6));
+
+  --ex-checkbox-card-radius-sm: var(--radius-sm);
+  --ex-checkbox-card-radius-md: var(--radius-sm);
+  --ex-checkbox-card-radius-lg: var(--radius-sm);
+
+  --ex-checkbox-card-content-gap-x-sm: calc(var(--spacing * 2));
+  --ex-checkbox-card-content-gap-x-md: calc(var(--spacing * 2.5));
+  --ex-checkbox-card-content-gap-x-lg: calc(var(--spacing * 3));
+
+  --ex-checkbox-card-content-gap-y-sm: calc(var(--spacing * 1));
+  --ex-checkbox-card-content-gap-y-md: calc(var(--spacing * 1));
+  --ex-checkbox-card-content-gap-y-lg: calc(var(--spacing * 1));
+
+  --ex-checkbox-card-label-font-family: var(--font-sans);
+  --ex-checkbox-card-label-font-weight: var(--font-weight-semibold);
+
+  --ex-checkbox-card-label-font-size-sm: var(--text-xs);
+  --ex-checkbox-card-label-font-size-md: var(--text-sm);
+  --ex-checkbox-card-label-font-size-lg: var(--text-base);
+
+  --ex-checkbox-card-description-font-family: var(--font-sans);
+  --ex-checkbox-card-description-font-weight: var(--font-weight-normal);
+  --ex-checkbox-card-description-opacity: var(--ex-options-muted-opacity);
+
+  --ex-checkbox-card-description-font-size-sm: var(--text-xs);
+  --ex-checkbox-card-description-font-size-md: var(--text-sm);
+  --ex-checkbox-card-description-font-size-lg: var(--text-base);
+
+  --ex-checkbox-card-indicator-font-size-sm: var(--text-lg);
+  --ex-checkbox-card-indicator-font-size-md: var(--text-xl);
+  --ex-checkbox-card-indicator-font-size-lg: var(--text-2xl);
+
+  --ex-checkbox-card-indicator-radius-sm: var(--radius-sm);
+  --ex-checkbox-card-indicator-radius-md: var(--radius-sm);
+  --ex-checkbox-card-indicator-radius-lg: var(--radius-sm);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference)
+
+### Checkbox Card
+
+<Api config={checkboxCardCfg} />
+
+### Checkbox Card Indicator
+
+<Api config={checkboxCardIndicatorCfg} />
+
+### Checkbox Card Content
+
+<Api config={checkboxCardContentCfg} />
+
+### Checkbox Card Label
+
+<Api config={checkboxCardLabelCfg} />
+
+### Checkbox Card Description
+
+<Api config={checkboxCardDescriptionCfg} />

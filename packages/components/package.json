@@ -1,0 +1,10 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "react": "^19.2.0",
+    "tailwindcss": "^4.1.16",
+    "utils": "workspace:*"
+  }
+}

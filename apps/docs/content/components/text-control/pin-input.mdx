@@ -1,0 +1,178 @@
+import { PinInput } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  pinInputCfg,
+  pinInputFieldCfg,
+  pinInputHiddenCfg,
+} from './pin-input';
+
+export const Component = (
+  <PinInput placeholder={'○○○'}>
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const ComponentValid = (
+  <PinInput className='valid' value={'123'} readOnly>
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const ComponentInvalid = (
+  <PinInput className='invalid' placeholder={'○○○'}>
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const ComponentDisabled = (
+  <PinInput className='disabled' placeholder={'○'}>
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const ComponentMasked = (
+  <PinInput type='password' placeholder={'○○○'}>
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const VariantComponent = (
+  <PinInput placeholder={'○'}>
+    <PinInput.Field />
+    <PinInput.Hidden />
+  </PinInput>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Pin Input
+
+{data['pin-input'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/one-time-password-field)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Masked
+
+Use the `type='password'` prop to mask the component input.
+
+<Usage
+  components={{
+    usage: ComponentMasked,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-pin-input-font-family: var(--font-sans);
+  --ex-pin-input-font-weight: var(--font-weight-normal);
+
+  --ex-pin-input-font-size-sm: var(--text-xs);
+  --ex-pin-input-font-size-md: var(--text-sm);
+  --ex-pin-input-font-size-lg: var(--text-base);
+
+  --ex-pin-input-size-sm: calc(var(--spacing) * 9);
+  --ex-pin-input-size-md: calc(var(--spacing) * 10);
+  --ex-pin-input-size-lg: calc(var(--spacing) * 11);
+
+  --ex-pin-input-gap-x-sm: calc(var(--spacing) * 1);
+  --ex-pin-input-gap-x-md: calc(var(--spacing) * 1.25);
+  --ex-pin-input-gap-x-lg: calc(var(--spacing) * 1.5);
+
+  --ex-pin-input-radius-sm: var(--radius-sm);
+  --ex-pin-input-radius-md: var(--radius-sm);
+  --ex-pin-input-radius-lg: var(--radius-sm);
+
+  --ex-pin-input-placeholder-font-size-sm: var(--text-2xs);
+  --ex-pin-input-placeholder-font-size-md: var(--text-xs);
+  --ex-pin-input-placeholder-font-size-lg: var(--text-sm);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/one-time-password-field#api-reference)
+
+### Pin Input
+
+<Api config={pinInputCfg} />
+
+### Pin Input Field
+
+<Api config={pinInputFieldCfg} />
+
+### Pin Input Hidden
+
+<Api config={pinInputHiddenCfg} />

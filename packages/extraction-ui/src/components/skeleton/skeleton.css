@@ -1,0 +1,25 @@
+@layer components {
+  .ex-skeleton {
+    --ex-radius: var(--ex-skeleton-radius, var(--radius-sm));
+    --ex-duration: var(--ex-skeleton-duration, 1000ms);
+  }
+
+  .ex-skeleton {
+    &:where(.ex-skeleton-loading) {
+      @apply variant-subtle palette-neutral;
+    }
+  }
+
+  .ex-skeleton {
+    &:where(.ex-skeleton-loading) {
+      @apply pointer-events-none w-full flex-shrink-0 cursor-default border-0 select-none;
+      @apply animate-pulse rounded-[var(--ex-radius)] [animation-duration:var(--ex-duration)];
+
+      *,
+      &::after,
+      &::before {
+        @apply invisible;
+      }
+    }
+  }
+}

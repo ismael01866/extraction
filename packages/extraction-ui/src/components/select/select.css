@@ -1,0 +1,270 @@
+@utility select-trigger-sm {
+  --ex-height: var(--ex-select-trigger-height-sm, var(--ex-size-xl));
+
+  --ex-px: var(--ex-select-trigger-px-sm, calc(var(--spacing) * 3.5));
+  --ex-radius: var(--ex-select-trigger-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-select-trigger-font-size-sm, var(--text-xs));
+
+  .ex-select-icon {
+    --ex-font-size: var(--ex-select-trigger-icon-size-sm, var(--text-lg));
+  }
+}
+
+@utility select-trigger-md {
+  --ex-height: var(--ex-select-trigger-height-md, var(--ex-size-2xl));
+
+  --ex-px: var(--ex-select-trigger-px-md, calc(var(--spacing) * 4));
+  --ex-radius: var(--ex-select-trigger-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-select-trigger-font-size-md, var(--text-sm));
+
+  .ex-select-icon {
+    --ex-font-size: var(--ex-select-trigger-icon-size-md, var(--text-xl));
+  }
+}
+
+@utility select-trigger-lg {
+  --ex-height: var(--ex-select-trigger-height-lg, var(--ex-size-3xl));
+
+  --ex-px: var(--ex-select-trigger-px-lg, calc(var(--spacing) * 4));
+  --ex-radius: var(--ex-select-trigger-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-select-trigger-font-size-lg, var(--text-base));
+
+  .ex-select-icon {
+    --ex-font-size: var(--ex-select-trigger-icon-size-lg, var(--text-2xl));
+  }
+}
+
+@utility select-content-sm {
+  --ex-max-w: var(--ex-select-content-max-w-sm, var(--container-3xs));
+  --ex-radius: var(--ex-select-content-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-select-content-shadow-sm, var(--shadow-sm));
+
+  .ex-select-section {
+    --ex-px: var(--ex-select-content-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-select-content-section-py-sm, calc(var(--spacing) * 2));
+
+    --ex-gap-y: var(--ex-select-section-gap-y-sm, calc(var(--spacing) * 1.5));
+  }
+
+  .ex-select-item,
+  .ex-select-label {
+    --ex-px: var(--ex-select-content-item-px-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-select-content-item-py-sm, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-select-content-item-font-size-sm, var(--text-xs));
+  }
+
+  .ex-select-label {
+    --ex-font-size: var(--ex-select-content-label-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-select-item-indicator {
+    --ex-font-size: var(--ex-select-content-item-indicator-font-size-sm, var(--text-sm));
+  }
+
+  .ex-select-scroll-up-button {
+    --ex-font-size: var(--ex-select-scroll-up-button-size-sm, var(--text-lg));
+  }
+
+  .ex-select-scroll-down-button {
+    --ex-font-size: var(--ex-select-scroll-down-button-size-sm, var(--text-lg));
+  }
+}
+
+@utility select-content-md {
+  --ex-max-w: var(--ex-select-content-max-w-md, var(--container-2xs));
+  --ex-radius: var(--ex-select-content-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-select-content-shadow-md, var(--shadow-sm));
+
+  .ex-select-section {
+    --ex-px: var(--ex-select-content-section-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-select-content-section-py-md, calc(var(--spacing) * 2.5));
+
+    --ex-gap-y: var(--ex-select-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-select-item,
+  .ex-select-label {
+    --ex-px: var(--ex-select-content-item-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-select-content-item-py-md, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-select-content-item-font-size-md, var(--text-sm));
+  }
+
+  .ex-select-label {
+    --ex-font-size: var(--ex-select-content-label-font-size-md, var(--text-xs));
+  }
+
+  .ex-select-item-indicator {
+    --ex-font-size: var(--ex-select-content-item-indicator-font-size-md, var(--text-base));
+  }
+
+  .ex-select-scroll-up-button {
+    --ex-font-size: var(--ex-select-scroll-up-button-size-md, var(--text-xl));
+  }
+
+  .ex-select-scroll-down-button {
+    --ex-font-size: var(--ex-select-scroll-down-button-size-md, var(--text-xl));
+  }
+}
+
+@utility select-content-lg {
+  --ex-max-w: var(--ex-select-content-max-w-lg, var(--container-xs));
+  --ex-radius: var(--ex-select-content-radius-lg, var(--radius-sm));
+  --ex-shadow: var(--ex-select-content-shadow-lg, var(--shadow-sm));
+
+  .ex-select-section {
+    --ex-px: var(--ex-select-content-section-px-lg, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-select-content-section-py-lg, calc(var(--spacing) * 3));
+
+    --ex-gap-y: var(--ex-select-section-gap-y-lg, calc(var(--spacing) * 2.5));
+  }
+
+  .ex-select-item,
+  .ex-select-label {
+    --ex-px: var(--ex-select-content-item-px-lg, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-select-content-item-py-lg, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-select-content-item-font-size-lg, var(--text-base));
+  }
+
+  .ex-select-label {
+    --ex-font-size: var(--ex-select-content-label-font-size-lg, var(--text-sm));
+  }
+
+  .ex-select-item-indicator {
+    --ex-font-size: var(--ex-select-content-item-indicator-font-size-lg, var(--text-lg));
+  }
+
+  .ex-select-scroll-up-button {
+    --ex-font-size: var(--ex-select-scroll-up-button-size-lg, var(--text-2xl));
+  }
+
+  .ex-select-scroll-down-button {
+    --ex-font-size: var(--ex-select-scroll-down-button-size-lg, var(--text-2xl));
+  }
+}
+
+@layer components {
+  .ex-select-trigger {
+    --ex-cursor: var(--ex-select-trigger-cursor, default);
+    --ex-font-family: var(--ex-select-trigger-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-select-trigger-font-weight, var(--font-weight-normal));
+
+    @apply select-trigger-md;
+  }
+
+  *:not(.ex-input-group) {
+    > .ex-select-trigger {
+      @apply palette-neutral variant-outline;
+    }
+  }
+
+  .ex-select-trigger {
+    @apply relative inline-flex w-full;
+    @apply h-[var(--ex-height)] [cursor:var(--ex-cursor)] items-center rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    padding-inline-end: calc(var(--ex-px) * 2.25);
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-select-icon {
+        @apply component-variant-solid-contrast;
+      }
+    }
+  }
+
+  .ex-select-icon {
+    @apply pointer-events-none absolute end-2 top-1/2 inline-flex -translate-y-1/2 items-center justify-center leading-none;
+  }
+
+  .ex-select-icon {
+    @apply size-[1em] fill-none stroke-current stroke-1 [font-size:var(--ex-font-size)] [stroke-linecap:round] [stroke-linejoin:round];
+  }
+
+  .ex-select-content {
+    @apply select-content-md;
+  }
+
+  .ex-select-content {
+    @apply palette-neutral variant-outline flex hidden min-w-fit;
+    @apply max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+
+    &:has(.ex-select-item-indicator) {
+      .ex-select-item {
+        @apply ps-[2.25em];
+      }
+
+      .ex-select-label {
+        @apply ps-[2.75em];
+      }
+    }
+  }
+
+  .ex-select-section {
+    @apply flex flex-col;
+    @apply gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-select-separator {
+    @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+  }
+
+  .ex-select-separator {
+    @apply h-[1px] w-full [transform:translateZ(0)];
+  }
+
+  .ex-select-item {
+    --ex-font-family: var(--ex-select-content-item-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-select-content-item-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-select-item {
+    @apply relative flex min-w-0 items-center select-none;
+    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &:where([data-highlighted]) {
+      @apply variant-subtle border-0!;
+    }
+  }
+
+  .ex-select-item-indicator {
+    @apply absolute left-[0.375rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
+    @apply size-[var(--ex-icon-size)];
+  }
+
+  .ex-select-item-indicator-check {
+    @apply size-[1em] fill-none stroke-current stroke-2;
+  }
+
+  .ex-select-label {
+    --ex-font-family: var(--ex-select-content-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-select-content-label-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-select-content-label-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-select-label {
+    @apply px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+
+  .ex-select-scroll-up-button,
+  .ex-select-scroll-down-button {
+    @apply size-[1em] self-center fill-current [font-size:var(--ex-font-size)];
+  }
+
+  [data-radix-popper-content-wrapper] {
+    @apply z-[var(--ex-options-z-select-popper)]!;
+  }
+}
+
+@layer utilities {
+  .ex-select-trigger {
+    @apply valid invalid interactive-form-control;
+
+    &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)];
+    }
+  }
+
+  .ex-select-content {
+    @apply component-variant-panel;
+  }
+}

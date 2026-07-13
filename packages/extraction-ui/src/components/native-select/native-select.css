@@ -1,0 +1,101 @@
+@utility native-select-sm {
+  --ex-height: var(--ex-native-select-height-sm, var(--ex-size-xl));
+
+  --ex-px: var(--ex-native-select-px-sm, calc(var(--spacing) * 3.5));
+  --ex-radius: var(--ex-native-select-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-native-select-font-size-sm, var(--text-xs));
+
+  .ex-native-select-icon {
+    --ex-font-size: var(--ex-native-select-icon-size-sm, var(--text-lg));
+  }
+}
+
+@utility native-select-md {
+  --ex-height: var(--ex-native-select-height-md, var(--ex-size-2xl));
+
+  --ex-px: var(--ex-native-select-px-md, calc(var(--spacing) * 4));
+  --ex-radius: var(--ex-native-select-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-native-select-font-size-md, var(--text-sm));
+
+  .ex-native-select-icon {
+    --ex-font-size: var(--ex-native-select-icon-size-md, var(--text-xl));
+  }
+}
+
+@utility native-select-lg {
+  --ex-height: var(--ex-native-select-height-lg, var(--ex-size-3xl));
+
+  --ex-px: var(--ex-native-select-px-lg, calc(var(--spacing) * 4.5));
+  --ex-radius: var(--ex-native-select-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-native-select-font-size-lg, var(--text-base));
+
+  .ex-native-select-icon {
+    --ex-font-size: var(--ex-native-select-icon-size-lg, var(--text-2xl));
+  }
+}
+
+@layer components {
+  .ex-native-select {
+    --ex-font-family: var(--ex-native-select-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-native-select-font-weight, var(--font-weight-normal));
+
+    @apply native-select-md;
+  }
+
+  *:not(.ex-input-group) {
+    > .ex-native-select {
+      @apply palette-neutral variant-outline;
+    }
+  }
+
+  .ex-native-select {
+    @apply relative inline-flex w-full [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
+    @apply border-transparent! bg-transparent! outline-transparent!;
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+    }
+  }
+
+  .ex-native-select-field {
+    @apply variant;
+  }
+
+  .ex-native-select-field {
+    @apply w-full appearance-none truncate;
+    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-size:var(--ex-font-size)];
+
+    option:not(:disabled) {
+      @apply variant;
+    }
+
+    option:where(:disabled) {
+      @apply hidden;
+    }
+  }
+
+  .ex-native-select-icon {
+    @apply pointer-events-none absolute end-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-native-select-caret {
+    @apply size-[1em] fill-none stroke-current stroke-1 [stroke-linecap:round] [stroke-linejoin:round];
+  }
+}
+
+@layer utilities {
+  .ex-native-select {
+    @apply valid invalid;
+
+    &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      .ex-native-select-field {
+        @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)];
+      }
+    }
+  }
+
+  .ex-native-select-field {
+    @apply interactive;
+  }
+}

@@ -1,0 +1,113 @@
+import { Switch } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg, switchCfg, switchThumbCfg } from './switch';
+
+export const Component = (
+  <Switch>
+    <Switch.Thumb aria-label='switch thumb' />
+  </Switch>
+);
+
+export const ComponentDisabled = (
+  <Switch disabled>
+    <Switch.Thumb aria-label='switch thumb' />
+  </Switch>
+);
+
+export const SizeComponent = (
+  <Switch defaultChecked>
+    <Switch.Thumb aria-label='switch thumb' />
+  </Switch>
+);
+
+export const VariantComponent = (
+  <Switch defaultChecked>
+    <Switch.Thumb aria-label='switch thumb' />
+  </Switch>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Switch
+
+{data.switch.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/switch)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-switch-cursor: default;
+
+  --ex-switch-height-sm: calc(var(--spacing) * 4);
+  --ex-switch-height-md: calc(var(--spacing) * 5);
+  --ex-switch-height-lg: calc(var(--spacing) * 6);
+
+  --ex-switch-width-sm: calc(var(--spacing) * 8);
+  --ex-switch-width-md: calc(var(--spacing) * 10);
+  --ex-switch-width-lg: calc(var(--spacing) * 12);
+
+  --ex-switch-radius-sm: 9999px;
+  --ex-switch-radius-md: 9999px;
+  --ex-switch-radius-lg: 9999px;
+
+  --ex-switch-thumb-mx: calc(var(--spacing) * 1);
+
+  --ex-switch-thumb-radius-sm: 9999px;
+  --ex-switch-thumb-radius-md: 9999px;
+  --ex-switch-thumb-radius-lg: 9999px;
+
+  --ex-switch-thumb-size-sm: calc(var(--spacing) * 2);
+  --ex-switch-thumb-size-md: calc(var(--spacing) * 3);
+  --ex-switch-thumb-size-lg: calc(var(--spacing) * 4);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/switch#api-reference)
+
+### Switch
+
+<Api config={switchCfg} />
+
+### Switch Thumb
+
+<Api config={switchThumbCfg} />

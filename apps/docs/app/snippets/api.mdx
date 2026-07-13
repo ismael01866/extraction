@@ -1,0 +1,88 @@
+{/* prettier-ignore-start */}
+
+import { Table } from 'nextra/components';
+
+export const TableHeader = ({ headers }) => (
+  <thead>
+    <Table.Tr>
+      {headers.map((header, i) => (
+        <Table.Th key={i} className={header.className}>
+          {header.label}
+        </Table.Th>
+      ))}
+    </Table.Tr>
+  </thead>
+);
+
+export const TableBody = ({ data, renderRow }) => (
+  <tbody>
+    {Object.entries(data).map(([key, values]) => (
+      <Table.Tr key={key}>{renderRow({ key, values })}</Table.Tr>
+    ))}
+  </tbody>
+);
+
+export const DataTable = ({ config }) => (
+  <Table>
+    <TableHeader headers={config.headers} />
+    <TableBody data={config.data} renderRow={config.renderRow} />
+  </Table>
+);
+
+{props.config?.selectors && (
+  <DataTable
+    config={{
+      headers: [
+        { label: 'Element', className: 'min-w-60 text-left' },
+        { label: 'Selector', className: 'min-w-60 text-left' },
+      ],
+      data: props.config.selectors,
+      renderRow: ({ key, values }) => (
+        <>
+          <Table.Td>
+            <b>
+              <code className='nextra-code'>{key}</code>
+            </b>
+          </Table.Td>
+          <Table.Td>
+            <code className='nextra-code'>.{values.default}</code>
+          </Table.Td>
+        </>
+      ),
+    }}
+  />
+)}
+
+{props.config?.api && (
+  <DataTable
+    config={{
+      headers: [
+        { label: 'Prop', className: 'min-w-60 text-left' },
+        { label: 'Type', className: 'min-w-60 text-left' },
+        { label: 'Default', className: 'w-full text-left' },
+      ],
+      data: props.config.api,
+      renderRow: ({ key, values }) => (
+        <>
+          <Table.Td>
+            <b>
+              <code className='nextra-code'>{key}</code>
+            </b>
+          </Table.Td>
+          <Table.Td>
+            <small>
+              <code>{values.type}</code>
+            </small>
+          </Table.Td>
+          <Table.Td>
+            {values.default.length > 0 && (
+              <code className='nextra-code'>{values.default}</code>
+            )}
+          </Table.Td>
+        </>
+      ),
+    }}
+  />
+)}
+
+{/* prettier-ignore-end */}

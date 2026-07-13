@@ -1,0 +1,34 @@
+@layer base {
+  *,
+  button,
+  input,
+  select,
+  optgroup,
+  textarea,
+  ::file-selector-button {
+    &:is(:disabled, [disabled], [data-disabled]) {
+      @apply disabled;
+    }
+  }
+
+  :root {
+    --ex-colors-background: var(--ex-options-background-default-color);
+    --ex-colors-foreground: var(--ex-options-text-default-color);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ex-colors-background: var(--ex-options-background-default-color-dark);
+      --ex-colors-foreground: var(--ex-options-text-default-color-dark);
+    }
+  }
+
+  .dark {
+    --ex-colors-background: var(--ex-options-background-default-color-dark);
+    --ex-colors-foreground: var(--ex-options-text-default-color-dark);
+  }
+
+  html {
+    @apply bg-(--ex-colors-background) text-(--ex-colors-foreground) outline-(--ex-colors-background);
+  }
+}

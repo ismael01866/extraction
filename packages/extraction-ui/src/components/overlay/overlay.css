@@ -1,0 +1,9 @@
+@layer components {
+  .ex-overlay {
+    --ex-opacity: var(--ex-overlay-opacity, var(--ex-options-overlay-opacity));
+    --ex-background: var(--ex-overlay-background, var(--color-black));
+
+    @apply absolute inset-0 flex flex-col;
+    @apply bg-[color-mix(in_srgb,_var(--ex-background)_calc(var(--ex-opacity)*100%),_transparent)];
+  }
+}

@@ -1,0 +1,131 @@
+import { Logo, Marquee } from 'extraction-ui';
+
+import data from '../data.json';
+import { marqueeCfg, marqueeItemCfg, marqueeTrackCfg } from './marquee';
+
+export const Component = (
+  <Marquee className='h-12'>
+    <Marquee.Track className='gap-12'>
+      {['logo-0', 'logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5'].map(
+        (item, index) => (
+          <Marquee.Item key={index}>
+            <Logo
+              key={index}
+              alt={`logo-${index}`}
+              src={`/images/assets/${item}.png`}
+              className='min-w-24'
+            />
+          </Marquee.Item>
+        ),
+      )}
+    </Marquee.Track>
+  </Marquee>
+);
+
+export const ComponentVertical = (
+  <Marquee orientation='vertical' className='h-64 w-24'>
+    <Marquee.Track className='gap-12'>
+      {['logo-0', 'logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5'].map(
+        (item, index) => (
+          <Marquee.Item key={index}>
+            <Logo
+              key={index}
+              alt={`logo-${index}`}
+              src={`/images/assets/${item}.png`}
+              className='min-w-24'
+            />
+          </Marquee.Item>
+        ),
+      )}
+    </Marquee.Track>
+  </Marquee>
+);
+
+export const ComponentCSS = (
+  <Marquee className='h-12 [--ex-marquee-duration:2s] hover:[--ex-marquee-play:paused]'>
+    <Marquee.Track className='gap-12'>
+      {['logo-0', 'logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5'].map(
+        (item, index) => (
+          <Marquee.Item key={index}>
+            <Logo
+              key={index}
+              alt={`logo-${index}`}
+              src={`/images/assets/${item}.png`}
+              className='min-w-24'
+            />
+          </Marquee.Item>
+        ),
+      )}
+    </Marquee.Track>
+  </Marquee>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Marquee
+
+{data.marquee.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Animation Classes
+
+You can set directly the CSS variables to control the animation behavior.
+
+<Usage
+  components={{
+    usage: ComponentCSS,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-marquee-gap-x: calc(var(--spacing) * 8);
+  --ex-marquee-gap-y: calc(var(--spacing) * 8);
+
+  --ex-marquee-delay: 0s;
+  --ex-marquee-ease: linear;
+  --ex-marquee-duration: 20s;
+
+  --ex-marquee-fill: forwards;
+  --ex-marquee-direction: normal;
+
+  --ex-marquee-count: infinite;
+  --ex-marquee-play: running;
+
+  --ex-marquee-animation-x: marquee-scroll-x;
+  --ex-marquee-animation-y: marquee-scroll-y;
+}
+```
+
+## API
+
+### Marquee
+
+<Api config={marqueeCfg} />
+
+### Marquee Track
+
+<Api config={marqueeTrackCfg} />
+
+### Marquee Item
+
+<Api config={marqueeItemCfg} />

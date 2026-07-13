@@ -1,0 +1,61 @@
+import { Highlight, Text } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './highlight';
+
+export const Component = (
+  <Highlight className='before:skew-y-3'>{`jumps over`}</Highlight>
+);
+
+export const ComponentWithAccent = (
+  <Highlight className='palette-primary before:accent-border-end before:rounded-none'>{`jumps over`}</Highlight>
+);
+
+export const VariantComponent = <Highlight>{`jumps over`}</Highlight>;
+
+export const Wrapper = ({ children }) => (
+  <Text className='w-full'>The quick brown fox {children} the lazy dog</Text>
+);
+
+# Highlight
+
+{data.highlight.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Accent
+
+<Usage
+  components={{
+    usage: ComponentWithAccent,
+    wrapper: Wrapper,
+  }}
+  withAccent
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-highlight-px: calc(var(--spacing) * 1.5);
+}
+```
+
+## API
+
+<Api config={cfg} />

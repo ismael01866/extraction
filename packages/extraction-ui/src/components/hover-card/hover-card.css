@@ -1,0 +1,127 @@
+@utility hover-card-content-sm {
+  --ex-font-size: var(--ex-hover-card-font-size-sm, var(--text-xs));
+
+  --ex-max-w: var(--ex-hover-card-max-w-sm, var(--container-3xs));
+  --ex-radius: var(--ex-hover-card-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-hover-card-shadow-sm, var(--shadow-sm));
+
+  .ex-hover-card-section {
+    --ex-px: var(--ex-hover-card-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-hover-card-section-py-sm, calc(var(--spacing) * 4));
+
+    --ex-gap-x: var(--ex-hover-card-section-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-hover-card-section-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-hover-card-title {
+    --ex-font-size: var(--ex-hover-card-title-font-size-sm, var(--text-sm));
+  }
+
+  .ex-hover-card-description {
+    --ex-font-size: var(--ex-hover-card-description-font-size-sm, var(--text-xs));
+  }
+
+  .ex-hover-card-arrow {
+    --ex-width: var(--ex-hover-card-arrow-width-sm, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-hover-card-arrow-height-sm, calc(var(--spacing) * 1.75));
+  }
+}
+
+@utility hover-card-content-md {
+  --ex-font-size: var(--ex-hover-card-font-size-md, var(--text-sm));
+
+  --ex-max-w: var(--ex-hover-card-max-w-md, var(--container-2xs));
+  --ex-radius: var(--ex-hover-card-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-hover-card-shadow-md, var(--shadow-sm));
+
+  .ex-hover-card-section {
+    --ex-px: var(--ex-hover-card-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-hover-card-section-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-hover-card-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-hover-card-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-hover-card-title {
+    --ex-font-size: var(--ex-hover-card-title-font-size-md, var(--text-base));
+  }
+
+  .ex-hover-card-description {
+    --ex-font-size: var(--ex-hover-card-description-font-size-md, var(--text-sm));
+  }
+
+  .ex-hover-card-arrow {
+    --ex-width: var(--ex-hover-card-arrow-width-md, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-hover-card-arrow-height-md, calc(var(--spacing) * 1.75));
+  }
+}
+
+@layer components {
+  .ex-hover-card-content {
+    @apply hover-card-content-md;
+  }
+
+  .ex-hover-card-content {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-hover-card-content {
+    --ex-z-index: var(--ex-hover-card-z-index, var(--ex-options-z-hover-card));
+
+    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &:where([data-side='top']) {
+      @apply animate-in slide-from-top-1 fade-in;
+    }
+
+    &:where([data-side='right']) {
+      @apply animate-in slide-from-end-1 fade-in;
+    }
+
+    &:where([data-side='bottom']) {
+      @apply animate-in slide-from-bottom-1 fade-in;
+    }
+
+    &:where([data-side='left']) {
+      @apply animate-in slide-from-start-1 fade-in;
+    }
+  }
+
+  .ex-hover-card-arrow {
+    @apply h-[var(--ex-height)] w-[var(--ex-width)] fill-[var(--background)] stroke-[var(--border)] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
+
+    stroke-dasharray: 2rem 2rem;
+    stroke-dashoffset: 2rem;
+    stroke-width: 2px;
+  }
+
+  .ex-hover-card-section {
+    @apply flex flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-hover-card-title {
+    --ex-font-family: var(--ex-hover-card-title-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-hover-card-title-font-weight, var(--font-weight-semibold));
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-hover-card-description {
+    --ex-font-family: var(--ex-hover-card-description-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-hover-card-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-hover-card-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-hover-card-content {
+    @apply component-variant-panel;
+  }
+}

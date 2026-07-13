@@ -1,0 +1,232 @@
+@utility dropdown-menu-content-sm {
+  --ex-max-w: var(--ex-dropdown-menu-max-w-sm, var(--container-3xs));
+  --ex-radius: var(--ex-dropdown-menu-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-dropdown-menu-shadow-sm, var(--shadow-sm));
+
+  .ex-dropdown-menu-section {
+    --ex-px: var(--ex-dropdown-menu-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-dropdown-menu-section-py-sm, calc(var(--spacing) * 2));
+
+    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
+  }
+
+  .ex-dropdown-menu-item,
+  .ex-dropdown-menu-label,
+  .ex-dropdown-menu-sub-trigger,
+  .ex-dropdown-menu-radio-item,
+  .ex-dropdown-menu-checkbox-item {
+    --ex-px: var(--ex-dropdown-menu-item-px-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-dropdown-menu-item-py-sm, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-dropdown-menu-item-font-size-sm, var(--text-xs));
+  }
+
+  .ex-dropdown-menu-label {
+    --ex-font-size: var(--ex-dropdown-menu-label-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-dropdown-menu-command {
+    --ex-font-size: var(--ex-dropdown-menu-command-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-dropdown-menu-item-indicator {
+    --ex-font-size: var(--ex-dropdown-menu-item-indicator-font-size-sm, var(--text-xs));
+  }
+
+  .ex-dropdown-menu-arrow {
+    --ex-width: var(--ex-dropdown-menu-arrow-width-sm, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-dropdown-menu-arrow-height-sm, calc(var(--spacing) * 1.75));
+  }
+}
+
+@utility dropdown-menu-content-md {
+  --ex-max-w: var(--ex-dropdown-menu-max-w-md, var(--container-2xs));
+  --ex-radius: var(--ex-dropdown-menu-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-dropdown-menu-shadow-md, var(--shadow-sm));
+
+  .ex-dropdown-menu-section {
+    --ex-px: var(--ex-dropdown-menu-section-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-dropdown-menu-section-py-md, calc(var(--spacing) * 2.5));
+
+    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-dropdown-menu-item,
+  .ex-dropdown-menu-label,
+  .ex-dropdown-menu-sub-trigger,
+  .ex-dropdown-menu-radio-item,
+  .ex-dropdown-menu-checkbox-item {
+    --ex-px: var(--ex-dropdown-menu-item-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-dropdown-menu-item-py-md, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-dropdown-menu-item-font-size-md, var(--text-sm));
+  }
+
+  .ex-dropdown-menu-label {
+    --ex-font-size: var(--ex-dropdown-menu-label-font-size-md, var(--text-xs));
+  }
+
+  .ex-dropdown-menu-command {
+    --ex-font-size: var(--ex-dropdown-menu-command-font-size-md, var(--text-xs));
+  }
+
+  .ex-dropdown-menu-item-indicator {
+    --ex-font-size: var(--ex-dropdown-menu-item-indicator-font-size-md, var(--text-sm));
+  }
+
+  .ex-dropdown-menu-arrow {
+    --ex-width: var(--ex-dropdown-menu-arrow-width-md, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-dropdown-menu-arrow-height-md, calc(var(--spacing) * 1.75));
+  }
+}
+
+@layer components {
+  .ex-dropdown-menu-content,
+  .ex-dropdown-menu-sub-content {
+    @apply dropdown-menu-content-md;
+  }
+
+  .ex-dropdown-menu-content,
+  .ex-dropdown-menu-sub-content {
+    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+
+    &:where([data-side='top']) {
+      @apply animate-in slide-from-top-1 fade-in;
+    }
+
+    &:where([data-side='right']) {
+      @apply animate-in slide-from-end-1 fade-in;
+    }
+
+    &:where([data-side='bottom']) {
+      @apply animate-in slide-from-bottom-1 fade-in;
+    }
+
+    &:where([data-side='left']) {
+      @apply animate-in slide-from-start-1 fade-in;
+    }
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &:has(.ex-dropdown-menu-item-indicator),
+    &:has(.ex-dropdown-menu-radio-item),
+    &:has(.ex-dropdown-menu-checkbox-item) {
+      .ex-dropdown-menu-item,
+      .ex-dropdown-menu-sub-trigger,
+      .ex-dropdown-menu-radio-item,
+      .ex-dropdown-menu-checkbox-item {
+        @apply ps-[2.25em];
+      }
+
+      .ex-dropdown-menu-label {
+        @apply ps-[2.75em];
+      }
+    }
+
+    &:has(.ex-dropdown-menu-command) {
+      .ex-dropdown-menu-item,
+      .ex-dropdown-menu-sub-trigger,
+      .ex-dropdown-menu-radio-item,
+      .ex-dropdown-menu-checkbox-item {
+        @apply pe-[2.75em];
+      }
+    }
+  }
+
+  .ex-dropdown-menu-content,
+  .ex-dropdown-menu-sub-content {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-dropdown-menu-section {
+    @apply flex flex-col;
+    @apply gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-dropdown-menu-arrow {
+    @apply h-[var(--ex-height)] w-[var(--ex-width)] fill-[var(--background)] stroke-[var(--border)] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
+
+    stroke-dasharray: 2rem 2rem;
+    stroke-dashoffset: 2rem;
+    stroke-width: 2px;
+  }
+
+  .ex-dropdown-menu-separator {
+    @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+  }
+
+  .ex-dropdown-menu-separator {
+    @apply h-[1px] w-full [transform:translateZ(0)];
+  }
+
+  .ex-dropdown-menu-radio-group {
+    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-dropdown-menu-sub-trigger {
+    > .ex-dropdown-menu-item-indicator:is(:last-child) {
+      @apply right-[0.5rem] left-[unset];
+    }
+  }
+
+  .ex-dropdown-menu-item,
+  .ex-dropdown-menu-sub-trigger,
+  .ex-dropdown-menu-radio-item,
+  .ex-dropdown-menu-checkbox-item {
+    --ex-font-family: var(--ex-dropdown-menu-item-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-dropdown-menu-item-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-dropdown-menu-item,
+  .ex-dropdown-menu-sub-trigger,
+  .ex-dropdown-menu-radio-item,
+  .ex-dropdown-menu-checkbox-item {
+    @apply relative flex min-w-0 items-center select-none;
+    @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &:where([data-highlighted]) {
+      @apply variant-subtle border-0!;
+    }
+  }
+
+  .ex-dropdown-menu-item-indicator {
+    @apply absolute left-[0.375rem] inline-flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-dropdown-menu-radio-item,
+  .ex-dropdown-menu-checkbox-item {
+    .ex-dropdown-menu-item-indicator:where([data-state='unchecked']) > * {
+      @apply invisible;
+    }
+  }
+
+  .ex-dropdown-menu-label {
+    --ex-font-family: var(--ex-dropdown-menu-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-dropdown-menu-label-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-dropdown-menu-label-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-dropdown-menu-label {
+    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+
+  .ex-dropdown-menu-command {
+    --ex-font-family: var(--ex-dropdown-menu-command-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-dropdown-menu-command-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-dropdown-menu-command-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-dropdown-menu-command {
+    @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-dropdown-menu-content,
+  .ex-dropdown-menu-sub-content {
+    @apply component-variant-panel;
+  }
+}

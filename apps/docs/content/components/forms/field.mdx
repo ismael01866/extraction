@@ -1,0 +1,198 @@
+import { Field, Input } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  fieldCfg,
+  fieldErrorCfg,
+  fieldHelperCfg,
+  fieldRequiredIndicatorCfg,
+  fieldSuccessCfg,
+} from './field';
+
+export const Component = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Input id='name' placeholder='Enter your name' />
+    <Field.Helper>{`The quick brown fox jumps over`}</Field.Helper>
+  </Field>
+);
+
+export const ComponentDisabled = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Input
+      id='name'
+      className='variant-surface disabled'
+      placeholder='Enter your name'
+    />
+  </Field>
+);
+
+export const ComponentValid = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Input
+      id='name'
+      className='valid'
+      placeholder='Enter your name'
+      readOnly
+      value='John'
+    />
+    <Field.Success>{`Name is valid`}</Field.Success>
+  </Field>
+);
+
+export const ComponentInvalid = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Input id='name' className='invalid' placeholder='Enter your name' />
+    <Field.Error>{`Name is required`}</Field.Error>
+  </Field>
+);
+
+export const SizeComponent = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Input id='name' placeholder='Enter your name' />
+    <Field.Helper>{`The quick brown fox jumps over`}</Field.Helper>
+  </Field>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Field
+
+{data.field.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-field-gap-y-sm: calc(var(--spacing) * 2.5);
+  --ex-field-gap-y-md: calc(var(--spacing) * 2.5);
+  --ex-field-gap-y-lg: calc(var(--spacing) * 2.5);
+
+  --ex-field-label-font-family: var(--font-sans);
+  --ex-field-label-font-weight: var(--font-weight-semibold);
+
+  --ex-field-label-font-size-sm: var(--text-xs);
+  --ex-field-label-font-size-md: var(--text-sm);
+  --ex-field-label-font-size-lg: var(--text-base);
+
+  --ex-field-helper-font-family: var(--font-sans);
+  --ex-field-helper-font-weight: var(--font-weight-normal);
+  --ex-field-helper-opacity: var(--ex-options-muted-opacity);
+
+  --ex-field-helper-font-size-sm: var(--text-xs);
+  --ex-field-helper-font-size-md: var(--text-sm);
+  --ex-field-helper-font-size-lg: var(--text-base);
+
+  --ex-field-error-color: var(--color-error-500);
+  --ex-field-error-color-dark: var(--color-error-500);
+  --ex-field-error-font-family: var(--font-sans);
+  --ex-field-error-font-weight: var(--font-weight-semibold);
+
+  --ex-field-error-font-size-sm: var(--text-xs);
+  --ex-field-error-font-size-md: var(--text-sm);
+  --ex-field-error-font-size-lg: var(--text-base);
+
+  --ex-field-success-color: var(--color-success-500);
+  --ex-field-success-color-dark: var(--color-success-500);
+  --ex-field-success-font-family: var(--font-sans);
+  --ex-field-success-font-weight: var(--font-weight-semibold);
+
+  --ex-field-success-font-size-sm: var(--text-xs);
+  --ex-field-success-font-size-md: var(--text-sm);
+  --ex-field-success-font-size-lg: var(--text-base);
+
+  --ex-field-required-indicator-color: var(--color-error-500);
+  --ex-field-required-indicator-color-dark: var(--color-error-500);
+  --ex-field-required-indicator-font-family: var(--font-sans);
+  --ex-field-required-indicator-font-weight: var(--font-weight-normal);
+}
+```
+
+## API
+
+### Field
+
+<Api config={fieldCfg} />
+
+### Field Helper
+
+<Api config={fieldHelperCfg} />
+
+### Field Error
+
+<Api config={fieldErrorCfg} />
+
+### Field Success
+
+<Api config={fieldSuccessCfg} />
+
+### Field Required Indicator
+
+<Api config={fieldRequiredIndicatorCfg} />

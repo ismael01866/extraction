@@ -1,0 +1,62 @@
+import { Box, Flex } from 'extraction-ui';
+
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+# Accents
+
+Accents provide visual emphasis and can be applied to components to enhance their visual appeal.
+
+## Positioning
+
+By default, accents are positioned at the start of the component, but you can use the `accent-border-top`, `accent-border-bottom`, or `accent-border-end` classes to set the position of the accent.
+
+<br />
+<section>
+  <BaseContainer>
+    <Flex className='gap-4'>
+    {['accent-border-start',  'accent-border-end', 'accent-border-top', 'accent-border-bottom',].map((accent, index) => {
+      return (
+        <Box key={index} className={`${accent} palette-primary variant-outline w-48 text-sm rounded-none e`}>
+          {accent}
+        </Box>
+      );
+    })}
+    </Flex>
+  </BaseContainer>
+
+  <CodeContainer>
+    <Code>
+      {[
+        `<Box className='palette-primary variant-outline accent-border-start' />`,
+        `<Box className='palette-primary variant-outline accent-border-end' />`,
+        `<Box className='palette-primary variant-outline accent-border-top' />`,
+        `<Box className='palette-primary variant-outline accent-border-bottom' />`,
+      ].join('\n')}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Coloring
+
+By default, accents will inherit the palette color of the parent component, but you can use the `border-{position}-{color}` class to set a specific color for the accent.
+
+<br />
+<section>
+  <BaseContainer>
+    <Box className={`palette-neutral variant-outline w-48 accent-border-start border-s-success text-sm rounded-none`}>
+      Neutral Box
+    </Box>
+  </BaseContainer>
+
+  <CodeContainer>
+    <Code>
+      {[
+        `<Box className='palette-neutral variant-outline accent-border-start border-s-success' />`,
+      ].join('\n')}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Custom Width
+
+By default, accents have a width of `3px`, but the utilities support custom widths. Value supports spacing scale steps, length, or percentage. Examples: `accent-border-start-4`, `accent-border-start-[4px]`, `accent-border-start-[4%]`.

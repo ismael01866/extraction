@@ -1,0 +1,14 @@
+@layer components {
+  .ex-toggle-group {
+    @apply flex justify-start;
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-row;
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-col;
+    }
+  }
+}

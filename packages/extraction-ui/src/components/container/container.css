@@ -1,0 +1,40 @@
+@utility container-xs {
+  --ex-max-w: var(--ex-container-max-w-xs, var(--container-xs));
+
+  @apply max-w-[var(--ex-max-w)];
+}
+
+@utility container-sm {
+  --ex-max-w: var(--ex-container-max-w-sm, var(--container-sm));
+
+  @apply max-w-[var(--ex-max-w)];
+}
+
+@utility container-md {
+  --ex-max-w: var(--ex-container-max-w-md, var(--container-md));
+
+  @apply max-w-[var(--ex-max-w)];
+}
+
+@utility container-lg {
+  --ex-max-w: var(--ex-container-max-w-lg, var(--container-lg));
+
+  @apply max-w-[var(--ex-max-w)];
+}
+
+@utility container-xl {
+  --ex-max-w: var(--ex-container-max-w-xl, var(--container-xl));
+
+  @apply max-w-[var(--ex-max-w)];
+}
+
+@layer components {
+  .ex-container {
+    @apply container mx-auto w-full;
+  }
+}
+
+
+
+
+

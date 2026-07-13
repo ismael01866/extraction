@@ -1,0 +1,118 @@
+import { DecorativeBox } from '@/app/components';
+
+import { HStack, Separator, Stack, VStack } from 'extraction-ui';
+
+import data from '../data.json';
+import { hStackCfg, stackCfg, vStackCfg } from './stack';
+
+export const Wrapper = ({ children }) => children;
+
+# Stack
+
+{data.stack.description} 
+
+<Usage
+  components={{
+    usage: (
+      <Stack className='w-full'>
+        <DecorativeBox className='w-full' />
+        <DecorativeBox className='w-full' />
+        <DecorativeBox className='w-full' />
+      </Stack>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Separators
+
+You can use any component as a separator.
+
+<Usage
+  components={{
+    usage: (
+      <Stack className='w-full' separator={<Separator className='my-2' />}>
+        <DecorativeBox className='w-full' />
+        <DecorativeBox className='w-full' />
+        <DecorativeBox className='w-full' />
+      </Stack>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## Stack Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-stack-gap-y: calc(var(--spacing) * 2);
+}
+```
+
+### API
+
+<Api config={stackCfg} />
+
+<br />
+<br />
+
+# HStack
+
+{data.hstack.description} 
+
+<Usage
+  components={{
+    usage: (
+      <HStack>
+        <DecorativeBox />
+        <DecorativeBox />
+        <DecorativeBox />
+      </HStack>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## HStack Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-hstack-gap-x: calc(var(--spacing) * 2);
+}
+```
+
+### API
+
+<Api config={hStackCfg} />
+
+<br />
+<br />
+
+# VStack
+
+{data.vstack.description} 
+
+<Usage
+  components={{
+    usage: (
+      <VStack>
+        <DecorativeBox />
+        <DecorativeBox />
+        <DecorativeBox />
+      </VStack>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## VStack Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-vstack-gap-y: calc(var(--spacing) * 2);
+}
+```
+
+### API
+
+<Api config={vStackCfg} />

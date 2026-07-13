@@ -1,0 +1,5 @@
+@layer components {
+  .ex-float {
+    @apply absolute inline-flex items-center justify-center;
+  }
+}

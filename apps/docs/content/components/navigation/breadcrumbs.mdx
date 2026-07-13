@@ -1,0 +1,172 @@
+import { Breadcrumbs } from 'extraction-ui';
+import { LuHouse, LuUser } from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  breadcrumbsCfg,
+  breadcrumbsCurrentLinkCfg,
+  breadcrumbsItemCfg,
+  breadcrumbsLinkCfg,
+  breadcrumbsListCfg,
+  breadcrumbsSeparatorCfg,
+  cfg,
+} from './breadcrumbs';
+
+export const Component = (
+  <Breadcrumbs>
+    <Breadcrumbs.List>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>{`Home`}</Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>{`Profile`}</Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Breadcrumbs.CurrentLink href='#'>{`Settings`}</Breadcrumbs.CurrentLink>
+      </Breadcrumbs.Item>
+    </Breadcrumbs.List>
+  </Breadcrumbs>
+);
+
+export const ComponentWithIcon = (
+  <Breadcrumbs>
+    <Breadcrumbs.List>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>
+          <LuHouse />
+          {`Home`}
+        </Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>
+          <LuUser />
+          {`Profile`}
+        </Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator />
+      <Breadcrumbs.Item>
+        <Breadcrumbs.CurrentLink href='#'>{`Settings`}</Breadcrumbs.CurrentLink>
+      </Breadcrumbs.Item>
+    </Breadcrumbs.List>
+  </Breadcrumbs>
+);
+
+export const ComponentWithSeparator = (
+  <Breadcrumbs>
+    <Breadcrumbs.List>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>{`Home`}</Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href='#'>{`Profile`}</Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.CurrentLink href='#'>{`Settings`}</Breadcrumbs.CurrentLink>
+      </Breadcrumbs.Item>
+    </Breadcrumbs.List>
+  </Breadcrumbs>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Breadcrumbs
+
+{data.breadcrumbs.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Icon
+
+<Usage
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Separator
+
+<Usage
+  components={{
+    usage: ComponentWithSeparator,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-breadcrumbs-font-family: var(--font-sans);
+  --ex-breadcrumbs-font-weight: var(--font-weight-regular);
+
+  --ex-breadcrumbs-font-size-sm: var(--text-xs);
+  --ex-breadcrumbs-font-size-md: var(--text-sm);
+
+  --ex-breadcrumbs-gap-x-sm: calc(var(--spacing) * 0.25);
+  --ex-breadcrumbs-gap-x-md: calc(var(--spacing) * 0.5);
+
+  --ex-breadcrumbs-link-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-breadcrumbs-link-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-breadcrumbs-separator-opacity: var(--ex-options-subtle-opacity);
+
+  --ex-breadcrumbs-current-link-font-weight: var(--font-weight-medium);
+}
+```
+
+## API
+
+### Breadcrumbs
+
+<Api config={breadcrumbsCfg} />
+
+### Breadcrumbs List
+
+<Api config={breadcrumbsListCfg} />
+
+### Breadcrumbs Item
+
+<Api config={breadcrumbsItemCfg} />
+
+### Breadcrumbs Link
+
+<Api config={breadcrumbsLinkCfg} />
+
+### Breadcrumbs Current Link
+
+<Api config={breadcrumbsCurrentLinkCfg} />
+
+### Breadcrumbs Separator
+
+<Api config={breadcrumbsSeparatorCfg} />

@@ -1,0 +1,68 @@
+import { CloseButton } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './close-button';
+
+export const Component = <CloseButton aria-label='close button' />;
+
+export const Wrapper = ({ children }) => children;
+
+# Close Button
+
+{data['close-button'].description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-close-button-cursor: pointer;
+
+  --ex-close-button-font-size-sm: var(--text-sm);
+  --ex-close-button-font-size-md: var(--text-base);
+  --ex-close-button-font-size-lg: var(--text-lg);
+  --ex-close-button-font-size-xl: var(--text-xl);
+
+  --ex-close-button-size-sm: calc(var(--spacing) * 7);
+  --ex-close-button-size-md: calc(var(--spacing) * 8);
+  --ex-close-button-size-lg: calc(var(--spacing) * 9);
+  --ex-close-button-size-xl: calc(var(--spacing) * 10);
+
+  --ex-close-button-radius-sm: var(--radius-sm);
+  --ex-close-button-radius-md: var(--radius-sm);
+  --ex-close-button-radius-lg: var(--radius-sm);
+  --ex-close-button-radius-xl: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

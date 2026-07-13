@@ -1,0 +1,126 @@
+import { Field, Input } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './input';
+
+export const Component = (
+  <Input className='w-64' placeholder='Enter your name' />
+);
+
+export const ComponentValid = (
+  <Field className='w-64'>
+    <Input
+      id='name'
+      placeholder='Enter your name'
+      className='valid'
+      readOnly
+      value='John'
+    />
+  </Field>
+);
+
+export const ComponentInvalid = (
+  <Field className='w-64'>
+    <Input id='name' placeholder='Enter your name' className='invalid' />
+  </Field>
+);
+
+export const ComponentDisabled = (
+  <Input
+    disabled
+    className='variant-surface w-64'
+    placeholder='Enter your name'
+  />
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Input
+
+{data.input.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-input-font-family: var(--font-sans);
+  --ex-input-font-weight: var(--font-weight-normal);
+
+  --ex-input-font-size-sm: var(--text-xs);
+  --ex-input-font-size-md: var(--text-sm);
+  --ex-input-font-size-lg: var(--text-base);
+
+  --ex-input-height-sm: calc(var(--spacing) * 9);
+  --ex-input-height-md: calc(var(--spacing) * 10);
+  --ex-input-height-lg: calc(var(--spacing) * 11);
+
+  --ex-input-px-sm: calc(var(--spacing) * 3.5);
+  --ex-input-px-md: calc(var(--spacing) * 4);
+  --ex-input-px-lg: calc(var(--spacing) * 4.5);
+
+  --ex-input-radius-sm: var(--radius-sm);
+  --ex-input-radius-md: var(--radius-sm);
+  --ex-input-radius-lg: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

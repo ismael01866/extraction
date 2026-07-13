@@ -1,0 +1,47 @@
+import { BaseContainer } from '@/app/components';
+
+import { HStack, Stack } from 'extraction-ui';
+
+# Letter Spacing
+
+Letter spacing tokens control the horizontal space between characters.
+For more information on the default available letter-spacing utilities, visit [Tailwind](https://tailwindcss.com/docs/letter-spacing)
+
+```css
+@theme {
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='gap-6 text-sm'>
+      <HStack>
+        <span className='w-12 text-center'>**Name**</span>
+        <span className='w-32 text-center'>**Value**</span>
+      </HStack>
+      {[
+        { name: 'tighter', value: -0.05 },
+        { name: 'tight', value: -0.025 },
+        { name: 'normal', value: 0 },
+        { name: 'wide', value: 0.025 },
+        { name: 'wider', value: 0.05 },
+        { name: 'widest', value: 0.1 },
+      ].map(({ name, value }) => (
+        <HStack key={name} className='items-baseline text-xs'>
+          <span className='w-12 shrink-0 text-center'>{name}</span>
+          <span className='w-32 shrink-0 text-center'>{`${value}em`}</span>
+          <p
+            style={{ letterSpacing: `${value}em` }}
+          >{`The quick brown fox jumps over the lazy dog.`}</p>
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

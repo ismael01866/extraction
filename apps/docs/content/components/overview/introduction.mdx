@@ -1,0 +1,35 @@
+import { Card, Grid, Icon } from 'extraction-ui';
+import { startCase } from 'lodash';
+
+import data from '../data.json';
+import { IconMap } from './introduction-icons';
+
+# Introduction
+
+Extraction UI is a modern system designed to help you build user interfaces faster and more efficiently.
+
+<br />
+<br />
+<Grid className='grid-cols-2 gap-4 md:grid-cols-3'>
+  {Object.entries(data)
+    .filter(([name]) => !['hstack', 'vstack'].includes(name))
+    .map(([name, { category }]) => {
+      return (
+        <Card
+          key={name}
+          as='a'
+          href={`/components/${category}/${name}`}
+          className='interactive hover:palette-primary hover:text-primary cursor-pointer hover:bg-white'
+        >
+          <Card.Content>
+            <Card.Section className='variant-suble palette-neutral pb-0'>
+              <Icon as={IconMap[name]} />
+            </Card.Section>
+            <Card.Section>
+              <Card.Title className='text-sm'>{startCase(name)}</Card.Title>
+            </Card.Section>
+          </Card.Content>
+        </Card>
+      );
+    })}
+</Grid>

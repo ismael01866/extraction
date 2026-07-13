@@ -1,0 +1,132 @@
+import { Box, Button, variantsValues } from 'extraction-ui';
+
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+# Interaction
+
+Interactive components respond to user actions with visual feedback through state changes. <br />Extraction UI provides consistent interaction patterns for **hover, focus, active,** and **disabled** states.
+
+## Overview
+
+All interactive components inherit these states automatically through the variant system:
+
+- **Hover** — Visual feedback when cursor hovers over an element
+- **Active** — Pressed or selected state
+- **Focus** — Keyboard navigation and accessibility indicator
+
+## States
+
+Interact with this button to see the hover, focus, and active states. Some components may have additional states such as loading or disabled. You can find these documented in their respective component pages.
+
+<br />
+<section>
+  <BaseContainer>
+    {variantsValues.filter((variant) => !['plain'].includes(variant)).map((variant, index) => {
+      return (
+        <Button key={index} className={`variant-${variant}`}>
+          Button
+        </Button>
+      );
+    })}
+  </BaseContainer>
+
+  <CodeContainer>
+    <Code>
+      {[
+        `<Button className='variant-solid' />`,
+        `<Button className='variant-outline' />`,
+        `<Button className='variant-surface' />`,
+        `<Button className='variant-subtle' />`,
+        `<Button className='variant-ghost' />`,
+      ].join('\n')}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Disabled State
+
+Use the `disabled` class to manually apply the disabled state to an element.
+
+<br />
+<section>
+  <BaseContainer>
+    <Button className={`disabled`}>
+      {`Disabled`}
+    </Button>
+  </BaseContainer>
+
+  <CodeContainer>
+    <Code>
+      {`<Button className='disabled' />`}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Custom States
+
+You can also set specific variants, shades, or palettes for certain states.
+
+<br />
+<section>
+  <BaseContainer>
+     <Button className={`hover:palette-accent`}>
+      {`Button`}
+    </Button>
+    <Button className={`variant-outline hover:variant-solid active:shade-950`}>
+      {`Button`}
+    </Button>
+  </BaseContainer>
+
+  <CodeContainer key={1}>
+    <Code>
+      {[
+        `<Button className='hover:palette-accent' /> `,
+        `<Button className='variant-outline hover:variant-solid active:shade-950' />`,
+      ].join('\n')}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Manual Interactivity
+
+In order to make non-standard components interactive, use the `interactive` class.
+
+<br />
+<section>
+  <BaseContainer>
+     <Box className={`cursor-pointer text-sm palette-primary variant-solid interactive`}>
+      {`Interactive Box`}
+    </Box>
+  </BaseContainer>
+
+  <CodeContainer key={2}>
+    <Code>
+      {`<Box className='cursor-pointer text-sm palette-primary variant-solid interactive' />`}
+    </Code>
+  </CodeContainer>
+</section>
+
+<br />
+
+If you only need specific states, you can use the `interactive-hover`, `interactive-active`, and `interactive-focus` classes to apply only those interactions.
+
+<br />
+<section>
+  <BaseContainer>
+     <Box className={`cursor-pointer text-sm palette-primary variant-solid hover:interactive-hover`}>
+      {`Hover only`}
+    </Box>
+    <Box className={`cursor-pointer text-sm palette-primary variant-solid active:interactive-active`}>
+      {`Active only`}
+    </Box>
+  </BaseContainer>
+
+  <CodeContainer key={3}>
+    <Code>
+     {[
+        `<Box className='cursor-pointer text-sm palette-primary variant-solid hover:interactive-hover' /> `,
+        `<Box className='cursor-pointer text-sm palette-primary variant-solid active:interactive-active' /> `,
+      ].join('\n')}
+    </Code>
+  </CodeContainer>
+</section>

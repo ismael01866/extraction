@@ -1,0 +1,43 @@
+import { Box, Image, Overlay } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './tooltip';
+
+export const Component = (
+  <Box className='relative overflow-hidden'>
+    <Image
+      src='/images/assets/espresso.jpg'
+      className='image-xl'
+      alt='espresso'
+    />
+    <Overlay />
+  </Box>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Overlay
+
+{data.overlay.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-overlay-opacity: var(--ex-options-overlay-opacity);
+  --ex-overlay-background: var(--color-black);
+}
+```
+
+## API
+
+### Overlay
+
+<Api config={cfg} />

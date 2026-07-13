@@ -1,0 +1,69 @@
+import { Code } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './code';
+
+export const Component = <Code>{`console.log()`}</Code>;
+export const Wrapper = ({ children }) => children;
+
+# Code
+
+{data.code.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-code-font-size-sm: var(--text-2xs);
+  --ex-code-font-size-md: var(--text-xs);
+  --ex-code-font-size-lg: var(--text-sm);
+
+  --ex-code-font-family-sm: var(--font-mono);
+  --ex-code-font-family-md: var(--font-mono);
+  --ex-code-font-family-lg: var(--font-mono);
+
+  --ex-code-font-weight-sm: var(--font-weight-normal)
+  --ex-code-font-weight-md: var(--font-weight-normal)
+  --ex-code-font-weight-lg: var(--font-weight-normal)
+
+  --ex-code-px-sm: calc(var(--spacing) * 1);
+  --ex-code-px-md: calc(var(--spacing) * 1);
+  --ex-code-px-lg: calc(var(--spacing) * 1);
+
+  --ex-code-radius-sm: var(--radius-sm);
+  --ex-code-radius-md: var(--radius-sm);
+  --ex-code-radius-lg: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

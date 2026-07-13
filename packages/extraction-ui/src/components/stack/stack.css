@@ -1,0 +1,19 @@
+@layer components {
+  .ex-stack {
+    --ex-gap-y: var(--ex-stack-gap-y, calc(var(--spacing) * 2));
+
+    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-vstack {
+    --ex-gap-y: var(--ex-vstack-gap-y, calc(var(--spacing) * 2));
+
+    @apply flex flex-col items-center gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-hstack {
+    --ex-gap-x: var(--ex-hstack-gap-x, calc(var(--spacing) * 2));
+
+    @apply flex flex-row items-center gap-x-[var(--ex-gap-x)];
+  }
+}

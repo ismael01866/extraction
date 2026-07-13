@@ -1,0 +1,117 @@
+# Gatsby
+
+import { Steps } from 'nextra/components';
+
+This guide is specific to Gatsby. For official framework documentation, visit the [Gatsby Documentation](https://www.gatsbyjs.com/docs/).
+
+## Prerequisites
+
+Before you begin, make sure your app is using:
+
+- **Gatsby** 5.16 or higher
+
+- **React** 19.2.0 or higher
+- **React DOM** 19.2.0 or higher
+
+## Installation
+
+<Steps>
+
+### Create a Gatsby app
+
+```bash
+pnpm create gatsby@latest
+```
+
+### Add React and Typescript support
+
+```bash
+pnpm add react@latest react-dom@latest typescript
+```
+
+### Install the package
+
+```bash
+pnpm install extraction-ui
+```
+
+### Install peer dependencies
+
+Extraction UI requires Radix UI as a peer dependency:
+
+```bash
+pnpm add radix-ui
+```
+
+And Tailwind CSS for styling:
+
+```bash
+pnpm add -D tailwindcss @tailwindcss/postcss postcss gatsby-plugin-postcss
+```
+
+Register the PostCSS plugin in Gatsby:
+
+```js
+/** gatsby-config.ts */
+import type { GatsbyConfig } from "gatsby";
+
+const config: GatsbyConfig = {
+  plugins: ["gatsby-plugin-postcss"],
+};
+
+export default config;
+```
+
+Add Tailwind to your PostCSS config as well:
+
+```js
+/** postcss.config.js */
+module.exports = {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+```
+
+For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation/framework-guides/gatsby).
+
+### Import styles in a global stylesheet
+
+Create a global stylesheet and add the Extraction UI styles:
+
+```css
+/** src/styles/globals.css */
+@import 'tailwindcss';
+@import 'extraction-ui/styles';
+```
+
+Create a gatsby-browser.js file at the root of your project if it doesn't already exist and make sure the CSS file is imported:
+
+```js
+/** gatsby-browser.js */
+import './src/styles/globals.css';
+```
+
+### Start using components
+
+Import and use components in your project:
+
+```tsx
+/** src/pages/index.tsx */
+import { Button, Card } from 'extraction-ui';
+
+export default function IndexPage() {
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Welcome to Extraction UI</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Button className='mbs-4'>Submit</Button>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+</Steps>

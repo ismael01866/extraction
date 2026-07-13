@@ -1,0 +1,66 @@
+import { HStack, Skeleton, VStack } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './loader';
+import { SkeletonExample } from './skeleton-example';
+
+export const Component = (
+  <VStack className='w-80'>
+    <HStack className='w-full'>
+      <Skeleton className='size-12 rounded-full' />
+      <VStack className='w-full'>
+        <Skeleton className='h-4' />
+        <Skeleton className='h-4' />
+      </VStack>
+    </HStack>
+    <Skeleton className='h-20' />
+  </VStack>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Skeleton
+
+{data.skeleton.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Content
+
+<Usage
+  components={{
+    usage: <SkeletonExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`
+    const SkeletonExample = () => {
+      const [loading, setLoading] = React.useState(true);
+      return (
+        <VStack className="w-80">
+          <Skeleton loading={loading}>
+            <Text>{\`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.\`}</Text>
+          </Skeleton>
+          <Button className="w-full" onClick={() => setLoading(!loading)}>Toggle</Button>
+        </VStack>
+      );
+    };
+  `}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-skeleton-duration: 1000ms;
+  --ex-skeleton-radius: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

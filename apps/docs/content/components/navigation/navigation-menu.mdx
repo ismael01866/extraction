@@ -1,0 +1,313 @@
+import { NavigationMenu } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  navigationMenuCfg,
+  navigationMenuContentCfg,
+  navigationMenuIndicatorCfg,
+  navigationMenuItemCfg,
+  navigationMenuListCfg,
+  navigationMenuSectionCfg,
+  navigationMenuSubCfg,
+  navigationMenuTriggerCfg,
+  navigationMenuViewportAnchorCfg,
+  navigationMenuViewportCfg,
+} from './navigation-menu';
+
+export const Component = (
+  <NavigationMenu>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Section>
+            {`The quick brown fox`}
+          </NavigationMenu.Section>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Settings</NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub defaultValue='sub1'>
+            <NavigationMenu.List>
+              <NavigationMenu.Item value='sub1'>
+                <NavigationMenu.Trigger>Sub 1</NavigationMenu.Trigger>
+                <NavigationMenu.Content>
+                  <NavigationMenu.Section>
+                    {`The quick brown fox`}
+                  </NavigationMenu.Section>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item value='sub2'>
+                <NavigationMenu.Trigger>Sub 2</NavigationMenu.Trigger>
+                <NavigationMenu.Content>
+                  <NavigationMenu.Section>
+                    {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+                  </NavigationMenu.Section>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.Viewport />
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link target='_blank' href='https://www.google.com'>
+          Google
+        </NavigationMenu.Link>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+    <NavigationMenu.ViewportAnchor>
+      <NavigationMenu.Viewport />
+    </NavigationMenu.ViewportAnchor>
+  </NavigationMenu>
+);
+
+export const ComponentVertical = (
+  <NavigationMenu orientation='vertical'>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Section>
+            {`The quick brown fox`}
+          </NavigationMenu.Section>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Settings</NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Sub defaultValue='sub1'>
+            <NavigationMenu.List>
+              <NavigationMenu.Item value='sub1'>
+                <NavigationMenu.Trigger>Sub 1</NavigationMenu.Trigger>
+                <NavigationMenu.Content>
+                  <NavigationMenu.Section>
+                    {`The quick brown fox`}
+                  </NavigationMenu.Section>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item value='sub2'>
+                <NavigationMenu.Trigger>Sub 2</NavigationMenu.Trigger>
+                <NavigationMenu.Content>
+                  <NavigationMenu.Section>
+                    {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+                  </NavigationMenu.Section>
+                </NavigationMenu.Content>
+              </NavigationMenu.Item>
+            </NavigationMenu.List>
+            <NavigationMenu.Viewport />
+          </NavigationMenu.Sub>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+    <NavigationMenu.ViewportAnchor>
+      <NavigationMenu.Viewport />
+    </NavigationMenu.ViewportAnchor>
+  </NavigationMenu>
+);
+
+export const ComponentDisabled = (
+  <NavigationMenu className='disabled'>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Profile</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link target='_blank' href='https://www.google.com'>
+          Google
+        </NavigationMenu.Link>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+  </NavigationMenu>
+);
+
+export const ComponentDisabledItem = (
+  <NavigationMenu>
+    <NavigationMenu.List>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger disabled>Home</NavigationMenu.Trigger>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Trigger>Profile</NavigationMenu.Trigger>
+        <NavigationMenu.Content>
+          <NavigationMenu.Section>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </NavigationMenu.Section>
+        </NavigationMenu.Content>
+      </NavigationMenu.Item>
+      <NavigationMenu.Item>
+        <NavigationMenu.Link target='_blank' href='https://www.google.com'>
+          Google
+        </NavigationMenu.Link>
+      </NavigationMenu.Item>
+    </NavigationMenu.List>
+    <NavigationMenu.ViewportAnchor>
+      <NavigationMenu.Viewport />
+    </NavigationMenu.ViewportAnchor>
+  </NavigationMenu>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Navigation Menu
+
+{data['navigation-menu'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/navigation-menu)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-navigation-menu-spacer-sm: calc(var(--spacing) * 2);
+  --ex-navigation-menu-spacer-md: calc(var(--spacing) * 3);
+
+  --ex-navigation-menu-height-sm: calc(var(--spacing) * 10);
+  --ex-navigation-menu-height-md: calc(var(--spacing) * 11);
+
+  --ex-navigation-menu-gap-x-sm: calc(var(--spacing) * 1);
+  --ex-navigation-menu-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-gap-y-sm: calc(var(--spacing) * 1);
+  --ex-navigation-menu-gap-y-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-px-sm: calc(var(--spacing) * 1.5);
+  --ex-navigation-menu-px-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-py-sm: calc(var(--spacing) * 1.5);
+  --ex-navigation-menu-py-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-radius-sm: var(--radius-sm);
+  --ex-navigation-menu-radius-md: var(--radius-sm);
+
+  --ex-navigation-menu-item-font-family: var(--font-sans);
+  --ex-navigation-menu-item-font-weight: var(--font-weight-normal);
+
+  --ex-navigation-menu-item-font-size-sm: var(--text-xs);
+  --ex-navigation-menu-item-font-size-md: var(--text-sm);
+
+  --ex-navigation-menu-item-height-sm: calc(var(--spacing) * 9);
+  --ex-navigation-menu-item-height-md: calc(var(--spacing) * 10);
+
+  --ex-navigation-menu-item-gap-x-sm: calc(var(--spacing) * 1);
+  --ex-navigation-menu-item-gap-x-md: calc(var(--spacing) * 1.25);
+
+  --ex-navigation-menu-item-px-sm: calc(var(--spacing) * 2);
+  --ex-navigation-menu-item-px-md: calc(var(--spacing) * 2.5);
+
+  --ex-navigation-menu-item-radius-sm: var(--radius-sm);
+  --ex-navigation-menu-item-radius-md: var(--radius-sm);
+
+  --ex-navigation-menu-content-font-size-sm: var(--text-xs);
+  --ex-navigation-menu-content-font-size-md: var(--text-sm);
+
+  --ex-navigation-menu-content-radius-sm: var(--radius-sm);
+  --ex-navigation-menu-content-radius-md: var(--radius-sm);
+
+  --ex-navigation-menu-content-shadow-sm: var(--shadow-sm);
+  --ex-navigation-menu-content-shadow-md: var(--shadow-sm);
+
+  --ex-navigation-menu-section-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-navigation-menu-section-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-navigation-menu-section-gap-y-md: calc(var(--spacing) * 2);
+
+  --ex-navigation-menu-section-px-sm: calc(var(--spacing) * 3);
+  --ex-navigation-menu-section-px-md: calc(var(--spacing) * 4);
+
+  --ex-navigation-menu-section-py-sm: calc(var(--spacing) * 3);
+  --ex-navigation-menu-section-py-md: calc(var(--spacing) * 4);
+
+  --ex-navigation-menu-indicator-font-size-sm: var(--text-sm);
+  --ex-navigation-menu-indicator-font-size-md: var(--text-base);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/navigation-menu#api-reference)
+
+### Navigation Menu
+
+<Api config={navigationMenuCfg} />
+
+### Navigation Menu List
+
+<Api config={navigationMenuListCfg} />
+
+### Navigation Menu Item
+
+<Api config={navigationMenuItemCfg} />
+
+### Navigation Menu Trigger
+
+<Api config={navigationMenuTriggerCfg} />
+
+### Navigation Menu Link
+
+<Api config={navigationMenuTriggerCfg} />
+
+### Navigation Menu Content
+
+<Api config={navigationMenuContentCfg} />
+
+### Navigation Menu Section
+
+<Api config={navigationMenuSectionCfg} />
+
+### Navigation Menu Indicator
+
+<Api config={navigationMenuIndicatorCfg} />
+
+### Navigation Menu Sub
+
+<Api config={navigationMenuSubCfg} />
+
+### Navigation Menu Viewport
+
+<Api config={navigationMenuViewportCfg} />
+
+### Navigation Menu Viewport Anchor
+
+<Api config={navigationMenuViewportAnchorCfg} />

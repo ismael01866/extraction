@@ -1,0 +1,10 @@
+@layer components {
+  .ex-grid {
+    @apply grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))];
+  }
+}
+
+
+
+
+

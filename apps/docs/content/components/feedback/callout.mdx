@@ -1,0 +1,151 @@
+import { Callout } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  calloutCfg,
+  calloutContentCfg,
+  calloutDescriptionCfg,
+  calloutIndicatorCfg,
+  calloutTitleCfg,
+  cfg,
+} from './callout';
+
+export const Component = (
+  <Callout>
+    <Callout.Indicator />
+    <Callout.Content>
+      <Callout.Title>{`Header`}</Callout.Title>
+      <Callout.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Callout.Description>
+    </Callout.Content>
+  </Callout>
+);
+
+export const ComponentWithAccent = (
+  <Callout className='accent-border-start'>
+    <Callout.Indicator />
+    <Callout.Content>
+      <Callout.Title>{`Header`}</Callout.Title>
+      <Callout.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Callout.Description>
+    </Callout.Content>
+  </Callout>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Callout
+
+{data.callout.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Accent
+
+<Usage
+  components={{
+    usage: ComponentWithAccent,
+    wrapper: Wrapper,
+  }}
+  withAccent
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-callout-font-size-sm: var(--text-xs);
+  --ex-callout-font-size-md: var(--text-sm);
+  --ex-callout-font-size-lg: var(--text-base);
+
+  --ex-callout-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-callout-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-callout-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-callout-px-sm: calc(var(--spacing) * 4);
+  --ex-callout-px-md: calc(var(--spacing) * 5);
+  --ex-callout-px-lg: calc(var(--spacing) * 6);
+
+  --ex-callout-py-sm: calc(var(--spacing) * 4);
+  --ex-callout-py-md: calc(var(--spacing) * 5);
+  --ex-callout-py-lg: calc(var(--spacing) * 6);
+
+  --ex-callout-radius-sm: var(--radius-sm);
+  --ex-callout-radius-md: var(--radius-sm);
+  --ex-callout-radius-lg: var(--radius-sm);
+
+  --ex-callout-indicator-font-size-sm: var(--text-lg);
+  --ex-callout-indicator-font-size-md: var(--text-xl);
+  --ex-callout-indicator-font-size-lg: var(--text-2xl);
+
+  --ex-callout-content-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-callout-content-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-callout-content-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-callout-content-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-callout-content-gap-y-md: calc(var(--spacing) * 2);
+  --ex-callout-content-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-callout-title-font-size-sm: var(--text-sm);
+  --ex-callout-title-font-size-md: var(--text-base);
+  --ex-callout-title-font-size-lg: var(--text-lg);
+
+  --ex-callout-title-font-weight: var(--font-weight-semibold);
+
+  --ex-callout-description-font-size-sm: var(--text-xs);
+  --ex-callout-description-font-size-md: var(--text-sm);
+  --ex-callout-description-font-size-lg: var(--text-base);
+
+  --ex-callout-description-font-weight: var(--font-weight-normal);
+  --ex-callout-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### Callout
+
+<Api config={calloutCfg} />
+
+### Callout Indicator
+
+<Api config={calloutIndicatorCfg} />
+
+### Callout Content
+
+<Api config={calloutContentCfg} />
+
+### Callout Title
+
+<Api config={calloutTitleCfg} />
+
+### Callout Description
+
+<Api config={calloutDescriptionCfg} />

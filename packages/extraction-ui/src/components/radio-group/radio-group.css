@@ -1,0 +1,71 @@
+@utility radio-group-sm {
+  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2));
+
+  .ex-radio,
+  .ex-radio-card-indicator {
+    @apply radio-sm;
+  }
+
+  .ex-radio-card {
+    @apply radio-card-sm;
+  }
+}
+
+@utility radio-group-md {
+  --ex-gap-y: var(--ex-field-gap-y-md, calc(var(--spacing) * 2));
+
+  .ex-radio,
+  .ex-radio-card-indicator {
+    @apply radio-md;
+  }
+
+  .ex-radio-card {
+    @apply radio-card-md;
+  }
+}
+
+@utility radio-group-lg {
+  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 2));
+
+  .ex-radio,
+  .ex-radio-card-indicator {
+    @apply radio-lg;
+  }
+
+  .ex-radio-card {
+    @apply radio-card-lg;
+  }
+}
+
+@layer components {
+  .ex-radio-group {
+    @apply radio-group-md;
+  }
+
+  .ex-radio-group {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-radio-group {
+    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+    @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+
+    &:where(.variant-solid) {
+      .ex-radio-card {
+        @apply component-variant-solid-contrast;
+      }
+    }
+
+    &:where(:not([class*='variant-plain'])) {
+      .ex-radio-card {
+        &:where(:focus-visible) {
+          @apply interactive-focus;
+        }
+
+        &:where([data-state='checked']) {
+          --border: var(--shade-color);
+        }
+      }
+    }
+  }
+}

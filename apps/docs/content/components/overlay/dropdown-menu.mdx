@@ -1,0 +1,371 @@
+import { DropdownMenu, IconButton } from 'extraction-ui';
+import {
+  LuCheck,
+  LuChevronRight,
+  LuDot,
+  LuMenu,
+  LuScreenShare,
+  LuTextSelect,
+} from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  cfg,
+  dropdownMenuArrowCfg,
+  dropdownMenuCfg,
+  dropdownMenuCheckboxItemCfg,
+  dropdownMenuCommandCfg,
+  dropdownMenuContentCfg,
+  dropdownMenuItemCfg,
+  dropdownMenuItemIndicatorCfg,
+  dropdownMenuLabelCfg,
+  dropdownMenuPortalCfg,
+  dropdownMenuRadioGroupCfg,
+  dropdownMenuRadioItemCfg,
+  dropdownMenuSectionCfg,
+  dropdownMenuSeparatorCfg,
+  dropdownMenuSubCfg,
+  dropdownMenuSubContentCfg,
+  dropdownMenuSubTriggerCfg,
+  dropdownMenuTriggerCfg,
+} from './dropdown-menu';
+
+export const Component = (
+  <DropdownMenu>
+    <DropdownMenu.Trigger asChild>
+      <IconButton aria-label='Open dropdown menu'>
+        <LuMenu />
+      </IconButton>
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content>
+        <DropdownMenu.Section>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuTextSelect />
+            </DropdownMenu.Indicator>
+            Select All
+            <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuScreenShare />
+            </DropdownMenu.Indicator>
+            Take Screenshot
+            <DropdownMenu.Command>⌘S</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Actions</DropdownMenu.Label>
+          <DropdownMenu.Item>
+            New Tab
+            <DropdownMenu.Command>⌘T</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Sub>
+            <DropdownMenu.SubTrigger>
+              More Actions
+              <DropdownMenu.Indicator>
+                <LuChevronRight />
+              </DropdownMenu.Indicator>
+            </DropdownMenu.SubTrigger>
+            <DropdownMenu.Portal>
+              <DropdownMenu.SubContent>
+                <DropdownMenu.Section>
+                  <DropdownMenu.Item>Print</DropdownMenu.Item>
+                  <DropdownMenu.Item>Save Page As...</DropdownMenu.Item>
+                </DropdownMenu.Section>
+              </DropdownMenu.SubContent>
+            </DropdownMenu.Portal>
+          </DropdownMenu.Sub>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Checkbox</DropdownMenu.Label>
+          <DropdownMenu.CheckboxItem checked>
+            <DropdownMenu.Indicator>
+              <LuCheck />
+            </DropdownMenu.Indicator>
+            Show Bookmarks Bar
+          </DropdownMenu.CheckboxItem>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Radio</DropdownMenu.Label>
+          <DropdownMenu.RadioGroup value='asc'>
+            <DropdownMenu.RadioItem value='asc'>
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Ascending
+            </DropdownMenu.RadioItem>
+            <DropdownMenu.RadioItem value='desc'>
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Descending
+            </DropdownMenu.RadioItem>
+          </DropdownMenu.RadioGroup>
+        </DropdownMenu.Section>
+        <DropdownMenu.Arrow />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu>
+);
+
+export const ComponentDisabledItem = (
+  <DropdownMenu>
+    <DropdownMenu.Trigger asChild>
+      <IconButton aria-label='Open dropdown menu'>
+        <LuMenu />
+      </IconButton>
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content>
+        <DropdownMenu.Section>
+          <DropdownMenu.Item disabled>
+            <DropdownMenu.Indicator>
+              <LuTextSelect />
+            </DropdownMenu.Indicator>
+            Select All
+            <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuScreenShare />
+            </DropdownMenu.Indicator>
+            Take Screenshot
+            <DropdownMenu.Command>⌘S</DropdownMenu.Command>
+          </DropdownMenu.Item>
+        </DropdownMenu.Section>
+        <DropdownMenu.Arrow />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu>
+);
+
+export const SizeComponent = ({ size }) => (
+  <DropdownMenu.Content>
+    <DropdownMenu.Section>
+      <DropdownMenu.Item>
+        <DropdownMenu.Indicator>
+          <LuTextSelect />
+        </DropdownMenu.Indicator>
+        Select All
+        <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+      </DropdownMenu.Item>
+      <DropdownMenu.Separator />
+      <DropdownMenu.Label>Actions</DropdownMenu.Label>
+      <DropdownMenu.Sub>
+        <DropdownMenu.SubTrigger>
+          More Actions
+          <DropdownMenu.Indicator>
+            <LuChevronRight />
+          </DropdownMenu.Indicator>
+        </DropdownMenu.SubTrigger>
+        <DropdownMenu.Portal>
+          <DropdownMenu.SubContent
+            className={` dropdown-menu-content-${size} `}
+          >
+            <DropdownMenu.Section>
+              <DropdownMenu.Item>Print</DropdownMenu.Item>
+              <DropdownMenu.Item>Save Page As...</DropdownMenu.Item>
+            </DropdownMenu.Section>
+          </DropdownMenu.SubContent>
+        </DropdownMenu.Portal>
+      </DropdownMenu.Sub>
+      <DropdownMenu.Separator />
+      <DropdownMenu.Label>Checkbox</DropdownMenu.Label>
+      <DropdownMenu.CheckboxItem checked>
+        <DropdownMenu.Indicator>
+          <LuCheck />
+        </DropdownMenu.Indicator>
+        Show Bookmarks Bar
+      </DropdownMenu.CheckboxItem>
+      <DropdownMenu.Separator />
+      <DropdownMenu.Label>Radio</DropdownMenu.Label>
+      <DropdownMenu.RadioGroup value='asc'>
+        <DropdownMenu.RadioItem value='asc'>
+          <DropdownMenu.Indicator>
+            <LuDot />
+          </DropdownMenu.Indicator>
+          Sort Ascending
+        </DropdownMenu.RadioItem>
+        <DropdownMenu.RadioItem value='desc'>
+          <DropdownMenu.Indicator>
+            <LuDot />
+          </DropdownMenu.Indicator>
+          Sort Descending
+        </DropdownMenu.RadioItem>
+      </DropdownMenu.RadioGroup>
+    </DropdownMenu.Section>
+    <DropdownMenu.Arrow />
+  </DropdownMenu.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Dropdown Menu
+
+{data['dropdown-menu'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/dropdown-menu)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children }) => (
+      <DropdownMenu>
+        <DropdownMenu.Trigger asChild>
+          <IconButton aria-label='Open dropdown menu'>
+            <LuMenu />
+          </IconButton>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Portal>{children}</DropdownMenu.Portal>
+      </DropdownMenu>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-dropdown-menu-max-w-sm: var(--container-3xs);
+  --ex-dropdown-menu-max-w-md: var(--container-2xs);
+
+  --ex-dropdown-menu-radius-sm: var(--radius-sm);
+  --ex-dropdown-menu-radius-md: var(--radius-sm);
+
+  --ex-dropdown-menu-shadow-sm: var(--shadow-sm);
+  --ex-dropdown-menu-shadow-md: var(--shadow-sm);
+
+  --ex-dropdown-menu-section-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-dropdown-menu-section-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-dropdown-menu-section-px-sm: calc(var(--spacing) * 1.5);
+  --ex-dropdown-menu-section-px-md: calc(var(--spacing) * 2);
+
+  --ex-dropdown-menu-section-py-sm: calc(var(--spacing) * 2);
+  --ex-dropdown-menu-section-py-md: calc(var(--spacing) * 2.5);
+
+  --ex-dropdown-menu-item-px-sm: calc(var(--spacing) * 2);
+  --ex-dropdown-menu-item-px-md: calc(var(--spacing) * 2);
+
+  --ex-dropdown-menu-item-py-sm: var(--spacing);
+  --ex-dropdown-menu-item-py-md: var(--spacing);
+
+  --ex-dropdown-menu-item-font-family: var(--font-sans);
+  --ex-dropdown-menu-item-font-weight: var(--font-weight-normal);
+
+  --ex-dropdown-menu-item-font-size-sm: var(--text-xs);
+  --ex-dropdown-menu-item-font-size-md: var(--text-sm);
+
+  --ex-dropdown-menu-item-indicator-font-size-sm: var(--text-xs);
+  --ex-dropdown-menu-item-indicator-font-size-md: var(--text-sm);
+
+  --ex-dropdown-menu-label-font-family: var(--font-sans);
+  --ex-dropdown-menu-label-font-weight: var(--font-weight-normal);
+  --ex-dropdown-menu-label-opacity: var(--ex-options-muted-opacity);
+
+  --ex-dropdown-menu-label-font-size-sm: var(--text-2xs);
+  --ex-dropdown-menu-label-font-size-md: var(--text-xs);
+
+  --ex-dropdown-menu-command-font-family: var(--font-sans);
+  --ex-dropdown-menu-command-font-weight: var(--font-weight-normal);
+  --ex-dropdown-menu-command-opacity: var(--ex-options-muted-opacity);
+
+  --ex-dropdown-menu-command-font-size-sm: var(--text-2xs);
+  --ex-dropdown-menu-command-font-size-md: var(--text-xs);
+
+  --ex-dropdown-menu-arrow-height-sm: calc(var(--spacing) * 1.75);
+  --ex-dropdown-menu-arrow-height-md: calc(var(--spacing) * 1.75);
+
+  --ex-dropdown-menu-arrow-width-sm: calc(var(--spacing) * 3.5);
+  --ex-dropdown-menu-arrow-width-md: calc(var(--spacing) * 3.5);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/dropdown-menu#api-reference)
+
+### Dropdown Menu
+
+<Api config={dropdownMenuCfg} />
+
+### Dropdown Menu Trigger
+
+<Api config={dropdownMenuTriggerCfg} />
+
+### Dropdown Menu Portal
+
+<Api config={dropdownMenuPortalCfg} />
+
+### Dropdown Menu Content
+
+<Api config={dropdownMenuContentCfg} />
+
+### Dropdown Menu Section
+
+<Api config={dropdownMenuSectionCfg} />
+
+### Dropdown Menu Arrow
+
+<Api config={dropdownMenuArrowCfg} />
+
+### Dropdown Menu Item
+
+<Api config={dropdownMenuItemCfg} />
+
+### Dropdown Menu Indicator
+
+<Api config={dropdownMenuItemIndicatorCfg} />
+
+### Dropdown Menu Label
+
+<Api config={dropdownMenuLabelCfg} />
+
+### Dropdown Menu Command
+
+<Api config={dropdownMenuCommandCfg} />
+
+### Dropdown Menu Separator
+
+<Api config={dropdownMenuSeparatorCfg} />
+
+### Dropdown Menu RadioGroup
+
+<Api config={dropdownMenuRadioGroupCfg} />
+
+### Dropdown Menu RadioItem
+
+<Api config={dropdownMenuRadioItemCfg} />
+
+### Dropdown Menu CheckboxItem
+
+<Api config={dropdownMenuCheckboxItemCfg} />
+
+### Dropdown Sub
+
+<Api config={dropdownMenuSubCfg} />
+
+### Dropdown Sub Trigger
+
+<Api config={dropdownMenuSubTriggerCfg} />
+
+### Dropdown Sub Content
+
+<Api config={dropdownMenuSubContentCfg} />

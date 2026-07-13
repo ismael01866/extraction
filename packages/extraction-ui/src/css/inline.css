@@ -1,0 +1,17 @@
+@source inline("text{-2xs,-xs,-sm,-base,-lg,-xl,-2xl,-3xl,-4xl,-5xl,-6xl,-7xl,-8xl,-9xl}");
+@source inline("{bg,text,fill}{-primary,-accent,-neutral,-error,-success,-info,-warning}{-50,-100,-200,-300,-400,-500,-600,-700,-800,-900,-950}");
+
+@source inline("rounded{-none,-sm,-md,-lg,-xl,-2xl,-3xl,-full}");
+@source inline("size{-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-14,-16,-20,-24,-28,-32,-36,-40,-44,-48,-52,-56,-60,-64,-72,-80,-96,-0.5,-1.5,-2.5,-3.5,-4.5,-full,-min,-max,-fit,-xs,-sm,-md,-lg,-xl}");
+
+@source inline("variant{-solid,-outline,-surface,-subtle,-ghost,-link,-plain}");
+@source inline("data-[state=checked]:variant{-solid,-outline,-surface,-subtle,-ghost,-link,-plain}");
+
+@source inline("{shade}{-50,-100,-200,-300,-400,-500,-600,-700,-800,-900,-950}");
+@source inline("{palette}{-primary,-accent,-neutral,-error,-success,-info,-warning}");
+
+@source inline("{pos}{-center,-top,-bottom,-start,-end,-top-start,-top-end,-bottom-start,-bottom-end,-middle,-middle-start,-middle-end,-top-middle,-bottom-middle,-out-top,-out-bottom,-out-start,-out-end,-out-top-start,-out-top-end,-out-bottom-start,-out-bottom-end,-out-middle,-out-middle-start,-out-middle-end,-out-top-middle,-out-bottom-middle}");
+
+@source inline("{accordion,alert-dialog-content,app-layout-sidenav,avatar,badge,blockquote,box,breadcrumbs,button,close-button,callout,card,checkbox,checkbox-card,code,color-swatch,container,context-menu-content,description,dialog-content,display,drawer-content,dropdown-menu-content,empty-state,field,headline,icon-box,icon-button,image,input,hover-card-content,input-group,kbd,list,menubar,menubar-content,native-select,nav-button,nav-link,navigation-menu,password,pin-input,popover-content,progress,radio,radio-card,radio-group,scroll-area,section,select-trigger,select-content,separator,slider,status,switch,table,tabs,textarea,title,toast,tooltip-content}{-xs,-sm,-md,-lg,-xl}");
+
+@source inline("duration{-fastest,-faster,-fast,-normal,-slow,-slower,-slowest}");

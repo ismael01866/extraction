@@ -1,0 +1,54 @@
+import { DecorativeBox } from '@/app/components';
+
+import { AbsoluteCenter, Box, Center } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './center';
+
+# Center
+
+{data.center.description} 
+
+<Usage
+  components={{
+    usage: (
+      <Center>
+        <DecorativeBox />
+      </Center>
+    ),
+    wrapper: ({ ...rest }) => (
+      <Box className='palette-neutral variant-subtle h-40 w-full' {...rest} />
+    ),
+  }}
+/>
+
+## API
+
+<Api config={cfg} />
+
+<br />
+<br />
+
+# Absolute Center
+
+Absolutely positions content at the center of its relative parent.
+
+<Usage
+  components={{
+    usage: (
+      <AbsoluteCenter>
+        <DecorativeBox />
+      </AbsoluteCenter>
+    ),
+    wrapper: ({ ...rest }) => (
+      <Box
+        className='palette-neutral variant-subtle relative h-40 w-full'
+        {...rest}
+      />
+    ),
+  }}
+/>
+
+## API
+
+<Api config={cfg} />

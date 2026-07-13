@@ -1,0 +1,21 @@
+packages:
+  - apps/**
+  - packages/**
+
+onlyBuiltDependencies:
+  - "@tailwindcss/oxide"
+  - core-js
+  - esbuild
+  - fsevents
+  - sharp
+  - unrs-resolver
+
+overrides:
+  diff@>=5.0.0 <5.2.2: ">=5.2.2"
+  diff@>=6.0.0 <8.0.3: ">=8.0.3"
+  glob@>=10.2.0 <10.5.0: ">=10.5.0"
+  js-yaml@>=4.0.0 <4.1.1: ">=4.1.1"
+  lodash-es@>=4.0.0 <=4.17.22: ">=4.17.23"
+  lodash@>=4.0.0 <=4.17.22: ">=4.17.23"
+  mdast-util-to-hast@>=13.0.0 <13.2.1: ">=13.2.1"
+  next@>=15.0.0-canary.0 <15.6.0-canary.61: ">=15.6.0-canary.61"

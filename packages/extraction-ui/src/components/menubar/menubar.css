@@ -1,0 +1,301 @@
+@utility menubar-sm {
+  --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
+
+  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 1.5));
+  --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
+
+  .ex-menubar-trigger {
+    --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
+
+    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1));
+
+    --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
+    --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility menubar-content-sm {
+  --ex-max-w: var(--ex-menubar-content-max-w-sm, var(--container-3xs));
+  --ex-radius: var(--ex-menubar-content-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-menubar-content-shadow-sm, var(--shadow-sm));
+
+  .ex-menubar-section {
+    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 2));
+
+    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 1.5));
+  }
+
+  .ex-menubar-item,
+  .ex-menubar-label,
+  .ex-menubar-sub-trigger,
+  .ex-menubar-radio-item,
+  .ex-menubar-checkbox-item {
+    --ex-px: var(--ex-menubar-item-px-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-menubar-item-py-sm, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-menubar-item-font-size-sm, var(--text-xs));
+  }
+
+  .ex-menubar-label {
+    --ex-font-size: var(--ex-menubar-label-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-menubar-command {
+    --ex-font-size: var(--ex-menubar-command-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-menubar-indicator {
+    --ex-font-size: var(--ex-menubar-indicator-font-size-sm, var(--text-sm));
+  }
+
+  .ex-menubar-arrow {
+    --ex-width: var(--ex-menubar-arrow-width-sm, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-menubar-arrow-height-sm, calc(var(--spacing) * 1.75));
+  }
+}
+
+@utility menubar-md {
+  --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
+
+  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2));
+  --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
+
+  .ex-menubar-trigger {
+    --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
+
+    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
+
+    --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
+    --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
+  }
+}
+
+@utility menubar-content-md {
+  --ex-max-w: var(--ex-menubar-content-max-w-md, var(--container-2xs));
+  --ex-radius: var(--ex-menubar-content-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-menubar-content-shadow-md, var(--shadow-sm));
+
+  .ex-menubar-section {
+    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2.5));
+
+    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 2.5));
+  }
+
+  .ex-menubar-item,
+  .ex-menubar-label,
+  .ex-menubar-sub-trigger,
+  .ex-menubar-radio-item,
+  .ex-menubar-checkbox-item {
+    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-menubar-item-font-size-md, var(--text-sm));
+  }
+
+  .ex-menubar-label {
+    --ex-font-size: var(--ex-menubar-label-font-size-md, var(--text-xs));
+  }
+
+  .ex-menubar-command {
+    --ex-font-size: var(--ex-menubar-command-font-size-md, var(--text-xs));
+  }
+
+  .ex-menubar-indicator {
+    --ex-font-size: var(--ex-menubar-indicator-font-size-md, var(--text-base));
+  }
+
+  .ex-menubar-arrow {
+    --ex-width: var(--ex-menubar-arrow-width-md, calc(var(--spacing) * 3.5));
+    --ex-height: var(--ex-menubar-arrow-height-md, calc(var(--spacing) * 1.75));
+  }
+}
+
+@layer components {
+  .ex-menubar {
+    @apply menubar-md;
+  }
+
+  .ex-menubar {
+    @apply palette-neutral variant-outline;
+  }
+
+  .ex-menubar {
+    @apply relative z-1 flex items-center justify-center;
+    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)];
+
+    > div:is(:first-child) {
+      @apply z-1;
+    }
+  }
+
+  .ex-menubar-trigger {
+    --ex-font-family: var(--ex-menubar-trigger-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-menubar-trigger-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-menubar-trigger {
+    @apply inline-flex items-center justify-center leading-none outline-none select-none;
+    @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-menubar-content,
+  .ex-menubar-sub-content {
+    @apply menubar-content-md;
+  }
+
+  .ex-menubar-content,
+  .ex-menubar-sub-content {
+    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+
+    &:where([data-state='open'][data-side='top']) {
+      @apply animate-in slide-from-top-1 fade-in;
+    }
+
+    &:where([data-state='open'][data-side='right']) {
+      @apply animate-in slide-from-end-1 fade-in;
+    }
+
+    &:where([data-state='open'][data-side='bottom']) {
+      @apply animate-in slide-from-bottom-1 fade-in;
+    }
+
+    &:where([data-state='open'][data-side='left']) {
+      @apply animate-in slide-from-start-1 fade-in;
+    }
+
+    &:has(.ex-menubar-indicator),
+    &:has(.ex-menubar-radio-item),
+    &:has(.ex-menubar-checkbox-item) {
+      .ex-menubar-item,
+      .ex-menubar-sub-trigger,
+      .ex-menubar-radio-item,
+      .ex-menubar-checkbox-item {
+        @apply ps-[2.25em];
+      }
+
+      .ex-menubar-label {
+        @apply ps-[2.75em];
+      }
+    }
+
+    &:has(.ex-menubar-command) {
+      .ex-menubar-item,
+      .ex-menubar-sub-trigger,
+      .ex-menubar-radio-item,
+      .ex-menubar-checkbox-item {
+        @apply pe-[2.75em];
+      }
+    }
+  }
+
+  .ex-menubar-content,
+  .ex-menubar-sub-content {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-menubar-section {
+    @apply flex flex-col;
+    @apply gap-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-menubar-arrow {
+    @apply h-[var(--ex-height)] w-[var(--ex-width)] fill-[var(--background)] stroke-[var(--border)] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
+
+    stroke-dasharray: 2rem 2rem;
+    stroke-dashoffset: 2rem;
+    stroke-width: 2px;
+  }
+
+  .ex-menubar-separator {
+    @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+  }
+
+  .ex-menubar-separator {
+    @apply h-[1px] w-full [transform:translateZ(0)];
+  }
+
+  .ex-menubar-radio-group {
+    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-menubar-sub-trigger {
+    > .ex-menubar-indicator:is(:last-child) {
+      @apply right-[0.5rem] left-[unset];
+    }
+  }
+
+  .ex-menubar-item,
+  .ex-menubar-sub-trigger,
+  .ex-menubar-radio-item,
+  .ex-menubar-checkbox-item {
+    --ex-font-family: var(--ex-menubar-item-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-menubar-item-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-menubar-item,
+  .ex-menubar-sub-trigger,
+  .ex-menubar-radio-item,
+  .ex-menubar-checkbox-item {
+    @apply relative flex min-w-0 items-center select-none;
+    @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &:where([data-highlighted]) {
+      @apply variant-subtle border-0!;
+    }
+  }
+
+  .ex-menubar-indicator {
+    @apply absolute left-[0.375rem] inline-flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+
+    svg {
+      @apply h-auto min-h-full w-full;
+    }
+  }
+
+  .ex-menubar-radio-item,
+  .ex-menubar-checkbox-item {
+    .ex-menubar-indicator:where([data-state='unchecked']) > * {
+      @apply invisible;
+    }
+  }
+
+  .ex-menubar-label {
+    --ex-font-family: var(--ex-menubar-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-menubar-label-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-menubar-label-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-menubar-label {
+    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+
+  .ex-menubar-command {
+    --ex-font-family: var(--ex-menubar-command-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-menubar-command-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-menubar-command-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-menubar-command {
+    @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-menubar-content,
+  .ex-menubar-sub-content {
+    @apply component-variant-panel;
+  }
+
+  .ex-menubar-trigger {
+    @apply interactive;
+
+    &:where([data-state='open']) {
+      @apply interactive-hover;
+    }
+  }
+}

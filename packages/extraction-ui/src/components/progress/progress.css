@@ -1,0 +1,36 @@
+@utility progress-sm {
+  --ex-size: var(--ex-progress-size-sm, calc(var(--spacing) * 0.5));
+  --ex-radius: var(--ex-progress-radius-sm, 9999px);
+}
+
+@utility progress-md {
+  --ex-size: var(--ex-progress-size-md, calc(var(--spacing) * 1));
+  --ex-radius: var(--ex-progress-radius-md, 9999px);
+}
+
+@utility progress-lg {
+  --ex-size: var(--ex-progress-size-lg, calc(var(--spacing) * 1.5));
+  --ex-radius: var(--ex-progress-radius-lg, 9999px);
+}
+
+@layer components {
+  .ex-progress {
+    @apply progress-md;
+  }
+
+  .ex-progress {
+    @apply variant-solid palette-primary;
+    @apply bg-[--alpha(var(--background)/20%)] dark:bg-[--alpha(var(--background-dark)/20%)];
+  }
+
+  .ex-progress {
+    @apply w-full shrink-0 [transform:translateZ(0)] overflow-hidden;
+    @apply h-[var(--ex-size)] rounded-[var(--ex-radius)];
+  }
+
+  .ex-progress-indicator {
+    @apply variant size-full;
+
+    transition: width, height, 200ms;
+  }
+}

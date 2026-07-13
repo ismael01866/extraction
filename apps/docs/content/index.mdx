@@ -1,0 +1,75 @@
+---
+title: Extraction UI
+theme:
+  layout: full
+  breadcrumb: false
+  timestamp: false
+  sidebar: false
+  toc: false
+---
+
+import { Container, Separator, Stack } from 'extraction-ui';
+
+import {
+  HomeSectionCSS,
+  HomeSectionColorModes,
+  HomeSectionFrameworks,
+  HomeSectionHero,
+  HomeSectionOpenSource,
+  HomeSectionPanels,
+  HomeSectionPanelsHero,
+} from './home';
+
+import { NumCaption } from './home/components';
+
+<Stack className='gap-8 sm:gap-20'>
+  <Container className='dashed-container mbs-8 px-8 sm:mbs-20 sm:px-14'>
+    <NumCaption text='001' />
+    <Container className='text-center'>
+      <HomeSectionHero />
+    </Container>
+  </Container>
+  <Container>
+    <HomeSectionPanels />
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+  <Container className='dashed-container px-8 sm:px-14'>
+    <NumCaption text='002' />
+    <Container className='max-w-2xl text-center'>
+      <HomeSectionPanelsHero />
+    </Container>
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+  <Container className='dashed-container px-8 sm:px-14'>
+    <NumCaption text='003' />
+    <Stack className='gap-20 sm:gap-40'>
+      <HomeSectionCSS />
+      <HomeSectionColorModes />
+    </Stack>
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+  <Container className='dashed-container px-8 text-center sm:px-14'>
+    <NumCaption text='004' />
+    <Container className='max-w-2xl text-center'>
+      <HomeSectionFrameworks />
+    </Container>
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+  <Container className='dashed-container px-8 text-center sm:px-14'>
+    <NumCaption text='005' />
+    <Container className='max-w-2xl text-center'>
+      <HomeSectionOpenSource />
+    </Container>
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+</Stack>

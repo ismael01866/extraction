@@ -1,0 +1,62 @@
+import { Headline } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './headline';
+
+export const Component = (
+  <Headline>{`The quick brown fox jumps over the lazy dog`}</Headline>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Headline
+
+{data.headline.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-headline-font-size-sm: var(--text-2xl);
+  --ex-headline-font-size-md: var(--text-3xl);
+  --ex-headline-font-size-lg: var(--text-4xl);
+  --ex-headline-font-size-xl: var(--text-5xl);
+
+  --ex-headline-line-height-sm: var(--text-2xl-line-height);
+  --ex-headline-line-height-md: var(--text-3xl-line-height);
+  --ex-headline-line-height-lg: var(--text-4xl-line-height);
+  --ex-headline-line-height-xl: var(--text-5xl-line-height);
+
+  --ex-headline-font-family-sm: var(--font-sans);
+  --ex-headline-font-family-md: var(--font-sans);
+  --ex-headline-font-family-lg: var(--font-sans);
+  --ex-headline-font-family-xl: var(--font-sans);
+
+  --ex-headline-font-weight-sm: var(--font-weight-normal);
+  --ex-headline-font-weight-md: var(--font-weight-normal);
+  --ex-headline-font-weight-lg: var(--font-weight-normal);
+  --ex-headline-font-weight-xl: var(--font-weight-normal);
+}
+```
+
+## API
+
+<Api config={cfg} />

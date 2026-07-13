@@ -1,0 +1,212 @@
+@utility drawer-content-sm {
+  --ex-font-size: var(--ex-drawer-font-size-sm, var(--text-sm));
+
+  --ex-size: var(--ex-drawer-size-sm, var(--container-2xs));
+  --ex-radius: var(--ex-drawer-radius-sm, 0);
+  --ex-shadow: var(--ex-drawer-shadow-sm, var(--shadow-xl));
+
+  .ex-drawer-section {
+    --ex-px: var(--ex-drawer-section-px-sm, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-drawer-section-py-sm, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-drawer-section-gap-x-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-drawer-title {
+    --ex-font-size: var(--ex-drawer-title-font-size-sm, var(--text-base));
+  }
+
+  .ex-drawer-description {
+    --ex-font-size: var(--ex-drawer-description-font-size-sm, var(--text-sm));
+  }
+}
+
+@utility drawer-content-md {
+  --ex-font-size: var(--ex-drawer-font-size-md, var(--text-sm));
+
+  --ex-size: var(--ex-drawer-size-md, var(--container-xs));
+  --ex-radius: var(--ex-drawer-radius-md, 0);
+  --ex-shadow: var(--ex-drawer-shadow-md, var(--shadow-xl));
+
+  .ex-drawer-section {
+    --ex-px: var(--ex-drawer-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-drawer-section-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-drawer-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-drawer-title {
+    --ex-font-size: var(--ex-drawer-title-font-size-md, var(--text-base));
+  }
+
+  .ex-drawer-description {
+    --ex-font-size: var(--ex-drawer-description-font-size-md, var(--text-sm));
+  }
+}
+
+@utility drawer-content-lg {
+  --ex-font-size: var(--ex-drawer-font-size-lg, var(--text-sm));
+
+  --ex-size: var(--ex-drawer-size-lg, var(--container-sm));
+  --ex-radius: var(--ex-drawer-radius-lg, 0);
+  --ex-shadow: var(--ex-drawer-shadow-lg, var(--shadow-xl));
+
+  .ex-drawer-section {
+    --ex-px: var(--ex-drawer-section-px-lg, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-drawer-section-py-lg, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-drawer-section-gap-x-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 2));
+  }
+
+  .ex-drawer-title {
+    --ex-font-size: var(--ex-drawer-title-font-size-lg, var(--text-base));
+  }
+
+  .ex-drawer-description {
+    --ex-font-size: var(--ex-drawer-description-font-size-lg, var(--text-sm));
+  }
+}
+
+@utility drawer-content-xl {
+  --ex-font-size: var(--ex-drawer-font-size-xl, var(--text-sm));
+
+  --ex-size: var(--ex-drawer-size-xl, var(--container-md));
+  --ex-radius: var(--ex-drawer-radius-xl, 0);
+  --ex-shadow: var(--ex-drawer-shadow-xl, var(--shadow-xl));
+
+  .ex-drawer-section {
+    --ex-px: var(--ex-drawer-section-px-xl, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-drawer-section-py-xl, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-drawer-section-gap-x-xl, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-xl, calc(var(--spacing) * 2));
+  }
+
+  .ex-drawer-title {
+    --ex-font-size: var(--ex-drawer-title-font-size-xl, var(--text-base));
+  }
+
+  .ex-drawer-description {
+    --ex-font-size: var(--ex-drawer-description-font-size-xl, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-drawer-overlay {
+    --ex-z-index: var(--ex-drawer-overlay-z-index, var(--ex-options-z-drawer-overlay));
+
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply z-[var(--ex-z-index)];
+
+    &:where([data-state='open']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-state='closed']) {
+      @apply animate-out fade-out;
+    }
+  }
+
+  .ex-drawer-content {
+    @apply drawer-content-md;
+  }
+
+  .ex-drawer-content {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-drawer-content {
+    --ex-z-index: var(--ex-drawer-z-index, var(--ex-options-z-drawer));
+
+    @apply palette-neutral variant-outline fixed flex flex-col border-transparent shadow-lg will-change-[transform,opacity];
+    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &[data-placement='end'] {
+      @apply inset-y-0 right-0 h-dvh w-[var(--ex-size)];
+
+      &:where([data-state='open']) {
+        @apply animate-in slide-from-end;
+      }
+
+      &:where([data-state='closed']) {
+        @apply animate-out slide-to-end;
+      }
+    }
+
+    &[data-placement='start'] {
+      @apply inset-y-0 left-0 h-dvh w-[var(--ex-size)];
+
+      &:where([data-state='open']) {
+        @apply animate-in slide-from-start;
+      }
+
+      &:where([data-state='closed']) {
+        @apply animate-out slide-to-start;
+      }
+    }
+
+    &[data-placement='top'] {
+      @apply inset-x-0 top-0 max-h-dvh w-dvw;
+
+      &:where([data-state='open']) {
+        @apply animate-in slide-from-top;
+      }
+
+      &:where([data-state='closed']) {
+        @apply animate-out slide-to-top;
+      }
+    }
+
+    &[data-placement='bottom'] {
+      @apply inset-x-0 bottom-0 max-h-dvh w-dvw;
+
+      &:where([data-state='open']) {
+        @apply animate-in slide-from-bottom;
+      }
+
+      &:where([data-state='closed']) {
+        @apply animate-out slide-to-bottom;
+      }
+    }
+  }
+
+  .ex-drawer-section {
+    @apply flex flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-drawer-close-native {
+    @apply absolute end-1.5 top-1.5;
+    @apply palette-inherit variant-inherit border-none;
+
+    .ex-close-icon {
+      @apply size-[1em] fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
+    }
+  }
+
+  .ex-drawer-title {
+    --ex-font-weight: var(--ex-drawer-title-font-weight, var(--font-weight-semibold));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-drawer-description {
+    --ex-font-weight: var(--ex-drawer-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-drawer-content {
+    @apply component-variant-panel;
+  }
+}

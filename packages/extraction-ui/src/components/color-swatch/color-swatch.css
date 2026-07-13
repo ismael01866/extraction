@@ -1,0 +1,29 @@
+@utility color-swatch-sm {
+  --ex-size: var(--ex-color-swatch-size-sm, var(--ex-size-2xs));
+  --ex-radius: var(--ex-color-swatch-radius-sm, var(--radius-sm));
+}
+
+@utility color-swatch-md {
+  --ex-size: var(--ex-color-swatch-size-md, var(--ex-size-xs));
+  --ex-radius: var(--ex-color-swatch-radius-md, var(--radius-sm));
+}
+
+@utility color-swatch-lg {
+  --ex-size: var(--ex-color-swatch-size-lg, var(--ex-size-sm));
+  --ex-radius: var(--ex-color-swatch-radius-lg, var(--radius-sm));
+}
+
+@layer components {
+  .ex-color-swatch {
+    @apply color-swatch-md;
+  }
+
+  .ex-color-swatch {
+    @apply variant-solid palette-primary;
+  }
+
+  .ex-color-swatch {
+    @apply inline-flex shrink-0;
+    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)];
+  }
+}

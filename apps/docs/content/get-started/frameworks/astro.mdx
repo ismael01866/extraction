@@ -1,0 +1,139 @@
+# Astro
+
+import { Steps } from 'nextra/components';
+
+This guide is specific to Astro. For official framework documentation, visit the [Astro Documentation](https://docs.astro.build).
+
+## Prerequisites
+
+Before you begin, make sure your app is using:
+
+- **Astro** 5 or higher
+
+- **React** 19.2.0 or higher
+- **React DOM** 19.2.0 or higher
+
+## Installation
+
+<Steps>
+
+### Create an Astro app
+
+```bash
+pnpm create astro@latest
+```
+
+### Add React and Typescript support
+
+```bash
+pnpm add react react-dom typescript
+pnpm add -D @astrojs/react
+```
+
+Make sure the astro config file is updated as well:
+
+```js
+/** astro.config.mjs */
+import { defineConfig } from 'astro/config';
+
+import react from '@astrojs/react';
+
+export default defineConfig({
+  integrations: [react()],
+});
+```
+
+### Install the package
+
+```bash
+pnpm install extraction-ui
+```
+
+### Install peer dependencies
+
+Extraction UI requires Radix UI as a peer dependency:
+
+```bash
+pnpm add radix-ui
+```
+
+And Tailwind CSS for styling:
+
+```bash
+pnpm add -D tailwindcss @tailwindcss/postcss postcss
+```
+
+Add Tailwind to your PostCSS config as well
+
+```js
+/** postcss.config.mjs */
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+```
+
+For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation).
+
+### Import styles in a global stylesheet
+
+Create a global stylesheet and add the Extraction UI styles:
+
+```css
+/** src/styles/globals.css */
+@import 'tailwindcss';
+@import 'extraction-ui/styles';
+```
+
+Make sure the CSS file is imported in your entry point:
+
+```astro
+---
+/** src/pages/index.astro */
+import '../styles/globals.css';
+---
+
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width' />
+  </head>
+  <body>...</body>
+</html>
+```
+
+### Start using components
+
+Import and use components in your project:
+
+```astro
+---
+/** src/pages/index.astro */
+import { Button, Card } from 'extraction-ui';
+---
+
+<html lang='en'>
+  <head>...</head>
+  <body>
+    <Card>
+      <Card.Header>
+        <Card.Title>Welcome to Extraction UI</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Button className='mbs-4'>Submit</Button>
+      </Card.Content>
+    </Card>
+  </body>
+</html>
+```
+
+### Hydrate interactive components when needed
+
+For components that rely on client-side interactivity, add an Astro client directive:
+
+```astro
+<SomeInteractiveComponent client:load />
+```
+
+</Steps>

@@ -1,0 +1,41 @@
+@utility title-sm {
+  --ex-font-size: var(--ex-title-font-size-sm, var(--text-sm));
+  --ex-line-height: var(--ex-title-line-height-sm, var(--text-sm-line-height));
+
+  --ex-font-family: var(--ex-title-font-family-sm, var(--font-sans));
+  --ex-font-weight: var(--ex-title-font-weight-sm, var(--font-weight-medium));
+}
+
+@utility title-md {
+  --ex-font-size: var(--ex-title-font-size-md, var(--text-base));
+  --ex-line-height: var(--ex-title-line-height-md, var(--text-base-line-height));
+
+  --ex-font-family: var(--ex-title-font-family-md, var(--font-sans));
+  --ex-font-weight: var(--ex-title-font-weight-md, var(--font-weight-medium));
+}
+
+@utility title-lg {
+  --ex-font-size: var(--ex-title-font-size-lg, var(--text-lg));
+  --ex-line-height: var(--ex-title-line-height-lg, var(--text-lg-line-height));
+
+  --ex-font-family: var(--ex-title-font-family-lg, var(--font-sans));
+  --ex-font-weight: var(--ex-title-font-weight-lg, var(--font-weight-medium));
+}
+
+@utility title-xl {
+  --ex-font-size: var(--ex-title-font-size-xl, var(--text-xl));
+  --ex-line-height: var(--ex-title-line-height-xl, var(--text-xl-line-height));
+
+  --ex-font-family: var(--ex-title-font-family-xl, var(--font-sans));
+  --ex-font-weight: var(--ex-title-font-weight-xl, var(--font-weight-medium));
+}
+
+@layer components {
+  .ex-title {
+    @apply title-md;
+  }
+
+  .ex-title {
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [line-height:var(--ex-line-height)] [font-weight:var(--ex-font-weight)];
+  }
+}

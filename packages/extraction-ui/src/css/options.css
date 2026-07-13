@@ -1,0 +1,55 @@
+:root {
+  --ex-options-muted-opacity: 0.88;
+  --ex-options-subtle-opacity: 0.64;
+  --ex-options-weak-opacity: 0.48;
+  --ex-options-disabled-opacity: 0.56;
+  --ex-options-overlay-opacity: 0.4;
+  --ex-options-placeholder-opacity: 0.64;
+
+  --ex-options-enable-transitions: 1;
+  --ex-options-enable-reduced-motion: 1;
+
+  --ex-options-duration-fastest: 50ms;
+  --ex-options-duration-faster: 100ms;
+  --ex-options-duration-fast: 150ms;
+  --ex-options-duration-normal: 200ms;
+  --ex-options-duration-slow: 300ms;
+  --ex-options-duration-slower: 400ms;
+  --ex-options-duration-slowest: 500ms;
+
+  --ex-options-input-border-valid: var(--color-success-500);
+  --ex-options-input-border-valid-dark: var(--color-success-500);
+
+  --ex-options-input-border-invalid: var(--color-error-500);
+  --ex-options-input-border-invalid-dark: var(--color-error-500);
+
+  --ex-options-background-default-color: color-mix(in oklch, var(--color-neutral-50) 30%, white);
+  --ex-options-background-default-color-dark: color-mix(
+    in oklch,
+    var(--color-neutral-950) 70%,
+    black
+  );
+
+  --ex-options-panel-background-default-color-dark: var(--color-black);
+  --ex-options-panel-background-default-color: var(--color-white);
+
+  --ex-options-text-default-color: var(--color-neutral-900);
+  --ex-options-text-default-color-dark: var(--color-neutral-100);
+
+  --ex-options-z-popover: 40;
+  --ex-options-z-hover-card: 40;
+
+  --ex-options-z-dialog: 50;
+  --ex-options-z-dialog-overlay: 45;
+
+  --ex-options-z-drawer: 50;
+  --ex-options-z-drawer-overlay: 45;
+
+  --ex-options-z-alert-dialog: 50;
+  --ex-options-z-alert-dialog-overlay: 45;
+
+  --ex-options-z-select-popper: 50;
+
+  --ex-options-z-toast: 55;
+  --ex-options-z-tooltip: 60;
+}

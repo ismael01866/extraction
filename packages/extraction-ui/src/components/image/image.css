@@ -1,0 +1,53 @@
+@utility ex-image-base {
+  @apply h-auto w-full object-cover;
+}
+
+@utility image-xs {
+  --ex-size: var(--ex-image-size-xs, calc(var(--spacing) * 20));
+  --ex-radius: var(--ex-image-radius-xs, var(--radius-sm));
+
+  @apply size-[var(--ex-size)];
+}
+
+@utility image-sm {
+  --ex-size: var(--ex-image-size-sm, calc(var(--spacing) * 24));
+  --ex-radius: var(--ex-image-radius-sm, var(--radius-sm));
+
+  @apply size-[var(--ex-size)];
+}
+
+@utility image-md {
+  --ex-size: var(--ex-image-size-md, calc(var(--spacing) * 32));
+  --ex-radius: var(--ex-image-radius-md, var(--radius-sm));
+
+  @apply size-[var(--ex-size)];
+}
+
+@utility image-lg {
+  --ex-size: var(--ex-image-size-lg, calc(var(--spacing) * 40));
+  --ex-radius: var(--ex-image-radius-lg, var(--radius-sm));
+
+  @apply size-[var(--ex-size)];
+}
+
+@utility image-xl {
+  --ex-size: var(--ex-image-size-xl, calc(var(--spacing) * 48));
+  --ex-radius: var(--ex-image-radius-xl, var(--radius-sm));
+
+  @apply size-[var(--ex-size)];
+}
+
+@layer components {
+  .ex-image {
+    @apply ex-image-base;
+  }
+
+  .ex-image {
+    @apply rounded-[var(--ex-radius)];
+  }
+}
+
+
+
+
+

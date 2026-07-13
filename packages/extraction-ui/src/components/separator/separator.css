@@ -1,0 +1,81 @@
+@utility separator-xs {
+  --ex-size: var(--ex-separator-size-xs, 1px);
+
+  &:where([data-orientation='horizontal']) {
+    width: 100%;
+  }
+
+  &:where([data-orientation='vertical']) {
+    height: 100%;
+  }
+}
+
+@utility separator-sm {
+  --ex-size: var(--ex-separator-size-sm, 2px);
+
+  &:where([data-orientation='horizontal']) {
+    width: 100%;
+  }
+
+  &:where([data-orientation='vertical']) {
+    height: 100%;
+  }
+}
+
+@utility separator-md {
+  --ex-size: var(--ex-separator-size-md, 3px);
+
+  &:where([data-orientation='horizontal']) {
+    width: 100%;
+  }
+
+  &:where([data-orientation='vertical']) {
+    height: 100%;
+  }
+}
+
+@utility separator-lg {
+  --ex-size: var(--ex-separator-size-lg, 4px);
+
+  &:where([data-orientation='horizontal']) {
+    width: 100%;
+  }
+
+  &:where([data-orientation='vertical']) {
+    height: 100%;
+  }
+}
+
+@utility separator-xl {
+  --ex-size: var(--ex-separator-size-xl, 5px);
+
+  &:where([data-orientation='horizontal']) {
+    width: 100%;
+  }
+
+  &:where([data-orientation='vertical']) {
+    height: 100%;
+  }
+}
+
+@layer components {
+  .ex-separator {
+    @apply shrink-0 border-0;
+
+    &:where([data-orientation='horizontal']) {
+      @apply [border-block-start-width:var(--ex-size)];
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply [border-inline-start-width:var(--ex-size)];
+    }
+  }
+
+  .ex-separator {
+    @apply separator-xs;
+  }
+
+  .ex-separator {
+    @apply palette-neutral variant-outline;
+  }
+}

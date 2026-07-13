@@ -1,0 +1,166 @@
+@utility checkbox-card-sm {
+  --ex-font-size: var(--ex-checkbox-card-font-size-sm, var(--text-xs));
+
+  --ex-px: var(--ex-checkbox-card-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-checkbox-card-py-sm, calc(var(--spacing) * 4));
+
+  --ex-gap-x: var(--ex-checkbox-card-gap-x-sm, calc(var(--spacing) * 2));
+  --ex-radius: var(--ex-checkbox-card-radius-sm, var(--radius-sm));
+
+  .ex-checkbox-card-indicator {
+    --ex-font-size: var(--ex-checkbox-card-indicator-font-size-sm, var(--text-lg));
+    --ex-radius: var(--ex-checkbox-card-indicator-radius-sm, var(--radius-sm));
+  }
+
+  .ex-checkbox-card-content {
+    --ex-gap-x: var(--ex-checkbox-card-content-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-sm, calc(var(--spacing) * 1));
+  }
+
+  .ex-checkbox-card-label {
+    --ex-font-size: var(--ex-checkbox-card-label-font-size-sm, var(--text-xs));
+  }
+
+  .ex-checkbox-card-description {
+    --ex-font-size: var(--ex-checkbox-card-description-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility checkbox-card-md {
+  --ex-font-size: var(--ex-checkbox-card-font-size-md, var(--text-sm));
+
+  --ex-px: var(--ex-checkbox-card-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-checkbox-card-py-md, calc(var(--spacing) * 5));
+
+  --ex-gap-x: var(--ex-checkbox-card-gap-x-md, calc(var(--spacing) * 2.5));
+  --ex-radius: var(--ex-checkbox-card-radius-md, var(--radius-sm));
+
+  .ex-checkbox-card-indicator {
+    --ex-font-size: var(--ex-checkbox-card-indicator-font-size-md, var(--text-xl));
+    --ex-radius: var(--ex-checkbox-card-indicator-radius-md, var(--radius-sm));
+  }
+
+  .ex-checkbox-card-content {
+    --ex-gap-x: var(--ex-checkbox-card-content-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-md, calc(var(--spacing) * 1));
+  }
+
+  .ex-checkbox-card-label {
+    --ex-font-size: var(--ex-checkbox-card-label-font-size-md, var(--text-sm));
+  }
+
+  .ex-checkbox-card-description {
+    --ex-font-size: var(--ex-checkbox-card-description-font-size-md, var(--text-sm));
+  }
+}
+
+@utility checkbox-card-lg {
+  --ex-font-size: var(--ex-checkbox-card-font-size-lg, var(--text-base));
+
+  --ex-px: var(--ex-checkbox-card-px-lg, calc(var(--spacing) * 6));
+  --ex-py: var(--ex-checkbox-card-py-lg, calc(var(--spacing) * 6));
+
+  --ex-gap-x: var(--ex-checkbox-card-gap-x-lg, calc(var(--spacing) * 3));
+  --ex-radius: var(--ex-checkbox-card-radius-lg, var(--radius-sm));
+
+  .ex-checkbox-card-indicator {
+    --ex-font-size: var(--ex-checkbox-card-indicator-font-size-lg, var(--text-2xl));
+    --ex-radius: var(--ex-checkbox-card-indicator-radius-lg, var(--radius-sm));
+  }
+
+  .ex-checkbox-card-content {
+    --ex-gap-x: var(--ex-checkbox-card-content-gap-x-lg, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-lg, calc(var(--spacing) * 1));
+  }
+
+  .ex-checkbox-card-label {
+    --ex-font-size: var(--ex-checkbox-card-label-font-size-lg, var(--text-base));
+  }
+
+  .ex-checkbox-card-description {
+    --ex-font-size: var(--ex-checkbox-card-description-font-size-lg, var(--text-base));
+  }
+}
+
+@layer components {
+  .ex-checkbox-card {
+    @apply checkbox-card-md;
+  }
+
+  .ex-checkbox-card {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-checkbox-card {
+    --ex-cursor: var(--ex-checkbox-card-cursor, default);
+
+    @apply flex leading-normal select-none;
+    @apply cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-size:var(--ex-font-size)];
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-checkbox-card-indicator {
+        @apply component-variant-solid-contrast;
+      }
+    }
+  }
+
+  .ex-checkbox-card-content {
+    @apply flex flex-1 flex-col items-start text-start;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-checkbox-card-indicator {
+    @apply variant-outline;
+  }
+
+  .ex-checkbox-card-indicator {
+    @apply inline-flex size-[1em] flex-shrink-0 items-center justify-center;
+    @apply rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+
+    &:where([data-state='unchecked']) > * {
+      @apply invisible;
+    }
+  }
+
+  .ex-checkbox-card-check {
+    @apply size-[1em] fill-none stroke-current stroke-2;
+  }
+
+  .ex-checkbox-card-label {
+    --ex-font-family: var(--ex-checkbox-card-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-checkbox-card-label-font-weight, var(--font-weight-semibold));
+  }
+
+  .ex-checkbox-card-label {
+    @apply cursor-[inherit] self-start [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-checkbox-card-description {
+    --ex-font-family: var(--ex-checkbox-card-description-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-checkbox-card-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-checkbox-card-description-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-checkbox-card-description {
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-checkbox-card {
+    &:where(:focus-visible) {
+      @apply interactive-focus;
+    }
+
+    &:where([data-state='checked']:not([class*='variant-plain'])) {
+      --border: var(--shade-bold);
+    }
+
+    &:where(:not([class*='variant-'])),
+    &:where([class*='variant-outline']) {
+      @apply component-variant-panel;
+    }
+  }
+}

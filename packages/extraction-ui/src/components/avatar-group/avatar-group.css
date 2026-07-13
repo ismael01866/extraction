@@ -1,0 +1,40 @@
+@layer components {
+  .ex-avatar-group {
+    --ex-gap-x: var(--ex-avatar-group-gap-x, calc(var(--spacing) * -3));
+    --ex-gap-y: var(--ex-avatar-group-gap-y, calc(var(--spacing) * -3));
+
+    --ex-ring-width: var(--ex-avatar-group-ring-width, 3px);
+    --ex-ring-color: var(--ex-avatar-group-ring-width, var(--ex-colors-background));
+  }
+
+  .ex-avatar-group {
+    @apply isolate flex items-center justify-start;
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-row;
+
+      > * + * {
+        margin-inline-start: var(--ex-gap-x);
+      }
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-col;
+
+      > * + * {
+        margin-top: var(--ex-gap-y);
+      }
+    }
+
+    > * {
+      border: var(--ex-ring-width) solid var(--ex-ring-color);
+    }
+  }
+
+  .ex-avatar-group {
+    .ex-avatar {
+      @apply border-solid;
+    }
+  }
+}

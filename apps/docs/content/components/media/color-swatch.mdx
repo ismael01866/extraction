@@ -1,0 +1,59 @@
+import { ColorSwatch } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './color-swatch';
+
+export const Component = <ColorSwatch />;
+
+export const Wrapper = ({ children }) => children;
+
+# Color Swatch
+
+{data['color-swatch'].description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-color-swatch-size-sm: calc(var(--spacing) * 4);
+  --ex-color-swatch-size-md: calc(var(--spacing) * 5);
+  --ex-color-swatch-size-lg: calc(var(--spacing) * 6);
+
+  --ex-color-swatch-radius-sm: var(--radius-sm);
+  --ex-color-swatch-radius-md: var(--radius-sm);
+  --ex-color-swatch-radius-lg: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

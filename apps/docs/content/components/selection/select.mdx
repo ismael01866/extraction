@@ -1,0 +1,445 @@
+import { Select } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  selectArrowCfg,
+  selectCfg,
+  selectContentCfg,
+  selectGroupCfg,
+  selectIconCfg,
+  selectItemCfg,
+  selectItemIndicatorCfg,
+  selectItemTextCfg,
+  selectLabelCfg,
+  selectPortalCfg,
+  selectScrollDownButtonCfg,
+  selectScrollUpButtonCfg,
+  selectSectionCfg,
+  selectSeparatorCfg,
+  selectTriggerCfg,
+  selectValueCfg,
+  selectViewportCfg,
+} from './select';
+
+export const Component = (
+  <Select>
+    <Select.Trigger className='w-64' aria-label='Select an option'>
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.ScrollUpButton />
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Group>
+              <Select.Label>Group 1</Select.Label>
+              <Select.Item value='op1'>
+                <Select.ItemText>Option 1</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+              <Select.Item value='op2'>
+                <Select.ItemText>Option 2</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+            </Select.Group>
+            <Select.Separator />
+            <Select.Group>
+              <Select.Label>Group 2</Select.Label>
+              <Select.Item value='op3'>
+                <Select.ItemText>Option 1</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+              <Select.Item value='op4'>
+                <Select.ItemText>Option 2</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+            </Select.Group>
+          </Select.Section>
+        </Select.Viewport>
+        <Select.ScrollDownButton />
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const ComponentValid = (
+  <Select value='op1'>
+    <Select.Trigger className='valid w-64' aria-label='Select an option'>
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Item value='op1'>
+              <Select.ItemText>Option 1</Select.ItemText>
+            </Select.Item>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const ComponentInvalid = (
+  <Select>
+    <Select.Trigger className='invalid w-64' aria-label='Select an option'>
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Item value='op1'>
+              <Select.ItemText>Option 1</Select.ItemText>
+            </Select.Item>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const ComponentDisabled = (
+  <Select>
+    <Select.Trigger
+      className='disabled variant-surface w-64'
+      aria-label='Select an option'
+    >
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Item value='op1'>
+              <Select.ItemText>Option 1</Select.ItemText>
+              <Select.ItemIndicator />
+            </Select.Item>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const ComponentDisabledItem = (
+  <Select>
+    <Select.Trigger className='w-64' aria-label='Select an option'>
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Item value='op1' disabled>
+              <Select.ItemText>Option 1</Select.ItemText>
+              <Select.ItemIndicator />
+            </Select.Item>
+            <Select.Item value='op2'>
+              <Select.ItemText>Option 2</Select.ItemText>
+              <Select.ItemIndicator />
+            </Select.Item>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const SizeComponent = ({ size }) => (
+  <Select>
+    <Select.Trigger
+      className={`w-64 select-trigger-${size} `}
+      aria-label='Select an option'
+    >
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content className={` select-content-${size} `}>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Group>
+              <Select.Label>Group 1</Select.Label>
+              <Select.Item value='op1'>
+                <Select.ItemText>Option 1</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+              <Select.Item value='op2'>
+                <Select.ItemText>Option 2</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+            </Select.Group>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const VariantComponent = ({ color, variant }) => (
+  <Select>
+    <Select.Trigger
+      className={`w-64 palette-${color} variant-${variant}`}
+      aria-label='Select an option'
+    >
+      <Select.Value placeholder='Select an option' />
+      <Select.Icon />
+    </Select.Trigger>
+    <Select.Portal>
+      <Select.Content>
+        <Select.Viewport>
+          <Select.Section>
+            <Select.Group>
+              <Select.Label>Group 1</Select.Label>
+              <Select.Item value='op1'>
+                <Select.ItemText>Option 1</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+              <Select.Item value='op2'>
+                <Select.ItemText>Option 2</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+            </Select.Group>
+          </Select.Section>
+        </Select.Viewport>
+      </Select.Content>
+    </Select.Portal>
+  </Select>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Select
+
+{data.select.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/select)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+Use the <code className='nextra-code'>`select-{slot}-{size}`</code> class to control the component size.
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-select-trigger-cursor: default;
+
+  --ex-select-trigger-font-family: var(--font-sans);
+  --ex-select-trigger-font-weight: var(--font-weight-normal);
+
+  --ex-select-trigger-font-size-sm: var(--text-xs);
+  --ex-select-trigger-font-size-md: var(--text-sm);
+  --ex-select-trigger-font-size-lg: var(--text-base);
+
+  --ex-select-trigger-height-sm: calc(var(--spacing) * 9);
+  --ex-select-trigger-height-md: calc(var(--spacing) * 10);
+  --ex-select-trigger-height-lg: calc(var(--spacing) * 11);
+
+  --ex-select-trigger-px-sm: calc(var(--spacing) * 3.5);
+  --ex-select-trigger-px-md: calc(var(--spacing) * 4);
+  --ex-select-trigger-px-lg: calc(var(--spacing) * 4.5);
+
+  --ex-select-trigger-radius-sm: var(--radius-sm);
+  --ex-select-trigger-radius-md: var(--radius-sm);
+  --ex-select-trigger-radius-lg: var(--radius-sm);
+
+  --ex-select-trigger-icon-size-sm: var(--text-lg);
+  --ex-select-trigger-icon-size-md: var(--text-xl);
+  --ex-select-trigger-icon-size-lg: var(--text-2xl);
+
+  --ex-select-content-max-w-sm: var(--container-3xs);
+  --ex-select-content-max-w-md: var(--container-2xs);
+  --ex-select-content-max-w-lg: var(--container-xs);
+
+  --ex-select-content-radius-sm: var(--radius-sm);
+  --ex-select-content-radius-md: var(--radius-sm);
+  --ex-select-content-radius-lg: var(--radius-sm);
+
+  --ex-select-content-shadow-sm: var(--shadow-sm);
+  --ex-select-content-shadow-md: var(--shadow-sm);
+  --ex-select-content-shadow-lg: var(--shadow-sm);
+
+  --ex-select-content-section-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-select-content-section-gap-x-md: calc(var(--spacing) * 2);
+  --ex-select-content-section-gap-x-lg: calc(var(--spacing) * 2.5);
+
+  --ex-select-content-section-px-sm: calc(var(--spacing) * 1.5);
+  --ex-select-content-section-px-md: calc(var(--spacing) * 2);
+  --ex-select-content-section-px-lg: calc(var(--spacing) * 2.5);
+
+  --ex-select-content-section-py-sm: calc(var(--spacing) * 2);
+  --ex-select-content-section-py-md: calc(var(--spacing) * 2.5);
+  --ex-select-content-section-py-lg: calc(var(--spacing) * 3);
+
+  --ex-select-content-item-font-family: var(--font-sans);
+  --ex-select-content-item-font-weight: var(--font-weight-normal);
+
+  --ex-select-content-item-font-size-sm: var(--text-sm);
+  --ex-select-content-item-font-size-md: var(--text-sm);
+  --ex-select-content-item-font-size-lg: var(--text-sm);
+
+  --ex-select-content-item-px-sm: calc(var(--spacing) * 2);
+  --ex-select-content-item-px-md: calc(var(--spacing) * 2);
+  --ex-select-content-item-px-lg: calc(var(--spacing) * 2);
+
+  --ex-select-content-item-py-sm: calc(var(--spacing) * 1);
+  --ex-select-content-item-py-md: calc(var(--spacing) * 1);
+  --ex-select-content-item-py-lg: calc(var(--spacing) * 1);
+
+  --ex-select-content-item-indicator-font-size-sm: var(--text-sm);
+  --ex-select-content-item-indicator-font-size-md: var(--text-base);
+  --ex-select-content-item-indicator-font-size-lg: var(--text-lg);
+
+  --ex-select-content-label-font-family: var(--font-sans);
+  --ex-select-content-label-font-weight: var(--font-weight-normal);
+  --ex-select-content-label-opacity: var(--ex-options-muted-opacity);
+
+  --ex-select-content-label-font-size-sm: var(--text-2xs);
+  --ex-select-content-label-font-size-md: var(--text-xs);
+  --ex-select-content-label-font-size-lg: var(--text-sm);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/select#api-reference)
+
+### Select
+
+<Api config={selectCfg} />
+
+### Select Trigger
+
+<Api config={selectTriggerCfg} />
+
+### Select Value
+
+<Api config={selectValueCfg} />
+
+### Select Icon
+
+<Api config={selectIconCfg} />
+
+### Select Portal
+
+<Api config={selectPortalCfg} />
+
+### Select Content
+
+<Api config={selectContentCfg} />
+
+### Select Section
+
+<Api config={selectSectionCfg} />
+
+### Select Arrow
+
+<Api config={selectArrowCfg} />
+
+### Select Group
+
+<Api config={selectGroupCfg} />
+
+### Select Item
+
+<Api config={selectItemCfg} />
+
+### Select Item Text
+
+<Api config={selectItemTextCfg} />
+
+### Select Item Indicator
+
+<Api config={selectItemIndicatorCfg} />
+
+### Select Label
+
+<Api config={selectLabelCfg} />
+
+### Select Separator
+
+<Api config={selectSeparatorCfg} />
+
+### Select Viewport
+
+<Api config={selectViewportCfg} />
+
+### Select Scroll Up Button
+
+<Api config={selectScrollUpButtonCfg} />
+
+### Select Scroll Down Button
+
+<Api config={selectScrollDownButtonCfg} />

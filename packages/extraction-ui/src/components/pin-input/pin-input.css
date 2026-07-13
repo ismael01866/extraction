@@ -1,0 +1,92 @@
+@utility pin-input-sm {
+  --ex-size: var(--ex-pin-input-size-sm, var(--ex-size-xl));
+
+  --ex-gap-x: var(--ex-pin-input-gap-x-sm, calc(var(--spacing) * 1));
+
+  --ex-font-size: var(--ex-pin-input-font-size-sm, var(--text-xs));
+  --ex-radius: var(--ex-pin-input-radius-sm, var(--radius-sm));
+
+  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-sm, var(--text-2xs));
+}
+
+@utility pin-input-md {
+  --ex-size: var(--ex-pin-input-size-md, var(--ex-size-2xl));
+
+  --ex-gap-x: var(--ex-pin-input-gap-x-md, calc(var(--spacing) * 1.25));
+
+  --ex-radius: var(--ex-pin-input-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-pin-input-font-size-md, var(--text-sm));
+
+  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-md, var(--text-xs));
+}
+
+@utility pin-input-lg {
+  --ex-size: var(--ex-pin-input-size-lg, var(--ex-size-3xl));
+
+  --ex-gap-x: var(--ex-pin-input-gap-x-lg, calc(var(--spacing) * 1.5));
+
+  --ex-radius: var(--ex-pin-input-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-pin-input-font-size-lg, var(--text-base));
+
+  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-lg, var(--text-base));
+}
+
+@layer components {
+  .ex-pin-input {
+    --ex-font-family: var(--ex-pin-input-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-pin-input-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-options-placeholder-opacity);
+
+    @apply pin-input-md;
+  }
+
+  *:not(.ex-input-group) {
+    > .ex-pin-input {
+      @apply palette-neutral variant-outline;
+      @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+    }
+  }
+
+  .ex-pin-input {
+    @apply relative flex flex-nowrap;
+    @apply gap-x-[var(--ex-gap-x)];
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-pin-input-field {
+        &::placeholder {
+          @apply opacity-[calc(var(--ex-options-disabled-opacity)+0.15)];
+        }
+      }
+    }
+  }
+
+  .ex-pin-input-field {
+    @apply variant inline-flex items-center justify-center text-center leading-none;
+    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &::placeholder {
+      @apply [font-size:var(--ex-placeholder-font-size)] text-[inherit] [opacity:var(--ex-opacity)];
+    }
+
+    &:where(:focus-within) {
+      &::placeholder {
+        @apply opacity-0;
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .ex-pin-input {
+    @apply valid invalid;
+  }
+
+  .ex-pin-input-field {
+    &:where([tabindex='0']),
+    &:where(:not([value=''])) {
+      @apply interactive-form-control;
+    }
+  }
+}

@@ -1,0 +1,225 @@
+import { Accordion, Title } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  accordionCfg,
+  accordionContentCfg,
+  accordionHeaderCfg,
+  accordionIconCfg,
+  accordionItemCfg,
+  accordionSectionCfg,
+  accordionTriggerCfg,
+  cfg,
+} from './accordion';
+
+export const Component = (
+  <Accordion className='w-80' defaultValue={'option-1'}>
+    <Accordion.Item value='option-1'>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 1</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>
+          {`The quick brown fox jumps over the lazy dog`}
+        </Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item value='option-2'>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 2</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>
+          {`The quick brown fox jumps over the lazy dog`}
+        </Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+  </Accordion>
+);
+
+export const ComponentDisabledItem = (
+  <Accordion className='w-80'>
+    <Accordion.Item value='option-1'>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 1</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>
+          {`The quick brown fox jumps over the lazy dog`}
+        </Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item value='option-2' disabled>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 2</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>
+          {`The quick brown fox jumps over the lazy dog`}
+        </Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+  </Accordion>
+);
+
+export const VariantComponent = (
+  <Accordion defaultValue={'option-1'}>
+    <Accordion.Item value='option-1'>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 1</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>{`The quick fox`}</Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+    <Accordion.Item value='option-2'>
+      <Accordion.Header>
+        <Accordion.Trigger>
+          <Title>Option 2</Title>
+          <Accordion.Icon />
+        </Accordion.Trigger>
+      </Accordion.Header>
+      <Accordion.Content>
+        <Accordion.Section>{`The quick fox`}</Accordion.Section>
+      </Accordion.Content>
+    </Accordion.Item>
+  </Accordion>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Accordion
+
+{data.accordion.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/accordion)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-accordion-trigger-cursor: default;
+
+  --ex-accordion-font-size-sm: var(--text-xs);
+  --ex-accordion-font-size-md: var(--text-sm);
+  --ex-accordion-font-size-lg: var(--text-base);
+
+  --ex-accordion-radius-sm: var(--radius-sm);
+  --ex-accordion-radius-md: var(--radius-sm);
+  --ex-accordion-radius-lg: var(--radius-sm);
+
+  --ex-accordion-trigger-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-accordion-trigger-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-accordion-trigger-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-accordion-trigger-px-sm: calc(var(--spacing) * 4);
+  --ex-accordion-trigger-px-md: calc(var(--spacing) * 5);
+  --ex-accordion-trigger-px-lg: calc(var(--spacing) * 6);
+
+  --ex-accordion-trigger-py-sm: calc(var(--spacing) * 4);
+  --ex-accordion-trigger-py-md: calc(var(--spacing) * 5);
+  --ex-accordion-trigger-py-lg: calc(var(--spacing) * 6);
+
+  --ex-accordion-section-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-accordion-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-accordion-section-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-accordion-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-accordion-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-accordion-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-accordion-section-px-sm: calc(var(--spacing) * 4);
+  --ex-accordion-section-px-md: calc(var(--spacing) * 5);
+  --ex-accordion-section-px-lg: calc(var(--spacing) * 6);
+
+  --ex-accordion-section-py-sm: calc(var(--spacing) * 4);
+  --ex-accordion-section-py-md: calc(var(--spacing) * 5);
+  --ex-accordion-section-py-lg: calc(var(--spacing) * 6);
+
+  --ex-accordion-icon-font-size-sm: var(--text-lg);
+  --ex-accordion-icon-font-size-md: var(--text-xl);
+  --ex-accordion-icon-font-size-lg: var(--text-2xl);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/accordion#api-reference)
+
+### Accordion
+
+<Api config={accordionCfg} />
+
+### Accordion Header
+
+<Api config={accordionHeaderCfg} />
+
+### Accordion Trigger
+
+<Api config={accordionTriggerCfg} />
+
+### Accordion Item
+
+<Api config={accordionItemCfg} />
+
+### Accordion Content
+
+<Api config={accordionContentCfg} />
+
+### Accordion Section
+
+<Api config={accordionSectionCfg} />
+
+### Accordion Icon
+
+<Api config={accordionIconCfg} />

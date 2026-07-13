@@ -1,0 +1,99 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { A, BaseContainer, Code, CodeContainer, P } from '@/app/components';
+import { getDisplayName, unwrap } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+export const applyToChildren = ({ children, className }) => {
+  if (Array.isArray(children)) {
+    return children.map((child, i) =>
+      React.cloneElement(child, {
+        key: i,
+        className: `${child.props.className ?? ''} ${className}`.trim(),
+      })
+    );
+  }
+
+  return React.cloneElement(children, {
+    className: `${children.props.className ?? ''} ${className}`.trim(),
+  });
+};
+
+{props.config?.sizes && (
+  <>
+    {props.config.sizeClass && (
+      <P>
+        Use the{' '}
+        <code className='nextra-code'>
+          {props.config.sizeClass}-{'{'}size{'}'}
+        </code>{' '}
+        class to control the component size.
+      </P>
+    )}
+    <P className='mbs-0!'>
+      Size values can include:
+      {props.config.sizes.map((size, index) => (
+        <code key={index} className='nextra-code mx-0.5'>
+          {size}
+        </code>
+      ))}
+      .
+    </P>
+  </>
+)}
+
+{
+  !props.isText && (
+    <P>
+      For more information on all available sizing utilities, visit <A href="https://tailwindcss.com/docs/width" target="_blank">Tailwind</A>
+    </P>
+  )
+}
+
+
+
+{
+  props.isText && (
+    <P>
+      For more information on all available font size utilities, visit <A href="https://tailwindcss.com/docs/font-size" target="_blank">Tailwind</A>
+    </P>
+  )
+}
+
+
+{props.config?.sizes?.map((size, index) => {
+  const usage = props.components.usage;
+  const rendered = typeof usage === 'function' ? usage({ size }) : usage;
+  const unwrapped = unwrap(rendered);
+  const sizeClass = props.config.sizeClass ? `${props.config.sizeClass}-${size}` : null;
+
+  return (
+    <section key={`size-section-${index}`} className="my-8">
+
+      <BaseContainer>
+        <props.components.wrapper size={size}>
+          {applyToChildren({ children: unwrapped, className: sizeClass })}
+        </props.components.wrapper>
+      </BaseContainer>
+
+      <CodeContainer>
+        <Code>
+          { props.serializedCode?.({ size }) ||
+            reactElementToJSXString(
+              props.components.wrapper({
+                children: applyToChildren({ children: unwrapped, className: sizeClass }),
+              }),
+              {
+                displayName: (element) => getDisplayName(element) || props.displayName,
+              }
+            )}
+        </Code>
+      </CodeContainer>
+    </section>
+  );
+})}
+
+{/* prettier-ignore-end */}

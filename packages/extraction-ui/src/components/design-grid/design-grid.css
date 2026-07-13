@@ -1,0 +1,9 @@
+@layer components {
+  .ex-design-grid {
+    @apply pointer-events-none fixed inset-0 z-50 grid;
+  }
+
+  .ex-design-grid-cell {
+    @apply bg-rose-50/30 outline outline-rose-300;
+  }
+}

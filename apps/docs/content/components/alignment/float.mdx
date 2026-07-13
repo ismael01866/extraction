@@ -1,0 +1,37 @@
+import { DecorativeBox } from '@/app/components';
+
+import { Box, Float } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './float';
+
+export const Component = (
+  <Float>
+    <Box className='bg-primary box-sm' />
+  </Float>
+);
+
+export const Wrapper = ({ ...rest }) => <DecorativeBox {...rest} />;
+
+# Float
+
+{data.float.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+<Position
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## API
+
+<Api config={cfg} />

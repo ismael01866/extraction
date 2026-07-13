@@ -1,0 +1,204 @@
+import React from 'react';
+
+import { Button, HoverCard } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  hoverCardArrowCfg,
+  hoverCardCfg,
+  hoverCardContentCfg,
+  hoverCardDescriptionCfg,
+  hoverCardPortalCfg,
+  hoverCardSectionCfg,
+  hoverCardTitleCfg,
+  hoverCardTriggerCfg,
+} from './hover-card';
+
+export const Component = (
+  <HoverCard>
+    <HoverCard.Trigger asChild>
+      <Button>Hover me</Button>
+    </HoverCard.Trigger>
+    <HoverCard.Portal>
+      <HoverCard.Content>
+        <HoverCard.Section>
+          <HoverCard.Title>{`The quick brown fox`}</HoverCard.Title>
+          <HoverCard.Description>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </HoverCard.Description>
+        </HoverCard.Section>
+        <HoverCard.Arrow />
+      </HoverCard.Content>
+    </HoverCard.Portal>
+  </HoverCard>
+);
+
+export const SizeComponent = () => (
+  <HoverCard.Content>
+    <HoverCard.Section>
+      <HoverCard.Title>{`The quick brown fox`}</HoverCard.Title>
+      <HoverCard.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </HoverCard.Description>
+    </HoverCard.Section>
+    <HoverCard.Arrow />
+  </HoverCard.Content>
+);
+
+export const PlacementComponent = ({ placement }) => (
+  <HoverCard.Content side={placement}>
+    <HoverCard.Section>
+      <HoverCard.Title>{`The quick brown fox`}</HoverCard.Title>
+      <HoverCard.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </HoverCard.Description>
+    </HoverCard.Section>
+    <HoverCard.Arrow />
+  </HoverCard.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Hover Card
+
+{data['hover-card'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/hover-card)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Placement
+
+Use the `side` prop on the `HoverCard.Content` to set the placement of the component. Values can include `top`, `right`, `bottom`, `left`.
+
+{['top', 'right', 'bottom', 'left'].map((placement, index) => (
+
+  <div key={placement}>
+    { index > 0 ? <hr className='x:my-8 nextra-border' /> : <br /> }
+    <Usage
+      key={placement}
+      components={{
+        usage: React.cloneElement(PlacementComponent({ placement })),
+        wrapper: ({ children }) => (
+          <HoverCard>
+            <HoverCard.Trigger asChild>
+              <Button>Hover me ({placement})</Button>
+            </HoverCard.Trigger>
+            <HoverCard.Portal>{children}</HoverCard.Portal>
+          </HoverCard>
+        ),
+      }}
+    />
+  </div>
+))}
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <HoverCard>
+        <HoverCard.Trigger asChild>
+          <Button>Hover me ({size})</Button>
+        </HoverCard.Trigger>
+        <HoverCard.Portal>{children}</HoverCard.Portal>
+      </HoverCard>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-hover-card-z-index: 40;
+
+  --ex-hover-card-font-size-sm: var(--text-xs);
+  --ex-hover-card-font-size-md: var(--text-sm);
+  --ex-hover-card-font-size-lg: var(--text-base);
+
+  --ex-hover-card-max-w-sm: var(--container-3xs);
+  --ex-hover-card-max-w-md: var(--container-2xs);
+
+  --ex-hover-card-radius-sm: var(--radius-sm);
+  --ex-hover-card-radius-md: var(--radius-sm);
+
+  --ex-hover-card-shadow-sm: var(--shadow-sm);
+  --ex-hover-card-shadow-md: var(--shadow-sm);
+
+  --ex-hover-card-section-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-hover-card-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-hover-card-section-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-hover-card-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-hover-card-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-hover-card-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-hover-card-section-px-sm: calc(var(--spacing) * 4);
+  --ex-hover-card-section-px-md: calc(var(--spacing) * 5);
+
+  --ex-hover-card-section-py-sm: calc(var(--spacing) * 4);
+  --ex-hover-card-section-py-md: calc(var(--spacing) * 5);
+
+  --ex-hover-card-title-font-family: var(--font-sans);
+  --ex-hover-card-title-font-weight: var(--font-weight-semibold);
+
+  --ex-hover-card-title-font-size-sm: var(--text-sm);
+  --ex-hover-card-title-font-size-md: var(--text-base);
+
+  --ex-hover-card-description-font-family: var(--font-sans);
+  --ex-hover-card-description-font-weight: var(--font-weight-normal);
+  --ex-hover-card-description-opacity: var(--ex-options-muted-opacity);
+
+  --ex-hover-card-description-font-size-sm: var(--text-xs);
+  --ex-hover-card-description-font-size-md: var(--text-sm);
+
+  --ex-hover-card-arrow-height-sm: calc(var(--spacing) * 1.75);
+  --ex-hover-card-arrow-height-md: calc(var(--spacing) * 1.75);
+
+  --ex-hover-card-arrow-width-sm: calc(var(--spacing) * 3.5);
+  --ex-hover-card-arrow-width-md: calc(var(--spacing) * 3.5);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/hover-card#api-reference)
+
+### Hover Card
+
+<Api config={hoverCardCfg} />
+
+### Hover Card Trigger
+
+<Api config={hoverCardTriggerCfg} />
+
+### Hover Card Portal
+
+<Api config={hoverCardPortalCfg} />
+
+### Hover Card Content
+
+<Api config={hoverCardContentCfg} />
+
+### Hover Card Section
+
+<Api config={hoverCardSectionCfg} />
+
+### Hover Card Title
+
+<Api config={hoverCardTitleCfg} />
+
+### Hover Card Description
+
+<Api config={hoverCardDescriptionCfg} />
+
+### Hover Card Arrow
+
+<Api config={hoverCardArrowCfg} />

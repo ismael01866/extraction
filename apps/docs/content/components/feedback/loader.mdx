@@ -1,0 +1,51 @@
+import { Loader } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './loader';
+
+export const Component = <Loader />;
+
+export const Wrapper = ({ children }) => children;
+
+# Loader
+
+{data.loader.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-loader-duration: 500ms;
+}
+```
+
+## API
+
+<Api config={cfg} />

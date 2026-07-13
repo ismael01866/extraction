@@ -1,0 +1,5 @@
+@layer components {
+  .ex-counter {
+    @apply tabular-nums;
+  }
+}

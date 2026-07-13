@@ -1,0 +1,152 @@
+import { AppLayout } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  appLayoutAsideCfg,
+  appLayoutBodyCfg,
+  appLayoutCfg,
+  appLayoutFooterCfg,
+  appLayoutHeaderCfg,
+  appLayoutMainCfg,
+  appLayoutSectionCfg,
+  appLayoutSidenavCfg,
+} from './app-layout';
+
+export const Component = (
+  <AppLayout
+    className='min-h-80 text-sm'
+    style={{
+      '--ex-app-layout-aside-width': '10em',
+      '--ex-app-layout-sidenav-width': '10em',
+    }}
+  >
+    <AppLayout.Header>Header</AppLayout.Header>
+    <AppLayout.Body>
+      <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+      <AppLayout.Main>
+        <AppLayout.Section>Main</AppLayout.Section>
+      </AppLayout.Main>
+      <AppLayout.Aside>Aside</AppLayout.Aside>
+    </AppLayout.Body>
+    <AppLayout.Footer>Footer</AppLayout.Footer>
+  </AppLayout>
+);
+
+export const AltComponent = (
+  <AppLayout
+    className='min-h-80 text-sm'
+    style={{
+      '--ex-app-layout-aside-width': '10em',
+      '--ex-app-layout-sidenav-width': '10em',
+    }}
+  >
+    <AppLayout.Body>
+      <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+      <AppLayout.Main>
+        <AppLayout.Header>Header</AppLayout.Header>
+        <AppLayout.Section>Main</AppLayout.Section>
+        <AppLayout.Footer>Footer</AppLayout.Footer>
+      </AppLayout.Main>
+      <AppLayout.Aside>Aside</AppLayout.Aside>
+    </AppLayout.Body>
+  </AppLayout>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# App Layout
+
+{data['app-layout'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`
+  <AppLayout>
+    <AppLayout.Header>Header</AppLayout.Header>
+    <AppLayout.Body>
+      <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+      <AppLayout.Main>
+        <AppLayout.Section>Main</AppLayout.Section>
+      </AppLayout.Main>
+      <AppLayout.Aside>Aside</AppLayout.Aside>
+    </AppLayout.Body>
+    <AppLayout.Footer>Footer</AppLayout.Footer>
+  </AppLayout>`}
+  containerClasses={'p-0!'}
+/>
+
+## Alternate Layout
+
+<Usage
+  components={{
+    usage: AltComponent,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`
+  <AppLayout>
+    <AppLayout.Body>
+      <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+      <AppLayout.Main>
+        <AppLayout.Header>Header</AppLayout.Header>
+        <AppLayout.Section>Main</AppLayout.Section>
+        <AppLayout.Footer>Footer</AppLayout.Footer>
+      </AppLayout.Main>
+      <AppLayout.Aside>Aside</AppLayout.Aside>
+    </AppLayout.Body>
+  </AppLayout>`}
+  containerClasses={'p-0!'}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-app-layout-px: calc(var(--spacing) * 5);
+  --ex-app-layout-py: calc(var(--spacing) * 5);
+
+  --ex-app-layout-header-min-height: calc(var(--spacing) * 16);
+  --ex-app-layout-footer-min-height: calc(var(--spacing) * 16);
+
+  --ex-app-layout-aside-width: calc(var(--spacing) * 64);
+
+  --ex-app-layout-sidenav-gap-y: calc(var(--spacing) * 4);
+  --ex-app-layout-sidenav-width: calc(var(--spacing) * 64);
+}
+```
+
+## API
+
+### App Layout
+
+<Api config={appLayoutCfg} />
+
+### App Layout Header
+
+<Api config={appLayoutHeaderCfg} />
+
+### App Layout Body
+
+<Api config={appLayoutBodyCfg} />
+
+### App Layout Sidenav
+
+<Api config={appLayoutSidenavCfg} />
+
+### App Layout Main
+
+<Api config={appLayoutMainCfg} />
+
+### App Layout Aside
+
+<Api config={appLayoutAsideCfg} />
+
+### App Layout Footer
+
+<Api config={appLayoutFooterCfg} />
+
+### App Layout Section
+
+<Api config={appLayoutSectionCfg} />

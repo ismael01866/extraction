@@ -1,0 +1,45 @@
+import { BaseContainer } from '@/app/components';
+
+import { HStack, Stack } from 'extraction-ui';
+
+# Line Height
+
+Line height tokens control the vertical spacing between lines of text.
+For more information on the default available line-height utilities, visit [Tailwind](https://tailwindcss.com/docs/line-height)
+
+```css
+@theme {
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='gap-6 text-sm'>
+      <HStack>
+        <span className='w-12 text-center'>**Name**</span>
+        <span className='w-24 text-center'>**Value**</span>
+      </HStack>
+      {[
+        { name: 'tight', value: 1.25 },
+        { name: 'snug', value: 1.375 },
+        { name: 'normal', value: 1.5 },
+        { name: 'relaxed', value: 1.625 },
+        { name: 'loose', value: 2 },
+      ].map(({ name, value }) => (
+        <HStack key={name} className='items-baseline text-xs'>
+          <span className='w-12 shrink-0 text-center'>{name}</span>
+          <span className='w-24 shrink-0 text-center'>{value}</span>
+          <p style={{ lineHeight: value }} className='text-sm'>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do. Once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it.`}
+          </p>
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

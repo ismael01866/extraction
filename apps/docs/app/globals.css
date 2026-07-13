@@ -1,0 +1,411 @@
+@import 'tailwindcss';
+
+@import 'extraction-ui/styles';
+@import 'extraction-ui/inline';
+
+@import 'nextra-theme-docs/style.css';
+
+@import './pages.css';
+@import './samples.css';
+
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root[data-theme='amber'] {
+  --color-primary: oklch(0.5 0.22 85);
+  --color-accent: oklch(0.5 0.22 65);
+  --color-neutral: oklch(0.55 0.02 85);
+}
+
+:root[data-theme='aqua'] {
+  --color-primary: oklch(0.5 0.22 185);
+  --color-accent: oklch(0.5 0.22 155);
+  --color-neutral: oklch(0.55 0.02 185);
+}
+
+:root[data-theme='coral'] {
+  --color-primary: oklch(0.5 0.22 35);
+  --color-accent: oklch(0.5 0.22 5);
+  --color-neutral: oklch(0.55 0.02 35);
+}
+
+:root[data-theme='forest'] {
+  --color-primary: oklch(0.5 0.22 150);
+  --color-accent: oklch(0.5 0.22 110);
+  --color-neutral: oklch(0.55 0.02 150);
+}
+
+:root[data-theme='lavender'] {
+  --color-primary: oklch(0.5 0.22 300);
+  --color-accent: oklch(0.5 0.22 267);
+  --color-neutral: oklch(0.55 0.02 300);
+}
+
+:root[data-theme='lime'] {
+  --color-primary: oklch(0.5 0.22 120);
+  --color-accent: oklch(0.5 0.22 85);
+  --color-neutral: oklch(0.55 0.02 120);
+}
+
+:root[data-theme='midnight'] {
+  --color-primary: oklch(0.5 0.22 250);
+  --color-accent: oklch(0.5 0.22 215);
+  --color-neutral: oklch(0.55 0.02 250);
+}
+
+:root[data-theme='ocean'] {
+  --color-primary: oklch(0.5 0.22 225);
+  --color-accent: oklch(0.5 0.22 190);
+  --color-neutral: oklch(0.55 0.02 225);
+}
+
+:root[data-theme='rose'] {
+  --color-primary: oklch(0.5 0.22 370);
+  --color-accent: oklch(0.5 0.22 355);
+  --color-neutral: oklch(0.55 0.02 370);
+}
+
+/** Sidenav   */
+/** ──────────────────────────── */
+
+.nextra-scrollbar.nextra-mask {
+  @apply pb-12;
+}
+
+/**  Footer   */
+/** ──────────────────────────── */
+
+.x\:bg-gray-100.x\:pb-\[env\(safe-area-inset-bottom\)\] {
+  @apply bg-neutral-50 dark:bg-neutral-950;
+
+  footer {
+    @apply text-neutral-900 dark:text-neutral-100;
+
+    a {
+      &:hover {
+        @apply opacity-subtle underline;
+      }
+    }
+  }
+}
+
+/**  Nextra Variable Overrides   */
+/** ──────────────────────────── */
+
+html:root {
+  --font-sans: var(--font-geist-sans);
+  --x-default-font-family: var(--font-geist-sans);
+
+  --x-color-gray-50: var(--color-neutral-50);
+  --x-color-gray-100: var(--color-neutral-100);
+  --x-color-gray-200: var(--color-neutral-200);
+  --x-color-gray-300: var(--color-neutral-300);
+  --x-color-gray-400: var(--color-neutral-400);
+  --x-color-gray-500: var(--color-neutral-500);
+  --x-color-gray-600: var(--color-neutral-600);
+  --x-color-gray-700: var(--color-neutral-700);
+  --x-color-gray-800: var(--color-neutral-800);
+  --x-color-gray-900: var(--color-neutral-900);
+  --x-color-gray-950: var(--color-neutral-950);
+
+  --x-color-slate-50: var(--color-neutral-50);
+  --x-color-slate-100: var(--color-neutral-100);
+  --x-color-slate-200: var(--color-neutral-200);
+  --x-color-slate-300: var(--color-neutral-300);
+  --x-color-slate-400: var(--color-neutral-400);
+  --x-color-slate-500: var(--color-neutral-500);
+  --x-color-slate-600: var(--color-neutral-600);
+  --x-color-slate-700: var(--color-neutral-700);
+  --x-color-slate-800: var(--color-neutral-800);
+  --x-color-slate-900: var(--color-neutral-900);
+  --x-color-slate-950: var(--color-neutral-950);
+
+  --x-color-neutral-50: var(--color-neutral-50);
+  --x-color-neutral-100: var(--color-neutral-100);
+  --x-color-neutral-200: var(--color-neutral-200);
+  --x-color-neutral-300: var(--color-neutral-300);
+  --x-color-neutral-400: var(--color-neutral-400);
+  --x-color-neutral-500: var(--color-neutral-500);
+  --x-color-neutral-600: var(--color-neutral-600);
+  --x-color-neutral-700: var(--color-neutral-700);
+  --x-color-neutral-800: var(--color-neutral-800);
+  --x-color-neutral-900: var(--color-neutral-900);
+  --x-color-neutral-950: var(--color-neutral-950);
+
+  --x-color-primary-50: var(--color-primary-50);
+  --x-color-primary-100: var(--color-primary-100);
+  --x-color-primary-200: var(--color-primary-200);
+  --x-color-primary-300: var(--color-primary-300);
+  --x-color-primary-400: var(--color-primary-400);
+  --x-color-primary-500: var(--color-primary-500);
+  --x-color-primary-600: var(--color-primary-600);
+  --x-color-primary-700: var(--color-primary-700);
+  --x-color-primary-800: var(--color-primary-800);
+  --x-color-primary-900: var(--color-primary-900);
+  --x-color-primary-950: var(--color-primary-950);
+}
+
+/**  Typography                  */
+/** ──────────────────────────── */
+
+h2[class*='x:'] {
+  @apply text-lg!;
+}
+
+h3[class*='x:'] {
+  @apply text-base!;
+}
+
+h1 ~ p:not([class*='ex-']),
+h2 ~ p:not([class*='ex-']),
+h3 ~ p:not([class*='ex-']),
+h4 ~ p:not([class*='ex-']),
+h5 ~ p:not([class*='ex-']) {
+  @apply text-sm!;
+}
+
+.nextra-callout {
+  @apply text-sm!;
+}
+
+.x\:list-disc li,
+.x\:list-decimal li {
+  @apply text-sm!;
+}
+
+table:not([class*='ex-']) {
+  thead th,
+  tbody td {
+    @apply text-sm!;
+  }
+}
+
+.nextra-breadcrumb {
+  @apply text-xs!;
+}
+
+a.x\:text-primary-600 {
+  @apply text-primary-600 dark:text-primary-400;
+}
+
+/**  Borders                     */
+/** ──────────────────────────── */
+
+h2.nextra-border {
+  @apply border-0;
+}
+
+div.nextra-code {
+  .x\:flex.x\:items-center.x\:border {
+    @apply palette-neutral variant-outline border-b-0;
+  }
+}
+
+div.nextra-code pre {
+  @apply palette-neutral variant-outline bg-white ring-0 dark:bg-black;
+}
+
+/**  Tables                      */
+/** ──────────────────────────── */
+
+table:not([class*='ex-']) {
+  @apply mbs-6;
+
+  thead th,
+  tbody td {
+    @apply text-left;
+  }
+
+  .x\:border-gray-300 {
+    @apply border-neutral-200 dark:border-neutral-800;
+  }
+
+  .x\:even\:bg-gray-100:nth-child(2n) {
+    @apply bg-neutral-50 dark:bg-neutral-950;
+  }
+}
+
+/**  Section spacing             */
+/** ──────────────────────────── */
+
+h2 + .x-container,
+h3 + .x-container,
+h4 + .x-container,
+h5 + .x-container,
+p + .x-container {
+  @apply mbs-6;
+}
+
+/**  Breadcrumbs                 */
+/** ──────────────────────────── */
+
+.nextra-breadcrumb {
+  @apply mbe-8!;
+}
+
+/**  Sidebar                     */
+/** ──────────────────────────── */
+
+.nextra-sidebar {
+  @apply w-48;
+
+  ul:first-of-type > li {
+    @apply mbs-4;
+
+    ul li {
+      @apply mbs-0;
+    }
+  }
+
+  ul li {
+    &.active {
+      a,
+      button {
+        @apply text-primary-600 dark:text-primary-400 bg-transparent font-normal;
+      }
+    }
+
+    button {
+      @apply pointer-events-none [font-family:var(--font-geist-mono)] text-xs font-semibold text-(--color-theme-foreground);
+    }
+  }
+
+  ul li ul {
+    @apply pl-0;
+
+    li {
+      @apply relative;
+
+      a {
+        @apply pl-4;
+      }
+    }
+
+    li.active::before {
+      content: var(--tw-content);
+      @apply bg-primary absolute top-1/2 inline-block h-[50%] w-px -translate-y-1/2;
+    }
+  }
+
+  ul li button > svg {
+    @apply hidden;
+  }
+}
+
+/**  Steps                  */
+/** ──────────────────────────── */
+
+.nextra-steps {
+  & h2,
+  & h3:not([style^='visibility:']),
+  & h4,
+  & h5,
+  & h6 {
+    &::before {
+      @apply -mbs-1.5 flex items-center justify-center rounded-sm border-0;
+    }
+  }
+}
+
+/**  TOC                         */
+/** ──────────────────────────── */
+
+.nextra-toc .x\:text-sm {
+  @apply [font-family:var(--font-geist-mono)] text-xs;
+}
+
+.nextra-toc ul li {
+  @apply py-0.5 [font-family:var(--font-geist-sans)] text-xs font-normal;
+}
+
+/**  Shiki Syntax Highlighting   */
+/** ──────────────────────────── */
+
+.shiki {
+  --shiki-dark-bg: #000 !important;
+
+  @apply overflow-x-auto py-4 text-sm leading-5;
+
+  &:not(:first-of-type) {
+    @apply border border-neutral-200;
+  }
+
+  .line {
+    @apply flex min-h-5 w-fit px-0 py-0.5;
+
+    .shiki-highlight {
+      @apply rounded-sm bg-[rgba(255,250,0,0.9)] px-[0.15rem] dark:bg-[rgba(255,250,0,0.3)]!;
+    }
+  }
+
+  code {
+    @apply flex flex-col;
+
+    &:hover .rehype-pretty-copy {
+      opacity: 1;
+    }
+
+    .rehype-pretty-copy {
+      @apply size-7 border border-neutral-200 bg-white;
+
+      &:hover {
+        @apply cursor-pointer;
+      }
+
+      span {
+        @apply bg-size-[16px] bg-center bg-no-repeat brightness-50 filter;
+      }
+    }
+  }
+}
+
+html.dark .shiki,
+html.dark .shiki code span {
+  @apply bg-(--shiki-dark-bg)! font-(--shiki-dark-font-weight)! text-(--shiki-dark)! [font-style:var(--shiki-dark-font-style)]! [text-decoration:var(--shiki-dark-text-decoration)]!;
+}
+
+html.dark .shiki code .rehype-pretty-copy {
+  @apply border border-neutral-800 bg-transparent!;
+}
+
+/**  Custom   */
+/** ──────────────────────────── */
+
+.base-container {
+  @apply mx-auto flex w-full flex-wrap gap-3 rounded-md p-8;
+
+  &.base-container-block {
+    @apply p-0;
+  }
+
+  .ex-app-layout {
+    @apply min-h-80;
+  }
+}
+
+.theme-container {
+  @apply ms-auto flex h-auto w-fit flex-col flex-wrap items-stretch gap-3 border-0 border-l p-5;
+}
+
+.code-container {
+  @apply mx-auto flex w-full flex-col items-stretch gap-3 border-t-0;
+}
+
+main:has(.base-container .theme-container) {
+  .base-container {
+    @apply gap-0;
+  }
+}
+
+main:has(.base-container ~ .ex-collapsible) {
+  .base-container {
+    @apply rounded-b-none;
+  }
+}

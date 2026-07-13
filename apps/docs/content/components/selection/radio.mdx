@@ -1,0 +1,171 @@
+import { Radio, RadioGroup } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  radioCfg,
+  radioControlCfg,
+  radioGroupCfg,
+  radioIndicatorCfg,
+  radioLabelCfg,
+} from './radio';
+
+export const Component = (
+  <RadioGroup defaultValue='option-1'>
+    <Radio>
+      <Radio.Control value='option-1' id='r1'>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor='r1'>Option 1</Radio.Label>
+    </Radio>
+    <Radio>
+      <Radio.Control value='option-2' id='r2'>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor='r2'>Option 2</Radio.Label>
+    </Radio>
+  </RadioGroup>
+);
+
+export const ComponentDisabled = (
+  <RadioGroup className='disabled' defaultValue='option-1'>
+    <Radio>
+      <Radio.Control value='option-1' id='r1-d'>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor='r1-d'>Option 1</Radio.Label>
+    </Radio>
+  </RadioGroup>
+);
+
+export const SizeComponent = ({ size }) => (
+  <RadioGroup defaultValue='option-1'>
+    <Radio>
+      <Radio.Control value='option-1' id={`r1-${size}`}>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor={`r1-${size}`}>Option 1</Radio.Label>
+    </Radio>
+    <Radio>
+      <Radio.Control value='option-2' id={`r2-${size}`}>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor={`r2-${size}`}>Option 2</Radio.Label>
+    </Radio>
+  </RadioGroup>
+);
+
+export const VariantComponent = ({ color, variant }) => (
+  <RadioGroup defaultValue='option-1'>
+    <Radio>
+      <Radio.Control value='option-1' id={`r1-${color}-${variant}`}>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor={`r1-${color}-${variant}`}>Option 1</Radio.Label>
+    </Radio>
+    <Radio>
+      <Radio.Control value='option-2' id={`r2-${color}-${variant}`}>
+        <Radio.Indicator />
+      </Radio.Control>
+      <Radio.Label htmlFor={`r2-${color}-${variant}`}>Option 2</Radio.Label>
+    </Radio>
+  </RadioGroup>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Radio
+
+{data.radio.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/radio-group)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-radio-cursor: default;
+
+  --ex-radio-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-radio-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-radio-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-radio-radius-sm: 9999px;
+  --ex-radio-radius-md: 9999px;
+  --ex-radio-radius-lg: 9999px;
+
+  --ex-radio-size-sm: calc(var(--spacing) * 4);
+  --ex-radio-size-md: calc(var(--spacing) * 5);
+  --ex-radio-size-lg: calc(var(--spacing) * 6);
+
+  --ex-radio-indicator-font-size-sm: var(--text-lg);
+  --ex-radio-indicator-font-size-md: var(--text-xl);
+  --ex-radio-indicator-font-size-lg: var(--text-2xl);
+
+  --ex-radio-label-font-family: var(--font-sans);
+  --ex-radio-label-font-weight: var(--font-weight-semibold);
+
+  --ex-radio-label-font-size-sm: var(--text-xs);
+  --ex-radio-label-font-size-md: var(--text-sm);
+  --ex-radio-label-font-size-lg: var(--text-base);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference)
+
+### Radio Group
+
+<Api config={radioGroupCfg} />
+
+### Radio
+
+<Api config={radioCfg} />
+
+### Radio Control
+
+<Api config={radioControlCfg} />
+
+### Radio Indicator
+
+<Api config={radioIndicatorCfg} />
+
+### Radio Label
+
+<Api config={radioLabelCfg} />

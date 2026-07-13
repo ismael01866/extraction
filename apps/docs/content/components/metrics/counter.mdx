@@ -1,0 +1,53 @@
+import { Counter } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './counter';
+import { CounterFormatterExample } from './counter-example';
+
+export const Component = <Counter value={1500} />;
+export const ComponentDecimals = <Counter value={99.9} decimals={1} />;
+
+export const Wrapper = ({ children }) => children;
+
+# Counter
+
+{data.counter.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Decimals
+
+Use the `decimals` prop to set a specified number of decimal places.
+
+<Usage
+  components={{
+    usage: ComponentDecimals,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Custom formatter
+
+Use the `formatter` prop to set a function to format the counter value in a custom way.
+
+<Usage
+  components={{
+    usage: <CounterFormatterExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<Counter
+    value={125000}
+    formatter={(value) => Math.round(value).toLocaleString()}
+  />`}
+/>
+
+## API
+
+### Counter
+
+<Api config={cfg} />

@@ -1,0 +1,82 @@
+# Customize
+
+Every component in Extraction UI is designed to be easily customizable. You can override styles, create variants, and even extend components to fit your specific needs.
+
+## CSS Variables
+
+In every component page, you'll find a `Customizing` section that provides a reference for all the CSS variables and it's default values you can use to customize the component's appearance. For example, the Box component has the following CSS variables:
+
+```css
+:root {
+  --ex-box-px-sm: calc(var(--spacing) * 3);
+  --ex-box-px-md: calc(var(--spacing) * 4);
+  --ex-box-px-lg: calc(var(--spacing) * 5);
+  --ex-box-px-xl: calc(var(--spacing) * 6);
+
+  --ex-box-py-sm: calc(var(--spacing) * 3);
+  --ex-box-py-md: calc(var(--spacing) * 4);
+  --ex-box-py-lg: calc(var(--spacing) * 5);
+  --ex-box-py-xl: calc(var(--spacing) * 6);
+
+  --ex-box-radius-sm: var(--radius-sm);
+  --ex-box-radius-md: var(--radius-sm);
+  --ex-box-radius-lg: var(--radius-sm);
+  --ex-box-radius-xl: var(--radius-sm);
+}
+```
+
+You can override these variables in your global stylesheet:
+
+```css
+/** src/styles/globals.css */
+:root {
+  --ex-box-px-sm: calc(var(--spacing) * 2);
+  --ex-box-py-sm: calc(var(--spacing) * 2);
+  --ex-box-radius-sm: var(--radius-xs);
+}
+```
+
+## Stylesheet Override
+
+If the CSS variables don't provide enough flexibility, you can also customize the component's classes. You can find each component class names under the `API` section in each component page. For example, the Box component has the class name of `.ex-box`. To customize the styles, you can target the class in your global stylesheet:
+
+```css
+.ex-box {
+  @apply border-4;
+}
+```
+
+Please note that customizing styles overriding the global CSS classes is not recommended as it can lead to conflicts and maintenance issues. It's best to use CSS variables or Composition whenever possible for a more scalable and maintainable approach.
+
+## Inline CSS
+
+You can also use inline Tailwind CSS. This is useful when you want to apply specific styles to a single instance of a component without affecting the global styles. For example:
+
+```tsx
+<Box className='h-10 px-8' />
+```
+
+## Using Composition
+
+If you need to create a specific style for a particular use case, it's recommended to create a new component by composing existing components together. This way you can create reusable components that fits your specific needs without affecting the global styles. For example, you can create a `Discount Box` component by composing the `Box` component:
+
+```tsx
+import { ElementType } from 'react';
+
+import { Box, BoxProps } from 'extraction-ui';
+
+export function DiscountBox<T extends ElementType = 'div'>(props: BoxProps<T>) {
+  const { children, className, ...rest } = props;
+
+  return (
+    <Box
+      className={`palette-accent variant-surface ${className ?? ''}`}
+      {...rest}
+    >
+      {children}
+    </Box>
+  );
+}
+```
+
+Refer to the [Composition](/components/overview/composition) page for more details on how to compose components together.

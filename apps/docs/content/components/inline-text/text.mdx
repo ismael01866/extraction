@@ -1,0 +1,44 @@
+import { Text } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './text';
+
+export const Component = (
+  <Text>{`The quick brown fox jumps over the lazy dog`}</Text>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Text
+
+{data.text.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-text-font-family: var(--font-sans);
+  --ex-text-font-weight: var(--font-weight-normal)
+}
+```
+
+## API
+
+<Api config={cfg} />

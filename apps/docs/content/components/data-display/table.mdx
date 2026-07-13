@@ -1,0 +1,419 @@
+import { Table } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  tableBodyCfg,
+  tableCaptionCfg,
+  tableCellCfg,
+  tableCfg,
+  tableFootCfg,
+  tableHeadCfg,
+  tableHeaderCfg,
+  tableRowCfg,
+} from './table';
+
+export const Component = (
+  <Table>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const StripedRowsComponent = (
+  <Table className='table-striped'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>3</Table.Header>
+        <Table.Cell>Cell 7</Table.Cell>
+        <Table.Cell>Cell 8</Table.Cell>
+        <Table.Cell>Cell 9</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const StripedColsComponent = (
+  <Table className='table-striped-columns'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>3</Table.Header>
+        <Table.Cell>Cell 7</Table.Cell>
+        <Table.Cell>Cell 8</Table.Cell>
+        <Table.Cell>Cell 9</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const InteractiveRowsComponent = (
+  <Table>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row className='interactive'>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row className='interactive'>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const ColumnBorderedComponent = (
+  <Table className='table-column-bordered'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const BorderedComponent = (
+  <Table className='table-bordered'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const FullBorderedComponent = (
+  <Table className='table-bordered table-column-bordered'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const BorderlessComponent = (
+  <Table className='table-borderless'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>#</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Header>1</Table.Header>
+        <Table.Cell>Cell 1</Table.Cell>
+        <Table.Cell>Cell 2</Table.Cell>
+        <Table.Cell>Cell 3</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Header>2</Table.Header>
+        <Table.Cell>Cell 4</Table.Cell>
+        <Table.Cell>Cell 5</Table.Cell>
+        <Table.Cell>Cell 6</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const VariantComponent = (
+  <Table className='w-40 table-fixed'>
+    <Table.Head>
+      <Table.Row>
+        <Table.Header>Header</Table.Header>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
+      <Table.Row>
+        <Table.Cell>Cell</Table.Cell>
+      </Table.Row>
+    </Table.Body>
+  </Table>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Table
+
+{data.table.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Striped Rows
+
+Use the <code className='nextra-code'>table-striped</code> or <code className='nextra-code'>table-striped-even</code> class to enable striped rows.
+
+<Usage
+  components={{
+    usage: StripedRowsComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Striped Columns
+
+Use the <code className='nextra-code'>table-striped-columns</code> or <code className='nextra-code'>table-striped-columns-odd</code> class to enable striped columns.
+
+<Usage
+  components={{
+    usage: StripedColsComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Bordered Table
+
+<Usage
+  components={{
+    usage: BorderedComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Column Bordered Table
+
+<Usage
+  components={{
+    usage: ColumnBorderedComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Full Bordered Table
+
+<Usage
+  components={{
+    usage: FullBorderedComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Borderless Table
+
+<Usage
+  components={{
+    usage: BorderlessComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Interactive Table
+
+Use the <code className='nextra-code'>interactive</code> class to enable interaction with the table. Refer to the [Interaction](/components/interaction/interactive) section for more information on interactive variants.
+
+<Usage
+  components={{
+    usage: InteractiveRowsComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-table-font-size-sm: var(--text-xs);
+  --ex-table-font-size-md: var(--text-sm);
+
+  --ex-table-striped-order: odd;
+  --ex-table-striped-columns-order: even;
+
+  --ex-table-cell-px-sm: calc(var(--spacing) * 3);
+  --ex-table-cell-px-md: calc(var(--spacing) * 4);
+
+  --ex-table-cell-py-sm: calc(var(--spacing) * 3);
+  --ex-table-cell-py-md: calc(var(--spacing) * 4);
+
+  --ex-table-caption-font-size-sm: var(--text-2xs);
+  --ex-table-caption-font-size-md: var(--text-xs);
+
+  --ex-table-caption-font-weight: var(--font-weight-normal);
+  --ex-table-caption-opacity: var(--ex-options-muted-opacity);
+
+  --ex-table-header-font-weight: var(--font-weight-normal);
+}
+```
+
+## API
+
+### Table
+
+<Api config={tableCfg} />
+
+### Table Caption
+
+<Api config={tableCaptionCfg} />
+
+### Table Head
+
+<Api config={tableHeadCfg} />
+
+### Table Body
+
+<Api config={tableBodyCfg} />
+
+### Table Foot
+
+<Api config={tableFootCfg} />
+
+### Table Header
+
+<Api config={tableHeaderCfg} />
+
+### Table Row
+
+<Api config={tableRowCfg} />
+
+### Table Cell
+
+<Api config={tableCellCfg} />

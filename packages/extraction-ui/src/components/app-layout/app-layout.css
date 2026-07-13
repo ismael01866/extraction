@@ -1,0 +1,70 @@
+@layer components {
+  .ex-app-layout {
+    --ex-px: var(--ex-app-layout-px, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-app-layout-py, calc(var(--spacing) * 5));
+
+    @apply palette-neutral variant-outline border-0 outline-0;
+    @apply text-current;
+  }
+
+  .ex-app-layout {
+    @apply flex min-h-dvh min-w-full flex-col;
+  }
+
+  .ex-app-layout-header {
+    --ex-min-height: var(--ex-app-layout-header-height, calc(var(--spacing) * 16));
+
+    @apply variant;
+  }
+
+  .ex-app-layout-header {
+    @apply flex items-center border-0 border-b;
+    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+  }
+
+  .ex-app-layout-body {
+    @apply flex flex-1;
+  }
+
+  .ex-app-layout-sidenav {
+    --ex-gap-y: var(--ex-app-layout-sidenav-gap-y, calc(var(--spacing) * 4));
+    --ex-width: var(--ex-app-layout-sidenav-width, calc(var(--spacing) * 64));
+
+    @apply variant;
+  }
+
+  .ex-app-layout-sidenav {
+    @apply flex flex-col border-0 border-e;
+    @apply w-[var(--ex-width)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-app-layout-main {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-app-layout-section {
+    @apply flex flex-1 flex-col px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-app-layout-aside {
+    --ex-width: var(--ex-app-layout-aside-width, calc(var(--spacing) * 64));
+
+    @apply variant;
+  }
+
+  .ex-app-layout-aside {
+    @apply flex flex-col border-0 border-s;
+    @apply w-[var(--ex-width)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-app-layout-footer {
+    --ex-min-height: var(--ex-app-layout-footer-height, calc(var(--spacing) * 16));
+
+    @apply variant;
+  }
+
+  .ex-app-layout-footer {
+    @apply flex items-center border-0 border-t;
+    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+  }
+}

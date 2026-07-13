@@ -1,0 +1,47 @@
+import { Button, Group } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './group';
+
+export const Component = (
+  <Group>
+    <Button className='palette-neutral variant-outline'>Item 1</Button>
+    <Button className='palette-neutral variant-outline'>Item 2</Button>
+    <Button className='palette-neutral variant-outline'>Item 3</Button>
+  </Group>
+);
+
+export const ComponentVertical = (
+  <Group orientation='vertical'>
+    <Button className='palette-neutral variant-outline'>Item 1</Button>
+    <Button className='palette-neutral variant-outline'>Item 2</Button>
+    <Button className='palette-neutral variant-outline'>Item 3</Button>
+  </Group>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Group
+
+{data.group.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## API
+
+<Api config={cfg} />

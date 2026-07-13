@@ -1,0 +1,91 @@
+import { Badge } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import { cfg } from './badge';
+
+export const Component = <Badge>{`Badge`}</Badge>;
+
+export const ComponentWithIcon = (
+  <Badge>
+    <LuMail />
+    {`Badge`}
+  </Badge>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Badge
+
+{data.badge.description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Icon
+
+<Usage
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-badge-font-family: var(--font-sans);
+  --ex-badge-font-weight: var(--font-weight-normal);
+
+  --ex-badge-font-size-sm: var(--text-2xs);
+  --ex-badge-font-size-md: var(--text-xs);
+  --ex-badge-font-size-lg: var(--text-sm);
+
+  --ex-badge-height-sm: calc(var(--spacing) * 4);
+  --ex-badge-height-md: calc(var(--spacing) * 5);
+  --ex-badge-height-lg: calc(var(--spacing) * 6);
+
+  --ex-badge-gap-x-sm: calc(var(--spacing) * 0.75);
+  --ex-badge-gap-x-md: calc(var(--spacing) * 1);
+  --ex-badge-gap-x-lg: calc(var(--spacing) * 1.25);
+
+  --ex-badge-px-sm: calc(var(--spacing) * 1);
+  --ex-badge-px-md: calc(var(--spacing) * 1.5);
+  --ex-badge-px-lg: calc(var(--spacing) * 2);
+
+  --ex-badge-radius-sm: var(--radius-sm);
+  --ex-badge-radius-md: var(--radius-sm);
+  --ex-badge-radius-lg: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

@@ -1,0 +1,103 @@
+@utility checkbox-sm {
+  --ex-gap-x: var(--ex-checkbox-gap-x-sm, calc(var(--spacing) * 2));
+
+  .ex-checkbox-control {
+    --ex-size: var(--ex-checkbox-size-sm, var(--ex-size-2xs));
+    --ex-radius: var(--ex-checkbox-radius-sm, var(--radius-sm));
+  }
+
+  .ex-checkbox-indicator {
+    --ex-font-size: var(--ex-checkbox-indicator-font-size-sm, var(--text-lg));
+  }
+
+  .ex-checkbox-label {
+    --ex-font-size: var(--ex-checkbox-label-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility checkbox-md {
+  --ex-gap-x: var(--ex-checkbox-gap-x-md, calc(var(--spacing) * 2.5));
+
+  .ex-checkbox-control {
+    --ex-size: var(--ex-checkbox-size-md, var(--ex-size-xs));
+    --ex-radius: var(--ex-checkbox-radius-md, var(--radius-sm));
+  }
+
+  .ex-checkbox-indicator {
+    --ex-font-size: var(--ex-checkbox-indicator-font-size-md, var(--text-xl));
+  }
+
+  .ex-checkbox-label {
+    --ex-font-size: var(--ex-checkbox-label-font-size-md, var(--text-sm));
+  }
+}
+
+@utility checkbox-lg {
+  --ex-gap-x: var(--ex-checkbox-gap-x-lg, calc(var(--spacing) * 3));
+
+  .ex-checkbox-control {
+    --ex-size: var(--ex-checkbox-size-lg, var(--ex-size-sm));
+    --ex-radius: var(--ex-checkbox-radius-lg, var(--radius-sm));
+  }
+
+  .ex-checkbox-indicator {
+    --ex-font-size: var(--ex-checkbox-indicator-font-size-lg, var(--text-2xl));
+  }
+
+  .ex-checkbox-label {
+    --ex-font-size: var(--ex-checkbox-label-font-size-lg, var(--text-base));
+  }
+}
+
+@layer components {
+  .ex-checkbox {
+    @apply checkbox-md;
+  }
+
+  .ex-checkbox {
+    @apply variant-outline palette-neutral;
+    @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+  }
+
+  .ex-checkbox {
+    @apply flex items-center justify-center;
+    @apply gap-x-[var(--ex-gap-x)] [font-size:var(--ex-font-size)];
+  }
+
+  .ex-checkbox-control {
+    @apply variant;
+  }
+
+  .ex-checkbox-control {
+    --ex-cursor: var(--ex-checkbox-cursor, default);
+
+    @apply flex [transform:translateZ(0)] items-center justify-center select-none;
+    @apply size-[var(--ex-size)] cursor-[var(--ex-cursor)] rounded-[var(--ex-radius)];
+  }
+
+  .ex-checkbox-indicator {
+    @apply inline-flex items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+
+    &:where([data-state='unchecked']) > * {
+      @apply invisible;
+    }
+  }
+
+  .ex-checkbox-check {
+    @apply size-[0.875em] fill-none stroke-current stroke-2;
+  }
+
+  .ex-checkbox-label {
+    --ex-font-family: var(--ex-checkbox-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-checkbox-label-font-weight, var(--font-weight-semibold));
+
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+}
+
+@layer utilities {
+  .ex-checkbox-control {
+    @apply valid invalid interactive-form-control;
+  }
+}

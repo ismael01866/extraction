@@ -1,0 +1,81 @@
+@utility breadcrumbs-sm {
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 0.25));
+  --ex-font-size: var(--ex-breadcrumbs-font-size-sm, var(--text-xs));
+
+  .ex-breadcrumbs-link {
+    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-sm, calc(var(--spacing) * 1.5));
+  }
+}
+
+@utility breadcrumbs-md {
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 0.5));
+  --ex-font-size: var(--ex-breadcrumbs-font-size-md, var(--text-sm));
+
+  .ex-breadcrumbs-link {
+    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-md, calc(var(--spacing) * 2));
+  }
+}
+
+@layer components {
+  .ex-breadcrumbs {
+    @apply breadcrumbs-md;
+  }
+
+  .ex-breadcrumbs {
+    --ex-font-family: var(--ex-breadcrumbs-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-breadcrumbs-font-weight, var(--font-weight-regular));
+
+    @apply flex;
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-breadcrumbs-list {
+    @apply flex list-none items-center justify-center gap-x-[var(--ex-gap-x)] break-all;
+  }
+
+  .ex-breadcrumbs-item {
+    @apply inline-flex items-center justify-center;
+  }
+
+  .ex-breadcrumbs-link,
+  .ex-breadcrumbs-current-link {
+    @apply inline-flex items-center justify-center;
+    @apply gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
+
+    > svg {
+      @apply h-[1em] w-[1em];
+    }
+  }
+
+  .ex-breadcrumbs-current-link {
+    --ex-font-weight: var(--ex-breadcrumbs-current-link-font-weight, var(--font-weight-medium));
+
+    @apply [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-breadcrumbs-separator {
+    --ex-opacity: var(--ex-breadcrumbs-separator-opacity, var(--ex-options-subtle-opacity));
+
+    @apply inline-flex size-[1.5em] items-center justify-center opacity-[var(--ex-opacity)];
+
+    > svg {
+      @apply relative h-[1em] w-[1em];
+    }
+  }
+
+  .ex-breadcrumbs-caret {
+    @apply fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round];
+  }
+}
+
+@layer utilities {
+  .ex-breadcrumbs-link {
+    &:where(:hover) {
+      @apply underline;
+    }
+
+    &:where(:focus-visible) {
+      @apply interactive-focus;
+    }
+  }
+}

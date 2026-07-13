@@ -1,0 +1,63 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { BaseContainer, Code, CodeContainer, P } from '@/app/components';
+import { cloneWithClass, getDisplayName } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+{props.config?.sizes && (
+
+<>
+  <P>
+    Use the{' '}
+    <code className='nextra-code'>
+      {props.config.sizeClass}-{'{'}size{'}'}
+    </code>{' '}
+    class to control the component size.
+  </P>
+  <P className='mbs-0!'>
+    Text size values can include:
+    {props.config.sizes.map((size, index) => (
+      <code key={index} className='nextra-code mx-0.5'>
+        {size}
+      </code>
+    ))}
+    .
+  </P>
+</>
+)}
+
+For more information on all available font size utilities, visit [Tailwind](https://tailwindcss.com/docs/font-size)
+
+{props.config?.sizes?.filter((size) => ['xs', 'sm', 'base', 'lg', 'xl'].includes(size))?.map((size, index) => (
+  <section key={`font-size-section-${index}`} className="my-8">
+    <BaseContainer>
+      <props.components.wrapper>
+        {cloneWithClass(
+          props.components.usage,
+          `${props.config.sizeClass}-${size}`,
+        )}
+      </props.components.wrapper>
+    </BaseContainer>
+    <CodeContainer>
+      <Code>
+        {reactElementToJSXString(
+          props.components.wrapper({
+            children: cloneWithClass(
+              props.components.usage,
+              `${props.config.sizeClass}-${size}`,
+            ),
+          }),
+          {
+            displayName: (element) =>
+              getDisplayName(element) || props.displayName,
+          },
+        )}
+      </Code>
+    </CodeContainer>
+  </section>
+))}
+
+{/* prettier-ignore-end */}

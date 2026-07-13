@@ -1,0 +1,167 @@
+@utility table-sm {
+  --ex-font-size: var(--ex-table-font-size-sm, var(--text-xs));
+
+  .ex-table-cell,
+  .ex-table-header {
+    --ex-px: var(--ex-table-cell-px-sm, calc(var(--spacing) * 3));
+    --ex-py: var(--ex-table-cell-py-sm, calc(var(--spacing) * 3));
+  }
+
+  .ex-table-caption {
+    --ex-font-size: var(--ex-table-caption-font-size-sm, var(--text-2xs));
+  }
+}
+
+@utility table-md {
+  --ex-font-size: var(--ex-table-font-size-md, var(--text-sm));
+
+  .ex-table-cell,
+  .ex-table-header {
+    --ex-px: var(--ex-table-cell-px-md, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-table-cell-py-md, calc(var(--spacing) * 4));
+  }
+
+  .ex-table-caption {
+    --ex-font-size: var(--ex-table-caption-font-size-md, var(--text-xs));
+  }
+}
+
+@layer components {
+  .ex-table {
+    @apply table-md;
+  }
+
+  .ex-table {
+    @apply palette-neutral variant-outline;
+    @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+  }
+
+  .ex-table {
+    @apply w-full border-collapse;
+    @apply [font-size:var(--ex-font-size)];
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-table-row,
+      .ex-table-head,
+      .ex-table-foot {
+        @apply border-[var(--shade-soft)] dark:border-[var(--shade-soft-dark)];
+      }
+    }
+
+    &:where(.variant-subtle) {
+      .ex-table-row,
+      .ex-table-head,
+      .ex-table-foot {
+        @apply border-[var(--shade-raised)] dark:border-[var(--shade-raised-dark)];
+      }
+    }
+  }
+
+  .ex-table-caption {
+    --ex-font-weight: var(--ex-table-caption-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-table-caption-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+
+  .ex-table-head {
+    @apply variant;
+    @apply border-0 border-be-1;
+  }
+
+  .ex-table-foot {
+    @apply variant;
+    @apply border-0 border-bs-1;
+  }
+
+  .ex-table-row {
+    @apply variant;
+    @apply border-0 border-be-1;
+
+    &:last-child {
+      @apply border-be-0;
+    }
+
+    .ex-table-head & {
+      @apply border-be-0;
+    }
+
+    .ex-table-foot & {
+      @apply border-be-0;
+    }
+  }
+
+  .ex-table-header {
+    --ex-font-weight: var(--ex-table-header-font-weight, var(--font-weight-normal));
+
+    @apply text-start align-middle;
+    @apply px-[var(--ex-px)] py-[var(--ex-py)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-table-cell {
+    @apply align-middle;
+    @apply px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+}
+
+@utility table-striped {
+  .ex-table-body {
+    .ex-table-row:nth-child(odd) {
+      @apply bg-[var(--shade-soft)] text-inherit dark:bg-[var(--shade-soft-dark)];
+    }
+  }
+}
+
+@utility table-striped-even {
+  .ex-table-body {
+    .ex-table-row:nth-child(even) {
+      @apply bg-[var(--shade-soft)] text-inherit dark:bg-[var(--shade-soft-dark)];
+    }
+  }
+}
+
+@utility table-striped-columns {
+  .ex-table-row {
+    .ex-table-cell:nth-child(even),
+    .ex-table-header:nth-child(even) {
+      @apply bg-[var(--shade-soft)] text-inherit dark:bg-[var(--shade-soft-dark)];
+    }
+  }
+}
+
+@utility table-striped-columns-odd {
+  .ex-table-row {
+    .ex-table-cell:nth-child(odd),
+    .ex-table-header:nth-child(odd) {
+      @apply bg-[var(--shade-soft)] text-inherit dark:bg-[var(--shade-soft-dark)];
+    }
+  }
+}
+
+@utility table-bordered {
+  .ex-table-row,
+  .ex-table-head,
+  .ex-table-foot {
+    @apply border-1;
+  }
+}
+
+@utility table-column-bordered {
+  .ex-table-row {
+    .ex-table-cell:nth-child(n + 2),
+    .ex-table-header:nth-child(n + 2) {
+      @apply border-s-1;
+      @apply border-[var(--shade-raised)] dark:border-[var(--shade-raised-dark)];
+    }
+  }
+}
+
+@utility table-borderless {
+  .ex-table-row,
+  .ex-table-head,
+  .ex-table-foot {
+    @apply border-0;
+  }
+}

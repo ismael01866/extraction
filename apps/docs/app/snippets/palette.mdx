@@ -1,0 +1,43 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+import { cloneWithClass, getDisplayName } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+Use the <code className="nextra-code">{props.config.colorPaletteClass}-\{color\}</code> class to control the component color. Refer to the [`Colors`](/theming/foundations/colors) documentation to see all available color and shade options.
+
+For more information on all available color utilities, visit [Tailwind](https://tailwindcss.com/docs/colors#working-with-colors).
+
+{props.config?.colorPalette?.map((color, index) => (
+  <section key={`palette-section-${index}`} className="my-8">
+    <BaseContainer>
+      <props.components.wrapper>
+        {cloneWithClass(
+          props.components.usage,
+          `${props.config.colorPaletteClass}-${color}`,
+        )}
+      </props.components.wrapper>
+    </BaseContainer>
+    <CodeContainer>
+      <Code>
+        {reactElementToJSXString(
+          props.components.wrapper({
+            children: cloneWithClass(
+              props.components.usage,
+              `${props.config.colorPaletteClass}-${color}`,
+            ),
+          }),
+          {
+            displayName: (element) =>
+              getDisplayName(element) || props.displayName,
+          },
+        )}
+      </Code>
+    </CodeContainer>
+  </section>
+))}
+
+{/* prettier-ignore-end */}

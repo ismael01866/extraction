@@ -1,0 +1,193 @@
+import { Checkbox, Field } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  checkboxCfg,
+  checkboxControlCfg,
+  checkboxIndicatorCfg,
+  checkboxLabelCfg,
+} from './checkbox';
+
+export const Component = (
+  <Checkbox>
+    <Checkbox.Control id='ch1' aria-label='Accept terms' defaultChecked>
+      <Checkbox.Indicator />
+    </Checkbox.Control>
+    <Checkbox.Label htmlFor='ch1'>Accept terms</Checkbox.Label>
+  </Checkbox>
+);
+
+export const ComponentValid = (
+  <Field className='w-64'>
+    <Checkbox className='valid'>
+      <Checkbox.Control id='ch-valid' aria-label='Accept terms' defaultChecked>
+        <Checkbox.Indicator />
+      </Checkbox.Control>
+      <Checkbox.Label htmlFor='ch-valid'>Accept terms</Checkbox.Label>
+    </Checkbox>
+    <Field.Success>{`Name is valid`}</Field.Success>
+  </Field>
+);
+
+export const ComponentInvalid = (
+  <Field className='w-64'>
+    <Checkbox className='invalid'>
+      <Checkbox.Control id='ch-invalid' aria-label='Accept terms'>
+        <Checkbox.Indicator />
+      </Checkbox.Control>
+      <Checkbox.Label htmlFor='ch-invalid'>Accept terms</Checkbox.Label>
+    </Checkbox>
+    <Field.Error>{`Name is required`}</Field.Error>
+  </Field>
+);
+
+export const ComponentDisabled = (
+  <Checkbox className='disabled'>
+    <Checkbox.Control aria-label='Accept terms'>
+      <Checkbox.Indicator />
+    </Checkbox.Control>
+    <Checkbox.Label>Accept terms</Checkbox.Label>
+  </Checkbox>
+);
+
+export const SizeComponent = ({ size }) => (
+  <Checkbox>
+    <Checkbox.Control
+      id={`ch1-${size}`}
+      aria-label='Accept terms'
+      defaultChecked
+    >
+      <Checkbox.Indicator />
+    </Checkbox.Control>
+    <Checkbox.Label htmlFor={`ch1-${size}`}>Accept terms</Checkbox.Label>
+
+  </Checkbox>
+);
+
+export const VariantComponent = ({ color, variant }) => (
+  <Checkbox>
+    <Checkbox.Control
+      id={`ch1-${color}-${variant}`}
+      aria-label='Accept terms'
+      defaultChecked
+    >
+      <Checkbox.Indicator />
+    </Checkbox.Control>
+
+  </Checkbox>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Checkbox
+
+{data.checkbox.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/checkbox)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-checkbox-cursor: default;
+
+  --ex-checkbox-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-checkbox-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-checkbox-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-checkbox-radius-sm: var(--radius-sm);
+  --ex-checkbox-radius-md: var(--radius-sm);
+  --ex-checkbox-radius-lg: var(--radius-sm);
+
+  --ex-checkbox-size-sm: calc(var(--spacing) * 4);
+  --ex-checkbox-size-md: calc(var(--spacing) * 5);
+  --ex-checkbox-size-lg: calc(var(--spacing) * 6);
+
+  --ex-checkbox-indicator-font-size-sm: var(--text-lg);
+  --ex-checkbox-indicator-font-size-md: var(--text-xl);
+  --ex-checkbox-indicator-font-size-lg: var(--text-2xl);
+
+  --ex-checkbox-label-font-family: var(--font-sans);
+  --ex-checkbox-label-font-weight: var(--font-weight-semibold);
+
+  --ex-checkbox-label-font-size-sm: var(--text-xs);
+  --ex-checkbox-label-font-size-md: var(--text-sm);
+  --ex-checkbox-label-font-size-lg: var(--text-base);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/checkbox#api-reference)
+
+### Checkbox
+
+<Api config={checkboxCfg} />
+
+### Checkbox Control
+
+<Api config={checkboxControlCfg} />
+
+### Checkbox Indicator
+
+<Api config={checkboxIndicatorCfg} />
+
+### Checkbox Label
+
+<Api config={checkboxLabelCfg} />

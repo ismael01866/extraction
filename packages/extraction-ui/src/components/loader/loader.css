@@ -1,0 +1,17 @@
+@layer components {
+  .ex-loader {
+    --ex-duration: var(--ex-loader-duration, 500ms);
+  }
+
+  .ex-loader {
+    @apply inline-flex size-[1em] shrink-0 items-center justify-center self-center font-normal text-inherit select-none;
+    @apply animate-spin [animation-duration:var(--ex-duration)];
+  }
+
+  .ex-loader-icon {
+    @apply fill-none stroke-current;
+
+    stroke-dasharray: 1.5rem;
+    stroke-width: 2px;
+  }
+}

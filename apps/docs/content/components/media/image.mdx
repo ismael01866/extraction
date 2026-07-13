@@ -1,0 +1,79 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Image } from 'extraction-ui';
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+import data from '../data.json';
+import { cfg } from './image';
+
+export const Component = (
+  <Image src='/images/assets/espresso.jpg' alt='espresso' />
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Image
+
+{data.image.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  displayName='Image'
+/>
+
+## Aspect Ratio
+
+Use the <code className='nextra-code'>aspect-{'{'}ratio{'}'}</code> class to control the component aspect ratio. Ratios values can include: `square` `video` `auto`.
+
+For more information on all aspect ratio utilities, visit [Tailwind](https://tailwindcss.com/docs/aspect-ratio)
+
+<BaseContainer>
+  <Image
+    className='aspect-video'
+    src='/images/assets/espresso.jpg'
+    alt='espresso'
+  />
+</BaseContainer>
+
+<CodeContainer>
+  <Code>
+    {`${reactElementToJSXString(
+      <Image className='aspect-video' src='/images/assets/espresso.jpg' />,
+    )}`}
+  </Code>
+</CodeContainer>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-image-size-xs: calc(var(--spacing) * 20);
+  --ex-image-size-sm: calc(var(--spacing) * 24);
+  --ex-image-size-md: calc(var(--spacing) * 32);
+  --ex-image-size-lg: calc(var(--spacing) * 40);
+  --ex-image-size-xl: calc(var(--spacing) * 48);
+
+  --ex-image-radius-xs: var(--radius-sm);
+  --ex-image-radius-sm: var(--radius-sm);
+  --ex-image-radius-md: var(--radius-sm);
+  --ex-image-radius-lg: var(--radius-sm);
+  --ex-image-radius-xl: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

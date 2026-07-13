@@ -1,0 +1,28 @@
+@layer components {
+  .ex-link {
+    --ex-color: var(--ex-link-color, var(--color-primary));
+    --ex-color-dark: var(--ex-link-color-dark, var(--color-primary));
+    --ex-font-family: var(--ex-link-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-link-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-link {
+    @apply inline;
+  }
+
+  .ex-link {
+    @apply [font-family:var(--ex-font-family)] font-(--ex-font-weight) text-(--ex-color) dark:text-(--ex-color-dark);
+  }
+}
+
+@layer utilities {
+  .ex-link {
+    &:where(:hover) {
+      @apply underline;
+    }
+
+    &:where(:focus-visible) {
+      @apply interactive-focus;
+    }
+  }
+}

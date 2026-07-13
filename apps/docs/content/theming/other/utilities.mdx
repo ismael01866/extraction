@@ -1,0 +1,117 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Button, Description } from 'extraction-ui';
+
+# Utilities
+
+Custom utility classes for Extraction UI components. Visit the [Options](/theming/other/options) page for the full reference on the CSS variables.
+
+## Transitions
+
+Use the `duration-{value}` class to control the duration of the transition. Duration values can include `slowest`, `slower`, `slow`, `normal`, `fast`, `faster` and `fastest`.
+
+Duration utilities map to the `--ex-options-duration-*` variables. Refer to the [Options](/theming/other/options) page for the full reference on the CSS variables.
+
+<br />
+
+<section>
+  <BaseContainer>
+    {['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map(
+      (value) => {
+        return (
+          <Button key={value} className={`duration-${value} hover:scale-110`}>
+            {value}
+          </Button>
+        );
+      },
+    )}
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map(
+    (value) => (
+      <Button key={value} className={\`duration-\${value} hover:scale-110\`}>
+        {value}
+      </Button>
+    );
+  );`}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Opacity
+
+| Name             | CSS Variable                  |
+| ---------------- | ----------------------------- |
+| `opacity-muted`  | `--ex-options-muted-opacity`  |
+| `opacity-subtle` | `--ex-options-subtle-opacity` |
+| `opacity-weak`   | `--ex-options-weak-opacity`   |
+
+### Example
+
+<br />
+
+<section>
+  <BaseContainer>
+  <div>
+    <Description>{`The brown fox jumps over the lazy dog`}</Description>
+    <Description className='opacity-muted'>{`The brown fox jumps over the lazy dog`}</Description>
+    <Description className='opacity-subtle'>{`The brown fox jumps over the lazy dog`}</Description>
+    <Description className='opacity-weak'>{`The brown fox jumps over the lazy dog`}</Description>
+  </div>
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+    {`
+  <Description>
+    The brown fox jumps over the lazy dog
+  </Description>\n
+  <Description className='opacity-muted'>
+    The brown fox jumps over the lazy dog
+  </Description>\n
+  <Description className='opacity-subtle'>
+    The brown fox jumps over the lazy dog
+  </Description>\n
+  <Description className='opacity-weak'>
+    The brown fox jumps over the lazy dog
+  </Description>
+    `}
+    </Code>
+
+  </CodeContainer>
+</section>
+
+## Tonal Shades
+
+| Name          |
+| ------------- |
+| `tonal-black` |
+| `tonal-white` |
+
+### Example
+
+<br />
+
+<section>
+  <BaseContainer>
+    <Button>{`Button`}</Button>
+    <Button className='tonal-black'>{`Button`}</Button>
+    <Button className='tonal-white variant-surface'>{`Button`}</Button>
+  </BaseContainer>
+
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`
+  <Button>
+    Button
+  </Button>\n
+  <Button className='tonal-black'>
+    Button
+  </Button>\n
+  <Button className='tonal-white variant-surface'>
+    Button
+  </Button>
+      `}
+    </Code>
+  </CodeContainer>
+</section>

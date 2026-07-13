@@ -1,0 +1,89 @@
+import { IconButton } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import { cfg } from './icon-button';
+
+export const Component = (
+  <IconButton aria-label='icon button'>
+    <LuMail />
+  </IconButton>
+);
+
+export const ComponentDisabled = (
+  <IconButton className='disabled' aria-label='icon button'>
+    <LuMail />
+  </IconButton>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Icon Button
+
+{data['icon-button'].description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-icon-button-cursor: pointer;
+
+  --ex-icon-button-font-size-sm: var(--text-base);
+  --ex-icon-button-font-size-md: var(--text-lg);
+  --ex-icon-button-font-size-lg: var(--text-xl);
+  --ex-icon-button-font-size-xl: var(--text-2xl);
+
+  --ex-icon-button-size-sm: calc(var(--spacing) * 9);
+  --ex-icon-button-size-md: calc(var(--spacing) * 10);
+  --ex-icon-button-size-lg: calc(var(--spacing) * 11);
+  --ex-icon-button-size-xl: calc(var(--spacing) * 12);
+
+  --ex-icon-button-radius-sm: var(--radius-sm);
+  --ex-icon-button-radius-md: var(--radius-sm);
+  --ex-icon-button-radius-lg: var(--radius-sm);
+  --ex-icon-button-radius-xl: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

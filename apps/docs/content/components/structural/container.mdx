@@ -1,0 +1,53 @@
+import { DecorativeBox } from '@/app/components';
+
+import { Container } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './container';
+
+export const Component = (
+  <Container>
+    <DecorativeBox className='w-full' />
+  </Container>
+);
+
+export const Wrapper = ({ ...rest }) => (
+  <div className='variant-subtle palette-neutral w-full' {...rest} />
+);
+
+# Container
+
+{data.container.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-container-max-w-xs: var(--container-xs);
+  --ex-container-max-w-sm: var(--container-sm);
+  --ex-container-max-w-md: var(--container-md);
+  --ex-container-max-w-lg: var(--container-lg);
+  --ex-container-max-w-xl: var(--container-xl);
+}
+```
+
+## API
+
+<Api config={cfg} />

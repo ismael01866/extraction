@@ -1,0 +1,119 @@
+import { EmptyState } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  cfg,
+  emptyStateCfg,
+  emptyStateContentCfg,
+  emptyStateDescriptionCfg,
+  emptyStateIndicatorCfg,
+  emptyStateTitleCfg,
+} from './empty-state';
+
+export const Component = (
+  <EmptyState>
+    <EmptyState.Content>
+      <EmptyState.Section>
+        <EmptyState.Indicator>
+          <LuMail />
+        </EmptyState.Indicator>
+        <EmptyState.Title>{`Header`}</EmptyState.Title>
+        <EmptyState.Description>
+          {`Alice was beginning to get very tired`}
+        </EmptyState.Description>
+      </EmptyState.Section>
+    </EmptyState.Content>
+  </EmptyState>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# EmptyState
+
+{data["empty-state"].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-empty-state-font-size-sm: var(--text-xs);
+  --ex-empty-state-font-size-md: var(--text-sm);
+  --ex-empty-state-font-size-lg: var(--text-base);
+
+  --ex-empty-state-section-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-empty-state-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-empty-state-section-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-empty-state-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-empty-state-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-empty-state-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-empty-state-section-px-sm: calc(var(--spacing) * 4);
+  --ex-empty-state-section-py-sm: calc(var(--spacing) * 4);
+
+  --ex-empty-state-section-px-md: calc(var(--spacing) * 5);
+  --ex-empty-state-section-py-md: calc(var(--spacing) * 5);
+
+  --ex-empty-state-section-px-lg: calc(var(--spacing) * 6);
+  --ex-empty-state-section-py-lg: calc(var(--spacing) * 6);
+
+  --ex-empty-state-indicator-font-size-sm: var(--text-lg);
+  --ex-empty-state-indicator-font-size-md: var(--text-xl);
+  --ex-empty-state-indicator-font-size-lg: var(--text-2xl);
+
+  --ex-empty-state-indicator-opacity: var(--ex-options-subtle-opacity);
+
+  --ex-empty-state-title-font-size-sm: var(--text-sm);
+  --ex-empty-state-title-font-size-md: var(--text-base);
+  --ex-empty-state-title-font-size-lg: var(--text-lg);
+
+  --ex-empty-state-title-font-weight: var(--font-weight-semibold);
+
+  --ex-empty-state-description-font-size-sm: var(--text-xs);
+  --ex-empty-state-description-font-size-md: var(--text-sm);
+  --ex-empty-state-description-font-size-lg: var(--text-base);
+
+  --ex-empty-state-description-font-weight: var(--font-weight-normal);
+  --ex-empty-state-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### EmptyState
+
+<Api config={emptyStateCfg} />
+
+### EmptyState Content
+
+<Api config={emptyStateContentCfg} />
+
+### EmptyState Indicator
+
+<Api config={emptyStateIndicatorCfg} />
+
+### EmptyState Title
+
+<Api config={emptyStateTitleCfg} />
+
+### EmptyState Description
+
+<Api config={emptyStateDescriptionCfg} />

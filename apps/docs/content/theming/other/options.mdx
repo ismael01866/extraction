@@ -1,0 +1,87 @@
+# Options
+
+The options layer defines global defaults used by Extraction UI components. Each applicable component can also be customized independently by overriding its own CSS variables. Refer to the individual component documentation pages for available options.
+
+## Background options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-background-default-color` | Default background color | `color-mix(in oklch, var(--color-neutral-50) 30%, white)` |
+| `--ex-options-background-default-color-dark` | Default background color in dark mode | `color-mix(in oklch, var(--color-neutral-950) 70%, black)` |
+| `--ex-options-panel-background-default-color` | Default panel background color | `var(--color-white)` |
+| `--ex-options-panel-background-default-color-dark` | Default panel background color in dark mode | `var(--color-black)` |
+
+## Decorative options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-input-border-valid` | Default border color for valid input | `var(--color-success-500)` |
+| `--ex-options-input-border-valid-dark` | Default border color for valid input in dark mode | `var(--color-success-500)` |
+| `--ex-options-input-border-invalid` | Default border color for invalid input | `var(--color-error-500)` |
+| `--ex-options-input-border-invalid-dark` | Default border color for invalid input in dark mode | `var(--color-error-500)` |
+
+## Opacity options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-muted-opacity` | Muted opacity for elements | `0.88` |
+| `--ex-options-subtle-opacity` | Subtle opacity for elements | `0.64` |
+| `--ex-options-weak-opacity` | Weak opacity for elements | `0.48` |
+| `--ex-options-disabled-opacity` | Disabled opacity for elements | `0.56` |
+| `--ex-options-overlay-opacity` | Default opacity for overlay backgrounds | `0.4` |
+| `--ex-options-placeholder-opacity` | Default opacity for inputs placeholder text | `0.64` |
+
+## Typography options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-text-default-color` | Default text color | `var(--color-neutral-900)` |
+| `--ex-options-text-default-color-dark` | Default text color in dark mode | `var(--color-neutral-100)` |
+
+## Transition options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-enable-transitions` | Toggle animations and transitions (use `1` or `0`) | `1` |
+| `--ex-options-enable-reduced-motion` | Toggle the prefers-reduced-motion media query (use `1` or `0`) | `1` |
+| `--ex-options-duration-fastest` | Duration for fastest animations | `50ms` |
+| `--ex-options-duration-faster` | Duration for faster animations | `100ms` |
+| `--ex-options-duration-fast` | Duration for fast animations | `150ms` |
+| `--ex-options-duration-normal` | Duration for normal animations | `200ms` |
+| `--ex-options-duration-slow` | Duration for slow animations | `300ms` |
+| `--ex-options-duration-slower` | Duration for slower animations | `400ms` |
+| `--ex-options-duration-slowest` | Duration for slowest animations | `500ms` |
+
+## Z-index options
+
+| Option | Description | Default value |
+| --- | --- | --- |
+| `--ex-options-z-alert-dialog` | Z-index for alert dialogs | `50` |
+| `--ex-options-z-alert-dialog-overlay` | Z-index for alert dialog overlays | `45` |
+| `--ex-options-z-dialog` | Z-index for dialogs | `50` |
+| `--ex-options-z-dialog-overlay` | Z-index for dialog overlays | `45` |
+| `--ex-options-z-drawer` | Z-index for drawers | `50` |
+| `--ex-options-z-drawer-overlay` | Z-index for drawer overlays | `45` |
+| `--ex-options-z-hover-card` | Z-index for hover cards | `40` |
+| `--ex-options-z-popover` | Z-index for popovers | `40` |
+| `--ex-options-z-select-popper` | Z-index for select poppers | `50` |
+| `--ex-options-z-toast` | Z-index for toasts | `55` |
+| `--ex-options-z-tooltip` | Z-index for tooltips | `60` |
+
+## Override example
+
+Add the variables in your main CSS file:
+
+```css filename="main.css"
+:root {
+  ...
+  --ex-options-enable-transitions: 0;
+  --ex-options-enable-reduced-motion: 0;
+  ...
+  --ex-options-muted-opacity: 0.85;
+  ...
+  --ex-options-input-border-valid: var(--color-primary-700);
+  --ex-options-input-border-valid-dark: var(--color-primary-300);
+  ...
+}
+```

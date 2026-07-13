@@ -1,0 +1,39 @@
+import { BaseContainer } from '@/app/components';
+
+import { Box, HStack, Stack } from 'extraction-ui';
+
+# Size & Space
+
+The base spacing unit is `0.25rem` (4px), assuming a root font size of 16px.
+Every Tailwind spacing utility — `p-`, `m-`, `gap-`, `w-`, `h-`, etc. — multiplies this value by its scale step.
+
+```css
+@theme {
+  --spacing: 0.25rem;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='max-w-full gap-6 text-sm'>
+      <HStack>
+        <span className='w-12 text-center'>**Name**</span>
+        <span className='w-32 text-center'>**Value**</span>
+      </HStack>
+      {[
+        0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16,
+        20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96,
+      ].map((step) => (
+        <HStack key={step} className='items-center text-xs'>
+          <span className='w-12 shrink-0 text-center'>{step}</span>
+          <span className='w-32 shrink-0 text-center'>{`${step * 0.25}rem / ${step * 4}px`}</span>
+          <Box
+            style={{ width: `calc(var(--spacing) * ${step} * 4)` }}
+            className='palette-primary variant-surface h-5 p-0'
+          />
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

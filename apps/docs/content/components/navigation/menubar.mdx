@@ -1,0 +1,447 @@
+import { Menubar } from 'extraction-ui';
+import {
+  LuCheck,
+  LuChevronRight,
+  LuDot,
+  LuScreenShare,
+  LuTextSelect,
+} from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  cfg,
+  menubarArrowCfg,
+  menubarCfg,
+  menubarCheckboxItemCfg,
+  menubarCommandCfg,
+  menubarContentCfg,
+  menubarItemCfg,
+  menubarItemIndicatorCfg,
+  menubarLabelCfg,
+  menubarMenuCfg,
+  menubarPortalCfg,
+  menubarRadioGroupCfg,
+  menubarRadioItemCfg,
+  menubarSectionCfg,
+  menubarSeparatorCfg,
+  menubarSubCfg,
+  menubarSubContentCfg,
+  menubarSubTriggerCfg,
+  menubarTriggerCfg,
+} from './menubar';
+
+export const Component = (
+  <Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuScreenShare />
+              </Menubar.Indicator>
+              Take Screenshot
+              <Menubar.Command>⌘S</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Label>Actions</Menubar.Label>
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Sub>
+              <Menubar.SubTrigger>
+                More Actions
+                <Menubar.Indicator>
+                  <LuChevronRight />
+                </Menubar.Indicator>
+              </Menubar.SubTrigger>
+              <Menubar.Portal>
+                <Menubar.SubContent>
+                  <Menubar.Section>
+                    <Menubar.Item>Print</Menubar.Item>
+                    <Menubar.Item>Save Page As...</Menubar.Item>
+                  </Menubar.Section>
+                </Menubar.SubContent>
+              </Menubar.Portal>
+            </Menubar.Sub>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+    <Menubar.Menu>
+      <Menubar.Trigger>Edit</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Label>Checkbox</Menubar.Label>
+            <Menubar.CheckboxItem checked>
+              <Menubar.Indicator>
+                <LuCheck />
+              </Menubar.Indicator>
+              Show Bookmarks Bar
+            </Menubar.CheckboxItem>
+            <Menubar.Separator />
+            <Menubar.Label>Radio</Menubar.Label>
+            <Menubar.RadioGroup value='asc'>
+              <Menubar.RadioItem value='asc'>
+                <Menubar.Indicator>
+                  <LuDot />
+                </Menubar.Indicator>
+                Sort Ascending
+              </Menubar.RadioItem>
+              <Menubar.RadioItem value='desc'>
+                <Menubar.Indicator>
+                  <LuDot />
+                </Menubar.Indicator>
+                Sort Descending
+              </Menubar.RadioItem>
+            </Menubar.RadioGroup>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+    <Menubar.Menu>
+      <Menubar.Trigger>View</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Item>Bookmarks</Menubar.Item>
+            <Menubar.Item>
+              Full Screen
+              <Menubar.Command>⌘F</Menubar.Command>
+            </Menubar.Item>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>
+);
+
+export const ComponentDisabled = (
+  <Menubar className='disabled'>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+    </Menubar.Menu>
+  </Menubar>
+);
+
+export const ComponentDisabledItem = (
+  <Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Item disabled>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>
+);
+
+export const SizeComponent = ({ size }) => (
+  <Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content className={` menubar-content-${size} `}>
+          <Menubar.Section>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Label>Actions</Menubar.Label>
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Sub>
+              <Menubar.SubTrigger>
+                More Actions
+                <Menubar.Indicator>
+                  <LuChevronRight />
+                </Menubar.Indicator>
+              </Menubar.SubTrigger>
+              <Menubar.Portal>
+                <Menubar.SubContent className={` menubar-content-${size} `}>
+                  <Menubar.Section>
+                    <Menubar.Item>Print</Menubar.Item>
+                    <Menubar.Item>Save Page As...</Menubar.Item>
+                  </Menubar.Section>
+                </Menubar.SubContent>
+              </Menubar.Portal>
+            </Menubar.Sub>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+    <Menubar.Menu>
+      <Menubar.Trigger>Edit</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content className={` menubar-content-${size} `}>
+          <Menubar.Section>
+            <Menubar.Label>Checkbox</Menubar.Label>
+            <Menubar.CheckboxItem checked>
+              <Menubar.Indicator>
+                <LuCheck />
+              </Menubar.Indicator>
+              Show Bookmarks Bar
+            </Menubar.CheckboxItem>
+            <Menubar.Separator />
+            <Menubar.Label>Radio</Menubar.Label>
+            <Menubar.RadioGroup value='asc'>
+              <Menubar.RadioItem value='asc'>
+                <Menubar.Indicator>
+                  <LuDot />
+                </Menubar.Indicator>
+                Sort Ascending
+              </Menubar.RadioItem>
+              <Menubar.RadioItem value='desc'>
+                <Menubar.Indicator>
+                  <LuDot />
+                </Menubar.Indicator>
+                Sort Descending
+              </Menubar.RadioItem>
+            </Menubar.RadioGroup>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Menubar Menu
+
+{data.menubar.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/menubar)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-menubar-height-sm: calc(var(--spacing) * 10);
+  --ex-menubar-height-md: calc(var(--spacing) * 12);
+
+  --ex-menubar-px-sm: calc(var(--spacing) * 1.5);
+  --ex-menubar-px-md: calc(var(--spacing) * 2);
+
+  --ex-menubar-radius-sm: var(--radius-sm);
+  --ex-menubar-radius-md: var(--radius-md);
+
+  --ex-menubar-trigger-font-family: var(--font-sans);
+  --ex-menubar-trigger-font-weight: var(--font-weight-normal);
+
+  --ex-menubar-trigger-font-size-sm: var(--text-xs);
+  --ex-menubar-trigger-font-size-md: var(--text-sm);
+
+  --ex-menubar-trigger-height-sm: calc(var(--spacing) * 7);
+  --ex-menubar-trigger-height-md: calc(var(--spacing) * 8);
+
+  --ex-menubar-trigger-gap-sm: calc(var(--spacing) * 1);
+  --ex-menubar-trigger-gap-md: calc(var(--spacing) * 1.25);
+
+  --ex-menubar-trigger-px-sm: calc(var(--spacing) * 2);
+  --ex-menubar-trigger-px-md: calc(var(--spacing) * 2.5);
+
+  --ex-menubar-trigger-radius-sm: var(--radius-sm);
+  --ex-menubar-trigger-radius-md: var(--radius-md);
+
+  --ex-menubar-content-max-w-sm: var(--container-3xs);
+  --ex-menubar-content-max-w-md: var(--container-2xs);
+
+  --ex-menubar-content-radius-sm: var(--radius-sm);
+  --ex-menubar-content-radius-md: var(--radius-sm);
+
+  --ex-menubar-content-shadow-sm: var(--shadow-sm);
+  --ex-menubar-content-shadow-md: var(--shadow-sm);
+
+  --ex-menubar-section-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-menubar-section-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-menubar-section-px-sm: calc(var(--spacing) * 1.5);
+  --ex-menubar-section-px-md: calc(var(--spacing) * 2);
+
+  --ex-menubar-section-py-sm: calc(var(--spacing) * 2);
+  --ex-menubar-section-py-md: calc(var(--spacing) * 2.5);
+
+  --ex-menubar-item-px-sm: calc(var(--spacing) * 2);
+  --ex-menubar-item-px-md: calc(var(--spacing) * 2);
+
+  --ex-menubar-item-py-sm: var(--spacing);
+  --ex-menubar-item-py-md: var(--spacing);
+
+  --ex-menubar-item-font-family: var(--font-sans);
+  --ex-menubar-item-font-weight: var(--font-weight-normal);
+
+  --ex-menubar-item-font-size-sm: var(--text-xs);
+  --ex-menubar-item-font-size-md: var(--text-sm);
+
+  --ex-menubar-indicator-font-size-sm: var(--text-sm);
+  --ex-menubar-indicator-font-size-md: var(--text-base);
+
+  --ex-menubar-label-font-family: var(--font-sans);
+  --ex-menubar-label-font-weight: var(--font-weight-normal);
+  --ex-menubar-label-opacity: var(--ex-options-muted-opacity);
+
+  --ex-menubar-label-font-size-sm: var(--text-2xs);
+  --ex-menubar-label-font-size-md: var(--text-xs);
+
+  --ex-menubar-command-font-family: var(--font-sans);
+  --ex-menubar-command-font-weight: var(--font-weight-normal);
+  --ex-menubar-command-opacity: var(--ex-options-muted-opacity);
+
+  --ex-menubar-command-font-size-sm: var(--text-2xs);
+  --ex-menubar-command-font-size-md: var(--text-xs);
+
+  --ex-menubar-arrow-height-sm: calc(var(--spacing) * 1.75);
+  --ex-menubar-arrow-height-md: calc(var(--spacing) * 1.75);
+
+  --ex-menubar-arrow-width-sm: calc(var(--spacing) * 3.5);
+  --ex-menubar-arrow-width-md: calc(var(--spacing) * 3.5);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/menubar#api-reference)
+
+### Menubar
+
+<Api config={menubarCfg} />
+
+### Menubar Menu
+
+<Api config={menubarMenuCfg} />
+
+### Menubar Menu Trigger
+
+<Api config={menubarTriggerCfg} />
+
+### Menubar Menu Portal
+
+<Api config={menubarPortalCfg} />
+
+### Menubar Menu Content
+
+<Api config={menubarContentCfg} />
+
+### Menubar Menu Section
+
+<Api config={menubarSectionCfg} />
+
+### Menubar Menu Arrow
+
+<Api config={menubarArrowCfg} />
+
+### Menubar Menu Item
+
+<Api config={menubarItemCfg} />
+
+### Menubar Menu Indicator
+
+<Api config={menubarItemIndicatorCfg} />
+
+### Menubar Menu Label
+
+<Api config={menubarLabelCfg} />
+
+### Menubar Menu Command
+
+<Api config={menubarCommandCfg} />
+
+### Menubar Menu Separator
+
+<Api config={menubarSeparatorCfg} />
+
+### Menubar Menu RadioGroup
+
+<Api config={menubarRadioGroupCfg} />
+
+### Menubar Menu RadioItem
+
+<Api config={menubarRadioItemCfg} />
+
+### Menubar Menu CheckboxItem
+
+<Api config={menubarCheckboxItemCfg} />
+
+### Menubar Sub
+
+<Api config={menubarSubCfg} />
+
+### Menubar Sub Trigger
+
+<Api config={menubarSubTriggerCfg} />
+
+### Menubar Sub Content
+
+<Api config={menubarSubContentCfg} />

@@ -1,0 +1,110 @@
+import { NavLink } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import { cfg } from './nav-link';
+
+export const Component = <NavLink>{`Nav Link`}</NavLink>;
+
+export const ComponentWithIcon = (
+  <NavLink>
+    <LuMail />
+    {`Nav Link`}
+  </NavLink>
+);
+
+export const ComponentDisabled = (
+  <NavLink className='disabled'>{`Nav Link`}</NavLink>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Nav Link
+
+{data['nav-link'].description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Icon
+
+<Usage
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-nav-link-font-family: var(--font-sans);
+  --ex-nav-link-font-weight: var(--font-weight-normal);
+
+  --ex-nav-link-font-size-sm: var(--text-xs);
+  --ex-nav-link-font-size-md: var(--text-sm);
+  --ex-nav-link-font-size-lg: var(--text-base);
+  --ex-nav-link-font-size-xl: var(--text-lg);
+
+  --ex-nav-link-height-sm: calc(var(--spacing) * 9);
+  --ex-nav-link-height-md: calc(var(--spacing) * 10);
+  --ex-nav-link-height-lg: calc(var(--spacing) * 11);
+  --ex-nav-link-height-xl: calc(var(--spacing) * 12);
+
+  --ex-nav-link-gap-x-sm: calc(var(--spacing) * 1.75);
+  --ex-nav-link-gap-x-md: calc(var(--spacing) * 2);
+  --ex-nav-link-gap-x-lg: calc(var(--spacing) * 2.25);
+  --ex-nav-link-gap-x-xl: calc(var(--spacing) * 2.5);
+
+  --ex-nav-link-px-sm: calc(var(--spacing) * 3.5);
+  --ex-nav-link-px-md: calc(var(--spacing) * 4);
+  --ex-nav-link-px-lg: calc(var(--spacing) * 4.5);
+  --ex-nav-link-px-xl: calc(var(--spacing) * 5);
+
+  --ex-nav-link-radius-sm: var(--radius-sm);
+  --ex-nav-link-radius-md: var(--radius-sm);
+  --ex-nav-link-radius-lg: var(--radius-sm);
+  --ex-nav-link-radius-xl: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

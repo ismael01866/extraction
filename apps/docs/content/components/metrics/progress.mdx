@@ -1,0 +1,77 @@
+import { Progress } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg, progressCfg, progressIndicatorCfg } from './progress';
+
+export const Component = (
+  <Progress className='max-w-80' aria-label='progress'>
+    <Progress.Indicator className='max-w-[50%]' />
+  </Progress>
+);
+
+export const VariantComponent = (
+  <Progress className='max-w-80' aria-label='progress'>
+    <Progress.Indicator className='max-w-[50%]' />
+  </Progress>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Progress
+
+{data.progress.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/progress)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-progress-size-sm: calc(var(--spacing) * 0.5);
+  --ex-progress-size-md: calc(var(--spacing) * 1);
+  --ex-progress-size-lg: calc(var(--spacing) * 1.5);
+  --ex-progress-size-xl: calc(var(--spacing) * 2);
+
+  --ex-progress-radius-sm: 9999px;
+  --ex-progress-radius-md: 9999px;
+  --ex-progress-radius-lg: 9999px;
+  --ex-progress-radius-xl: 9999px;
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/progress#api-reference)
+
+### Progress
+
+<Api config={progressCfg} />
+
+### Progress Indicator
+
+<Api config={progressIndicatorCfg} />

@@ -1,0 +1,48 @@
+import { Box, Button, Collapsible } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  collapsibleCfg,
+  collapsibleContentCfg,
+  collapsibleTriggerCfg,
+} from './collapsible';
+
+export const Component = (
+  <Collapsible>
+    <Collapsible.Trigger asChild>
+      <Button>Trigger</Button>
+    </Collapsible.Trigger>
+    <Collapsible.Content>
+      <Box>The quick brown fox jumps over the lazy dog</Box>
+    </Collapsible.Content>
+  </Collapsible>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Collapsible
+
+{data.collapsible.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/collapsible)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/collapsible#api-reference)
+
+### Collapsible
+
+<Api config={collapsibleCfg} />
+
+### Collapsible Trigger
+
+<Api config={collapsibleTriggerCfg} />
+
+### Collapsible Content
+
+<Api config={collapsibleContentCfg} />

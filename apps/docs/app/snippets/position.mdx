@@ -1,0 +1,44 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+import { cloneWithClass, getDisplayName } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+## Positions
+
+Use the <code className="nextra-code">pos-\{position\}</code> class to control the component position.
+Position values can include {props.config?.positions?.map((position, index) => <code key={index} className='nextra-code mx-0.5'>{position}</code>)}
+
+{props.config?.positions?.map((position, index) => {
+
+  return (
+    <section key={`position-section-${index}`} className="my-8">
+      <BaseContainer>
+        <props.components.wrapper>
+          {cloneWithClass(props.components.usage, `pos-${position}`)}
+        </props.components.wrapper>
+      </BaseContainer>
+      <CodeContainer>
+        <Code>
+          {reactElementToJSXString(
+            props.components.wrapper({
+              children: cloneWithClass(
+                props.components.usage,
+                `pos-${position}`,
+              ),
+            }),
+            {
+              displayName: (element) =>
+                getDisplayName(element) || props.displayName,
+            },
+          )}
+        </Code>
+      </CodeContainer>
+    </section>
+  )
+})}
+
+{/* prettier-ignore-end */}

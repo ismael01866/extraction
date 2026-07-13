@@ -1,0 +1,55 @@
+@utility textarea-sm {
+  --ex-px: var(--ex-textarea-px-sm, calc(var(--spacing) * 3.5));
+  --ex-py: var(--ex-textarea-py-sm, calc(var(--spacing) * 2.5));
+  --ex-radius: var(--ex-textarea-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-textarea-font-size-sm, var(--text-xs));
+}
+
+@utility textarea-md {
+  --ex-px: var(--ex-textarea-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-textarea-py-md, calc(var(--spacing) * 3));
+  --ex-radius: var(--ex-textarea-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-textarea-font-size-md, var(--text-sm));
+}
+
+@utility textarea-lg {
+  --ex-px: var(--ex-textarea-px-lg, calc(var(--spacing) * 4.5));
+  --ex-py: var(--ex-textarea-py-lg, calc(var(--spacing) * 3.5));
+  --ex-radius: var(--ex-textarea-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-textarea-font-size-lg, var(--text-base));
+}
+
+@layer components {
+  .ex-textarea {
+    --ex-font-family: var(--ex-textarea-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-textarea-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-options-placeholder-opacity);
+
+    @apply textarea-md;
+  }
+
+  .ex-textarea {
+    @apply palette-neutral variant-outline;
+  }
+
+  .ex-textarea {
+    @apply inline-flex w-full;
+    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &::placeholder {
+      @apply text-[inherit] [opacity:var(--ex-opacity)];
+    }
+
+    &:where(.variant-solid) {
+      &::placeholder {
+        @apply opacity-[calc(var(--ex-options-disabled-opacity)+0.15)];
+      }
+    }
+  }
+}
+
+@layer utilities {
+  .ex-textarea {
+    @apply interactive-form-control valid invalid;
+  }
+}

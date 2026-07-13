@@ -1,0 +1,344 @@
+/**  Typography  */
+/** ──────────────────────────── */
+
+@utility text-2xs {
+  font-size: var(--text-2xs);
+  line-height: var(--text-2xs-line-height);
+}
+
+@utility text-fluid {
+  --ex-fluid-scale-floor: 0.5;
+  --ex-fluid-anchor: 0.5;
+  --ex-fluid-speed: 1.5vw;
+
+  --ex-fluid-min: calc(var(--ex-font-size) * var(--ex-fluid-scale-floor));
+  --ex-fluid-max: var(--ex-font-size);
+  --ex-fluid-engine: calc((var(--ex-font-size) * var(--ex-fluid-anchor)) + var(--ex-fluid-speed));
+
+  font-size: clamp(var(--ex-fluid-min), var(--ex-fluid-engine), var(--ex-fluid-max));
+}
+
+/**  Colors  */
+/** ──────────────────────────── */
+
+@utility global-color-bg {
+  --ex-colors-bg: var(--ex-colors-background);
+}
+
+@utility global-color-fg {
+  --ex-colors-fg: var(--ex-colors-foreground);
+}
+
+/**  Animation  */
+/** ──────────────────────────── */
+
+@utility anim-delay-* {
+  animation-delay: --value([duration]);
+  animation-delay: calc(--value(integer) * 1ms);
+  animation-delay: --value([*]);
+  animation-delay: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility anim-direction-* {
+  animation-direction: --value('normal', 'reverse', 'alternate', 'alternate-reverse');
+  animation-direction: --value([*]);
+  animation-direction: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility anim-duration-* {
+  animation-duration: --value([duration]);
+  animation-duration: calc(--value(integer) * 1ms);
+  animation-duration: --value([*]);
+  animation-duration: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility anim-fill-* {
+  animation-fill-mode: --value('none', 'forwards', 'backwards', 'both');
+  animation-fill-mode: --value([*]);
+  animation-fill-mode: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility anim-play-* {
+  animation-play-state: --value('running', 'paused');
+  animation-play-state: --value([*]);
+  animation-play-state: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility anim-repeat-* {
+  animation-iteration-count: --value(integer);
+  animation-iteration-count: --value('infinite');
+  animation-iteration-count: --value([*]);
+  animation-iteration-count: --value('initial', 'inherit', 'unset', 'revert', 'revert-layer');
+}
+
+@utility duration-fastest {
+  @apply duration-(--ex-options-transition-duration-fastest);
+}
+
+@utility duration-faster {
+  @apply duration-(--ex-options-transition-duration-faster);
+}
+
+@utility duration-fast {
+  @apply duration-(--ex-options-transition-duration-fast);
+}
+
+@utility duration-normal {
+  @apply duration-(--ex-options-transition-duration-normal);
+}
+
+@utility duration-slow {
+  @apply duration-(--ex-options-transition-duration-slow);
+}
+
+@utility duration-slower {
+  @apply duration-(--ex-options-transition-duration-slower);
+}
+
+@utility duration-slowest {
+  @apply duration-(--ex-options-transition-duration-slowest);
+}
+
+/**  Children  */
+/** ──────────────────────────── */
+
+@utility children-inherit-palette {
+  :where([class*='ex-']:not([class*='palette-'])) {
+    @apply palette-inherit;
+  }
+}
+
+@utility children-inherit-variant {
+  :where([class*='ex-']:not([class*='variant-'])) {
+    @apply variant-inherit;
+  }
+}
+
+/**  Decorations  */
+/** ──────────────────────────── */
+
+@utility accent-border-start {
+  --accent-width: 3px;
+
+  @apply [border-inline-start-width:var(--accent-width)] border-s-[var(--shade-bold)];
+}
+
+@utility accent-border-start-* {
+  --accent-width-length: --value(--translate-*, [percentage], [length]);
+  --accent-width-integer: calc(--value(integer) * var(--spacing));
+  --accent-width: var(--accent-width-length, var(--accent-width-integer));
+
+  @apply [border-inline-start-width:var(--accent-width)] border-s-[var(--shade-bold)];
+}
+
+@utility accent-border-end {
+  --accent-width: 3px;
+
+  @apply [border-inline-end-width:var(--accent-width)] border-e-[var(--shade-bold)];
+}
+
+@utility accent-border-end-* {
+  --accent-width-length: --value(--translate-*, [percentage], [length]);
+  --accent-width-integer: calc(--value(integer) * var(--spacing));
+  --accent-width: var(--accent-width-length, var(--accent-width-integer));
+
+  @apply [border-inline-end-width:var(--accent-width)] border-e-[var(--shade-bold)];
+}
+
+@utility accent-border-top {
+  --accent-width: 3px;
+
+  @apply [border-block-start-width:var(--accent-width)] border-t-[var(--shade-bold)];
+}
+
+@utility accent-border-top-* {
+  --accent-width-length: --value(--translate-*, [percentage], [length]);
+  --accent-width-integer: calc(--value(integer) * var(--spacing));
+  --accent-width: var(--accent-width-length, var(--accent-width-integer));
+
+  @apply [border-block-start-width:var(--accent-width)] border-t-[var(--shade-bold)];
+}
+
+@utility accent-border-bottom {
+  --accent-width: 3px;
+
+  @apply [border-block-end-width:var(--accent-width)] border-b-[var(--shade-bold)];
+}
+
+@utility accent-border-bottom-* {
+  --accent-width-length: --value(--translate-*, [percentage], [length]);
+  --accent-width-integer: calc(--value(integer) * var(--spacing));
+  --accent-width: var(--accent-width-length, var(--accent-width-integer));
+
+  @apply [border-block-end-width:var(--accent-width)] border-b-[var(--shade-bold)];
+}
+
+/**  Opacity  */
+/** ──────────────────────────── */
+
+@utility opacity-muted {
+  @apply opacity-(--ex-options-muted-opacity);
+}
+
+@utility opacity-subtle {
+  @apply opacity-(--ex-options-subtle-opacity);
+}
+
+@utility opacity-weak {
+  @apply opacity-(--ex-options-weak-opacity);
+}
+
+/**  Position  */
+/** ──────────────────────────── */
+
+@utility pos-top-start {
+  @apply top-0 left-0;
+}
+
+@utility pos-top {
+  @apply top-0 left-1/2 -translate-x-1/2;
+}
+
+@utility pos-top-end {
+  @apply top-0 right-0;
+}
+
+@utility pos-start {
+  @apply top-1/2 left-0 -translate-y-1/2;
+}
+
+@utility pos-center {
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-end {
+  @apply top-1/2 right-0 -translate-y-1/2;
+}
+
+@utility pos-bottom-start {
+  @apply bottom-0 left-0;
+}
+
+@utility pos-bottom {
+  @apply bottom-0 left-1/2 -translate-x-1/2;
+}
+
+@utility pos-bottom-end {
+  @apply right-0 bottom-0;
+}
+
+@utility pos-out-top-start {
+  @apply top-0 left-0 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-out-top {
+  @apply top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-out-top-end {
+  @apply top-0 right-0 translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-out-start {
+  @apply top-1/2 left-0 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-out-end {
+  @apply top-1/2 right-0 translate-x-1/2 -translate-y-1/2;
+}
+
+@utility pos-out-bottom-start {
+  @apply bottom-0 left-0 -translate-x-1/2 translate-y-1/2;
+}
+
+@utility pos-out-bottom {
+  @apply bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2;
+}
+
+@utility pos-out-bottom-end {
+  @apply right-0 bottom-0 translate-x-1/2 translate-y-1/2;
+}
+
+/**  State  */
+/** ──────────────────────────── */
+
+@utility disabled {
+  @apply palette-neutral pointer-events-none opacity-(--ex-options-disabled-opacity) grayscale select-none;
+}
+
+@utility valid {
+  &:where(.valid),
+  &:where([data-valid]) {
+    --border: var(--ex-options-input-border-valid);
+    --hover-border: var(--ex-options-input-border-valid);
+    --active-border: var(--ex-options-input-border-valid);
+    --border-dark: var(--ex-options-input-border-valid-dark,);
+    --hover-border-dark: var(--ex-options-input-border-valid-dark,);
+    --active-border-dark: var(--ex-options-input-border-valid-dark,);
+    --outline: var(--ex-options-input-border-valid);
+    --outline-dark: var(--ex-options-input-border-valid-dark,);
+  }
+}
+
+@utility invalid {
+  &:where(.invalid),
+  &:where([data-invalid]) {
+    --border: var(--ex-options-input-border-invalid);
+    --hover-border: var(--ex-options-input-border-invalid);
+    --active-border: var(--ex-options-input-border-invalid);
+    --border-dark: var(--ex-options-input-border-invalid-dark,);
+    --hover-border-dark: var(--ex-options-input-border-invalid-dark,);
+    --active-border-dark: var(--ex-options-input-border-invalid-dark,);
+    --outline: var(--ex-options-input-border-invalid);
+    --outline-dark: var(--ex-options-input-border-invalid-dark,);
+  }
+}
+
+/**  Tonal  */
+/** ──────────────────────────── */
+
+@utility tonal-black {
+  --shade-soft: var(--color-black);
+  --shade-soft-dark: var(--color-white);
+
+  --shade-color: var(--color-black);
+  --shade-color-dark: var(--color-white);
+
+  --shade-foreground: var(--color-white);
+  --shade-foreground-dark: var(--color-black);
+
+  --shade-raised: color-mix(in oklch, var(--color-black) 75%, white);
+  --shade-raised-dark: color-mix(in oklch, var(--color-white) 85%, black);
+
+  --shade-deep: color-mix(in oklch, var(--color-black) 50%, white);
+  --shade-deep-dark: color-mix(in oklch, var(--color-white) 70%, black);
+
+  --shade-strong: color-mix(in oklch, var(--color-black) 35%, white);
+  --shade-strong-dark: color-mix(in oklch, var(--color-white) 55%, black);
+
+  --shade-bold: color-mix(in oklch, var(--color-black) 20%, white);
+  --shade-bold-dark: color-mix(in oklch, var(--color-white) 40%, black);
+}
+
+@utility tonal-white {
+  --shade-soft: var(--color-white);
+  --shade-soft-dark: var(--color-black);
+
+  --shade-color: var(--color-white);
+  --shade-color-dark: var(--color-black);
+
+  --shade-foreground: var(--color-black);
+  --shade-foreground-dark: var(--color-white);
+
+  --shade-raised: color-mix(in oklch, var(--color-white) 85%, black);
+  --shade-raised-dark: color-mix(in oklch, var(--color-black) 75%, white);
+
+  --shade-deep: color-mix(in oklch, var(--color-white) 70%, black);
+  --shade-deep-dark: color-mix(in oklch, var(--color-black) 50%, white);
+
+  --shade-strong: color-mix(in oklch, var(--color-white) 55%, black);
+  --shade-strong-dark: color-mix(in oklch, var(--color-black) 35%, white);
+
+  --shade-bold: color-mix(in oklch, var(--color-white) 40%, black);
+  --shade-bold-dark: color-mix(in oklch, var(--color-black) 20%, white);
+}

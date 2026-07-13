@@ -1,0 +1,217 @@
+import React from 'react';
+
+import { Button, Popover } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  popoverAnchorCfg,
+  popoverArrowCfg,
+  popoverCfg,
+  popoverCloseCfg,
+  popoverContentCfg,
+  popoverDescriptionCfg,
+  popoverPortalCfg,
+  popoverSectionCfg,
+  popoverTitleCfg,
+  popoverTriggerCfg,
+} from './popover';
+
+export const Component = (
+  <Popover>
+    <Popover.Trigger asChild>
+      <Button>Click me</Button>
+    </Popover.Trigger>
+    <Popover.Portal>
+      <Popover.Content>
+        <Popover.Section>
+          <Popover.Title>{`The quick brown fox`}</Popover.Title>
+          <Popover.Description>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </Popover.Description>
+        </Popover.Section>
+        <Popover.Close aria-label='Close' />
+        <Popover.Arrow />
+      </Popover.Content>
+    </Popover.Portal>
+  </Popover>
+);
+
+export const SizeComponent = ({ size }) => (
+  <Popover.Content>
+    <Popover.Section>
+      <Popover.Title>{`The quick brown fox`}</Popover.Title>
+      <Popover.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Popover.Description>
+    </Popover.Section>
+    <Popover.Close className={`close-button-${size}`} aria-label='Close' />
+    <Popover.Arrow />
+  </Popover.Content>
+);
+
+export const PlacementComponent = ({ placement }) => (
+  <Popover.Content side={placement}>
+    <Popover.Section>
+      <Popover.Title>{`The quick brown fox`}</Popover.Title>
+      <Popover.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Popover.Description>
+    </Popover.Section>
+    <Popover.Close aria-label='Close' />
+    <Popover.Arrow />
+  </Popover.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Popover
+
+{data.popover.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/popover)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Placement
+
+Use the `side` prop on the `Popover.Content` to set the placement of the component. Values can include `top`, `right`, `bottom`, `left`.
+
+{['top', 'right', 'bottom', 'left'].map((placement, index) => (
+
+  <div key={placement}>
+    { index > 0 ? <hr className='x:my-8 nextra-border' /> : <br /> }
+    <Usage
+      key={placement}
+      components={{
+        usage: React.cloneElement(PlacementComponent({ placement })),
+        wrapper: ({ children }) => (
+          <Popover>
+            <Popover.Trigger asChild>
+              <Button>Click me ({placement})</Button>
+            </Popover.Trigger>
+            <Popover.Portal>{children}</Popover.Portal>
+          </Popover>
+        ),
+      }}
+    />
+  </div>
+))}
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <Popover>
+        <Popover.Trigger asChild>
+          <Button>Click me ({size})</Button>
+        </Popover.Trigger>
+        <Popover.Portal>{children}</Popover.Portal>
+      </Popover>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-popover-z-index: 40;
+
+  --ex-popover-font-size-sm: var(--text-xs);
+  --ex-popover-font-size-md: var(--text-sm);
+  --ex-popover-font-size-lg: var(--text-base);
+
+  --ex-popover-max-w-sm: var(--container-3xs);
+  --ex-popover-max-w-md: var(--container-2xs);
+
+  --ex-popover-radius-sm: var(--radius-sm);
+  --ex-popover-radius-md: var(--radius-sm);
+
+  --ex-popover-shadow-sm: var(--shadow-sm);
+  --ex-popover-shadow-md: var(--shadow-sm);
+
+  --ex-popover-section-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-popover-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-popover-section-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-popover-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-popover-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-popover-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-popover-section-px-sm: calc(var(--spacing) * 4);
+  --ex-popover-section-px-md: calc(var(--spacing) * 5);
+
+  --ex-popover-section-py-sm: calc(var(--spacing) * 4);
+  --ex-popover-section-py-md: calc(var(--spacing) * 5);
+
+  --ex-popover-title-font-family: var(--font-sans);
+  --ex-popover-title-font-weight: var(--font-weight-semibold);
+
+  --ex-popover-title-font-size-sm: var(--text-sm);
+  --ex-popover-title-font-size-md: var(--text-base);
+
+  --ex-popover-description-font-family: var(--font-sans);
+  --ex-popover-description-font-weight: var(--font-weight-normal);
+  --ex-popover-description-opacity: var(--ex-options-muted-opacity);
+
+  --ex-popover-description-font-size-sm: var(--text-xs);
+  --ex-popover-description-font-size-md: var(--text-sm);
+
+  --ex-popover-arrow-height-sm: calc(var(--spacing) * 1.75);
+  --ex-popover-arrow-height-md: calc(var(--spacing) * 1.75);
+
+  --ex-popover-arrow-width-sm: calc(var(--spacing) * 3.5);
+  --ex-popover-arrow-width-md: calc(var(--spacing) * 3.5);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/popover#api-reference)
+
+### Popover
+
+<Api config={popoverCfg} />
+
+### Popover Trigger
+
+<Api config={popoverTriggerCfg} />
+
+### Popover Anchor
+
+<Api config={popoverAnchorCfg} />
+
+### Popover Portal
+
+<Api config={popoverPortalCfg} />
+
+### Popover Content
+
+<Api config={popoverContentCfg} />
+
+### Popover Section
+
+<Api config={popoverSectionCfg} />
+
+### Popover Title
+
+<Api config={popoverTitleCfg} />
+
+### Popover Description
+
+<Api config={popoverDescriptionCfg} />
+
+### Popover Arrow
+
+<Api config={popoverArrowCfg} />
+
+### Popover Close
+
+<Api config={popoverCloseCfg} />

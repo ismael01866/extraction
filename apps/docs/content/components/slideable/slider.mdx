@@ -1,0 +1,150 @@
+import { Slider } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  sliderCfg,
+  sliderRangeCfg,
+  sliderThumbCfg,
+  sliderTrackCfg,
+} from './slider';
+
+export const Component = (
+  <Slider className='max-w-40' defaultValue={[50]}>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb aria-label='slider thumb' />
+  </Slider>
+);
+
+export const ComponentVertical = (
+  <Slider defaultValue={[50]} orientation='vertical'>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb aria-label='slider thumb' />
+  </Slider>
+);
+
+export const ComponentDisabled = (
+  <Slider className='max-w-40' defaultValue={[50]} disabled>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb aria-label='slider thumb' />
+  </Slider>
+);
+
+export const VariantComponent = (
+  <Slider className='max-w-40' defaultValue={[50]}>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb aria-label='slider thumb' />
+  </Slider>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Slider
+
+{data.slider.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/slider)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: ({ children }) => <div className='h-20'>{children}</div>,
+  }}
+  vertical
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-slider-size-sm: calc(var(--spacing) * 0.5);
+  --ex-slider-size-md: calc(var(--spacing) * 1);
+  --ex-slider-size-lg: calc(var(--spacing) * 1.5);
+  --ex-slider-size-xl: calc(var(--spacing) * 2);
+
+  --ex-slider-radius-sm: 9999px;
+  --ex-slider-radius-md: 9999px;
+  --ex-slider-radius-lg: 9999px;
+  --ex-slider-radius-xl: 9999px;
+
+  --ex-slider-thumb-size-sm: calc(var(--spacing) * 3);
+  --ex-slider-thumb-size-md: calc(var(--spacing) * 4);
+  --ex-slider-thumb-size-lg: calc(var(--spacing) * 5);
+  --ex-slider-thumb-size-xl: calc(var(--spacing) * 6);
+
+  --ex-slider-thumb-radius-sm: 9999px;
+  --ex-slider-thumb-radius-md: 9999px;
+  --ex-slider-thumb-radius-lg: 9999px;
+  --ex-slider-thumb-radius-xl: 9999px;
+
+  --ex-slider-thumb-shadow-sm: var(--shadow-sm);
+  --ex-slider-thumb-shadow-md: var(--shadow-sm);
+  --ex-slider-thumb-shadow-lg: var(--shadow-sm);
+  --ex-slider-thumb-shadow-xl: var(--shadow-sm);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/slider#api-reference)
+
+### Slider
+
+<Api config={sliderCfg} />
+
+### Slider Track
+
+<Api config={sliderTrackCfg} />
+
+### Slider Range
+
+<Api config={sliderRangeCfg} />
+
+### Slider Thumb
+
+<Api config={sliderThumbCfg} />

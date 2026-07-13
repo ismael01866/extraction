@@ -1,0 +1,53 @@
+import { DecorativeBox } from '@/app/components';
+
+import { Section } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './section';
+
+export const Component = (
+  <Section>
+    <DecorativeBox className='w-full' />
+  </Section>
+);
+
+export const Wrapper = ({ ...rest }) => (
+  <div className='palette-neutral variant-subtle w-full' {...rest} />
+);
+
+# Section
+
+{data.section.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-section-py-xs: calc(var(--spacing) * 8);
+  --ex-section-py-sm: calc(var(--spacing) * 12);
+  --ex-section-py-md: calc(var(--spacing) * 16);
+  --ex-section-py-lg: calc(var(--spacing) * 20);
+  --ex-section-py-xl: calc(var(--spacing) * 24);
+}
+```
+
+## API
+
+<Api config={cfg} />

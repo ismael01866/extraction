@@ -1,0 +1,36 @@
+import { DecorativeBox } from '@/app/components';
+
+import { Flex } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './flex';
+
+export const Component = (
+  <Flex>
+    <DecorativeBox />
+    <DecorativeBox />
+    <DecorativeBox />
+  </Flex>
+);
+
+# Flex
+
+{data.flex.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: ({ children }) => children,
+  }}
+/>
+## Flex Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-flex-gap-x: calc(var(--spacing) * 2);
+}
+```
+
+## API
+
+<Api config={cfg} />

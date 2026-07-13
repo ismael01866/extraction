@@ -1,0 +1,24 @@
+import { Logo } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './logo';
+
+export const Component = <Logo src='/images/assets/xui.svg' alt='logo' />;
+
+export const Wrapper = ({ children }) => children;
+
+# Logo
+
+{data.logo.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  displayName='Logo'
+/>
+
+## API
+
+<Api config={cfg} />

@@ -1,0 +1,61 @@
+import { Status } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg, statusCfg } from './status';
+
+export const Component = <Status />;
+
+export const Wrapper = ({ children }) => children;
+
+# Status
+
+{data.status.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-status-size-sm: 6px;
+  --ex-status-size-md: 8px;
+  --ex-status-size-lg: 10px;
+  --ex-status-size-xl: 12px;
+
+  --ex-status-radius-sm: 9999px;
+  --ex-status-radius-md: 9999px;
+  --ex-status-radius-lg: 9999px;
+  --ex-status-radius-xl: 9999px;
+}
+```
+
+## API
+
+### Status
+
+<Api config={statusCfg} />

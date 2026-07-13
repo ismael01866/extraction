@@ -1,0 +1,184 @@
+import { Group, IconButton, ToggleGroup } from 'extraction-ui';
+import { LuAlignCenter, LuAlignLeft, LuAlignRight } from 'react-icons/lu';
+
+import data from '../data.json';
+import { toggleGroupCfg, toggleGroupItemCfg } from './toggle-group';
+
+export const Component = (
+  <ToggleGroup type='single'>
+    <Group>
+      <ToggleGroup.Item value={'item-1'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align left'
+        >
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-2'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align center'
+        >
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-3'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align right'
+        >
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>
+);
+
+export const ComponentVertical = (
+  <ToggleGroup type='single' orientation='vertical'>
+    <Group orientation='vertical'>
+      <ToggleGroup.Item value={'item-1'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align left'
+        >
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-2'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align center'
+        >
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-3'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align right'
+        >
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>
+);
+
+export const ComponentDisabled = (
+  <ToggleGroup type='single' disabled>
+    <Group>
+      <ToggleGroup.Item value={'item-1'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align left'
+        >
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-2'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align center'
+        >
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-3'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align right'
+        >
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>
+);
+
+export const ComponentDisabledItem = (
+  <ToggleGroup type='single'>
+    <Group>
+      <ToggleGroup.Item value={'item-1'} asChild disabled>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align left'
+        >
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-2'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align center'
+        >
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value={'item-3'} asChild>
+        <IconButton
+          className={`variant-outline data-[state='on']:variant-solid`}
+          aria-label='align right'
+        >
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Toggle Group
+
+{data['toggle-group'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toggle-group)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/toggle-group#api-reference)
+
+### Toggle Group
+
+<Api config={toggleGroupCfg} />
+
+### Toggle Group Item
+
+<Api config={toggleGroupItemCfg} />

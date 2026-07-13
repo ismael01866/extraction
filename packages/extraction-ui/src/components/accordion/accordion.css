@@ -1,0 +1,161 @@
+@utility accordion-sm {
+  --ex-radius: var(--ex-accordion-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-accordion-font-size-sm, var(--text-xs));
+
+  .ex-accordion-trigger {
+    --ex-px: var(--ex-accordion-trigger-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-accordion-trigger-py-sm, calc(var(--spacing) * 4));
+
+    --ex-gap-x: var(--ex-accordion-trigger-gap-x-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-accordion-section {
+    --ex-px: var(--ex-accordion-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-accordion-section-py-sm, calc(var(--spacing) * 4));
+
+    --ex-gap-x: var(--ex-accordion-section-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-accordion-section-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-accordion-icon {
+    --ex-font-size: var(--ex-accordion-icon-font-size-sm, var(--text-lg));
+  }
+}
+
+@utility accordion-md {
+  --ex-radius: var(--ex-accordion-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-accordion-font-size-md, var(--text-sm));
+
+  .ex-accordion-trigger {
+    --ex-px: var(--ex-accordion-trigger-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-accordion-trigger-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-accordion-trigger-gap-x-md, calc(var(--spacing) * 2.5));
+  }
+
+  .ex-accordion-section {
+    --ex-px: var(--ex-accordion-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-accordion-section-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-accordion-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-accordion-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-accordion-icon {
+    --ex-font-size: var(--ex-accordion-icon-font-size-md, var(--text-xl));
+  }
+}
+
+@utility accordion-lg {
+  --ex-radius: var(--ex-accordion-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-accordion-font-size-lg, var(--text-base));
+
+  .ex-accordion-trigger {
+    --ex-px: var(--ex-accordion-trigger-px-lg, calc(var(--spacing) * 6));
+    --ex-py: var(--ex-accordion-trigger-py-lg, calc(var(--spacing) * 6));
+
+    --ex-gap-x: var(--ex-accordion-trigger-gap-x-lg, calc(var(--spacing) * 3));
+  }
+
+  .ex-accordion-section {
+    --ex-px: var(--ex-accordion-section-px-lg, calc(var(--spacing) * 6));
+    --ex-py: var(--ex-accordion-section-py-lg, calc(var(--spacing) * 6));
+
+    --ex-gap-x: var(--ex-accordion-section-gap-x-lg, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-accordion-section-gap-y-lg, calc(var(--spacing) * 2));
+  }
+
+  .ex-accordion-icon {
+    --ex-font-size: var(--ex-accordion-icon-font-size-lg, var(--text-2xl));
+  }
+}
+
+@layer components {
+  .ex-accordion {
+    @apply accordion-md;
+  }
+
+  .ex-accordion {
+    @apply palette-neutral variant-outline;
+  }
+
+  .ex-accordion {
+    @apply flex flex-col;
+    @apply rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-accordion-item {
+        @apply border-[var(--shade-soft)] dark:border-[var(--shade-soft-dark)];
+      }
+    }
+
+    &:where(.variant-subtle) .ex-accordion-item {
+      @apply border-[var(--shade-raised)] dark:border-[var(--shade-raised-dark)];
+    }
+  }
+
+  .ex-accordion-item {
+    @apply border-b border-inherit;
+
+    &:where(:last-child) {
+      @apply border-be-0;
+    }
+  }
+
+  .ex-accordion-header {
+    @apply flex items-center;
+  }
+
+  .ex-accordion-trigger {
+    --ex-cursor: var(--ex-accordion-trigger-cursor, default);
+
+    @apply relative inline-block flex-1 cursor-pointer truncate text-start;
+    @apply [cursor:var(--ex-cursor)] gap-x-[var(--ex-gap-x)] px-[var(--ex-px)] py-[var(--ex-py)] pe-[calc(var(--ex-px)*2)];
+
+    &:where([data-state='open']) .ex-accordion-icon > .ex-accordion-icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .ex-accordion-icon {
+    @apply pointer-events-none absolute end-4 top-1/2 inline-flex h-[1em] w-[1em] flex-shrink-0 -translate-y-1/2 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-accordion-caret {
+    @apply size-[1em] fill-none stroke-current stroke-1 [stroke-linecap:round] [stroke-linejoin:round];
+  }
+
+  .ex-accordion-content {
+    @apply overflow-hidden;
+
+    &:where([data-state='open']) {
+      --tw-enter-height: var(--radix-accordion-content-height, auto);
+      @apply animate-collapse-down;
+    }
+
+    &:where([data-state='closed']) {
+      --tw-exit-height: var(--radix-accordion-content-height, auto);
+      @apply animate-collapse-up;
+    }
+
+    > .ex-accordion-section:is(:first-child) {
+      @apply pbs-0;
+    }
+  }
+
+  .ex-accordion-section {
+    @apply flex flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+}
+
+@layer utilities {
+  .ex-accordion-trigger {
+    &:where(:focus-visible) {
+      @apply interactive-focus;
+    }
+  }
+}

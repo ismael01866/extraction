@@ -1,0 +1,355 @@
+import { ContextMenu, IconButton } from 'extraction-ui';
+import {
+  LuCheck,
+  LuChevronRight,
+  LuDot,
+  LuMenu,
+  LuScreenShare,
+  LuTextSelect,
+} from 'react-icons/lu';
+
+import data from '../data.json';
+import {
+  cfg,
+  contextMenuCfg,
+  contextMenuCheckboxItemCfg,
+  contextMenuCommandCfg,
+  contextMenuContentCfg,
+  contextMenuItemCfg,
+  contextMenuItemIndicatorCfg,
+  contextMenuLabelCfg,
+  contextMenuPortalCfg,
+  contextMenuRadioGroupCfg,
+  contextMenuRadioItemCfg,
+  contextMenuSectionCfg,
+  contextMenuSeparatorCfg,
+  contextMenuSubCfg,
+  contextMenuSubContentCfg,
+  contextMenuSubTriggerCfg,
+  contextMenuTriggerCfg,
+} from './context-menu';
+
+export const Component = (
+  <ContextMenu>
+    <ContextMenu.Trigger asChild>
+      <IconButton aria-label='Open context menu'>
+        <LuMenu />
+      </IconButton>
+    </ContextMenu.Trigger>
+    <ContextMenu.Portal>
+      <ContextMenu.Content>
+        <ContextMenu.Section>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuTextSelect />
+            </ContextMenu.Indicator>
+            Select All
+            <ContextMenu.Command>⌘A</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuScreenShare />
+            </ContextMenu.Indicator>
+            Take Screenshot
+            <ContextMenu.Command>⌘S</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Actions</ContextMenu.Label>
+          <ContextMenu.Item>
+            New Tab
+            <ContextMenu.Command>⌘T</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Sub>
+            <ContextMenu.SubTrigger>
+              More Actions
+              <ContextMenu.Indicator>
+                <LuChevronRight />
+              </ContextMenu.Indicator>
+            </ContextMenu.SubTrigger>
+            <ContextMenu.Portal>
+              <ContextMenu.SubContent>
+                <ContextMenu.Section>
+                  <ContextMenu.Item>Print</ContextMenu.Item>
+                  <ContextMenu.Item>Save Page As...</ContextMenu.Item>
+                </ContextMenu.Section>
+              </ContextMenu.SubContent>
+            </ContextMenu.Portal>
+          </ContextMenu.Sub>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Checkbox</ContextMenu.Label>
+          <ContextMenu.CheckboxItem checked>
+            <ContextMenu.Indicator>
+              <LuCheck />
+            </ContextMenu.Indicator>
+            Show Bookmarks Bar
+          </ContextMenu.CheckboxItem>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Radio</ContextMenu.Label>
+          <ContextMenu.RadioGroup value='asc'>
+            <ContextMenu.RadioItem value='asc'>
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Ascending
+            </ContextMenu.RadioItem>
+            <ContextMenu.RadioItem value='desc'>
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Descending
+            </ContextMenu.RadioItem>
+          </ContextMenu.RadioGroup>
+        </ContextMenu.Section>
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  </ContextMenu>
+);
+
+export const ComponentDisabledItem = (
+  <ContextMenu>
+    <ContextMenu.Trigger asChild>
+      <IconButton aria-label='Open context menu'>
+        <LuMenu />
+      </IconButton>
+    </ContextMenu.Trigger>
+    <ContextMenu.Portal>
+      <ContextMenu.Content>
+        <ContextMenu.Section>
+          <ContextMenu.Item disabled>
+            <ContextMenu.Indicator>
+              <LuTextSelect />
+            </ContextMenu.Indicator>
+            Select All
+            <ContextMenu.Command>⌘A</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuScreenShare />
+            </ContextMenu.Indicator>
+            Take Screenshot
+            <ContextMenu.Command>⌘S</ContextMenu.Command>
+          </ContextMenu.Item>
+        </ContextMenu.Section>
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  </ContextMenu>
+);
+
+export const SizeComponent = ({ size }) => (
+  <ContextMenu.Content>
+    <ContextMenu.Section>
+      <ContextMenu.Item>
+        <ContextMenu.Indicator>
+          <LuTextSelect />
+        </ContextMenu.Indicator>
+        Select All
+        <ContextMenu.Command>⌘A</ContextMenu.Command>
+      </ContextMenu.Item>
+      <ContextMenu.Separator />
+      <ContextMenu.Label>Actions</ContextMenu.Label>
+      <ContextMenu.Sub>
+        <ContextMenu.SubTrigger>
+          More Actions
+          <ContextMenu.Indicator>
+            <LuChevronRight />
+          </ContextMenu.Indicator>
+        </ContextMenu.SubTrigger>
+        <ContextMenu.Portal>
+          <ContextMenu.SubContent className={` context-menu-content-${size} `}>
+            <ContextMenu.Section>
+              <ContextMenu.Item>Print</ContextMenu.Item>
+              <ContextMenu.Item>Save Page As...</ContextMenu.Item>
+            </ContextMenu.Section>
+          </ContextMenu.SubContent>
+        </ContextMenu.Portal>
+      </ContextMenu.Sub>
+      <ContextMenu.Separator />
+      <ContextMenu.Label>Checkbox</ContextMenu.Label>
+      <ContextMenu.CheckboxItem checked>
+        <ContextMenu.Indicator>
+          <LuCheck />
+        </ContextMenu.Indicator>
+        Show Bookmarks Bar
+      </ContextMenu.CheckboxItem>
+      <ContextMenu.Separator />
+      <ContextMenu.Label>Radio</ContextMenu.Label>
+      <ContextMenu.RadioGroup value='asc'>
+        <ContextMenu.RadioItem value='asc'>
+          <ContextMenu.Indicator>
+            <LuDot />
+          </ContextMenu.Indicator>
+          Sort Ascending
+        </ContextMenu.RadioItem>
+        <ContextMenu.RadioItem value='desc'>
+          <ContextMenu.Indicator>
+            <LuDot />
+          </ContextMenu.Indicator>
+          Sort Descending
+        </ContextMenu.RadioItem>
+      </ContextMenu.RadioGroup>
+    </ContextMenu.Section>
+  </ContextMenu.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Context Menu
+
+{data['context-menu'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/context-menu)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled Item
+
+<Usage
+  components={{
+    usage: ComponentDisabledItem,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children }) => (
+      <ContextMenu>
+        <ContextMenu.Trigger asChild>
+          <IconButton aria-label='Open context menu'>
+            <LuMenu />
+          </IconButton>
+        </ContextMenu.Trigger>
+        <ContextMenu.Portal>{children}</ContextMenu.Portal>
+      </ContextMenu>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-context-menu-max-w-sm: var(--container-3xs);
+  --ex-context-menu-max-w-md: var(--container-2xs);
+
+  --ex-context-menu-radius-sm: var(--radius-sm);
+  --ex-context-menu-radius-md: var(--radius-sm);
+
+  --ex-context-menu-shadow-sm: var(--shadow-sm);
+  --ex-context-menu-shadow-md: var(--shadow-sm);
+
+  --ex-context-menu-section-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-context-menu-section-gap-x-md: calc(var(--spacing) * 2);
+
+  --ex-context-menu-section-px-sm: calc(var(--spacing) * 1.5);
+  --ex-context-menu-section-px-md: calc(var(--spacing) * 2);
+
+  --ex-context-menu-section-py-sm: calc(var(--spacing) * 2);
+  --ex-context-menu-section-py-md: calc(var(--spacing) * 2.5);
+
+  --ex-context-menu-item-px-sm: calc(var(--spacing) * 2);
+  --ex-context-menu-item-px-md: calc(var(--spacing) * 2);
+
+  --ex-context-menu-item-py-sm: var(--spacing);
+  --ex-context-menu-item-py-md: var(--spacing);
+
+  --ex-context-menu-item-font-family: var(--font-sans);
+  --ex-context-menu-item-font-weight: var(--font-weight-normal);
+
+  --ex-context-menu-item-font-size-sm: var(--text-xs);
+  --ex-context-menu-item-font-size-md: var(--text-sm);
+
+  --ex-context-menu-item-indicator-font-size-sm: var(--text-xs);
+  --ex-context-menu-item-indicator-font-size-md: var(--text-sm);
+
+  --ex-context-menu-label-font-family: var(--font-sans);
+  --ex-context-menu-label-font-weight: var(--font-weight-normal);
+  --ex-context-menu-label-opacity: var(--ex-options-muted-opacity);
+
+  --ex-context-menu-label-font-size-sm: var(--text-2xs);
+  --ex-context-menu-label-font-size-md: var(--text-xs);
+
+  --ex-context-menu-command-font-family: var(--font-sans);
+  --ex-context-menu-command-font-weight: var(--font-weight-normal);
+  --ex-context-menu-command-opacity: var(--ex-options-muted-opacity);
+
+  --ex-context-menu-command-font-size-sm: var(--text-2xs);
+  --ex-context-menu-command-font-size-md: var(--text-xs);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/context-menu#api-reference)
+
+### Context Menu
+
+<Api config={contextMenuCfg} />
+
+### Context Menu Trigger
+
+<Api config={contextMenuTriggerCfg} />
+
+### Context Menu Portal
+
+<Api config={contextMenuPortalCfg} />
+
+### Context Menu Content
+
+<Api config={contextMenuContentCfg} />
+
+### Context Menu Section
+
+<Api config={contextMenuSectionCfg} />
+
+### Context Menu Item
+
+<Api config={contextMenuItemCfg} />
+
+### Context Menu Indicator
+
+<Api config={contextMenuItemIndicatorCfg} />
+
+### Context Menu Label
+
+<Api config={contextMenuLabelCfg} />
+
+### Context Menu Command
+
+<Api config={contextMenuCommandCfg} />
+
+### Context Menu Separator
+
+<Api config={contextMenuSeparatorCfg} />
+
+### Context Menu RadioGroup
+
+<Api config={contextMenuRadioGroupCfg} />
+
+### Context Menu RadioItem
+
+<Api config={contextMenuRadioItemCfg} />
+
+### Context Menu CheckboxItem
+
+<Api config={contextMenuCheckboxItemCfg} />
+
+### Context Sub
+
+<Api config={contextMenuSubCfg} />
+
+### Context Sub Trigger
+
+<Api config={contextMenuSubTriggerCfg} />
+
+### Context Sub Content
+
+<Api config={contextMenuSubContentCfg} />

@@ -1,0 +1,60 @@
+@layer components {
+  .ex-marquee {
+    --ex-gap-x: var(--ex-marquee-gap-x, calc(var(--spacing) * 8));
+    --ex-gap-y: var(--ex-marquee-gap-y, calc(var(--spacing) * 8));
+
+    --ex-delay: var(--ex-marquee-delay, 0s);
+    --ex-ease: var(--ex-marquee-ease, linear);
+    --ex-duration: var(--ex-marquee-duration, 20s);
+
+    --ex-fill: var(--ex-marquee-fill, forwards);
+    --ex-direction: var(--ex-marquee-direction, normal);
+
+    --ex-count: var(--ex-marquee-count, infinite);
+    --ex-play: var(--ex-marquee-play, running);
+
+    --ex-animation-x: var(--ex-marquee-animation-x, marquee-scroll-x);
+    --ex-animation-y: var(--ex-marquee-animation-y, marquee-scroll-y);
+  }
+
+  .ex-marquee {
+    @apply flex overflow-hidden;
+  }
+
+  .ex-marquee-item {
+    @apply flex items-center justify-center;
+  }
+
+  .ex-marquee-track {
+    @apply flex will-change-transform;
+    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
+  }
+
+  .ex-marquee:where([data-orientation='horizontal']) .ex-marquee-track {
+    --ex-marquee-transform-x: calc(-50% - calc(var(--ex-gap-x)) / 2);
+
+    animation: marquee-scroll-x var(--ex-duration) var(--ex-ease) var(--ex-delay) var(--ex-count)
+      var(--ex-direction) var(--ex-fill);
+
+    animation-name: var(--ex-animation-x);
+    animation-play-state: var(--ex-play);
+  }
+
+  .ex-marquee:where([data-orientation='horizontal']) .ex-marquee-track {
+    @apply w-max flex-row;
+  }
+
+  .ex-marquee:where([data-orientation='vertical']) .ex-marquee-track {
+    --ex-marquee-transform-y: calc(-50% - calc(var(--ex-gap-y)) / 2);
+
+    animation: marquee-scroll-y var(--ex-duration) var(--ex-ease) var(--ex-delay) var(--ex-count)
+      var(--ex-direction) var(--ex-fill);
+
+    animation-name: var(--ex-animation-y);
+    animation-play-state: var(--ex-play);
+  }
+
+  .ex-marquee:where([data-orientation='vertical']) .ex-marquee-track {
+    @apply h-max flex-col items-start;
+  }
+}

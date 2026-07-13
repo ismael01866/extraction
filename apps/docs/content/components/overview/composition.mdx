@@ -1,0 +1,110 @@
+# Composition
+
+Extraction UI encourages composition-first development: build complex interfaces by combining small, focused components.
+
+## Slotting and element control
+
+Use the `as` prop to change the rendered element.
+
+```tsx
+import { Button } from 'extraction-ui';
+
+export function Example() {
+  return (
+    <Button as='a' href='/docs'>
+      Read the docs
+    </Button>
+  );
+}
+```
+
+Use the `asChild` prop when you want to render the element as the child, and pass its props and styles along.
+
+```tsx
+import { Button } from 'extraction-ui';
+
+export function Example() {
+  return (
+    <Button asChild>
+      <a href='/docs'>Read the docs</a>
+    </Button>
+  );
+}
+```
+
+## Compound components
+
+Many components ship as compound APIs with dot notation. This lets you keep structure explicit while sharing styles and context.
+
+```tsx
+import { Button, Card } from 'extraction-ui';
+
+export function Example() {
+  return (
+    <Card>
+      <Card.Content>
+        <Card.Section>
+          <Card.Title>Header</Card.Title>
+          <Card.Description>
+            Alice was beginning to get very tired.
+          </Card.Description>
+        </Card.Section>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+## Closed Components
+
+Closed components encapsulate their structure and only expose a fixed set of props. Use them when you want a simple, opinionated API without internal customization.
+
+```tsx
+import { Button, Card, VStack } from 'extraction-ui';
+
+export function FeatureCard(props) {
+  const { title, description, onAction } = props;
+
+  return (
+    <Card>
+      <Card.Content>
+        <Card.Section>
+          <VStack>
+            <Card.Title>{title}</Card.Title>
+            <Card.Description>{description}</Card.Description>
+          </VStack>
+          <Button onClick={onAction}>Learn more</Button>
+        </Card.Section>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+## Creating new components
+
+You can wrap components to create specialized variants while preserving polymorphism.
+
+```tsx
+import { ElementType } from 'react';
+
+import { Button, ButtonProps } from 'extraction-ui';
+
+export function CustomButton<T extends ElementType = 'button'>(
+  props: ButtonProps<T>,
+) {
+  return <Button {...props} />;
+}
+```
+
+This keeps the `as` prop working so you can render the custom button as any element.
+
+```tsx
+<CustomButton>
+  Submit
+</CustomButton>
+
+<CustomButton as='a' href='/next'>
+  Continue
+</CustomButton>
+```

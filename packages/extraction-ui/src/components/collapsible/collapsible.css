@@ -1,0 +1,15 @@
+@layer components {
+  .ex-collapsible-content {
+    @apply overflow-hidden;
+
+    &:where([data-state='open']) {
+      --tw-enter-height: var(--radix-collapsible-content-height, auto);
+      @apply animate-collapse-down;
+    }
+
+    &:where([data-state='closed']) {
+      --tw-exit-height: var(--radix-collapsible-content-height, auto);
+      @apply animate-collapse-up;
+    }
+  }
+}

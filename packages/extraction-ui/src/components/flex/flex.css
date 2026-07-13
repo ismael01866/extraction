@@ -1,0 +1,7 @@
+@layer components {
+  .ex-flex {
+    --ex-gap-x: var(--ex-flex-gap-x, calc(var(--spacing) * 2));
+
+    @apply flex gap-x-[var(--ex-gap-x)];
+  }
+}

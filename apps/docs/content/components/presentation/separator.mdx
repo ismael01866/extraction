@@ -1,0 +1,85 @@
+import { DecorativeBox } from '@/app/components';
+
+import { HStack, Separator, VStack } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './separator';
+
+export const Component = (
+  <VStack>
+    <DecorativeBox />
+    <Separator />
+    <DecorativeBox />
+  </VStack>
+);
+
+export const ComponentVertical = (
+  <HStack>
+    <DecorativeBox />
+    <Separator className='h-8' orientation='vertical' />
+    <DecorativeBox />
+    <Separator className='h-8' orientation='vertical' />
+    <DecorativeBox />
+  </HStack>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Separator
+
+{data.separator.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/separator)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: <Separator />,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: <Separator />,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-separator-size-xs: 1px;
+  --ex-separator-size-sm: 2px;
+  --ex-separator-size-md: 3px;
+  --ex-separator-size-lg: 4px;
+  --ex-separator-size-xl: 5px;
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/separator#api-reference)
+
+<Api config={cfg} />

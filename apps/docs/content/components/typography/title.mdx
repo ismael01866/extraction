@@ -1,0 +1,62 @@
+import { Title } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './title';
+
+export const Component = (
+  <Title>{`The quick brown fox jumps over the lazy dog`}</Title>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Title
+
+{data.title.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-title-font-size-sm: var(--text-sm);
+  --ex-title-font-size-md: var(--text-base);
+  --ex-title-font-size-lg: var(--text-lg);
+  --ex-title-font-size-xl: var(--text-xl);
+
+  --ex-title-line-height-sm: var(--text-sm-line-height);
+  --ex-title-line-height-md: var(--text-base-line-height);
+  --ex-title-line-height-lg: var(--text-lg-line-height);
+  --ex-title-line-height-xl: var(--text-xl-line-height);
+
+  --ex-title-font-family-sm: var(--font-sans);
+  --ex-title-font-family-md: var(--font-sans);
+  --ex-title-font-family-lg: var(--font-sans);
+  --ex-title-font-family-xl: var(--font-sans);
+
+  --ex-title-font-weight-sm: var(--font-weight-medium);
+  --ex-title-font-weight-md: var(--font-weight-medium);
+  --ex-title-font-weight-lg: var(--font-weight-medium);
+  --ex-title-font-weight-xl: var(--font-weight-medium);
+}
+```
+
+## API
+
+<Api config={cfg} />

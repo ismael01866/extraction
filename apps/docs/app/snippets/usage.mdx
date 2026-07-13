@@ -1,0 +1,108 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { A, BaseContainer, Code, CodeContainer, P } from '@/app/components';
+import { getDisplayName } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+export const wrapUsageElement = ({ usage, wrapper }) => {
+  const element = typeof usage === 'function' ? usage() : usage;
+
+  try {
+    const out = wrapper({
+      children:
+        element?.props?.children !== undefined
+          ? element
+          : React.cloneElement(element, element.props),
+    });
+
+    if (Array.isArray(out)) {
+      return out.length === 1 ? out[0] : <>{out}</>;
+    }
+
+    return out;
+  } catch {
+    return React.createElement(wrapper, null, element);
+  }
+};
+
+{
+  props.disabled && (
+    <P>
+      Use the <code className="nextra-code">disabled</code> class to disable
+      the component.
+    </P>
+  )
+}
+
+{
+  props.disabledNative && (
+    <P>
+      Use the <code className="nextra-code">disabled</code> attr or the{' '}
+      <code className="nextra-code">disabled</code> class to disable an item
+      component.
+    </P>
+  )
+}
+
+{
+  props.withAccent && (
+    <P>
+      Use the <code className="nextra-code">accent-border</code> class to add a decorative accent to the component. Refer to the <A href="/theming/decorations/accents">Accents</A> section for more information.
+    </P>
+  )
+}
+
+{
+  props.vertical && (
+    <P>
+      Set the <code className="nextra-code">orientation</code> prop to <code className="nextra-code">vertical</code> to change the orientation of the component.
+    </P>
+  )
+}
+
+{
+  props.valid && (
+    <P>
+      Use the <code className="nextra-code">data-valid</code> attr or the{' '}
+      <code className="nextra-code">valid</code> class to indicate an valid
+      state.
+    </P>
+  )
+}
+
+{
+  props.invalid && (
+    <P>
+      Use the <code className="nextra-code">data-invalid</code> attr or the{' '}
+      <code className="nextra-code">invalid</code> class to indicate an invalid
+      state.
+    </P>
+  )
+}
+
+<BaseContainer className={props.containerClasses}>
+  <props.components.wrapper>
+    {props.components.usage}
+  </props.components.wrapper>
+</BaseContainer>
+
+<CodeContainer>
+  <Code>
+    {props.serializedCode ||
+      reactElementToJSXString(
+        wrapUsageElement({
+          usage: props.components.usage,
+          wrapper: props.components.wrapper,
+        }),
+        {
+          displayName: (element) =>
+            getDisplayName(element) || props.displayName,
+        },
+      )}
+  </Code>
+</CodeContainer>
+
+{/* prettier-ignore-end */}

@@ -1,0 +1,34 @@
+@layer components {
+  .ex-text-slide {
+    --ex-transition-delay: var(--ex-text-slide-delay, 0s);
+    --ex-transition-ease: var(--ex-text-slide-ease, var(--ease-out));
+    --ex-transition-duration: var(--ex-text-slide-duration, 200ms);
+  }
+
+  .ex-text-slide {
+    @apply inline-flex h-lh overflow-hidden;
+
+    &:where(:hover) {
+      .ex-text-slide-track {
+        @apply -translate-y-full;
+      }
+    }
+
+    &:where(:has(.ex-text-slide-item > svg)) {
+      @apply h-[1em];
+    }
+  }
+
+  .ex-text-slide-track {
+    @apply flex flex-col transition-transform will-change-transform;
+    @apply delay-(--ex-transition-delay) duration-(--ex-transition-duration) ease-(--ex-transition-ease);
+  }
+
+  .ex-text-slide-item {
+    @apply flex items-center;
+  }
+
+  .group\/text-slide:is(:hover, :focus-visible) .ex-text-slide-track {
+    @apply -translate-y-full;
+  }
+}

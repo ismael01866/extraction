@@ -1,0 +1,171 @@
+@utility dialog-content-sm {
+  --ex-font-size: var(--ex-dialog-font-size-sm, var(--text-sm));
+
+  --ex-w: var(--ex-dialog-w-sm, var(--container-sm));
+  --ex-radius: var(--ex-dialog-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-dialog-shadow-sm, var(--shadow-xl));
+
+  .ex-dialog-section {
+    --ex-px: var(--ex-dialog-section-px-sm, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-dialog-section-py-sm, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-dialog-title {
+    --ex-font-size: var(--ex-dialog-title-font-size-sm, var(--text-base));
+  }
+
+  .ex-dialog-description {
+    --ex-font-size: var(--ex-dialog-description-font-size-sm, var(--text-sm));
+  }
+}
+
+@utility dialog-content-md {
+  --ex-font-size: var(--ex-dialog-font-size-md, var(--text-sm));
+
+  --ex-w: var(--ex-dialog-w-md, var(--container-md));
+  --ex-radius: var(--ex-dialog-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-dialog-shadow-md, var(--shadow-xl));
+
+  .ex-dialog-section {
+    --ex-px: var(--ex-dialog-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-dialog-section-py-md, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-dialog-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-dialog-title {
+    --ex-font-size: var(--ex-dialog-title-font-size-md, var(--text-base));
+  }
+
+  .ex-dialog-description {
+    --ex-font-size: var(--ex-dialog-description-font-size-md, var(--text-sm));
+  }
+}
+
+@utility dialog-content-lg {
+  --ex-font-size: var(--ex-dialog-font-size-lg, var(--text-sm));
+
+  --ex-w: var(--ex-dialog-w-lg, var(--container-lg));
+  --ex-radius: var(--ex-dialog-radius-lg, var(--radius-sm));
+  --ex-shadow: var(--ex-dialog-shadow-lg, var(--shadow-xl));
+
+  .ex-dialog-section {
+    --ex-px: var(--ex-dialog-section-px-lg, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-dialog-section-py-lg, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-lg, calc(var(--spacing) * 2));
+  }
+
+  .ex-dialog-title {
+    --ex-font-size: var(--ex-dialog-title-font-size-lg, var(--text-base));
+  }
+
+  .ex-dialog-description {
+    --ex-font-size: var(--ex-dialog-description-font-size-lg, var(--text-sm));
+  }
+}
+
+@utility dialog-content-xl {
+  --ex-w: var(--ex-dialog-w-xl, var(--container-xl));
+  --ex-radius: var(--ex-dialog-radius-xl, var(--radius-sm));
+  --ex-shadow: var(--ex-dialog-shadow-xl, var(--shadow-xl));
+
+  .ex-dialog-section {
+    --ex-px: var(--ex-dialog-section-px-xl, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-dialog-section-py-xl, calc(var(--spacing) * 5));
+
+    --ex-gap-x: var(--ex-dialog-section-gap-x-xl, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-xl, calc(var(--spacing) * 2));
+  }
+
+  .ex-dialog-title {
+    --ex-font-size: var(--ex-dialog-title-font-size-xl, var(--text-base));
+  }
+
+  .ex-dialog-description {
+    --ex-font-size: var(--ex-dialog-description-font-size-xl, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-dialog-overlay {
+    --ex-z-index: var(--ex-dialog-overlay-z-index, var(--ex-options-z-dialog-overlay));
+
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply z-[var(--ex-z-index)];
+
+    &:where([data-state='open']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-state='closed']) {
+      @apply animate-out fade-out;
+    }
+  }
+
+  .ex-dialog-content {
+    @apply dialog-content-md;
+  }
+
+  .ex-dialog-content {
+    --ex-z-index: var(--ex-dialog-z-index, var(--ex-options-z-dialog));
+
+    @apply palette-neutral variant-outline fixed top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
+    @apply z-[var(--ex-z-index)] w-[var(--ex-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+
+    &:where([data-state='open']) {
+      @apply animate-in fade-in scale-in-75;
+    }
+
+    &:where([data-state='closed']) {
+      @apply animate-out fade-out;
+    }
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+  }
+
+  .ex-dialog-content {
+    @apply flex flex-1 flex-col;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-dialog-section {
+    @apply flex flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-dialog-close-native {
+    @apply absolute end-1.5 top-1.5;
+    @apply palette-inherit variant-inherit border-none;
+
+    .ex-close-icon {
+      @apply size-[1em] fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
+    }
+  }
+
+  .ex-dialog-title {
+    --ex-font-weight: var(--ex-dialog-title-font-weight, var(--font-weight-semibold));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-dialog-description {
+    --ex-font-weight: var(--ex-dialog-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-dialog-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-dialog-content {
+    @apply component-variant-panel;
+  }
+}

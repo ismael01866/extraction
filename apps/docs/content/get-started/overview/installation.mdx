@@ -1,0 +1,116 @@
+# Installation
+
+import { Steps } from 'nextra/components';
+
+Get Extraction UI up and running in your project with a few simple steps.
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- **Node.js** 18.0.0 or higher
+- **React** 19.2.0 or higher
+- **React DOM** 19.2.0 or higher
+
+## Installation
+
+<Steps>
+
+### Install the package
+
+```bash
+pnpm install extraction-ui
+```
+
+### Install peer dependencies
+
+Extraction UI requires Radix UI as a peer dependency:
+
+```bash
+pnpm add radix-ui
+```
+
+And Tailwind CSS for styling:
+
+```bash
+pnpm add -D tailwindcss @tailwindcss/postcss postcss
+```
+
+Add Tailwind to your PostCSS config as well
+
+```js
+/** postcss.config.mjs */
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+```
+
+For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation).
+
+### Import styles
+
+Add the Extraction UI styles to your main CSS file:
+
+```css
+/** main.css */
+@import 'tailwindcss';
+@import 'extraction-ui/styles';
+```
+
+```tsx
+/** app/layout.tsx */
+import 'main.css';
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang='en'>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Start using components
+
+Import and use components in your project:
+
+```tsx
+import { Button, Card } from 'extraction-ui';
+
+export default function Home() {
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Welcome to Extraction UI</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Button className='mbs-4'>Submit</Button>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+</Steps>
+
+## Next Steps
+
+Now that you have Extraction UI installed, explore:
+
+### Components
+
+- [Library](/components/overview/introduction) - Browse all available components
+- [Composition](/components/overview/composition) - Understand how to compose components together
+
+### Theming
+
+- [Colors](/theming/theming/colors) - Customize the color palette to match your brand
+- [Variants](/theming/theming/variants) - Learn how to create and use component variants for different styles and states
+- [Color Mode](/theming/theming/color-mode) - Implement light and dark mode support in your application
+
+### Other
+
+- [Options](/theming/other/options) - Configure global options for Extraction UI
+- [Utilities](/theming/other/utilities) - Explore utility classes for styling and functionality

@@ -1,0 +1,117 @@
+import { NavButton } from 'extraction-ui';
+import { LuMail } from 'react-icons/lu';
+
+import data from '../data.json';
+import { cfg } from './nav-button';
+
+export const Component = (
+  <NavButton>
+    <LuMail /> {`Button`}
+  </NavButton>
+);
+
+export const ComponentWithIcon = (
+  <NavButton>
+    <LuMail />
+    {`Button`}
+  </NavButton>
+);
+
+export const ComponentDisabled = (
+  <NavButton className='disabled'>
+    <LuMail /> {`Button`}
+  </NavButton>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# NavButton
+
+{data['nav-button'].description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## With Icon
+
+<Usage
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-nav-button-cursor: pointer;
+  --ex-nav-button-font-family: var(--font-sans);
+  --ex-nav-button-font-weight: var(--font-weight-normal);
+
+  --ex-nav-button-font-size-sm: var(--text-xs);
+  --ex-nav-button-font-size-md: var(--text-sm);
+  --ex-nav-button-font-size-lg: var(--text-base);
+  --ex-nav-button-font-size-xl: var(--text-lg);
+
+  --ex-nav-button-width-sm: calc(var(--spacing) * 14);
+  --ex-nav-button-width-md: calc(var(--spacing) * 16);
+  --ex-nav-button-width-lg: calc(var(--spacing) * 18);
+  --ex-nav-button-width-xl: calc(var(--spacing) * 20);
+
+  --ex-nav-button-gap-y-sm: calc(var(--spacing) * 1.75);
+  --ex-nav-button-gap-y-md: calc(var(--spacing) * 2);
+  --ex-nav-button-gap-y-lg: calc(var(--spacing) * 2.25);
+  --ex-nav-button-gap-y-xl: calc(var(--spacing) * 2.5);
+
+  --ex-nav-button-py-sm: calc(var(--spacing) * 2.5);
+  --ex-nav-button-py-md: calc(var(--spacing) * 3);
+  --ex-nav-button-py-lg: calc(var(--spacing) * 3.5);
+  --ex-nav-button-py-xl: calc(var(--spacing) * 4);
+
+  --ex-nav-button-radius-sm: var(--radius-sm);
+  --ex-nav-button-radius-md: var(--radius-sm);
+  --ex-nav-button-radius-lg: var(--radius-sm);
+  --ex-nav-button-radius-xl: var(--radius-sm);
+}
+```
+
+## API
+
+<Api config={cfg} />

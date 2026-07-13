@@ -1,0 +1,174 @@
+import { Field, NativeSelect } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  nativeSelectCfg,
+  nativeSelectFieldCfg,
+  nativeSelectIconCfg,
+} from './native-select';
+
+export const Component = (
+  <NativeSelect className='w-64'>
+    <NativeSelect.Field defaultValue='' aria-label='select field'>
+      <option value='' disabled>
+        Select an option
+      </option>
+      <option>option 1</option>
+      <option>option 2</option>
+    </NativeSelect.Field>
+    <NativeSelect.Icon />
+  </NativeSelect>
+);
+
+export const ComponentValid = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Field.Helper>{`The quick brown fox jumps over`}</Field.Helper>
+    <NativeSelect className='valid'>
+      <NativeSelect.Field defaultValue='option-1' aria-label='select field'>
+        <option value='option-1'>option 1</option>
+      </NativeSelect.Field>
+      <NativeSelect.Icon />
+    </NativeSelect>
+    <Field.Success>{`Name is valid`}</Field.Success>
+  </Field>
+);
+
+export const ComponentInvalid = (
+  <Field className='w-64'>
+    <Field.Label htmlFor='name'>
+      Name
+      <Field.RequiredIndicator />
+    </Field.Label>
+    <Field.Helper>{`The quick brown fox jumps over`}</Field.Helper>
+    <NativeSelect className='invalid'>
+      <NativeSelect.Field defaultValue='' aria-label='select field'>
+        <option value=''>Select an option</option>
+      </NativeSelect.Field>
+      <NativeSelect.Icon />
+    </NativeSelect>
+    <Field.Error>{`Name is required`}</Field.Error>
+  </Field>
+);
+
+export const ComponentDisabled = (
+  <NativeSelect className='disabled variant-surface w-64'>
+    <NativeSelect.Field defaultValue='' aria-label='select field'>
+      <option value='' disabled>
+        Select an option
+      </option>
+      <option>option 1</option>
+    </NativeSelect.Field>
+    <NativeSelect.Icon />
+  </NativeSelect>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Native Select
+
+{data['native-select'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-native-select-font-family: var(--font-sans);
+  --ex-native-select-font-weight: var(--font-weight-normal);
+
+  --ex-native-select-font-size-sm: var(--text-xs);
+  --ex-native-select-font-size-md: var(--text-sm);
+  --ex-native-select-font-size-lg: var(--text-base);
+
+  --ex-native-select-height-sm: calc(var(--spacing) * 9);
+  --ex-native-select-height-md: calc(var(--spacing) * 10);
+  --ex-native-select-height-lg: calc(var(--spacing) * 11);
+
+  --ex-native-select-px-sm: calc(var(--spacing) * 3.5);
+  --ex-native-select-px-md: calc(var(--spacing) * 4);
+  --ex-native-select-px-lg: calc(var(--spacing) * 4.5);
+
+  --ex-native-select-radius-sm: var(--radius-sm);
+  --ex-native-select-radius-md: var(--radius-sm);
+  --ex-native-select-radius-lg: var(--radius-sm);
+
+  --ex-native-select-icon-size-sm: var(--text-lg);
+  --ex-native-select-icon-size-md: var(--text-xl);
+  --ex-native-select-icon-size-lg: var(--text-2xl);
+}
+```
+
+## API
+
+### Native Select
+
+<Api config={nativeSelectCfg} />
+
+### Native Select Field
+
+<Api config={nativeSelectFieldCfg} />
+
+### Native Select Icon
+
+<Api config={nativeSelectIconCfg} />

@@ -1,0 +1,52 @@
+import { BaseContainer } from '@/app/components';
+
+import { Box, HStack, Stack } from 'extraction-ui';
+
+# Radius
+
+Border radius tokens control the roundness of component corners.
+For more information on the default available border-radius utilities, visit [Tailwind](https://tailwindcss.com/docs/border-radius)
+
+```css
+@theme {
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2rem;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='gap-6 text-sm'>
+      <HStack>
+        <span className='w-12 text-center'>**Name**</span>
+        <span className='w-32 text-center'>**Value**</span>
+      </HStack>
+      {[
+        { name: 'xs', value: '0.125rem', px: 2 },
+        { name: 'sm', value: '0.25rem', px: 4 },
+        { name: 'md', value: '0.375rem', px: 6 },
+        { name: 'lg', value: '0.5rem', px: 8 },
+        { name: 'xl', value: '0.75rem', px: 12 },
+        { name: '2xl', value: '1rem', px: 16 },
+        { name: '3xl', value: '1.5rem', px: 24 },
+        { name: '4xl', value: '2rem', px: 32 },
+      ].map(({ name, value, px }) => (
+        <HStack key={name} className='items-center text-xs'>
+          <span className='w-12 shrink-0 text-center'>{name}</span>
+          <span className='w-32 shrink-0 text-center'>{`${value} / ${px}px`}</span>
+          <Box
+            style={{ borderRadius: value }}
+            className='variant-surface palette-primary ms-4 size-16'
+          />
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

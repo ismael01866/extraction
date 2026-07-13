@@ -1,0 +1,52 @@
+import { BaseContainer } from '@/app/components';
+
+import { HStack, Stack } from 'extraction-ui';
+
+# Font Weight
+
+Font weight tokens control the thickness of text. For more information on the default available font-weight utilities, visit [Tailwind](https://tailwindcss.com/docs/font-weight)
+
+```css
+@theme {
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='gap-6 text-sm'>
+      <HStack>
+        <span className='w-24 text-center'>**Name**</span>
+        <span className='w-24 text-center'>**Value**</span>
+      </HStack>
+      {[
+        { name: 'thin', value: 100 },
+        { name: 'extralight', value: 200 },
+        { name: 'light', value: 300 },
+        { name: 'normal', value: 400 },
+        { name: 'medium', value: 500 },
+        { name: 'semibold', value: 600 },
+        { name: 'bold', value: 700 },
+        { name: 'extrabold', value: 800 },
+        { name: 'black', value: 900 },
+      ].map(({ name, value }) => (
+        <HStack key={name} className='items-baseline text-xs'>
+          <span className='w-24 shrink-0 text-center'>{name}</span>
+          <span className='w-24 shrink-0 text-center'>{value}</span>
+          <p
+            style={{ fontWeight: value }}
+          >{`The quick brown fox jumps over the lazy dog.`}</p>
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

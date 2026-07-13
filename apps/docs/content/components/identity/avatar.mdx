@@ -1,0 +1,177 @@
+import { Avatar, AvatarGroup } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  avatarCfg,
+  avatarFallbackCfg,
+  avatarGroupCfg,
+  avatarImageCfg,
+  cfg,
+} from './avatar';
+
+export const Component = (
+  <Avatar>
+    <Avatar.Image src='/images/assets/avatar-0.jpg' alt='avatar' />
+  </Avatar>
+);
+
+export const FallbackComponent = (
+  <Avatar>
+    <Avatar.Fallback>JD</Avatar.Fallback>
+  </Avatar>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Avatar
+
+{data.avatar.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/avatar)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Fallback
+
+<Usage
+  components={{
+    usage: FallbackComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  key={'avatar-variants'}
+  config={cfg}
+  components={{
+    usage: FallbackComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-avatar-font-family: var(--font-sans);
+  --ex-avatar-font-weight: var(--font-weight-normal);
+
+  --ex-avatar-font-size-sm: var(--text-xs);
+  --ex-avatar-font-size-md: var(--text-sm);
+  --ex-avatar-font-size-lg: var(--text-base);
+  --ex-avatar-font-size-xl: var(--text-lg);
+
+  --ex-avatar-size-sm: calc(var(--spacing) * 9);
+  --ex-avatar-size-md: calc(var(--spacing) * 10);
+  --ex-avatar-size-lg: calc(var(--spacing) * 11);
+  --ex-avatar-size-xl: calc(var(--spacing) * 12);
+
+  --ex-avatar-radius-sm: 9999px;
+  --ex-avatar-radius-md: 9999px;
+  --ex-avatar-radius-lg: 9999px;
+  --ex-avatar-radius-xl: 9999px;
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/avatar#api-reference)
+
+### Avatar
+
+<Api config={avatarCfg} />
+
+### Avatar Image
+
+<Api config={avatarImageCfg} />
+
+### Avatar Fallback
+
+<Api config={avatarFallbackCfg} />
+
+<br />
+<br />
+
+# Avatar Group
+
+A data display component that groups multiple avatars together with overlapping or stacked formatting.
+
+<Usage
+  components={{
+    usage: (
+      <AvatarGroup>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-0.jpg' alt='avatar-0' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-1.jpg' alt='avatar-1' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-2.jpg' alt='avatar-2' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Fallback>+5</Avatar.Fallback>
+        </Avatar>
+      </AvatarGroup>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: (
+      <AvatarGroup orientation='vertical'>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-0.jpg' alt='avatar-0' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-1.jpg' alt='avatar-1' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-2.jpg' alt='avatar-2' />
+        </Avatar>
+        <Avatar>
+          <Avatar.Fallback>+5</Avatar.Fallback>
+        </Avatar>
+      </AvatarGroup>
+    ),
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-avatar-group-gap-x: calc(var(--spacing) * -3);
+  --ex-avatar-group-gap-y: calc(var(--spacing) * -3);
+
+  --ex-avatar-group-ring-width: 3px;
+  --ex-avatar-group-ring-color: var(--ex-colors-background);
+}
+```
+
+## API
+
+### Avatar Group
+
+<Api config={avatarGroupCfg} />

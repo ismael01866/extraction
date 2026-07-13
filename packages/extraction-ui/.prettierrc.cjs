@@ -1,0 +1,22 @@
+module.exports = {
+  semi: true,
+  singleQuote: true,
+  trailingComma: 'all',
+  printWidth: 100,
+  tabWidth: 2,
+  bracketSpacing: true,
+  arrowParens: 'always',
+  endOfLine: 'lf',
+  plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-tailwindcss'],
+  importOrder: [
+    String.raw`^.+\.(css|scss)$`,
+    '^react$',
+    '^react-dom$',
+    '<THIRD_PARTY_MODULES>',
+    '^@/.*',
+    '^[./]',
+  ],
+  importOrderSeparation: true,
+  importOrderSortSpecifiers: true,
+  tailwindFunctions: ['clsx', 'cva'],
+};

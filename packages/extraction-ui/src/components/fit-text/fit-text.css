@@ -1,0 +1,13 @@
+@layer components {
+  .ex-fit-text {
+    @apply block h-auto w-full overflow-visible;
+  }
+
+  .ex-fit-text-content {
+    @apply overflow-visible;
+  }
+
+  .ex-fit-text-target {
+    @apply inline-block whitespace-nowrap;
+  }
+}

@@ -1,0 +1,14 @@
+@layer components {
+  .ex-text {
+    --ex-font-family: var(--ex-text-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-text-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-text {
+    @apply inline;
+  }
+
+  .ex-text {
+    @apply [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
+  }
+}

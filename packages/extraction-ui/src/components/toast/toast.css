@@ -1,0 +1,254 @@
+@utility toast-sm {
+  --ex-max-w: var(--ex-toast-max-w-sm, var(--container-3xs));
+  --ex-font-size: var(--ex-toast-font-size-sm, var(--text-xs));
+
+  --ex-px: var(--ex-toast-px-sm, calc(var(--spacing) * 3));
+  --ex-py: var(--ex-toast-py-sm, calc(var(--spacing) * 3));
+
+  --ex-gap-x: var(--ex-toast-gap-x-sm, calc(var(--spacing) * 2));
+  --ex-radius: var(--ex-toast-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-toast-shadow-sm, var(--shadow-sm));
+
+  .ex-toast-indicator {
+    --ex-font-size: var(--ex-toast-indicator-font-size-sm, var(--text-lg));
+
+    @apply top-px;
+  }
+
+  .ex-toast-content {
+    --ex-gap-x: var(--ex-toast-content-gap-x-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-toast-content-gap-y-sm, calc(var(--spacing) * 2));
+  }
+
+  .ex-toast-title {
+    --ex-font-size: var(--ex-toast-title-font-size-sm, var(--text-sm));
+  }
+
+  .ex-toast-description {
+    --ex-font-size: var(--ex-toast-description-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility toast-md {
+  --ex-max-w: var(--ex-toast-max-w-md, var(--container-2xs));
+  --ex-font-size: var(--ex-toast-font-size-md, var(--text-sm));
+
+  --ex-px: var(--ex-toast-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-toast-py-md, calc(var(--spacing) * 4));
+
+  --ex-gap-x: var(--ex-toast-gap-x-md, calc(var(--spacing) * 2.5));
+  --ex-radius: var(--ex-toast-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-toast-shadow-md, var(--shadow-sm));
+
+  .ex-toast-indicator {
+    --ex-font-size: var(--ex-toast-indicator-font-size-md, var(--text-xl));
+
+    @apply top-[2px];
+  }
+
+  .ex-toast-content {
+    --ex-gap-x: var(--ex-toast-content-gap-x-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-toast-content-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-toast-title {
+    --ex-font-size: var(--ex-toast-title-font-size-md, var(--text-base));
+  }
+
+  .ex-toast-description {
+    --ex-font-size: var(--ex-toast-description-font-size-md, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-toast {
+    @apply toast-md;
+  }
+
+  .ex-toast {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-toast {
+    @apply flex flex-1 will-change-[transform,opacity];
+    @apply max-w-[var(--ex-max-w)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+    }
+
+    &:where([data-swipe-direction='right']) {
+      --ex-toast-swipe-out-x: calc(100%);
+    }
+
+    &:where([data-swipe-direction='right'][data-state='open']) {
+      @apply animate-in slide-from-end;
+    }
+
+    &:where([data-swipe-direction='right'][data-state='closed']) {
+      @apply animate-out slide-to-end;
+    }
+
+    &:where([data-swipe-direction='left']) {
+      --ex-toast-swipe-out-x: calc(-100%);
+    }
+
+    &:where([data-swipe-direction='left'][data-state='open']) {
+      @apply animate-in slide-from-start;
+    }
+
+    &:where([data-swipe-direction='left'][data-state='closed']) {
+      @apply animate-out slide-to-start;
+    }
+
+    &:where([data-swipe-direction='up']) {
+      --ex-toast-swipe-out-y: calc(-100%);
+    }
+
+    &:where([data-swipe-direction='up'][data-state='open']) {
+      @apply animate-in slide-from-top;
+    }
+
+    &:where([data-swipe-direction='up'][data-state='closed']) {
+      @apply animate-out slide-to-top;
+    }
+
+    &:where([data-swipe-direction='down']) {
+      --ex-toast-swipe-out-y: calc(100%);
+    }
+
+    &:where([data-swipe-direction='down'][data-state='open']) {
+      @apply animate-in slide-from-bottom;
+    }
+
+    &:where([data-swipe-direction='down'][data-state='closed']) {
+      @apply animate-out slide-to-bottom;
+    }
+
+    &:where([data-swipe='end']) {
+      @apply animate-toast-swipe-out;
+    }
+
+    &:where([data-swipe='move']),
+    &:where([data-swipe='cancel']) {
+      @apply motion-transform;
+    }
+
+    &:where([data-swipe='move']) {
+      --tw-translate-x: var(--radix-toast-swipe-move-x, 0);
+      --tw-translate-y: var(--radix-toast-swipe-move-y, 0);
+    }
+
+    &:where([data-swipe='cancel']) {
+      --tw-translate-x: 0;
+      --tw-translate-y: 0;
+    }
+  }
+
+  .ex-toast-viewport {
+    --ex-px: var(--ex-toast-viewport-px, var(--ex-size-sm));
+    --ex-py: var(--ex-toast-viewport-py, var(--ex-size-sm));
+    --ex-z-index: var(--ex-toast-z-index, var(--ex-options-z-toast));
+  }
+
+  .ex-toast-viewport {
+    @apply fixed m-0 flex w-auto max-w-full list-none outline-none;
+    @apply z-[var(--ex-z-index)] px-[var(--ex-px)] py-[var(--ex-py)];
+
+    &:where(:has(.ex-toast:not([data-placement]))) {
+      @apply end-0 bottom-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='top-start'])) {
+      @apply start-0 top-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='top'])) {
+      @apply top-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='top-end'])) {
+      @apply end-0 top-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='bottom-start'])) {
+      @apply start-0 bottom-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='bottom'])) {
+      @apply bottom-0;
+    }
+
+    &:where(:has(.ex-toast[data-placement='bottom-end'])) {
+      @apply end-0 bottom-0;
+    }
+  }
+
+  .ex-toast-close-native {
+    @apply absolute end-1.5 top-1.5;
+    @apply palette-inherit variant-inherit border-none;
+
+    .ex-close-icon {
+      @apply size-[1em] fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
+    }
+  }
+
+  .ex-toast-content {
+    @apply flex flex-1 flex-col;
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-toast-content {
+    &[data-placement='end'] {
+      @apply inset-y-0 right-0 h-dvh w-[var(--ex-size)];
+
+      &:where([data-state='open']) {
+        @apply animate-in slide-from-end;
+      }
+
+      &:where([data-state='closed']) {
+        @apply animate-out slide-to-end;
+      }
+    }
+  }
+
+  .ex-toast-indicator {
+    @apply relative inline-flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-toast-indicator-icon {
+    @apply size-[1em] fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round];
+  }
+
+  .ex-toast-title {
+    --ex-font-family: var(--ex-toast-title-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-toast-title-font-weight, var(--font-weight-semibold));
+
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-toast-description {
+    --ex-font-family: var(--ex-toast-description-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-toast-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-toast-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [opacity:var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-toast {
+    &:not(.variant-solid, .variant-subtle, .variant-surface) {
+      @apply component-variant-panel;
+    }
+
+    &:where(.variant-outline) {
+      @apply component-variant-panel;
+    }
+  }
+}

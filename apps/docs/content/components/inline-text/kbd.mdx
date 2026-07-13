@@ -1,0 +1,84 @@
+import { HStack, Kbd } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './kbd';
+
+export const Component = <Kbd>{`Shift`}</Kbd>;
+
+export const Wrapper = ({ children }) => children;
+
+# Kbd
+
+{data.kbd.description} 
+
+## Usage
+
+<Usage
+  components={{
+    usage: (
+      <HStack className='gap-1'>
+        <Kbd>⌘</Kbd>+<Kbd>Shift</Kbd>+<Kbd>K</Kbd>
+      </HStack>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-kbd-font-size-sm: var(--text-2xs);
+  --ex-kbd-font-size-md: var(--text-xs);
+  --ex-kbd-font-size-lg: var(--text-sm);
+
+  --ex-kbd-font-family-sm: var(--font-mono);
+  --ex-kbd-font-family-md: var(--font-mono);
+  --ex-kbd-font-family-lg: var(--font-mono);
+
+  --ex-kbd-font-weight-sm: var(--font-weight-normal)
+  --ex-kbd-font-weight-md: var(--font-weight-normal)
+  --ex-kbd-font-weight-lg: var(--font-weight-normal)
+
+  --ex-kbd-height-sm: calc(var(--spacing) * 4);
+  --ex-kbd-height-md: calc(var(--spacing) * 5);
+  --ex-kbd-height-lg: calc(var(--spacing) * 6);
+
+  --ex-kbd-px-sm: var(--spacing);
+  --ex-kbd-px-md: var(--spacing);
+  --ex-kbd-px-lg: var(--spacing);
+
+  --ex-kbd-radius-sm: var(--radius-sm);
+  --ex-kbd-radius-md: var(--radius-sm);
+  --ex-kbd-radius-lg: var(--radius-sm);
+
+  --ex-kbd-shadow-sm: var(--shadow-xs);
+  --ex-kbd-shadow-md: var(--shadow-xs);
+  --ex-kbd-shadow-lg: var(--shadow-xs);
+}
+```
+
+## API
+
+<Api config={cfg} />

@@ -1,0 +1,215 @@
+@utility context-menu-content-sm {
+  --ex-max-w: var(--ex-context-menu-max-w-sm, var(--container-3xs));
+  --ex-radius: var(--ex-context-menu-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-context-menu-shadow-sm, var(--shadow-sm));
+
+  .ex-context-menu-section {
+    --ex-px: var(--ex-context-menu-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-context-menu-section-py-sm, calc(var(--spacing) * 2));
+
+    --ex-gap-y: var(--ex-context-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
+  }
+
+  .ex-context-menu-item,
+  .ex-context-menu-label,
+  .ex-context-menu-sub-trigger,
+  .ex-context-menu-radio-item,
+  .ex-context-menu-checkbox-item {
+    --ex-px: var(--ex-context-menu-item-px-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-context-menu-item-py-sm, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-context-menu-item-font-size-sm, var(--text-xs));
+  }
+
+  .ex-context-menu-label {
+    --ex-font-size: var(--ex-context-menu-label-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-context-menu-command {
+    --ex-font-size: var(--ex-context-menu-command-font-size-sm, var(--text-2xs));
+  }
+
+  .ex-context-menu-item-indicator {
+    --ex-font-size: var(--ex-context-menu-item-indicator-font-size-sm, var(--text-xs));
+  }
+}
+
+@utility context-menu-content-md {
+  --ex-max-w: var(--ex-context-menu-max-w-md, var(--container-2xs));
+  --ex-radius: var(--ex-context-menu-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-context-menu-shadow-md, var(--shadow-sm));
+
+  .ex-context-menu-section {
+    --ex-px: var(--ex-context-menu-section-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-context-menu-section-py-md, calc(var(--spacing) * 2.5));
+
+    --ex-gap-y: var(--ex-context-menu-section-gap-y-md, calc(var(--spacing) * 2));
+  }
+
+  .ex-context-menu-item,
+  .ex-context-menu-label,
+  .ex-context-menu-sub-trigger,
+  .ex-context-menu-radio-item,
+  .ex-context-menu-checkbox-item {
+    --ex-px: var(--ex-context-menu-item-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-context-menu-item-py-md, calc(var(--spacing) * 1));
+    --ex-font-size: var(--ex-context-menu-item-font-size-md, var(--text-sm));
+  }
+
+  .ex-context-menu-label {
+    --ex-font-size: var(--ex-context-menu-label-font-size-md, var(--text-xs));
+  }
+
+  .ex-context-menu-command {
+    --ex-font-size: var(--ex-context-menu-command-font-size-md, var(--text-xs));
+  }
+
+  .ex-context-menu-item-indicator {
+    /* prettier-ignore */
+    --ex-font-size: var(--ex-context-menu-item-indicator-font-size-md, var(--text-sm));
+  }
+}
+
+@layer components {
+  .ex-context-menu-content,
+  .ex-context-menu-sub-content {
+    @apply context-menu-content-md;
+  }
+
+  .ex-context-menu-content,
+  .ex-context-menu-sub-content {
+    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+
+    &:where([data-side='top']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-side='right']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-side='bottom']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where([data-side='left']) {
+      @apply animate-in fade-in;
+    }
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &:has(.ex-context-menu-item-indicator),
+    &:has(.ex-context-menu-radio-item),
+    &:has(.ex-context-menu-checkbox-item) {
+      .ex-context-menu-item,
+      .ex-context-menu-sub-trigger,
+      .ex-context-menu-radio-item,
+      .ex-context-menu-checkbox-item {
+        @apply ps-[2.25em];
+      }
+
+      .ex-context-menu-label {
+        @apply ps-[2.75em];
+      }
+    }
+
+    &:has(.ex-context-menu-command) {
+      .ex-context-menu-item,
+      .ex-context-menu-sub-trigger,
+      .ex-context-menu-radio-item,
+      .ex-context-menu-checkbox-item {
+        @apply pe-[2.75em];
+      }
+    }
+  }
+
+  .ex-context-menu-content,
+  .ex-context-menu-sub-content {
+    @apply flex flex-1 flex-col;
+  }
+
+  .ex-context-menu-section {
+    @apply flex flex-col;
+    @apply gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+
+  .ex-context-menu-separator {
+    @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+  }
+
+  .ex-context-menu-separator {
+    @apply h-[1px] w-full [transform:translateZ(0)];
+  }
+
+  .ex-context-menu-radio-group {
+    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+  }
+
+  .ex-context-menu-sub-trigger {
+    > .ex-context-menu-item-indicator:is(:last-child) {
+      @apply right-[0.5rem] left-[unset];
+    }
+  }
+
+  .ex-context-menu-item,
+  .ex-context-menu-sub-trigger,
+  .ex-context-menu-radio-item,
+  .ex-context-menu-checkbox-item {
+    --ex-font-family: var(--ex-context-menu-item-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-context-menu-item-font-weight, var(--font-weight-normal));
+  }
+
+  .ex-context-menu-item,
+  .ex-context-menu-sub-trigger,
+  .ex-context-menu-radio-item,
+  .ex-context-menu-checkbox-item {
+    @apply relative flex min-w-0 items-center select-none;
+    @apply -my-[0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &:where([data-highlighted]) {
+      @apply variant-subtle border-0!;
+    }
+  }
+
+  .ex-context-menu-item-indicator {
+    @apply absolute left-[0.375rem] inline-flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+  }
+
+  .ex-context-menu-radio-item,
+  .ex-context-menu-checkbox-item {
+    .ex-context-menu-item-indicator:where([data-state='unchecked']) > * {
+      @apply invisible;
+    }
+  }
+
+  .ex-context-menu-label {
+    --ex-font-family: var(--ex-context-menu-label-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-context-menu-label-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-context-menu-label-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-context-menu-label {
+    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+
+  .ex-context-menu-command {
+    --ex-font-family: var(--ex-context-menu-command-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-context-menu-command-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-context-menu-command-opacity, var(--ex-options-muted-opacity));
+  }
+
+  .ex-context-menu-command {
+    @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+  }
+}
+
+@layer utilities {
+  .ex-context-menu-content,
+  .ex-context-menu-sub-content {
+    @apply component-variant-panel;
+  }
+}

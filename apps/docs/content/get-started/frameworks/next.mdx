@@ -1,0 +1,109 @@
+# Next.js
+
+import { Steps } from 'nextra/components';
+
+This guide is specific to Next.js. For official framework documentation, visit the [Next.js Documentation](https://nextjs.org/docs).
+
+## Prerequisites
+
+Before you begin, make sure your app is using:
+
+- **Next.js** 15 or higher
+
+- **React** 19.2.0 or higher
+- **React DOM** 19.2.0 or higher
+
+## Installation
+
+<Steps>
+
+### Create a Next.js app
+
+```bash
+pnpm create next-app@latest my-app --ts
+```
+
+### Install the package
+
+```bash
+pnpm install extraction-ui
+```
+
+### Install peer dependencies
+
+Extraction UI requires Radix UI as a peer dependency:
+
+```bash
+pnpm add radix-ui
+```
+
+And Tailwind CSS for styling:
+
+```bash
+pnpm add -D tailwindcss @tailwindcss/postcss postcss
+```
+
+Add Tailwind to your PostCSS config as well
+
+```js
+/** postcss.config.mjs */
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+  },
+};
+```
+
+For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation).
+
+### Import styles in `app/globals.css`
+
+Create a global stylesheet and add the Extraction UI styles:
+
+```css
+/** app/globals.css */
+@import 'tailwindcss';
+@import 'extraction-ui/styles';
+```
+
+Make sure the CSS file is imported in your entry point:
+
+```tsx
+/** app/layout.tsx */
+import './globals.css';
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang='en'>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
+
+### Start using components
+
+Import and use components in your project:
+
+```tsx
+import { Button, Card } from 'extraction-ui';
+
+export default function Page() {
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Welcome to Extraction UI</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Button className='mbs-4'>Submit</Button>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+</Steps>

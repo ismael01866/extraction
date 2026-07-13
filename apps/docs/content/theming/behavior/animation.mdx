@@ -1,0 +1,139 @@
+import { Grid, VStack } from 'extraction-ui';
+
+import {
+  BaseContainer,
+  Code,
+  CodeContainer,
+  DecorativeBox,
+} from '@/app/components';
+
+# Animation
+
+Extraction UI provides a set of animation utilities for enter and exit transitions, built on CSS custom properties. For more information on ready available animations, visit [Tailwind](https://tailwindcss.com/docs/animation)
+
+## Overview
+
+Animations are driven by two CSS classes — `animate-in` and `animate-out` — combined with composable transition modifiers such as `fade-in`, `fade-out`, `scale-in`, `scale-out` and so on.
+
+## Enter Animations
+
+Use the `animate-in` class with the following utilities to animate entering elements:
+
+<br />
+<section>
+  <BaseContainer>
+    <Grid className='grid-cols-7 gap-4'>
+      {[
+        'blur-in',
+        'fade-in',
+        'scale-in',
+        'slide-from-start',
+        'slide-from-end',
+        'slide-from-top',
+        'slide-from-bottom',
+      ].map((value) => {
+        return (
+          <VStack key={value} className='gap-3 text-xs'>
+            <DecorativeBox
+              className={`${value} animate-in anim-repeat-infinite anim-duration-[2s]`}
+            />
+            {value}
+          </VStack>
+        );
+      })}
+    </Grid>
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`['blur-in',
+   'fade-in',
+   'scale-in',
+   'slide-from-start',
+   'slide-from-end',
+   'slide-from-top',
+   'slide-from-bottom'].map((value) => (
+      <DecorativeBox
+        className={\`\${value} animate-in anim-repeat-infinite anim-duration-[2s]\`}
+      />
+    );
+  );`}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Exit Animations
+
+Use the `animate-out` class with the following utilities to animate exiting elements:
+
+<br />
+<section>
+  <BaseContainer>
+    <Grid className='grid-cols-7 gap-4'>
+      {[
+        'blur-out',
+        'fade-out',
+        'scale-out',
+        'slide-to-start',
+        'slide-to-end',
+        'slide-to-top',
+        'slide-to-bottom',
+      ].map((value) => {
+        return (
+          <VStack key={value} className='gap-3 text-xs'>
+            <DecorativeBox
+              className={`${value} animate-out anim-repeat-infinite anim-duration-[2s]`}
+            />
+            {value}
+          </VStack>
+        );
+      })}
+    </Grid>
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`['blur-out',
+   'fade-out',
+   'scale-out',
+   'slide-to-start',
+   'slide-to-end',
+   'slide-to-top',
+   'slide-to-bottom'].map((value) => (
+      <DecorativeBox
+        className={\`\${value} animate-out anim-repeat-infinite anim-duration-[2s]\`}
+      />
+    );
+  );`}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Possible Animation Values
+
+Animation utilities support custom intensity or distance.
+
+- Opacity: value is a percentage-like number from `0` to `100`. Examples: `fade-in-25`, `fade-out-50`, `fade-out-80`.
+
+- Scale: value is a number interpreted as `%`. Examples: `scale-in-75`, `scale-out-95`.
+
+- Blur: value is in pixels. Examples: `blur-in-4`, `blur-out-12`.
+
+- Slide: value supports spacing scale steps, length, or percentage. Examples: `slide-from-end-2`, `slide-from-bottom-25`, `slide-to-top-4`, `slide-to-start-[40%]`.
+
+You also can combine multiple modifiers with `animate-in` or `animate-out`:
+
+```tsx
+<DecorativeBox className='animate-in fade-in scale-in-50' />
+```
+
+## Utilities
+
+Animation utilities help control animation timing and playback behavior.
+
+| Name               | Purpose                          |
+| ------------------ | -------------------------------- |
+| `anim-delay-*`     | Sets `animation-delay`           |
+| `anim-direction-*` | Sets `animation-direction`       |
+| `anim-duration-*`  | Sets `animation-duration`        |
+| `anim-fill-*`      | Sets `animation-fill-mode`       |
+| `anim-play-*`      | Sets `animation-play-state`      |
+| `anim-repeat-*`    | Sets `animation-iteration-count` |

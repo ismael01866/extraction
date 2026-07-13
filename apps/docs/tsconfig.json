@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": false,
+    "plugins": [
+      {
+        "name": "next"
+      },
+      {
+        "name": "@mdx-js/typescript-plugin"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "global.d.ts",
+    "tailwind.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.mdx",
+    "mdx-components.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

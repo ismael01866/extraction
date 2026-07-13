@@ -1,0 +1,9 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+	<style>
+		.s0 { fill: #000000 } 
+		.s1 { fill: #ffffff } 
+	</style>
+	<path id="Background" class="s0" d="m0 0h50v50h-50z"/>
+	<path id="Border" class="s1" d="m0 0h50v50h-50zm1 1v48h48v-48z"/>
+	<path id="x" class="s1" aria-label="x"  d="m37.8 36h-9.9l-15.2-22.8h9.9zm0-22.8l-6.6 10.5-4.9-7.4 1.6-3.1zm-15.2 22.8h-9.9l6.4-10.9 5.1 7.7z"/>
+</svg>

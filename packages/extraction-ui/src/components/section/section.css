@@ -1,0 +1,35 @@
+@utility section-xs {
+  --ex-py: var(--ex-section-py-xs, calc(var(--spacing) * 8));
+
+  @apply py-[var(--ex-py)];
+}
+
+@utility section-sm {
+  --ex-py: var(--ex-section-py-sm, calc(var(--spacing) * 12));
+
+  @apply py-[var(--ex-py)];
+}
+
+@utility section-md {
+  --ex-py: var(--ex-section-py-md, calc(var(--spacing) * 16));
+
+  @apply py-[var(--ex-py)];
+}
+
+@utility section-lg {
+  --ex-py: var(--ex-section-py-lg, calc(var(--spacing) * 20));
+
+  @apply py-[var(--ex-py)];
+}
+
+@utility section-xl {
+  --ex-py: var(--ex-section-py-xl, calc(var(--spacing) * 24));
+
+  @apply py-[var(--ex-py)];
+}
+
+@layer components {
+  .ex-section {
+    @apply w-full;
+  }
+}

@@ -1,0 +1,77 @@
+import { HStack, Stack } from 'extraction-ui';
+
+import { BaseContainer } from '@/app/components';
+
+# Font Size
+
+Font size tokens define the typographic scale.
+For more information on the default available font sizes and utilities, visit [Tailwind](https://tailwindcss.com/docs/font-size)
+
+```css
+@theme {
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: calc(0.875 / 0.625);
+  --text-xs: 0.75rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-base: 1rem;
+  --text-base--line-height: calc(1.5 / 1);
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: calc(2.25 / 1.875);
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 1;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+  --text-7xl: 4.5rem;
+  --text-7xl--line-height: 1;
+  --text-8xl: 6rem;
+  --text-8xl--line-height: 1;
+  --text-9xl: 8rem;
+  --text-9xl--line-height: 1;
+}
+```
+
+<br />
+<section>
+  <BaseContainer className='rounded-md'>
+    <Stack className='gap-6 text-sm'>
+      <HStack>
+        <span className='w-12 text-center'>**Name**</span>
+        <span className='w-32 text-center'>**Value**</span>
+      </HStack>
+      {[
+        { name: '2xs', size: '0.625rem', px: 10 },
+        { name: 'xs', size: '0.75rem', px: 12 },
+        { name: 'sm', size: '0.875rem', px: 14 },
+        { name: 'base', size: '1rem', px: 16 },
+        { name: 'lg', size: '1.125rem', px: 18 },
+        { name: 'xl', size: '1.25rem', px: 20 },
+        { name: '2xl', size: '1.5rem', px: 24 },
+        { name: '3xl', size: '1.875rem', px: 30 },
+        { name: '4xl', size: '2.25rem', px: 36 },
+        { name: '5xl', size: '3rem', px: 48 },
+        { name: '6xl', size: '3.75rem', px: 60 },
+        { name: '7xl', size: '4.5rem', px: 72 },
+        { name: '8xl', size: '6rem', px: 96 },
+        { name: '9xl', size: '8rem', px: 128 },
+      ].map(({ name, size, px }) => (
+        <HStack key={name} className='items-baseline text-xs'>
+          <span className='w-12 shrink-0 text-center'>{name}</span>
+          <span className='w-32 shrink-0 text-center'>{`${size} / ${px}px`}</span>
+          <p style={{ fontSize: size }} className='flex-1 font-normal'>
+            {`Ag`}
+          </p>
+        </HStack>
+      ))}
+    </Stack>
+  </BaseContainer>
+</section>

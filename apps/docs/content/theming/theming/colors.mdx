@@ -1,0 +1,229 @@
+import {
+  Box,
+  Grid,
+  VStack,
+  colorPaletteValues,
+  shadesValues,
+} from 'extraction-ui';
+import { capitalize } from 'lodash';
+
+import { BaseContainer, Code, CodeContainer, Variants } from '@/app/components';
+
+# Colors
+
+Colors define the Extraction UI palette and provide consistent usage across components.
+
+## Overview
+
+Each color has 11 shades:
+
+- **50-100** — Very light: use for backgrounds, disabled states
+- **200-400** — Light: borders, hover states
+- **500-600** — Mid-tone: primary text, icons
+- **700-800** — Dark: secondary text, emphasis
+- **900-950** — Very dark: text contrast, prominent emphasis
+
+## Accessibility
+
+All color combinations are tested to meet **WCAG AA** (minimum 4.5:1 contrast) for text and **WCAG AAA** (7:1) where possible. [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+## Colors
+
+Extraction UI supports the following custom colors.
+
+Because these colors are defined under `@theme`, Tailwind also generates the matching color utility classes, such as `bg-primary`, `text-primary-500`, `border-primary-200`, etc. For more information about default color utilities and usage, visit [Tailwind](https://tailwindcss.com/docs/colors)
+
+{ colorPaletteValues.map((color, index) => (
+
+   <section key={index}>
+    {index === 0 && <br />}
+    {index > 0 && <hr className="x:my-8 nextra-border" />}
+
+    <BaseContainer className="flex-col items-start">
+      {capitalize(color)}
+
+      <Grid className='gap-2 mbs-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-11'>
+        {shadesValues.map((shade, index) => (
+          <VStack key={index} className='gap-3 items-stretch text-sm text-center'>
+            <Box
+              key={index}
+              className={`variant-solid palette-${color} shade-${shade} h-15`}
+            ></Box>
+            {shade}
+          </VStack>
+        ))}
+      </Grid>
+    </BaseContainer>
+
+    <CodeContainer>
+      <Code>
+        {[
+          `<Box className='variant-solid palette-${color} shade-50'  />`,
+          `<Box className='variant-solid palette-${color} shade-100' />`,
+          `<Box className='variant-solid palette-${color} shade-200' />`,
+          `...`,
+          `<Box className='variant-solid palette-${color} shade-900' />`,
+          `<Box className='variant-solid palette-${color} shade-950' />`,
+        ].join('\n')}
+      </Code>
+    </CodeContainer>
+
+  </section>
+))}
+
+## Customizing Colors
+
+The recommended way to customize Extraction UI palette is by overriding the custom theme CSS variables.
+
+## Basic override
+
+Add an override in your main CSS file, this will also generate all shades automatically:
+
+```sass filename="main.css"
+:root {
+  --color-primary: oklch(0.5 0.22 275);
+  --color-accent: oklch(0.5 0.22 280);
+  --color-neutral: oklch(0.5 0.03 275);
+  --color-error: oklch(0.5 0.22 25);
+  --color-success: oklch(0.5 0.22 140);
+  --color-info: oklch(0.5 0.22 255);
+  --color-warning: oklch(0.7 0.22 95);
+}
+```
+
+## Advanced override
+
+For complete control over all shades and their foreground colors, use the advanced approach. You don't have to use the color-mix formulas. You can set any color you want for each shade and its foreground.
+
+```sass filename="main.css"
+:root {
+  --color-primary: oklch(0.5 0.22 250);
+  --color-primary-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-50: color-mix(in oklch, var(--color-primary) 10%, white);
+  --color-primary-50-foreground: color-mix(in oklch, var(--color-primary) 50%, black);
+
+  --color-primary-100: color-mix(in oklch, var(--color-primary) 20%, white);
+  --color-primary-100-foreground: color-mix(in oklch, var(--color-primary) 50%, black);
+
+  --color-primary-200: color-mix(in oklch, var(--color-primary) 35%, white);
+  --color-primary-200-foreground: color-mix(in oklch, var(--color-primary) 50%, black);
+
+  --color-primary-300: color-mix(in oklch, var(--color-primary) 50%, white);
+  --color-primary-300-foreground: color-mix(in oklch, var(--color-primary) 50%, black);
+
+  --color-primary-400: color-mix(in oklch, var(--color-primary) 75%, white);
+  --color-primary-400-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-500: var(--color-primary);
+  --color-primary-500-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-600: color-mix(in oklch, var(--color-primary) 85%, black);
+  --color-primary-600-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-700: color-mix(in oklch, var(--color-primary) 70%, black);
+  --color-primary-700-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-800: color-mix(in oklch, var(--color-primary) 55%, black);
+  --color-primary-800-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-900: color-mix(in oklch, var(--color-primary) 40%, black);
+  --color-primary-900-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  --color-primary-950: color-mix(in oklch, var(--color-primary) 30%, black);
+  --color-primary-950-foreground: color-mix(in oklch, var(--color-primary) 2%, white);
+
+  /* ... repeat for shades(50-950) and colors(accent, neutral, success, ...) you want to customize ... */
+}
+```
+
+## Adding Colors
+
+You can add new colors using CSS variables in your file. After this you are ready to create a palette utility to use in your components (see section below).
+
+```sass filename="main.css"
+@theme {
+  --color-new: oklch(0.5 0.22 35);
+  --color-new-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-50 : color-mix(in oklch, var(--color-new) 10%, white);
+  --color-new-50-foreground : color-mix(in oklch, var(--color-new) 50%, black);
+
+  --color-new-100: color-mix(in oklch, var(--color-new) 20%, white);
+  --color-new-100-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+
+  --color-new-200: color-mix(in oklch, var(--color-new) 35%, white);
+  --color-new-200-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+
+  --color-new-300: color-mix(in oklch, var(--color-new) 50%, white);
+  --color-new-300-foreground: color-mix(in oklch, var(--color-new) 50%, black);
+
+  --color-new-400: color-mix(in oklch, var(--color-new) 75%, white);
+  --color-new-400-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-500: var(--color-new);
+  --color-new-500-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-600: color-mix(in oklch, var(--color-new) 85%, black);
+  --color-new-600-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-700: color-mix(in oklch, var(--color-new) 70%, black);
+  --color-new-700-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-800: color-mix(in oklch, var(--color-new) 55%, black);
+  --color-new-800-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-900: color-mix(in oklch, var(--color-new) 40%, black);
+  --color-new-900-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+
+  --color-new-950: color-mix(in oklch, var(--color-new) 30%, black);
+  --color-new-950-foreground: color-mix(in oklch, var(--color-new) 2%, white);
+}
+```
+
+## Creating Palettes
+
+To create a dynamic palette to be used in all components, add a new utility in your main CSS file:
+
+```sass filename="main.css"
+@utility palette-new {
+  --palette: var(--color-new);
+  --palette-foreground: var(--color-new-foreground);
+
+  --palette-50: var(--color-new-50);
+  --palette-50-foreground: var(--color-new-50-foreground);
+
+  --palette-100: var(--color-new-100);
+  --palette-100-foreground: var(--color-new-100-foreground);
+
+  --palette-200: var(--color-new-200);
+  --palette-200-foreground: var(--color-new-200-foreground);
+
+  --palette-300: var(--color-new-300);
+  --palette-300-foreground: var(--color-new-300-foreground);
+
+  --palette-400: var(--color-new-400);
+  --palette-400-foreground: var(--color-new-400-foreground);
+
+  --palette-500: var(--color-new-500);
+  --palette-500-foreground: var(--color-new-500-foreground);
+
+  --palette-600: var(--color-new-600);
+  --palette-600-foreground: var(--color-new-600-foreground);
+
+  --palette-700: var(--color-new-700);
+  --palette-700-foreground: var(--color-new-700-foreground);
+
+  --palette-800: var(--color-new-800);
+  --palette-800-foreground: var(--color-new-800-foreground);
+
+  --palette-900: var(--color-new-900);
+  --palette-900-foreground: var(--color-new-900-foreground);
+
+  --palette-950: var(--color-new-950);
+  --palette-950-foreground: var(--color-new-950-foreground);
+}
+```
+
+<br />
+<Variants color={'new'} />

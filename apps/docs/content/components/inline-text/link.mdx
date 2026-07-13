@@ -1,0 +1,51 @@
+import { Link } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './link';
+
+export const Component = <Link href='#'>{`Link`}</Link>;
+
+export const Wrapper = ({ children }) => children;
+
+# Link
+
+{data.link.description} 
+
+<Usage
+  components={{
+    usage: (
+      <div>
+        The quick <Link href='#'>brown fox</Link> jumps over the lazy dog
+      </div>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+For more information on how to customize text decorations visit Tailwind's [Text Decoration](https://tailwindcss.com/docs/text-decoration-line) and [Interaction States](https://tailwindcss.com/docs/hover-focus-and-other-states#pseudo-class-reference)
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-link-color: var(--color-primary);
+  --ex-link-color-dark: var(--color-primary);
+
+  --ex-link-font-family: var(--font-sans);
+  --ex-link-font-weight: var(--font-weight-normal);
+}
+```
+
+## API
+
+<Api config={cfg} />

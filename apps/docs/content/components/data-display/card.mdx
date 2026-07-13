@@ -1,0 +1,157 @@
+import { Button, Card, Image } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cardCfg,
+  cardContentCfg,
+  cardDescriptionCfg,
+  cardSectionCfg,
+  cardTitleCfg,
+  cfg,
+} from './card';
+
+export const Component = (
+  <Card className='max-w-80'>
+    <Card.Content>
+      <Image
+        alt='espresso'
+        src='/images/assets/espresso.jpg'
+        className='aspect-3/2 rounded-b-none'
+      />
+      <Card.Section>
+        <Card.Title>{`Header`}</Card.Title>
+        <Card.Description>
+          {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+        </Card.Description>
+      </Card.Section>
+      <Card.Section className='flex-row justify-end'>
+        <Button className='variant-outline'>Cancel</Button>
+        <Button>Confirm</Button>
+      </Card.Section>
+    </Card.Content>
+  </Card>
+);
+
+export const SizeComponent = (
+  <Card className='max-w-80'>
+    <Card.Content>
+      <Card.Section>
+        <Card.Title>{`Header`}</Card.Title>
+        <Card.Description>
+          {`Alice was beginning to get very tired.`}
+        </Card.Description>
+      </Card.Section>
+    </Card.Content>
+  </Card>
+);
+
+export const VariantComponent = (
+  <Card className='flex-1'>
+    <Card.Content>
+      <Card.Section>
+        <Card.Title>{`Header`}</Card.Title>
+        <Card.Description>
+          {`Alice was beginning to get very tired.`}
+        </Card.Description>
+      </Card.Section>
+    </Card.Content>
+  </Card>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Card
+
+{data.card.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-card-font-size-sm: var(--text-xs);
+  --ex-card-font-size-md: var(--text-sm);
+  --ex-card-font-size-lg: var(--text-base);
+
+  --ex-card-radius-sm: var(--radius-sm);
+  --ex-card-radius-md: var(--radius-sm);
+  --ex-card-radius-lg: var(--radius-sm);
+
+  --ex-card-section-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-card-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-card-section-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-card-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-card-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-card-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-card-section-px-sm: calc(var(--spacing) * 4);
+  --ex-card-section-px-md: calc(var(--spacing) * 5);
+  --ex-card-section-px-lg: calc(var(--spacing) * 6);
+
+  --ex-card-section-py-sm: calc(var(--spacing) * 4);
+  --ex-card-section-py-md: calc(var(--spacing) * 5);
+  --ex-card-section-py-lg: calc(var(--spacing) * 6);
+
+  --ex-card-title-font-size-sm: var(--text-sm);
+  --ex-card-title-font-size-md: var(--text-base);
+  --ex-card-title-font-size-lg: var(--text-lg);
+
+  --ex-card-title-font-weight: var(--font-weight-semibold);
+
+  --ex-card-description-font-size-sm: var(--text-xs);
+  --ex-card-description-font-size-md: var(--text-sm);
+  --ex-card-description-font-size-lg: var(--text-base);
+
+  --ex-card-description-font-weight: var(--font-weight-normal);
+  --ex-card-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### Card
+
+<Api config={cardCfg} />
+
+### Card Content
+
+<Api config={cardContentCfg} />
+
+### Card Section
+
+<Api config={cardSectionCfg} />
+
+### Card Title
+
+<Api config={cardTitleCfg} />
+
+### Card Description
+
+<Api config={cardDescriptionCfg} />

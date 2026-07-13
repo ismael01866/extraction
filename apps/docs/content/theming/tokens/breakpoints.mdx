@@ -1,0 +1,34 @@
+import { Box, Stack } from 'extraction-ui';
+
+# Breakpoints
+
+Breakpoint tokens define the min-width thresholds used by responsive utilities. For more information on the default available breakpoints and utilities, visit [Tailwind](https://tailwindcss.com/docs/breakpoints)
+
+```css
+@theme {
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+}
+```
+
+<br />
+<section>
+  <Stack className='gap-8 text-sm'>
+    <div className='rounded-md'>
+      <p className='mbs-2'>
+        {`Resize the viewport to see the active range update.`}
+      </p>
+      <Box className='variant-surface palette-primary mbs-3'>
+        <span className='sm:hidden'>{`base: below 40rem`}</span>
+        <span className='hidden sm:inline md:hidden'>{`sm: 40rem and up`}</span>
+        <span className='hidden md:inline lg:hidden'>{`md: 48rem and up`}</span>
+        <span className='hidden lg:inline xl:hidden'>{`lg: 64rem and up`}</span>
+        <span className='hidden xl:inline 2xl:hidden'>{`xl: 80rem and up`}</span>
+        <span className='hidden 2xl:inline'>{`2xl: 96rem and up`}</span>
+      </Box>
+    </div>
+  </Stack>
+</section>

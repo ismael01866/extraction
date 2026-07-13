@@ -1,0 +1,90 @@
+{/* prettier-ignore-start */}
+
+import React from 'react';
+
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+import { getDisplayName, unwrap } from '@/app/utils/client-utils';
+
+import reactElementToJSXString from 'react-element-to-jsx-string';
+
+export const applyToChildren = ({ children, className }) => {
+  if (Array.isArray(children)) {
+    return children.map((child, i) =>
+      React.cloneElement(child, {
+        key: i,
+        className: `${child.props.className ?? ''} ${className}`.trim(),
+      })
+    );
+  }
+
+  return React.cloneElement(children, {
+    className: `${children.props.className ?? ''} ${className}`.trim(),
+  });
+};
+
+export const buildVariantClassName = ({ config, color, variant }) => {
+  const colorClass = `${config.colorPaletteClass}-${color}`;
+  const variantClass = config.variantClass ? `${config.variantClass}:variant-${variant}` : `variant-${variant}`;
+
+  return `${colorClass} ${variantClass}`.trim();
+};
+
+Use the <code className="nextra-code ">variant</code> and <code className="nextra-code">palette</code> classes to control the appereance of the component.
+
+Variant values can include { props.config?.variants?.map((variant, index) => <code key={index} className='nextra-code mx-0.5'>{variant}</code> )}. <br/>
+Color palettes can include { props.config?.colorPalette?.map((color, index) => <code key={index} className='nextra-code mx-0.5'>{color}</code> )}.
+
+For more information on all available colors and shades, refer to the [`Colors`](/tokens/colors) documentation.
+
+{ props.config?.colorPalette?.map((color, index) => {
+
+    return (
+      <section key={`variant-section-${index}`} className="my-8">
+
+        <BaseContainer>
+          {
+            props.config?.variants?.map((variant, variantIndex) => {
+
+            const usage = props.components.usage;
+            const rendered = typeof usage === 'function' ? usage({ color, variant }) : usage;
+            const unwrapped = unwrap(rendered);
+            const className = buildVariantClassName({ config: props.config, color, variant });
+
+            return <props.components.wrapper key={`${variant}-${variantIndex}`}>
+                {applyToChildren({ children: unwrapped, className })}
+              </props.components.wrapper>
+            })
+          }
+        </BaseContainer>
+
+        <CodeContainer>
+          <Code>
+          {
+            props.config?.variants?.map((variant) => {
+
+              const usage = props.components.usage;
+              const rendered = typeof usage === 'function' ? usage({ color, variant }) : usage;
+              const unwrapped = unwrap(rendered);
+              const className = buildVariantClassName({ config: props.config, color, variant });
+
+              return props.serializedCode && props.serializedCode({ color, variant}) ||
+              `${reactElementToJSXString(
+                props.components.wrapper({
+                  color,
+                  variant,
+                  children: applyToChildren({ children: unwrapped, className }),
+                }),
+                {
+                  displayName: (element) => getDisplayName(element) || props.displayName,
+                },
+              )}`
+            }).join('\n\n')
+          }
+          </Code>
+        </CodeContainer>
+      </section>
+    )
+
+})}
+
+{/* prettier-ignore-end */}

@@ -1,0 +1,50 @@
+@utility icon-button-sm {
+  --ex-size: var(--ex-icon-button-size-sm, var(--ex-size-xl));
+
+  --ex-radius: var(--ex-icon-button-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-icon-button-font-size-sm, var(--text-sm));
+}
+
+@utility icon-button-md {
+  --ex-size: var(--ex-icon-button-size-md, var(--ex-size-2xl));
+
+  --ex-radius: var(--ex-icon-button-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-icon-button-font-size-md, var(--text-base));
+}
+
+@utility icon-button-lg {
+  --ex-size: var(--ex-icon-button-size-lg, var(--ex-size-3xl));
+
+  --ex-radius: var(--ex-icon-button-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-icon-button-font-size-lg, var(--text-lg));
+}
+
+@utility icon-button-xl {
+  --ex-size: var(--ex-icon-button-size-xl, var(--ex-size-4xl));
+
+  --ex-radius: var(--ex-icon-button-radius-xl, var(--radius-sm));
+  --ex-font-size: var(--ex-icon-button-font-size-xl, var(--text-xl));
+}
+
+@layer components {
+  .ex-icon-button {
+    --ex-cursor: var(--ex-icon-button-cursor, pointer);
+
+    @apply icon-button-md;
+  }
+
+  .ex-icon-button {
+    @apply variant-solid palette-primary;
+  }
+
+  .ex-icon-button {
+    @apply inline-flex shrink-0 cursor-pointer items-center justify-center select-none;
+    @apply h-[var(--ex-size)] w-[var(--ex-size)] [cursor:var(--ex-cursor)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+  }
+}
+
+@layer utilities {
+  .ex-icon-button {
+    @apply interactive;
+  }
+}

@@ -1,0 +1,169 @@
+import React from 'react';
+
+import { Button, Tooltip } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  tooltipArrowCfg,
+  tooltipCfg,
+  tooltipContentCfg,
+  tooltipPortalCfg,
+  tooltipProviderCfg,
+  tooltipTriggerCfg,
+} from './tooltip';
+
+export const Component = (
+  <Tooltip.Provider>
+    <Tooltip>
+      <Tooltip.Trigger>
+        <Button>Hover me</Button>
+      </Tooltip.Trigger>
+      <Tooltip.Portal>
+        <Tooltip.Content>
+          {`The quick brown fox.`}
+          <Tooltip.Arrow />
+        </Tooltip.Content>
+      </Tooltip.Portal>
+    </Tooltip>
+  </Tooltip.Provider>
+);
+
+export const SizeComponent = (
+  <Tooltip.Content>
+    {`The quick brown fox.`}
+    <Tooltip.Arrow />
+  </Tooltip.Content>
+);
+
+export const PlacementComponent = ({ placement }) => (
+  <Tooltip.Content side={placement}>
+    {`The quick brown fox.`}
+    <Tooltip.Arrow />
+  </Tooltip.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Tooltip
+
+{data.tooltip.description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/tooltip)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Placement
+
+Use the `side` prop on the `Tooltip.Content` to set the placement of the component. Values can include `top`, `right`, `bottom`, `left`.
+
+{['top', 'right', 'bottom', 'left'].map((placement, index) => (
+
+  <div key={placement}>
+    { index > 0 ? <hr className='x:my-8 nextra-border' /> : <br /> }
+    <Usage
+      key={placement}
+      components={{
+        usage: React.cloneElement(PlacementComponent({ placement })),
+        wrapper: ({ children }) => (
+          <Tooltip.Provider>
+            <Tooltip>
+              <Tooltip.Trigger>
+                <Button>Hover me ({placement})</Button>
+              </Tooltip.Trigger>
+              <Tooltip.Portal>{children}</Tooltip.Portal>
+            </Tooltip>
+          </Tooltip.Provider>
+        ),
+      }}
+    />
+  </div>
+))}
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <Tooltip.Provider>
+        <Tooltip>
+          <Tooltip.Trigger>
+            <Button>Hover me ({size})</Button>
+          </Tooltip.Trigger>
+          <Tooltip.Portal>{children}</Tooltip.Portal>
+        </Tooltip>
+      </Tooltip.Provider>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-tooltip-z-index: 60;
+
+  --ex-tooltip-font-family: var(--font-sans);
+  --ex-tooltip-font-weight: var(--font-weight-normal);
+
+  --ex-tooltip-font-size-sm: var(--text-xs);
+  --ex-tooltip-font-size-md: var(--text-sm);
+
+  --ex-tooltip-max-w-sm: var(--container-3xs);
+  --ex-tooltip-max-w-md: var(--container-2xs);
+
+  --ex-tooltip-gap-sm: calc(var(--spacing) * 0.75);
+  --ex-tooltip-gap-md: calc(var(--spacing) * 1);
+
+  --ex-tooltip-px-sm: calc(var(--spacing) * 1.5);
+  --ex-tooltip-px-md: calc(var(--spacing) * 2);
+
+  --ex-tooltip-py-sm: calc(var(--spacing) * 0.5);
+  --ex-tooltip-py-md: calc(var(--spacing) * 1);
+
+  --ex-tooltip-radius-sm: var(--radius-sm);
+  --ex-tooltip-radius-md: var(--radius-sm);
+
+  --ex-tooltip-shadow-sm: var(--shadow-sm);
+  --ex-tooltip-shadow-md: var(--shadow-sm);
+
+  --ex-tooltip-arrow-height-sm: calc(var(--spacing) * 1.5);
+  --ex-tooltip-arrow-height-md: calc(var(--spacing) * 1.5);
+
+  --ex-tooltip-arrow-width-sm: calc(var(--spacing) * 3);
+  --ex-tooltip-arrow-width-md: calc(var(--spacing) * 3);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/tooltip#api-reference)
+
+### Tooltip Provider
+
+<Api config={tooltipProviderCfg} />
+
+### Tooltip
+
+<Api config={tooltipCfg} />
+
+### Tooltip Trigger
+
+<Api config={tooltipTriggerCfg} />
+
+### Tooltip Portal
+
+<Api config={tooltipPortalCfg} />
+
+### Tooltip Content
+
+<Api config={tooltipContentCfg} />
+
+### Tooltip Arrow
+
+<Api config={tooltipArrowCfg} />

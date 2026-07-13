@@ -1,0 +1,342 @@
+{
+  "accordion": {
+    "category": "disclosure",
+    "description": "A disclosure component that groups collapsible sections to let users reveal or hide related content."
+  },
+  "alert-dialog": {
+    "category": "overlay",
+    "description": "A modal overlay component that requires an explicit user action or confirmation before closing."
+  },
+  "app-layout": {
+    "category": "structural",
+    "description": "A structural component that wraps the entire application to define its global layout shell."
+  },
+  "avatar": {
+    "category": "identity",
+    "description": "A data display component that renders a user or entity image with an optional fallback visual."
+  },
+  "badge": {
+    "category": "visual-display",
+    "description": "A data display component that presents a compact label, count, or status indicator."
+  },
+  "bg-image": {
+    "category": "media",
+    "description": "A data display component that applies an absolutely positioned background image to a container."
+  },
+  "box": {
+    "category": "structural",
+    "description": "A generic layout primitive that serves as a low-level container for grouping and styling content."
+  },
+  "blockquote": {
+    "category": "block-text",
+    "description": "A typography component that highlights a quoted passage of text with stylized indentation or borders."
+  },
+  "border-beam": {
+    "category": "fx",
+    "description": "An effect component that renders an animated, traveling beam of light around an element's border."
+  },
+  "breadcrumbs": {
+    "category": "navigation",
+    "description": "A navigation component that displays a linear path of links showing the user's current location in a hierarchy."
+  },
+  "button": {
+    "category": "buttons",
+    "description": "An interactive component that triggers an action, event, or operation when clicked or tapped."
+  },
+  "callout": {
+    "category": "feedback",
+    "description": "A feedback component that highlights important messages or notices within a visually distinct container."
+  },
+  "card": {
+    "category": "data-display",
+    "description": "A data display component that groups related content, imagery, and actions onto a single contained surface."
+  },
+  "center": {
+    "category": "alignment",
+    "description": "An alignment component that centers its child elements both horizontally and vertically."
+  },
+  "checkbox": {
+    "category": "selection",
+    "description": "A form component that allows users to select one or more independent options from a list."
+  },
+  "checkbox-card": {
+    "category": "selection",
+    "description": "A form component that pairs a standard checkbox state with a selectable structural card layout."
+  },
+  "close-button": {
+    "category": "buttons",
+    "description": "An interactive component specifically styled to dismiss or close parent overlays, alerts, or panels."
+  },
+  "code": {
+    "category": "inline-text",
+    "description": "A typography component that displays inline or block text using a monospaced font for code snippets."
+  },
+  "collapsible": {
+    "category": "disclosure",
+    "description": "A disclosure component that toggles the visibility of an isolated content region."
+  },
+  "color-swatch": {
+    "category": "media",
+    "description": "A data display component that presents a solid color block for color previewing or selection."
+  },
+  "container": {
+    "category": "structural",
+    "description": "A structural component that constrains content width and applies responsive margins to maintain layout consistency."
+  },
+  "context-menu": {
+    "category": "overlay",
+    "description": "An overlay component that reveals a targeted list of actions when triggered by a right-click or long-press."
+  },
+  "counter": {
+    "category": "metrics",
+    "description": "An effect component that displays numerical values with animated transitions during value changes."
+  },
+  "description": {
+    "category": "typography",
+    "description": "A typography component designed for secondary or descriptive prose with standard spacing and hierarchy."
+  },
+  "dialog": {
+    "category": "overlay",
+    "description": "A modal overlay component that interrupts the user flow to capture focus for vital content or interactions."
+  },
+  "display": {
+    "category": "typography",
+    "description": "A typography component that renders extra-large text for high-impact visual statements and headlines."
+  },
+  "design-grid": {
+    "category": "presentation",
+    "description": "A utility layout component that overlays a visual grid system to assist with layout alignment and development."
+  },
+  "drawer": {
+    "category": "overlay",
+    "description": "An overlay component that slides out from the edge of the screen to present secondary content."
+  },
+  "dropdown-menu": {
+    "category": "overlay",
+    "description": "An overlay component that displays a contextual menu of choices when triggered by a button."
+  },
+  "empty-state": {
+    "category": "feedback",
+    "description": "A feedback component that provides guidance, context, or action items when a view has no data to display."
+  },
+  "field": {
+    "category": "forms",
+    "description": "A form component that encapsulates a form input alongside its associated label, description, and validation errors."
+  },
+  "flex": {
+    "category": "layout",
+    "description": "A layout primitive based on CSS Flexbox for distributing space and aligning item rows or columns."
+  },
+  "float": {
+    "category": "alignment",
+    "description": "An alignment component that floats elements within text-based flows to allow inline word-wrapping."
+  },
+  "grid": {
+    "category": "layout",
+    "description": "A layout primitive based on CSS Grid for arranging items into strict, structured columns and rows."
+  },
+  "group": {
+    "category": "layout",
+    "description": "A layout primitive that clusters related items horizontally or vertically with unified borders and spacing."
+  },
+  "headline": {
+    "category": "typography",
+    "description": "A typography component used for prominent structural headings across content sections."
+  },
+  "highlight": {
+    "category": "inline-text",
+    "description": "A typography component that emphasizes specific words using background or pseudo-element visual markers."
+  },
+  "hover-card": {
+    "category": "overlay",
+    "description": "An overlay component that reveals rich preview content when a pointer hovers over a target element."
+  },
+  "hstack": {
+    "category": "layout",
+    "description": "A layout primitive that arranges child elements in a strict horizontal row with uniform spacing."
+  },
+  "icon": {
+    "category": "visual-display",
+    "description": "A data display component that renders a scalable vector graphic to visually communicate meaning."
+  },
+  "icon-box": {
+    "category": "visual-display",
+    "description": "A data display component that nests an icon within a styled, geometrically bounded container."
+  },
+  "icon-button": {
+    "category": "buttons",
+    "description": "An interactive component that packages an icon inside a click target for compact layouts."
+  },
+  "image": {
+    "category": "media",
+    "description": "A data display component that renders responsive images with baked-in aspect ratio and fallback controls."
+  },
+  "input": {
+    "category": "text-control",
+    "description": "A form component that accepts single-line textual input from the user."
+  },
+  "in-view": {
+    "category": "fx",
+    "description": "An effect component that triggers entrance transitions or animations when it passes into the viewport."
+  },
+  "kbd": {
+    "category": "inline-text",
+    "description": "A typography component that formats keyboard inputs, shortcuts, or hotkeys."
+  },
+  "lead": {
+    "category": "typography",
+    "description": "A typography component that emphasizes introduction paragraphs with expanded text styling."
+  },
+  "link": {
+    "category": "inline-text",
+    "description": "A navigation component that renders an interactive hyperlink for browser navigation."
+  },
+  "list": {
+    "category": "block-text",
+    "description": "A typography component that organizes textual points or child items into ordered or unordered blocks."
+  },
+  "loader": {
+    "category": "feedback",
+    "description": "A feedback component that displays an animation indicating an ongoing system background process."
+  },
+  "logo": {
+    "category": "identity",
+    "description": "A data display component optimized for rendering brand assets and identities cleanly."
+  },
+  "mark": {
+    "category": "inline-text",
+    "description": "A typography component that applies a subtle inline background color highlight to emphasize key terms."
+  },
+  "marquee": {
+    "category": "fx",
+    "description": "A data display component that horizontally loops a continuous, infinitely scrolling banner of content."
+  },
+  "menubar": {
+    "category": "navigation",
+    "description": "A navigation component that implements a persistent horizontal bar of top-level application menus."
+  },
+  "native-select": {
+    "category": "selection",
+    "description": "A form component that implements the browser's unstyled drop-down interface for menu choices."
+  },
+  "nav-button": {
+    "category": "buttons",
+    "description": "A navigation component styled as a button used specifically for route changes and link navigation."
+  },
+  "nav-link": {
+    "category": "navigation",
+    "description": "A navigation component that applies semantic active-states to inline navigational hyperlinks."
+  },
+  "navigation-menu": {
+    "category": "navigation",
+    "description": "A navigation component that presents structural site hierarchies via drop-down panels or links."
+  },
+  "overlay": {
+    "category": "overlay",
+    "description": "An overlay component that darkens or blurs the background behind active modal content."
+  },
+  "password": {
+    "category": "text-control",
+    "description": "A form component that masks text strings for secure password entry, featuring optional visibility toggles."
+  },
+  "pin-input": {
+    "category": "text-control",
+    "description": "A form component split into individual character blocks for entering authentication codes or pins."
+  },
+  "popover": {
+    "category": "overlay",
+    "description": "An overlay component that floats complex descriptive content or micro-forms relative to a reference trigger."
+  },
+  "progress": {
+    "category": "metrics",
+    "description": "A data display component that maps numerical completeness percentages across a tracking bar."
+  },
+  "radio": {
+    "category": "selection",
+    "description": "A form component that restricts users to selecting exactly one option from an associated button set."
+  },
+  "radio-card": {
+    "category": "selection",
+    "description": "A form component that adapts exclusive radio selection mechanisms into larger, data-rich card layouts."
+  },
+  "scroll-area": {
+    "category": "presentation",
+    "description": "A layout component that replaces browser defaults with sleek, custom-designed viewport scrollbars."
+  },
+  "section": {
+    "category": "structural",
+    "description": "A structural component that groups layouts into isolated block regions separated by consistent padding rules."
+  },
+  "select": {
+    "category": "selection",
+    "description": "A form component that provides a styled custom selection menu for picking singular values."
+  },
+  "separator": {
+    "category": "presentation",
+    "description": "A layout component that creates thin horizontal or vertical rule lines to divide layout zones."
+  },
+  "skeleton": {
+    "category": "feedback",
+    "description": "A feedback component that uses flashing abstract blocks to mask incomplete content during network requests."
+  },
+  "slider": {
+    "category": "slideable",
+    "description": "A form component that sets values by scrubbing a dial slider handle along a continuous range track."
+  },
+  "stack": {
+    "category": "layout",
+    "description": "A layout primitive that establishes vertical rhythm by adding identical margins between nested elements."
+  },
+  "status": {
+    "category": "feedback",
+    "description": "A feedback component that renders a color-coded node representing systemic status states."
+  },
+  "switch": {
+    "category": "slideable",
+    "description": "A form component modeled after a hardware toggle switch to quickly commit binary settings."
+  },
+  "table": {
+    "category": "data-display",
+    "description": "A data display component designed to structure structured, multi-column datasets inside rows and cells."
+  },
+  "tabs": {
+    "category": "navigation",
+    "description": "A navigation component that switches structural content views without reloading by clicking button panes."
+  },
+  "text": {
+    "category": "inline-text",
+    "description": "A typography component acting as a primitive wrapper for inline text."
+  },
+  "textarea": {
+    "category": "text-control",
+    "description": "A form component providing adjustable multi-line bounding inputs for lengthy textual responses."
+  },
+  "text-slide": {
+    "category": "fx",
+    "description": "An effect component that applies sliding animations to alphanumeric strings when mounted."
+  },
+  "title": {
+    "category": "typography",
+    "description": "A typography component used to style distinct page titles or modal headings with proper weights."
+  },
+  "toast": {
+    "category": "feedback",
+    "description": "A feedback component displaying brief, self-destructing notification prompts at the corners of viewports."
+  },
+  "toggle": {
+    "category": "selection",
+    "description": "A form component implementing basic binary choice selections on individual custom button frames."
+  },
+  "toggle-group": {
+    "category": "selection",
+    "description": "A form component tracking multi-select button arrays that retain clicked or unclicked selections."
+  },
+  "tooltip": {
+    "category": "overlay",
+    "description": "An overlay component displaying brief hints or string text descriptions over focused interactive items."
+  },
+  "vstack": {
+    "category": "layout",
+    "description": "A layout primitive that strictly chains its layout elements into automated vertical tracks with distinct gap metrics."
+  }
+}

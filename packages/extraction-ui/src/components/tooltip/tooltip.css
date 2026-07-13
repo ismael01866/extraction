@@ -1,0 +1,87 @@
+@utility tooltip-content-sm {
+  --ex-max-w: var(--ex-tooltip-max-w-sm, var(--container-3xs));
+  --ex-gap-x: var(--ex-tooltip-gap-x-sm, calc(var(--spacing) * 0.75));
+
+  --ex-px: var(--ex-tooltip-px-sm, calc(var(--spacing) * 1.5));
+  --ex-py: var(--ex-tooltip-py-sm, calc(var(--spacing) * 0.5));
+
+  --ex-radius: var(--ex-tooltip-radius-sm, var(--radius-sm));
+  --ex-shadow: var(--ex-tooltip-shadow-sm, var(--shadow-sm));
+  --ex-font-size: var(--ex-tooltip-font-size-sm, var(--text-xs));
+
+  .ex-tooltip-arrow {
+    --ex-width: var(--ex-tooltip-arrow-width-sm, calc(var(--spacing) * 3));
+    --ex-height: var(--ex-tooltip-arrow-height-sm, calc(var(--spacing) * 1.5));
+  }
+}
+
+@utility tooltip-content-md {
+  --ex-max-w: var(--ex-tooltip-max-w-md, var(--container-xs));
+  --ex-gap-x: var(--ex-tooltip-gap-x-md, calc(var(--spacing) * 1));
+
+  --ex-px: var(--ex-tooltip-px-md, calc(var(--spacing) * 2));
+  --ex-py: var(--ex-tooltip-py-md, calc(var(--spacing) * 1));
+
+  --ex-radius: var(--ex-tooltip-radius-md, var(--radius-sm));
+  --ex-shadow: var(--ex-tooltip-shadow-md, var(--shadow-sm));
+  --ex-font-size: var(--ex-tooltip-font-size-md, var(--text-sm));
+
+  .ex-tooltip-arrow {
+    --ex-width: var(--ex-tooltip-arrow-width-md, calc(var(--spacing) * 3));
+    --ex-height: var(--ex-tooltip-arrow-height-md, calc(var(--spacing) * 1.5));
+  }
+}
+
+@layer components {
+  .ex-tooltip-content {
+    --ex-font-family: var(--ex-tooltip-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-tooltip-font-weight, var(--font-weight-normal));
+
+    @apply tooltip-content-md;
+  }
+
+  .ex-tooltip-content {
+    @apply tonal-black variant-solid;
+  }
+
+  .ex-tooltip-content {
+    --ex-z-index: var(--ex-tooltip-z-index, var(--ex-options-z-tooltip));
+
+    @apply flex will-change-[transform,opacity];
+    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] shadow-[var(--shadow)];
+
+    &:where(:focus) {
+      @apply outline-none;
+    }
+
+    &:where([data-state='delayed-open'][data-side='top']) {
+      @apply animate-in slide-from-top-1 fade-in;
+    }
+
+    &:where([data-state='delayed-open'][data-side='right']) {
+      @apply animate-in slide-from-end-1 fade-in;
+    }
+
+    &:where([data-state='delayed-open'][data-side='bottom']) {
+      @apply animate-in slide-from-bottom-1 fade-in;
+    }
+
+    &:where([data-state='delayed-open'][data-side='left']) {
+      @apply animate-in slide-from-start-1 fade-in;
+    }
+  }
+
+  .ex-tooltip-arrow {
+    @apply m-[-1px] h-[var(--ex-height)] w-[var(--ex-width)] fill-[var(--background)] stroke-[var(--border)] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
+
+    stroke-dasharray: 2rem 2rem;
+    stroke-dashoffset: 2rem;
+    stroke-width: 2px;
+  }
+}
+
+@layer utilities {
+  .ex-tooltip-content {
+    @apply component-variant-solid-contrast;
+  }
+}

@@ -1,0 +1,5 @@
+@layer components {
+  .ex-icon {
+    @apply inline-flex size-[1em] shrink-0 items-center justify-center text-inherit select-none;
+  }
+}

@@ -1,0 +1,54 @@
+@utility close-button-sm {
+  --ex-size: var(--ex-close-button-size-sm, var(--ex-size-md));
+
+  --ex-radius: var(--ex-close-button-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-close-button-font-size-sm, var(--text-sm));
+}
+
+@utility close-button-md {
+  --ex-size: var(--ex-close-button-size-md, var(--ex-size-lg));
+
+  --ex-radius: var(--ex-close-button-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-close-button-font-size-md, var(--text-base));
+}
+
+@utility close-button-lg {
+  --ex-size: var(--ex-close-button-size-lg, var(--ex-size-xl));
+
+  --ex-radius: var(--ex-close-button-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-close-button-font-size-lg, var(--text-lg));
+}
+
+@utility close-button-xl {
+  --ex-size: var(--ex-close-button-size-xl, var(--ex-size-2xl));
+
+  --ex-radius: var(--ex-close-button-radius-xl, var(--radius-sm));
+  --ex-font-size: var(--ex-close-button-font-size-xl, var(--text-xl));
+}
+
+@layer components {
+  .ex-close-button {
+    --ex-cursor: var(--ex-close-button-cursor, pointer);
+
+    @apply close-button-md;
+  }
+
+  .ex-close-button {
+    @apply variant-ghost palette-neutral;
+  }
+
+  .ex-close-button {
+    @apply inline-flex shrink-0 cursor-pointer items-center justify-center select-none;
+    @apply h-[var(--ex-size)] w-[var(--ex-size)] [cursor:var(--ex-cursor)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+  }
+
+  .ex-close-icon {
+    @apply opacity-muted size-[1em] fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
+  }
+}
+
+@layer utilities {
+  .ex-close-button {
+    @apply interactive;
+  }
+}

@@ -1,0 +1,190 @@
+import { AlertDialog, Button } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  alertDialogActionCfg,
+  alertDialogCancelCfg,
+  alertDialogCfg,
+  alertDialogContentCfg,
+  alertDialogDescriptionCfg,
+  alertDialogOverlayCfg,
+  alertDialogSectionCfg,
+  alertDialogTitleCfg,
+  alertDialogTriggerCfg,
+  cfg,
+} from './alert-dialog.ts';
+
+export const Component = (
+  <AlertDialog>
+    <AlertDialog.Trigger asChild>
+      <Button>Trigger</Button>
+    </AlertDialog.Trigger>
+    <AlertDialog.Portal>
+      <AlertDialog.Overlay />
+      <AlertDialog.Content>
+        <AlertDialog.Section>
+          <AlertDialog.Title>{`The quick brown fox`}</AlertDialog.Title>
+          <AlertDialog.Description>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </AlertDialog.Description>
+        </AlertDialog.Section>
+        <AlertDialog.Section className='flex-row justify-end'>
+          <AlertDialog.Cancel>
+            <Button className='variant-outline palette-neutral'>Cancel</Button>
+          </AlertDialog.Cancel>
+          <AlertDialog.Action asChild>
+            <Button>Confirm</Button>
+          </AlertDialog.Action>
+        </AlertDialog.Section>
+      </AlertDialog.Content>
+    </AlertDialog.Portal>
+  </AlertDialog>
+);
+
+export const SizeComponent = (
+  <AlertDialog.Content>
+    <AlertDialog.Section>
+      <AlertDialog.Title>{`The quick brown fox`}</AlertDialog.Title>
+      <AlertDialog.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </AlertDialog.Description>
+    </AlertDialog.Section>
+    <AlertDialog.Section className='flex-row justify-end'>
+      <AlertDialog.Action asChild>
+        <Button>Confirm</Button>
+      </AlertDialog.Action>
+    </AlertDialog.Section>
+  </AlertDialog.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Alert Dialog
+
+{data['alert-dialog'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <AlertDialog>
+        <AlertDialog.Trigger asChild>
+          <Button>Trigger ({size})</Button>
+        </AlertDialog.Trigger>
+        <AlertDialog.Portal>
+          <AlertDialog.Overlay />
+          {children}
+        </AlertDialog.Portal>
+      </AlertDialog>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-alert-dialog-z-index: 50;
+  --ex-alert-dialog-overlay-z-index: 45;
+
+  --ex-alert-dialog-font-size-sm: var(--text-sm);
+  --ex-alert-dialog-font-size-md: var(--text-sm);
+  --ex-alert-dialog-font-size-lg: var(--text-sm);
+  --ex-alert-dialog-font-size-xl: var(--text-sm);
+
+  --ex-alert-dialog-radius-sm: var(--radius-sm);
+  --ex-alert-dialog-radius-md: var(--radius-sm);
+  --ex-alert-dialog-radius-lg: var(--radius-sm);
+  --ex-alert-dialog-radius-xl: var(--radius-sm);
+
+  --ex-alert-dialog-shadow-sm: var(--shadow-xl);
+  --ex-alert-dialog-shadow-md: var(--shadow-xl);
+  --ex-alert-dialog-shadow-lg: var(--shadow-xl);
+  --ex-alert-dialog-shadow-xl: var(--shadow-xl);
+
+  --ex-alert-dialog-w-sm: var(--container-sm);
+  --ex-alert-dialog-w-md: var(--container-md);
+  --ex-alert-dialog-w-lg: var(--container-lg);
+  --ex-alert-dialog-w-xl: var(--container-xl);
+
+  --ex-alert-dialog-section-gap-x-sm: calc(var(--spacing) * 2.5);
+  --ex-alert-dialog-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-alert-dialog-section-gap-x-lg: calc(var(--spacing) * 2.5);
+
+  --ex-alert-dialog-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-alert-dialog-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-alert-dialog-section-gap-y-lg: calc(var(--spacing) * 2);
+
+  --ex-alert-dialog-section-px-sm: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-px-md: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-px-lg: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-px-xl: calc(var(--spacing) * 5);
+
+  --ex-alert-dialog-section-py-sm: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-py-md: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-py-lg: calc(var(--spacing) * 5);
+  --ex-alert-dialog-section-py-xl: calc(var(--spacing) * 5);
+
+  --ex-alert-dialog-title-font-size-sm: var(--text-base);
+  --ex-alert-dialog-title-font-size-md: var(--text-base);
+  --ex-alert-dialog-title-font-size-lg: var(--text-base);
+  --ex-alert-dialog-title-font-size-xl: var(--text-base);
+  --ex-alert-dialog-title-font-weight: var(--font-weight-semibold);
+
+  --ex-alert-dialog-description-font-size-sm: var(--text-sm);
+  --ex-alert-dialog-description-font-size-md: var(--text-sm);
+  --ex-alert-dialog-description-font-size-lg: var(--text-sm);
+  --ex-alert-dialog-description-font-size-xl: var(--text-sm);
+  --ex-alert-dialog-description-font-weight: var(--font-weight-normal);
+
+  --ex-alert-dialog-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### Alert Dialog
+
+<Api config={alertDialogCfg} />
+
+### Alert Dialog Trigger
+
+<Api config={alertDialogTriggerCfg} />
+
+### Alert Dialog Content
+
+<Api config={alertDialogContentCfg} />
+
+### Alert Dialog Section
+
+<Api config={alertDialogSectionCfg} />
+
+### Alert Dialog Overlay
+
+<Api config={alertDialogOverlayCfg} />
+
+### Alert Dialog Title
+
+<Api config={alertDialogTitleCfg} />
+
+### Alert Dialog Description
+
+<Api config={alertDialogDescriptionCfg} />
+
+### Alert Dialog Action
+
+<Api config={alertDialogActionCfg} />
+
+### Alert Dialog Cancel
+
+<Api config={alertDialogCancelCfg} />

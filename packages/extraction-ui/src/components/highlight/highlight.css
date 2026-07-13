@@ -1,0 +1,26 @@
+@layer components {
+  .ex-highlight {
+    --ex-px: var(--ex-highlight-px, calc(var(--spacing) * 1.5));
+    --ex-radius: var(--ex-highlight-radius-sm, var(--radius-sm));
+
+    @apply relative inline bg-transparent whitespace-nowrap;
+    @apply px-[var(--ex-px)];
+  }
+
+  .ex-highlight {
+    @apply palette-neutral variant-subtle;
+    @apply border-transparent! bg-transparent! outline-transparent!;
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+    }
+  }
+
+  .ex-highlight {
+    &::before {
+      content: '';
+      @apply variant absolute inset-0 -z-1;
+      @apply rounded-[var(--ex-radius)];
+    }
+  }
+}

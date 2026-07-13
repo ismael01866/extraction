@@ -1,0 +1,200 @@
+import { RadioCard, RadioGroup } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  radioCardCfg,
+  radioCardContentCfg,
+  radioCardDescriptionCfg,
+  radioCardIndicatorCfg,
+  radioCardLabelCfg,
+  radioGroupCfg,
+} from './radio-card';
+
+export const Component = (
+  <RadioGroup defaultValue='option-1'>
+    <RadioCard value='option-1' id='r1'>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 1</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+    <RadioCard value='option-2' id='r2'>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 2</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+  </RadioGroup>
+);
+
+export const ComponentDisabled = (
+  <RadioGroup className='disabled' defaultValue='option-1'>
+    <RadioCard value='option-1' id='r1-d'>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 1</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+  </RadioGroup>
+);
+
+export const SizeComponent = ({ size }) => (
+  <RadioGroup defaultValue='option-1'>
+    <RadioCard value='option-1' id={`r1-${size}`}>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 1</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+    <RadioCard value='option-2' id={`r2-${size}`}>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 2</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+  </RadioGroup>
+);
+
+export const VariantComponent = ({ color, variant }) => (
+  <RadioGroup defaultValue='option-1'>
+    <RadioCard value='option-1' id={`r1-${color}-${variant}`}>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 1</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+    <RadioCard value='option-2' id={`r2-${color}-${variant}`}>
+      <RadioCard.Indicator />
+      <RadioCard.Content>
+        <RadioCard.Label>Option 2</RadioCard.Label>
+      </RadioCard.Content>
+    </RadioCard>
+  </RadioGroup>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Radio Card
+
+{data['radio-card'].description} <br/>For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/radio-group)
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabled
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-radio-card-cursor: default;
+
+  --ex-radio-card-font-size-sm: var(--text-xs);
+  --ex-radio-card-font-size-md: var(--text-sm);
+  --ex-radio-card-font-size-lg: var(--text-base);
+
+  --ex-radio-card-gap-x-sm: calc(var(--spacing * 2));
+  --ex-radio-card-gap-x-md: calc(var(--spacing * 2.5));
+  --ex-radio-card-gap-x-lg: calc(var(--spacing * 3));
+
+  --ex-radio-card-px-sm: --spacing(4);
+  --ex-radio-card-px-md: --spacing(5);
+  --ex-radio-card-px-lg: --spacing(6);
+
+  --ex-radio-card-py-sm: --spacing(4);
+  --ex-radio-card-py-md: --spacing(5);
+  --ex-radio-card-py-lg: --spacing(6);
+
+  --ex-radio-card-radius-sm: var(--radius-sm);
+  --ex-radio-card-radius-md: var(--radius-sm);
+  --ex-radio-card-radius-lg: var(--radius-sm);
+
+  --ex-radio-card-content-gap-x-sm: calc(var(--spacing * 2));
+  --ex-radio-card-content-gap-x-md: calc(var(--spacing * 2.5));
+  --ex-radio-card-content-gap-x-lg: calc(var(--spacing * 3));
+
+  --ex-radio-card-content-gap-y-sm: calc(var(--spacing * 1));
+  --ex-radio-card-content-gap-y-md: calc(var(--spacing * 1));
+  --ex-radio-card-content-gap-y-lg: calc(var(--spacing * 1));
+
+  --ex-radio-card-label-font-family: var(--font-sans);
+  --ex-radio-card-label-font-weight: var(--font-weight-semibold);
+
+  --ex-radio-card-label-font-size-sm: var(--text-xs);
+  --ex-radio-card-label-font-size-md: var(--text-sm);
+  --ex-radio-card-label-font-size-lg: var(--text-base);
+
+  --ex-radio-card-description-font-family: var(--font-sans);
+  --ex-radio-card-description-font-weight: var(--font-weight-normal);
+  --ex-radio-card-description-opacity: var(--ex-options-muted-opacity);
+
+  --ex-radio-card-description-font-size-sm: var(--text-xs);
+  --ex-radio-card-description-font-size-md: var(--text-sm);
+  --ex-radio-card-description-font-size-lg: var(--text-base);
+
+  --ex-radio-card-indicator-font-size-sm: var(--text-lg);
+  --ex-radio-card-indicator-font-size-md: var(--text-xl);
+  --ex-radio-card-indicator-font-size-lg: var(--text-2xl);
+}
+```
+
+## API
+
+For more information on this component configuration, visit [Radix UI](https://www.radix-ui.com/primitives/docs/components/radio-group#api-reference)
+
+### Radio Group
+
+<Api config={radioGroupCfg} />
+
+### Radio Card
+
+<Api config={radioCardCfg} />
+
+### Radio Card Indicator
+
+<Api config={radioCardIndicatorCfg} />
+
+### Radio Card Content
+
+<Api config={radioCardContentCfg} />
+
+### Radio Card Label
+
+<Api config={radioCardLabelCfg} />
+
+### Radio Card Description
+
+<Api config={radioCardDescriptionCfg} />

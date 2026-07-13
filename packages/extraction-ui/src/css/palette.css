@@ -1,0 +1,231 @@
+@utility palette-primary {
+  --palette: var(--color-primary);
+  --palette-foreground: var(--color-primary-foreground);
+
+  --palette-50: var(--color-primary-50);
+  --palette-100: var(--color-primary-100);
+  --palette-200: var(--color-primary-200);
+  --palette-300: var(--color-primary-300);
+  --palette-400: var(--color-primary-400);
+  --palette-500: var(--color-primary-500);
+  --palette-600: var(--color-primary-600);
+  --palette-700: var(--color-primary-700);
+  --palette-800: var(--color-primary-800);
+  --palette-900: var(--color-primary-900);
+  --palette-950: var(--color-primary-950);
+
+  --palette-50-foreground: var(--color-primary-50-foreground);
+  --palette-100-foreground: var(--color-primary-100-foreground);
+  --palette-200-foreground: var(--color-primary-200-foreground);
+  --palette-300-foreground: var(--color-primary-300-foreground);
+  --palette-400-foreground: var(--color-primary-400-foreground);
+  --palette-500-foreground: var(--color-primary-500-foreground);
+  --palette-600-foreground: var(--color-primary-600-foreground);
+  --palette-700-foreground: var(--color-primary-700-foreground);
+  --palette-800-foreground: var(--color-primary-800-foreground);
+  --palette-900-foreground: var(--color-primary-900-foreground);
+  --palette-950-foreground: var(--color-primary-950-foreground);
+}
+
+@utility palette-accent {
+  --palette: var(--color-accent);
+  --palette-foreground: var(--color-accent-foreground);
+
+  --palette-50: var(--color-accent-50);
+  --palette-100: var(--color-accent-100);
+  --palette-200: var(--color-accent-200);
+  --palette-300: var(--color-accent-300);
+  --palette-400: var(--color-accent-400);
+  --palette-500: var(--color-accent-500);
+  --palette-600: var(--color-accent-600);
+  --palette-700: var(--color-accent-700);
+  --palette-800: var(--color-accent-800);
+  --palette-900: var(--color-accent-900);
+  --palette-950: var(--color-accent-950);
+
+  --palette-50-foreground: var(--color-accent-50-foreground);
+  --palette-100-foreground: var(--color-accent-100-foreground);
+  --palette-200-foreground: var(--color-accent-200-foreground);
+  --palette-300-foreground: var(--color-accent-300-foreground);
+  --palette-400-foreground: var(--color-accent-400-foreground);
+  --palette-500-foreground: var(--color-accent-500-foreground);
+  --palette-600-foreground: var(--color-accent-600-foreground);
+  --palette-700-foreground: var(--color-accent-700-foreground);
+  --palette-800-foreground: var(--color-accent-800-foreground);
+  --palette-900-foreground: var(--color-accent-900-foreground);
+  --palette-950-foreground: var(--color-accent-950-foreground);
+}
+
+@utility palette-neutral {
+  --palette: var(--color-neutral);
+  --palette-foreground: var(--color-neutral-foreground);
+
+  --palette-50: var(--color-neutral-50);
+  --palette-100: var(--color-neutral-100);
+  --palette-200: var(--color-neutral-200);
+  --palette-300: var(--color-neutral-300);
+  --palette-400: var(--color-neutral-400);
+  --palette-500: var(--color-neutral-500);
+  --palette-600: var(--color-neutral-600);
+  --palette-700: var(--color-neutral-700);
+  --palette-800: var(--color-neutral-800);
+  --palette-900: var(--color-neutral-900);
+  --palette-950: var(--color-neutral-950);
+
+  --palette-50-foreground: var(--color-neutral-50-foreground);
+  --palette-100-foreground: var(--color-neutral-100-foreground);
+  --palette-200-foreground: var(--color-neutral-200-foreground);
+  --palette-300-foreground: var(--color-neutral-300-foreground);
+  --palette-400-foreground: var(--color-neutral-400-foreground);
+  --palette-500-foreground: var(--color-neutral-500-foreground);
+  --palette-600-foreground: var(--color-neutral-600-foreground);
+  --palette-700-foreground: var(--color-neutral-700-foreground);
+  --palette-800-foreground: var(--color-neutral-800-foreground);
+  --palette-900-foreground: var(--color-neutral-900-foreground);
+  --palette-950-foreground: var(--color-neutral-950-foreground);
+}
+
+@utility palette-error {
+  --palette: var(--color-error);
+  --palette-foreground: var(--color-error-foreground);
+
+  --palette-50: var(--color-error-50);
+  --palette-100: var(--color-error-100);
+  --palette-200: var(--color-error-200);
+  --palette-300: var(--color-error-300);
+  --palette-400: var(--color-error-400);
+  --palette-500: var(--color-error-500);
+  --palette-600: var(--color-error-600);
+  --palette-700: var(--color-error-700);
+  --palette-800: var(--color-error-800);
+  --palette-900: var(--color-error-900);
+  --palette-950: var(--color-error-950);
+
+  --palette-50-foreground: var(--color-error-50-foreground);
+  --palette-100-foreground: var(--color-error-100-foreground);
+  --palette-200-foreground: var(--color-error-200-foreground);
+  --palette-300-foreground: var(--color-error-300-foreground);
+  --palette-400-foreground: var(--color-error-400-foreground);
+  --palette-500-foreground: var(--color-error-500-foreground);
+  --palette-600-foreground: var(--color-error-600-foreground);
+  --palette-700-foreground: var(--color-error-700-foreground);
+  --palette-800-foreground: var(--color-error-800-foreground);
+  --palette-900-foreground: var(--color-error-900-foreground);
+  --palette-950-foreground: var(--color-error-950-foreground);
+}
+
+@utility palette-success {
+  --palette: var(--color-success);
+  --palette-foreground: var(--color-success-foreground);
+
+  --palette-50: var(--color-success-50);
+  --palette-100: var(--color-success-100);
+  --palette-200: var(--color-success-200);
+  --palette-300: var(--color-success-300);
+  --palette-400: var(--color-success-400);
+  --palette-500: var(--color-success-500);
+  --palette-600: var(--color-success-600);
+  --palette-700: var(--color-success-700);
+  --palette-800: var(--color-success-800);
+  --palette-900: var(--color-success-900);
+  --palette-950: var(--color-success-950);
+
+  --palette-50-foreground: var(--color-success-50-foreground);
+  --palette-100-foreground: var(--color-success-100-foreground);
+  --palette-200-foreground: var(--color-success-200-foreground);
+  --palette-300-foreground: var(--color-success-300-foreground);
+  --palette-400-foreground: var(--color-success-400-foreground);
+  --palette-500-foreground: var(--color-success-500-foreground);
+  --palette-600-foreground: var(--color-success-600-foreground);
+  --palette-700-foreground: var(--color-success-700-foreground);
+  --palette-800-foreground: var(--color-success-800-foreground);
+  --palette-900-foreground: var(--color-success-900-foreground);
+  --palette-950-foreground: var(--color-success-950-foreground);
+}
+
+@utility palette-info {
+  --palette: var(--color-info);
+  --palette-foreground: var(--color-info-foreground);
+
+  --palette-50: var(--color-info-50);
+  --palette-100: var(--color-info-100);
+  --palette-200: var(--color-info-200);
+  --palette-300: var(--color-info-300);
+  --palette-400: var(--color-info-400);
+  --palette-500: var(--color-info-500);
+  --palette-600: var(--color-info-600);
+  --palette-700: var(--color-info-700);
+  --palette-800: var(--color-info-800);
+  --palette-900: var(--color-info-900);
+  --palette-950: var(--color-info-950);
+
+  --palette-50-foreground: var(--color-info-50-foreground);
+  --palette-100-foreground: var(--color-info-100-foreground);
+  --palette-200-foreground: var(--color-info-200-foreground);
+  --palette-300-foreground: var(--color-info-300-foreground);
+  --palette-400-foreground: var(--color-info-400-foreground);
+  --palette-500-foreground: var(--color-info-500-foreground);
+  --palette-600-foreground: var(--color-info-600-foreground);
+  --palette-700-foreground: var(--color-info-700-foreground);
+  --palette-800-foreground: var(--color-info-800-foreground);
+  --palette-900-foreground: var(--color-info-900-foreground);
+  --palette-950-foreground: var(--color-info-950-foreground);
+}
+
+@utility palette-warning {
+  --palette: var(--color-warning);
+  --palette-foreground: var(--color-warning-foreground);
+
+  --palette-50: var(--color-warning-50);
+  --palette-100: var(--color-warning-100);
+  --palette-200: var(--color-warning-200);
+  --palette-300: var(--color-warning-300);
+  --palette-400: var(--color-warning-400);
+  --palette-500: var(--color-warning-500);
+  --palette-600: var(--color-warning-600);
+  --palette-700: var(--color-warning-700);
+  --palette-800: var(--color-warning-800);
+  --palette-900: var(--color-warning-900);
+  --palette-950: var(--color-warning-950);
+
+  --palette-50-foreground: var(--color-warning-50-foreground);
+  --palette-100-foreground: var(--color-warning-100-foreground);
+  --palette-200-foreground: var(--color-warning-200-foreground);
+  --palette-300-foreground: var(--color-warning-300-foreground);
+  --palette-400-foreground: var(--color-warning-400-foreground);
+  --palette-500-foreground: var(--color-warning-500-foreground);
+  --palette-600-foreground: var(--color-warning-600-foreground);
+  --palette-700-foreground: var(--color-warning-700-foreground);
+  --palette-800-foreground: var(--color-warning-800-foreground);
+  --palette-900-foreground: var(--color-warning-900-foreground);
+  --palette-950-foreground: var(--color-warning-950-foreground);
+}
+
+@utility palette-inherit {
+  --palette: inherit;
+  --palette-foreground: inherit;
+
+  --palette-50: inherit;
+  --palette-100: inherit;
+  --palette-200: inherit;
+  --palette-300: inherit;
+  --palette-400: inherit;
+  --palette-500: inherit;
+  --palette-600: inherit;
+  --palette-700: inherit;
+  --palette-800: inherit;
+  --palette-900: inherit;
+  --palette-950: inherit;
+
+  --palette-50-foreground: inherit;
+  --palette-100-foreground: inherit;
+  --palette-200-foreground: inherit;
+  --palette-300-foreground: inherit;
+  --palette-400-foreground: inherit;
+  --palette-500-foreground: inherit;
+  --palette-600-foreground: inherit;
+  --palette-700-foreground: inherit;
+  --palette-800-foreground: inherit;
+  --palette-900-foreground: inherit;
+  --palette-950-foreground: inherit;
+}

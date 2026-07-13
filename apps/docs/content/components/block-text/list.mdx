@@ -1,0 +1,121 @@
+import { List } from 'extraction-ui';
+import { LuCircleCheck } from 'react-icons/lu';
+
+import data from '../data.json';
+import { cfg, listCfg, listIndicatorCfg, listItemCfg } from './list';
+
+export const Component = (
+  <List>
+    <List.Item>First item of the list</List.Item>
+    <List.Item>Second item of the list</List.Item>
+  </List>
+);
+
+export const SizeComponent = (
+  <List>
+    <List.Item>
+      <List.Indicator className='text-primary'>
+        <LuCircleCheck />
+      </List.Indicator>
+      First item of the list
+    </List.Item>
+    <List.Item>
+      <List.Indicator className='text-primary'>
+        <LuCircleCheck />
+      </List.Indicator>
+      Second item of the list
+    </List.Item>
+  </List>
+);
+
+export const ComponentWithIcon = (
+  <List>
+    <List.Item>
+      <List.Indicator className='text-primary'>
+        <LuCircleCheck />
+      </List.Indicator>
+      First item of the list
+    </List.Item>
+    <List.Item>
+      <List.Indicator className='text-primary'>
+        <LuCircleCheck />
+      </List.Indicator>
+      Second item of the list
+    </List.Item>
+  </List>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# List
+
+{data.list.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+For more information on all available list style utilities, visit [Tailwind](https://tailwindcss.com/docs/list-style-type)
+
+## With Icon
+
+<Usage
+  components={{
+    usage: ComponentWithIcon,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+  isText
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-list-font-size-sm: var(--text-xs);
+  --ex-list-font-size-md: var(--text-sm);
+  --ex-list-font-size-lg: var(--text-base);
+
+  --ex-list-font-family-sm: var(--font-sans);
+  --ex-list-font-family-md: var(--font-sans);
+  --ex-list-font-family-lg: var(--font-sans);
+
+  --ex-list-font-weight-sm: var(--font-weight-normal)
+  --ex-list-font-weight-md: var(--font-weight-normal)
+  --ex-list-font-weight-lg: var(--font-weight-normal)
+
+  --ex-list-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-list-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-list-gap-x-lg: calc(var(--spacing) * 3);
+
+  --ex-list-gap-y-sm: calc(var(--spacing) * 1);
+  --ex-list-gap-y-md: calc(var(--spacing) * 1);
+  --ex-list-gap-y-lg: calc(var(--spacing) * 1);
+}
+```
+
+## API
+
+### List
+
+<Api config={listCfg} />
+
+### List.Item
+
+<Api config={listItemCfg} />
+
+### List.Indicator
+
+<Api config={listIndicatorCfg} />

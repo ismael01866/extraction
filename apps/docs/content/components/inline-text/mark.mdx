@@ -1,0 +1,35 @@
+import { Mark, Text } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './mark';
+
+export const Component = <Mark>{`jumps over`}</Mark>;
+
+export const Wrapper = ({ children }) => (
+  <Text className='w-full'>The quick brown fox {children} the lazy dog</Text>
+);
+
+# Mark
+
+{data.mark.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## API
+
+<Api config={cfg} />

@@ -1,0 +1,177 @@
+import { Button, Dialog } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  dialogCfg,
+  dialogCloseCfg,
+  dialogContentCfg,
+  dialogDescriptionCfg,
+  dialogOverlayCfg,
+  dialogSectionCfg,
+  dialogTitleCfg,
+  dialogTriggerCfg,
+} from './dialog';
+
+export const Component = (
+  <Dialog>
+    <Dialog.Trigger asChild>
+      <Button>Trigger</Button>
+    </Dialog.Trigger>
+    <Dialog.Portal>
+      <Dialog.Overlay />
+      <Dialog.Content>
+        <Dialog.Section>
+          <Dialog.Title>{`The quick brown fox`}</Dialog.Title>
+          <Dialog.Description>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </Dialog.Description>
+        </Dialog.Section>
+        <Dialog.Close aria-label='Close' />
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog>
+);
+
+export const SizeComponent = (
+  <Dialog.Content>
+    <Dialog.Section>
+      <Dialog.Title>{`The quick brown fox`}</Dialog.Title>
+      <Dialog.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Dialog.Description>
+    </Dialog.Section>
+    <Dialog.Close aria-label='Close' />
+  </Dialog.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Dialog
+
+{data.dialog.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <Dialog>
+        <Dialog.Trigger asChild>
+          <Button>Trigger ({size})</Button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Overlay />
+          {children}
+        </Dialog.Portal>
+      </Dialog>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-dialog-z-index: 50;
+  --ex-dialog-overlay-z-index: 45;
+
+  --ex-dialog-font-size-sm: var(--text-sm);
+  --ex-dialog-font-size-md: var(--text-sm);
+  --ex-dialog-font-size-lg: var(--text-sm);
+  --ex-dialog-font-size-xl: var(--text-sm);
+
+  --ex-dialog-radius-sm: var(--radius-sm);
+  --ex-dialog-radius-md: var(--radius-sm);
+  --ex-dialog-radius-lg: var(--radius-sm);
+  --ex-dialog-radius-xl: var(--radius-sm);
+
+  --ex-dialog-shadow-sm: var(--shadow-xl);
+  --ex-dialog-shadow-md: var(--shadow-xl);
+  --ex-dialog-shadow-lg: var(--shadow-xl);
+  --ex-dialog-shadow-xl: var(--shadow-xl);
+
+  --ex-dialog-w-sm: var(--container-sm);
+  --ex-dialog-w-md: var(--container-md);
+  --ex-dialog-w-lg: var(--container-lg);
+  --ex-dialog-w-xl: var(--container-xl);
+
+  --ex-dialog-section-gap-x-sm: calc(var(--spacing) * 2.5);
+  --ex-dialog-section-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-dialog-section-gap-x-lg: calc(var(--spacing) * 2.5);
+  --ex-dialog-section-gap-x-xl: calc(var(--spacing) * 2.5);
+
+  --ex-dialog-section-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-dialog-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-dialog-section-gap-y-lg: calc(var(--spacing) * 2);
+  --ex-dialog-section-gap-y-xl: calc(var(--spacing) * 2);
+
+  --ex-dialog-section-px-sm: calc(var(--spacing) * 5);
+  --ex-dialog-section-px-md: calc(var(--spacing) * 5);
+  --ex-dialog-section-px-lg: calc(var(--spacing) * 5);
+  --ex-dialog-section-px-xl: calc(var(--spacing) * 5);
+
+  --ex-dialog-section-py-sm: calc(var(--spacing) * 5);
+  --ex-dialog-section-py-md: calc(var(--spacing) * 5);
+  --ex-dialog-section-py-lg: calc(var(--spacing) * 5);
+  --ex-dialog-section-py-xl: calc(var(--spacing) * 5);
+
+  --ex-dialog-title-font-size-sm: var(--text-base);
+  --ex-dialog-title-font-size-md: var(--text-base);
+  --ex-dialog-title-font-size-lg: var(--text-base);
+  --ex-dialog-title-font-size-xl: var(--text-base);
+
+  --ex-dialog-title-font-weight: var(--font-weight-semibold);
+
+  --ex-dialog-description-font-size-sm: var(--text-sm);
+  --ex-dialog-description-font-size-md: var(--text-sm);
+  --ex-dialog-description-font-size-lg: var(--text-sm);
+  --ex-dialog-description-font-size-xl: var(--text-sm);
+
+  --ex-dialog-description-font-weight: var(--font-weight-normal);
+  --ex-dialog-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### Dialog
+
+<Api config={dialogCfg} />
+
+### Dialog Trigger
+
+<Api config={dialogTriggerCfg} />
+
+### Dialog Content
+
+<Api config={dialogContentCfg} />
+
+### Dialog Section
+
+<Api config={dialogSectionCfg} />
+
+### Dialog Title
+
+<Api config={dialogTitleCfg} />
+
+### Dialog Description
+
+<Api config={dialogDescriptionCfg} />
+
+### Dialog Overlay
+
+<Api config={dialogOverlayCfg} />
+
+### Dialog Close
+
+<Api config={dialogCloseCfg} />

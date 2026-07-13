@@ -1,0 +1,227 @@
+import React from 'react';
+
+import { Button, Drawer } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  drawerCfg,
+  drawerCloseCfg,
+  drawerContentCfg,
+  drawerDescriptionCfg,
+  drawerOverlayCfg,
+  drawerSectionCfg,
+  drawerTitleCfg,
+  drawerTriggerCfg,
+} from './drawer';
+
+export const Component = (
+  <Drawer>
+    <Drawer.Trigger asChild>
+      <Button>Trigger</Button>
+    </Drawer.Trigger>
+    <Drawer.Portal>
+      <Drawer.Overlay />
+      <Drawer.Content>
+        <Drawer.Section>
+          <Drawer.Title>{`The quick brown fox`}</Drawer.Title>
+          <Drawer.Description>
+            {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+          </Drawer.Description>
+        </Drawer.Section>
+        <Drawer.Section className='mbs-auto flex-row justify-end'>
+          <Drawer.Close>
+            <Button className='variant-outline palette-neutral'>Cancel</Button>
+          </Drawer.Close>
+          <Drawer.Close>
+            <Button>Confirm</Button>
+          </Drawer.Close>
+        </Drawer.Section>
+        <Drawer.Close />
+      </Drawer.Content>
+    </Drawer.Portal>
+  </Drawer>
+);
+
+export const SizeComponent = (
+  <Drawer.Content>
+    <Drawer.Section>
+      <Drawer.Title>{`The quick brown fox`}</Drawer.Title>
+      <Drawer.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Drawer.Description>
+    </Drawer.Section>
+    <Drawer.Close />
+  </Drawer.Content>
+);
+
+export const PlacementComponent = ({ placement }) => (
+  <Drawer.Content placement={placement}>
+    <Drawer.Section>
+      <Drawer.Title>{`The quick brown fox`}</Drawer.Title>
+      <Drawer.Description>
+        {`Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do.`}
+      </Drawer.Description>
+    </Drawer.Section>
+    <Drawer.Close />
+  </Drawer.Content>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Drawer
+
+{data.drawer.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Placement
+
+Use the `placement` prop on the `Drawer.Content` to set the placement of the component. Values can include `start`, `end`, `top`, `bottom`.
+
+{['start', 'end', 'top', 'bottom'].map((placement, index) => (
+
+  <div key={placement}>
+    { index > 0 ? <hr className='x:my-8 nextra-border' /> : <br /> }
+    <Usage
+      key={placement}
+      components={{
+        usage: React.cloneElement(PlacementComponent({ placement })),
+        wrapper: ({ children }) => (
+          <Drawer>
+            <Drawer.Trigger asChild>
+              <Button>Trigger ({placement})</Button>
+            </Drawer.Trigger>
+            <Drawer.Portal>
+              <Drawer.Overlay />
+              {children}
+            </Drawer.Portal>
+          </Drawer>
+        ),
+      }}
+    />
+  </div>
+))}
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: ({ children, size }) => (
+      <Drawer>
+        <Drawer.Trigger asChild>
+          <Button>Trigger ({size})</Button>
+        </Drawer.Trigger>
+        <Drawer.Portal>
+          <Drawer.Overlay />
+          {children}
+        </Drawer.Portal>
+      </Drawer>
+    ),
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-drawer-z-index: 50;
+  --ex-drawer-overlay-z-index: 45;
+
+  --ex-drawer-font-size-sm: var(--text-sm);
+  --ex-drawer-font-size-md: var(--text-sm);
+  --ex-drawer-font-size-lg: var(--text-sm);
+  --ex-drawer-font-size-xl: var(--text-sm);
+
+  --ex-drawer-radius-sm: 0;
+  --ex-drawer-radius-md: 0;
+  --ex-drawer-radius-lg: 0;
+  --ex-drawer-radius-xl: 0;
+
+  --ex-drawer-shadow-sm: var(--shadow-xl);
+  --ex-drawer-shadow-md: var(--shadow-xl);
+  --ex-drawer-shadow-lg: var(--shadow-xl);
+  --ex-drawer-shadow-xl: var(--shadow-xl);
+
+  --ex-drawer-size-sm: var(--container-sm);
+  --ex-drawer-size-md: var(--container-md);
+  --ex-drawer-size-lg: var(--container-lg);
+  --ex-drawer-size-xl: var(--container-xl);
+
+  --ex-drawer-gap-x-sm: calc(var(--spacing) * 2.5);
+  --ex-drawer-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-drawer-gap-x-lg: calc(var(--spacing) * 2.5);
+  --ex-drawer-gap-x-xl: calc(var(--spacing) * 2.5);
+
+  --ex-drawer-gap-y-sm: calc(var(--spacing) * 2);
+  --ex-drawer-gap-y-md: calc(var(--spacing) * 2);
+  --ex-drawer-gap-y-lg: calc(var(--spacing) * 2);
+  --ex-drawer-gap-y-xl: calc(var(--spacing) * 2);
+
+  --ex-drawer-section-px-sm: calc(var(--spacing) * 5);
+  --ex-drawer-section-px-md: calc(var(--spacing) * 5);
+  --ex-drawer-section-px-lg: calc(var(--spacing) * 5);
+  --ex-drawer-section-px-xl: calc(var(--spacing) * 5);
+
+  --ex-drawer-section-py-sm: calc(var(--spacing) * 5);
+  --ex-drawer-section-py-md: calc(var(--spacing) * 5);
+  --ex-drawer-section-py-lg: calc(var(--spacing) * 5);
+  --ex-drawer-section-py-xl: calc(var(--spacing) * 5);
+
+  --ex-drawer-title-font-size-sm: var(--text-base);
+  --ex-drawer-title-font-size-md: var(--text-base);
+  --ex-drawer-title-font-size-lg: var(--text-base);
+  --ex-drawer-title-font-size-xl: var(--text-base);
+
+  --ex-drawer-title-font-weight: var(--font-weight-semibold);
+
+  --ex-drawer-description-font-size-sm: var(--text-sm);
+  --ex-drawer-description-font-size-md: var(--text-sm);
+  --ex-drawer-description-font-size-lg: var(--text-sm);
+  --ex-drawer-description-font-size-xl: var(--text-sm);
+
+  --ex-drawer-description-font-weight: var(--font-weight-normal);
+  --ex-drawer-description-opacity: var(--ex-options-muted-opacity);
+}
+```
+
+## API
+
+### Drawer
+
+<Api config={drawerCfg} />
+
+### Drawer Trigger
+
+<Api config={drawerTriggerCfg} />
+
+### Drawer Content
+
+<Api config={drawerContentCfg} />
+
+### Drawer Section
+
+<Api config={drawerSectionCfg} />
+
+### Drawer Title
+
+<Api config={drawerTitleCfg} />
+
+### Drawer Description
+
+<Api config={drawerDescriptionCfg} />
+
+### Drawer Overlay
+
+<Api config={drawerOverlayCfg} />
+
+### Drawer Close
+
+<Api config={drawerCloseCfg} />

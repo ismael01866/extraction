@@ -1,0 +1,31 @@
+import { BgImage, Box, Center, Description, Overlay } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './bg-image';
+
+export const Component = (
+  <Box className='relative h-64 w-full overflow-hidden'>
+    <BgImage src='/images/assets/espresso.jpg' />
+    <Overlay />
+    <Center>
+      <Description className='text-xl text-white drop-shadow-md'>{`The quick brown fox jumps over the lazy dog`}</Description>
+    </Center>
+  </Box>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Bg Image
+
+{data['bg-image'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## API
+
+<Api config={cfg} />
