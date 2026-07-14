@@ -173,7 +173,62 @@ The monorepo uses **Tailwind CSS** for styling:
 - Import main styles: `import 'extraction-ui/styles'`
 - Styles are compiled during build
 
+## Release Workflow
+
+This monorepo uses [Changesets](https://github.com/changesets/changesets) to manage versioning and releases for publishable packages.
+
+### Creating a Changeset
+
+When making changes to a publishable package (for example `extraction-ui`), create a changeset:
+
+```bash
+pnpm changeset
+```
+
+Follow the prompts:
+
+1. Select the package affected by your changes.
+2. Select the version bump:
+   - `patch` — bug fixes and small improvements
+   - `minor` — new features and backwards-compatible changes
+   - `major` — breaking changes
+3. Write a short description of the change.
+
+This creates a changeset file:
+
+```text
+.changeset/<generated-name>.md
+```
+
+Commit this file with your pull request.
+
+### Automated Release Process
+
+When changesets are merged into `master`, GitHub Actions automatically creates a **Version Packages** pull request.
+
+The release PR:
+
+- Updates package versions
+- Generates changelog entries
+- Removes consumed changeset files
+
+After the release PR is merged, GitHub Actions publishes the updated packages to npm automatically.
+
+### Maintainer Commands
+
+To manually test the release process locally:
+
+```bash
+pnpm changeset version
+```
+
+Build and publish a package:
+
+```bash
+pnpm --filter=extraction-ui build
+pnpm --filter=extraction-ui publish
+```
+
 ## License
 
-Extraction UI
-Copyright (c) 2026 Ismael Mariscal
+Extraction UI Copyright (c) 2026 Ismael Mariscal
