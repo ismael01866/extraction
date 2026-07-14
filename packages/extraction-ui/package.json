@@ -1,8 +1,16 @@
 {
   "name": "extraction-ui",
+  "description": "Modern UI design system and component library",
   "license": "MIT",
   "version": "0.7.0",
   "type": "module",
+  "keywords": [
+    "react",
+    "tailwind",
+    "radix",
+    "ui",
+    "components"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -11,6 +19,10 @@
   ],
   "engines": {
     "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ismael01866/extraction"
   },
   "exports": {
     ".": {
@@ -38,12 +50,12 @@
     "lint:css": "stylelint \"src/**/*.css\"",
     "generate-theme": "tsx src/scripts/generate-theme.ts",
     "generate": "pnpm run generate-theme && pnpm run build",
-    "cli:init": "node bin/publish.js"
+    "cli:init": "node bin/publish.js",
+    "prepack": "pnpm run build"
   },
   "dependencies": {
     "clsx": "^2.1.1",
-    "tailwind-merge": "^3.3.1",
-    "tailwindcss": "^4.1.16"
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.38.0",
@@ -85,6 +97,6 @@
     "radix-ui": "^1.4.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.16"
   }
 }
