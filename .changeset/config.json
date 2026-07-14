@@ -5,7 +5,13 @@
   "fixed": [],
   "linked": [],
   "access": "restricted",
-  "baseBranch": "main",
+  "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": ["astro", "gatsby", "next", "vite", "extraction-ui-docs", "docs"]
+  "ignore": [
+    "astro",
+    "gatsby",
+    "next",
+    "vite",
+    "extraction-ui-docs"
+  ]
 }
