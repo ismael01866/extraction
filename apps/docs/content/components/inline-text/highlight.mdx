@@ -3,9 +3,7 @@ import { Highlight, Text } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './highlight';
 
-export const Component = (
-  <Highlight className='before:skew-y-3'>{`jumps over`}</Highlight>
-);
+export const Component = <Highlight className='before:skew-y-3'>{`jumps over`}</Highlight>;
 
 export const ComponentWithAccent = (
   <Highlight className='palette-primary before:accent-border-end before:rounded-none'>{`jumps over`}</Highlight>

@@ -27,11 +27,7 @@ export const ComponentDisabled = (
       Name
       <Field.RequiredIndicator />
     </Field.Label>
-    <Input
-      id='name'
-      className='variant-surface disabled'
-      placeholder='Enter your name'
-    />
+    <Input id='name' className='variant-surface disabled' placeholder='Enter your name' />
   </Field>
 );
 
@@ -41,13 +37,7 @@ export const ComponentValid = (
       Name
       <Field.RequiredIndicator />
     </Field.Label>
-    <Input
-      id='name'
-      className='valid'
-      placeholder='Enter your name'
-      readOnly
-      value='John'
-    />
+    <Input id='name' className='valid' placeholder='Enter your name' readOnly value='John' />
     <Field.Success>{`Name is valid`}</Field.Success>
   </Field>
 );

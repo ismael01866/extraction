@@ -4,13 +4,9 @@ export const cfg = {
   class: 'scroll-area',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['xs', 'sm', 'md', 'lg', 'xl'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'scroll-area',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
 };
 
 export const scrollAreaCfg = {

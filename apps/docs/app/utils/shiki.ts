@@ -1,7 +1,6 @@
 import { ShikiTransformer } from 'shiki';
 
-const escapeRegExp = (value: string) =>
-  value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 export const highlightWords = (words: string[]): ShikiTransformer => ({
   name: 'highlight-words',

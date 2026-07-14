@@ -4,13 +4,9 @@ export const cfg = {
   class: 'input',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'input',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

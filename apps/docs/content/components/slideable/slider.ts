@@ -4,9 +4,7 @@ export const cfg = {
   class: 'slider',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'slider',
 };
 

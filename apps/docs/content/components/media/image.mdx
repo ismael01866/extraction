@@ -6,9 +6,7 @@ import reactElementToJSXString from 'react-element-to-jsx-string';
 import data from '../data.json';
 import { cfg } from './image';
 
-export const Component = (
-  <Image src='/images/assets/espresso.jpg' alt='espresso' />
-);
+export const Component = <Image src='/images/assets/espresso.jpg' alt='espresso' />;
 
 export const Wrapper = ({ children }) => children;
 
@@ -31,11 +29,7 @@ Use the <code className='nextra-code'>aspect-{'{'}ratio{'}'}</code> class to con
 For more information on all aspect ratio utilities, visit [Tailwind](https://tailwindcss.com/docs/aspect-ratio)
 
 <BaseContainer>
-  <Image
-    className='aspect-video'
-    src='/images/assets/espresso.jpg'
-    alt='espresso'
-  />
+  <Image className='aspect-video' src='/images/assets/espresso.jpg' alt='espresso' />
 </BaseContainer>
 
 <CodeContainer>

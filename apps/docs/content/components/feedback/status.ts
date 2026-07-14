@@ -4,9 +4,7 @@ export const cfg = {
   class: 'status',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg', 'xl'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'status',
   variants: variantsValues.filter((variant) => ['solid'].includes(variant)),
 };

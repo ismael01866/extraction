@@ -12,9 +12,7 @@ export function LenisProvider() {
   useEffect(() => {
     if (pathname !== '/') return;
 
-    const prefersReducedMotion = globalThis.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches;
+    const prefersReducedMotion = globalThis.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReducedMotion) return;
 

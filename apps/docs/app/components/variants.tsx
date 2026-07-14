@@ -1,10 +1,4 @@
-import {
-  Button,
-  Grid,
-  VStack,
-  shadesValues,
-  variantsValues,
-} from 'extraction-ui';
+import { Button, Grid, VStack, shadesValues, variantsValues } from 'extraction-ui';
 import { capitalize } from 'lodash';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
@@ -17,10 +11,7 @@ export function Variants({ color }: { color?: string }) {
         Solid
         <Grid className="mbs-2 grid-cols-2 gap-2 sm:grid-cols-3">
           {shadesValues.map((shade, index) => (
-            <Button
-              key={index}
-              className={`palette-${color} shade-${shade} variant-solid`}
-            >
+            <Button key={index} className={`palette-${color} shade-${shade} variant-solid`}>
               {shade}
             </Button>
           ))}
@@ -46,10 +37,7 @@ export function Variants({ color }: { color?: string }) {
             .filter((variant) => !['solid', 'plain'].includes(variant))
             .map((variant, index) => (
               <VStack key={index} className="items-stretch">
-                <Button
-                  key={index}
-                  className={`palette-${color} variant-${variant}`}
-                >
+                <Button key={index} className={`palette-${color} variant-${variant}`}>
                   {capitalize(variant)}
                 </Button>
               </VStack>

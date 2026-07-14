@@ -4,15 +4,7 @@ import { useState } from 'react';
 
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import {
-  HStack,
-  Headline,
-  Icon,
-  IconButton,
-  Mark,
-  Section,
-  Stack,
-} from 'extraction-ui';
+import { HStack, Headline, Icon, IconButton, Mark, Section, Stack } from 'extraction-ui';
 import { SiAstro, SiGatsby, SiNextdotjs, SiVite } from 'react-icons/si';
 
 const FRAMEWORKS = [
@@ -30,7 +22,7 @@ export function HomeSectionFrameworks() {
       <Stack className="gap-8 sm:gap-12">
         <MotionInView>
           <Stack className="gap-8">
-            <Headline className="headline-xl text-fluid leading-tight font-semibold">
+            <Headline className="headline-xl text-fluid font-semibold leading-tight">
               Built for <br />
               <Mark
                 key={framework}
@@ -47,10 +39,7 @@ export function HomeSectionFrameworks() {
           </Stack>
         </MotionInView>
 
-        <HStack
-          className="justify-center"
-          onMouseLeave={() => setFramework('any React stack')}
-        >
+        <HStack className="justify-center" onMouseLeave={() => setFramework('any React stack')}>
           {FRAMEWORKS.map(({ label, icon }, index) => (
             <MotionInView
               key={label}

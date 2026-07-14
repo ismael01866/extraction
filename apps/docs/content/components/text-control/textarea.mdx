@@ -3,9 +3,7 @@ import { Field, Textarea } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './textarea';
 
-export const Component = (
-  <Textarea className='w-64' placeholder='Enter your name' />
-);
+export const Component = <Textarea className='w-64' placeholder='Enter your name' />;
 
 export const ComponentValid = (
   <Field className='w-64'>
@@ -14,12 +12,7 @@ export const ComponentValid = (
       <Field.RequiredIndicator />
     </Field.Label>
     <Field.Helper>{`The quick brown fox jumps over`}</Field.Helper>
-    <Textarea
-      placeholder='Enter your name'
-      value='John'
-      className='valid'
-      readOnly
-    />
+    <Textarea placeholder='Enter your name' value='John' className='valid' readOnly />
     <Field.Success>{`Name is valid`}</Field.Success>
   </Field>
 );

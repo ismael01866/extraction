@@ -14,8 +14,8 @@ export function HomeSectionPanelsHero() {
               80+ customizable components
             </Headline>
             <Headline className="headline-sm text-fluid">
-              Production-ready components designed for speed, aesthetic,
-              functionality, and flexibility
+              Production-ready components designed for speed, aesthetic, functionality, and
+              flexibility
             </Headline>
           </VStack>
         </VStack>

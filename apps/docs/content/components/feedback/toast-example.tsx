@@ -45,9 +45,7 @@ export const ToastPlacementExample = ({ placement }) => {
         <Toast.Indicator />
         <Toast.Content>
           <Toast.Title>{`The quick brown fox`}</Toast.Title>
-          <Toast.Description>
-            {`Alice was beginning to get very tired.`}
-          </Toast.Description>
+          <Toast.Description>{`Alice was beginning to get very tired.`}</Toast.Description>
         </Toast.Content>
         <Toast.Close aria-label="Close" />
       </Toast>
@@ -62,18 +60,11 @@ export const ToastSizeExample = ({ size }) => {
   return (
     <Toast.Provider>
       <Button onClick={() => setOpen(true)}>Trigger ({size})</Button>
-      <Toast
-        className={`toast-${size}`}
-        open={open}
-        onOpenChange={setOpen}
-        duration={2000}
-      >
+      <Toast className={`toast-${size}`} open={open} onOpenChange={setOpen} duration={2000}>
         <Toast.Indicator />
         <Toast.Content>
           <Toast.Title>{`The quick brown fox`}</Toast.Title>
-          <Toast.Description>
-            {`Alice was beginning to get very tired.`}
-          </Toast.Description>
+          <Toast.Description>{`Alice was beginning to get very tired.`}</Toast.Description>
         </Toast.Content>
         <Toast.Close className={`close-button-${size}`} aria-label="Close" />
       </Toast>
@@ -87,10 +78,7 @@ export const ToastVariantExample = ({ color, variant }) => {
 
   return (
     <Toast.Provider>
-      <Button
-        className={`palette-${color} variant-${variant}`}
-        onClick={() => setOpen(true)}
-      >
+      <Button className={`palette-${color} variant-${variant}`} onClick={() => setOpen(true)}>
         Trigger
       </Button>
       <Toast
@@ -105,9 +93,7 @@ export const ToastVariantExample = ({ color, variant }) => {
             {`The quick brown fox`}
             <Toast.Close aria-label="Close" />
           </Toast.Title>
-          <Toast.Description>
-            {`Alice was beginning to get very tired.`}
-          </Toast.Description>
+          <Toast.Description>{`Alice was beginning to get very tired.`}</Toast.Description>
         </Toast.Content>
       </Toast>
       <Toast.Viewport />
@@ -121,11 +107,7 @@ export const ToastWithAccentExample = () => {
   return (
     <Toast.Provider>
       <Button onClick={() => setOpen(true)}>Trigger</Button>
-      <Toast
-        className="accent-border-start border-l-primary"
-        open={open}
-        onOpenChange={setOpen}
-      >
+      <Toast className="accent-border-start border-l-primary" open={open} onOpenChange={setOpen}>
         <Toast.Indicator />
         <Toast.Content>
           <Toast.Title>{`The quick brown fox`}</Toast.Title>

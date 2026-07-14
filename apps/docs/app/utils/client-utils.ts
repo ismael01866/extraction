@@ -111,16 +111,12 @@ export const getDisplayName = (element) => {
 
   if (typeof type === 'string') return type;
 
-  const directName =
-    type?.displayName || type?.render?.displayName || type?.type?.displayName;
+  const directName = type?.displayName || type?.render?.displayName || type?.type?.displayName;
 
   if (directName) return directName;
 
   const refId =
-    type?.$$id ||
-    type?._payload?.value?.$$id ||
-    type?._payload?._result?.$$id ||
-    type?._init?.$$id;
+    type?.$$id || type?._payload?.value?.$$id || type?._payload?._result?.$$id || type?._init?.$$id;
 
   if (typeof refId === 'string') {
     const hashIndex = refId.lastIndexOf('#');
@@ -137,12 +133,7 @@ export const getDisplayName = (element) => {
   return undefined;
 };
 
-export const buildVariantClass = ({
-  colorClass,
-  color,
-  variantClass,
-  variant,
-}) =>
+export const buildVariantClass = ({ colorClass, color, variantClass, variant }) =>
   `${colorClass}-${color} ${variantClass ? `${variantClass}:variant-${variant}` : `variant-${variant}`}`.trim();
 
 export const wrapUsageElement = ({ usage, wrapper }) => {
@@ -159,9 +150,7 @@ export const wrapUsageElement = ({ usage, wrapper }) => {
     });
 
     if (Array.isArray(out)) {
-      return out.length === 1
-        ? out[0]
-        : React.createElement(React.Fragment, null, ...out);
+      return out.length === 1 ? out[0] : React.createElement(React.Fragment, null, ...out);
     }
 
     return out;

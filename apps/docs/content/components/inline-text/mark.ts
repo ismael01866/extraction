@@ -4,9 +4,7 @@ export const cfg = {
   class: 'mark',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'plain'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'plain'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

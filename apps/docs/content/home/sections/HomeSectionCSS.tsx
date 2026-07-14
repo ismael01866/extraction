@@ -37,7 +37,7 @@ export function HomeSectionCSS() {
       <Grid className="grid-cols-1 gap-x-24 gap-y-4 xl:grid-cols-2">
         <MotionInView>
           <Stack className="gap-4">
-            <Headline className="headline-xl text-fluid leading-tight font-semibold">
+            <Headline className="headline-xl text-fluid font-semibold leading-tight">
               Set your design from CSS
             </Headline>
             <Headline className="headline-sm text-fluid">
@@ -46,7 +46,7 @@ export function HomeSectionCSS() {
           </Stack>
         </MotionInView>
 
-        <Stack className="mbs-4 gap-8 sm:mbs-12">
+        <Stack className="mbs-4 sm:mbs-12 gap-8">
           {CSS_FEATURES.map((feature, index) => (
             <MotionInView
               key={feature.title}
@@ -60,7 +60,7 @@ export function HomeSectionCSS() {
                 </IconBox>
 
                 <Stack>
-                  <Title className="title-lg text-fluid leading-none font-semibold">
+                  <Title className="title-lg text-fluid font-semibold leading-none">
                     {feature.title}
                   </Title>
                   <Description className="opacity-muted text-fluid">

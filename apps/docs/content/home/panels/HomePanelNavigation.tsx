@@ -14,9 +14,7 @@ export function HomePanelNavigation() {
               <NavigationMenu.Item>
                 <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
                 <NavigationMenu.Content>
-                  <NavigationMenu.Section>
-                    Account overview page
-                  </NavigationMenu.Section>
+                  <NavigationMenu.Section>Account overview page</NavigationMenu.Section>
                 </NavigationMenu.Content>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
@@ -27,9 +25,7 @@ export function HomePanelNavigation() {
                       <NavigationMenu.Item value="sub1">
                         <NavigationMenu.Trigger>Sub 1</NavigationMenu.Trigger>
                         <NavigationMenu.Content>
-                          <NavigationMenu.Section>
-                            Account overview page
-                          </NavigationMenu.Section>
+                          <NavigationMenu.Section>Account overview page</NavigationMenu.Section>
                         </NavigationMenu.Content>
                       </NavigationMenu.Item>
                       <NavigationMenu.Item value="sub2">
@@ -46,10 +42,7 @@ export function HomePanelNavigation() {
                 </NavigationMenu.Content>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
-                <NavigationMenu.Link
-                  href="https://www.google.com"
-                  target="_blank"
-                >
+                <NavigationMenu.Link href="https://www.google.com" target="_blank">
                   Google
                 </NavigationMenu.Link>
               </NavigationMenu.Item>

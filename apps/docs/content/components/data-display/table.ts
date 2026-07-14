@@ -6,9 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md'].includes(size as string)),
   sizeClass: 'table',
-  variants: variantsValues.filter(
-    (variant) => !['surface', 'ghost'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['surface', 'ghost'].includes(variant)),
 };
 
 export const tableCfg = {

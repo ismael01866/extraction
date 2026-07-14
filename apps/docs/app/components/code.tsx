@@ -51,7 +51,7 @@ export function Code({
         <button
           type="button"
           onClick={handleCopy}
-          className="absolute top-3 right-3 z-10 rounded-md border border-white/10 bg-black/60 px-2 py-1 text-xs text-white backdrop-blur transition hover:bg-black/80"
+          className="absolute right-3 top-3 z-10 rounded-md border border-white/10 bg-black/60 px-2 py-1 text-xs text-white backdrop-blur transition hover:bg-black/80"
         >
           {copied ? 'Copied' : 'Copy'}
         </button>

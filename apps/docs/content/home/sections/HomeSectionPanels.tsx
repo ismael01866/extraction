@@ -88,11 +88,7 @@ export function HomeSectionPanels() {
               transitionDelay: `${(index + 4) * 50}ms`,
             }}
           >
-            <HomeFeatureCard
-              icon={icon}
-              title={title}
-              description={description}
-            >
+            <HomeFeatureCard icon={icon} title={title} description={description}>
               <Panel />
             </HomeFeatureCard>
           </MotionInView>

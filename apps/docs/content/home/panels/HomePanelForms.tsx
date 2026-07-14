@@ -9,10 +9,7 @@ export function HomePanelForms() {
           <Input id="name" placeholder="Name" />
         </Field>
         <Select>
-          <Select.Trigger
-            aria-label="select-trigger"
-            className="select-trigger-sm"
-          >
+          <Select.Trigger aria-label="select-trigger" className="select-trigger-sm">
             <Select.Value placeholder="Choose..." />
             <Select.Icon />
           </Select.Trigger>

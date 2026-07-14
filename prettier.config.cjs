@@ -5,7 +5,7 @@ module.exports = {
   tabWidth: 2,
   useTabs: false,
   endOfLine: 'auto',
-  printWidth: 80,
+  printWidth: 100,
   proseWrap: 'never',
   plugins: [
     '@trivago/prettier-plugin-sort-imports',
@@ -15,6 +15,7 @@ module.exports = {
   multilineArraysWrapThreshold: 4,
   importOrder: [
     '^react$',
+    '^react-dom$',
     '^next/(.*)$',
     '^@/.*$',
     '^[a-zA-Z]',

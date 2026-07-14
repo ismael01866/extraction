@@ -72,14 +72,8 @@ const navbar = (
   <Navbar
     logo={
       <HStack className="gap-3">
-        <Logo
-          src="/images/assets/xui.svg"
-          alt="Extraction UI Logo"
-          className="size-7"
-        />
-        <Title className="[font-family:var(--font-geist-sans)] font-extrabold">
-          Extraction UI
-        </Title>
+        <Logo src="/images/assets/xui.svg" alt="Extraction UI Logo" className="size-7" />
+        <Title className="font-extrabold [font-family:var(--font-geist-sans)]">Extraction UI</Title>
       </HStack>
     }
   >
@@ -96,11 +90,7 @@ const navbar = (
         aria-label="Toggle Color Mode"
         asChild
       >
-        <ColorModeButton
-          useNativeClassList={false}
-          useNextThemes
-          propagateToIFrame
-        >
+        <ColorModeButton useNativeClassList={false} useNextThemes propagateToIFrame>
           <LuSun />
         </ColorModeButton>
       </IconButton>

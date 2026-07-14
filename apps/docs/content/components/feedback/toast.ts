@@ -6,9 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md'].includes(size as string)),
   sizeClass: 'toast',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
 };
 
 export const toastProviderCfg = {

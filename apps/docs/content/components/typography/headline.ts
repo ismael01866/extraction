@@ -2,9 +2,7 @@ import { sizeValues } from 'extraction-ui';
 
 export const cfg = {
   class: 'headline',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg', 'xl'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'headline',
   api: {
     as: {

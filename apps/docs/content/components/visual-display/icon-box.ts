@@ -4,13 +4,9 @@ export const cfg = {
   class: 'icon-box',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg', 'xl'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'icon-box',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

@@ -12,9 +12,7 @@ export function HomeSectionOpenSource() {
       <MotionInView>
         <VStack className="gap-4">
           <Icon as={LuHandHeart} className="mbe-4 size-24" />
-          <Headline className="headline-xl text-fluid font-semibold">
-            Open Source
-          </Headline>
+          <Headline className="headline-xl text-fluid font-semibold">Open Source</Headline>
           <Headline className="headline-sm text-fluid">
             {' '}
             Extraction UI is an open source project licensed under MIT

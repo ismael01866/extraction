@@ -106,10 +106,7 @@ export const ComponentInvalid = (
 
 export const ComponentDisabled = (
   <Select>
-    <Select.Trigger
-      className='disabled variant-surface w-64'
-      aria-label='Select an option'
-    >
+    <Select.Trigger className='disabled variant-surface w-64' aria-label='Select an option'>
       <Select.Value placeholder='Select an option' />
       <Select.Icon />
     </Select.Trigger>
@@ -155,10 +152,7 @@ export const ComponentDisabledItem = (
 
 export const SizeComponent = ({ size }) => (
   <Select>
-    <Select.Trigger
-      className={`w-64 select-trigger-${size} `}
-      aria-label='Select an option'
-    >
+    <Select.Trigger className={`w-64 select-trigger-${size} `} aria-label='Select an option'>
       <Select.Value placeholder='Select an option' />
       <Select.Icon />
     </Select.Trigger>

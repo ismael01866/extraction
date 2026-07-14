@@ -1,4 +1,4 @@
-import React, { ComponentProps } from 'react';
+import { ComponentProps } from 'react';
 
 import { Box } from 'extraction-ui';
 import { cn } from 'utils';
@@ -15,23 +15,13 @@ const decorativeStyles = {
   `,
 } as const;
 
-export function DecorativeBox({
-  className,
-  style,
-  ...rest
-}: ComponentProps<typeof Box>) {
+export function DecorativeBox({ className, style, ...rest }: ComponentProps<typeof Box>) {
   const classes = cn(
     'palette-neutral shade-200 rounded-sm size-16 variant-solid relative',
     className,
   );
 
-  return (
-    <Box
-      className={classes}
-      style={{ ...decorativeStyles, ...style }}
-      {...rest}
-    />
-  );
+  return <Box className={classes} style={{ ...decorativeStyles, ...style }} {...rest} />;
 }
 
 DecorativeBox.displayName = 'DecorativeBox';

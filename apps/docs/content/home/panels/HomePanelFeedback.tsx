@@ -1,11 +1,4 @@
-import {
-  Callout,
-  HStack,
-  IconButton,
-  Loader,
-  Skeleton,
-  VStack,
-} from 'extraction-ui';
+import { Callout, HStack, IconButton, Loader, Skeleton, VStack } from 'extraction-ui';
 
 export function HomePanelFeedback() {
   return (

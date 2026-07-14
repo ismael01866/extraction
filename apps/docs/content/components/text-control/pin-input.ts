@@ -4,13 +4,9 @@ export const cfg = {
   class: 'pin-input',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'pin-input',
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
 };
 
 export const pinInputCfg = {

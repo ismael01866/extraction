@@ -4,8 +4,7 @@ import { Box, HStack, Stack } from 'extraction-ui';
 
 # Shadows (Box)
 
-Shadow tokens define elevation and depth styles for box elements.
-For more information on the default available shadow utilities, visit [Tailwind](https://tailwindcss.com/docs/box-shadow).
+Shadow tokens define elevation and depth styles for box elements. For more information on the default available shadow utilities, visit [Tailwind](https://tailwindcss.com/docs/box-shadow).
 
 ```css
 @theme {
@@ -13,10 +12,8 @@ For more information on the default available shadow utilities, visit [Tailwind]
   --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl:
-    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
 
   --inset-shadow-2xs: inset 0 1px rgb(0 0 0 / 0.05);
@@ -46,32 +43,25 @@ For more information on the default available shadow utilities, visit [Tailwind]
         { name: 'xs', value: '0 1px 2px 0 rgb(0 0 0 / 0.05)' },
         {
           name: 'sm',
-          value:
-            '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
+          value: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)',
         },
         {
           name: 'md',
-          value:
-            '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
+          value: '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)',
         },
         {
           name: 'lg',
-          value:
-            '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
+          value: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
         },
         {
           name: 'xl',
-          value:
-            '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
+          value: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
         },
         { name: '2xl', value: '0 25px 50px -12px rgb(0 0 0 / 0.25)' },
       ].map(({ name, value }) => (
         <HStack key={name} className='items-center gap-8 text-xs'>
           <span className='w-12 shrink-0 text-center'>{`${name}`}</span>
-          <Box
-            style={{ boxShadow: value }}
-            className='size-16 bg-white dark:bg-neutral-900'
-          />
+          <Box style={{ boxShadow: value }} className='size-16 bg-white dark:bg-neutral-900' />
         </HStack>
       ))}
     </Stack>
@@ -94,10 +84,7 @@ For more information on the default available shadow utilities, visit [Tailwind]
       ].map(({ name, value }) => (
         <HStack key={name} className='items-center gap-8 text-xs'>
           <span className='w-12 shrink-0 text-center'>{`${name}`}</span>
-          <Box
-            style={{ boxShadow: value }}
-            className='palette-neutral variant-surface size-16'
-          />
+          <Box style={{ boxShadow: value }} className='palette-neutral variant-surface size-16' />
         </HStack>
       ))}
     </Stack>

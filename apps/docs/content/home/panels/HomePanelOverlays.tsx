@@ -1,11 +1,4 @@
-import {
-  Button,
-  Dialog,
-  HStack,
-  Popover,
-  Tooltip,
-  VStack,
-} from 'extraction-ui';
+import { Button, Dialog, HStack, Popover, Tooltip, VStack } from 'extraction-ui';
 
 export function HomePanelOverlays() {
   return (
@@ -21,8 +14,8 @@ export function HomePanelOverlays() {
               <Dialog.Section>
                 <Dialog.Title>Project update ready</Dialog.Title>
                 <Dialog.Description>
-                  Alice was beginning to get very tired of sitting by her sister
-                  on the bank, and of having nothing to do.
+                  Alice was beginning to get very tired of sitting by her sister on the bank, and of
+                  having nothing to do.
                 </Dialog.Description>
               </Dialog.Section>
               <Dialog.Close />
@@ -33,17 +26,15 @@ export function HomePanelOverlays() {
       <HStack className="w-full">
         <Popover>
           <Popover.Trigger asChild>
-            <Button className="button-sm variant-outline flex-1">
-              Popover
-            </Button>
+            <Button className="button-sm variant-outline flex-1">Popover</Button>
           </Popover.Trigger>
           <Popover.Portal>
             <Popover.Content>
               <Popover.Section>
                 <Popover.Title>Project update ready</Popover.Title>
                 <Popover.Description>
-                  Alice was beginning to get very tired of sitting by her sister
-                  on the bank, and of having nothing to do.
+                  Alice was beginning to get very tired of sitting by her sister on the bank, and of
+                  having nothing to do.
                 </Popover.Description>
               </Popover.Section>
               <Popover.Arrow />
@@ -53,9 +44,7 @@ export function HomePanelOverlays() {
         <Tooltip.Provider>
           <Tooltip>
             <Tooltip.Trigger asChild>
-              <Button className="button-sm variant-outline flex-1">
-                Tooltip
-              </Button>
+              <Button className="button-sm variant-outline flex-1">Tooltip</Button>
             </Tooltip.Trigger>
             <Tooltip.Portal>
               <Tooltip.Content>

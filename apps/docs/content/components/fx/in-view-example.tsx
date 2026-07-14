@@ -10,9 +10,7 @@ export const InViewRenderPropExample = () => {
           <div>
             <div className="mb-20">Scroll to reveal animation</div>
             <InView>
-              {({ isInView }) => (
-                <Counter key={isInView ? 'in' : 'out'} value={1000} />
-              )}
+              {({ isInView }) => <Counter key={isInView ? 'in' : 'out'} value={1000} />}
             </InView>
           </div>
         </ScrollArea.Content>

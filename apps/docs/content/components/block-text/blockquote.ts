@@ -4,9 +4,7 @@ export const cfg = {
   class: 'blockquote',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'blockquote',
   variants: variantsValues.filter((v) => v !== 'ghost'),
 };

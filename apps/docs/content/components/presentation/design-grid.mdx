@@ -3,15 +3,10 @@ import { Box, DesignGrid } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './design-grid';
 
-export const Component = (
-  <DesignGrid className='absolute grid-cols-8 grid-rows-4' />
-);
+export const Component = <DesignGrid className='absolute grid-cols-8 grid-rows-4' />;
 
 export const Wrapper = ({ ...rest }) => (
-  <Box
-    className='palette-neutral variant-subtle relative h-40 w-full'
-    {...rest}
-  />
+  <Box className='palette-neutral variant-subtle relative h-40 w-full' {...rest} />
 );
 
 # DesignGrid

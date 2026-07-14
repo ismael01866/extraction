@@ -4,9 +4,7 @@ export const cfg = {
   class: 'separator',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['xs', 'sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['xs', 'sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'separator',
   api: {
     as: {

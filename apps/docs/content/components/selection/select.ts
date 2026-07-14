@@ -4,12 +4,8 @@ export const cfg = {
   class: 'select',
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
-  variants: variantsValues.filter(
-    (variant) => !['ghost', 'link'].includes(variant),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
+  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
 };
 
 export const selectCfg = {

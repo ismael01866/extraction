@@ -2,9 +2,7 @@ import { sizeValues } from 'extraction-ui';
 
 export const cfg = {
   class: 'empty-state',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'empty-state',
 };
 

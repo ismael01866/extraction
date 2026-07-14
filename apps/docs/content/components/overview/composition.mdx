@@ -45,9 +45,7 @@ export function Example() {
       <Card.Content>
         <Card.Section>
           <Card.Title>Header</Card.Title>
-          <Card.Description>
-            Alice was beginning to get very tired.
-          </Card.Description>
+          <Card.Description>Alice was beginning to get very tired.</Card.Description>
         </Card.Section>
       </Card.Content>
     </Card>
@@ -90,9 +88,7 @@ import { ElementType } from 'react';
 
 import { Button, ButtonProps } from 'extraction-ui';
 
-export function CustomButton<T extends ElementType = 'button'>(
-  props: ButtonProps<T>,
-) {
+export function CustomButton<T extends ElementType = 'button'>(props: ButtonProps<T>) {
   return <Button {...props} />;
 }
 ```

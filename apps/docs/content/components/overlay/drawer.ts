@@ -2,9 +2,7 @@ import { sizeValues } from 'extraction-ui';
 
 export const cfg = {
   class: 'drawer',
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg', 'xl'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'drawer-content',
 };
 

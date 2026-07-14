@@ -3,19 +3,11 @@ import { Field, Input } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './input';
 
-export const Component = (
-  <Input className='w-64' placeholder='Enter your name' />
-);
+export const Component = <Input className='w-64' placeholder='Enter your name' />;
 
 export const ComponentValid = (
   <Field className='w-64'>
-    <Input
-      id='name'
-      placeholder='Enter your name'
-      className='valid'
-      readOnly
-      value='John'
-    />
+    <Input id='name' placeholder='Enter your name' className='valid' readOnly value='John' />
   </Field>
 );
 
@@ -26,11 +18,7 @@ export const ComponentInvalid = (
 );
 
 export const ComponentDisabled = (
-  <Input
-    disabled
-    className='variant-surface w-64'
-    placeholder='Enter your name'
-  />
+  <Input disabled className='variant-surface w-64' placeholder='Enter your name' />
 );
 
 export const Wrapper = ({ children }) => children;

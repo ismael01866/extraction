@@ -32,16 +32,13 @@ export function HomeSectionColorModes() {
               <Card.Section className="relative h-64 text-white">
                 <div className="contents">
                   <BgImage src="/images/assets/sample-1.jpg" />
-                  <Overlay className="bg-transparent bg-linear-to-t from-black/75 via-transparent to-black/75" />
+                  <Overlay className="bg-linear-to-t bg-transparent from-black/75 via-transparent to-black/75" />
                 </div>
 
                 <HStack className="relative justify-between">
                   <HStack className="gap-3">
                     <Avatar className="avatar-md">
-                      <Avatar.Image
-                        alt="John Doe"
-                        src="/images/assets/avatar-1.jpg"
-                      />
+                      <Avatar.Image alt="John Doe" src="/images/assets/avatar-1.jpg" />
                     </Avatar>
                     <Stack className="gap-0">
                       <span className="opacity-subtle">Hosted by</span>
@@ -50,10 +47,7 @@ export function HomeSectionColorModes() {
                   </HStack>
 
                   <div>
-                    <IconButton
-                      aria-label="icon-button"
-                      className="tonal-white rounded-full"
-                    >
+                    <IconButton aria-label="icon-button" className="tonal-white rounded-full">
                       <Icon as={LuBookMarked} />
                     </IconButton>
                   </div>
@@ -92,12 +86,12 @@ export function HomeSectionColorModes() {
           <MotionInView>
             <div>
               <Stack className="gap-4">
-                <Headline className="headline-xl text-fluid leading-tight font-semibold">
+                <Headline className="headline-xl text-fluid font-semibold leading-tight">
                   Consistent UI
                 </Headline>
                 <Headline className="headline-sm text-fluid">
-                  Define your color tokens once and let every component adapt
-                  seamlessly across modes.
+                  Define your color tokens once and let every component adapt seamlessly across
+                  modes.
                 </Headline>
               </Stack>
               <Grid className="mbs-8 grid-cols-1 gap-3 xl:grid-cols-2">

@@ -177,9 +177,7 @@ Use the `placement` prop on the `Toast.Provider` to set the placement of the Toa
 <Variants
   config={cfg}
   components={{
-    usage: ({ color, variant }) => (
-      <ToastVariantExample color={color} variant={variant} />
-    ),
+    usage: ({ color, variant }) => <ToastVariantExample color={color} variant={variant} />,
     wrapper: Wrapper,
   }}
   serializedCode={({ color, variant }) => {

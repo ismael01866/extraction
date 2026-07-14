@@ -273,7 +273,7 @@ p + .x-container {
     }
 
     button {
-      @apply pointer-events-none [font-family:var(--font-geist-mono)] text-xs font-semibold text-(--color-theme-foreground);
+      @apply text-(--color-theme-foreground) pointer-events-none text-xs font-semibold [font-family:var(--font-geist-mono)];
     }
   }
 
@@ -318,11 +318,11 @@ p + .x-container {
 /** ──────────────────────────── */
 
 .nextra-toc .x\:text-sm {
-  @apply [font-family:var(--font-geist-mono)] text-xs;
+  @apply text-xs [font-family:var(--font-geist-mono)];
 }
 
 .nextra-toc ul li {
-  @apply py-0.5 [font-family:var(--font-geist-sans)] text-xs font-normal;
+  @apply py-0.5 text-xs font-normal [font-family:var(--font-geist-sans)];
 }
 
 /**  Shiki Syntax Highlighting   */
@@ -341,7 +341,7 @@ p + .x-container {
     @apply flex min-h-5 w-fit px-0 py-0.5;
 
     .shiki-highlight {
-      @apply rounded-sm bg-[rgba(255,250,0,0.9)] px-[0.15rem] dark:bg-[rgba(255,250,0,0.3)]!;
+      @apply dark:bg-[rgba(255,250,0,0.3)]! rounded-sm bg-[rgba(255,250,0,0.9)] px-[0.15rem];
     }
   }
 
@@ -372,7 +372,7 @@ html.dark .shiki code span {
 }
 
 html.dark .shiki code .rehype-pretty-copy {
-  @apply border border-neutral-800 bg-transparent!;
+  @apply bg-transparent! border border-neutral-800;
 }
 
 /**  Custom   */

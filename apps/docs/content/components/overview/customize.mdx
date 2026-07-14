@@ -69,10 +69,7 @@ export function DiscountBox<T extends ElementType = 'div'>(props: BoxProps<T>) {
   const { children, className, ...rest } = props;
 
   return (
-    <Box
-      className={`palette-accent variant-surface ${className ?? ''}`}
-      {...rest}
-    >
+    <Box className={`palette-accent variant-surface ${className ?? ''}`} {...rest}>
       {children}
     </Box>
   );

@@ -16,15 +16,13 @@ Duration utilities map to the `--ex-options-duration-*` variables. Refer to the 
 
 <section>
   <BaseContainer>
-    {['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map(
-      (value) => {
-        return (
-          <Button key={value} className={`duration-${value} hover:scale-110`}>
-            {value}
-          </Button>
-        );
-      },
-    )}
+    {['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map((value) => {
+      return (
+        <Button key={value} className={`duration-${value} hover:scale-110`}>
+          {value}
+        </Button>
+      );
+    })}
   </BaseContainer>
   <CodeContainer defaultOpen showToggle={false}>
     <Code>

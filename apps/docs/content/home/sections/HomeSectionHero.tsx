@@ -1,16 +1,6 @@
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import {
-  Button,
-  Center,
-  Display,
-  Grid,
-  Headline,
-  Icon,
-  Mark,
-  Section,
-  Stack,
-} from 'extraction-ui';
+import { Button, Center, Display, Grid, Headline, Icon, Mark, Section, Stack } from 'extraction-ui';
 import { LuRocket } from 'react-icons/lu';
 
 export function HomeSectionHero() {
@@ -31,8 +21,7 @@ export function HomeSectionHero() {
         <MotionInView className="delay-100">
           <Center>
             <Headline className="headline-sm text-fluid">
-              Customizable design system and component library to help you ship
-              your UI faster
+              Customizable design system and component library to help you ship your UI faster
             </Headline>
           </Center>
         </MotionInView>

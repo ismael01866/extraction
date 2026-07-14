@@ -9,8 +9,7 @@ import { ColorSwatch, HStack, Select } from 'extraction-ui';
 export const ColorThemeSelect = () => {
   const [value, setValue] = useState(THEMES[0]?.value ?? '');
 
-  const selectedTheme =
-    THEMES.find((theme) => theme.value === value) ?? THEMES[0];
+  const selectedTheme = THEMES.find((theme) => theme.value === value) ?? THEMES[0];
 
   useEffect(() => {
     if (!value) return;

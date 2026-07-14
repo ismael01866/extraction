@@ -3,9 +3,7 @@ import { colorPaletteValues, sizeValues } from 'extraction-ui';
 export const cfg = {
   class: 'list',
   colorPalette: colorPaletteValues,
-  sizes: sizeValues.filter((size) =>
-    ['sm', 'md', 'lg'].includes(size as string),
-  ),
+  sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'list',
 };
 

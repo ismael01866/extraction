@@ -12,18 +12,11 @@ export function HomePanelButtons() {
         <Button className="button-sm variant-surface flex-1">Button</Button>
       </HStack>
       <HStack className="w-full">
-        <IconButton
-          aria-label="icon-button"
-          className="icon-button-sm palette-neutral"
-        >
+        <IconButton aria-label="icon-button" className="icon-button-sm palette-neutral">
           <LuStar />
         </IconButton>
-        <Button className="button-sm variant-outline palette-neutral flex-1">
-          Button
-        </Button>
-        <Button className="button-sm variant-surface palette-neutral flex-1">
-          Button
-        </Button>
+        <Button className="button-sm variant-outline palette-neutral flex-1">Button</Button>
+        <Button className="button-sm variant-surface palette-neutral flex-1">Button</Button>
       </HStack>
     </VStack>
   );
