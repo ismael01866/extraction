@@ -15,10 +15,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       - uses: actions/setup-node@v4
         with:
@@ -30,7 +30,7 @@ jobs:
       - uses: changesets/action@v1
         with:
           version: pnpm changeset version
-          publish: cd packages/extraction-ui && pnpm publish --no-git-checks
+          publish: pnpm --filter extraction-ui publish --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
