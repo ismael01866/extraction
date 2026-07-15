@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "extraction-ui": "workspace:*",
-    "gatsby": "^5.14.6",
+    "gatsby": "^1.0.0",
     "radix-ui": "^1.4.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

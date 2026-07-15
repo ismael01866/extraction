@@ -2,7 +2,7 @@
   "name": "extraction-ui",
   "description": "Modern UI design system and component library",
   "license": "MIT",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "type": "module",
   "keywords": [
     "react",
@@ -87,7 +87,7 @@
     "stylelint-config-standard": "^37.0.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
-    "vite": "^7.1.12",
+    "vite": "^0.0.0",
     "vite-plugin-dts": "^4.5.4",
     "vitest": "^4.1.7"
   },
