@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
-
 import { SliderRange, SliderRoot, SliderThumb, SliderTrack } from './slider';
 
+import { render } from '@testing-library/react';
+
 // JSDOM doesn't implement ResizeObserver; mock it for Radix use-size
-if (typeof (global as any).ResizeObserver === 'undefined') {
-  (global as any).ResizeObserver = class {
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class ResizeObserver {
     observe() {}
     unobserve() {}
     disconnect() {}
@@ -16,7 +16,7 @@ if (typeof (global as any).ResizeObserver === 'undefined') {
 describe('SliderRoot', () => {
   it('renders default div and class', () => {
     render(
-      <SliderRoot defaultValue={[0]}>
+      <SliderRoot>
         <SliderTrack>
           <SliderRange />
         </SliderTrack>
@@ -31,7 +31,7 @@ describe('SliderRoot', () => {
 
   it('supports custom element and props', () => {
     render(
-      <SliderRoot as="section" defaultValue={[0]} id="slider" className="custom">
+      <SliderRoot as="section" id="slider" className="custom">
         <SliderTrack>
           <SliderRange />
         </SliderTrack>
@@ -49,7 +49,7 @@ describe('SliderRoot', () => {
 describe('SliderTrack', () => {
   it('renders default div and class inside SliderRoot', () => {
     render(
-      <SliderRoot defaultValue={[0]}>
+      <SliderRoot>
         <SliderTrack>
           <SliderRange />
         </SliderTrack>
@@ -66,7 +66,7 @@ describe('SliderTrack', () => {
 describe('SliderRange', () => {
   it('renders default div and class inside SliderRoot', () => {
     render(
-      <SliderRoot defaultValue={[0]}>
+      <SliderRoot>
         <SliderTrack>
           <SliderRange />
         </SliderTrack>
@@ -83,7 +83,7 @@ describe('SliderRange', () => {
 describe('SliderThumb', () => {
   it('renders default div and class inside SliderRoot', () => {
     render(
-      <SliderRoot defaultValue={[0]}>
+      <SliderRoot>
         <SliderTrack>
           <SliderRange>
             <SliderThumb />

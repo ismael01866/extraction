@@ -1,21 +1,21 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import { Title } from './index';
+
+import { render, screen } from '@testing-library/react';
 
 describe('Title', () => {
   it('renders with an h4 by default', () => {
     render(<Title>Title</Title>);
 
-    const element = screen.getByRole('title', { name: /title/i });
+    const element = screen.getByRole('heading', { name: /title/i });
     expect(element.tagName).toBe('H4');
   });
 
   it('applies the default class name', () => {
     render(<Title>Title</Title>);
 
-    const element = screen.getByRole('title', { name: /title/i });
+    const element = screen.getByRole('heading', { name: /title/i });
     expect(element).toHaveClass('ex-title');
   });
 
@@ -29,7 +29,7 @@ describe('Title', () => {
   it('passes additional props through', () => {
     render(<Title id="title-id">Title</Title>);
 
-    const element = screen.getByRole('title', { name: /title/i });
+    const element = screen.getByRole('heading', { name: /title/i });
     expect(element).toHaveAttribute('id', 'title-id');
   });
 

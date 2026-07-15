@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import {
   AlertDialogAction,
   AlertDialogCancel,
@@ -13,6 +11,8 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from './alert-dialog';
+
+import { render, screen } from '@testing-library/react';
 
 describe('AlertDialogRoot', () => {
   it('passes children through correctly', () => {
@@ -99,7 +99,7 @@ describe('AlertDialogSection', () => {
 
 describe('AlertDialogCancel', () => {
   it('renders default div and class with child inside content', () => {
-    const { container } = render(
+    render(
       <AlertDialogRoot>
         <AlertDialogOverlay forceMount />
         <AlertDialogContent forceMount>

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import {
   TooltipArrow,
   TooltipContent,
@@ -10,8 +8,10 @@ import {
   TooltipTrigger,
 } from './tooltip';
 
-if (typeof (global as any).ResizeObserver === 'undefined') {
-  (global as any).ResizeObserver = class {
+import { render, screen } from '@testing-library/react';
+
+if (typeof globalThis.ResizeObserver === 'undefined') {
+  globalThis.ResizeObserver = class ResizeObserver {
     observe() {}
     unobserve() {}
     disconnect() {}
@@ -82,8 +82,7 @@ describe('TooltipContent', () => {
     const contents = document.querySelectorAll('.ex-tooltip-content');
     expect(contents.length).toBeGreaterThan(0);
     const el = Array.from(contents).find((n) => n.textContent?.includes('Content')) as
-      | HTMLElement
-      | undefined;
+      HTMLElement | undefined;
     expect(el).toBeDefined();
     expect(el?.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-tooltip-content');
