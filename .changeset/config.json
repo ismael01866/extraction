@@ -7,11 +7,5 @@
   "access": "restricted",
   "baseBranch": "master",
   "updateInternalDependencies": "patch",
-  "ignore": [
-    "astro",
-    "gatsby",
-    "next",
-    "vite",
-    "extraction-ui-docs"
-  ]
+  "ignore": []
 }
