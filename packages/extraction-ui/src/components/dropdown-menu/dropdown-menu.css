@@ -1,82 +1,5 @@
-@utility dropdown-menu-content-sm {
-  --ex-max-w: var(--ex-dropdown-menu-max-w-sm, var(--container-3xs));
-  --ex-radius: var(--ex-dropdown-menu-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-dropdown-menu-shadow-sm, var(--shadow-sm));
-
-  .ex-dropdown-menu-section {
-    --ex-px: var(--ex-dropdown-menu-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-dropdown-menu-section-py-sm, calc(var(--spacing) * 2));
-
-    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
-  }
-
-  .ex-dropdown-menu-item,
-  .ex-dropdown-menu-label,
-  .ex-dropdown-menu-sub-trigger,
-  .ex-dropdown-menu-radio-item,
-  .ex-dropdown-menu-checkbox-item {
-    --ex-px: var(--ex-dropdown-menu-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-dropdown-menu-item-py-sm, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-dropdown-menu-item-font-size-sm, var(--text-xs));
-  }
-
-  .ex-dropdown-menu-label {
-    --ex-font-size: var(--ex-dropdown-menu-label-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-dropdown-menu-command {
-    --ex-font-size: var(--ex-dropdown-menu-command-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-dropdown-menu-item-indicator {
-    --ex-font-size: var(--ex-dropdown-menu-item-indicator-font-size-sm, var(--text-xs));
-  }
-
-  .ex-dropdown-menu-arrow {
-    --ex-width: var(--ex-dropdown-menu-arrow-width-sm, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-dropdown-menu-arrow-height-sm, calc(var(--spacing) * 1.75));
-  }
-}
-
-@utility dropdown-menu-content-md {
-  --ex-max-w: var(--ex-dropdown-menu-max-w-md, var(--container-2xs));
-  --ex-radius: var(--ex-dropdown-menu-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-dropdown-menu-shadow-md, var(--shadow-sm));
-
-  .ex-dropdown-menu-section {
-    --ex-px: var(--ex-dropdown-menu-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-dropdown-menu-section-py-md, calc(var(--spacing) * 2.5));
-
-    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-dropdown-menu-item,
-  .ex-dropdown-menu-label,
-  .ex-dropdown-menu-sub-trigger,
-  .ex-dropdown-menu-radio-item,
-  .ex-dropdown-menu-checkbox-item {
-    --ex-px: var(--ex-dropdown-menu-item-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-dropdown-menu-item-py-md, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-dropdown-menu-item-font-size-md, var(--text-sm));
-  }
-
-  .ex-dropdown-menu-label {
-    --ex-font-size: var(--ex-dropdown-menu-label-font-size-md, var(--text-xs));
-  }
-
-  .ex-dropdown-menu-command {
-    --ex-font-size: var(--ex-dropdown-menu-command-font-size-md, var(--text-xs));
-  }
-
-  .ex-dropdown-menu-item-indicator {
-    --ex-font-size: var(--ex-dropdown-menu-item-indicator-font-size-md, var(--text-sm));
-  }
-
-  .ex-dropdown-menu-arrow {
-    --ex-width: var(--ex-dropdown-menu-arrow-width-md, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-dropdown-menu-arrow-height-md, calc(var(--spacing) * 1.75));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-dropdown-menu-content,
@@ -166,7 +89,7 @@
 
   .ex-dropdown-menu-sub-trigger {
     > .ex-dropdown-menu-item-indicator:is(:last-child) {
-      @apply right-[0.5rem] left-[unset];
+      @apply left-[unset] right-[0.5rem];
     }
   }
 
@@ -182,7 +105,7 @@
   .ex-dropdown-menu-sub-trigger,
   .ex-dropdown-menu-radio-item,
   .ex-dropdown-menu-checkbox-item {
-    @apply relative flex min-w-0 items-center select-none;
+    @apply relative flex min-w-0 select-none items-center;
     @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
@@ -209,7 +132,7 @@
   }
 
   .ex-dropdown-menu-label {
-    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply px-[var(--ex-px)] opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-dropdown-menu-command {
@@ -220,7 +143,7 @@
 
   .ex-dropdown-menu-command {
     @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

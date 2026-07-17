@@ -1,22 +1,5 @@
-@utility status-sm {
-  --ex-size: var(--ex-status-size-sm, 6px);
-  --ex-radius: var(--ex-status-radius-sm, 9999px);
-}
-
-@utility status-md {
-  --ex-size: var(--ex-status-size-md, 8px);
-  --ex-radius: var(--ex-status-radius-md, 9999px);
-}
-
-@utility status-lg {
-  --ex-size: var(--ex-status-size-lg, 10px);
-  --ex-radius: var(--ex-status-radius-lg, 9999px);
-}
-
-@utility status-xl {
-  --ex-size: var(--ex-status-size-xl, 12px);
-  --ex-radius: var(--ex-status-radius-xl, 9999px);
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-status {

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './border-beam.css';
+
 import { Element } from '../element';
 import { BorderBeamProps, BorderBeamPulseProps, BorderBeamTrackProps } from './border-beam.types';
 

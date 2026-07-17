@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { AlertDialog } from 'radix-ui';
+import './alert-dialog.css';
 
 import { Element } from '../element';
 import {
@@ -15,6 +15,8 @@ import {
   AlertDialogTitleProps,
   AlertDialogTriggerProps,
 } from './alert-dialog.types';
+
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
 
 export const AlertDialogRoot = (props: AlertDialogProps) => {
   const { children, ...rest } = props;

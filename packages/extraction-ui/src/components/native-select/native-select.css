@@ -1,38 +1,5 @@
-@utility native-select-sm {
-  --ex-height: var(--ex-native-select-height-sm, var(--ex-size-xl));
-
-  --ex-px: var(--ex-native-select-px-sm, calc(var(--spacing) * 3.5));
-  --ex-radius: var(--ex-native-select-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-native-select-font-size-sm, var(--text-xs));
-
-  .ex-native-select-icon {
-    --ex-font-size: var(--ex-native-select-icon-size-sm, var(--text-lg));
-  }
-}
-
-@utility native-select-md {
-  --ex-height: var(--ex-native-select-height-md, var(--ex-size-2xl));
-
-  --ex-px: var(--ex-native-select-px-md, calc(var(--spacing) * 4));
-  --ex-radius: var(--ex-native-select-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-native-select-font-size-md, var(--text-sm));
-
-  .ex-native-select-icon {
-    --ex-font-size: var(--ex-native-select-icon-size-md, var(--text-xl));
-  }
-}
-
-@utility native-select-lg {
-  --ex-height: var(--ex-native-select-height-lg, var(--ex-size-3xl));
-
-  --ex-px: var(--ex-native-select-px-lg, calc(var(--spacing) * 4.5));
-  --ex-radius: var(--ex-native-select-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-native-select-font-size-lg, var(--text-base));
-
-  .ex-native-select-icon {
-    --ex-font-size: var(--ex-native-select-icon-size-lg, var(--text-2xl));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-native-select {

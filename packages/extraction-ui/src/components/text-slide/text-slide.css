@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-text-slide {
     --ex-transition-delay: var(--ex-text-slide-delay, 0s);
@@ -6,7 +9,7 @@
   }
 
   .ex-text-slide {
-    @apply inline-flex h-lh overflow-hidden;
+    @apply h-lh inline-flex overflow-hidden;
 
     &:where(:hover) {
       .ex-text-slide-track {

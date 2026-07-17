@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './list.css';
+
 import { Element } from '../element';
 import { Icon } from '../icon';
 import { ListIndicatorProps, ListItemProps, ListProps } from './list.types';

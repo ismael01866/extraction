@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Label } from 'radix-ui';
+import './field.css';
 
 import { Element } from '../element';
 import {
@@ -11,6 +11,8 @@ import {
   FieldRequiredIndicatorProps,
   FieldSuccessProps,
 } from './field.types';
+
+import * as Label from '@radix-ui/react-label';
 
 export const FieldRoot = <T extends ElementType = 'div'>(props: FieldProps<T>) => {
   const { as = 'div', children, ...rest } = props;

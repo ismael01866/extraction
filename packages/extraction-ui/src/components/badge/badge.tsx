@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './badge.css';
+
 import { Element } from '../element';
 import { BadgeProps } from './badge.types';
 

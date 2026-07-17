@@ -1,34 +1,5 @@
-@utility headline-sm {
-  --ex-font-size: var(--ex-headline-font-size-sm, var(--text-2xl));
-  --ex-line-height: var(--ex-headline-line-height-sm, var(--text-2xl-line-height));
-
-  --ex-font-family: var(--ex-headline-font-family-sm, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-sm, var(--font-weight-normal));
-}
-
-@utility headline-md {
-  --ex-font-size: var(--ex-headline-font-size-md, var(--text-3xl));
-  --ex-line-height: var(--ex-headline-line-height-md, var(--text-3xl-line-height));
-
-  --ex-font-family: var(--ex-headline-font-family-md, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-md, var(--font-weight-normal));
-}
-
-@utility headline-lg {
-  --ex-font-size: var(--ex-headline-font-size-lg, var(--text-4xl));
-  --ex-line-height: var(--ex-headline-line-height-lg, var(--text-4xl-line-height));
-
-  --ex-font-family: var(--ex-headline-font-family-lg, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-lg, var(--font-weight-normal));
-}
-
-@utility headline-xl {
-  --ex-font-size: var(--ex-headline-font-size-xl, var(--text-5xl));
-  --ex-line-height: var(--ex-headline-line-height-xl, var(--text-5xl-line-height));
-
-  --ex-font-family: var(--ex-headline-font-family-xl, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-xl, var(--font-weight-normal));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-headline {
@@ -36,6 +7,6 @@
   }
 
   .ex-headline {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [line-height:var(--ex-line-height)] [font-weight:var(--ex-font-weight)];
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }

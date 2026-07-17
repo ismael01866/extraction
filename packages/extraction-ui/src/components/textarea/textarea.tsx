@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './textarea.css';
+
 import { Element } from '../element';
 import { TextareaProps } from './textarea.types';
 

@@ -1,9 +1,9 @@
 import { ComponentProps, ElementType } from 'react';
 
-import { Accordion } from 'radix-ui';
-
 import { ButtonProps } from '../button';
 import { ElementProps } from '../element';
+
+import * as Accordion from '@radix-ui/react-accordion';
 
 export type AccordionProps<T extends ElementType> = ElementProps<T> &
   Omit<ComponentProps<typeof Accordion.Root>, 'as' | 'asChild' | 'className' | 'children'>;

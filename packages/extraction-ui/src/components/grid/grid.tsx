@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './grid.css';
+
 import { Element } from '../element';
 import { GridProps } from './grid.types';
 

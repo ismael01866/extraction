@@ -1,15 +1,6 @@
 import { useMDXComponents as getThemeComponents } from 'nextra-theme-docs';
 
-import {
-  Api,
-  FontSize,
-  Palette,
-  Position,
-  Shape,
-  Size,
-  Usage,
-  Variants,
-} from './app/snippets';
+import { Api, FontSize, Palette, Position, Shape, Size, Usage, Variants } from './app/snippets';
 
 export function useMDXComponents(components = {}) {
   const themeComponents = getThemeComponents();

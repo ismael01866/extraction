@@ -1,64 +1,5 @@
-@utility toast-sm {
-  --ex-max-w: var(--ex-toast-max-w-sm, var(--container-3xs));
-  --ex-font-size: var(--ex-toast-font-size-sm, var(--text-xs));
-
-  --ex-px: var(--ex-toast-px-sm, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-toast-py-sm, calc(var(--spacing) * 3));
-
-  --ex-gap-x: var(--ex-toast-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-radius: var(--ex-toast-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-toast-shadow-sm, var(--shadow-sm));
-
-  .ex-toast-indicator {
-    --ex-font-size: var(--ex-toast-indicator-font-size-sm, var(--text-lg));
-
-    @apply top-px;
-  }
-
-  .ex-toast-content {
-    --ex-gap-x: var(--ex-toast-content-gap-x-sm, calc(var(--spacing) * 1.5));
-    --ex-gap-y: var(--ex-toast-content-gap-y-sm, calc(var(--spacing) * 2));
-  }
-
-  .ex-toast-title {
-    --ex-font-size: var(--ex-toast-title-font-size-sm, var(--text-sm));
-  }
-
-  .ex-toast-description {
-    --ex-font-size: var(--ex-toast-description-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility toast-md {
-  --ex-max-w: var(--ex-toast-max-w-md, var(--container-2xs));
-  --ex-font-size: var(--ex-toast-font-size-md, var(--text-sm));
-
-  --ex-px: var(--ex-toast-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-toast-py-md, calc(var(--spacing) * 4));
-
-  --ex-gap-x: var(--ex-toast-gap-x-md, calc(var(--spacing) * 2.5));
-  --ex-radius: var(--ex-toast-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-toast-shadow-md, var(--shadow-sm));
-
-  .ex-toast-indicator {
-    --ex-font-size: var(--ex-toast-indicator-font-size-md, var(--text-xl));
-
-    @apply top-[2px];
-  }
-
-  .ex-toast-content {
-    --ex-gap-x: var(--ex-toast-content-gap-x-md, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-toast-content-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-toast-title {
-    --ex-font-size: var(--ex-toast-title-font-size-md, var(--text-base));
-  }
-
-  .ex-toast-description {
-    --ex-font-size: var(--ex-toast-description-font-size-md, var(--text-sm));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-toast {
@@ -71,7 +12,7 @@
 
   .ex-toast {
     @apply flex flex-1 will-change-[transform,opacity];
-    @apply max-w-[var(--ex-max-w)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+    @apply max-w-[var(--ex-max-w)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -160,7 +101,7 @@
     @apply z-[var(--ex-z-index)] px-[var(--ex-px)] py-[var(--ex-py)];
 
     &:where(:has(.ex-toast:not([data-placement]))) {
-      @apply end-0 bottom-0;
+      @apply bottom-0 end-0;
     }
 
     &:where(:has(.ex-toast[data-placement='top-start'])) {
@@ -176,7 +117,7 @@
     }
 
     &:where(:has(.ex-toast[data-placement='bottom-start'])) {
-      @apply start-0 bottom-0;
+      @apply bottom-0 start-0;
     }
 
     &:where(:has(.ex-toast[data-placement='bottom'])) {
@@ -184,7 +125,7 @@
     }
 
     &:where(:has(.ex-toast[data-placement='bottom-end'])) {
-      @apply end-0 bottom-0;
+      @apply bottom-0 end-0;
     }
   }
 

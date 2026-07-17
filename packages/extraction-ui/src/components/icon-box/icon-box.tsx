@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './icon-box.css';
+
 import { Element } from '../element';
 import { IconBoxProps } from './icon-box.types';
 

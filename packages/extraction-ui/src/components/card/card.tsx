@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './card.css';
+
 import { Element } from '../element';
 import {
   CardContentProps,

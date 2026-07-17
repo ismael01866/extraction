@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './nav-link.css';
+
 import { Element } from '../element';
 import { NavLinkProps } from './nav-link.types';
 

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { ContextMenu } from 'radix-ui';
+import './context-menu.css';
 
 import { Element } from '../element';
 import {
@@ -21,6 +21,8 @@ import {
   ContextMenuSubTriggerProps,
   ContextMenuTriggerProps,
 } from './context-menu.types';
+
+import * as ContextMenu from '@radix-ui/react-context-menu';
 
 export const ContextMenuRoot = (props: ContextMenuProps) => {
   const { children, ...rest } = props;

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { NavigationMenu } from 'radix-ui';
+import './navigation-menu.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -17,6 +17,8 @@ import {
   NavigationMenuViewportAnchorProps,
   NavigationMenuViewportProps,
 } from './navigation-menu.types';
+
+import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
 export const NavigationMenuRoot = <T extends ElementType = 'nav'>(
   props: NavigationMenuProps<T>,

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { unstable_PasswordToggleField as Password } from 'radix-ui';
+import './password.css';
 
 import { Element } from '../element';
 import {
@@ -9,6 +9,8 @@ import {
   PasswordProps,
   PasswordToggleProps,
 } from './password.types';
+
+import * as Password from '@radix-ui/react-password-toggle-field';
 
 export const PasswordRoot = (props: PasswordProps) => {
   const { asChild = false, children, ...rest } = props;

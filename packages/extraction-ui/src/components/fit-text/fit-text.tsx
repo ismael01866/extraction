@@ -2,6 +2,8 @@
 
 import React, { ElementType, useContext, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
+import './fit-text.css';
+
 import { Element } from '../element';
 import { FitTextContext } from './fit-text.context';
 import { FitTextContentProps, FitTextProps, FitTextTargetProps } from './fit-text.types';

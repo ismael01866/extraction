@@ -2,6 +2,8 @@
 
 import React, { ElementType, useEffect, useRef, useState } from 'react';
 
+import './counter.css';
+
 import { Element } from '../element';
 import { CounterProps } from './counter.types';
 

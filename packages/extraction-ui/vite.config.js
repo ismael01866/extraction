@@ -1,9 +1,11 @@
-import react from '@vitejs/plugin-react';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import preserveDirectives from 'rollup-preserve-directives';
 import { defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
+
+import react from '@vitejs/plugin-react';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +15,7 @@ export default defineConfig({
     react({
       jsxRuntime: 'automatic',
     }),
+    libInjectCss(),
     dts({
       include: ['src'],
       exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
@@ -33,7 +36,6 @@ export default defineConfig({
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),
         styles: path.resolve(__dirname, 'src/index.css'),
-        inline: path.resolve(__dirname, 'src/css/inline.css'),
       },
       formats: ['es'],
     },

@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-app-layout {
     --ex-px: var(--ex-app-layout-px, calc(var(--spacing) * 5));

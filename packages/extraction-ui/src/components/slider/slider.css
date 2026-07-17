@@ -1,38 +1,5 @@
-@utility slider-sm {
-  --ex-size: var(--ex-slider-size-sm, calc(var(--spacing) * 0.5));
-  --ex-radius: var(--ex-slider-radius-sm, 9999px);
-
-  .ex-slider-thumb {
-    --ex-size: var(--ex-slider-thumb-size-sm, var(--ex-size-3xs));
-
-    --ex-radius: var(--ex-slider-thumb-radius-sm, 9999px);
-    --ex-shadow: var(--ex-slider-thumb-shadow-sm, var(--shadow-sm));
-  }
-}
-
-@utility slider-md {
-  --ex-size: var(--ex-slider-size-md, calc(var(--spacing) * 1));
-  --ex-radius: var(--ex-slider-radius-md, 9999px);
-
-  .ex-slider-thumb {
-    --ex-size: var(--ex-slider-thumb-size-md, var(--ex-size-2xs));
-
-    --ex-radius: var(--ex-slider-thumb-radius-md, 9999px);
-    --ex-shadow: var(--ex-slider-thumb-shadow-md, var(--shadow-sm));
-  }
-}
-
-@utility slider-lg {
-  --ex-size: var(--ex-slider-size-lg, calc(var(--spacing) * 1.5));
-  --ex-radius: var(--ex-slider-radius-lg, 9999px);
-
-  .ex-slider-thumb {
-    --ex-size: var(--ex-slider-thumb-size-lg, var(--ex-size-xs));
-
-    --ex-radius: var(--ex-slider-thumb-radius-lg, 9999px);
-    --ex-shadow: var(--ex-slider-thumb-shadow-lg, var(--shadow-sm));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-slider {
@@ -49,7 +16,7 @@
   }
 
   .ex-slider {
-    @apply relative flex shrink-0 touch-none items-center justify-center select-none;
+    @apply relative flex shrink-0 touch-none select-none items-center justify-center;
 
     &:where([data-orientation='horizontal']) {
       @apply w-full;

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './logo.css';
+
 import { Element } from '../element';
 import { LogoProps } from './logo.types';
 

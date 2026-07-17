@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-link {
     --ex-color: var(--ex-link-color, var(--color-primary));
@@ -11,7 +14,7 @@
   }
 
   .ex-link {
-    @apply [font-family:var(--ex-font-family)] font-(--ex-font-weight) text-(--ex-color) dark:text-(--ex-color-dark);
+    @apply font-(--ex-font-weight) text-(--ex-color) dark:text-(--ex-color-dark) [font-family:var(--ex-font-family)];
   }
 }
 

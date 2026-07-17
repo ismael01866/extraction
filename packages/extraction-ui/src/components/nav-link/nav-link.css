@@ -1,42 +1,5 @@
-@utility nav-link-sm {
-  --ex-height: var(--ex-nav-link-height-sm, var(--ex-size-xl));
-
-  --ex-px: var(--ex-nav-link-px-sm, calc(var(--spacing) * 3.5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-sm, calc(var(--spacing) * 1.75));
-
-  --ex-radius: var(--ex-nav-link-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-link-font-size-sm, var(--text-xs));
-}
-
-@utility nav-link-md {
-  --ex-height: var(--ex-nav-link-height-md, var(--ex-size-2xl));
-
-  --ex-px: var(--ex-nav-link-px-md, calc(var(--spacing) * 4));
-  --ex-gap-x: var(--ex-nav-link-gap-x-md, calc(var(--spacing) * 2));
-
-  --ex-radius: var(--ex-nav-link-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-link-font-size-md, var(--text-sm));
-}
-
-@utility nav-link-lg {
-  --ex-height: var(--ex-nav-link-height-lg, var(--ex-size-3xl));
-
-  --ex-px: var(--ex-nav-link-px-lg, calc(var(--spacing) * 4.5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-lg, calc(var(--spacing) * 2.25));
-
-  --ex-radius: var(--ex-nav-link-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-link-font-size-lg, var(--text-base));
-}
-
-@utility nav-link-xl {
-  --ex-height: var(--ex-nav-link-height-xl, var(--ex-size-4xl));
-
-  --ex-px: var(--ex-nav-link-px-xl, calc(var(--spacing) * 5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-xl, calc(var(--spacing) * 2.5));
-
-  --ex-radius: var(--ex-nav-link-radius-xl, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-link-font-size-xl, var(--text-lg));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-nav-link {
@@ -51,7 +14,7 @@
   }
 
   .ex-nav-link {
-    @apply inline-flex shrink-0 cursor-pointer items-center justify-start select-none;
+    @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-start;
     @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

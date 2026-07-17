@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-marquee {
     --ex-gap-x: var(--ex-marquee-gap-x, calc(var(--spacing) * 8));

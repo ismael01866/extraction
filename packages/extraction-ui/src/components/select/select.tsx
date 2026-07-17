@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Select } from 'radix-ui';
+import './select.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -23,6 +23,8 @@ import {
   SelectValueProps,
   SelectViewportProps,
 } from './select.types';
+
+import * as Select from '@radix-ui/react-select';
 
 export const SelectRoot = (props: SelectProps) => {
   const { children, ...rest } = props;

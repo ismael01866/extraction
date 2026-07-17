@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './link.css';
+
 import { Element } from '../element';
 import { LinkProps } from './link.types';
 

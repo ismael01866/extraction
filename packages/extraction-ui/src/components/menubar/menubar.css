@@ -1,116 +1,5 @@
-@utility menubar-sm {
-  --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
-
-  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 1.5));
-  --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
-
-  .ex-menubar-trigger {
-    --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
-
-    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1));
-
-    --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
-    --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility menubar-content-sm {
-  --ex-max-w: var(--ex-menubar-content-max-w-sm, var(--container-3xs));
-  --ex-radius: var(--ex-menubar-content-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-menubar-content-shadow-sm, var(--shadow-sm));
-
-  .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 2));
-
-    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 1.5));
-  }
-
-  .ex-menubar-item,
-  .ex-menubar-label,
-  .ex-menubar-sub-trigger,
-  .ex-menubar-radio-item,
-  .ex-menubar-checkbox-item {
-    --ex-px: var(--ex-menubar-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-item-py-sm, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-menubar-item-font-size-sm, var(--text-xs));
-  }
-
-  .ex-menubar-label {
-    --ex-font-size: var(--ex-menubar-label-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-menubar-command {
-    --ex-font-size: var(--ex-menubar-command-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-menubar-indicator {
-    --ex-font-size: var(--ex-menubar-indicator-font-size-sm, var(--text-sm));
-  }
-
-  .ex-menubar-arrow {
-    --ex-width: var(--ex-menubar-arrow-width-sm, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-menubar-arrow-height-sm, calc(var(--spacing) * 1.75));
-  }
-}
-
-@utility menubar-md {
-  --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
-
-  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2));
-  --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
-
-  .ex-menubar-trigger {
-    --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
-
-    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
-
-    --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
-    --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
-  }
-}
-
-@utility menubar-content-md {
-  --ex-max-w: var(--ex-menubar-content-max-w-md, var(--container-2xs));
-  --ex-radius: var(--ex-menubar-content-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-menubar-content-shadow-md, var(--shadow-sm));
-
-  .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2.5));
-
-    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 2.5));
-  }
-
-  .ex-menubar-item,
-  .ex-menubar-label,
-  .ex-menubar-sub-trigger,
-  .ex-menubar-radio-item,
-  .ex-menubar-checkbox-item {
-    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-menubar-item-font-size-md, var(--text-sm));
-  }
-
-  .ex-menubar-label {
-    --ex-font-size: var(--ex-menubar-label-font-size-md, var(--text-xs));
-  }
-
-  .ex-menubar-command {
-    --ex-font-size: var(--ex-menubar-command-font-size-md, var(--text-xs));
-  }
-
-  .ex-menubar-indicator {
-    --ex-font-size: var(--ex-menubar-indicator-font-size-md, var(--text-base));
-  }
-
-  .ex-menubar-arrow {
-    --ex-width: var(--ex-menubar-arrow-width-md, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-menubar-arrow-height-md, calc(var(--spacing) * 1.75));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-menubar {
@@ -122,7 +11,7 @@
   }
 
   .ex-menubar {
-    @apply relative z-1 flex items-center justify-center;
+    @apply z-1 relative flex items-center justify-center;
     @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)];
 
     > div:is(:first-child) {
@@ -136,7 +25,7 @@
   }
 
   .ex-menubar-trigger {
-    @apply inline-flex items-center justify-center leading-none outline-none select-none;
+    @apply inline-flex select-none items-center justify-center leading-none outline-none;
     @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
@@ -223,7 +112,7 @@
 
   .ex-menubar-sub-trigger {
     > .ex-menubar-indicator:is(:last-child) {
-      @apply right-[0.5rem] left-[unset];
+      @apply left-[unset] right-[0.5rem];
     }
   }
 
@@ -239,7 +128,7 @@
   .ex-menubar-sub-trigger,
   .ex-menubar-radio-item,
   .ex-menubar-checkbox-item {
-    @apply relative flex min-w-0 items-center select-none;
+    @apply relative flex min-w-0 select-none items-center;
     @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
@@ -270,7 +159,7 @@
   }
 
   .ex-menubar-label {
-    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply px-[var(--ex-px)] opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-menubar-command {
@@ -281,7 +170,7 @@
 
   .ex-menubar-command {
     @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

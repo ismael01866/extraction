@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './marquee.css';
+
 import { Element } from '../element';
 import { MarqueeItemProps, MarqueeProps, MarqueeTrackProps } from './marquee.types';
 

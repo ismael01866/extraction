@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-stack {
     --ex-gap-y: var(--ex-stack-gap-y, calc(var(--spacing) * 2));

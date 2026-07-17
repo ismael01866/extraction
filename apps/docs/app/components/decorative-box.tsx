@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 
 import { Box } from 'extraction-ui';
-import { cn } from 'utils';
+import { cn } from 'extraction-ui-utils';
 
 const decorativeStyles = {
   backgroundImage: `

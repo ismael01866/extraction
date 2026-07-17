@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './nav-button.css';
+
 import { Element } from '../element';
 import { NavButtonProps } from './nav-button.types';
 

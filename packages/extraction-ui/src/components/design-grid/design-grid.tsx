@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './design-grid.css';
+
 import { Element } from '../element';
 import type { DesignGridProps } from './design-grid.types';
 

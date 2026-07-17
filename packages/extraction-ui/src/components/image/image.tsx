@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './image.css';
+
 import { Element } from '../element';
 import { ImageProps } from './image.types';
 

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { RadioGroup } from 'radix-ui';
+import './radio-card.css';
 
 import { Element } from '../element';
 import {
@@ -10,6 +10,8 @@ import {
   RadioCardLabelProps,
   RadioCardRootProps,
 } from './radio-card.types';
+
+import * as RadioGroup from '@radix-ui/react-radio-group';
 
 export const RadioCardRoot = <T extends ElementType = 'button'>(props: RadioCardRootProps<T>) => {
   const { as = 'button', asChild = false, children, ...rest } = props;

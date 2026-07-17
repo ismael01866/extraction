@@ -1,9 +1,11 @@
 import React, { ElementType } from 'react';
 
-import { Slider } from 'radix-ui';
+import './slider.css';
 
 import { Element } from '../element';
 import { SliderProps, SliderRangeProps, SliderThumbProps, SliderTrackProps } from './slider.types';
+
+import * as Slider from '@radix-ui/react-slider';
 
 export const SliderRoot = <T extends ElementType = 'div'>(props: SliderProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

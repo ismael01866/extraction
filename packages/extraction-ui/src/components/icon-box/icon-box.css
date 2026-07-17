@@ -1,30 +1,5 @@
-@utility icon-box-sm {
-  --ex-size: var(--ex-icon-box-size-sm, var(--ex-size-xl));
-
-  --ex-radius: var(--ex-icon-box-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-icon-box-font-size-sm, var(--text-xs));
-}
-
-@utility icon-box-md {
-  --ex-size: var(--ex-icon-box-size-md, var(--ex-size-2xl));
-
-  --ex-radius: var(--ex-icon-box-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-icon-box-font-size-md, var(--text-sm));
-}
-
-@utility icon-box-lg {
-  --ex-size: var(--ex-icon-box-size-lg, var(--ex-size-3xl));
-
-  --ex-radius: var(--ex-icon-box-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-icon-box-font-size-lg, var(--text-base));
-}
-
-@utility icon-box-xl {
-  --ex-size: var(--ex-icon-box-size-xl, var(--ex-size-4xl));
-
-  --ex-radius: var(--ex-icon-box-radius-xl, var(--radius-sm));
-  --ex-font-size: var(--ex-icon-box-font-size-xl, var(--text-lg));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-icon-box {
@@ -36,7 +11,7 @@
   }
 
   .ex-icon-box {
-    @apply inline-flex shrink-0 items-center justify-center select-none;
+    @apply inline-flex shrink-0 select-none items-center justify-center;
     @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
   }
 }

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './float.css';
+
 import { Element } from '../element';
 import { FloatProps } from './float.types';
 

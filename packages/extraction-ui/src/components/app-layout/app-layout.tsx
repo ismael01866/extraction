@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './app-layout.css';
+
 import { Element } from '../element';
 import {
   AppLayoutAsideProps,

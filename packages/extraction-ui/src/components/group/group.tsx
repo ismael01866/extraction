@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './group.css';
+
 import { Element } from '../element';
 import { GroupProps } from './group.types';
 

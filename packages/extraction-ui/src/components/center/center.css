@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-center {
     @apply flex h-auto min-h-full w-full content-center items-center justify-center;

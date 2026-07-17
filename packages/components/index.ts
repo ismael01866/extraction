@@ -1,1 +1,1 @@
-export * from "./color-mode-button";
+export * from './color-mode-button';

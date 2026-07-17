@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { ScrollArea } from 'radix-ui';
+import './scroll-area.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -12,6 +12,8 @@ import {
   ScrollAreaThumbProps,
   ScrollAreaViewportProps,
 } from './scroll-area.types';
+
+import * as ScrollArea from '@radix-ui/react-scroll-area';
 
 export const ScrollAreaRoot = <T extends ElementType = 'div'>(props: ScrollAreaProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './section.css';
+
 import { Element } from '../element';
 import { SectionProps } from './section.types';
 

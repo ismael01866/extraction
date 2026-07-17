@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-flex {
     --ex-gap-x: var(--ex-flex-gap-x, calc(var(--spacing) * 2));

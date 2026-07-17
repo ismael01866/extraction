@@ -1,158 +1,5 @@
-@utility field-sm {
-  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2.5));
-
-  .ex-field-label {
-    --ex-font-size: var(--ex-field-label-font-size-sm, var(--text-xs));
-  }
-
-  .ex-field-helper {
-    --ex-font-size: var(--ex-field-helper-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-field-error {
-    --ex-font-size: var(--ex-field-error-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-field-success {
-    --ex-font-size: var(--ex-field-success-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-input {
-    @apply input-sm;
-  }
-
-  .ex-select-trigger {
-    @apply select-trigger-sm;
-  }
-
-  .ex-select-content {
-    @apply select-content-sm;
-  }
-
-  .ex-native-select {
-    @apply native-select-sm;
-  }
-
-  .ex-password {
-    @apply password-sm;
-  }
-
-  .ex-checkbox {
-    @apply checkbox-sm;
-  }
-
-  .ex-radio {
-    @apply radio-sm;
-  }
-
-  .ex-radio-group {
-    @apply radio-group-sm;
-  }
-}
-
-@utility field-md {
-  --ex-gap-y: var(--ex-field-gap-y-md, calc(var(--spacing) * 2.5));
-
-  .ex-field-label {
-    --ex-font-size: var(--ex-field-label-font-size-md, var(--text-sm));
-  }
-
-  .ex-field-helper {
-    --ex-font-size: var(--ex-field-helper-font-size-md, var(--text-xs));
-  }
-
-  .ex-field-error {
-    --ex-font-size: var(--ex-field-error-font-size-md, var(--text-xs));
-  }
-
-  .ex-field-success {
-    --ex-font-size: var(--ex-field-success-font-size-md, var(--text-xs));
-  }
-
-  .ex-input {
-    @apply input-md;
-  }
-
-  .ex-select-trigger {
-    @apply select-trigger-md;
-  }
-
-  .ex-select-content {
-    @apply select-content-md;
-  }
-
-  .ex-native-select {
-    @apply native-select-md;
-  }
-
-  .ex-password {
-    @apply password-md;
-  }
-
-  .ex-checkbox {
-    @apply checkbox-md;
-  }
-
-  .ex-radio {
-    @apply radio-md;
-  }
-
-  .ex-radio-group {
-    @apply radio-group-md;
-  }
-}
-
-@utility field-lg {
-  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 2.5));
-
-  .ex-field-label {
-    --ex-font-size: var(--ex-field-label-font-size-lg, var(--text-base));
-  }
-
-  .ex-field-helper {
-    --ex-font-size: var(--ex-field-helper-font-size-lg, var(--text-sm));
-  }
-
-  .ex-field-error {
-    --ex-font-size: var(--ex-field-error-font-size-lg, var(--text-sm));
-  }
-
-  .ex-field-success {
-    --ex-font-size: var(--ex-field-success-font-size-lg, var(--text-sm));
-  }
-
-  .ex-input {
-    @apply input-lg;
-  }
-
-  .ex-select-trigger {
-    @apply select-trigger-lg;
-  }
-
-  .ex-select-content {
-    @apply select-content-lg;
-  }
-
-  .ex-native-select {
-    @apply native-select-lg;
-  }
-
-  .ex-password {
-    @apply password-lg;
-  }
-
-  .ex-checkbox {
-    @apply checkbox-lg;
-  }
-
-  .ex-radio {
-    @apply radio-lg;
-  }
-
-  .ex-radio-group {
-    @apply radio-group-lg;
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-field {
@@ -170,7 +17,7 @@
   }
 
   .ex-field-label {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] leading-none [font-weight:var(--ex-font-weight)];
+    @apply leading-none [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-field-helper {
@@ -180,7 +27,7 @@
   }
 
   .ex-field-helper {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] leading-none [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply leading-none opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-field-error {
@@ -189,7 +36,7 @@
     --ex-font-family: var(--ex-field-error-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-field-error-font-weight, var(--font-weight-semibold));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] leading-none [font-weight:var(--ex-font-weight)] text-[var(--ex-color)] dark:text-[var(--ex-color-dark)];
+    @apply leading-none text-[var(--ex-color)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] dark:text-[var(--ex-color-dark)];
   }
 
   .ex-field-success {
@@ -198,7 +45,7 @@
     --ex-font-family: var(--ex-field-success-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-field-success-font-weight, var(--font-weight-semibold));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] leading-none [font-weight:var(--ex-font-weight)] text-[var(--ex-color)] dark:text-[var(--ex-color-dark)];
+    @apply leading-none text-[var(--ex-color)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] dark:text-[var(--ex-color-dark)];
   }
 
   .ex-field-required-indicator {
@@ -207,6 +54,6 @@
     --ex-font-family: var(--ex-field-required-indicator-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-field-required-indicator-font-weight, var(--font-weight-normal));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] leading-none [font-weight:var(--ex-font-weight)] text-[var(--ex-color)] dark:text-[var(--ex-color-dark)];
+    @apply leading-none text-[var(--ex-color)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] dark:text-[var(--ex-color-dark)];
   }
 }

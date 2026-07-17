@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { DropdownMenu } from 'radix-ui';
+import './dropdown-menu.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -23,6 +23,8 @@ import {
   DropdownMenuSubTriggerProps,
   DropdownMenuTriggerProps,
 } from './dropdown-menu.types';
+
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
 export const DropdownMenuRoot = (props: DropdownMenuProps) => {
   const { children, ...rest } = props;

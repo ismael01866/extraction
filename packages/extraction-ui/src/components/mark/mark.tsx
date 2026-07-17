@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './mark.css';
+
 import { Element } from '../element';
 import { MarkProps } from './mark.types';
 

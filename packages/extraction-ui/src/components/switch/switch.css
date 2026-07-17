@@ -1,35 +1,5 @@
-@utility switch-sm {
-  --ex-radius: var(--ex-switch-radius-sm, 9999px);
-  --ex-width: var(--ex-switch-width-sm, var(--ex-size-lg));
-  --ex-height: var(--ex-switch-height-sm, var(--ex-size-2xs));
-
-  .ex-switch-thumb {
-    --ex-size: var(--ex-switch-thumb-size-sm, var(--ex-size-4xs));
-    --ex-radius: var(--ex-switch-thumb-radius-sm, 9999px);
-  }
-}
-
-@utility switch-md {
-  --ex-radius: var(--ex-switch-radius-md, 9999px);
-  --ex-width: var(--ex-switch-width-md, var(--ex-size-2xl));
-  --ex-height: var(--ex-switch-height-md, var(--ex-size-xs));
-
-  .ex-switch-thumb {
-    --ex-size: var(--ex-switch-thumb-size-md, var(--ex-size-3xs));
-    --ex-radius: var(--ex-switch-thumb-radius-md, 9999px);
-  }
-}
-
-@utility switch-lg {
-  --ex-radius: var(--ex-switch-radius-lg, 9999px);
-  --ex-width: var(--ex-switch-width-lg, var(--ex-size-4xl));
-  --ex-height: var(--ex-switch-height-lg, var(--ex-size-sm));
-
-  .ex-switch-thumb {
-    --ex-size: var(--ex-switch-thumb-size-lg, var(--ex-size-2xs));
-    --ex-radius: var(--ex-switch-thumb-radius-lg, 9999px);
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-switch {
@@ -52,7 +22,7 @@
   .ex-switch {
     --ex-cursor: var(--ex-switch-cursor, default);
 
-    @apply inline-flex shrink-0 [transform:translateZ(0)] items-center select-none;
+    @apply inline-flex shrink-0 select-none items-center [transform:translateZ(0)];
     @apply h-[var(--ex-height)] w-[var(--ex-width)] cursor-[var(--ex-cursor)] rounded-[var(--ex-radius)];
   }
 }
@@ -64,7 +34,7 @@
   }
 
   .ex-switch-thumb {
-    @apply inline-block [transform:translateZ(0)] bg-white align-middle dark:bg-black;
+    @apply inline-block bg-white align-middle [transform:translateZ(0)] dark:bg-black;
     @apply mx-[var(--ex-mx)] size-[var(--ex-size)] rounded-[var(--ex-radius)] transition-transform;
 
     &:where([data-state='checked']) {

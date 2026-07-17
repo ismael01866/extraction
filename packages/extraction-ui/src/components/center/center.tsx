@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './center.css';
+
 import { Element } from '../element';
 import { CenterProps } from './center.types';
 

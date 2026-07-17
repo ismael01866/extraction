@@ -1,35 +1,5 @@
-@utility pin-input-sm {
-  --ex-size: var(--ex-pin-input-size-sm, var(--ex-size-xl));
-
-  --ex-gap-x: var(--ex-pin-input-gap-x-sm, calc(var(--spacing) * 1));
-
-  --ex-font-size: var(--ex-pin-input-font-size-sm, var(--text-xs));
-  --ex-radius: var(--ex-pin-input-radius-sm, var(--radius-sm));
-
-  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-sm, var(--text-2xs));
-}
-
-@utility pin-input-md {
-  --ex-size: var(--ex-pin-input-size-md, var(--ex-size-2xl));
-
-  --ex-gap-x: var(--ex-pin-input-gap-x-md, calc(var(--spacing) * 1.25));
-
-  --ex-radius: var(--ex-pin-input-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-pin-input-font-size-md, var(--text-sm));
-
-  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-md, var(--text-xs));
-}
-
-@utility pin-input-lg {
-  --ex-size: var(--ex-pin-input-size-lg, var(--ex-size-3xl));
-
-  --ex-gap-x: var(--ex-pin-input-gap-x-lg, calc(var(--spacing) * 1.5));
-
-  --ex-radius: var(--ex-pin-input-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-pin-input-font-size-lg, var(--text-base));
-
-  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-lg, var(--text-base));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-pin-input {
@@ -67,7 +37,7 @@
     @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &::placeholder {
-      @apply [font-size:var(--ex-placeholder-font-size)] text-[inherit] [opacity:var(--ex-opacity)];
+      @apply text-[inherit] [font-size:var(--ex-placeholder-font-size)] [opacity:var(--ex-opacity)];
     }
 
     &:where(:focus-within) {

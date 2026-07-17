@@ -1,34 +1,5 @@
-@utility tabs-sm {
-  --ex-px: var(--ex-tabs-px-sm, calc(var(--spacing) * 2));
-  --ex-py: var(--ex-tabs-py-sm, calc(var(--spacing) * 2));
-  --ex-radius: var(--ex-tabs-radius-sm, var(--radius-sm));
-
-  .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-xl));
-
-    --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3));
-    --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.5));
-
-    --ex-radius: var(--ex-tabs-trigger-radius-sm, var(--radius-sm));
-    --ex-font-size: var(--ex-tabs-trigger-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility tabs-md {
-  --ex-px: var(--ex-tabs-px-md, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-tabs-py-md, calc(var(--spacing) * 3));
-  --ex-radius: var(--ex-tabs-radius-md, var(--radius-sm));
-
-  .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-2xl));
-
-    --ex-px: var(--ex-tabs-trigger-px-md, calc(var(--spacing) * 4));
-    --ex-gap-x: var(--ex-tabs-trigger-gap-x-md, calc(var(--spacing) * 2));
-
-    --ex-radius: var(--ex-tabs-trigger-radius-md, var(--radius-sm));
-    --ex-font-size: var(--ex-tabs-trigger-font-size-md, var(--text-sm));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-tabs {
@@ -56,7 +27,7 @@
       &:where(:not([data-orientation])),
       &:where([data-orientation='horizontal']) {
         .ex-tabs-list {
-          @apply mx-[var(--ex-px)] gap-x-0 border-0 border-be-1 px-0 py-0;
+          @apply border-be-1 mx-[var(--ex-px)] gap-x-0 border-0 px-0 py-0;
         }
 
         .ex-tabs-trigger {
@@ -66,7 +37,7 @@
 
       &:where([data-orientation='vertical']) {
         .ex-tabs-list {
-          @apply my-[var(--ex-py)] gap-y-1 border-0 border-e-1 px-0 py-0;
+          @apply border-e-1 my-[var(--ex-py)] gap-y-1 border-0 px-0 py-0;
         }
 
         .ex-tabs-trigger {
@@ -108,7 +79,7 @@
     --ex-font-family: var(--ex-tabs-trigger-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-tabs-trigger-font-weight, var(--font-weight-normal));
 
-    @apply relative inline-flex items-center justify-center self-stretch leading-none outline-none select-none;
+    @apply relative inline-flex select-none items-center justify-center self-stretch leading-none outline-none;
     @apply h-[var(--ex-height)] cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     > svg {
@@ -123,7 +94,7 @@
       &:where(:not([data-orientation])),
       &:where([data-orientation='horizontal']) {
         .ex-tabs-list {
-          @apply border-0 border-be-1;
+          @apply border-be-1 border-0;
         }
 
         .ex-tabs-trigger {
@@ -140,7 +111,7 @@
 
       &:where([data-orientation='vertical']) {
         .ex-tabs-list {
-          @apply border-0 border-e-1;
+          @apply border-e-1 border-0;
         }
 
         .ex-tabs-trigger {

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Accordion } from 'radix-ui';
+import './accordion.css';
 
 import { Element } from '../element';
 import {
@@ -12,6 +12,8 @@ import {
   AccordionSectionProps,
   AccordionTriggerProps,
 } from './accordion.types';
+
+import * as Accordion from '@radix-ui/react-accordion';
 
 export const AccordionRoot = <T extends ElementType = 'div'>(props: AccordionProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

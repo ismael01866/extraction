@@ -1,32 +1,5 @@
-@utility code-sm {
-  --ex-font-family: var(--ex-code-font-family-sm, var(--font-mono));
-  --ex-font-weight: var(--ex-code-font-weight-sm, var(--font-weight-normal));
-
-  --ex-px: var(--ex-code-px-sm, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
-  --ex-font-size: var(--ex-code-font-size-sm, var(--text-2xs));
-}
-
-@utility code-md {
-  --ex-font-family: var(--ex-code-font-family-md, var(--font-mono));
-  --ex-font-weight: var(--ex-code-font-weight-md, var(--font-weight-normal));
-
-  --ex-px: var(--ex-code-px-md, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
-  --ex-font-size: var(--ex-code-font-size-md, var(--text-xs));
-}
-
-@utility code-lg {
-  --ex-font-family: var(--ex-code-font-family-lg, var(--font-mono));
-  --ex-font-weight: var(--ex-code-font-weight-lg, var(--font-weight-normal));
-
-  --ex-px: var(--ex-code-px-lg, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
-  --ex-font-size: var(--ex-code-font-size-lg, var(--text-sm));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-code {
@@ -38,7 +11,7 @@
   }
 
   .ex-code {
-    @apply inline-flex items-center break-words whitespace-nowrap;
+    @apply inline-flex items-center whitespace-nowrap break-words;
     @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

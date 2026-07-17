@@ -1,30 +1,5 @@
-@utility box-sm {
-  --ex-px: var(--ex-box-px-sm, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-box-py-sm, calc(var(--spacing) * 3));
-
-  --ex-radius: var(--ex-box-radius-sm, var(--radius-sm));
-}
-
-@utility box-md {
-  --ex-px: var(--ex-box-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-box-py-md, calc(var(--spacing) * 4));
-
-  --ex-radius: var(--ex-box-radius-md, var(--radius-sm));
-}
-
-@utility box-lg {
-  --ex-px: var(--ex-box-px-lg, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-box-py-lg, calc(var(--spacing) * 5));
-
-  --ex-radius: var(--ex-box-radius-lg, var(--radius-sm));
-}
-
-@utility box-xl {
-  --ex-px: var(--ex-box-px-xl, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-box-py-xl, calc(var(--spacing) * 6));
-
-  --ex-radius: var(--ex-box-radius-xl, var(--radius-sm));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-box {

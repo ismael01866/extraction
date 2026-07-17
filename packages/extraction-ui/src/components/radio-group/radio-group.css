@@ -1,41 +1,5 @@
-@utility radio-group-sm {
-  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2));
-
-  .ex-radio,
-  .ex-radio-card-indicator {
-    @apply radio-sm;
-  }
-
-  .ex-radio-card {
-    @apply radio-card-sm;
-  }
-}
-
-@utility radio-group-md {
-  --ex-gap-y: var(--ex-field-gap-y-md, calc(var(--spacing) * 2));
-
-  .ex-radio,
-  .ex-radio-card-indicator {
-    @apply radio-md;
-  }
-
-  .ex-radio-card {
-    @apply radio-card-md;
-  }
-}
-
-@utility radio-group-lg {
-  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 2));
-
-  .ex-radio,
-  .ex-radio-card-indicator {
-    @apply radio-lg;
-  }
-
-  .ex-radio-card {
-    @apply radio-card-lg;
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-radio-group {

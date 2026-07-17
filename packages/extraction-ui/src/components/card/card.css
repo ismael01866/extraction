@@ -1,65 +1,5 @@
-@utility card-sm {
-  --ex-radius: var(--ex-card-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-card-font-size-sm, var(--text-xs));
-
-  .ex-card-section {
-    --ex-px: var(--ex-card-section-px-sm, calc(var(--spacing) * 4));
-    --ex-py: var(--ex-card-section-py-sm, calc(var(--spacing) * 4));
-
-    --ex-gap-x: var(--ex-card-section-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-card-section-gap-y-sm, calc(var(--spacing) * 2));
-  }
-
-  .ex-card-title {
-    --ex-font-size: var(--ex-card-title-font-size-sm, var(--text-sm));
-  }
-
-  .ex-card-description {
-    --ex-font-size: var(--ex-card-description-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility card-md {
-  --ex-radius: var(--ex-card-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-card-font-size-md, var(--text-sm));
-
-  .ex-card-section {
-    --ex-px: var(--ex-card-section-px-md, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-card-section-py-md, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-card-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-card-section-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-card-title {
-    --ex-font-size: var(--ex-card-title-font-size-md, var(--text-base));
-  }
-
-  .ex-card-description {
-    --ex-font-size: var(--ex-card-description-font-size-md, var(--text-sm));
-  }
-}
-
-@utility card-lg {
-  --ex-radius: var(--ex-card-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-card-font-size-lg, var(--text-base));
-
-  .ex-card-section {
-    --ex-px: var(--ex-card-section-px-lg, calc(var(--spacing) * 6));
-    --ex-py: var(--ex-card-section-py-lg, calc(var(--spacing) * 6));
-
-    --ex-gap-x: var(--ex-card-section-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-card-section-gap-y-lg, calc(var(--spacing) * 2));
-  }
-
-  .ex-card-title {
-    --ex-font-size: var(--ex-card-title-font-size-lg, var(--text-lg));
-  }
-
-  .ex-card-description {
-    --ex-font-size: var(--ex-card-description-font-size-lg, var(--text-base));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-card {
@@ -98,7 +38,7 @@
     --ex-font-weight: var(--ex-card-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-card-description-opacity, var(--ex-options-muted-opacity));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

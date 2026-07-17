@@ -1,42 +1,5 @@
-@utility button-sm {
-  --ex-height: var(--ex-button-height-sm, var(--ex-size-xl));
-
-  --ex-px: var(--ex-button-px-sm, calc(var(--spacing) * 3.5));
-  --ex-gap-x: var(--ex-button-gap-x-sm, calc(var(--spacing) * 1.75));
-
-  --ex-radius: var(--ex-button-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-button-font-size-sm, var(--text-xs));
-}
-
-@utility button-md {
-  --ex-height: var(--ex-button-height-md, var(--ex-size-2xl));
-
-  --ex-px: var(--ex-button-px-md, calc(var(--spacing) * 4));
-  --ex-gap-x: var(--ex-button-gap-x-md, calc(var(--spacing) * 2));
-
-  --ex-radius: var(--ex-button-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-button-font-size-md, var(--text-sm));
-}
-
-@utility button-lg {
-  --ex-height: var(--ex-button-height-lg, var(--ex-size-3xl));
-
-  --ex-px: var(--ex-button-px-lg, calc(var(--spacing) * 4.5));
-  --ex-gap-x: var(--ex-button-gap-x-lg, calc(var(--spacing) * 2.25));
-
-  --ex-radius: var(--ex-button-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-button-font-size-lg, var(--text-base));
-}
-
-@utility button-xl {
-  --ex-height: var(--ex-button-height-xl, var(--ex-size-4xl));
-
-  --ex-px: var(--ex-button-px-xl, calc(var(--spacing) * 5));
-  --ex-gap-x: var(--ex-button-gap-x-xl, calc(var(--spacing) * 2.5));
-
-  --ex-radius: var(--ex-button-radius-xl, var(--radius-sm));
-  --ex-font-size: var(--ex-button-font-size-xl, var(--text-lg));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-button {
@@ -52,8 +15,8 @@
   }
 
   .ex-button {
-    @apply inline-flex shrink-0 items-center justify-center select-none;
-    @apply h-(--ex-height) cursor-(--ex-cursor) gap-x-(--ex-gap-x) rounded-(--ex-radius) px-(--ex-px) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] font-(--ex-font-weight);
+    @apply inline-flex shrink-0 select-none items-center justify-center;
+    @apply h-(--ex-height) cursor-(--ex-cursor) gap-x-(--ex-gap-x) rounded-(--ex-radius) px-(--ex-px) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
 
     > svg {
       @apply relative h-[1em] w-[1em];

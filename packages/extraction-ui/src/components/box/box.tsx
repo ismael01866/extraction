@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './box.css';
+
 import { Element } from '../element';
 import { BoxProps } from './box.types';
 

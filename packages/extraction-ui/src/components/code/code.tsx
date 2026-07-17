@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './code.css';
+
 import { Element } from '../element';
 import { CodeProps } from './code.types';
 

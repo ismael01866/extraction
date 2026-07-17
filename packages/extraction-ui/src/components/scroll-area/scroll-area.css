@@ -1,27 +1,5 @@
-@utility scroll-area-xs {
-  --ex-size-xs: var(--ex-scroll-area-scrollbar-size-xs, calc(var(--spacing) * 0.5));
-  --scrollbar-size: var(--ex-size-xs);
-}
-
-@utility scroll-area-sm {
-  --ex-size-sm: var(--ex-scroll-area-scrollbar-size-sm, calc(var(--spacing) * 1));
-  --scrollbar-size: var(--ex-size-sm);
-}
-
-@utility scroll-area-md {
-  --ex-size-md: var(--ex-scroll-area-scrollbar-size-md, calc(var(--spacing) * 1.5));
-  --scrollbar-size: var(--ex-size-md);
-}
-
-@utility scroll-area-lg {
-  --ex-size-lg: var(--ex-scroll-area-scrollbar-size-lg, calc(var(--spacing) * 2));
-  --scrollbar-size: var(--ex-size-lg);
-}
-
-@utility scroll-area-xl {
-  --ex-size-xl: var(--ex-scroll-area-scrollbar-size-xl, calc(var(--spacing) * 2.5));
-  --scrollbar-size: var(--ex-size-xl);
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-scroll-area {
@@ -42,7 +20,7 @@
   }
 
   .ex-scroll-area-scrollbar {
-    @apply flex touch-none rounded-full border select-none;
+    @apply flex touch-none select-none rounded-full border;
     @apply end-[var(--scrollbar-size)];
 
     &:where([data-orientation='vertical']) {
@@ -71,14 +49,14 @@
 
     &:where(::before) {
       content: '';
-      @apply absolute top-1/2 left-1/2 h-full min-h-12 w-full min-w-12 -translate-x-1/2 -translate-y-1/2 transform;
+      @apply absolute left-1/2 top-1/2 h-full min-h-12 w-full min-w-12 -translate-x-1/2 -translate-y-1/2 transform;
     }
   }
 }
 
 @layer components {
   .ex-scroll-area-content {
-    @apply pe-[var(--scrollbar-size)] pbe-[var(--scrollbar-size)];
+    @apply pbe-[var(--scrollbar-size)] pe-[var(--scrollbar-size)];
     @apply flex items-start;
   }
 }

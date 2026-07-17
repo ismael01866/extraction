@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Popover } from 'radix-ui';
+import './popover.css';
 
 import { cn } from '../../utils';
 import { CloseButton } from '../close-button';
@@ -17,6 +17,8 @@ import {
   PopoverTitleProps,
   PopoverTriggerProps,
 } from './popover.types';
+
+import * as Popover from '@radix-ui/react-popover';
 
 export const PopoverRoot = (props: PopoverProps) => {
   const { children, ...rest } = props;

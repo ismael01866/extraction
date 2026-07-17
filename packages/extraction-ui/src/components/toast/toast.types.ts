@@ -1,16 +1,11 @@
 import { ComponentProps, ElementType } from 'react';
 
-import { Toast } from 'radix-ui';
-
 import { ElementProps } from '../element';
 
+import * as Toast from '@radix-ui/react-toast';
+
 export type ToastPlacement =
-  | 'top-start'
-  | 'top'
-  | 'top-end'
-  | 'bottom-start'
-  | 'bottom'
-  | 'bottom-end';
+  'top-start' | 'top' | 'top-end' | 'bottom-start' | 'bottom' | 'bottom-end';
 
 export type ToastProviderProps = ComponentProps<typeof Toast.Provider> & {
   placement?: ToastPlacement;

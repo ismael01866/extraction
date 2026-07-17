@@ -1,9 +1,9 @@
 import React, { ElementType } from 'react';
 
-import { Slot } from 'radix-ui';
-
 import { cn } from '../../utils';
 import { ElementProps } from './element.types';
+
+import * as Slot from '@radix-ui/react-slot';
 
 export const Element = <T extends ElementType = 'div'>(props: ElementProps<T>) => {
   const {

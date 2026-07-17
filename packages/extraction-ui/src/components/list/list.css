@@ -1,32 +1,5 @@
-@utility list-sm {
-  --ex-font-size: var(--ex-list-font-size-sm, var(--text-xs));
-
-  --ex-font-family: var(--ex-list-font-family-sm, var(--font-sans));
-  --ex-font-weight: var(--ex-list-font-weight-sm, var(--font-weight-normal));
-
-  --ex-gap-x: var(--ex-list-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-gap-y: var(--ex-list-gap-y-sm, calc(var(--spacing) * 1));
-}
-
-@utility list-md {
-  --ex-font-size: var(--ex-list-font-size-md, var(--text-sm));
-
-  --ex-font-family: var(--ex-list-font-family-md, var(--font-sans));
-  --ex-font-weight: var(--ex-list-font-weight-md, var(--font-weight-normal));
-
-  --ex-gap-x: var(--ex-list-gap-x-md, calc(var(--spacing) * 2.5));
-  --ex-gap-y: var(--ex-list-gap-y-md, calc(var(--spacing) * 1));
-}
-
-@utility list-lg {
-  --ex-font-size: var(--ex-list-font-size-lg, var(--text-base));
-
-  --ex-font-family: var(--ex-list-font-family-lg, var(--font-sans));
-  --ex-font-weight: var(--ex-list-font-weight-lg, var(--font-weight-normal));
-
-  --ex-gap-x: var(--ex-list-gap-x-lg, calc(var(--spacing) * 3));
-  --ex-gap-y: var(--ex-list-gap-y-lg, calc(var(--spacing) * 1));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-list {
@@ -47,6 +20,6 @@
   }
 
   .ex-list-indicator {
-    @apply inline-flex h-[1em] w-[1em] shrink-0 items-center justify-center self-center text-inherit select-none;
+    @apply inline-flex h-[1em] w-[1em] shrink-0 select-none items-center justify-center self-center text-inherit;
   }
 }

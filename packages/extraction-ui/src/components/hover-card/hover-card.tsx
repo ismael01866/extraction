@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { HoverCard } from 'radix-ui';
+import './hover-card.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -14,6 +14,8 @@ import {
   HoverCardTitleProps,
   HoverCardTriggerProps,
 } from './hover-card.types';
+
+import * as HoverCard from '@radix-ui/react-hover-card';
 
 export const HoverCardRoot = (props: HoverCardProps) => {
   const { children, ...rest } = props;

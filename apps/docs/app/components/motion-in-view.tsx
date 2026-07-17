@@ -1,7 +1,7 @@
 import { ElementType } from 'react';
 
 import { InView, InViewProps } from 'extraction-ui';
-import { cn } from 'utils';
+import { cn } from 'extraction-ui-utils';
 
 type MotionInViewProps<T extends ElementType = 'div'> = InViewProps<T> & {
   animationClassName?: string;

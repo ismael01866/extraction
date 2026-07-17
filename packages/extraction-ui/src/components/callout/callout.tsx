@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './callout.css';
+
 import { Element } from '../element';
 import {
   CalloutContentProps,

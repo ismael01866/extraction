@@ -1,10 +1,13 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-loader {
     --ex-duration: var(--ex-loader-duration, 500ms);
   }
 
   .ex-loader {
-    @apply inline-flex size-[1em] shrink-0 items-center justify-center self-center font-normal text-inherit select-none;
+    @apply inline-flex size-[1em] shrink-0 select-none items-center justify-center self-center font-normal text-inherit;
     @apply animate-spin [animation-duration:var(--ex-duration)];
   }
 

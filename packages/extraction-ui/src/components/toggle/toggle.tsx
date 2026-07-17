@@ -1,9 +1,9 @@
 import React, { ElementType } from 'react';
 
-import { Toggle } from 'radix-ui';
-
 import { Element } from '../element';
 import { ToggleProps } from './toggle.types';
+
+import * as Toggle from '@radix-ui/react-toggle';
 
 export const ToggleRoot = <T extends ElementType = 'div'>(props: ToggleProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

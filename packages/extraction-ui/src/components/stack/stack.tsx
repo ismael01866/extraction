@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './stack.css';
+
 import { Element } from '../element';
 import { StackProps } from './stack.types';
 
