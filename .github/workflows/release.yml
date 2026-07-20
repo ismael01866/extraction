@@ -26,12 +26,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - run: pnpm install --frozen-lockfile
-
-      - name: Inspect dist
-        working-directory: packages/extraction-ui
-        run: |
-          ls -la dist
-          find dist -maxdepth 2 -type d | head -50
+      - run: pnpm --filter extraction-ui build
 
       - uses: changesets/action@v1
         with:
