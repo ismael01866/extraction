@@ -4,7 +4,16 @@ import { useState } from 'react';
 
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import { HStack, Headline, Icon, IconButton, Mark, Section, Stack } from 'extraction-ui';
+import {
+  Description,
+  Display,
+  HStack,
+  Icon,
+  IconButton,
+  Mark,
+  Section,
+  Stack,
+} from 'extraction-ui';
 import { SiAstro, SiGatsby, SiNextdotjs, SiVite } from 'react-icons/si';
 
 const FRAMEWORKS = [
@@ -22,7 +31,7 @@ export function HomeSectionFrameworks() {
       <Stack className="gap-8 sm:gap-12">
         <MotionInView>
           <Stack className="gap-8">
-            <Headline className="headline-xl text-fluid font-semibold leading-tight">
+            <Display className="text-fluid leading-tight">
               Built for <br />
               <Mark
                 key={framework}
@@ -32,10 +41,10 @@ export function HomeSectionFrameworks() {
                   {framework}
                 </span>
               </Mark>
-            </Headline>
-            <Headline className="headline-sm text-fluid">
+            </Display>
+            <Description className="text-fluid description-2xl">
               Same components, same tokens — any framework
-            </Headline>
+            </Description>
           </Stack>
         </MotionInView>
 

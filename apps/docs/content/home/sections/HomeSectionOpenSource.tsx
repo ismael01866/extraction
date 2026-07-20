@@ -2,7 +2,7 @@
 
 import { MotionInView } from '@/app/components';
 
-import { Button, Headline, Icon, Section, VStack } from 'extraction-ui';
+import { Button, Description, Display, Icon, Section, VStack } from 'extraction-ui';
 import { LuHandHeart } from 'react-icons/lu';
 import { SiGithub } from 'react-icons/si';
 
@@ -12,11 +12,10 @@ export function HomeSectionOpenSource() {
       <MotionInView>
         <VStack className="gap-4">
           <Icon as={LuHandHeart} className="mbe-4 size-24" />
-          <Headline className="headline-xl text-fluid font-semibold">Open Source</Headline>
-          <Headline className="headline-sm text-fluid">
-            {' '}
+          <Display className="text-fluid">Open Source</Display>
+          <Description className="text-fluid description-2xl">
             Extraction UI is an open source project licensed under MIT
-          </Headline>
+          </Description>
         </VStack>
       </MotionInView>
       <MotionInView className="delay-50">

@@ -1,6 +1,6 @@
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import { Button, Headline, Icon, Section, VStack } from 'extraction-ui';
+import { Button, Description, Display, Icon, Section, VStack } from 'extraction-ui';
 import { LuFileBox } from 'react-icons/lu';
 
 export function HomeSectionPanelsHero() {
@@ -10,13 +10,11 @@ export function HomeSectionPanelsHero() {
         <VStack className="gap-4">
           <Icon as={LuFileBox} className="mbe-8 size-24" />
           <VStack className="gap-8">
-            <Headline className="headline-xl text-fluid font-semibold">
-              80+ customizable components
-            </Headline>
-            <Headline className="headline-sm text-fluid">
+            <Display className="text-fluid">80+ customizable components</Display>
+            <Description className="text-fluid description-2xl">
               Production-ready components designed for speed, aesthetic, functionality, and
               flexibility
-            </Headline>
+            </Description>
           </VStack>
         </VStack>
       </MotionInView>

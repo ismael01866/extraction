@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import type { ButtonHTMLAttributes } from "react";
-import * as React from "react";
+import type { ButtonHTMLAttributes } from 'react';
+import * as React from 'react';
 
-import { cn } from "utils";
-import { useColorModeWithOptions } from "./use-color-mode";
+import { cn } from 'extraction-ui-utils';
+
+import { useColorModeWithOptions } from './use-color-mode';
 
 type ColorModeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   useNextThemes?: boolean;
@@ -28,7 +29,7 @@ export const ColorModeButton = (props: ColorModeButtonProps) => {
     propagateToIFrame,
   });
 
-  const classNames = cn("ex-color-mode-button", className);
+  const classNames = cn('ex-color-mode-button', className);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     toggleColorMode();
@@ -46,4 +47,4 @@ export const ColorModeButton = (props: ColorModeButtonProps) => {
   );
 };
 
-ColorModeButton.displayName = "ColorModeButton";
+ColorModeButton.displayName = 'ColorModeButton';

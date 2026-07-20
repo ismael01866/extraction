@@ -1,6 +1,16 @@
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import { Button, Center, Display, Grid, Headline, Icon, Mark, Section, Stack } from 'extraction-ui';
+import {
+  Button,
+  Center,
+  Description,
+  Display,
+  Grid,
+  Icon,
+  Mark,
+  Section,
+  Stack,
+} from 'extraction-ui';
 import { LuRocket } from 'react-icons/lu';
 
 export function HomeSectionHero() {
@@ -9,7 +19,7 @@ export function HomeSectionHero() {
       <Stack className="gap-6">
         <MotionInView>
           <Center>
-            <Display className="text-fluid font-semibold">
+            <Display className="text-fluid display-lg">
               Modern
               <Mark className="variant-solid palette-primary ml-2 inline-block px-3 py-2">
                 UI System
@@ -20,9 +30,9 @@ export function HomeSectionHero() {
 
         <MotionInView className="delay-100">
           <Center>
-            <Headline className="headline-sm text-fluid">
+            <Description className="text-fluid description-2xl">
               Customizable design system and component library to help you ship your UI faster
-            </Headline>
+            </Description>
           </Center>
         </MotionInView>
 
