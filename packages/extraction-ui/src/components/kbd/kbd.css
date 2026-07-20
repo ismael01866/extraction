@@ -1,41 +1,5 @@
-@utility kbd-sm {
-  --ex-height: var(--ex-kbd-height-sm, var(--ex-size-2xs));
-
-  --ex-font-family: var(--ex-kbd-font-family-sm, var(--font-mono));
-  --ex-font-weight: var(--ex-kbd-font-weight-sm, var(--font-weight-normal));
-
-  --ex-px: var(--ex-kbd-px-sm, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-kbd-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-kbd-shadow-sm, var(--shadow-xs));
-  --ex-font-size: var(--ex-kbd-font-size-sm, var(--text-2xs));
-}
-
-@utility kbd-md {
-  --ex-height: var(--ex-kbd-height-md, var(--ex-size-xs));
-
-  --ex-font-family: var(--ex-kbd-font-family-md, var(--font-mono));
-  --ex-font-weight: var(--ex-kbd-font-weight-md, var(--font-weight-normal));
-
-  --ex-px: var(--ex-kbd-px-md, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-kbd-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-kbd-shadow-md, var(--shadow-xs));
-  --ex-font-size: var(--ex-kbd-font-size-md, var(--text-xs));
-}
-
-@utility kbd-lg {
-  --ex-height: var(--ex-kbd-height-lg, var(--ex-size-sm));
-
-  --ex-font-family: var(--ex-kbd-font-family-lg, var(--font-mono));
-  --ex-font-weight: var(--ex-kbd-font-weight-lg, var(--font-weight-normal));
-
-  --ex-px: var(--ex-kbd-px-lg, calc(var(--spacing) * 1));
-
-  --ex-radius: var(--ex-kbd-radius-lg, var(--radius-sm));
-  --ex-shadow: var(--ex-kbd-shadow-lg, var(--shadow-xs));
-  --ex-font-size: var(--ex-kbd-font-size-lg, var(--text-sm));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-kbd {
@@ -47,7 +11,7 @@
   }
 
   .ex-kbd {
-    @apply inline-flex items-center justify-center select-none;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] shadow-[var(--ex-shadow)];
+    @apply inline-flex select-none items-center justify-center;
+    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] shadow-[var(--ex-shadow)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

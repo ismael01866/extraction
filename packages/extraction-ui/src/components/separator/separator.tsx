@@ -1,9 +1,11 @@
 import React, { ElementType } from 'react';
 
-import { Separator } from 'radix-ui';
+import './separator.css';
 
 import { Element } from '../element';
 import { SeparatorProps } from './separator.types';
+
+import * as Separator from '@radix-ui/react-separator';
 
 export const SeparatorRoot = <T extends ElementType = 'div'>(props: SeparatorProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

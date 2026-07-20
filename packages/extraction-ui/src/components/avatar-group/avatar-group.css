@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-avatar-group {
     --ex-gap-x: var(--ex-avatar-group-gap-x, calc(var(--spacing) * -3));

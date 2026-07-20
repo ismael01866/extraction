@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-border-beam {
     --ex-gradient-color: var(
@@ -27,7 +30,7 @@
   }
 
   .ex-border-beam-track {
-    @apply pointer-events-none absolute inset-0 rounded-[inherit] border-transparent mask-intersect;
+    @apply mask-intersect pointer-events-none absolute inset-0 rounded-[inherit] border-transparent;
 
     border-style: solid;
     border-width: var(--ex-border-width);

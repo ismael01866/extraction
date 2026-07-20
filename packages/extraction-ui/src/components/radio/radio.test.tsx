@@ -1,10 +1,10 @@
 import React from 'react';
 
+import { RadioControl, RadioIndicator, RadioItem, RadioLabel } from './radio';
+
+import * as RadioGroup from '@radix-ui/react-radio-group';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { RadioGroup } from 'radix-ui';
-
-import { RadioControl, RadioIndicator, RadioItem, RadioLabel } from './radio';
 
 describe('RadioItem', () => {
   it('renders default div and class', () => {

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Dialog } from 'radix-ui';
+import './dialog.css';
 
 import { CloseButton } from '../close-button';
 import { Element } from '../element';
@@ -15,6 +15,8 @@ import {
   DialogTitleProps,
   DialogTriggerProps,
 } from './dialog.types';
+
+import * as Dialog from '@radix-ui/react-dialog';
 
 export const DialogRoot = (props: DialogProps) => {
   const { children, ...rest } = props;

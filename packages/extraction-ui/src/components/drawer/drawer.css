@@ -1,98 +1,5 @@
-@utility drawer-content-sm {
-  --ex-font-size: var(--ex-drawer-font-size-sm, var(--text-sm));
-
-  --ex-size: var(--ex-drawer-size-sm, var(--container-2xs));
-  --ex-radius: var(--ex-drawer-radius-sm, 0);
-  --ex-shadow: var(--ex-drawer-shadow-sm, var(--shadow-xl));
-
-  .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-sm, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-sm, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-drawer-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 2));
-  }
-
-  .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-sm, var(--text-base));
-  }
-
-  .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-sm, var(--text-sm));
-  }
-}
-
-@utility drawer-content-md {
-  --ex-font-size: var(--ex-drawer-font-size-md, var(--text-sm));
-
-  --ex-size: var(--ex-drawer-size-md, var(--container-xs));
-  --ex-radius: var(--ex-drawer-radius-md, 0);
-  --ex-shadow: var(--ex-drawer-shadow-md, var(--shadow-xl));
-
-  .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-md, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-md, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-drawer-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-md, var(--text-base));
-  }
-
-  .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-md, var(--text-sm));
-  }
-}
-
-@utility drawer-content-lg {
-  --ex-font-size: var(--ex-drawer-font-size-lg, var(--text-sm));
-
-  --ex-size: var(--ex-drawer-size-lg, var(--container-sm));
-  --ex-radius: var(--ex-drawer-radius-lg, 0);
-  --ex-shadow: var(--ex-drawer-shadow-lg, var(--shadow-xl));
-
-  .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-lg, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-lg, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-drawer-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 2));
-  }
-
-  .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-lg, var(--text-base));
-  }
-
-  .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-lg, var(--text-sm));
-  }
-}
-
-@utility drawer-content-xl {
-  --ex-font-size: var(--ex-drawer-font-size-xl, var(--text-sm));
-
-  --ex-size: var(--ex-drawer-size-xl, var(--container-md));
-  --ex-radius: var(--ex-drawer-radius-xl, 0);
-  --ex-shadow: var(--ex-drawer-shadow-xl, var(--shadow-xl));
-
-  .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-xl, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-xl, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-drawer-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-xl, calc(var(--spacing) * 2));
-  }
-
-  .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-xl, var(--text-base));
-  }
-
-  .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-xl, var(--text-sm));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-drawer-overlay {
@@ -122,7 +29,7 @@
     --ex-z-index: var(--ex-drawer-z-index, var(--ex-options-z-drawer));
 
     @apply palette-neutral variant-outline fixed flex flex-col border-transparent shadow-lg will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -201,7 +108,7 @@
     --ex-font-weight: var(--ex-drawer-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-muted-opacity));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './text.css';
+
 import { Element } from '../element';
 import { TextProps } from './text.types';
 

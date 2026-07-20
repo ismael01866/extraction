@@ -1,60 +1,5 @@
-@utility popover-content-sm {
-  --ex-font-size: var(--ex-popover-font-size-sm, var(--text-xs));
-
-  --ex-max-w: var(--ex-popover-max-w-sm, var(--container-3xs));
-  --ex-radius: var(--ex-popover-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-popover-shadow-sm, var(--shadow-sm));
-
-  .ex-popover-section {
-    --ex-px: var(--ex-popover-section-px-sm, calc(var(--spacing) * 4));
-    --ex-py: var(--ex-popover-section-py-sm, calc(var(--spacing) * 4));
-
-    --ex-gap-x: var(--ex-popover-section-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-popover-section-gap-y-sm, calc(var(--spacing) * 2));
-  }
-
-  .ex-popover-title {
-    --ex-font-size: var(--ex-popover-title-font-size-sm, var(--text-sm));
-  }
-
-  .ex-popover-description {
-    --ex-font-size: var(--ex-popover-description-font-size-sm, var(--text-xs));
-  }
-
-  .ex-popover-arrow {
-    --ex-width: var(--ex-popover-arrow-width-sm, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-popover-arrow-height-sm, calc(var(--spacing) * 1.75));
-  }
-}
-
-@utility popover-content-md {
-  --ex-font-size: var(--ex-popover-font-size-md, var(--text-sm));
-
-  --ex-max-w: var(--ex-popover-max-w-md, var(--container-2xs));
-  --ex-radius: var(--ex-popover-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-popover-shadow-md, var(--shadow-sm));
-
-  .ex-popover-section {
-    --ex-px: var(--ex-popover-section-px-md, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-popover-section-py-md, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-popover-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-popover-section-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-popover-title {
-    --ex-font-size: var(--ex-popover-title-font-size-md, var(--text-base));
-  }
-
-  .ex-popover-description {
-    --ex-font-size: var(--ex-popover-description-font-size-md, var(--text-sm));
-  }
-
-  .ex-popover-arrow {
-    --ex-width: var(--ex-popover-arrow-width-md, calc(var(--spacing) * 3.5));
-    --ex-height: var(--ex-popover-arrow-height-md, calc(var(--spacing) * 1.75));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-popover-content {
@@ -69,7 +14,7 @@
     --ex-z-index: var(--ex-popover-z-index, var(--ex-options-z-popover));
 
     @apply palette-neutral variant-outline flex will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)] shadow-[var(--ex-shadow)];
+    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -126,7 +71,7 @@
     --ex-font-weight: var(--ex-popover-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-popover-description-opacity, var(--ex-options-muted-opacity));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

@@ -1,9 +1,12 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-highlight {
     --ex-px: var(--ex-highlight-px, calc(var(--spacing) * 1.5));
     --ex-radius: var(--ex-highlight-radius-sm, var(--radius-sm));
 
-    @apply relative inline bg-transparent whitespace-nowrap;
+    @apply relative inline whitespace-nowrap bg-transparent;
     @apply px-[var(--ex-px)];
   }
 
@@ -19,7 +22,7 @@
   .ex-highlight {
     &::before {
       content: '';
-      @apply variant absolute inset-0 -z-1;
+      @apply variant -z-1 absolute inset-0;
       @apply rounded-[var(--ex-radius)];
     }
   }

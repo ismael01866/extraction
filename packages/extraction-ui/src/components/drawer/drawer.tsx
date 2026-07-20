@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Dialog } from 'radix-ui';
+import './drawer.css';
 
 import { CloseButton } from '../close-button';
 import { Element } from '../element';
@@ -15,6 +15,8 @@ import {
   DrawerTitleProps,
   DrawerTriggerProps,
 } from './drawer.types';
+
+import * as Dialog from '@radix-ui/react-dialog';
 
 export const DrawerRoot = (props: DrawerProps) => {
   const { children, ...rest } = props;

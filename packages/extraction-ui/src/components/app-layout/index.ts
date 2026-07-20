@@ -9,6 +9,16 @@ import {
   AppLayoutSidenav,
 } from './app-layout';
 
+export const AppLayout = Object.assign(AppLayoutRoot, {
+  Aside: AppLayoutAside,
+  Body: AppLayoutBody,
+  Footer: AppLayoutFooter,
+  Header: AppLayoutHeader,
+  Main: AppLayoutMain,
+  Sidenav: AppLayoutSidenav,
+  Section: AppLayoutSection,
+});
+
 export type {
   AppLayoutAsideProps,
   AppLayoutBodyProps,
@@ -19,13 +29,3 @@ export type {
   AppLayoutSectionProps,
   AppLayoutSidenavProps,
 } from './app-layout.types';
-
-export const AppLayout = Object.assign(AppLayoutRoot, {
-  Aside: AppLayoutAside,
-  Body: AppLayoutBody,
-  Footer: AppLayoutFooter,
-  Header: AppLayoutHeader,
-  Main: AppLayoutMain,
-  Sidenav: AppLayoutSidenav,
-  Section: AppLayoutSection,
-});

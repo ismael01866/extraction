@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './empty-state.css';
+
 import { Element } from '../element';
 import {
   EmptyStateContentProps,

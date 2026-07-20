@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './icon-button.css';
+
 import { Element } from '../element';
 import { IconButtonProps } from './icon-button.types';
 

@@ -1,20 +1,5 @@
-@utility breadcrumbs-sm {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 0.25));
-  --ex-font-size: var(--ex-breadcrumbs-font-size-sm, var(--text-xs));
-
-  .ex-breadcrumbs-link {
-    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-sm, calc(var(--spacing) * 1.5));
-  }
-}
-
-@utility breadcrumbs-md {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 0.5));
-  --ex-font-size: var(--ex-breadcrumbs-font-size-md, var(--text-sm));
-
-  .ex-breadcrumbs-link {
-    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-md, calc(var(--spacing) * 2));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-breadcrumbs {

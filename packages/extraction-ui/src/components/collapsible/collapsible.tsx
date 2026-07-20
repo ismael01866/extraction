@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Collapsible } from 'radix-ui';
+import './collapsible.css';
 
 import { Element } from '../element';
 import {
@@ -8,6 +8,8 @@ import {
   CollapsibleProps,
   CollapsibleTriggerProps,
 } from './collapsible.types';
+
+import * as Collapsible from '@radix-ui/react-collapsible';
 
 export const CollapsibleRoot = <T extends ElementType = 'div'>(props: CollapsibleProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

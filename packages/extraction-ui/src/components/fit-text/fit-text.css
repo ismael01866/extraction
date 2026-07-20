@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-fit-text {
     @apply block h-auto w-full overflow-visible;

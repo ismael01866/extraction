@@ -1,9 +1,11 @@
 import React, { ElementType } from 'react';
 
-import { Tabs } from 'radix-ui';
+import './tabs.css';
 
 import { Element } from '../element';
 import { TabsContentProps, TabsListProps, TabsProps, TabsTriggerProps } from './tabs.types';
+
+import * as Tabs from '@radix-ui/react-tabs';
 
 export const TabsRoot = <T extends ElementType = 'div'>(props: TabsProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

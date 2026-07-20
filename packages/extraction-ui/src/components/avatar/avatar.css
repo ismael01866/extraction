@@ -1,30 +1,5 @@
-@utility avatar-sm {
-  --ex-size: var(--ex-avatar-size-sm, var(--ex-size-xl));
-
-  --ex-radius: var(--ex-avatar-radius-sm, 9999px);
-  --ex-font-size: var(--ex-avatar-font-size-sm, var(--text-xs));
-}
-
-@utility avatar-md {
-  --ex-size: var(--ex-avatar-size-md, var(--ex-size-2xl));
-
-  --ex-radius: var(--ex-avatar-radius-md, 9999px);
-  --ex-font-size: var(--ex-avatar-font-size-md, var(--text-sm));
-}
-
-@utility avatar-lg {
-  --ex-size: var(--ex-avatar-size-lg, var(--ex-size-3xl));
-
-  --ex-radius: var(--ex-avatar-radius-lg, 9999px);
-  --ex-font-size: var(--ex-avatar-font-size-lg, var(--text-base));
-}
-
-@utility avatar-xl {
-  --ex-size: var(--ex-avatar-size-xl, var(--ex-size-4xl));
-
-  --ex-radius: var(--ex-avatar-radius-xl, 9999px);
-  --ex-font-size: var(--ex-avatar-font-size-xl, var(--text-lg));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-avatar {
@@ -39,8 +14,8 @@
   }
 
   .ex-avatar {
-    @apply shrink-0 overflow-hidden select-none;
-    @apply size-[var(--ex-size)] [transform:translateZ(0)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply shrink-0 select-none overflow-hidden;
+    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [transform:translateZ(0)];
 
     &:has(.ex-avatar-image) {
       mask-image: radial-gradient(white 99%, transparent 100%);
@@ -52,11 +27,11 @@
   }
 
   .ex-avatar-image {
-    @apply ex-image-base;
+    @apply h-auto w-full object-cover;
   }
 
   .ex-avatar-image {
-    @apply absolute inset-0 [transform:translateZ(0)] rounded-none;
+    @apply absolute inset-0 rounded-none [transform:translateZ(0)];
     backface-visibility: hidden;
   }
 

@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-collapsible-content {
     @apply overflow-hidden;

@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './color-swatch.css';
+
 import { Element } from '../element';
 import { ColorSwatchProps } from './color-swatch.types';
 

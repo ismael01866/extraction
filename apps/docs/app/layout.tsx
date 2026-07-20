@@ -1,6 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import { ColorModeButton } from 'components';
 import {
   Description,
   Flex,
@@ -12,6 +11,7 @@ import {
   Text,
   Title,
 } from 'extraction-ui';
+import { ColorModeButton } from 'extraction-ui-components';
 import { Metadata } from 'next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';

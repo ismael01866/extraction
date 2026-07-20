@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-theme-provider {
     @apply children-inherit-palette children-inherit-variant contents;

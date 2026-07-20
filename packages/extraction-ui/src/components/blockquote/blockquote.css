@@ -1,77 +1,5 @@
-@utility blockquote-sm {
-  --ex-px: var(--ex-blockquote-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-blockquote-py-sm, calc(var(--spacing) * 4));
-
-  --ex-gap-x: var(--ex-blockquote-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-gap-y: var(--ex-blockquote-gap-y-sm, calc(var(--spacing) * 2));
-
-  --ex-radius: var(--ex-blockquote-radius-sm, var(--radius-sm));
-
-  --ex-font-size: var(--ex-blockquote-font-size-sm, var(--text-xs));
-  --ex-font-family: var(--ex-blockquote-font-family-sm, var(--font-sans));
-  --ex-font-weight: var(--ex-blockquote-font-weight-sm, var(--font-weight-normal));
-
-  .ex-blockquote-cite {
-    --ex-font-size: var(--ex-blockquote-cite-font-size-sm, var(--text-xs));
-
-    --ex-font-family: var(--ex-blockquote-cite-font-family-sm, var(--font-sans));
-    --ex-font-weight: var(--ex-blockquote-cite-font-weight-sm, var(--font-weight-normal));
-  }
-
-  .ex-blockquote-icon {
-    --ex-font-size: var(--ex-blockquote-icon-font-size-sm, var(--text-lg));
-  }
-}
-
-@utility blockquote-md {
-  --ex-px: var(--ex-blockquote-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-blockquote-py-md, calc(var(--spacing) * 5));
-
-  --ex-gap-x: var(--ex-blockquote-gap-x-md, calc(var(--spacing) * 2.5));
-  --ex-gap-y: var(--ex-blockquote-gap-y-md, calc(var(--spacing) * 2));
-
-  --ex-radius: var(--ex-blockquote-radius-md, var(--radius-sm));
-
-  --ex-font-size: var(--ex-blockquote-font-size-md, var(--text-sm));
-  --ex-font-family: var(--ex-blockquote-font-family-md, var(--font-sans));
-  --ex-font-weight: var(--ex-blockquote-font-weight-md, var(--font-weight-normal));
-
-  .ex-blockquote-cite {
-    --ex-font-size: var(--ex-blockquote-cite-font-size-md, var(--text-sm));
-
-    --ex-font-family: var(--ex-blockquote-cite-font-family-md, var(--font-sans));
-    --ex-font-weight: var(--ex-blockquote-cite-font-weight-md, var(--font-weight-normal));
-  }
-
-  .ex-blockquote-icon {
-    --ex-font-size: var(--ex-blockquote-icon-font-size-md, var(--text-xl));
-  }
-}
-
-@utility blockquote-lg {
-  --ex-px: var(--ex-blockquote-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-blockquote-py-lg, calc(var(--spacing) * 6));
-
-  --ex-gap-x: var(--ex-blockquote-gap-x-lg, calc(var(--spacing) * 3));
-  --ex-gap-y: var(--ex-blockquote-gap-y-lg, calc(var(--spacing) * 2));
-
-  --ex-radius: var(--ex-blockquote-radius-lg, var(--radius-sm));
-
-  --ex-font-size: var(--ex-blockquote-font-size-lg, var(--text-base));
-  --ex-font-family: var(--ex-blockquote-font-family-lg, var(--font-sans));
-  --ex-font-weight: var(--ex-blockquote-font-weight-lg, var(--font-weight-normal));
-
-  .ex-blockquote-cite {
-    --ex-font-size: var(--ex-blockquote-cite-font-size-lg, var(--text-base));
-
-    --ex-font-family: var(--ex-blockquote-cite-font-family-lg, var(--font-sans));
-    --ex-font-weight: var(--ex-blockquote-cite-font-weight-lg, var(--font-weight-normal));
-  }
-
-  .ex-blockquote-icon {
-    --ex-font-size: var(--ex-blockquote-icon-font-size-lg, var(--text-2xl));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-blockquote {
@@ -112,6 +40,6 @@
   }
 
   .ex-blockquote-cite {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

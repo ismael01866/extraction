@@ -1,8 +1,8 @@
 import { ComponentProps, ElementType } from 'react';
 
-import { Dialog } from 'radix-ui';
-
 import { ElementProps } from '../element';
+
+import * as Dialog from '@radix-ui/react-dialog';
 
 export type DialogProps = ComponentProps<typeof Dialog.Root>;
 

@@ -1,7 +1,7 @@
 'use client';
 
-import { useColorModeWithOptions } from 'components';
 import { Button, Icon } from 'extraction-ui';
+import { useColorModeWithOptions } from 'extraction-ui-components';
 import { LuSunMoon } from 'react-icons/lu';
 
 export function ColorModeButton() {

@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Menubar } from 'radix-ui';
+import './menubar.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -24,6 +24,8 @@ import {
   MenubarSubTriggerProps,
   MenubarTriggerProps,
 } from './menubar.types';
+
+import * as Menubar from '@radix-ui/react-menubar';
 
 export const MenubarRoot = <T extends ElementType = 'div'>(props: MenubarProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

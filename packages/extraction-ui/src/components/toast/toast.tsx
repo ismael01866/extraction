@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Toast } from 'radix-ui';
+import './toast.css';
 
 import { CloseButton } from '../close-button';
 import { Element } from '../element';
@@ -15,6 +15,8 @@ import {
   ToastTitleProps,
   ToastViewportProps,
 } from './toast.types';
+
+import * as Toast from '@radix-ui/react-toast';
 
 const SWIPE_DIRECTION_MAP: Map<
   ToastProviderProps['placement'],

@@ -1,73 +1,5 @@
-@utility context-menu-content-sm {
-  --ex-max-w: var(--ex-context-menu-max-w-sm, var(--container-3xs));
-  --ex-radius: var(--ex-context-menu-radius-sm, var(--radius-sm));
-  --ex-shadow: var(--ex-context-menu-shadow-sm, var(--shadow-sm));
-
-  .ex-context-menu-section {
-    --ex-px: var(--ex-context-menu-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-context-menu-section-py-sm, calc(var(--spacing) * 2));
-
-    --ex-gap-y: var(--ex-context-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
-  }
-
-  .ex-context-menu-item,
-  .ex-context-menu-label,
-  .ex-context-menu-sub-trigger,
-  .ex-context-menu-radio-item,
-  .ex-context-menu-checkbox-item {
-    --ex-px: var(--ex-context-menu-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-context-menu-item-py-sm, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-context-menu-item-font-size-sm, var(--text-xs));
-  }
-
-  .ex-context-menu-label {
-    --ex-font-size: var(--ex-context-menu-label-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-context-menu-command {
-    --ex-font-size: var(--ex-context-menu-command-font-size-sm, var(--text-2xs));
-  }
-
-  .ex-context-menu-item-indicator {
-    --ex-font-size: var(--ex-context-menu-item-indicator-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility context-menu-content-md {
-  --ex-max-w: var(--ex-context-menu-max-w-md, var(--container-2xs));
-  --ex-radius: var(--ex-context-menu-radius-md, var(--radius-sm));
-  --ex-shadow: var(--ex-context-menu-shadow-md, var(--shadow-sm));
-
-  .ex-context-menu-section {
-    --ex-px: var(--ex-context-menu-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-context-menu-section-py-md, calc(var(--spacing) * 2.5));
-
-    --ex-gap-y: var(--ex-context-menu-section-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-context-menu-item,
-  .ex-context-menu-label,
-  .ex-context-menu-sub-trigger,
-  .ex-context-menu-radio-item,
-  .ex-context-menu-checkbox-item {
-    --ex-px: var(--ex-context-menu-item-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-context-menu-item-py-md, calc(var(--spacing) * 1));
-    --ex-font-size: var(--ex-context-menu-item-font-size-md, var(--text-sm));
-  }
-
-  .ex-context-menu-label {
-    --ex-font-size: var(--ex-context-menu-label-font-size-md, var(--text-xs));
-  }
-
-  .ex-context-menu-command {
-    --ex-font-size: var(--ex-context-menu-command-font-size-md, var(--text-xs));
-  }
-
-  .ex-context-menu-item-indicator {
-    /* prettier-ignore */
-    --ex-font-size: var(--ex-context-menu-item-indicator-font-size-md, var(--text-sm));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-context-menu-content,
@@ -149,7 +81,7 @@
 
   .ex-context-menu-sub-trigger {
     > .ex-context-menu-item-indicator:is(:last-child) {
-      @apply right-[0.5rem] left-[unset];
+      @apply left-[unset] right-[0.5rem];
     }
   }
 
@@ -165,7 +97,7 @@
   .ex-context-menu-sub-trigger,
   .ex-context-menu-radio-item,
   .ex-context-menu-checkbox-item {
-    @apply relative flex min-w-0 items-center select-none;
+    @apply relative flex min-w-0 select-none items-center;
     @apply -my-[0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
@@ -192,7 +124,7 @@
   }
 
   .ex-context-menu-label {
-    @apply px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply px-[var(--ex-px)] opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-context-menu-command {
@@ -203,7 +135,7 @@
 
   .ex-context-menu-command {
     @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

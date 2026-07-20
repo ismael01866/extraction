@@ -1,17 +1,5 @@
-@utility progress-sm {
-  --ex-size: var(--ex-progress-size-sm, calc(var(--spacing) * 0.5));
-  --ex-radius: var(--ex-progress-radius-sm, 9999px);
-}
-
-@utility progress-md {
-  --ex-size: var(--ex-progress-size-md, calc(var(--spacing) * 1));
-  --ex-radius: var(--ex-progress-radius-md, 9999px);
-}
-
-@utility progress-lg {
-  --ex-size: var(--ex-progress-size-lg, calc(var(--spacing) * 1.5));
-  --ex-radius: var(--ex-progress-radius-lg, 9999px);
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-progress {
@@ -24,7 +12,7 @@
   }
 
   .ex-progress {
-    @apply w-full shrink-0 [transform:translateZ(0)] overflow-hidden;
+    @apply w-full shrink-0 overflow-hidden [transform:translateZ(0)];
     @apply h-[var(--ex-size)] rounded-[var(--ex-radius)];
   }
 

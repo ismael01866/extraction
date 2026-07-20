@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './overlay.css';
+
 import { Element } from '../element';
 import { OverlayProps } from './overlay.types';
 

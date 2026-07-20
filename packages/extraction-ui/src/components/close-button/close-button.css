@@ -1,30 +1,5 @@
-@utility close-button-sm {
-  --ex-size: var(--ex-close-button-size-sm, var(--ex-size-md));
-
-  --ex-radius: var(--ex-close-button-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-close-button-font-size-sm, var(--text-sm));
-}
-
-@utility close-button-md {
-  --ex-size: var(--ex-close-button-size-md, var(--ex-size-lg));
-
-  --ex-radius: var(--ex-close-button-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-close-button-font-size-md, var(--text-base));
-}
-
-@utility close-button-lg {
-  --ex-size: var(--ex-close-button-size-lg, var(--ex-size-xl));
-
-  --ex-radius: var(--ex-close-button-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-close-button-font-size-lg, var(--text-lg));
-}
-
-@utility close-button-xl {
-  --ex-size: var(--ex-close-button-size-xl, var(--ex-size-2xl));
-
-  --ex-radius: var(--ex-close-button-radius-xl, var(--radius-sm));
-  --ex-font-size: var(--ex-close-button-font-size-xl, var(--text-xl));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-close-button {
@@ -38,8 +13,8 @@
   }
 
   .ex-close-button {
-    @apply inline-flex shrink-0 cursor-pointer items-center justify-center select-none;
-    @apply h-[var(--ex-size)] w-[var(--ex-size)] [cursor:var(--ex-cursor)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+    @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
+    @apply h-[var(--ex-size)] w-[var(--ex-size)] rounded-[var(--ex-radius)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
   }
 
   .ex-close-icon {

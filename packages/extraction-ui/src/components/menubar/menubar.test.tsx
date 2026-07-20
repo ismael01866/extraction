@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
-
 import {
   MenubarContent,
   MenubarItem,
@@ -10,6 +8,8 @@ import {
   MenubarSeparator,
   MenubarTrigger,
 } from './menubar';
+
+import { render } from '@testing-library/react';
 
 describe('MenubarRoot', () => {
   it('preserves displayName', () => {

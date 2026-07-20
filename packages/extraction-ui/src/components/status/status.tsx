@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './status.css';
+
 import { Element } from '../element';
 import { StatusProps } from './status.types';
 

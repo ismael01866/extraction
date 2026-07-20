@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './table.css';
+
 import { Element } from '../element';
 import {
   TableBodyProps,

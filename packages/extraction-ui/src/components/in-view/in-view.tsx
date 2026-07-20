@@ -2,6 +2,8 @@
 
 import React, { ElementType } from 'react';
 
+import './in-view.css';
+
 import { useInView } from '../../hooks';
 import { cn } from '../../utils';
 import { Element } from '../element';

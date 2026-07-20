@@ -1,83 +1,5 @@
-@utility callout-sm {
-  --ex-font-size: var(--ex-callout-font-size-sm, var(--text-xs));
-
-  --ex-px: var(--ex-callout-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-callout-py-sm, calc(var(--spacing) * 4));
-
-  --ex-gap-x: var(--ex-callout-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-radius: var(--ex-callout-radius-sm, var(--radius-sm));
-
-  .ex-callout-indicator {
-    --ex-font-size: var(--ex-callout-indicator-font-size-sm, var(--text-lg));
-  }
-
-  .ex-callout-content {
-    --ex-gap-x: var(--ex-callout-content-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-callout-content-gap-y-sm, calc(var(--spacing) * 2));
-  }
-
-  .ex-callout-title {
-    --ex-font-size: var(--ex-callout-title-font-size-sm, var(--text-sm));
-  }
-
-  .ex-callout-description {
-    --ex-font-size: var(--ex-callout-description-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility callout-md {
-  --ex-font-size: var(--ex-callout-font-size-md, var(--text-sm));
-
-  --ex-px: var(--ex-callout-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-callout-py-md, calc(var(--spacing) * 5));
-
-  --ex-gap-x: var(--ex-callout-gap-x-md, calc(var(--spacing) * 2.5));
-  --ex-radius: var(--ex-callout-radius-md, var(--radius-sm));
-
-  .ex-callout-indicator {
-    --ex-font-size: var(--ex-callout-indicator-font-size-md, var(--text-xl));
-  }
-
-  .ex-callout-content {
-    --ex-gap-x: var(--ex-callout-content-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-callout-content-gap-y-md, calc(var(--spacing) * 2));
-  }
-
-  .ex-callout-title {
-    --ex-font-size: var(--ex-callout-title-font-size-md, var(--text-base));
-  }
-
-  .ex-callout-description {
-    --ex-font-size: var(--ex-callout-description-font-size-md, var(--text-sm));
-  }
-}
-
-@utility callout-lg {
-  --ex-font-size: var(--ex-callout-font-size-lg, var(--text-base));
-
-  --ex-px: var(--ex-callout-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-callout-py-lg, calc(var(--spacing) * 6));
-
-  --ex-gap-x: var(--ex-callout-gap-x-lg, calc(var(--spacing) * 3));
-  --ex-radius: var(--ex-callout-radius-lg, var(--radius-sm));
-
-  .ex-callout-indicator {
-    --ex-font-size: var(--ex-callout-indicator-font-size-lg, var(--text-2xl));
-  }
-
-  .ex-callout-content {
-    --ex-gap-x: var(--ex-callout-content-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-callout-content-gap-y-lg, calc(var(--spacing) * 2));
-  }
-
-  .ex-callout-title {
-    --ex-font-size: var(--ex-callout-title-font-size-lg, var(--text-lg));
-  }
-
-  .ex-callout-description {
-    --ex-font-size: var(--ex-callout-description-font-size-lg, var(--text-base));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-callout {
@@ -121,6 +43,6 @@
     --ex-font-weight: var(--ex-callout-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-callout-description-opacity, var(--ex-options-muted-opacity));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

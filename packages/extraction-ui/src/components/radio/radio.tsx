@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { RadioGroup } from 'radix-ui';
+import './radio.css';
 
 import { Element } from '../element';
 import {
@@ -9,6 +9,8 @@ import {
   RadioItemProps,
   RadioLabelProps,
 } from './radio.types';
+
+import * as RadioGroup from '@radix-ui/react-radio-group';
 
 export const RadioItem = <T extends ElementType = 'div'>(props: RadioItemProps<T>) => {
   const { as = 'div', children, ...rest } = props;

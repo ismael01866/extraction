@@ -1,53 +1,5 @@
-@utility radio-sm {
-  --ex-gap-x: var(--ex-radio-gap-x-sm, calc(var(--spacing) * 2));
-
-  .ex-radio-control {
-    --ex-size: var(--ex-radio-size-sm, var(--ex-size-2xs));
-    --ex-radius: var(--ex-radio-radius-sm, 9999px);
-  }
-
-  .ex-radio-indicator {
-    --ex-font-size: var(--ex-radio-indicator-font-size-sm, var(--text-lg));
-  }
-
-  .ex-radio-label {
-    --ex-font-size: var(--ex-radio-label-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility radio-md {
-  --ex-gap-x: var(--ex-radio-gap-x-md, calc(var(--spacing) * 2.5));
-
-  .ex-radio-control {
-    --ex-size: var(--ex-radio-size-md, var(--ex-size-xs));
-    --ex-radius: var(--ex-radio-radius-md, 9999px);
-  }
-
-  .ex-radio-indicator {
-    --ex-font-size: var(--ex-radio-indicator-font-size-md, var(--text-xl));
-  }
-
-  .ex-radio-label {
-    --ex-font-size: var(--ex-radio-label-font-size-md, var(--text-sm));
-  }
-}
-
-@utility radio-lg {
-  --ex-gap-x: var(--ex-radio-gap-x-lg, calc(var(--spacing) * 3));
-
-  .ex-radio-control {
-    --ex-size: var(--ex-radio-size-lg, var(--ex-size-sm));
-    --ex-radius: var(--ex-radio-radius-lg, 9999px);
-  }
-
-  .ex-radio-indicator {
-    --ex-font-size: var(--ex-radio-indicator-font-size-lg, var(--text-2xl));
-  }
-
-  .ex-radio-label {
-    --ex-font-size: var(--ex-radio-label-font-size-lg, var(--text-base));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-radio {
@@ -66,7 +18,7 @@
   .ex-radio-control {
     --ex-cursor: var(--ex-radio-cursor, default);
 
-    @apply flex [transform:translateZ(0)] items-center justify-center rounded-full select-none;
+    @apply flex select-none items-center justify-center rounded-full [transform:translateZ(0)];
     @apply size-[var(--ex-size)] cursor-[var(--ex-cursor)];
   }
 

@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-logo {
     @apply inline-block h-auto max-h-full w-auto max-w-full object-contain;

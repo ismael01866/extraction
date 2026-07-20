@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './blockquote.css';
+
 import { Element } from '../element';
 import {
   BlockquoteCaptionProps,

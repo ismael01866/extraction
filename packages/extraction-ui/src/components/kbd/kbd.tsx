@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './kbd.css';
+
 import { Element } from '../element';
 import { KbdProps } from './kbd.types';
 

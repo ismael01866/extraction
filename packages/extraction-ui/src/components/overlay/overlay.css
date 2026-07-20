@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-overlay {
     --ex-opacity: var(--ex-overlay-opacity, var(--ex-options-overlay-opacity));

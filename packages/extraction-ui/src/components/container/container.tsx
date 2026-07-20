@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './container.css';
+
 import { Element } from '../element';
 import { ContainerProps } from './container.types';
 

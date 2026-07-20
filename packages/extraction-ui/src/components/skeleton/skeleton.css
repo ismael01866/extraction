@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-skeleton {
     --ex-radius: var(--ex-skeleton-radius, var(--radius-sm));
@@ -12,7 +15,7 @@
 
   .ex-skeleton {
     &:where(.ex-skeleton-loading) {
-      @apply pointer-events-none w-full flex-shrink-0 cursor-default border-0 select-none;
+      @apply pointer-events-none w-full flex-shrink-0 cursor-default select-none border-0;
       @apply animate-pulse rounded-[var(--ex-radius)] [animation-duration:var(--ex-duration)];
 
       *,

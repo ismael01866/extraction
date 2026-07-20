@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './description.css';
+
 import { Element } from '../element';
 import { DescriptionProps } from './description.types';
 

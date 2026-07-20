@@ -1,3 +1,6 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
 @layer components {
   .ex-in-view {
     --ex-transition-delay: var(--ex-in-view-delay, 0s);
@@ -6,6 +9,6 @@
   }
 
   .ex-in-view {
-    @apply transition-all delay-(--ex-transition-delay) duration-(--ex-transition-duration) ease-(--ex-transition-ease);
+    @apply delay-(--ex-transition-delay) duration-(--ex-transition-duration) ease-(--ex-transition-ease) transition-all;
   }
 }

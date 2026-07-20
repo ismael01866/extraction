@@ -1,26 +1,5 @@
-@utility input-sm {
-  --ex-height: var(--ex-input-height-sm, var(--ex-size-xl));
-
-  --ex-px: var(--ex-input-px-sm, calc(var(--spacing) * 3.5));
-  --ex-radius: var(--ex-input-radius-sm, var(--radius-sm));
-  --ex-font-size: var(--ex-input-font-size-sm, var(--text-xs));
-}
-
-@utility input-md {
-  --ex-height: var(--ex-input-height-md, var(--ex-size-2xl));
-
-  --ex-px: var(--ex-input-px-md, calc(var(--spacing) * 4));
-  --ex-radius: var(--ex-input-radius-md, var(--radius-sm));
-  --ex-font-size: var(--ex-input-font-size-md, var(--text-sm));
-}
-
-@utility input-lg {
-  --ex-height: var(--ex-input-height-lg, var(--ex-size-3xl));
-
-  --ex-px: var(--ex-input-px-lg, calc(var(--spacing) * 4.5));
-  --ex-radius: var(--ex-input-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-input-font-size-lg, var(--text-base));
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-input {

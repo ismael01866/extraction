@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './headline.css';
+
 import { Element } from '../element';
 import { HeadlineProps } from './headline.types';
 

@@ -1,10 +1,12 @@
 import React, { ElementType } from 'react';
 
-import { Switch } from 'radix-ui';
+import './switch.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
 import { SwitchProps, SwitchThumbProps } from './switch.types';
+
+import * as Switch from '@radix-ui/react-switch';
 
 export const SwitchRoot = <T extends ElementType = 'button'>(props: SwitchProps<T>) => {
   const { children, className, ...rest } = props;

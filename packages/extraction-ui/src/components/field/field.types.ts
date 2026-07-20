@@ -1,8 +1,8 @@
 import { ComponentProps, ElementType } from 'react';
 
-import { Label } from 'radix-ui';
-
 import { ElementProps } from '../element';
+
+import * as Label from '@radix-ui/react-label';
 
 export type FieldProps<T extends ElementType> = ElementProps<T>;
 export type FieldHelperProps<T extends ElementType> = ElementProps<T>;

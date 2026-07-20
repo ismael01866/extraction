@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './native-select.css';
+
 import { Element } from '../element';
 import {
   NativeSelectFieldProps,

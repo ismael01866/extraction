@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Tooltip } from 'radix-ui';
+import './tooltip.css';
 
 import { cn } from '../../utils';
 import { Element } from '../element';
@@ -12,6 +12,8 @@ import {
   TooltipProviderProps,
   TooltipTriggerProps,
 } from './tooltip.types';
+
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 export const TooltipProvider = (props: TooltipProviderProps) => {
   const { children, ...rest } = props;

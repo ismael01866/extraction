@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './bg-image.css';
+
 import { Element } from '../element';
 import { BgImageProps } from './bg-image.types';
 

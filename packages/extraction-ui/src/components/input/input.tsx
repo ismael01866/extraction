@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './input.css';
+
 import { Element } from '../element';
 import { InputProps } from './input.types';
 

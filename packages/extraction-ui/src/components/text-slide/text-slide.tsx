@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './text-slide.css';
+
 import { Element } from '../element';
 import { TextSlideItemProps, TextSlideProps, TextSlideTrackProps } from './text-slide.types';
 

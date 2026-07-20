@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './display.css';
+
 import { Element } from '../element';
 import { DisplayProps } from './display.types';
 

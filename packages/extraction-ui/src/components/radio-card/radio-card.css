@@ -1,83 +1,5 @@
-@utility radio-card-sm {
-  --ex-font-size: var(--ex-radio-card-font-size-sm, var(--text-xs));
-
-  --ex-px: var(--ex-radio-card-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-radio-card-py-sm, calc(var(--spacing) * 4));
-
-  --ex-gap-x: var(--ex-radio-card-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-radius: var(--ex-radio-card-radius-sm, var(--radius-sm));
-
-  .ex-radio-card-indicator {
-    --ex-font-size: var(--ex-radio-card-indicator-font-size-sm, var(--text-lg));
-  }
-
-  .ex-radio-card-content {
-    --ex-gap-x: var(--ex-radio-card-content-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-radio-card-content-gap-y-sm, calc(var(--spacing) * 1));
-  }
-
-  .ex-radio-card-label {
-    --ex-font-size: var(--ex-radio-card-label-font-size-sm, var(--text-xs));
-  }
-
-  .ex-radio-card-description {
-    --ex-font-size: var(--ex-radio-card-description-font-size-sm, var(--text-xs));
-  }
-}
-
-@utility radio-card-md {
-  --ex-font-size: var(--ex-radio-card-font-size-md, var(--text-sm));
-
-  --ex-px: var(--ex-radio-card-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-radio-card-py-md, calc(var(--spacing) * 5));
-
-  --ex-gap-x: var(--ex-radio-card-gap-x-md, calc(var(--spacing) * 2.5));
-  --ex-radius: var(--ex-radio-card-radius-md, var(--radius-sm));
-
-  .ex-radio-card-indicator {
-    --ex-font-size: var(--ex-radio-card-indicator-font-size-md, var(--text-xl));
-  }
-
-  .ex-radio-card-content {
-    --ex-gap-x: var(--ex-radio-card-content-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-radio-card-content-gap-y-md, calc(var(--spacing) * 1));
-  }
-
-  .ex-radio-card-label {
-    --ex-font-size: var(--ex-radio-card-label-font-size-md, var(--text-sm));
-  }
-
-  .ex-radio-card-description {
-    --ex-font-size: var(--ex-radio-card-description-font-size-md, var(--text-sm));
-  }
-}
-
-@utility radio-card-lg {
-  --ex-font-size: var(--ex-radio-card-font-size-lg, var(--text-base));
-
-  --ex-px: var(--ex-radio-card-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-radio-card-py-lg, calc(var(--spacing) * 6));
-
-  --ex-gap-x: var(--ex-radio-card-gap-x-lg, calc(var(--spacing) * 3));
-  --ex-radius: var(--ex-radio-card-radius-lg, var(--radius-sm));
-
-  .ex-radio-card-indicator {
-    --ex-font-size: var(--ex-radio-card-indicator-font-size-lg, var(--text-2xl));
-  }
-
-  .ex-radio-card-content {
-    --ex-gap-x: var(--ex-radio-card-content-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-radio-card-content-gap-y-lg, calc(var(--spacing) * 1));
-  }
-
-  .ex-radio-card-label {
-    --ex-font-size: var(--ex-radio-card-label-font-size-lg, var(--text-base));
-  }
-
-  .ex-radio-card-description {
-    --ex-font-size: var(--ex-radio-card-description-font-size-lg, var(--text-base));
-  }
-}
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
 
 @layer components {
   .ex-radio-card {
@@ -91,7 +13,7 @@
   .ex-radio-card {
     --ex-cursor: var(--ex-radio-card-cursor, default);
 
-    @apply flex [transform:translateZ(0)] leading-normal select-none;
+    @apply flex select-none leading-normal [transform:translateZ(0)];
     @apply cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-size:var(--ex-font-size)];
 
     &:where(.variant-solid) {
@@ -145,7 +67,7 @@
   }
 
   .ex-radio-card-description {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] opacity-[var(--ex-opacity)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

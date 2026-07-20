@@ -1,9 +1,11 @@
 import React, { ElementType } from 'react';
 
-import { Avatar } from 'radix-ui';
+import './avatar.css';
 
 import { Element } from '../element';
 import { AvatarFallbackProps, AvatarImageProps, AvatarProps } from './avatar.types';
+
+import * as Avatar from '@radix-ui/react-avatar';
 
 export const AvatarRoot = <T extends ElementType = 'div'>(props: AvatarProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

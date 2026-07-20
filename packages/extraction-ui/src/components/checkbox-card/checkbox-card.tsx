@@ -1,6 +1,6 @@
 import React, { ElementType } from 'react';
 
-import { Checkbox } from 'radix-ui';
+import './checkbox-card.css';
 
 import { Element } from '../element';
 import {
@@ -10,6 +10,8 @@ import {
   CheckboxCardLabelProps,
   CheckboxCardRootProps,
 } from './checkbox-card.types';
+
+import * as Checkbox from '@radix-ui/react-checkbox';
 
 export const CheckboxCardRoot = <T extends ElementType = 'button'>(
   props: CheckboxCardRootProps<T>,

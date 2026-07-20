@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './breadcrumbs.css';
+
 import { Element } from '../element';
 import {
   BreadcrumbsCurrentLinkProps,

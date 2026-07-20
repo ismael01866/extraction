@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './skeleton.css';
+
 import { cn } from '../../utils';
 import { Element } from '../element';
 import { SkeletonProps } from './skeleton.types';

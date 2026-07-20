@@ -1,9 +1,11 @@
 import React, { ElementType } from 'react';
 
-import { Progress } from 'radix-ui';
+import './progress.css';
 
 import { Element } from '../element';
 import { ProgressIndicatorProps, ProgressProps } from './progress.types';
+
+import * as Progress from '@radix-ui/react-progress';
 
 export const ProgressRoot = <T extends ElementType = 'div'>(props: ProgressProps<T>) => {
   const { as = 'div', asChild = false, children, ...rest } = props;

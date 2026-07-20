@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import { RadioGroup } from 'radix-ui';
-
 import {
   RadioCardContent,
   RadioCardDescription,
@@ -10,6 +7,9 @@ import {
   RadioCardLabel,
   RadioCardRoot,
 } from './radio-card';
+
+import * as RadioGroup from '@radix-ui/react-radio-group';
+import { render, screen } from '@testing-library/react';
 
 describe('RadioCardRoot', () => {
   it('renders default button and class inside RadioGroup', () => {

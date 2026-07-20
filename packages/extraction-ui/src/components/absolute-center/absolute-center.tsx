@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './absolute-center.css';
+
 import { Element } from '../element';
 import { AbsoluteCenterProps } from './absolute-center.types';
 

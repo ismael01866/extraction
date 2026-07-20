@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './loader.css';
+
 import { Element } from '../element';
 import { LoaderProps } from './loader.types';
 
