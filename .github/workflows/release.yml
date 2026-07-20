@@ -35,6 +35,11 @@ jobs:
         run: npm whoami
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Show package info
+        working-directory: packages/extraction-ui
+        run: |
+          cat package.json
+          npm publish --dry-run
 
       - uses: changesets/action@v1
         with:
