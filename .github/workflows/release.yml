@@ -26,20 +26,12 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - run: pnpm install --frozen-lockfile
-      - name: Check npm registry
-        run: |
-          npm config get registry
-          pnpm config get registry
 
-      - name: Check NPM auth
-        run: npm whoami
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Show package info
+      - name: Inspect dist
         working-directory: packages/extraction-ui
         run: |
-          cat package.json
-          npm publish --dry-run
+          ls -la dist
+          find dist -maxdepth 2 -type d | head -50
 
       - uses: changesets/action@v1
         with:
