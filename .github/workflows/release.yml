@@ -25,13 +25,17 @@ jobs:
           node-version: 22
           registry-url: https://registry.npmjs.org
 
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm --filter extraction-ui build
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
 
-      - uses: changesets/action@v1
+      - name: Build package
+        run: pnpm --filter extraction-ui build
+
+      - name: Create Release / Publish
+        uses: changesets/action@v1
         with:
           version: pnpm changeset version
           publish: pnpm --filter extraction-ui publish --no-git-checks
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Switch to a PAT if other workflows need to trigger on these commits
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
