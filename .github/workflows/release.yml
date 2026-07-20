@@ -31,6 +31,11 @@ jobs:
           npm config get registry
           pnpm config get registry
 
+      - name: Check NPM auth
+        run: npm whoami
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
       - uses: changesets/action@v1
         with:
           version: pnpm changeset version
