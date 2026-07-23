@@ -64,7 +64,7 @@ export const emptyStateTitleCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h2',
+      default: 'h4',
     },
     asChild: {
       type: 'boolean',

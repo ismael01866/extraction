@@ -44,7 +44,6 @@
     "lint:css": "stylelint \"src/**/*.css\"",
     "generate-theme": "tsx src/scripts/generate-theme.ts",
     "generate": "pnpm run generate-theme && pnpm run build",
-    "cli:init": "node bin/publish.js",
     "prepack": "pnpm run build"
   },
   "dependencies": {

@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-
 import {
   EmptyStateContent,
   EmptyStateDescription,
@@ -11,6 +8,9 @@ import {
   EmptyStateSection,
   EmptyStateTitle,
 } from './empty-state';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('EmptyStateRoot', () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -70,10 +70,10 @@ describe('EmptyStateSection', () => {
 });
 
 describe('EmptyStateTitle', () => {
-  it('renders default h2 and class', () => {
+  it('renders default h4 and class', () => {
     render(<EmptyStateTitle>Title</EmptyStateTitle>);
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-empty-state-title');
   });
 });

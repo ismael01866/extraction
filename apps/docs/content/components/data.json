@@ -31,10 +31,6 @@
     "category": "block-text",
     "description": "A typography component that highlights a quoted passage of text with stylized indentation or borders."
   },
-  "border-beam": {
-    "category": "fx",
-    "description": "An effect component that renders an animated, traveling beam of light around an element's border."
-  },
   "breadcrumbs": {
     "category": "navigation",
     "description": "A navigation component that displays a linear path of links showing the user's current location in a hierarchy."

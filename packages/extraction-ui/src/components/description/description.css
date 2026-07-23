@@ -2,7 +2,7 @@
 @reference "../../styles.css";
 
 @layer components {
-  .ex-title {
+  .ex-description {
     @apply description-md;
   }
 

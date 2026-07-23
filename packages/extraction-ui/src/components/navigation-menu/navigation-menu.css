@@ -10,50 +10,6 @@
     @apply palette-neutral variant-outline;
   }
 
-  .ex-navigation-menu {
-    @apply z-1 relative flex justify-center;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
-
-    > div:is(:first-child) {
-      @apply z-1;
-    }
-
-    &:where(:not([class*='variant-'])),
-    &:where([class*='variant-outline'], [class*='variant-outline']) {
-      .ex-navigation-menu-indicator-icon {
-        @apply component-variant-panel;
-      }
-
-      .ex-navigation-menu-viewport-anchor {
-        > .ex-navigation-menu-viewport {
-          @apply component-variant-panel;
-        }
-      }
-    }
-  }
-
-  .ex-navigation-menu,
-  .ex-navigation-menu-sub {
-    @apply flex px-[var(--ex-px)] py-[var(--ex-py)];
-
-    &:where(:not([data-orientation])),
-    &:where([data-orientation='horizontal']) {
-      @apply flex-col;
-
-      .ex-navigation-menu-viewport-anchor {
-        @apply mbs-[var(--ex-spacer)] left-0 top-full min-w-full;
-      }
-    }
-
-    &:where([data-orientation='vertical']) {
-      @apply flex-row;
-
-      .ex-navigation-menu-viewport-anchor {
-        @apply left-full top-0 ms-[var(--ex-spacer)] h-auto min-h-full;
-      }
-    }
-  }
-
   .ex-navigation-menu-viewport {
     @apply relative flex origin-[top_center] overflow-hidden;
     @apply h-[var(--radix-navigation-menu-viewport-height)] w-[var(--radix-navigation-menu-viewport-width)];
@@ -86,6 +42,65 @@
 
     &:has(.ex-navigation-menu-section) {
       @apply pbe-0;
+    }
+  }
+
+  .ex-navigation-menu-indicator-icon {
+    @apply relative h-[0.5em] w-[1em] rotate-180;
+    @apply fill-[var(--background)] stroke-[var(--border)] [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:1.5] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
+
+    margin-block-start: calc(0.75em - 1px);
+
+    line {
+      @apply stroke-[var(--background)] [stroke-width:2] dark:stroke-[var(--background-dark)];
+    }
+  }
+
+  .ex-navigation-menu {
+    @apply z-1 relative flex justify-center;
+    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+
+    > div:is(:first-child) {
+      @apply z-1;
+    }
+
+    &:where(:not([class*='variant-'])),
+    &:where([class*='variant-outline'], [class*='variant-outline']) {
+      .ex-navigation-menu-indicator-icon {
+        --background: var(--ex-options-panel-background-default-color);
+        --background-dark: var(--ex-options-panel-background-default-color-dark);
+      }
+
+      .ex-navigation-menu-viewport-anchor {
+        > .ex-navigation-menu-viewport {
+          &:where(.variant-outline) {
+            --background: var(--ex-options-panel-background-default-color);
+            --background-dark: var(--ex-options-panel-background-default-color-dark);
+          }
+        }
+      }
+    }
+  }
+
+  .ex-navigation-menu,
+  .ex-navigation-menu-sub {
+    @apply flex px-[var(--ex-px)] py-[var(--ex-py)];
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-col;
+
+      .ex-navigation-menu-viewport-anchor {
+        @apply mbs-[var(--ex-spacer)] left-0 top-full min-w-full;
+      }
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-row;
+
+      .ex-navigation-menu-viewport-anchor {
+        @apply left-full top-0 ms-[var(--ex-spacer)] h-auto min-h-full;
+      }
     }
   }
 
@@ -173,34 +188,26 @@
 
     transition: width, transform, 200ms;
   }
-
-  .ex-navigation-menu-indicator-icon {
-    @apply relative h-[0.5em] w-[1em] rotate-180;
-    @apply fill-[var(--background)] stroke-[var(--border)] [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:1.5] dark:fill-[var(--background-dark)] dark:stroke-[var(--border-dark)];
-
-    margin-block-start: calc(0.75em - 1px);
-
-    line {
-      @apply stroke-[var(--background)] [stroke-width:2] dark:stroke-[var(--background-dark)];
-    }
-  }
 }
 
 @layer utilities {
-  .ex-navigation-menu-viewport-anchor {
-    > .ex-navigation-menu-viewport {
-      &:where([class*='variant-outline'], [class*='variant-plain']) {
-        @apply component-variant-panel;
-      }
-    }
-  }
-
   .ex-navigation-menu-link,
   .ex-navigation-menu-trigger {
     @apply interactive;
 
     &:where([data-state='open']) {
       @apply interactive-hover;
+    }
+  }
+
+  .ex-navigation-menu-viewport-anchor {
+    > .ex-navigation-menu-viewport {
+      &:where([class*='variant-outline'], [class*='variant-plain']) {
+        &:where(.variant-outline) {
+          --background: var(--ex-options-panel-background-default-color);
+          --background-dark: var(--ex-options-panel-background-default-color-dark);
+        }
+      }
     }
   }
 }

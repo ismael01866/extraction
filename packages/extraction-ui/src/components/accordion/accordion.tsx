@@ -5,21 +5,23 @@ import './accordion.css';
 import { Element } from '../element';
 import {
   AccordionContentProps,
+  AccordionDescriptionProps,
   AccordionHeaderProps,
   AccordionIconProps,
   AccordionItemProps,
   AccordionProps,
   AccordionSectionProps,
+  AccordionTitleProps,
   AccordionTriggerProps,
 } from './accordion.types';
 
 import * as Accordion from '@radix-ui/react-accordion';
 
 export const AccordionRoot = <T extends ElementType = 'div'>(props: AccordionProps<T>) => {
-  const { as = 'div', asChild = false, children, ...rest } = props;
+  const { as = 'div', asChild = false, children, type = 'single', ...rest } = props;
 
   return (
-    <Accordion.Root asChild {...rest}>
+    <Accordion.Root asChild type={type} {...rest}>
       <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-accordion">
         {children}
       </Element>
@@ -118,3 +120,29 @@ export const AccordionIcon = <T extends ElementType = 'div'>(props: AccordionIco
 };
 
 AccordionIcon.displayName = 'Accordion.Icon';
+
+export const AccordionTitle = <T extends ElementType = 'h4'>(props: AccordionTitleProps<T>) => {
+  const { as = 'h4', children, ...rest } = props;
+
+  return (
+    <Element as={as as ElementType<any>} cssClassName="ex-accordion-title" {...rest}>
+      {children}
+    </Element>
+  );
+};
+
+AccordionTitle.displayName = 'Accordion.Title';
+
+export const AccordionDescription = <T extends ElementType = 'p'>(
+  props: AccordionDescriptionProps<T>,
+) => {
+  const { as = 'p', children, ...rest } = props;
+
+  return (
+    <Element as={as as ElementType<any>} cssClassName="ex-accordion-description" {...rest}>
+      {children}
+    </Element>
+  );
+};
+
+AccordionDescription.displayName = 'Accordion.Description';

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 
-import { useTheme } from 'next-themes';
+import { useTheme } from 'nextra-theme-docs';
 
 type ColorMode = 'light' | 'dark';
 
@@ -21,6 +21,20 @@ function applyColorModeToIframe(iframe: HTMLIFrameElement, mode: ColorMode) {
 
   html.classList.toggle('dark', isDark);
   html.classList.toggle('light', !isDark);
+}
+
+function disableTransitions(callback: () => void) {
+  const html = document.documentElement;
+
+  html.classList.add('disable-transitions');
+
+  callback();
+
+  void html.offsetHeight;
+
+  requestAnimationFrame(() => {
+    html.classList.remove('disable-transitions');
+  });
 }
 
 function propagateColorMode(mode: ColorMode) {
@@ -48,11 +62,13 @@ function getDomColorMode(): ColorMode {
 function applyDomColorMode(nextMode: ColorMode) {
   if (typeof document === 'undefined') return;
 
-  const html = document.documentElement;
-  const isDark = nextMode === 'dark';
+  disableTransitions(() => {
+    const html = document.documentElement;
+    const isDark = nextMode === 'dark';
 
-  html.classList.toggle('dark', isDark);
-  html.classList.toggle('light', !isDark);
+    html.classList.toggle('dark', isDark);
+    html.classList.toggle('light', !isDark);
+  });
 }
 
 export function useColorMode() {

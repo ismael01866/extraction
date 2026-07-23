@@ -93,8 +93,8 @@ export const DrawerSection = <T extends ElementType = 'div'>(props: DrawerSectio
 
 DrawerSection.displayName = 'Drawer.Section';
 
-export const DrawerTitle = <T extends ElementType = 'h2'>(props: DrawerTitleProps<T>) => {
-  const { as = 'h2', asChild = false, children, ...rest } = props;
+export const DrawerTitle = <T extends ElementType = 'h4'>(props: DrawerTitleProps<T>) => {
+  const { as = 'h4', asChild = false, children, ...rest } = props;
 
   return (
     <Dialog.Title asChild {...rest}>

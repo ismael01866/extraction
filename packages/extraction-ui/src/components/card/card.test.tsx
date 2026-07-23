@@ -1,9 +1,9 @@
 import React from 'react';
 
+import { CardContent, CardDescription, CardRoot, CardSection, CardTitle } from './card';
+
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
-import { CardContent, CardDescription, CardRoot, CardSection, CardTitle } from './card';
 
 describe('CardRoot', () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -63,10 +63,10 @@ describe('CardSection', () => {
 });
 
 describe('CardTitle', () => {
-  it('renders default h2 and class', () => {
+  it('renders default h4 and class', () => {
     render(<CardTitle>Title</CardTitle>);
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-card-title');
   });
 });

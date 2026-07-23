@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './avatar-group.css';
+
 import { Element } from '../element';
 import { AvatarGroupProps } from './avatar-group.types';
 

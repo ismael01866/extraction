@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import {
   DrawerClose,
   DrawerContent,
@@ -12,6 +10,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from './drawer';
+
+import { render, screen } from '@testing-library/react';
 
 describe('DrawerRoot', () => {
   it('passes children through correctly', () => {
@@ -97,7 +97,7 @@ describe('DrawerSection', () => {
 });
 
 describe('DrawerTitle', () => {
-  it('renders default h2 and class when within drawer', () => {
+  it('renders default h4 and class when within drawer', () => {
     render(
       <DrawerRoot>
         <DrawerTitle>Title</DrawerTitle>
@@ -105,7 +105,7 @@ describe('DrawerTitle', () => {
     );
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-drawer-title');
   });
 });

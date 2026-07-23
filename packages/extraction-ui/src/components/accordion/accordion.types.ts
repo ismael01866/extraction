@@ -24,3 +24,6 @@ export type AccordionContentProps<T extends ElementType> = ElementProps<T> &
 
 export type AccordionSectionProps<T extends ElementType> = ElementProps<T>;
 export type AccordionIconProps<T extends ElementType> = ElementProps<T>;
+
+export type AccordionTitleProps<T extends ElementType> = ElementProps<T>;
+export type AccordionDescriptionProps<T extends ElementType> = ElementProps<T>;

@@ -47,8 +47,8 @@ export const CardSection = <T extends ElementType = 'div'>(props: CardSectionPro
 
 CardSection.displayName = 'Card.Section';
 
-export const CardTitle = <T extends ElementType = 'h2'>(props: CardTitleProps<T>) => {
-  const { as = 'h2', children, ...rest } = props;
+export const CardTitle = <T extends ElementType = 'h4'>(props: CardTitleProps<T>) => {
+  const { as = 'h4', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-card-title" {...rest}>

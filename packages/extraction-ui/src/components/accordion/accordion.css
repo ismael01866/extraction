@@ -81,12 +81,33 @@
     @apply flex flex-col;
     @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
   }
+
+  .ex-accordion-title {
+    --ex-font-weight: var(--ex-accordion-title-font-weight, var(--font-weight-semibold));
+
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-accordion-description {
+    --ex-font-weight: var(--ex-accordion-description-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-accordion-description-opacity, var(--ex-options-muted-opacity));
+
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
 }
 
 @layer utilities {
   .ex-accordion-trigger {
     &:where(:focus-visible) {
       @apply interactive-focus;
+    }
+  }
+
+  .ex-accordion {
+    &:where(:not([class*='variant-'])),
+    &:where([class*='variant-outline']) {
+      --background: var(--ex-options-panel-background-default-color);
+      --background-dark: var(--ex-options-panel-background-default-color-dark);
     }
   }
 }

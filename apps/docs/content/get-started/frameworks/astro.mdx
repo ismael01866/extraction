@@ -13,6 +13,8 @@ Before you begin, make sure your app is using:
 - **React** 19.2.0 or higher
 - **React DOM** 19.2.0 or higher
 
+- **TypeScript** 5 or higher
+
 ## Installation
 
 <Steps>
@@ -46,18 +48,12 @@ export default defineConfig({
 ### Install the package
 
 ```bash
-pnpm install extraction-ui
+pnpm add extraction-ui
 ```
 
 ### Install peer dependencies
 
-Extraction UI requires Radix UI as a peer dependency:
-
-```bash
-pnpm add radix-ui
-```
-
-And Tailwind CSS for styling:
+Tailwind CSS for styling:
 
 ```bash
 pnpm add -D tailwindcss @tailwindcss/postcss postcss

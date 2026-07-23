@@ -135,8 +135,8 @@ export const ToastIndicator = <T extends ElementType = 'div'>(props: ToastIndica
 
 ToastIndicator.displayName = 'Toast.Indicator';
 
-export const ToastTitle = <T extends ElementType = 'h2'>(props: ToastTitleProps<T>) => {
-  const { as = 'h2', asChild = false, children, ...rest } = props;
+export const ToastTitle = <T extends ElementType = 'h4'>(props: ToastTitleProps<T>) => {
+  const { as = 'h4', asChild = false, children, ...rest } = props;
 
   return (
     <Toast.Title asChild {...rest}>

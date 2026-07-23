@@ -88,8 +88,8 @@ export const DialogSection = <T extends ElementType = 'div'>(props: DialogSectio
 
 DialogSection.displayName = 'Dialog.Section';
 
-export const DialogTitle = <T extends ElementType = 'h2'>(props: DialogTitleProps<T>) => {
-  const { as = 'h2', asChild = false, children, ...rest } = props;
+export const DialogTitle = <T extends ElementType = 'h4'>(props: DialogTitleProps<T>) => {
+  const { as = 'h4', asChild = false, children, ...rest } = props;
 
   return (
     <Dialog.Title asChild {...rest}>

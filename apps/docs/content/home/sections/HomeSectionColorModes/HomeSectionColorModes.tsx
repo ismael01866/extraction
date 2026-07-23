@@ -6,9 +6,10 @@ import {
   BgImage,
   Button,
   Card,
+  Description,
+  Display,
   Grid,
   HStack,
-  Headline,
   Icon,
   IconButton,
   Overlay,
@@ -86,13 +87,11 @@ export function HomeSectionColorModes() {
           <MotionInView>
             <div>
               <Stack className="gap-4">
-                <Headline className="headline-xl text-fluid font-semibold leading-tight">
-                  Consistent UI
-                </Headline>
-                <Headline className="headline-sm text-fluid">
+                <Display className="text-fluid">Consistent UI</Display>
+                <Description className="text-fluid description-2xl">
                   Define your color tokens once and let every component adapt seamlessly across
                   modes.
-                </Headline>
+                </Description>
               </Stack>
               <Grid className="mbs-8 grid-cols-1 gap-3 xl:grid-cols-2">
                 <ColorThemeSelect />

@@ -2,9 +2,9 @@ import { MotionInView } from '@/app/components/motion-in-view';
 
 import {
   Description,
+  Display,
   Grid,
   HStack,
-  Headline,
   Icon,
   IconBox,
   Section,
@@ -33,20 +33,18 @@ const CSS_FEATURES = [
 
 export function HomeSectionCSS() {
   return (
-    <Section className="pros">
-      <Grid className="grid-cols-1 gap-x-24 gap-y-4 xl:grid-cols-2">
+    <Section>
+      <Grid className="grid-cols-1 gap-x-24 gap-y-12 xl:grid-cols-2">
         <MotionInView>
           <Stack className="gap-4">
-            <Headline className="headline-xl text-fluid font-semibold leading-tight">
-              Set your design from CSS
-            </Headline>
-            <Headline className="headline-sm text-fluid">
+            <Display className="text-fluid">Set your design from CSS</Display>
+            <Description className="text-fluid description-2xl">
               Tune colors, spacing, measures, and more with CSS variables
-            </Headline>
+            </Description>
           </Stack>
         </MotionInView>
 
-        <Stack className="mbs-4 sm:mbs-12 gap-8">
+        <Stack className="gap-8">
           {CSS_FEATURES.map((feature, index) => (
             <MotionInView
               key={feature.title}

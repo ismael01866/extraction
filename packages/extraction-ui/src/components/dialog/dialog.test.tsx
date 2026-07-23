@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import {
   DialogClose,
   DialogContent,
@@ -12,6 +10,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from './dialog';
+
+import { render, screen } from '@testing-library/react';
 
 describe('DialogRoot', () => {
   it('passes children through correctly', () => {
@@ -97,7 +97,7 @@ describe('DialogSection', () => {
 });
 
 describe('DialogTitle', () => {
-  it('renders default h2 and class when within dialog', () => {
+  it('renders default h4 and class when within dialog', () => {
     render(
       <DialogRoot>
         <DialogTitle>Title</DialogTitle>
@@ -105,7 +105,7 @@ describe('DialogTitle', () => {
     );
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-dialog-title');
   });
 });

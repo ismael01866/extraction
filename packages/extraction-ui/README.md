@@ -82,5 +82,8 @@ import { Button, Card, Flex, ... } from 'extraction-ui'
 
 ## License
 
-Extraction UI
-Copyright (c) 2026 Ismael Mariscal
+Extraction UI Copyright (c) 2026 Ismael Mariscal
+
+## Release & Publishing
+
+Releases and npm publishing are fully automated using [Changesets](https://github.com/changesets/changesets) and GitHub Actions.

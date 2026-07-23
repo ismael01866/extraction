@@ -1,0 +1,114 @@
+# TanStack Start
+
+import { Steps } from 'nextra/components';
+
+This guide is specific to TanStack Start. For official framework documentation, visit the [TanStack Start Documentation](https://tanstack.com/start).
+
+## Prerequisites
+
+Before you begin, make sure your app is using:
+
+- **TanStack Start** latest version
+
+- **React** 19 or higher
+- **React DOM** 19.2.0 or higher
+
+- **TypeScript** 5 or higher
+
+## Installation
+
+<Steps>
+
+### Create a TanStack Start app
+
+```bash
+pnpm create @tanstack/start
+```
+
+### Install the package
+
+```bash
+pnpm add extraction-ui
+```
+
+### Install peer dependencies
+
+Tailwind CSS for styling:
+
+```bash
+pnpm add -D tailwindcss @tailwindcss/vite
+```
+
+Add Tailwind to your Vite configuration:
+
+```ts
+/** vite.config.ts */
+import { defineConfig } from 'vite';
+
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+});
+```
+
+For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation).
+
+### Configure SSR
+
+Extraction UI ships component-level CSS imports. Configure Vite to bundle the package during SSR so the CSS is processed correctly.
+
+```ts
+/** vite.config.ts */
+import { defineConfig } from 'vite';
+
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+  ssr: {
+    noExternal: ['extraction-ui'],
+  },
+});
+```
+
+### Import styles in a global stylesheet
+
+Create a global stylesheet and add the Extraction UI styles:
+
+```css
+/** app/styles.css */
+@import 'tailwindcss';
+@import 'extraction-ui/styles';
+```
+
+Make sure the CSS file is imported in your entry point:
+
+```tsx
+/** app/routes/__root.tsx */
+import '../styles.css';
+```
+
+### Start using components
+
+Import and use components in your routes:
+
+```tsx
+/** app/routes/index.tsx */
+import { Button, Card } from 'extraction-ui';
+
+export default function Index() {
+  return (
+    <Card>
+      <Card.Header>
+        <Card.Title>Welcome to Extraction UI</Card.Title>
+      </Card.Header>
+      <Card.Content>
+        <Button className='mbs-4'>Submit</Button>
+      </Card.Content>
+    </Card>
+  );
+}
+```
+
+</Steps>

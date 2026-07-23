@@ -13,6 +13,8 @@ Before you begin, make sure your app is using:
 - **React** 19.2.0 or higher
 - **React DOM** 19.2.0 or higher
 
+- **TypeScript** 5 or higher
+
 ## Installation
 
 <Steps>
@@ -26,18 +28,12 @@ pnpm create vite@latest --template react-ts
 ### Install the package
 
 ```bash
-pnpm install extraction-ui
+pnpm add extraction-ui
 ```
 
 ### Install peer dependencies
 
-Extraction UI requires Radix UI as a peer dependency:
-
-```bash
-pnpm add radix-ui
-```
-
-And Tailwind CSS for styling:
+Tailwind CSS for styling:
 
 ```bash
 pnpm add -D tailwindcss @tailwindcss/vite
@@ -59,6 +55,24 @@ export default defineConfig({
 
 For more details on setting up Tailwind CSS, refer to the [Tailwind CSS Installation Guide](https://tailwindcss.com/docs/installation).
 
+### Configure SSR
+
+Extraction UI ships component-level CSS imports. Configure Vite to bundle the package during SSR so the CSS is processed correctly.
+
+```ts
+/** vite.config.ts */
+import { defineConfig } from 'vite';
+
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  plugins: [tailwindcss()],
+  ssr: {
+    noExternal: ['extraction-ui'],
+  },
+});
+```
+
 ### Import styles in `src/index.css`
 
 Create a global stylesheet and add the Extraction UI styles:
@@ -73,19 +87,7 @@ Make sure the CSS file is imported in your entry point:
 
 ```tsx
 /** src/main.tsx */
-import { StrictMode } from 'react';
-
-import { createRoot } from 'react-dom/client';
-
 import './index.css';
-
-import App from './App.tsx';
-
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-);
 ```
 
 ### Start using components

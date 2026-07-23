@@ -4,11 +4,21 @@ import { useState } from 'react';
 
 import { MotionInView } from '@/app/components/motion-in-view';
 
-import { HStack, Headline, Icon, IconButton, Mark, Section, Stack } from 'extraction-ui';
-import { SiAstro, SiGatsby, SiNextdotjs, SiVite } from 'react-icons/si';
+import {
+  Description,
+  Display,
+  HStack,
+  Icon,
+  IconButton,
+  Mark,
+  Section,
+  Stack,
+} from 'extraction-ui';
+import { SiAstro, SiGatsby, SiNextdotjs, SiTanstack, SiVite } from 'react-icons/si';
 
 const FRAMEWORKS = [
   { icon: SiNextdotjs, label: 'Next' },
+  { icon: SiTanstack, label: 'Tanstack' },
   { icon: SiAstro, label: 'Astro' },
   { icon: SiVite, label: 'Vite' },
   { icon: SiGatsby, label: 'Gatsby' },
@@ -22,20 +32,20 @@ export function HomeSectionFrameworks() {
       <Stack className="gap-8 sm:gap-12">
         <MotionInView>
           <Stack className="gap-8">
-            <Headline className="headline-xl text-fluid font-semibold leading-tight">
+            <Display className="text-fluid leading-tight">
               Built for <br />
               <Mark
                 key={framework}
-                className="palette-primary variant-subtle text-fluid wrap-break-word break-all"
+                className="palette-primary variant-solid text-fluid wrap-break-word break-all"
               >
                 <span className="animate-in slide-from-bottom-4 fade-in duration-slowest inline-block">
                   {framework}
                 </span>
               </Mark>
-            </Headline>
-            <Headline className="headline-sm text-fluid">
+            </Display>
+            <Description className="text-fluid description-2xl">
               Same components, same tokens — any framework
-            </Headline>
+            </Description>
           </Stack>
         </MotionInView>
 

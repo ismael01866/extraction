@@ -128,8 +128,8 @@ export const AlertDialogAction = <T extends ElementType = 'div'>(
 
 AlertDialogAction.displayName = 'AlertDialog.Action';
 
-export const AlertDialogTitle = <T extends ElementType = 'h2'>(props: AlertDialogTitleProps<T>) => {
-  const { as = 'h2', asChild = false, children, ...rest } = props;
+export const AlertDialogTitle = <T extends ElementType = 'h4'>(props: AlertDialogTitleProps<T>) => {
+  const { as = 'h4', asChild = false, children, ...rest } = props;
 
   return (
     <AlertDialog.Title asChild {...rest}>

@@ -19,3 +19,5 @@
 @import './css/components.css';
 
 @source "../dist";
+
+@custom-variant dark (&:where(.dark,.dark *,[data-theme="dark"],[data-theme="dark"] *));

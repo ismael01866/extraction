@@ -8,7 +8,4 @@ export default {
   'icon-button': {
     title: 'Icon Button',
   },
-  'nav-button': {
-    title: 'Nav Button',
-  },
 };
