@@ -64,7 +64,7 @@ const ABOUT = [
   },
   {
     label: 'Github Repository',
-    href: 'https://github.com/ismael01866',
+    href: 'https://github.com/ismael01866/extraction',
   },
 ];
 
@@ -81,6 +81,10 @@ const navbar = (
       <IconButton
         className="variant-ghost palette-neutral icon-button-sm size-8"
         aria-label="Github Repository"
+        as="a"
+        href="https://github.com/ismael01866/extraction"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         <LuGithub />
       </IconButton>
@@ -90,7 +94,7 @@ const navbar = (
         aria-label="Toggle Color Mode"
         asChild
       >
-        <ColorModeButton useNativeClassList={false} useNextThemes propagateToIFrame>
+        <ColorModeButton useNativeClassList={true} useNextThemes>
           <LuSun />
         </ColorModeButton>
       </IconButton>

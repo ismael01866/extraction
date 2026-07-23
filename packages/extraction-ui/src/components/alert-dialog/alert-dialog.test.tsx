@@ -129,7 +129,7 @@ describe('AlertDialogAction', () => {
 });
 
 describe('AlertDialogTitle', () => {
-  it('renders default h2 and class when within alert-dialog', () => {
+  it('renders default h4 and class when within alert-dialog', () => {
     render(
       <AlertDialogRoot>
         <AlertDialogTitle>Title</AlertDialogTitle>
@@ -137,7 +137,7 @@ describe('AlertDialogTitle', () => {
     );
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-alert-dialog-title');
   });
 });

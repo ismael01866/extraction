@@ -1,24 +1,19 @@
 # Color Mode
 
-Color mode allows your UI to adapt its visual appearance based on user preferences.  
-There are two modes—light and dark—to improve readability in different environments.
+Color mode allows components to adapt their appearance between light and dark themes. <br/> Dark mode is enabled by adding either the `.dark` class or the `data-theme="dark"` attribute to the root `<html>` element.
 
-## Enabling Dark Mode
+Add the theme to your root HTML element:
 
-For more information on Tailwind's support for dark mode, visit [Tailwind](https://tailwindcss.com/docs/dark-mode)
-
-### Manual Toggle
-
-Add a custom variant in your main CSS file:
-
-```sass filename="main.css"
-@custom-variant dark (&:where(.dark, .dark *));
+```html
+<html class="dark">
+  ...
+</html>
 ```
 
-### Using a data attribute
+or:
 
-Add a custom variant in your main CSS file:
-
-```sass filename="main.css"
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+```html
+<html data-theme="dark">
+  ...
+</html>
 ```

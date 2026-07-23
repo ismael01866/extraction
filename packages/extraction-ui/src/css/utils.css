@@ -21,13 +21,13 @@
 /**  Colors  */
 /** ──────────────────────────── */
 
-@utility global-color-bg {
+/* @utility global-color-bg {
   --ex-colors-bg: var(--ex-colors-background);
 }
 
 @utility global-color-fg {
   --ex-colors-fg: var(--ex-colors-foreground);
-}
+} */
 
 /**  Animation  */
 /** ──────────────────────────── */
@@ -120,7 +120,7 @@
 @utility accent-border-start {
   --accent-width: 3px;
 
-  @apply [border-inline-start-width:var(--accent-width)] border-s-[var(--shade-bold)];
+  @apply border-s-[var(--shade-bold)] [border-inline-start-width:var(--accent-width)];
 }
 
 @utility accent-border-start-* {
@@ -128,13 +128,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply [border-inline-start-width:var(--accent-width)] border-s-[var(--shade-bold)];
+  @apply border-s-[var(--shade-bold)] [border-inline-start-width:var(--accent-width)];
 }
 
 @utility accent-border-end {
   --accent-width: 3px;
 
-  @apply [border-inline-end-width:var(--accent-width)] border-e-[var(--shade-bold)];
+  @apply border-e-[var(--shade-bold)] [border-inline-end-width:var(--accent-width)];
 }
 
 @utility accent-border-end-* {
@@ -142,13 +142,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply [border-inline-end-width:var(--accent-width)] border-e-[var(--shade-bold)];
+  @apply border-e-[var(--shade-bold)] [border-inline-end-width:var(--accent-width)];
 }
 
 @utility accent-border-top {
   --accent-width: 3px;
 
-  @apply [border-block-start-width:var(--accent-width)] border-t-[var(--shade-bold)];
+  @apply border-t-[var(--shade-bold)] [border-block-start-width:var(--accent-width)];
 }
 
 @utility accent-border-top-* {
@@ -156,13 +156,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply [border-block-start-width:var(--accent-width)] border-t-[var(--shade-bold)];
+  @apply border-t-[var(--shade-bold)] [border-block-start-width:var(--accent-width)];
 }
 
 @utility accent-border-bottom {
   --accent-width: 3px;
 
-  @apply [border-block-end-width:var(--accent-width)] border-b-[var(--shade-bold)];
+  @apply border-b-[var(--shade-bold)] [border-block-end-width:var(--accent-width)];
 }
 
 @utility accent-border-bottom-* {
@@ -170,7 +170,7 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply [border-block-end-width:var(--accent-width)] border-b-[var(--shade-bold)];
+  @apply border-b-[var(--shade-bold)] [border-block-end-width:var(--accent-width)];
 }
 
 /**  Opacity  */
@@ -192,27 +192,27 @@
 /** ──────────────────────────── */
 
 @utility pos-top-start {
-  @apply top-0 left-0;
+  @apply left-0 top-0;
 }
 
 @utility pos-top {
-  @apply top-0 left-1/2 -translate-x-1/2;
+  @apply left-1/2 top-0 -translate-x-1/2;
 }
 
 @utility pos-top-end {
-  @apply top-0 right-0;
+  @apply right-0 top-0;
 }
 
 @utility pos-start {
-  @apply top-1/2 left-0 -translate-y-1/2;
+  @apply left-0 top-1/2 -translate-y-1/2;
 }
 
 @utility pos-center {
-  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
 @utility pos-end {
-  @apply top-1/2 right-0 -translate-y-1/2;
+  @apply right-0 top-1/2 -translate-y-1/2;
 }
 
 @utility pos-bottom-start {
@@ -224,27 +224,27 @@
 }
 
 @utility pos-bottom-end {
-  @apply right-0 bottom-0;
+  @apply bottom-0 right-0;
 }
 
 @utility pos-out-top-start {
-  @apply top-0 left-0 -translate-x-1/2 -translate-y-1/2;
+  @apply left-0 top-0 -translate-x-1/2 -translate-y-1/2;
 }
 
 @utility pos-out-top {
-  @apply top-0 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  @apply left-1/2 top-0 -translate-x-1/2 -translate-y-1/2;
 }
 
 @utility pos-out-top-end {
-  @apply top-0 right-0 translate-x-1/2 -translate-y-1/2;
+  @apply right-0 top-0 -translate-y-1/2 translate-x-1/2;
 }
 
 @utility pos-out-start {
-  @apply top-1/2 left-0 -translate-x-1/2 -translate-y-1/2;
+  @apply left-0 top-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
 @utility pos-out-end {
-  @apply top-1/2 right-0 translate-x-1/2 -translate-y-1/2;
+  @apply right-0 top-1/2 -translate-y-1/2 translate-x-1/2;
 }
 
 @utility pos-out-bottom-start {
@@ -256,14 +256,14 @@
 }
 
 @utility pos-out-bottom-end {
-  @apply right-0 bottom-0 translate-x-1/2 translate-y-1/2;
+  @apply bottom-0 right-0 translate-x-1/2 translate-y-1/2;
 }
 
 /**  State  */
 /** ──────────────────────────── */
 
 @utility disabled {
-  @apply palette-neutral pointer-events-none opacity-(--ex-options-disabled-opacity) grayscale select-none;
+  @apply palette-neutral opacity-(--ex-options-disabled-opacity) pointer-events-none select-none grayscale;
 }
 
 @utility valid {

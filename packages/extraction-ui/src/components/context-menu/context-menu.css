@@ -142,6 +142,7 @@
 @layer utilities {
   .ex-context-menu-content,
   .ex-context-menu-sub-content {
-    @apply component-variant-panel;
+    --background: var(--ex-options-panel-background-default-color);
+    --background-dark: var(--ex-options-panel-background-default-color-dark);
   }
 }

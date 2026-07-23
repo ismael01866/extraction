@@ -13,11 +13,12 @@ import { Container, Separator, Stack } from 'extraction-ui';
 import {
   HomeSectionCSS,
   HomeSectionColorModes,
+  HomeSectionFaq,
   HomeSectionFrameworks,
   HomeSectionHero,
+  HomeSectionMetrics,
   HomeSectionOpenSource,
   HomeSectionPanels,
-  HomeSectionPanelsHero,
 } from './home';
 
 import { NumCaption } from './home/components';
@@ -37,19 +38,19 @@ import { NumCaption } from './home/components';
   </Container>
   <Container className='dashed-container px-8 sm:px-14'>
     <NumCaption text='002' />
-    <Container className='max-w-2xl text-center'>
-      <HomeSectionPanelsHero />
-    </Container>
+    <Stack className='gap-20 sm:gap-20 md:gap-40'>
+      <HomeSectionCSS />
+      <HomeSectionColorModes />
+    </Stack>
   </Container>
   <Container>
     <Separator className='separator-dot' />
   </Container>
   <Container className='dashed-container px-8 sm:px-14'>
     <NumCaption text='003' />
-    <Stack className='gap-20 sm:gap-40'>
-      <HomeSectionCSS />
-      <HomeSectionColorModes />
-    </Stack>
+    <Container>
+      <HomeSectionMetrics />
+    </Container>
   </Container>
   <Container>
     <Separator className='separator-dot' />
@@ -63,8 +64,17 @@ import { NumCaption } from './home/components';
   <Container>
     <Separator className='separator-dot' />
   </Container>
-  <Container className='dashed-container px-8 text-center sm:px-14'>
+  <Container className='dashed-container px-8 sm:px-14'>
     <NumCaption text='005' />
+    <Container>
+      <HomeSectionFaq />
+    </Container>
+  </Container>
+  <Container>
+    <Separator className='separator-dot' />
+  </Container>
+  <Container className='dashed-container px-8 text-center sm:px-14'>
+    <NumCaption text='006' />
     <Container className='max-w-2xl text-center'>
       <HomeSectionOpenSource />
     </Container>

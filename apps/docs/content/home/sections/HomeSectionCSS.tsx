@@ -33,8 +33,8 @@ const CSS_FEATURES = [
 
 export function HomeSectionCSS() {
   return (
-    <Section className="pros">
-      <Grid className="grid-cols-1 gap-x-24 gap-y-4 xl:grid-cols-2">
+    <Section>
+      <Grid className="grid-cols-1 gap-x-24 gap-y-12 xl:grid-cols-2">
         <MotionInView>
           <Stack className="gap-4">
             <Display className="text-fluid">Set your design from CSS</Display>

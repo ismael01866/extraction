@@ -52,8 +52,8 @@ export const EmptyStateSection = <T extends ElementType = 'div'>(
 
 EmptyStateSection.displayName = 'EmptyState.Section';
 
-export const EmptyStateTitle = <T extends ElementType = 'h2'>(props: EmptyStateTitleProps<T>) => {
-  const { as = 'h2', children, ...rest } = props;
+export const EmptyStateTitle = <T extends ElementType = 'h4'>(props: EmptyStateTitleProps<T>) => {
+  const { as = 'h4', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-empty-state-title" {...rest}>

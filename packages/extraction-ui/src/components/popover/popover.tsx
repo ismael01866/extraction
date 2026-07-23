@@ -98,8 +98,8 @@ export const PopoverArrow = (props: PopoverArrowProps) => {
 
 PopoverArrow.displayName = 'Popover.Arrow';
 
-export const PopoverTitle = <T extends ElementType = 'h2'>(props: PopoverTitleProps<T>) => {
-  const { as = 'h2', children, ...rest } = props;
+export const PopoverTitle = <T extends ElementType = 'h4'>(props: PopoverTitleProps<T>) => {
+  const { as = 'h4', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-popover-title" {...rest}>

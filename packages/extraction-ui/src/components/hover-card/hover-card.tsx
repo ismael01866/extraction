@@ -93,8 +93,8 @@ export const HoverCardArrow = (props: HoverCardArrowProps) => {
 
 HoverCardArrow.displayName = 'HoverCard.Arrow';
 
-export const HoverCardTitle = <T extends ElementType = 'h2'>(props: HoverCardTitleProps<T>) => {
-  const { as = 'h2', children, ...rest } = props;
+export const HoverCardTitle = <T extends ElementType = 'h4'>(props: HoverCardTitleProps<T>) => {
+  const { as = 'h4', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-hover-card-title" {...rest}>

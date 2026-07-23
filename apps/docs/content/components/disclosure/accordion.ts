@@ -32,7 +32,7 @@ export const accordionCfg = {
     },
     type: {
       type: 'enum of ["single", "multiple"]',
-      default: '',
+      default: 'single',
     },
     value: {
       type: 'string',
@@ -166,6 +166,42 @@ export const accordionIconCfg = {
   selectors: {
     'Accordion.Icon': {
       default: 'ex-accordion-icon',
+    },
+  },
+};
+
+export const accordionTitleCfg = {
+  api: {
+    as: {
+      type: 'ElementType',
+      default: 'h4',
+    },
+    asChild: {
+      type: 'boolean',
+      default: 'false',
+    },
+  },
+  selectors: {
+    'Accordion.Title': {
+      default: 'ex-accordion-title',
+    },
+  },
+};
+
+export const accordionDescriptionCfg = {
+  api: {
+    as: {
+      type: 'ElementType',
+      default: 'p',
+    },
+    asChild: {
+      type: 'boolean',
+      default: 'false',
+    },
+  },
+  selectors: {
+    'Accordion.Description': {
+      default: 'ex-accordion-description',
     },
   },
 };

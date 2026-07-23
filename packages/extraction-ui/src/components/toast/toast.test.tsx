@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import {
   ToastClose,
   ToastContent,
@@ -12,6 +10,8 @@ import {
   ToastTitle,
   ToastViewport,
 } from './toast';
+
+import { render, screen } from '@testing-library/react';
 
 describe('ToastProvider', () => {
   it('passes children through correctly', () => {
@@ -63,11 +63,11 @@ describe('ToastIndicator', () => {
 });
 
 describe('ToastTitle', () => {
-  it('renders default h2 and class', () => {
+  it('renders default h4 and class', () => {
     render(<ToastTitle>Title</ToastTitle>);
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H2');
+    expect(el.tagName).toBe('H4');
     expect(el).toHaveClass('ex-toast-title');
   });
 });

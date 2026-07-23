@@ -8,6 +8,9 @@ export default {
   next: {
     title: 'Next',
   },
+  tanstack: {
+    title: 'Tanstack Start',
+  },
   vite: {
     title: 'Vite',
   },

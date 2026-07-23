@@ -14,10 +14,11 @@ import {
   Section,
   Stack,
 } from 'extraction-ui';
-import { SiAstro, SiGatsby, SiNextdotjs, SiVite } from 'react-icons/si';
+import { SiAstro, SiGatsby, SiNextdotjs, SiTanstack, SiVite } from 'react-icons/si';
 
 const FRAMEWORKS = [
   { icon: SiNextdotjs, label: 'Next' },
+  { icon: SiTanstack, label: 'Tanstack' },
   { icon: SiAstro, label: 'Astro' },
   { icon: SiVite, label: 'Vite' },
   { icon: SiGatsby, label: 'Gatsby' },
@@ -35,7 +36,7 @@ export function HomeSectionFrameworks() {
               Built for <br />
               <Mark
                 key={framework}
-                className="palette-primary variant-subtle text-fluid wrap-break-word break-all"
+                className="palette-primary variant-solid text-fluid wrap-break-word break-all"
               >
                 <span className="animate-in slide-from-bottom-4 fade-in duration-slowest inline-block">
                   {framework}

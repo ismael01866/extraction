@@ -1,18 +1,10 @@
 @utility variant {
-  @apply border border-(--border) bg-(--background) text-(--text) outline-0 outline-(--outline) dark:border-(--border-dark) dark:bg-(--background-dark) dark:text-(--text-dark) dark:outline-(--outline-dark);
+  @apply border-(--border) bg-(--background) text-(--text) outline-(--outline) dark:border-(--border-dark) dark:bg-(--background-dark) dark:text-(--text-dark) dark:outline-(--outline-dark) border outline-0;
 }
 
 @utility variant-solid {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-solid-theme;
-}
-
-@utility variant-solid-theme {
-  :where(&) {
-    @apply shade-500;
+    @apply variant shade-500;
   }
 
   --background: var(--shade-color);
@@ -48,15 +40,7 @@
 
 @utility variant-outline {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-outline-theme;
-}
-
-@utility variant-outline-theme {
-  :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: transparent;
@@ -92,15 +76,7 @@
 
 @utility variant-surface {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-surface-theme;
-}
-
-@utility variant-surface-theme {
-  :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: var(--shade-soft);
@@ -136,15 +112,7 @@
 
 @utility variant-subtle {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-subtle-theme;
-}
-
-@utility variant-subtle-theme {
-  :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: var(--shade-soft);
@@ -180,15 +148,7 @@
 
 @utility variant-ghost {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-ghost-theme;
-}
-
-@utility variant-ghost-theme {
-  :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: transparent;
@@ -224,15 +184,7 @@
 
 @utility variant-link {
   :where(&) {
-    @apply variant;
-  }
-
-  @apply variant-link-theme;
-}
-
-@utility variant-link-theme {
-  :where(&) {
-    @apply shade-500;
+    @apply variant shade-500;
   }
 
   --background: transparent;
@@ -271,10 +223,6 @@
     @apply variant;
   }
 
-  @apply variant-plain-theme;
-}
-
-@utility variant-plain-theme {
   --background: transparent;
   --background-dark: transparent;
 
@@ -307,10 +255,6 @@
 }
 
 @utility variant-inherit {
-  @apply variant-inherit-theme;
-}
-
-@utility variant-inherit-theme {
   --background: inherit;
   --background-dark: inherit;
 
@@ -376,29 +320,24 @@
   }
 }
 
-@utility component-variant-panel {
-  --background: var(--ex-options-panel-background-default-color);
-  --background-dark: var(--ex-options-panel-background-default-color-dark);
-}
-
 @layer utilities {
   .variant-solid .variant-inherit {
-    @apply variant-solid-theme;
+    @apply variant-solid;
   }
 
   .variant-outline .variant-inherit {
-    @apply variant-outline-theme;
+    @apply variant-outline;
   }
 
   .variant-subtle .variant-inherit {
-    @apply variant-subtle-theme;
+    @apply variant-subtle;
   }
 
   .variant-surface .variant-inherit {
-    @apply variant-surface-theme;
+    @apply variant-surface;
   }
 
   .variant-ghost .variant-inherit {
-    @apply variant-ghost-theme;
+    @apply variant-ghost;
   }
 }

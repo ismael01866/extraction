@@ -25,9 +25,6 @@ export * from './bg-image/bg-image.types';
 export { Blockquote } from './blockquote';
 export * from './blockquote/blockquote.types';
 
-export { BorderBeam } from './border-beam';
-export * from './border-beam/border-beam.types';
-
 export { Box } from './box';
 export * from './box/box.types';
 
@@ -244,8 +241,8 @@ export * from './text-slide/text-slide.types';
 export { Textarea } from './textarea';
 export * from './textarea/textarea.types';
 
-export { ThemeProvider } from './theme-provider';
-export * from './theme-provider/theme-provider.types';
+// export { ThemeProvider } from './theme-provider';
+// export * from './theme-provider/theme-provider.types';
 
 export { Title } from './title';
 export * from './title/title.types';

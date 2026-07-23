@@ -177,7 +177,8 @@
 @layer utilities {
   .ex-menubar-content,
   .ex-menubar-sub-content {
-    @apply component-variant-panel;
+    --background: var(--ex-options-panel-background-default-color);
+    --background-dark: var(--ex-options-panel-background-default-color-dark);
   }
 
   .ex-menubar-trigger {

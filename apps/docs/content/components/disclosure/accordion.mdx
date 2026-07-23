@@ -1,13 +1,15 @@
-import { Accordion, Title } from 'extraction-ui';
+import { Accordion } from 'extraction-ui';
 
 import data from '../data.json';
 import {
   accordionCfg,
   accordionContentCfg,
+  accordionDescriptionCfg,
   accordionHeaderCfg,
   accordionIconCfg,
   accordionItemCfg,
   accordionSectionCfg,
+  accordionTitleCfg,
   accordionTriggerCfg,
   cfg,
 } from './accordion';
@@ -17,23 +19,31 @@ export const Component = (
     <Accordion.Item value='option-1'>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 1</Title>
+          <Accordion.Title>Option 1</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick brown fox jumps over the lazy dog`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
     <Accordion.Item value='option-2'>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 2</Title>
+          <Accordion.Title>Option 2</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick brown fox jumps over the lazy dog`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
   </Accordion>
@@ -44,23 +54,31 @@ export const ComponentDisabledItem = (
     <Accordion.Item value='option-1'>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 1</Title>
+          <Accordion.Title>Option 1</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick brown fox jumps over the lazy dog`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
     <Accordion.Item value='option-2' disabled>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 2</Title>
+          <Accordion.Title>Option 2</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick brown fox jumps over the lazy dog`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
   </Accordion>
@@ -71,23 +89,31 @@ export const VariantComponent = (
     <Accordion.Item value='option-1'>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 1</Title>
+          <Accordion.Title>Option 1</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick fox`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
     <Accordion.Item value='option-2'>
       <Accordion.Header>
         <Accordion.Trigger>
-          <Title>Option 2</Title>
+          <Accordion.Title>Option 2</Accordion.Title>
           <Accordion.Icon />
         </Accordion.Trigger>
       </Accordion.Header>
       <Accordion.Content>
-        <Accordion.Section>{`The quick fox`}</Accordion.Section>
+        <Accordion.Section>
+          <Accordion.Description>
+            {`The quick brown fox jumps over the lazy dog`}
+          </Accordion.Description>
+        </Accordion.Section>
       </Accordion.Content>
     </Accordion.Item>
   </Accordion>
@@ -181,6 +207,19 @@ export const Wrapper = ({ children }) => children;
   --ex-accordion-icon-font-size-sm: var(--text-lg);
   --ex-accordion-icon-font-size-md: var(--text-xl);
   --ex-accordion-icon-font-size-lg: var(--text-2xl);
+
+  --ex-accordion-title-font-size-sm: var(--text-sm);
+  --ex-accordion-title-font-size-md: var(--text-base);
+  --ex-accordion-title-font-size-lg: var(--text-lg);
+
+  --ex-accordion-title-font-weight: var(--font-weight-semibold);
+
+  --ex-accordion-description-font-size-sm: var(--text-xs);
+  --ex-accordion-description-font-size-md: var(--text-sm);
+  --ex-accordion-description-font-size-lg: var(--text-base);
+
+  --ex-accordion-description-font-weight: var(--font-weight-normal);
+  --ex-accordion-description-opacity: var(--ex-options-muted-opacity);
 }
 ```
 
@@ -215,3 +254,11 @@ For more information on this component configuration, visit [Radix UI](https://w
 ### Accordion Icon
 
 <Api config={accordionIconCfg} />
+
+### Accordion Title
+
+<Api config={accordionTitleCfg} />
+
+### Accordion Description
+
+<Api config={accordionDescriptionCfg} />

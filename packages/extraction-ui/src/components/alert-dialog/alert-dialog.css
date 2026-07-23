@@ -66,6 +66,7 @@
 
 @layer utilities {
   .ex-alert-dialog-content {
-    @apply component-variant-panel;
+    --background: var(--ex-options-panel-background-default-color);
+    --background-dark: var(--ex-options-panel-background-default-color-dark);
   }
 }

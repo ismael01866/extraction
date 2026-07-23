@@ -1,4 +1,7 @@
 export default {
+  blockquote: {
+    title: 'Blockquote',
+  },
   code: {
     title: 'Code',
   },
@@ -11,10 +14,10 @@ export default {
   link: {
     title: 'Link',
   },
+  list: {
+    title: 'List',
+  },
   mark: {
     title: 'Mark',
-  },
-  text: {
-    title: 'Text',
   },
 };

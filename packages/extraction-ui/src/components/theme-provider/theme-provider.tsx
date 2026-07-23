@@ -1,5 +1,7 @@
 import React, { ElementType } from 'react';
 
+import './theme-provider.css';
+
 import { Element } from '../element';
 import { ThemeProviderProps } from './theme-provider.types';
 

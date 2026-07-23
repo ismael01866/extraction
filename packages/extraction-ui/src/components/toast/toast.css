@@ -184,12 +184,14 @@
 
 @layer utilities {
   .ex-toast {
-    &:not(.variant-solid, .variant-subtle, .variant-surface) {
-      @apply component-variant-panel;
+    &:where(.variant-outline) {
+      --background: var(--ex-options-panel-background-default-color);
+      --background-dark: var(--ex-options-panel-background-default-color-dark);
     }
 
-    &:where(.variant-outline) {
-      @apply component-variant-panel;
+    &:not(.variant-solid, .variant-subtle, .variant-surface) {
+      --background: var(--ex-options-panel-background-default-color);
+      --background-dark: var(--ex-options-panel-background-default-color-dark);
     }
   }
 }

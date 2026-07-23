@@ -20,6 +20,14 @@
   .ex-accordion-icon {
     --ex-font-size: var(--ex-accordion-icon-font-size-sm, var(--text-lg));
   }
+
+  .ex-accordion-title {
+    --ex-font-size: var(--ex-accordion-title-font-size-sm, var(--text-sm));
+  }
+
+  .ex-accordion-description {
+    --ex-font-size: var(--ex-accordion-description-font-size-sm, var(--text-xs));
+  }
 }
 
 @utility accordion-md {
@@ -44,6 +52,14 @@
   .ex-accordion-icon {
     --ex-font-size: var(--ex-accordion-icon-font-size-md, var(--text-xl));
   }
+
+  .ex-accordion-title {
+    --ex-font-size: var(--ex-accordion-title-font-size-md, var(--text-base));
+  }
+
+  .ex-accordion-description {
+    --ex-font-size: var(--ex-accordion-description-font-size-md, var(--text-sm));
+  }
 }
 
 @utility accordion-lg {
@@ -67,6 +83,14 @@
 
   .ex-accordion-icon {
     --ex-font-size: var(--ex-accordion-icon-font-size-lg, var(--text-2xl));
+  }
+
+  .ex-accordion-title {
+    --ex-font-size: var(--ex-accordion-title-font-size-lg, var(--text-lg));
+  }
+
+  .ex-accordion-description {
+    --ex-font-size: var(--ex-accordion-description-font-size-lg, var(--text-base));
   }
 }
 
@@ -1421,7 +1445,7 @@
   --ex-line-height: var(--ex-headline-line-height-sm, var(--text-2xl-line-height));
 
   --ex-font-family: var(--ex-headline-font-family-sm, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-sm, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-headline-font-weight-sm, var(--font-weight-semibold));
 }
 
 @utility headline-md {
@@ -1429,7 +1453,7 @@
   --ex-line-height: var(--ex-headline-line-height-md, var(--text-3xl-line-height));
 
   --ex-font-family: var(--ex-headline-font-family-md, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-md, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-headline-font-weight-md, var(--font-weight-semibold));
 }
 
 @utility headline-lg {
@@ -1437,7 +1461,7 @@
   --ex-line-height: var(--ex-headline-line-height-lg, var(--text-4xl-line-height));
 
   --ex-font-family: var(--ex-headline-font-family-lg, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-lg, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-headline-font-weight-lg, var(--font-weight-semibold));
 }
 
 @utility headline-xl {
@@ -1445,7 +1469,7 @@
   --ex-line-height: var(--ex-headline-line-height-xl, var(--text-5xl-line-height));
 
   --ex-font-family: var(--ex-headline-font-family-xl, var(--font-sans));
-  --ex-font-weight: var(--ex-headline-font-weight-xl, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-headline-font-weight-xl, var(--font-weight-semibold));
 }
 
 @utility hover-card-content-sm {
@@ -2799,7 +2823,7 @@
   --ex-line-height: var(--ex-title-line-height-xs, var(--text-xs-line-height));
 
   --ex-font-family: var(--ex-title-font-family-xs, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-xs, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-xs, var(--font-weight-semibold));
 }
 
 @utility title-sm {
@@ -2807,7 +2831,7 @@
   --ex-line-height: var(--ex-title-line-height-sm, var(--text-sm-line-height));
 
   --ex-font-family: var(--ex-title-font-family-sm, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-sm, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-sm, var(--font-weight-semibold));
 }
 
 @utility title-md {
@@ -2815,7 +2839,7 @@
   --ex-line-height: var(--ex-title-line-height-md, var(--text-base-line-height));
 
   --ex-font-family: var(--ex-title-font-family-md, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-md, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-md, var(--font-weight-semibold));
 }
 
 @utility title-lg {
@@ -2823,7 +2847,7 @@
   --ex-line-height: var(--ex-title-line-height-lg, var(--text-lg-line-height));
 
   --ex-font-family: var(--ex-title-font-family-lg, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-lg, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-lg, var(--font-weight-semibold));
 }
 
 @utility title-xl {
@@ -2831,7 +2855,7 @@
   --ex-line-height: var(--ex-title-line-height-xl, var(--text-xl-line-height));
 
   --ex-font-family: var(--ex-title-font-family-xl, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-xl, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-xl, var(--font-weight-semibold));
 }
 
 @utility title-2xl {
@@ -2839,7 +2863,7 @@
   --ex-line-height: var(--ex-title-line-height-2xl, var(--text-2xl-line-height));
 
   --ex-font-family: var(--ex-title-font-family-2xl, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-2xl, var(--font-weight-medium));
+  --ex-font-weight: var(--ex-title-font-weight-2xl, var(--font-weight-semibold));
 }
 
 @utility toast-sm {
