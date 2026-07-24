@@ -34,6 +34,6 @@
 
 @layer utilities {
   .ex-input {
-    @apply valid invalid interactive-form-control;
+    @apply interactive valid invalid;
   }
 }

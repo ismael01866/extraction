@@ -320,7 +320,7 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .variant-solid .variant-inherit {
     @apply variant-solid;
   }
@@ -340,4 +340,4 @@
   .variant-ghost .variant-inherit {
     @apply variant-ghost;
   }
-}
+} */

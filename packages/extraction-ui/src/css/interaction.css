@@ -55,7 +55,7 @@
       )
     ) {
       @apply duration-normal;
-      @apply outline-2 -outline-offset-1 outline-(--outline) outline-solid dark:outline-(--outline-dark);
+      @apply outline-(--outline) outline-solid dark:outline-(--outline-dark) outline-2 -outline-offset-1;
 
       transition-property:
         background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
@@ -75,36 +75,16 @@
 
   &:where(:hover) {
     &:where(:not([class*='hover:variant-'])) {
-      @apply interactive-hover;
+      &:where(:not(:focus-visible)) {
+        @apply interactive-hover;
+      }
     }
   }
 
   &:where(:active) {
-    &:where(:not([class*='active:variant-'])) {
-      @apply interactive-active;
-    }
-  }
-
-  &:where(:focus-visible) {
-    &:where(:not([class*='focus:variant-'])) {
-      @apply interactive-focus;
-    }
-  }
-}
-
-@utility interactive-form-control {
-  :where(&) {
-    @apply duration-normal;
-
-    transition-property:
-      background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
-      transform, scale, blur;
-  }
-
-  &:where(:hover) {
-    &:where(:not([class*='hover:variant-'])) {
-      &:where(:not(:focus-visible)) {
-        @apply interactive-hover;
+    &:where(:not(:focus-visible)) {
+      &:where(:not([class*='active:variant-'])) {
+        @apply interactive-active;
       }
     }
   }

@@ -56,7 +56,7 @@
   .ex-pin-input-field {
     &:where([tabindex='0']),
     &:where(:not([value=''])) {
-      @apply interactive-form-control;
+      @apply interactive;
     }
   }
 }
