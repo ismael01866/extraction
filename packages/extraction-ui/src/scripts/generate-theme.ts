@@ -23,13 +23,13 @@ function getMixBase(shade: string) {
   return num <= 500 ? 'white' : 'black';
 }
 
-function getForegroundColor(shade: string, name: string) {
-  const num = Number(shade);
+// function getForegroundColor(shade: string, name: string) {
+//   const num = Number(shade);
 
-  return num <= 300
-    ? `color-mix(in oklch, var(--color-${name}) 50%, black)`
-    : `color-mix(in oklch, var(--color-${name}) 2%, white)`;
-}
+//   return num <= 300
+//     ? `color-mix(in oklch, var(--color-${name}) 50%, black)`
+//     : `color-mix(in oklch, var(--color-${name}) 2%, white)`;
+// }
 
 /*
  * PALETTE + SHADES */
@@ -39,7 +39,7 @@ function generatePaletteVars() {
 
   for (const [name, base] of Object.entries(colorPalette)) {
     vars[`--color-${name}`] = base;
-    vars[`--color-${name}-foreground`] = `color-mix(in oklch, var(--color-${name}) 2%, white)`;
+    // vars[`--color-${name}-foreground`] = `color-mix(in oklch, var(--color-${name}) 2%, white)`;
 
     for (const shade of Object.keys(shades)) {
       const mixBase = getMixBase(shade);
@@ -51,7 +51,7 @@ function generatePaletteVars() {
           `color-mix(in oklch, var(--color-${name}) ${themePercentages[shade as unknown as keyof typeof themePercentages]}, ${mixBase})`;
       }
 
-      vars[`--color-${name}-${shade}-foreground`] = getForegroundColor(shade, name);
+      // vars[`--color-${name}-${shade}-foreground`] = getForegroundColor(shade, name);
     }
   }
 
