@@ -1,4 +1,4 @@
-@source inline("{bg,text,palette}{-primary,-accent,-neutral,-error,-success,-info,-warning,-black,-white,-new}");
+@source inline("{bg,text,palette}{-primary,-accent,-neutral,-new}");
 
 @theme {
   --color-new: oklch(0.5 0.22 35);

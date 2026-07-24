@@ -17,11 +17,15 @@
   --ex-options-duration-slower: 400ms;
   --ex-options-duration-slowest: 500ms;
 
-  --ex-options-input-border-valid: var(--color-success-500);
-  --ex-options-input-border-valid-dark: var(--color-success-500);
+  --ex-options-input-border-valid: var(--color-green-600);
+  --ex-options-input-border-valid-dark: var(--color-green-400);
+  --ex-options-input-color-valid: var(--color-green-600);
+  --ex-options-input-color-valid-dark: var(--color-green-400);
 
-  --ex-options-input-border-invalid: var(--color-error-500);
-  --ex-options-input-border-invalid-dark: var(--color-error-500);
+  --ex-options-input-border-invalid: var(--color-red-600);
+  --ex-options-input-border-invalid-dark: var(--color-red-400);
+  --ex-options-input-color-invalid: var(--color-red-600);
+  --ex-options-input-color-invalid-dark: var(--color-red-400);
 
   --ex-options-background-default-color: color-mix(in oklch, var(--color-neutral-50) 30%, white);
   --ex-options-background-default-color-dark: color-mix(

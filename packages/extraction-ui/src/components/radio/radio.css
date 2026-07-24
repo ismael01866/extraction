@@ -49,6 +49,6 @@
 
 @layer utilities {
   .ex-radio-control {
-    @apply interactive-form-control;
+    @apply interactive;
   }
 }

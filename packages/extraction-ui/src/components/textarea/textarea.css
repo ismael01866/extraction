@@ -32,6 +32,6 @@
 
 @layer utilities {
   .ex-textarea {
-    @apply interactive-form-control valid invalid;
+    @apply interactive valid invalid;
   }
 }

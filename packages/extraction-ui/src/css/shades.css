@@ -2,12 +2,6 @@
   --shade-color: var(--palette-50);
   --shade-color-dark: var(--palette-950);
 
-  --shade-foreground: var(--palette-50-foreground);
-  --shade-foreground-dark: var(--palette-950-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-50);
   --shade-soft-dark: var(--palette-950);
 
@@ -27,12 +21,6 @@
 @utility shade-100 {
   --shade-color: var(--palette-100);
   --shade-color-dark: var(--palette-900);
-
-  --shade-foreground: var(--palette-100-foreground);
-  --shade-foreground-dark: var(--palette-900-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
 
   --shade-soft: var(--palette-50);
   --shade-soft-dark: var(--palette-950);
@@ -54,12 +42,6 @@
   --shade-color: var(--palette-200);
   --shade-color-dark: var(--palette-800);
 
-  --shade-foreground: var(--palette-200-foreground);
-  --shade-foreground-dark: var(--palette-800-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-100);
   --shade-soft-dark: var(--palette-900);
 
@@ -79,12 +61,6 @@
 @utility shade-300 {
   --shade-color: var(--palette-300);
   --shade-color-dark: var(--palette-700);
-
-  --shade-foreground: var(--palette-300-foreground);
-  --shade-foreground-dark: var(--palette-700-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
 
   --shade-soft: var(--palette-200);
   --shade-soft-dark: var(--palette-800);
@@ -106,12 +82,6 @@
   --shade-color: var(--palette-400);
   --shade-color-dark: var(--palette-600);
 
-  --shade-foreground: var(--palette-400-foreground);
-  --shade-foreground-dark: var(--palette-600-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-300);
   --shade-soft-dark: var(--palette-700);
 
@@ -131,12 +101,6 @@
 @utility shade-500 {
   --shade-color: var(--palette-500);
   --shade-color-dark: var(--palette-500);
-
-  --shade-foreground: var(--palette-500-foreground);
-  --shade-foreground-dark: var(--palette-500-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
 
   --shade-soft: var(--palette-400);
   --shade-soft-dark: var(--palette-600);
@@ -158,12 +122,6 @@
   --shade-color: var(--palette-600);
   --shade-color-dark: var(--palette-400);
 
-  --shade-foreground: var(--palette-600-foreground);
-  --shade-foreground-dark: var(--palette-400-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-700);
   --shade-soft-dark: var(--palette-300);
 
@@ -183,12 +141,6 @@
 @utility shade-700 {
   --shade-color: var(--palette-700);
   --shade-color-dark: var(--palette-300);
-
-  --shade-foreground: var(--palette-700-foreground);
-  --shade-foreground-dark: var(--palette-300-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
 
   --shade-soft: var(--palette-800);
   --shade-soft-dark: var(--palette-200);
@@ -210,12 +162,6 @@
   --shade-color: var(--palette-800);
   --shade-color-dark: var(--palette-200);
 
-  --shade-foreground: var(--palette-800-foreground);
-  --shade-foreground-dark: var(--palette-200-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-900);
   --shade-soft-dark: var(--palette-100);
 
@@ -236,12 +182,6 @@
   --shade-color: var(--palette-900);
   --shade-color-dark: var(--palette-100);
 
-  --shade-foreground: var(--palette-900-foreground);
-  --shade-foreground-dark: var(--palette-100-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
-
   --shade-soft: var(--palette-950);
   --shade-soft-dark: var(--palette-50);
 
@@ -261,12 +201,6 @@
 @utility shade-950 {
   --shade-color: var(--palette-950);
   --shade-color-dark: var(--palette-50);
-
-  --shade-foreground: var(--palette-950-foreground);
-  --shade-foreground-dark: var(--palette-50-foreground);
-
-  --shade-text: var(--palette-900);
-  --shade-text-dark: var(--palette-100);
 
   --shade-soft: var(--palette-950);
   --shade-soft-dark: var(--palette-50);

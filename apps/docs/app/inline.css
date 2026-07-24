@@ -1,5 +1,5 @@
 @source inline("text{-2xs,-xs,-sm,-base,-lg,-xl,-2xl,-3xl,-4xl,-5xl,-6xl,-7xl,-8xl,-9xl}");
-@source inline("{bg,text,fill}{-primary,-accent,-neutral,-error,-success,-info,-warning}{-50,-100,-200,-300,-400,-500,-600,-700,-800,-900,-950}");
+@source inline("{bg,text,fill}{-primary,-accent,-neutral}{-50,-100,-200,-300,-400,-500,-600,-700,-800,-900,-950}");
 
 @source inline("rounded{-none,-sm,-md,-lg,-xl,-2xl,-3xl,-full}");
 @source inline("size{-1,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-14,-16,-20,-24,-28,-32,-36,-40,-44,-48,-52,-56,-60,-64,-72,-80,-96,-0.5,-1.5,-2.5,-3.5,-4.5,-full,-min,-max,-fit,-xs,-sm,-md,-lg,-xl}");
@@ -8,7 +8,7 @@
 @source inline("data-[state=checked]:variant{-solid,-outline,-surface,-subtle,-ghost,-link,-plain}");
 
 @source inline("{shade}{-50,-100,-200,-300,-400,-500,-600,-700,-800,-900,-950}");
-@source inline("{palette}{-primary,-accent,-neutral,-error,-success,-info,-warning}");
+@source inline("{palette}{-primary,-accent,-neutral}");
 
 @source inline("{pos}{-center,-top,-bottom,-start,-end,-top-start,-top-end,-bottom-start,-bottom-end,-middle,-middle-start,-middle-end,-top-middle,-bottom-middle,-out-top,-out-bottom,-out-start,-out-end,-out-top-start,-out-top-end,-out-bottom-start,-out-bottom-end,-out-middle,-out-middle-start,-out-middle-end,-out-top-middle,-out-bottom-middle}");
 

@@ -18,11 +18,10 @@ export default defineConfig({
     libInjectCss(),
     dts({
       include: ['src'],
-      exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
+      exclude: ['src/**/*.test.ts', 'src/**/*.test.tsx', 'src/scripts/**'],
       rollupTypes: false,
       entryRoot: 'src',
       outputDir: 'dist',
-      skipDiagnostics: false,
     }),
   ],
   test: {
@@ -32,6 +31,7 @@ export default defineConfig({
     include: ['**/*.{test,spec}.{ts,tsx}'],
   },
   build: {
+    target: 'es2020',
     lib: {
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),

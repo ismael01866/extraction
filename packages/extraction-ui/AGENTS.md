@@ -877,10 +877,6 @@ Use palette utilities to apply consistent color schemes:
 - **Primary**: `palette-primary`
 - **Accent**: `palette-accent`
 - **Neutral**: `palette-neutral`
-- **Error**: `palette-error`
-- **Success**: `palette-success`
-- **Info**: `palette-info`
-- **Warning**: `palette-warning`
 
 ```css
 /* Example: palette-primary sets all color tokens */

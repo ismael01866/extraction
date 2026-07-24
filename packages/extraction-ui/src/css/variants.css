@@ -25,14 +25,14 @@
   --active-border: transparent;
   --active-border-dark: transparent;
 
-  --text: var(--shade-foreground);
-  --text-dark: var(--shade-foreground-dark);
+  --text: contrast-color(var(--shade-color));
+  --text-dark: contrast-color(var(--shade-color-dark));
 
-  --hover-text: var(--shade-foreground);
-  --hover-text-dark: var(--shade-foreground-dark);
+  --hover-text: contrast-color(var(--shade-raised));
+  --hover-text-dark: contrast-color(var(--shade-raised-dark));
 
-  --active-text: var(--shade-foreground);
-  --active-text-dark: var(--shade-foreground-dark);
+  --active-text: contrast-color(var(--shade-deep));
+  --active-text-dark: contrast-color(var(--shade-deep-dark));
 
   --outline: var(--shade-raised);
   --outline-dark: var(--shade-raised-dark);
@@ -61,14 +61,14 @@
   --active-border: var(--shade-strong);
   --active-border-dark: var(--shade-strong-dark);
 
-  --text: var(--shade-text);
-  --text-dark: var(--shade-text-dark);
+  --text: contrast-color(var(--shade-background));
+  --text-dark: contrast-color(var(--shade-background-dark));
 
-  --hover-text: var(--shade-foreground);
-  --hover-text-dark: var(--shade-foreground-dark);
+  --hover-text: contrast-color(var(--shade-soft));
+  --hover-text-dark: contrast-color(var(--shade-soft-dark));
 
-  --active-text: var(--shade-foreground);
-  --active-text-dark: var(--shade-foreground-dark);
+  --active-text: contrast-color(var(--shade-color));
+  --active-text-dark: contrast-color(var(--shade-color-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
@@ -97,14 +97,14 @@
   --active-border: var(--shade-strong);
   --active-border-dark: var(--shade-strong-dark);
 
-  --text: var(--shade-foreground);
-  --text-dark: var(--shade-foreground-dark);
+  --text: contrast-color(var(--shade-color));
+  --text-dark: contrast-color(var(--shade-color-dark));
 
-  --hover-text: var(--shade-foreground);
-  --hover-text-dark: var(--shade-foreground-dark);
+  --hover-text: contrast-color(var(--shade-raised));
+  --hover-text-dark: contrast-color(var(--shade-raised-dark));
 
-  --active-text: var(--shade-foreground);
-  --active-text-dark: var(--shade-foreground-dark);
+  --active-text: contrast-color(var(--shade-deep));
+  --active-text-dark: contrast-color(var(--shade-deep-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
@@ -133,14 +133,14 @@
   --active-border: transparent;
   --active-border-dark: transparent;
 
-  --text: var(--shade-foreground);
-  --text-dark: var(--shade-foreground-dark);
+  --text: contrast-color(var(--shade-color));
+  --text-dark: contrast-color(var(--shade-color-dark));
 
-  --hover-text: var(--shade-foreground);
-  --hover-text-dark: var(--shade-foreground-dark);
+  --hover-text: contrast-color(var(--shade-raised));
+  --hover-text-dark: contrast-color(var(--shade-raised-dark));
 
-  --active-text: var(--shade-foreground);
-  --active-text-dark: var(--shade-foreground-dark);
+  --active-text: contrast-color(var(--shade-deep));
+  --active-text-dark: contrast-color(var(--shade-deep-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
@@ -169,14 +169,14 @@
   --active-border: transparent;
   --active-border-dark: transparent;
 
-  --text: var(--shade-text);
-  --text-dark: var(--shade-text-dark);
+  --text: contrast-color(var(--shade-background));
+  --text-dark: contrast-color(var(--shade-background-dark));
 
-  --hover-text: var(--shade-foreground);
-  --hover-text-dark: var(--shade-foreground-dark);
+  --hover-text: contrast-color(var(--shade-soft));
+  --hover-text-dark: contrast-color(var(--shade-soft-dark));
 
-  --active-text: var(--shade-foreground);
-  --active-text-dark: var(--shade-foreground-dark);
+  --active-text: contrast-color(var(--shade-color));
+  --active-text-dark: contrast-color(var(--shade-color-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
@@ -320,7 +320,7 @@
   }
 }
 
-@layer utilities {
+/* @layer utilities {
   .variant-solid .variant-inherit {
     @apply variant-solid;
   }
@@ -340,4 +340,4 @@
   .variant-ghost .variant-inherit {
     @apply variant-ghost;
   }
-}
+} */

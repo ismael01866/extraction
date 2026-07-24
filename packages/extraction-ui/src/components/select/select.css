@@ -116,7 +116,7 @@
 
 @layer utilities {
   .ex-select-trigger {
-    @apply valid invalid interactive-form-control;
+    @apply interactive valid invalid;
 
     &:where(:disabled, [disabled], [data-disabled], .disabled) {
       @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)];

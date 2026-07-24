@@ -31,26 +31,29 @@
   }
 
   .ex-field-error {
-    --ex-color: var(--ex-field-error-color, var(--color-error-500));
-    --ex-color-dark: var(--ex-field-error-color-dark, var(--color-error-500));
+    --ex-color: var(--ex-field-error-color, var(--ex-options-input-color-invalid));
+    --ex-color-dark: var(--ex-field-error-color-dark, var(--ex-options-input-color-invalid-dark));
     --ex-font-family: var(--ex-field-error-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-field-error-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-field-error-font-weight, var(--font-weight-medium));
 
     @apply leading-none text-[var(--ex-color)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] dark:text-[var(--ex-color-dark)];
   }
 
   .ex-field-success {
-    --ex-color: var(--ex-field-success-color, var(--color-success-500));
-    --ex-color-dark: var(--ex-field-success-color-dark, var(--color-success-500));
+    --ex-color: var(--ex-field-success-color, var(--ex-options-input-color-valid));
+    --ex-color-dark: var(--ex-field-success-color-dark, var(--ex-options-input-color-valid-dark));
     --ex-font-family: var(--ex-field-success-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-field-success-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-field-success-font-weight, var(--font-weight-medium));
 
     @apply leading-none text-[var(--ex-color)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] dark:text-[var(--ex-color-dark)];
   }
 
   .ex-field-required-indicator {
-    --ex-color: var(--ex-field-required-indicator-color, var(--color-error-500));
-    --ex-color-dark: var(--ex-field-required-indicator-color-dark, var(--color-error-500));
+    --ex-color: var(--ex-field-required-indicator-color, var(--ex-options-input-color-invalid));
+    --ex-color-dark: var(
+      --ex-field-required-indicator-color-dark,
+      var(--ex-options-input-color-invalid-dark)
+    );
     --ex-font-family: var(--ex-field-required-indicator-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-field-required-indicator-font-weight, var(--font-weight-normal));
 

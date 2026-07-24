@@ -50,6 +50,6 @@
 
 @layer utilities {
   .ex-checkbox-control {
-    @apply valid invalid interactive-form-control;
+    @apply interactive valid invalid;
   }
 }
