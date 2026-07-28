@@ -1,7 +1,7 @@
 export const colorPalette = {
   primary: 'oklch(0.5 0.22 267)',
-  accent: 'oklch(0.5 0.22 280)',
   neutral: 'oklch(0.5 0.03 275)',
+  // accent: 'oklch(0.5 0.22 280)',
   // error: 'oklch(0.5 0.22 25)',
   // success: 'oklch(0.5 0.22 140)',
   // info: 'oklch(0.5 0.22 255)',

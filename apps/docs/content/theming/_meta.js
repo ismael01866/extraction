@@ -11,6 +11,9 @@ export default {
   tokens: {
     title: 'Design Tokens',
   },
+  utils: {
+    title: 'Utilities',
+  },
   other: {
     title: 'Other',
   },

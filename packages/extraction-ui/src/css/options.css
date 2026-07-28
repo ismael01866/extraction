@@ -1,10 +1,10 @@
 :root {
-  --ex-options-muted-opacity: 0.88;
-  --ex-options-subtle-opacity: 0.64;
-  --ex-options-weak-opacity: 0.48;
-  --ex-options-disabled-opacity: 0.56;
-  --ex-options-overlay-opacity: 0.4;
-  --ex-options-placeholder-opacity: 0.64;
+  --ex-options-opacity-muted: 0.88;
+  --ex-options-opacity-subtle: 0.64;
+  --ex-options-opacity-weak: 0.48;
+  --ex-options-opacity-disabled: 0.56;
+  --ex-options-opacity-overlay: 0.4;
+  --ex-options-opacity-placeholder: 0.64;
 
   --ex-options-enable-transitions: 1;
   --ex-options-enable-reduced-motion: 1;
@@ -28,11 +28,7 @@
   --ex-options-input-color-invalid-dark: var(--color-red-400);
 
   --ex-options-background-default-color: color-mix(in oklch, var(--color-neutral-50) 30%, white);
-  --ex-options-background-default-color-dark: color-mix(
-    in oklch,
-    var(--color-neutral-950) 70%,
-    black
-  );
+  --ex-options-background-default-color-dark: color-mix(in oklch,var(--color-neutral-950) 70%,black);
 
   --ex-options-panel-background-default-color-dark: var(--color-black);
   --ex-options-panel-background-default-color: var(--color-white);

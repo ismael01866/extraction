@@ -7,7 +7,7 @@
   }
 
   .ex-tabs {
-    @apply palette-neutral variant-outline;
+    @apply variant variant-outline palette-neutral;
     @apply border-transparent! bg-transparent! outline-transparent!;
   }
 

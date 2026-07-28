@@ -22,9 +22,13 @@
   }
 
   .ex-dialog-content {
+    @apply variant variant-outline palette-neutral;
+  }
+
+  .ex-dialog-content {
     --ex-z-index: var(--ex-dialog-z-index, var(--ex-options-z-dialog));
 
-    @apply palette-neutral variant-outline fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
+    @apply fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
     @apply z-[var(--ex-z-index)] w-[var(--ex-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open']) {
@@ -67,7 +71,7 @@
 
   .ex-dialog-description {
     --ex-font-weight: var(--ex-dialog-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-dialog-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-dialog-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

@@ -16,13 +16,15 @@ export function CodeContainer({
   return (
     <Collapsible defaultOpen={defaultOpen}>
       <Collapsible.Content>
-        <div className={`code-container x-container variant-outline palette-neutral ${className}`}>
+        <div
+          className={`code-container x-container variant variant-outline palette-neutral ${className}`}
+        >
           {children}
         </div>
       </Collapsible.Content>
       {showToggle && (
         <Collapsible.Trigger asChild>
-          <Button className="size-sm variant-surface palette-neutral border-t-0! w-full rounded-none rounded-b-md">
+          <Button className="size-sm variant variant-surface palette-neutral border-t-0! w-full rounded-none rounded-b-md">
             <Text className="text-2xs">SHOW CODE</Text>
           </Button>
         </Collapsible.Trigger>

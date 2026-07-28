@@ -39,7 +39,7 @@
   }
 
   .ex-breadcrumbs-separator {
-    --ex-opacity: var(--ex-breadcrumbs-separator-opacity, var(--ex-options-subtle-opacity));
+    --ex-opacity: var(--ex-breadcrumbs-separator-opacity, var(--ex-options-opacity-subtle));
 
     @apply inline-flex size-[1.5em] items-center justify-center opacity-[var(--ex-opacity)];
 

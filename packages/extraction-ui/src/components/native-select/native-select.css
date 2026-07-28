@@ -11,7 +11,7 @@
 
   *:not(.ex-input-group) {
     > .ex-native-select {
-      @apply palette-neutral variant-outline;
+      @apply variant variant-outline palette-neutral;
     }
   }
 
@@ -57,7 +57,7 @@
 
     &:where(:disabled, [disabled], [data-disabled], .disabled) {
       .ex-native-select-field {
-        @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)];
+        @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)];
       }
     }
   }

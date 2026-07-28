@@ -10,7 +10,7 @@
   }
 
   .ex-blockquote {
-    @apply variant-subtle palette-neutral;
+    @apply variant variant-subtle palette-neutral;
   }
 
   .ex-blockquote {
@@ -36,7 +36,7 @@
   }
 
   .ex-blockquote-cite {
-    --ex-opacity: var(--ex-blockquote-cite-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-blockquote-cite-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-blockquote-cite {

@@ -9,7 +9,7 @@
   }
 
   .ex-close-button {
-    @apply variant-ghost palette-neutral;
+    @apply variant variant-ghost palette-neutral;
   }
 
   .ex-close-button {

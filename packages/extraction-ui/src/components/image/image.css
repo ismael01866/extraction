@@ -7,6 +7,6 @@
   }
 
   .ex-image {
-    @apply rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius);
   }
 }

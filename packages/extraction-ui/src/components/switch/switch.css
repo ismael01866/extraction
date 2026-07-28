@@ -7,7 +7,10 @@
   }
 
   .ex-switch {
-    @apply variant-solid;
+    @apply variant variant-solid;
+  }
+
+  .ex-switch {
     @apply data-[state=checked]:palette-primary data-[state=unchecked]:palette-neutral;
 
     &:where([data-state='unchecked']) {

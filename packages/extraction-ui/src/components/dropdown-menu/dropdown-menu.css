@@ -9,7 +9,12 @@
 
   .ex-dropdown-menu-content,
   .ex-dropdown-menu-sub-content {
-    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply variant variant-outline palette-neutral;
+  }
+
+  .ex-dropdown-menu-content,
+  .ex-dropdown-menu-sub-content {
+    @apply flex will-change-[transform,opacity];
     @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where([data-side='top']) {
@@ -109,7 +114,7 @@
     @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
-      @apply variant-subtle border-0!;
+      @apply variant variant-subtle border-0!;
     }
   }
 
@@ -128,7 +133,7 @@
   .ex-dropdown-menu-label {
     --ex-font-family: var(--ex-dropdown-menu-label-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-dropdown-menu-label-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-dropdown-menu-label-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-dropdown-menu-label-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-dropdown-menu-label {
@@ -138,7 +143,7 @@
   .ex-dropdown-menu-command {
     --ex-font-family: var(--ex-dropdown-menu-command-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-dropdown-menu-command-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-dropdown-menu-command-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-dropdown-menu-command-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-dropdown-menu-command {

@@ -7,13 +7,13 @@
   }
 
   .ex-popover-content {
-    @apply flex flex-1 flex-col;
+    @apply variant variant-outline palette-neutral;
   }
 
   .ex-popover-content {
     --ex-z-index: var(--ex-popover-z-index, var(--ex-options-z-popover));
 
-    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply flex flex-1 flex-col will-change-[transform,opacity];
     @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:where(:focus) {
@@ -69,7 +69,7 @@
   .ex-popover-description {
     --ex-font-family: var(--ex-popover-description-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-popover-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-popover-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-popover-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

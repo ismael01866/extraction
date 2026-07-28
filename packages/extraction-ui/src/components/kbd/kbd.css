@@ -7,7 +7,7 @@
   }
 
   .ex-kbd {
-    @apply palette-neutral variant-surface;
+    @apply variant variant-surface palette-neutral;
   }
 
   .ex-kbd {

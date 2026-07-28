@@ -7,7 +7,7 @@
   }
 
   .ex-navigation-menu {
-    @apply palette-neutral variant-outline;
+    @apply variant variant-outline palette-neutral;
   }
 
   .ex-navigation-menu-viewport {
@@ -162,7 +162,11 @@
     @apply absolute flex;
 
     > .ex-navigation-menu-viewport {
-      @apply variant rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+      @apply variant variant-outline palette-neutral;
+    }
+
+    > .ex-navigation-menu-viewport {
+      @apply rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
     }
   }
 
@@ -202,12 +206,14 @@
 
   .ex-navigation-menu-viewport-anchor {
     > .ex-navigation-menu-viewport {
-      &:where([class*='variant-outline'], [class*='variant-plain']) {
+      --background: var(--ex-options-panel-background-default-color);
+      --background-dark: var(--ex-options-panel-background-default-color-dark);
+      /* &:where([class*='variant-outline'], [class*='variant-plain']) {
         &:where(.variant-outline) {
           --background: var(--ex-options-panel-background-default-color);
           --background-dark: var(--ex-options-panel-background-default-color-dark);
         }
-      }
+      } */
     }
   }
 }

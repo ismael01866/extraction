@@ -7,7 +7,7 @@
   }
 
   .ex-callout {
-    @apply variant-surface palette-primary;
+    @apply variant variant-surface palette-primary;
   }
 
   .ex-callout {
@@ -41,7 +41,7 @@
 
   .ex-callout-description {
     --ex-font-weight: var(--ex-callout-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-callout-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-callout-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

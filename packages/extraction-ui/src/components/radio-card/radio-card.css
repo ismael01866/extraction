@@ -31,7 +31,7 @@
   }
 
   .ex-radio-card-indicator {
-    @apply variant-outline;
+    @apply variant variant-outline;
   }
 
   .ex-radio-card-indicator {
@@ -63,7 +63,7 @@
   .ex-radio-card-description {
     --ex-font-family: var(--ex-radio-card-description-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-radio-card-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-radio-card-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-radio-card-description-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-radio-card-description {

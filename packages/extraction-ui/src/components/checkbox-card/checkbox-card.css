@@ -7,7 +7,7 @@
   }
 
   .ex-checkbox-card {
-    @apply variant-outline palette-neutral;
+    @apply variant variant-outline palette-neutral;
   }
 
   .ex-checkbox-card {
@@ -31,7 +31,7 @@
   }
 
   .ex-checkbox-card-indicator {
-    @apply variant-outline;
+    @apply variant variant-outline;
   }
 
   .ex-checkbox-card-indicator {
@@ -59,7 +59,7 @@
   .ex-checkbox-card-description {
     --ex-font-family: var(--ex-checkbox-card-description-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-checkbox-card-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-checkbox-card-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-checkbox-card-description-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-checkbox-card-description {

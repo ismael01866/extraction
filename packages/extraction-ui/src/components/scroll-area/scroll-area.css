@@ -3,7 +3,15 @@
 
 @layer components {
   .ex-scroll-area {
-    @apply scroll-area-md palette-neutral variant-solid overflow-hidden;
+    @apply scroll-area-md;
+  }
+
+  .ex-scroll-area {
+    @apply variant variant-solid palette-neutral;
+  }
+
+  .ex-scroll-area {
+    @apply overflow-hidden;
     @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
   }
 }

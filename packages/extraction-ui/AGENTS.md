@@ -875,7 +875,6 @@ Always verify compatibility in `package.json`.
 Use palette utilities to apply consistent color schemes:
 
 - **Primary**: `palette-primary`
-- **Accent**: `palette-accent`
 - **Neutral**: `palette-neutral`
 
 ```css

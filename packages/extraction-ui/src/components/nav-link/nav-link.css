@@ -10,7 +10,7 @@
   }
 
   .ex-nav-link {
-    @apply variant-ghost palette-neutral;
+    @apply variant variant-ghost palette-neutral;
   }
 
   .ex-nav-link {

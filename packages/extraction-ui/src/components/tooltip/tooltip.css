@@ -10,7 +10,7 @@
   }
 
   .ex-tooltip-content {
-    @apply tonal-black variant-solid;
+    @apply variant variant-solid tonal-black;
   }
 
   .ex-tooltip-content {

@@ -7,7 +7,7 @@
   }
 
   .ex-radio-group {
-    @apply variant-outline palette-neutral;
+    @apply variant variant-outline palette-neutral;
   }
 
   .ex-radio-group {

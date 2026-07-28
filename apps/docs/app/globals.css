@@ -200,12 +200,12 @@ h2.nextra-border {
 
 div.nextra-code {
   .x\:flex.x\:items-center.x\:border {
-    @apply palette-neutral variant-outline border-b-0;
+    @apply variant variant-outline palette-neutral border-b-0;
   }
 }
 
 div.nextra-code pre {
-  @apply palette-neutral variant-outline bg-white ring-0 dark:bg-black;
+  @apply variant variant-outline palette-neutral bg-white ring-0 dark:bg-black;
 }
 
 /**  Tables                      */

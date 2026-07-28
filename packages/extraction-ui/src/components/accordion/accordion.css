@@ -7,7 +7,7 @@
   }
 
   .ex-accordion {
-    @apply palette-neutral variant-outline;
+    @apply variant variant-outline palette-neutral;
   }
 
   .ex-accordion {
@@ -90,7 +90,7 @@
 
   .ex-accordion-description {
     --ex-font-weight: var(--ex-accordion-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-accordion-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-accordion-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

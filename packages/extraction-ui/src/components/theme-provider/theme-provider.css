@@ -3,6 +3,6 @@
 
 @layer components {
   .ex-theme-provider {
-    @apply children-inherit-palette children-inherit-variant contents;
+    /* @apply children-inherit-palette children-inherit-variant contents; */
   }
 }

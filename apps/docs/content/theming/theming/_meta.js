@@ -5,6 +5,9 @@ export default {
   variants: {
     title: 'Variants',
   },
+  tonal: {
+    title: 'Tonal',
+  },
   'color-mode': {
     title: 'Color Mode',
   },

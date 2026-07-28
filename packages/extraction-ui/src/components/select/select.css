@@ -12,7 +12,7 @@
 
   *:not(.ex-input-group) {
     > .ex-select-trigger {
-      @apply palette-neutral variant-outline;
+      @apply variant variant-outline palette-neutral;
     }
   }
 
@@ -44,7 +44,11 @@
   }
 
   .ex-select-content {
-    @apply palette-neutral variant-outline flex hidden min-w-fit;
+    @apply variant variant-outline palette-neutral;
+  }
+
+  .ex-select-content {
+    @apply flex hidden min-w-fit;
     @apply max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:has(.ex-select-item-indicator) {
@@ -81,7 +85,7 @@
     @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
-      @apply variant-subtle border-0!;
+      @apply variant variant-subtle border-0!;
     }
   }
 
@@ -97,7 +101,7 @@
   .ex-select-label {
     --ex-font-family: var(--ex-select-content-label-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-select-content-label-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-select-content-label-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-select-content-label-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-select-label {
@@ -119,7 +123,7 @@
     @apply interactive valid invalid;
 
     &:where(:disabled, [disabled], [data-disabled], .disabled) {
-      @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-disabled-opacity)*100%),_transparent)];
+      @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)];
     }
   }
 

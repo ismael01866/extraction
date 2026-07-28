@@ -3,6 +3,14 @@
 
 @layer components {
   .ex-separator {
+    @apply separator-xs;
+  }
+
+  .ex-separator {
+    @apply variant variant-outline palette-neutral;
+  }
+
+  .ex-separator {
     @apply shrink-0 border-0;
 
     &:where([data-orientation='horizontal']) {
@@ -12,13 +20,5 @@
     &:where([data-orientation='vertical']) {
       @apply [border-inline-start-width:var(--ex-size)];
     }
-  }
-
-  .ex-separator {
-    @apply separator-xs;
-  }
-
-  .ex-separator {
-    @apply palette-neutral variant-outline;
   }
 }

@@ -7,7 +7,7 @@
   }
 
   .ex-checkbox {
-    @apply variant-outline palette-neutral;
+    @apply variant variant-outline palette-neutral;
     @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
   }
 

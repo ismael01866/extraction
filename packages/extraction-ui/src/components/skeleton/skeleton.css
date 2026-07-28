@@ -9,7 +9,7 @@
 
   .ex-skeleton {
     &:where(.ex-skeleton-loading) {
-      @apply variant-subtle palette-neutral;
+      @apply variant variant-subtle palette-neutral;
     }
   }
 

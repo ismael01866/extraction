@@ -5,14 +5,14 @@
   .ex-pin-input {
     --ex-font-family: var(--ex-pin-input-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-pin-input-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-options-placeholder-opacity);
+    --ex-opacity: var(--ex-options-opacity-placeholder);
 
     @apply pin-input-md;
   }
 
   *:not(.ex-input-group) {
     > .ex-pin-input {
-      @apply palette-neutral variant-outline;
+      @apply variant variant-outline palette-neutral;
       @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
     }
   }
@@ -26,7 +26,7 @@
 
       .ex-pin-input-field {
         &::placeholder {
-          @apply opacity-[calc(var(--ex-options-disabled-opacity)+0.15)];
+          @apply opacity-[calc(var(--ex-options-opacity-disabled)+0.15)];
         }
       }
     }

@@ -95,3 +95,9 @@
     }
   }
 }
+
+@layer utilities {
+  .ex-icon-button {
+    @apply interactive;
+  }
+}

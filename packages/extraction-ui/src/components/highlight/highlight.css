@@ -11,7 +11,7 @@
   }
 
   .ex-highlight {
-    @apply palette-neutral variant-subtle;
+    @apply variant variant-subtle palette-neutral;
     @apply border-transparent! bg-transparent! outline-transparent!;
 
     &:where(.variant-solid) {

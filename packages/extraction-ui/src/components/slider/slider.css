@@ -11,7 +11,7 @@
   }
 
   .ex-slider {
-    @apply variant-solid palette-primary;
+    @apply variant variant-solid palette-primary;
     @apply border-transparent! bg-transparent! outline-transparent!;
   }
 
@@ -28,11 +28,12 @@
   }
 
   .ex-slider-track {
-    @apply variant-solid bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
+    @apply variant variant-solid;
   }
 
   .ex-slider-track {
     @apply relative flex-1 overflow-hidden rounded-[var(--ex-radius)];
+    @apply bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
 
     &:where([data-orientation='horizontal']) {
       @apply h-[var(--ex-size)] w-full;
@@ -44,7 +45,7 @@
   }
 
   .ex-slider-range {
-    @apply variant-solid rounded-[var(--ex-radius)];
+    @apply variant variant-solid rounded-[var(--ex-radius)];
   }
 
   .ex-slider-range {
