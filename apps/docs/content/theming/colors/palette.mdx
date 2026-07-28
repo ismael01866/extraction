@@ -1,0 +1,72 @@
+import { Box, Grid, VStack, colorPaletteValues, shadesValues } from 'extraction-ui';
+import { capitalize } from 'lodash';
+
+import { BaseContainer, Code, CodeContainer, Variants } from '@/app/components';
+
+# Palette
+
+Colors define the Extraction UI palette and provide consistent usage across components.
+
+## Overview
+
+Each color palette has 11 shades:
+
+- **50-100** — Very light: use for backgrounds, disabled states
+- **200-400** — Light: borders, hover states
+- **500-600** — Mid-tone: primary text, icons
+- **700-800** — Dark: secondary text, emphasis
+- **900-950** — Very dark: text contrast, prominent emphasis
+
+## Accessibility
+
+All color combinations are tested to meet **WCAG AA** (minimum 4.5:1 contrast) for text and **WCAG AAA** (7:1) where possible. [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+
+## Colors
+
+Extraction UI supports the following custom colors out of the box.
+
+Because these colors are defined under `@theme`, Tailwind also generates the matching color utility classes, such as `bg-primary`, `text-primary-500`, `border-primary-200`, etc. For more information about default color utilities and usage, visit [Tailwind](https://tailwindcss.com/docs/colors)
+
+{ colorPaletteValues.map((color, index) => (
+
+   <section key={index}>
+    {index === 0 && <br />}
+    {index > 0 && <hr className="x:my-8 nextra-border" />}
+
+    <BaseContainer className="flex-col items-start">
+      {capitalize(color)}
+
+      <Grid className='gap-2 mbs-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-11'>
+        {shadesValues.map((shade, index) => (
+          <VStack key={index} className='gap-3 items-stretch text-sm text-center'>
+            <Box
+              key={index}
+              className={`variant-solid palette-${color} shade-${shade} h-15`}
+            ></Box>
+            {shade}
+          </VStack>
+        ))}
+      </Grid>
+    </BaseContainer>
+
+    <CodeContainer>
+      <Code>
+        {[
+          `<Box className='variant-solid palette-${color} shade-50'  />`,
+          `<Box className='variant-solid palette-${color} shade-100' />`,
+          `<Box className='variant-solid palette-${color} shade-200' />`,
+          `...`,
+          `<Box className='variant-solid palette-${color} shade-900' />`,
+          `<Box className='variant-solid palette-${color} shade-950' />`,
+        ].join('\n')}
+      </Code>
+    </CodeContainer>
+
+  </section>
+))}
+
+## Extra Palettes
+
+While Extraction UI includes by default the `primary` and `neutral` palettes to keep the css as optimal as possible, we've included an extra file that provides the `accent`, `success`, `error`, `info`, and `warning` palette.
+
+For more details on the extra palettes, refer to the [Extra Palettes](/theming/colors/extra) section.

@@ -1,6 +1,6 @@
 export default {
-  theming: {
-    title: 'Theming',
+  colors: {
+    title: 'Colors',
   },
   behavior: {
     title: 'Behavior',
