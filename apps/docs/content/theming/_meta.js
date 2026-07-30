@@ -1,6 +1,6 @@
 export default {
-  theming: {
-    title: 'Theming',
+  colors: {
+    title: 'Colors',
   },
   behavior: {
     title: 'Behavior',
@@ -10,6 +10,9 @@ export default {
   },
   tokens: {
     title: 'Design Tokens',
+  },
+  utils: {
+    title: 'Utilities',
   },
   other: {
     title: 'Other',

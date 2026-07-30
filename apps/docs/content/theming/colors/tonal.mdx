@@ -1,0 +1,27 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Button, Stack } from 'extraction-ui';
+
+# Tonal
+
+Use the `tonal-{value}` class to apply a neutral tonal palette to an element. Values include `black` and `white`.
+
+<br />
+
+<section>
+  <BaseContainer>
+    <Stack direction="row">
+      <Button>Default</Button>
+      <Button className="tonal-black">Black</Button>
+      <Button className="tonal-white variant-surface">White</Button>
+    </Stack>
+  </BaseContainer>
+
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`<Button>Default</Button>
+  <Button className="tonal-black">Black</Button>
+  <Button className="tonal-white variant-surface">White</Button>`}
+    </Code>
+  </CodeContainer>
+</section>

@@ -7,7 +7,7 @@
   }
 
   .ex-code {
-    @apply palette-neutral variant-subtle;
+    @apply variant-subtle palette-neutral;
   }
 
   .ex-code {

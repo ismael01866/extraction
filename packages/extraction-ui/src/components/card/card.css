@@ -36,7 +36,7 @@
 
   .ex-card-description {
     --ex-font-weight: var(--ex-card-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-card-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-card-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

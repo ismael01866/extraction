@@ -36,6 +36,7 @@ export default defineConfig({
       entry: {
         index: path.resolve(__dirname, 'src/index.ts'),
         styles: path.resolve(__dirname, 'src/index.css'),
+        palettes: path.resolve(__dirname, 'src/css/palettes.css'),
       },
       formats: ['es'],
     },

@@ -1,15 +1,23 @@
 export const colorPalette = {
   primary: 'oklch(0.5 0.22 267)',
-  accent: 'oklch(0.5 0.22 280)',
   neutral: 'oklch(0.5 0.03 275)',
-  // error: 'oklch(0.5 0.22 25)',
-  // success: 'oklch(0.5 0.22 140)',
-  // info: 'oklch(0.5 0.22 255)',
-  // warning: 'oklch(0.7 0.22 95)',
+};
+
+export const extraColorPalette = {
+  accent: 'oklch(0.5 0.22 280)',
+  success: 'oklch(0.5 0.22 140)',
+  error: 'oklch(0.5 0.22 25)',
+  info: 'oklch(0.5 0.22 255)',
+  warning: 'oklch(0.7 0.22 95)',
 };
 
 export type ColorPaletteToken = typeof colorPalette;
+export type ExtraColorPaletteToken = typeof extraColorPalette;
+
 export const colorPaletteValues = Object.keys(colorPalette) as (keyof ColorPaletteToken)[];
+export const extraColorPaletteValues = Object.keys(
+  extraColorPalette,
+) as (keyof ExtraColorPaletteToken)[];
 
 type ColorKeys<T extends string> =
   | `${T}`

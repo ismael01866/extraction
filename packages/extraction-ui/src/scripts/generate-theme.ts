@@ -23,23 +23,14 @@ function getMixBase(shade: string) {
   return num <= 500 ? 'white' : 'black';
 }
 
-// function getForegroundColor(shade: string, name: string) {
-//   const num = Number(shade);
-
-//   return num <= 300
-//     ? `color-mix(in oklch, var(--color-${name}) 50%, black)`
-//     : `color-mix(in oklch, var(--color-${name}) 2%, white)`;
-// }
-
 /*
  * PALETTE + SHADES */
 
-function generatePaletteVars() {
+function generatePaletteVars(colors: Record<string, string>) {
   const vars: Record<string, string> = {};
 
-  for (const [name, base] of Object.entries(colorPalette)) {
+  for (const [name, base] of Object.entries(colors)) {
     vars[`--color-${name}`] = base;
-    // vars[`--color-${name}-foreground`] = `color-mix(in oklch, var(--color-${name}) 2%, white)`;
 
     for (const shade of Object.keys(shades)) {
       const mixBase = getMixBase(shade);
@@ -50,8 +41,6 @@ function generatePaletteVars() {
         vars[`--color-${name}-${shade}`] =
           `color-mix(in oklch, var(--color-${name}) ${themePercentages[shade as unknown as keyof typeof themePercentages]}, ${mixBase})`;
       }
-
-      // vars[`--color-${name}-${shade}-foreground`] = getForegroundColor(shade, name);
     }
   }
 
@@ -64,18 +53,26 @@ function generatePaletteVars() {
 function main() {
   const css =
     `@theme {\n` +
-    Object.entries(generatePaletteVars())
+    Object.entries(generatePaletteVars(colorPalette))
       .map(([k, v]) => `  ${k}: ${v};`)
       .join('\n') +
     `\n}\n`;
 
+  // const extra =
+  //   `@theme {\n` +
+  //   Object.entries(generatePaletteVars(extraColorPalette))
+  //     .map(([k, v]) => `  ${k}: ${v};`)
+  //     .join('\n') +
+  //   `\n}\n`;
+
   const outDir = path.resolve('src/css');
-  const outPath = path.join(outDir, 'theme.css');
 
   fs.mkdirSync(outDir, { recursive: true });
-  fs.writeFileSync(outPath, css);
 
-  console.log(`✅ Generated theme CSS at ${outPath}`);
+  fs.writeFileSync(path.join(outDir, 'theme.css'), css);
+  // fs.writeFileSync(path.join(outDir, 'palettes.css'), extra);
+
+  console.log(`✅ Generated theme CSS`);
 }
 
 main();

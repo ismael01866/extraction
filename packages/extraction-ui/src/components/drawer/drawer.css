@@ -5,7 +5,7 @@
   .ex-drawer-overlay {
     --ex-z-index: var(--ex-drawer-overlay-z-index, var(--ex-options-z-drawer-overlay));
 
-    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-opacity-overlay))];
     @apply z-[var(--ex-z-index)];
 
     &:where([data-state='open']) {
@@ -22,13 +22,13 @@
   }
 
   .ex-drawer-content {
-    @apply flex flex-1 flex-col;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-drawer-content {
     --ex-z-index: var(--ex-drawer-z-index, var(--ex-options-z-drawer));
 
-    @apply palette-neutral variant-outline fixed flex flex-col border-transparent shadow-lg will-change-[transform,opacity];
+    @apply fixed flex flex-1 flex-col border-transparent shadow-lg will-change-[transform,opacity];
     @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:where(:focus) {
@@ -106,7 +106,7 @@
 
   .ex-drawer-description {
     --ex-font-weight: var(--ex-drawer-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

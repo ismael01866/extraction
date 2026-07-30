@@ -3,11 +3,14 @@
 
 @layer components {
   .ex-app-layout {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-app-layout {
     --ex-px: var(--ex-app-layout-px, calc(var(--spacing) * 5));
     --ex-py: var(--ex-app-layout-py, calc(var(--spacing) * 5));
 
-    @apply palette-neutral variant-outline border-0 outline-0;
-    @apply text-current;
+    @apply border-0 text-current outline-0;
   }
 
   .ex-app-layout {

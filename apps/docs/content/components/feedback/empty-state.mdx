@@ -3,12 +3,12 @@ import { LuMail } from 'react-icons/lu';
 
 import data from '../data.json';
 import {
-  cfg,
-  emptyStateCfg,
-  emptyStateContentCfg,
-  emptyStateDescriptionCfg,
-  emptyStateIndicatorCfg,
-  emptyStateTitleCfg,
+    cfg,
+    emptyStateCfg,
+    emptyStateContentCfg,
+    emptyStateDescriptionCfg,
+    emptyStateIndicatorCfg,
+    emptyStateTitleCfg,
 } from './empty-state';
 
 export const Component = (
@@ -77,7 +77,7 @@ export const Wrapper = ({ children }) => children;
   --ex-empty-state-indicator-font-size-md: var(--text-xl);
   --ex-empty-state-indicator-font-size-lg: var(--text-2xl);
 
-  --ex-empty-state-indicator-opacity: var(--ex-options-subtle-opacity);
+  --ex-empty-state-indicator-opacity: var(--ex-options-opacity-subtle);
 
   --ex-empty-state-title-font-size-sm: var(--text-sm);
   --ex-empty-state-title-font-size-md: var(--text-base);
@@ -90,7 +90,7 @@ export const Wrapper = ({ children }) => children;
   --ex-empty-state-description-font-size-lg: var(--text-base);
 
   --ex-empty-state-description-font-weight: var(--font-weight-normal);
-  --ex-empty-state-description-opacity: var(--ex-options-muted-opacity);
+  --ex-empty-state-description-opacity: var(--ex-options-opacity-muted);
 }
 ```
 

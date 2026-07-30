@@ -5,7 +5,7 @@
   .ex-alert-dialog-overlay {
     --ex-z-index: var(--ex-alert-dialog-overlay-z-index, var(--ex-options-z-alert-dialog-overlay));
 
-    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-opacity-overlay))];
     @apply z-[var(--ex-z-index)];
 
     &:where([data-state='open']) {
@@ -22,9 +22,13 @@
   }
 
   .ex-alert-dialog-content {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-alert-dialog-content {
     --ex-z-index: var(--ex-alert-dialog-z-index, var(--ex-options-z-alert-dialog));
 
-    @apply palette-neutral variant-outline fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
+    @apply fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
     @apply z-[var(--ex-z-index)] w-[var(--ex-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open']) {
@@ -58,7 +62,7 @@
 
   .ex-alert-dialog-description {
     --ex-font-weight: var(--ex-alert-dialog-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-alert-dialog-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-alert-dialog-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

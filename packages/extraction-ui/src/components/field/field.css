@@ -23,7 +23,7 @@
   .ex-field-helper {
     --ex-font-family: var(--ex-field-helper-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-field-helper-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-field-helper-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-field-helper-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-field-helper {

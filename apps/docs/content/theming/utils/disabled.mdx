@@ -1,0 +1,27 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Button, Stack } from 'extraction-ui';
+
+# Disabled
+
+Use the `disabled` class to apply a disabled appearance and behavior to an element. This is useful for non-form elements or when the disabled state is controlled externally.
+
+Dsiabled utility maps to the corresponding `--ex-options-opacity-disabled` variable. Refer to the [Options](/theming/other/options) page for the full reference on the CSS variables.
+
+<br />
+
+<section>
+  <BaseContainer>
+    <Stack direction="row">
+      <Button>Default</Button>
+      <Button className="disabled">Disabled</Button>
+    </Stack>
+  </BaseContainer>
+
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`<Button>Default</Button>
+  <Button className="disabled">Disabled</Button>`}
+    </Code>
+  </CodeContainer>
+</section>

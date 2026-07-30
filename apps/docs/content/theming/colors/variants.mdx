@@ -1,0 +1,51 @@
+import { Variants } from '@/app/components';
+
+# Variants
+
+Variants define the visual style of a component by determining how its palette is applied. Each variant combines the active palette with a different treatment for the background, border, outline, and text to create distinct appearances while maintaining a consistent color system.
+
+Use the `variant-{value}` class to apply a variant to a component. <br/> Available variants include `solid`, `outline`, `surface`, `subtle`, `ghost`, `link`, and `plain`. Keep in mind that while you can apply any variant to any component, not every variant is appropriate for every use case. Some components are designed with a specific set of variants in mind and may produce a better user experience with those intended styles.
+
+### Primary
+
+<br />
+<Variants color={'primary'} />
+
+### Neutral
+
+<br />
+<Variants color={'neutral'} />
+
+## Extra Palettes
+
+If you also included the extra palettes:
+
+```css
+/** main.css */
+@import 'extraction-ui/palettes';
+```
+
+### Accent
+
+<br />
+<Variants color={'accent'} />
+
+### Success
+
+<br />
+<Variants color={'success'} />
+
+### Error
+
+<br />
+<Variants color={'error'} />
+
+### Info
+
+<br />
+<Variants color={'info'} />
+
+### Warning
+
+<br />
+<Variants color={'warning'} />

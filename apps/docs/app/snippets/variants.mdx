@@ -32,9 +32,7 @@ export const buildVariantClassName = ({ config, color, variant }) => {
 Use the <code className="nextra-code ">variant</code> and <code className="nextra-code">palette</code> classes to control the appereance of the component.
 
 Variant values can include { props.config?.variants?.map((variant, index) => <code key={index} className='nextra-code mx-0.5'>{variant}</code> )}. <br/>
-Color palettes can include { props.config?.colorPalette?.map((color, index) => <code key={index} className='nextra-code mx-0.5'>{color}</code> )}.
-
-For more information on all available colors and shades, refer to the [`Colors`](/tokens/colors) documentation.
+Color palettes can include { props.config?.colorPalette?.map((color, index) => <code key={index} className='nextra-code mx-0.5'>{color}</code> )}. For extra palettes such as `warning` `error` and more, refer to the [`Colors`](/theming/colors/palettes) section.
 
 { props.config?.colorPalette?.map((color, index) => {
 

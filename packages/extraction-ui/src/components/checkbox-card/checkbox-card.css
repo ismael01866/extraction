@@ -59,7 +59,7 @@
   .ex-checkbox-card-description {
     --ex-font-family: var(--ex-checkbox-card-description-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-checkbox-card-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-checkbox-card-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-checkbox-card-description-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-checkbox-card-description {

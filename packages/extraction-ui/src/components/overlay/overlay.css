@@ -3,7 +3,7 @@
 
 @layer components {
   .ex-overlay {
-    --ex-opacity: var(--ex-overlay-opacity, var(--ex-options-overlay-opacity));
+    --ex-opacity: var(--ex-overlay-opacity, var(--ex-options-opacity-overlay));
     --ex-background: var(--ex-overlay-background, var(--color-black));
 
     @apply absolute inset-0 flex flex-col;

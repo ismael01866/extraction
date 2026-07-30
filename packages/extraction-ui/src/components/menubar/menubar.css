@@ -7,7 +7,7 @@
   }
 
   .ex-menubar {
-    @apply palette-neutral variant-outline;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-menubar {
@@ -36,7 +36,12 @@
 
   .ex-menubar-content,
   .ex-menubar-sub-content {
-    @apply palette-neutral variant-outline flex will-change-[transform,opacity];
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-menubar-content,
+  .ex-menubar-sub-content {
+    @apply flex will-change-[transform,opacity];
     @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open'][data-side='top']) {
@@ -155,7 +160,7 @@
   .ex-menubar-label {
     --ex-font-family: var(--ex-menubar-label-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-menubar-label-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-menubar-label-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-menubar-label-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-menubar-label {
@@ -165,7 +170,7 @@
   .ex-menubar-command {
     --ex-font-family: var(--ex-menubar-command-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-menubar-command-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-menubar-command-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-menubar-command-opacity, var(--ex-options-opacity-muted));
   }
 
   .ex-menubar-command {

@@ -1,0 +1,32 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Button } from 'extraction-ui';
+
+# Transitions
+
+Use the `duration-{value}` class to control the duration of the transition. Values can include `slowest`, `slower`, `slow`, `normal`, `fast`, `faster` and `fastest`.
+
+Duration utilities map to the `--ex-options-duration-*` variables. Refer to the [Options](/theming/other/options) page for the full reference on the CSS variables.
+
+<br />
+
+<section>
+  <BaseContainer>
+    {['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map((value) => (
+      <Button key={value} className={`duration-${value} hover:scale-110`}>
+        {value}
+      </Button>
+    ))}
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`['slowest', 'slower', 'slow', 'normal', 'fast', 'faster', 'fastest'].map(
+    (value) => (
+      <Button key={value} className={\`duration-\${value} hover:scale-110\`}>
+        {value}
+      </Button>
+    );
+  );`}
+    </Code>
+  </CodeContainer>
+</section>

@@ -176,7 +176,7 @@
   .ex-toast-description {
     --ex-font-family: var(--ex-toast-description-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-toast-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-toast-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-toast-description-opacity, var(--ex-options-opacity-muted));
 
     @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [opacity:var(--ex-opacity)];
   }

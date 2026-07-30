@@ -3,6 +3,6 @@
 
 @layer components {
   .ex-container {
-    @apply container mx-auto w-full;
+    @apply container mx-auto;
   }
 }

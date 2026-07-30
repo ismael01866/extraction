@@ -22,7 +22,7 @@
 
   .ex-empty-state-indicator {
     --ex-font-size: var(--ex-empty-state-indicator-font-size, var(--text-lg));
-    --ex-opacity: var(--ex-empty-state-indicator-opacity, var(--ex-options-subtle-opacity));
+    --ex-opacity: var(--ex-empty-state-indicator-opacity, var(--ex-options-opacity-subtle));
 
     @apply my-[0.375rem];
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)];
@@ -36,7 +36,7 @@
 
   .ex-empty-state-description {
     --ex-font-weight: var(--ex-empty-state-description-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-empty-state-description-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-empty-state-description-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

@@ -28,11 +28,12 @@
   }
 
   .ex-slider-track {
-    @apply variant-solid bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
+    @apply variant-solid;
   }
 
   .ex-slider-track {
     @apply relative flex-1 overflow-hidden rounded-[var(--ex-radius)];
+    @apply bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
 
     &:where([data-orientation='horizontal']) {
       @apply h-[var(--ex-size)] w-full;

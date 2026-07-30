@@ -5,13 +5,13 @@
   .ex-textarea {
     --ex-font-family: var(--ex-textarea-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-textarea-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-options-placeholder-opacity);
+    --ex-opacity: var(--ex-options-opacity-placeholder);
 
     @apply textarea-md;
   }
 
   .ex-textarea {
-    @apply palette-neutral variant-outline;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-textarea {
@@ -24,7 +24,7 @@
 
     &:where(.variant-solid) {
       &::placeholder {
-        @apply opacity-[calc(var(--ex-options-disabled-opacity)+0.15)];
+        @apply opacity-[calc(var(--ex-options-opacity-disabled)+0.15)];
       }
     }
   }

@@ -7,7 +7,7 @@
   }
 
   .ex-status {
-    @apply palette-primary variant-solid;
+    @apply variant-solid palette-primary;
   }
 
   .ex-status {

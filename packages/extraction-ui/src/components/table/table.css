@@ -7,7 +7,7 @@
   }
 
   .ex-table {
-    @apply palette-neutral variant-outline;
+    @apply variant-outline palette-neutral;
     @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
   }
 
@@ -36,7 +36,7 @@
 
   .ex-table-caption {
     --ex-font-weight: var(--ex-table-caption-font-weight, var(--font-weight-normal));
-    --ex-opacity: var(--ex-table-caption-opacity, var(--ex-options-muted-opacity));
+    --ex-opacity: var(--ex-table-caption-opacity, var(--ex-options-opacity-muted));
 
     @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

@@ -7,7 +7,7 @@
   }
 
   .ex-tabs {
-    @apply palette-neutral variant-outline;
+    @apply variant-outline palette-neutral;
     @apply border-transparent! bg-transparent! outline-transparent!;
   }
 
@@ -130,10 +130,6 @@
 
   .ex-tabs-trigger {
     @apply interactive;
-
-    &:where([data-state='active']) {
-      @apply interactive-hover;
-    }
   }
 
   .ex-tabs-content {

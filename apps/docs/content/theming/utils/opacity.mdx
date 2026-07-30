@@ -1,0 +1,33 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Description, Stack } from 'extraction-ui';
+
+# Opacity
+
+Use the `opacity-{value}` class to adjust the opacity of an element. Values include `muted`, `subtle`, and `weak`.
+
+Opacity utilities map to the corresponding `--ex-options-opacity-*` variables. Refer to the [Options](/theming/other/options) page for the full reference on the CSS variables.
+
+<br />
+
+<section>
+  <BaseContainer>
+    <Stack>
+      {['muted', 'subtle', 'weak'].map((value) => (
+        <Description key={value} className={`opacity-${value}`}>
+          The brown fox jumps over the lazy dog
+        </Description>
+      ))}
+    </Stack>
+  </BaseContainer>
+
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`['muted', 'subtle', 'weak'].map((value) => (
+    <Description key={value} className={\`opacity-\${value}\`}>
+      The brown fox jumps over the lazy dog
+    </Description>
+));`}
+    </Code>
+  </CodeContainer>
+</section>

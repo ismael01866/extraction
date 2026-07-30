@@ -49,7 +49,7 @@ const DOCUMENTATION = [
   },
   {
     label: 'Theming',
-    href: '/theming/overview/introduction',
+    href: '/theming/colors/palettes',
   },
 ];
 

@@ -102,7 +102,7 @@
 /**  Children  */
 /** ──────────────────────────── */
 
-@utility children-inherit-palette {
+/* @utility children-inherit-palette {
   :where([class*='ex-']:not([class*='palette-'])) {
     @apply palette-inherit;
   }
@@ -112,7 +112,7 @@
   :where([class*='ex-']:not([class*='variant-'])) {
     @apply variant-inherit;
   }
-}
+} */
 
 /**  Decorations  */
 /** ──────────────────────────── */
@@ -120,7 +120,7 @@
 @utility accent-border-start {
   --accent-width: 3px;
 
-  @apply border-s-[var(--shade-bold)] [border-inline-start-width:var(--accent-width)];
+  @apply border-s-(--shade-bold) [border-inline-start-width:var(--accent-width)];
 }
 
 @utility accent-border-start-* {
@@ -128,13 +128,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-s-[var(--shade-bold)] [border-inline-start-width:var(--accent-width)];
+  @apply border-s-(--shade-bold) [border-inline-start-width:var(--accent-width)];
 }
 
 @utility accent-border-end {
   --accent-width: 3px;
 
-  @apply border-e-[var(--shade-bold)] [border-inline-end-width:var(--accent-width)];
+  @apply border-e-(--shade-bold) [border-inline-end-width:var(--accent-width)];
 }
 
 @utility accent-border-end-* {
@@ -142,13 +142,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-e-[var(--shade-bold)] [border-inline-end-width:var(--accent-width)];
+  @apply border-e-(--shade-bold) [border-inline-end-width:var(--accent-width)];
 }
 
 @utility accent-border-top {
   --accent-width: 3px;
 
-  @apply border-t-[var(--shade-bold)] [border-block-start-width:var(--accent-width)];
+  @apply border-t-(--shade-bold) [border-block-start-width:var(--accent-width)];
 }
 
 @utility accent-border-top-* {
@@ -156,13 +156,13 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-t-[var(--shade-bold)] [border-block-start-width:var(--accent-width)];
+  @apply border-t-(--shade-bold) [border-block-start-width:var(--accent-width)];
 }
 
 @utility accent-border-bottom {
   --accent-width: 3px;
 
-  @apply border-b-[var(--shade-bold)] [border-block-end-width:var(--accent-width)];
+  @apply border-b-(--shade-bold) [border-block-end-width:var(--accent-width)];
 }
 
 @utility accent-border-bottom-* {
@@ -170,22 +170,22 @@
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-b-[var(--shade-bold)] [border-block-end-width:var(--accent-width)];
+  @apply border-b-(--shade-bold) [border-block-end-width:var(--accent-width)];
 }
 
 /**  Opacity  */
 /** ──────────────────────────── */
 
 @utility opacity-muted {
-  @apply opacity-(--ex-options-muted-opacity);
+  @apply opacity-(--ex-options-opacity-muted);
 }
 
 @utility opacity-subtle {
-  @apply opacity-(--ex-options-subtle-opacity);
+  @apply opacity-(--ex-options-opacity-subtle);
 }
 
 @utility opacity-weak {
-  @apply opacity-(--ex-options-weak-opacity);
+  @apply opacity-(--ex-options-opacity-weak);
 }
 
 /**  Position  */
@@ -263,7 +263,7 @@
 /** ──────────────────────────── */
 
 @utility disabled {
-  @apply palette-neutral opacity-(--ex-options-disabled-opacity) pointer-events-none select-none grayscale;
+  @apply palette-neutral opacity-(--ex-options-opacity-disabled) pointer-events-none select-none grayscale;
 }
 
 @utility valid {

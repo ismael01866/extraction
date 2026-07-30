@@ -8,6 +8,9 @@
 
   .ex-progress {
     @apply variant-solid palette-primary;
+  }
+
+  .ex-progress {
     @apply bg-[--alpha(var(--background)/20%)] dark:bg-[--alpha(var(--background-dark)/20%)];
   }
 
