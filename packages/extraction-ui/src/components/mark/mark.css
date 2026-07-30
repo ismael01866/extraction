@@ -3,10 +3,6 @@
 
 @layer components {
   .ex-mark {
-    @apply variant;
-  }
-
-  .ex-mark {
     @apply inline whitespace-nowrap;
   }
 }

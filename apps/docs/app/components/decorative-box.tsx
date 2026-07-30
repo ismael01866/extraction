@@ -17,7 +17,7 @@ const decorativeStyles = {
 
 export function DecorativeBox({ className, style, ...rest }: ComponentProps<typeof Box>) {
   const classes = cn(
-    'palette-neutral shade-200 rounded-sm size-16 variant variant-solid relative',
+    'palette-neutral shade-200 rounded-sm size-16 variant-solid relative',
     className,
   );
 

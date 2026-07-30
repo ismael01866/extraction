@@ -7,7 +7,7 @@
   }
 
   .ex-navigation-menu {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-navigation-menu-viewport {
@@ -162,7 +162,7 @@
     @apply absolute flex;
 
     > .ex-navigation-menu-viewport {
-      @apply variant variant-outline palette-neutral;
+      @apply variant-outline palette-neutral;
     }
 
     > .ex-navigation-menu-viewport {

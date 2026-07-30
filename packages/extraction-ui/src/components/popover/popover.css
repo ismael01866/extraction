@@ -7,7 +7,7 @@
   }
 
   .ex-popover-content {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-popover-content {

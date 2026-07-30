@@ -81,7 +81,7 @@
   },
   "context-menu": {
     "category": "overlay",
-    "description": "An overlay component that reveals a targeted list of actions when triggered by a right-click or long-press."
+    "description": "An overlay component that reveals a targeted list of actions when triggered by a right-click."
   },
   "counter": {
     "category": "data-display",

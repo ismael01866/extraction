@@ -11,7 +11,7 @@
   }
 
   .ex-button {
-    @apply variant variant-solid palette-primary;
+    @apply variant-solid palette-primary;
   }
 
   .ex-button {

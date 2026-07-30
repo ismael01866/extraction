@@ -3,7 +3,7 @@
 
 @layer components {
   .ex-app-layout {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-app-layout {

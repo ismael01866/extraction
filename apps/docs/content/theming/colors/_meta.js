@@ -1,22 +1,18 @@
 export default {
-  palette: {
-    title: 'Palette',
+  palettes: {
+    title: 'Palettes',
   },
-  extra: {
-    title: 'Extra Palettes',
+  variants: {
+    title: 'Variants',
   },
   customizing: {
     title: 'Customizing',
   },
-  creating: {
-    title: 'Adding Colors',
+  adding: {
+    title: 'Adding New',
   },
-
   tonal: {
     title: 'Tonal Colors',
-  },
-  variants: {
-    title: 'Variants',
   },
   'color-mode': {
     title: 'Color Mode',

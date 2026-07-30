@@ -1,9 +1,16 @@
-import { Box, Grid, VStack, colorPaletteValues, shadesValues } from 'extraction-ui';
+import {
+  Box,
+  Grid,
+  VStack,
+  colorPaletteValues,
+  extraColorPaletteValues,
+  shadesValues,
+} from 'extraction-ui';
 import { capitalize } from 'lodash';
 
-import { BaseContainer, Code, CodeContainer, Variants } from '@/app/components';
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
 
-# Palette
+# Palettes
 
 Colors define the Extraction UI palette and provide consistent usage across components.
 
@@ -67,6 +74,51 @@ Because these colors are defined under `@theme`, Tailwind also generates the mat
 
 ## Extra Palettes
 
-While Extraction UI includes by default the `primary` and `neutral` palettes to keep the css as optimal as possible, we've included an extra file that provides the `accent`, `success`, `error`, `info`, and `warning` palette.
+While Extraction UI only includes by default the `primary` and `neutral` palettes to keep the css as optimal as possible, we've included an extra file that provides the `accent`, `success`, `error`, `info`, and `warning` colors.
 
-For more details on the extra palettes, refer to the [Extra Palettes](/theming/colors/extra) section.
+Include the palettes file in your main CSS:
+
+```css
+/** main.css */
+@import 'extraction-ui/palettes';
+```
+
+You now have access to the full suite of colors.
+
+{ extraColorPaletteValues.map((color, index) => (
+
+   <section key={index}>
+    {index === 0 && <br />}
+    {index > 0 && <hr className="x:my-8 nextra-border" />}
+
+    <BaseContainer className="flex-col items-start">
+      {capitalize(color)}
+
+      <Grid className='gap-2 mbs-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-11'>
+        {shadesValues.map((shade, index) => (
+          <VStack key={index} className='gap-3 items-stretch text-sm text-center'>
+            <Box
+              key={index}
+              className={`variant-solid palette-${color} shade-${shade} h-15`}
+            ></Box>
+            {shade}
+          </VStack>
+        ))}
+      </Grid>
+    </BaseContainer>
+
+    <CodeContainer>
+      <Code>
+        {[
+          `<Box className='variant-solid palette-${color} shade-50'  />`,
+          `<Box className='variant-solid palette-${color} shade-100' />`,
+          `<Box className='variant-solid palette-${color} shade-200' />`,
+          `...`,
+          `<Box className='variant-solid palette-${color} shade-900' />`,
+          `<Box className='variant-solid palette-${color} shade-950' />`,
+        ].join('\n')}
+      </Code>
+    </CodeContainer>
+
+  </section>
+))}

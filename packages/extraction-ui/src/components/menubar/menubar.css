@@ -7,7 +7,7 @@
   }
 
   .ex-menubar {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-menubar {
@@ -36,7 +36,7 @@
 
   .ex-menubar-content,
   .ex-menubar-sub-content {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-menubar-content,
@@ -137,7 +137,7 @@
     @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
-      @apply variant variant-subtle border-0!;
+      @apply variant-subtle border-0!;
     }
   }
 

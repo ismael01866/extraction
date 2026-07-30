@@ -5,7 +5,7 @@
   .ex-alert-dialog-overlay {
     --ex-z-index: var(--ex-alert-dialog-overlay-z-index, var(--ex-options-z-alert-dialog-overlay));
 
-    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-overlay-opacity))];
+    @apply fixed inset-0 grid place-items-center overflow-y-auto bg-[rgba(0,0,0,var(--ex-options-opacity-overlay))];
     @apply z-[var(--ex-z-index)];
 
     &:where([data-state='open']) {
@@ -22,7 +22,7 @@
   }
 
   .ex-alert-dialog-content {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-alert-dialog-content {

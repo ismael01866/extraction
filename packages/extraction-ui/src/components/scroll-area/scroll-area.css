@@ -7,7 +7,7 @@
   }
 
   .ex-scroll-area {
-    @apply variant variant-solid palette-neutral;
+    @apply variant-solid palette-neutral;
   }
 
   .ex-scroll-area {

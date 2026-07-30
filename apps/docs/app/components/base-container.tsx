@@ -10,7 +10,7 @@ export function BaseContainer({
 }) {
   return (
     <div
-      className={`base-container x-container variant variant-outline palette-neutral ${className}`}
+      className={`base-container x-container variant-outline palette-neutral ${className}`}
       {...rest}
     >
       {children}

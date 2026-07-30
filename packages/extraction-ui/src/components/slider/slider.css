@@ -11,7 +11,7 @@
   }
 
   .ex-slider {
-    @apply variant variant-solid palette-primary;
+    @apply variant-solid palette-primary;
     @apply border-transparent! bg-transparent! outline-transparent!;
   }
 
@@ -28,7 +28,7 @@
   }
 
   .ex-slider-track {
-    @apply variant variant-solid;
+    @apply variant-solid;
   }
 
   .ex-slider-track {
@@ -45,7 +45,7 @@
   }
 
   .ex-slider-range {
-    @apply variant variant-solid rounded-[var(--ex-radius)];
+    @apply variant-solid rounded-[var(--ex-radius)];
   }
 
   .ex-slider-range {

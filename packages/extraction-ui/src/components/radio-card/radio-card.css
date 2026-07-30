@@ -31,7 +31,7 @@
   }
 
   .ex-radio-card-indicator {
-    @apply variant variant-outline;
+    @apply variant-outline;
   }
 
   .ex-radio-card-indicator {

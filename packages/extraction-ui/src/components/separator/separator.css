@@ -7,7 +7,7 @@
   }
 
   .ex-separator {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-separator {

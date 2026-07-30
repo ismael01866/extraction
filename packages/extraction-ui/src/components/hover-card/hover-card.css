@@ -7,7 +7,7 @@
   }
 
   .ex-hover-card-content {
-    @apply variant variant-outline palette-neutral;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-hover-card-content {

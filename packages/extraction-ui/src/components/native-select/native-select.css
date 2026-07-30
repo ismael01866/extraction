@@ -11,7 +11,7 @@
 
   *:not(.ex-input-group) {
     > .ex-native-select {
-      @apply variant variant-outline palette-neutral;
+      @apply variant-outline palette-neutral;
     }
   }
 

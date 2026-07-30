@@ -10,7 +10,7 @@
   }
 
   .ex-avatar {
-    @apply variant variant-subtle palette-neutral;
+    @apply variant-subtle palette-neutral;
   }
 
   .ex-avatar {

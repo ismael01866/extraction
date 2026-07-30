@@ -7,10 +7,6 @@
   }
 
   .ex-box {
-    @apply variant variant-plain;
-  }
-
-  .ex-box {
     @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)];
   }
 }

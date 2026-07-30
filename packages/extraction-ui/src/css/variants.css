@@ -4,7 +4,7 @@
 
 @utility variant-solid {
   :where(&) {
-    @apply shade-500;
+    @apply variant shade-500;
   }
 
   --background: var(--shade-color);
@@ -40,7 +40,7 @@
 
 @utility variant-outline {
   :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: transparent;
@@ -76,7 +76,7 @@
 
 @utility variant-surface {
   :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: var(--shade-soft);
@@ -112,7 +112,7 @@
 
 @utility variant-subtle {
   :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: var(--shade-soft);
@@ -148,7 +148,7 @@
 
 @utility variant-ghost {
   :where(&) {
-    @apply shade-100;
+    @apply variant shade-100;
   }
 
   --background: transparent;
@@ -184,7 +184,7 @@
 
 @utility variant-link {
   :where(&) {
-    @apply shade-500;
+    @apply variant shade-500;
   }
 
   --background: transparent;

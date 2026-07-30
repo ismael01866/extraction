@@ -12,7 +12,7 @@
 
   *:not(.ex-input-group) {
     > .ex-input {
-      @apply variant variant-outline palette-neutral;
+      @apply variant-outline palette-neutral;
     }
   }
 
