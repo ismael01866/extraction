@@ -99,6 +99,16 @@
   @apply duration-(--ex-options-transition-duration-slowest);
 }
 
+@utility transition {
+  :where(&) {
+    @apply duration-normal;
+
+    transition-property:
+      background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+      transform, scale, blur;
+  }
+}
+
 /**  Children  */
 /** ──────────────────────────── */
 

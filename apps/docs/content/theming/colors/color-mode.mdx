@@ -1,15 +1,77 @@
 # Color Mode
 
-Color mode allows components to adapt their appearance between light and dark themes. <br/> Dark mode is enabled by adding either the `.dark` class or the `data-theme="dark"` attribute to the root `<html>` element.
+Color mode allows components to adapt their appearance between light and dark themes.
 
-Add the theme to your root HTML element:
+Dark mode is controlled by adding either the `.dark` or `.light` class to the root `<html>` element. The `useColorMode` hook manages these classes automatically and temporarily disables transitions during theme changes to prevent unwanted animations.
+
+## Enable dark mode manually
+
+Add the theme class to your root HTML element:
 
 ```html
 <html class="dark" />
 ```
 
-or:
+For light mode:
 
 ```html
-<html data-theme="dark" />
+<html class="light" />
+```
+
+## Using the `useColorMode` hook
+
+The `useColorMode` hook provides:
+
+- `colorMode` — the current detected color mode ('light' or 'dark').
+- `setColorMode(mode)` — sets a specific color mode ('light' or 'dark').
+- `toggleColorMode()` — switches between light and dark mode.
+
+## Basic usage
+
+For basic applications:
+
+```tsx
+'use client';
+
+import { useColorMode } from 'extraction-ui';
+
+export function ColorModeButton() {
+  const { toggleColorMode } = useColorMode();
+
+  return <Button onClick={toggleColorMode}>Toggle</Button>;
+}
+```
+
+## Using a theme provider
+
+If your application uses an external theme manager such as `next-themes`, use the `onChange` callback to synchronize the selected mode:
+
+```tsx
+'use client';
+
+import { useColorMode } from 'extraction-ui';
+import { useTheme } from 'next-themes';
+
+export function ColorModeButton() {
+  const { setTheme } = useTheme();
+  const { toggleColorMode } = useColorMode({ onChange: setTheme });
+
+  return <Button onClick={toggleColorMode}>Toggle</Button>;
+}
+```
+
+## Options
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `useClassList` | `boolean` | `true` | Controls whether the hook updates the `.dark` and `.light` classes on the root HTML element. |
+| `onChange` | `function` | `undefined` | Called whenever the color mode changes. Useful for syncing external theme providers. |
+
+```tsx
+const { setColorMode } = useColorMode({
+  useClassList: false,
+  onChange(mode) {
+    console.log(mode);
+  },
+});
 ```

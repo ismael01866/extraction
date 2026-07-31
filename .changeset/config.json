@@ -9,7 +9,6 @@
   "updateInternalDependencies": "patch",
   "ignore": [
     "extraction-ui-utils",
-    "extraction-ui-components",
     "extraction-ui-demo-astro",
     "extraction-ui-demo-gatsby",
     "extraction-ui-demo-next",

@@ -11,11 +11,7 @@
 }
 
 @utility interactive {
-  @apply duration-normal;
-
-  transition-property:
-    background-color, border-color, color, fill, stroke, opacity, box-shadow, translate, transform,
-    scale, blur;
+  @apply transition;
 
   &:where(
     :not(.disabled, :disabled, [disabled], [data-disabled], [aria-disabled='true'], [data-loading])

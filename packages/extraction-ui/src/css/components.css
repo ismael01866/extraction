@@ -2576,18 +2576,6 @@
   }
 }
 
-@utility separator-xl {
-  --ex-size: var(--ex-separator-size-xl, 5px);
-
-  &:where([data-orientation='horizontal']) {
-    width: 100%;
-  }
-
-  &:where([data-orientation='vertical']) {
-    height: 100%;
-  }
-}
-
 @utility slider-sm {
   --ex-size: var(--ex-slider-size-sm, calc(var(--spacing) * 0.5));
   --ex-radius: var(--ex-slider-radius-sm, 9999px);

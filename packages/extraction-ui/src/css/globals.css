@@ -31,4 +31,13 @@
   html {
     @apply bg-(--ex-colors-background) text-(--ex-colors-foreground) outline-(--ex-colors-background);
   }
+
+  html.ex-disable-transitions,
+  html.ex-disable-transitions *,
+  html.ex-disable-transitions *::before,
+  html.ex-disable-transitions *::after {
+    transition-property: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
 }

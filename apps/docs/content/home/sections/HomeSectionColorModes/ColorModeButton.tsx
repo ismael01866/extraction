@@ -1,13 +1,12 @@
 'use client';
 
-import { Button, Icon } from 'extraction-ui';
-import { useColorModeWithOptions } from 'extraction-ui-components';
+import { Button, Icon, useColorMode } from 'extraction-ui';
+import { useTheme } from 'nextra-theme-docs';
 import { LuSunMoon } from 'react-icons/lu';
 
 export function ColorModeButton() {
-  const { toggleColorMode } = useColorModeWithOptions({
-    useNativeClassList: false,
-  });
+  const { setTheme } = useTheme();
+  const { toggleColorMode } = useColorMode({ onChange: setTheme });
 
   return (
     <Button
