@@ -1,7 +1,6 @@
 import { MotionInView } from '@/app/components';
 
 import { Button, Description, Display, Icon, Section, VStack } from 'extraction-ui';
-import { FcLike } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 
 export function HomeSectionOpenSource() {
@@ -9,7 +8,6 @@ export function HomeSectionOpenSource() {
     <Section>
       <MotionInView>
         <VStack className="gap-4">
-          <Icon as={FcLike} className="mbe-4 size-20" />
           <Display className="text-fluid">Open Source</Display>
           <Description className="text-fluid description-2xl">
             Extraction UI is an open source project licensed under MIT
