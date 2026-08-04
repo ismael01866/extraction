@@ -3,6 +3,9 @@
   "description": "Modern UI design system and component library",
   "license": "MIT",
   "version": "0.8.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "keywords": [
     "react",
