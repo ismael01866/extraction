@@ -18,17 +18,6 @@
   font-size: clamp(var(--ex-fluid-min), var(--ex-fluid-engine), var(--ex-fluid-max));
 }
 
-/**  Colors  */
-/** ──────────────────────────── */
-
-/* @utility global-color-bg {
-  --ex-colors-bg: var(--ex-colors-background);
-}
-
-@utility global-color-fg {
-  --ex-colors-fg: var(--ex-colors-foreground);
-} */
-
 /**  Animation  */
 /** ──────────────────────────── */
 
@@ -99,6 +88,16 @@
   @apply duration-(--ex-options-transition-duration-slowest);
 }
 
+@utility transition {
+  :where(&) {
+    @apply duration-normal;
+
+    transition-property:
+      background-color, border-color, color, fill, stroke, opacity, box-shadow, translate,
+      transform, scale, blur;
+  }
+}
+
 /**  Children  */
 /** ──────────────────────────── */
 
@@ -117,60 +116,60 @@
 /**  Decorations  */
 /** ──────────────────────────── */
 
-@utility accent-border-start {
+@utility decoration-accent-start {
   --accent-width: 3px;
 
-  @apply border-s-(--shade-bold) [border-inline-start-width:var(--accent-width)];
+  @apply border-s-(--shade-bold) rounded-s-none [border-inline-start-width:var(--accent-width)];
 }
 
-@utility accent-border-start-* {
+@utility decoration-accent-start-* {
   --accent-width-length: --value(--translate-*, [percentage], [length]);
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-s-(--shade-bold) [border-inline-start-width:var(--accent-width)];
+  @apply border-s-(--shade-bold) rounded-s-none [border-inline-start-width:var(--accent-width)];
 }
 
-@utility accent-border-end {
+@utility decoration-accent-end {
   --accent-width: 3px;
 
-  @apply border-e-(--shade-bold) [border-inline-end-width:var(--accent-width)];
+  @apply border-e-(--shade-bold) rounded-e-none [border-inline-end-width:var(--accent-width)];
 }
 
-@utility accent-border-end-* {
+@utility decoration-accent-end-* {
   --accent-width-length: --value(--translate-*, [percentage], [length]);
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-e-(--shade-bold) [border-inline-end-width:var(--accent-width)];
+  @apply border-e-(--shade-bold) rounded-e-none [border-inline-end-width:var(--accent-width)];
 }
 
-@utility accent-border-top {
+@utility decoration-accent-top {
   --accent-width: 3px;
 
-  @apply border-t-(--shade-bold) [border-block-start-width:var(--accent-width)];
+  @apply border-t-(--shade-bold) rounded-t-none [border-block-start-width:var(--accent-width)];
 }
 
-@utility accent-border-top-* {
+@utility decoration-accent-top-* {
   --accent-width-length: --value(--translate-*, [percentage], [length]);
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-t-(--shade-bold) [border-block-start-width:var(--accent-width)];
+  @apply border-t-(--shade-bold) rounded-t-none [border-block-start-width:var(--accent-width)];
 }
 
-@utility accent-border-bottom {
+@utility decoration-accent-bottom {
   --accent-width: 3px;
 
-  @apply border-b-(--shade-bold) [border-block-end-width:var(--accent-width)];
+  @apply border-b-(--shade-bold) rounded-b-none [border-block-end-width:var(--accent-width)];
 }
 
-@utility accent-border-bottom-* {
+@utility decoration-accent-bottom-* {
   --accent-width-length: --value(--translate-*, [percentage], [length]);
   --accent-width-integer: calc(--value(integer) * var(--spacing));
   --accent-width: var(--accent-width-length, var(--accent-width-integer));
 
-  @apply border-b-(--shade-bold) [border-block-end-width:var(--accent-width)];
+  @apply border-b-(--shade-bold) rounded-b-none [border-block-end-width:var(--accent-width)];
 }
 
 /**  Opacity  */

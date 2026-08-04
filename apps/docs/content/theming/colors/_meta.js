@@ -14,6 +14,9 @@ export default {
   tonal: {
     title: 'Tonal Colors',
   },
+  'app-colors': {
+    title: 'App Colors',
+  },
   'color-mode': {
     title: 'Color Mode',
   },

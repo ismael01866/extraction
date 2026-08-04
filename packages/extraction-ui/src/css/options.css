@@ -27,14 +27,14 @@
   --ex-options-input-color-invalid: var(--color-red-600);
   --ex-options-input-color-invalid-dark: var(--color-red-400);
 
-  --ex-options-background-default-color: color-mix(in oklch, var(--color-neutral-50) 30%, white);
-  --ex-options-background-default-color-dark: color-mix(in oklch,var(--color-neutral-950) 70%,black);
+  --ex-options-body-color: color-mix(in oklch, var(--color-neutral-50) 30%, white);
+  --ex-options-body-color-dark: color-mix(in oklch, var(--color-neutral-950) 70%, black);
 
-  --ex-options-panel-background-default-color-dark: var(--color-black);
-  --ex-options-panel-background-default-color: var(--color-white);
+  --ex-options-panel-body-color: color-mix(in oklch, var(--color-neutral) 0%, white);
+  --ex-options-panel-body-color-dark: color-mix(in oklch, var(--color-neutral) 0%, black);
 
-  --ex-options-text-default-color: var(--color-neutral-900);
-  --ex-options-text-default-color-dark: var(--color-neutral-100);
+  --ex-options-foreground-color: var(--color-neutral-900);
+  --ex-options-foreground-color-dark: var(--color-neutral-100);
 
   --ex-options-z-popover: 40;
   --ex-options-z-hover-card: 40;
@@ -52,4 +52,54 @@
 
   --ex-options-z-toast: 55;
   --ex-options-z-tooltip: 60;
+}
+
+:root {
+  --ex-options-transition-duration-fastest: calc(
+    var(--ex-options-duration-fastest) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-faster: calc(
+    var(--ex-options-duration-faster) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-fast: calc(
+    var(--ex-options-duration-fast) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-normal: calc(
+    var(--ex-options-duration-normal) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-slow: calc(
+    var(--ex-options-duration-slow) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-slower: calc(
+    var(--ex-options-duration-slower) * var(--ex-options-enable-transitions, 1)
+  );
+  --ex-options-transition-duration-slowest: calc(
+    var(--ex-options-duration-slowest) * var(--ex-options-enable-transitions, 1)
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ex-options-transition-duration-fastest: calc(
+      var(--ex-options-duration-fastest) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-faster: calc(
+      var(--ex-options-duration-faster) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-fast: calc(
+      var(--ex-options-duration-fast) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-normal: calc(
+      var(--ex-options-duration-normal) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-slow: calc(
+      var(--ex-options-duration-slow) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-slower: calc(
+      var(--ex-options-duration-slower) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+    --ex-options-transition-duration-slowest: calc(
+      var(--ex-options-duration-slowest) * (1 - var(--ex-options-enable-reduced-motion, 1))
+    );
+  }
 }

@@ -2,8 +2,8 @@
 /** ──────────────────────────── */
 
 :root:has(#homepage) {
-  --ex-options-background-default-color: color-mix(in oklch, var(--color-primary) 2%, white);
-  --ex-options-background-default-color-dark: color-mix(in oklch, var(--color-primary) 20%, black);
+  /* --ex-options-body-color: color-mix(in oklch, var(--color-neutral) 2%, white); */
+  /* --ex-options-body-color-dark: color-mix(in oklch, var(--color-neutral) 20%, black); */
 }
 
 body:has(#homepage) {
@@ -12,14 +12,14 @@ body:has(#homepage) {
     linear-gradient(to right, rgb(from var(--x-color-gray-50) r g b / 50%) 1px, transparent 1px);
 
   @apply bg-size-[20px_20px];
-  @apply bg-(--ex-options-background-default-color)! dark:bg-(--ex-options-background-default-color-dark)!;
+  @apply bg-(--ex-options-body-color)! dark:bg-(--ex-options-body-color-dark)!;
 }
 
 html.dark {
   body:has(#homepage) {
     background-image:
-      linear-gradient(var(--x-color-gray-950) 1px, transparent 1px),
-      linear-gradient(to right, var(--x-color-gray-950) 1px, transparent 1px);
+      linear-gradient(rgb(from var(--x-color-gray-950) r g b / 25%) 1px, transparent 1px),
+      linear-gradient(to right, rgb(from var(--x-color-gray-950) r g b / 25%) 1px, transparent 1px);
   }
 
   #homepage main .separator-dot {

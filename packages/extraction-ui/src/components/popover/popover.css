@@ -77,7 +77,7 @@
 
 @layer utilities {
   .ex-popover-content {
-    --background: var(--ex-options-panel-background-default-color);
-    --background-dark: var(--ex-options-panel-background-default-color-dark);
+    --background: var(--ex-options-panel-body-color);
+    --background-dark: var(--ex-options-panel-body-color-dark);
   }
 }

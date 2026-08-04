@@ -11,15 +11,15 @@ import {
   Text,
   Title,
 } from 'extraction-ui';
-import { ColorModeButton } from 'extraction-ui-components';
 import { Metadata } from 'next';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
-import { LuGithub, LuSun } from 'react-icons/lu';
+import { LuGithub } from 'react-icons/lu';
 
 import './globals.css';
 
+import { ColorModeButton } from './components';
 import { LenisProvider } from './components/lenis-provider';
 import { NavigationEvents } from './components/navigation-events';
 
@@ -89,15 +89,7 @@ const navbar = (
         <LuGithub />
       </IconButton>
 
-      <IconButton
-        className="variant-ghost palette-neutral icon-button-sm size-8"
-        aria-label="Toggle Color Mode"
-        asChild
-      >
-        <ColorModeButton useNativeClassList={true} useNextThemes>
-          <LuSun />
-        </ColorModeButton>
-      </IconButton>
+      <ColorModeButton />
     </HStack>
   </Navbar>
 );

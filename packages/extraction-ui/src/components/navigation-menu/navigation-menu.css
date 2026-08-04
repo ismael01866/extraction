@@ -67,15 +67,15 @@
     &:where(:not([class*='variant-'])),
     &:where([class*='variant-outline'], [class*='variant-outline']) {
       .ex-navigation-menu-indicator-icon {
-        --background: var(--ex-options-panel-background-default-color);
-        --background-dark: var(--ex-options-panel-background-default-color-dark);
+        --background: var(--ex-options-panel-body-color);
+        --background-dark: var(--ex-options-panel-body-color-dark);
       }
 
       .ex-navigation-menu-viewport-anchor {
         > .ex-navigation-menu-viewport {
           &:where(.variant-outline) {
-            --background: var(--ex-options-panel-background-default-color);
-            --background-dark: var(--ex-options-panel-background-default-color-dark);
+            --background: var(--ex-options-panel-body-color);
+            --background-dark: var(--ex-options-panel-body-color-dark);
           }
         }
       }
@@ -206,12 +206,12 @@
 
   .ex-navigation-menu-viewport-anchor {
     > .ex-navigation-menu-viewport {
-      --background: var(--ex-options-panel-background-default-color);
-      --background-dark: var(--ex-options-panel-background-default-color-dark);
+      --background: var(--ex-options-panel-body-color);
+      --background-dark: var(--ex-options-panel-body-color-dark);
       /* &:where([class*='variant-outline'], [class*='variant-plain']) {
         &:where(.variant-outline) {
-          --background: var(--ex-options-panel-background-default-color);
-          --background-dark: var(--ex-options-panel-background-default-color-dark);
+          --background: var(--ex-options-panel-body-color);
+          --background-dark: var(--ex-options-panel-body-color-dark);
         }
       } */
     }

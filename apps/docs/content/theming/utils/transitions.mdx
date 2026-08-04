@@ -1,8 +1,10 @@
 import { BaseContainer, Code, CodeContainer } from '@/app/components';
 
-import { Button } from 'extraction-ui';
+import { Avatar, Button } from 'extraction-ui';
 
 # Transitions
+
+## Duration
 
 Use the `duration-{value}` class to control the duration of the transition. Values can include `slowest`, `slower`, `slow`, `normal`, `fast`, `faster` and `fastest`.
 
@@ -27,6 +29,26 @@ Duration utilities map to the `--ex-options-duration-*` variables. Refer to the 
       </Button>
     );
   );`}
+    </Code>
+  </CodeContainer>
+</section>
+
+## Transition
+
+Use the `transition` utility to enable smooth visuals on components that normally aren't interactive.
+
+<br />
+<section>
+  <BaseContainer>
+    <Avatar className={`hover:scale-120 transition`}>
+      <Avatar.Image alt='avatar' src='/images/assets/avatar-0.jpg' />
+    </Avatar>
+  </BaseContainer>
+  <CodeContainer defaultOpen showToggle={false}>
+    <Code>
+      {`<Avatar className={\`hover:scale-120 transition\`}>
+    <Avatar.Image alt='avatar' src='/images/assets/avatar-0.jpg' />
+  </Avatar>`}
     </Code>
   </CodeContainer>
 </section>

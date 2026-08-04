@@ -9,7 +9,7 @@ export default {
     title: 'Next',
   },
   tanstack: {
-    title: 'Tanstack Start',
+    title: 'Tanstack',
   },
   vite: {
     title: 'Vite',

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
-
 import { NativeSelectField, NativeSelectIcon, NativeSelectRoot } from './native-select';
+
+import { render } from '@testing-library/react';
 
 describe('NativeSelectRoot', () => {
   it('preserves displayName', () => {
@@ -34,14 +34,18 @@ describe('NativeSelectIcon', () => {
       <NativeSelectRoot>
         <NativeSelectField as="select">
           <option value="1">Option 1</option>
-          <NativeSelectIcon />
         </NativeSelectField>
+
+        <NativeSelectIcon />
       </NativeSelectRoot>,
     );
 
     const icon = document.querySelector('.ex-native-select-icon');
+
     expect(icon).toBeInTheDocument();
     expect(icon?.tagName).toBe('DIV');
     expect(icon).toHaveClass('ex-native-select-icon');
+
+    expect(icon?.querySelector('svg')).toBeInTheDocument();
   });
 });

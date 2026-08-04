@@ -39,7 +39,7 @@ export function HomeSectionColorModes() {
                 <HStack className="relative justify-between">
                   <HStack className="gap-3">
                     <Avatar className="avatar-md">
-                      <Avatar.Image alt="John Doe" src="/images/assets/avatar-1.jpg" />
+                      <Avatar.Image alt="avatar" src="/images/assets/avatar-1.jpg" />
                     </Avatar>
                     <Stack className="gap-0">
                       <span className="opacity-subtle">Hosted by</span>
