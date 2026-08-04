@@ -12,10 +12,10 @@ const METRICS = [
     description: 'Accessible, composable, and built for modern applications.',
   },
   {
-    number: 10,
-    decorator: 'x',
-    title: 'Faster development',
-    description: 'Reduce repetitive work with reusable building blocks.',
+    number: 100,
+    decorator: '%',
+    title: 'Customizable',
+    description: 'Style every component using classes and CSS variables.',
   },
   {
     number: 100,
@@ -45,7 +45,7 @@ export function HomeSectionMetrics() {
               <span className="text-primary">Use everywhere.</span>
             </Display>
             <Description className="text-fluid description-2xl">
-              Explore the numbers behind the platform.
+              Components and utilities designed to work together.
             </Description>
           </Stack>
         </MotionInView>

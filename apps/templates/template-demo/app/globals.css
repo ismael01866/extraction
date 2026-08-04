@@ -1,4 +1,0 @@
-@import 'tailwindcss';
-@import 'extraction-ui/styles';
-
-@custom-variant dark (&:where(.dark, .dark *));

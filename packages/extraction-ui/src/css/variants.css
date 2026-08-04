@@ -208,8 +208,8 @@
   --text: var(--shade-color);
   --text-dark: var(--shade-color-dark);
 
-  --hover-text: var(--shade-deep);
-  --hover-text-dark: var(--shade-deep-dark);
+  --hover-text: var(--shade-bold);
+  --hover-text-dark: var(--shade-bold-dark);
 
   --active-text: var(--shade-bold);
   --active-text-dark: var(--shade-bold-dark);

@@ -1,0 +1,60 @@
+import { BaseContainer, Code, CodeContainer } from '@/app/components';
+
+import { Avatar, Card, Float, Status } from 'extraction-ui';
+
+# App Colors
+
+Extraction UI provides colors for the application background, text, and panel surfaces. <br/> These colors are generated from the corresponding theme options and automatically stay in sync with your configuration.
+
+The `body` and `foreground` colors are intended for the application's main layout and represent the default page background and foreground text colors.
+
+The `panel` color is used by components that render elevated surfaces, such as **Accordion**, **Alerts**, **Cards**, **Dialogs**, **Dropdowns**, **Menus**, **Popover**, **Select**, and **Toast**.
+
+| Semantic Color | Light                           | Dark                                 |
+| -------------- | ------------------------------- | ------------------------------------ |
+| `body`         | `--ex-options-body-color`       | `--ex-options-body-color-dark`       |
+| `foreground`   | `--ex-options-foreground-color` | `--ex-options-foreground-color-dark` |
+| `panel`        | `--ex-options-panel-body-color` | `--ex-options-panel-body-color-dark` |
+
+Because these colors are defined inside `@theme`, Tailwind automatically generates the corresponding color utilities. <br/> For example, you can use `bg-body`, `bg-panel`, `border-panel`, `text-foreground`, `stroke-body`, `ring-panel`, and any other color utility supported by Tailwind without any additional configuration.
+
+<br />
+<br />
+<section>
+  <BaseContainer>
+    <Card>
+      <Card.Section>
+        <div className="relative">
+                  <Avatar>
+            <Avatar.Image src='/images/assets/avatar-0.jpg' alt='avatar' />
+          </Avatar>
+          <Float className="pos-bottom-end">
+            <Status className="bg-green-500 outline-3 outline-panel" />
+          </Float>
+        </div>
+      </Card.Section>
+    </Card>
+  </BaseContainer>
+
+  <CodeContainer
+    defaultOpen
+    showToggle={false}
+  >
+    <Code
+      words={['outline-panel']}
+    >
+      {`<Card>
+    <Card.Section>
+      <div className="relative">
+        <Avatar>
+          <Avatar.Image src='/images/assets/avatar-0.jpg' alt='avatar' />
+        </Avatar>
+        <Float className="pos-bottom-end">
+          <Status className="bg-green-500 outline-3 outline-panel" />
+        </Float>
+      </div>
+    </Card.Section>
+  </Card>`}
+    </Code>
+  </CodeContainer>
+</section>

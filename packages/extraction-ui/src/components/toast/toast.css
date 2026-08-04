@@ -185,13 +185,13 @@
 @layer utilities {
   .ex-toast {
     &:where(.variant-outline) {
-      --background: var(--ex-options-panel-background-default-color);
-      --background-dark: var(--ex-options-panel-background-default-color-dark);
+      --background: var(--ex-options-panel-body-color);
+      --background-dark: var(--ex-options-panel-body-color-dark);
     }
 
     &:not(.variant-solid, .variant-subtle, .variant-surface) {
-      --background: var(--ex-options-panel-background-default-color);
-      --background-dark: var(--ex-options-panel-background-default-color-dark);
+      --background: var(--ex-options-panel-body-color);
+      --background-dark: var(--ex-options-panel-body-color-dark);
     }
   }
 }

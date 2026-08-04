@@ -107,7 +107,11 @@ export const ToastWithAccentExample = () => {
   return (
     <Toast.Provider>
       <Button onClick={() => setOpen(true)}>Trigger</Button>
-      <Toast className="accent-border-start border-l-primary" open={open} onOpenChange={setOpen}>
+      <Toast
+        className="decoration-accent-start border-l-primary"
+        open={open}
+        onOpenChange={setOpen}
+      >
         <Toast.Indicator />
         <Toast.Content>
           <Toast.Title>{`The quick brown fox`}</Toast.Title>

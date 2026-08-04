@@ -12,24 +12,27 @@
   }
 
   :root {
-    --ex-colors-background: var(--ex-options-background-default-color);
-    --ex-colors-foreground: var(--ex-options-text-default-color);
+    --ex-colors-body: var(--ex-options-body-color);
+    --ex-colors-foreground: var(--ex-options-foreground-color);
+    --ex-colors-panel-body: var(--ex-options-panel-body-color);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --ex-colors-background: var(--ex-options-background-default-color-dark);
-      --ex-colors-foreground: var(--ex-options-text-default-color-dark);
+      --ex-colors-body: var(--ex-options-body-color-dark);
+      --ex-colors-foreground: var(--ex-options-foreground-color-dark);
+      --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
     }
   }
 
   .dark {
-    --ex-colors-background: var(--ex-options-background-default-color-dark);
-    --ex-colors-foreground: var(--ex-options-text-default-color-dark);
+    --ex-colors-body: var(--ex-options-body-color-dark);
+    --ex-colors-foreground: var(--ex-options-foreground-color-dark);
+    --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
   }
 
   html {
-    @apply bg-(--ex-colors-background) text-(--ex-colors-foreground) outline-(--ex-colors-background);
+    @apply bg-(--ex-colors-body) text-(--ex-colors-foreground) outline-(--ex-colors-body);
   }
 
   html.ex-disable-transitions,

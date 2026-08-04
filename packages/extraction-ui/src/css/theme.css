@@ -8,9 +8,9 @@
   --color-primary-500: var(--color-primary);
   --color-primary-600: color-mix(in oklch, var(--color-primary) 85%, black);
   --color-primary-700: color-mix(in oklch, var(--color-primary) 70%, black);
-  --color-primary-800: color-mix(in oklch, var(--color-primary) 55%, black);
-  --color-primary-900: color-mix(in oklch, var(--color-primary) 40%, black);
-  --color-primary-950: color-mix(in oklch, var(--color-primary) 30%, black);
+  --color-primary-800: color-mix(in oklch, var(--color-primary) 60%, black);
+  --color-primary-900: color-mix(in oklch, var(--color-primary) 50%, black);
+  --color-primary-950: color-mix(in oklch, var(--color-primary) 45%, black);
   --color-neutral: oklch(0.5 0.03 275);
   --color-neutral-50: color-mix(in oklch, var(--color-neutral) 10%, white);
   --color-neutral-100: color-mix(in oklch, var(--color-neutral) 20%, white);
@@ -20,7 +20,7 @@
   --color-neutral-500: var(--color-neutral);
   --color-neutral-600: color-mix(in oklch, var(--color-neutral) 85%, black);
   --color-neutral-700: color-mix(in oklch, var(--color-neutral) 70%, black);
-  --color-neutral-800: color-mix(in oklch, var(--color-neutral) 55%, black);
-  --color-neutral-900: color-mix(in oklch, var(--color-neutral) 40%, black);
-  --color-neutral-950: color-mix(in oklch, var(--color-neutral) 30%, black);
+  --color-neutral-800: color-mix(in oklch, var(--color-neutral) 60%, black);
+  --color-neutral-900: color-mix(in oklch, var(--color-neutral) 50%, black);
+  --color-neutral-950: color-mix(in oklch, var(--color-neutral) 45%, black);
 }

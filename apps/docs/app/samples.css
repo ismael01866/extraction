@@ -20,11 +20,11 @@
   --color-new-600-foreground: color-mix(in oklch, var(--color-new) 2%, white);
   --color-new-700: color-mix(in oklch, var(--color-new) 70%, black);
   --color-new-700-foreground: color-mix(in oklch, var(--color-new) 2%, white);
-  --color-new-800: color-mix(in oklch, var(--color-new) 55%, black);
+  --color-new-800: color-mix(in oklch, var(--color-new) 60%, black);
   --color-new-800-foreground: color-mix(in oklch, var(--color-new) 2%, white);
-  --color-new-900: color-mix(in oklch, var(--color-new) 40%, black);
+  --color-new-900: color-mix(in oklch, var(--color-new) 50%, black);
   --color-new-900-foreground: color-mix(in oklch, var(--color-new) 2%, white);
-  --color-new-950: color-mix(in oklch, var(--color-new) 30%, black);
+  --color-new-950: color-mix(in oklch, var(--color-new) 45%, black);
   --color-new-950-foreground: color-mix(in oklch, var(--color-new) 2%, white);
 }
 
