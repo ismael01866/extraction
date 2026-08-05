@@ -37,7 +37,7 @@ const FAQ = [
 export function HomeSectionFaq() {
   return (
     <Section>
-      <Grid className="grid-cols-1 gap-20 lg:grid-cols-8">
+      <Grid className="grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-8">
         <Stack className="gap-4 lg:col-span-2">
           <Display className="text-fluid">FAQ</Display>
           <Description className="text-fluid description-xl">
@@ -54,13 +54,15 @@ export function HomeSectionFaq() {
                 <Accordion.Item value={id} key={id}>
                   <Accordion.Header>
                     <Accordion.Trigger className="cursor-pointer">
-                      <Accordion.Title>{title}</Accordion.Title>
+                      <Accordion.Title className="text-fluid">{title}</Accordion.Title>
                       <Accordion.Icon />
                     </Accordion.Trigger>
                   </Accordion.Header>
                   <Accordion.Content>
                     <Accordion.Section>
-                      <Accordion.Description>{description}</Accordion.Description>
+                      <Accordion.Description className="text-fluid">
+                        {description}
+                      </Accordion.Description>
                     </Accordion.Section>
                   </Accordion.Content>
                 </Accordion.Item>
