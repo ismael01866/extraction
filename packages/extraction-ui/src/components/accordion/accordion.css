@@ -42,7 +42,7 @@
   .ex-accordion-trigger {
     --ex-cursor: var(--ex-accordion-trigger-cursor, default);
 
-    @apply relative inline-block flex-1 cursor-pointer truncate text-start;
+    @apply relative inline-block flex-1 cursor-pointer text-start;
     @apply gap-x-[var(--ex-gap-x)] px-[var(--ex-px)] py-[var(--ex-py)] pe-[calc(var(--ex-px)*2)] [cursor:var(--ex-cursor)];
 
     &:where([data-state='open']) .ex-accordion-icon > .ex-accordion-icon {

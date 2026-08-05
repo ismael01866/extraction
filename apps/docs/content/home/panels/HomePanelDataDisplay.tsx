@@ -7,7 +7,7 @@ export function HomePanelDataDisplay() {
         <Card.Section>
           <HStack>
             <Avatar>
-              <Avatar.Image src="/images/assets/avatar-0.jpg" alt="avatar" />
+              <Avatar.Image src="/images/assets/avatar-0.webp" alt="avatar" />
             </Avatar>
             <Stack className="gap-0">
               <Card.Title className="text-sm">Jhon Doe</Card.Title>
