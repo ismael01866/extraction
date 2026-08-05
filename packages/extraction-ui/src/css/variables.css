@@ -151,13 +151,13 @@
   --ex-size-lg: calc(var(--spacing) * 8);
   --ex-size-xl: calc(var(--spacing) * 9);
   --ex-size-2xl: calc(var(--spacing) * 10);
-  --ex-size-3xl: calc(var(--spacing) * 11);
-  --ex-size-4xl: calc(var(--spacing) * 12);
-  --ex-size-5xl: calc(var(--spacing) * 13);
-  --ex-size-6xl: calc(var(--spacing) * 14);
-  --ex-size-7xl: calc(var(--spacing) * 16);
-  --ex-size-8xl: calc(var(--spacing) * 18);
-  --ex-size-9xl: calc(var(--spacing) * 20);
+  --ex-size-3xl: calc(var(--spacing) * 12);
+  --ex-size-4xl: calc(var(--spacing) * 14);
+  --ex-size-5xl: calc(var(--spacing) * 16);
+  --ex-size-6xl: calc(var(--spacing) * 18);
+  --ex-size-7xl: calc(var(--spacing) * 20);
+  --ex-size-8xl: calc(var(--spacing) * 22);
+  --ex-size-9xl: calc(var(--spacing) * 24);
 
   --color-body: var(--ex-colors-body);
   --color-panel: var(--ex-colors-panel-body);
