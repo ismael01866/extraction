@@ -16,7 +16,7 @@
 
   .ex-nav-button {
     @apply inline-flex shrink-0 select-none flex-col items-center justify-center leading-none;
-    @apply w-(--ex-width) cursor-(--ex-cursor) gap-y-(--ex-gap-y) rounded-(--ex-radius) py-(--ex-py) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
+    @apply w-(--ex-width) cursor-(--ex-cursor) gap-y-(--ex-gap-y) rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
 
     > svg {
       @apply relative h-[1em] w-[1em];

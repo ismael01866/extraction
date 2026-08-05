@@ -1865,9 +1865,8 @@
 }
 
 @utility nav-button-sm {
-  --ex-width: var(--ex-nav-button-width-sm, var(--ex-size-6xl));
-
-  --ex-py: var(--ex-nav-button-px-sm, calc(var(--spacing) * 2.5));
+  --ex-px: var(--ex-nav-button-px-sm, calc(var(--spacing) * 3.5));
+  --ex-py: var(--ex-nav-button-py-sm, calc(var(--spacing) * 2.5));
   --ex-gap-y: var(--ex-nav-button-gap-x-sm, calc(var(--spacing) * 1.75));
 
   --ex-radius: var(--ex-nav-button-radius-sm, var(--radius-sm));
@@ -1875,9 +1874,8 @@
 }
 
 @utility nav-button-md {
-  --ex-width: var(--ex-nav-button-width-md, var(--ex-size-7xl));
-
-  --ex-py: var(--ex-nav-button-px-md, calc(var(--spacing) * 3));
+  --ex-px: var(--ex-nav-button-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-nav-button-py-md, calc(var(--spacing) * 3));
   --ex-gap-y: var(--ex-nav-button-gap-x-md, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-nav-button-radius-md, var(--radius-sm));
@@ -1885,9 +1883,8 @@
 }
 
 @utility nav-button-lg {
-  --ex-width: var(--ex-nav-button-width-lg, var(--ex-size-8xl));
-
-  --ex-py: var(--ex-nav-button-px-lg, calc(var(--spacing) * 3.5));
+  --ex-px: var(--ex-nav-button-px-lg, calc(var(--spacing) * 4.5));
+  --ex-py: var(--ex-nav-button-py-lg, calc(var(--spacing) * 3.5));
   --ex-gap-y: var(--ex-nav-button-gap-x-lg, calc(var(--spacing) * 2.25));
 
   --ex-radius: var(--ex-nav-button-radius-lg, var(--radius-sm));
@@ -1895,9 +1892,8 @@
 }
 
 @utility nav-button-xl {
-  --ex-width: var(--ex-nav-button-width-xl, var(--ex-size-9xl));
-
-  --ex-py: var(--ex-nav-button-px-xl, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-nav-button-px-xl, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-nav-button-py-xl, calc(var(--spacing) * 4));
   --ex-gap-y: var(--ex-nav-button-gap-x-xl, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-nav-button-radius-xl, var(--radius-sm));
@@ -2759,7 +2755,7 @@
   --ex-radius: var(--ex-tabs-radius-sm, var(--radius-sm));
 
   .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-xl));
+    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-2xl));
 
     --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3));
     --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.5));
@@ -2775,7 +2771,7 @@
   --ex-radius: var(--ex-tabs-radius-md, var(--radius-sm));
 
   .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-2xl));
+    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-3xl));
 
     --ex-px: var(--ex-tabs-trigger-px-md, calc(var(--spacing) * 4));
     --ex-gap-x: var(--ex-tabs-trigger-gap-x-md, calc(var(--spacing) * 2));
