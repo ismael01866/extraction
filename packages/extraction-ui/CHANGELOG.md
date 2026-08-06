@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.2
+
+### Patch Changes
+
+- CSS fixes on some px values. Added text-fluid utils.
+
 ## 0.8.1
 
 ### Patch Changes
