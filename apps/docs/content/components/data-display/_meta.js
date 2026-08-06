@@ -2,6 +2,9 @@ export default {
   avatar: {
     title: 'Avatar',
   },
+  'avatar-group': {
+    title: 'Avatar Group',
+  },
   badge: {
     title: 'Badge',
   },

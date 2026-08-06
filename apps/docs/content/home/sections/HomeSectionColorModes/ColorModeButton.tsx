@@ -10,7 +10,7 @@ export function ColorModeButton() {
 
   return (
     <Button
-      className="button-lg tonal-black palette-neutral text-fluid h-14 px-8"
+      className="button-xl tonal-black palette-neutral text-fluid-base px-8"
       onClick={toggleColorMode}
     >
       <Icon as={LuSunMoon} />

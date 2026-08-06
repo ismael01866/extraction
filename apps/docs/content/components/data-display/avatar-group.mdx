@@ -1,0 +1,76 @@
+import { Avatar, AvatarGroup } from 'extraction-ui';
+
+import data from '../data.json';
+import { avatarGroupCfg } from './avatar-group';
+
+export const Component = (
+  <AvatarGroup>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-0.webp' alt='avatar-0' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-1.webp' alt='avatar-1' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-2.webp' alt='avatar-2' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Fallback>+5</Avatar.Fallback>
+    </Avatar>
+  </AvatarGroup>
+);
+
+export const ComponentVertical = (
+  <AvatarGroup orientation='vertical'>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-0.webp' alt='avatar-0' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-1.webp' alt='avatar-1' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Image src='/images/assets/avatar-2.webp' alt='avatar-2' />
+    </Avatar>
+    <Avatar>
+      <Avatar.Fallback>+5</Avatar.Fallback>
+    </Avatar>
+  </AvatarGroup>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Avatar Group
+
+{data['avatar-group'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-avatar-group-gap-x: calc(var(--spacing) * -3);
+  --ex-avatar-group-gap-y: calc(var(--spacing) * -3);
+
+  --ex-avatar-group-ring-width: 3px;
+}
+```
+
+## API
+
+<Api config={avatarGroupCfg} />

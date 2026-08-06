@@ -392,8 +392,8 @@
 @utility button-lg {
   --ex-height: var(--ex-button-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-button-px-lg, calc(var(--spacing) * 4.5));
-  --ex-gap-x: var(--ex-button-gap-x-lg, calc(var(--spacing) * 2.25));
+  --ex-px: var(--ex-button-px-lg, calc(var(--spacing) * 5));
+  --ex-gap-x: var(--ex-button-gap-x-lg, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-button-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-button-font-size-lg, var(--text-base));
@@ -402,8 +402,8 @@
 @utility button-xl {
   --ex-height: var(--ex-button-height-xl, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-button-px-xl, calc(var(--spacing) * 5));
-  --ex-gap-x: var(--ex-button-gap-x-xl, calc(var(--spacing) * 2.5));
+  --ex-px: var(--ex-button-px-xl, calc(var(--spacing) * 6));
+  --ex-gap-x: var(--ex-button-gap-x-xl, calc(var(--spacing) * 3));
 
   --ex-radius: var(--ex-button-radius-xl, var(--radius-sm));
   --ex-font-size: var(--ex-button-font-size-xl, var(--text-lg));
@@ -1640,7 +1640,7 @@
 @utility input-lg {
   --ex-height: var(--ex-input-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-input-px-lg, calc(var(--spacing) * 4.5));
+  --ex-px: var(--ex-input-px-lg, calc(var(--spacing) * 5));
   --ex-radius: var(--ex-input-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-input-font-size-lg, var(--text-base));
 }
@@ -1855,7 +1855,7 @@
 @utility native-select-lg {
   --ex-height: var(--ex-native-select-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-native-select-px-lg, calc(var(--spacing) * 4.5));
+  --ex-px: var(--ex-native-select-px-lg, calc(var(--spacing) * 5));
   --ex-radius: var(--ex-native-select-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-native-select-font-size-lg, var(--text-base));
 
@@ -1923,8 +1923,8 @@
 @utility nav-link-lg {
   --ex-height: var(--ex-nav-link-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-nav-link-px-lg, calc(var(--spacing) * 4.5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-lg, calc(var(--spacing) * 2.25));
+  --ex-px: var(--ex-nav-link-px-lg, calc(var(--spacing) * 5));
+  --ex-gap-x: var(--ex-nav-link-gap-x-lg, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-nav-link-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-nav-link-font-size-lg, var(--text-base));
@@ -1933,8 +1933,8 @@
 @utility nav-link-xl {
   --ex-height: var(--ex-nav-link-height-xl, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-nav-link-px-xl, calc(var(--spacing) * 5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-xl, calc(var(--spacing) * 2.5));
+  --ex-px: var(--ex-nav-link-px-xl, calc(var(--spacing) * 6));
+  --ex-gap-x: var(--ex-nav-link-gap-x-xl, calc(var(--spacing) * 3));
 
   --ex-radius: var(--ex-nav-link-radius-xl, var(--radius-sm));
   --ex-font-size: var(--ex-nav-link-font-size-xl, var(--text-lg));
@@ -2043,7 +2043,7 @@
 @utility password-lg {
   --ex-height: var(--ex-password-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-password-px-lg, calc(var(--spacing) * 4.5));
+  --ex-px: var(--ex-password-px-lg, calc(var(--spacing) * 5));
   --ex-radius: var(--ex-password-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-password-font-size-lg, var(--text-base));
 }
@@ -2407,7 +2407,7 @@
 @utility select-trigger-lg {
   --ex-height: var(--ex-select-trigger-height-lg, var(--ex-size-3xl));
 
-  --ex-px: var(--ex-select-trigger-px-lg, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-select-trigger-px-lg, calc(var(--spacing) * 5));
   --ex-radius: var(--ex-select-trigger-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-select-trigger-font-size-lg, var(--text-base));
 

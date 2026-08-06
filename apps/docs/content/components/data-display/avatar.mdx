@@ -1,7 +1,7 @@
-import { Avatar, AvatarGroup } from 'extraction-ui';
+import { Avatar } from 'extraction-ui';
 
 import data from '../data.json';
-import { avatarCfg, avatarFallbackCfg, avatarGroupCfg, avatarImageCfg, cfg } from './avatar';
+import { avatarCfg, avatarFallbackCfg, avatarImageCfg, cfg } from './avatar';
 
 export const Component = (
   <Avatar>
@@ -97,75 +97,3 @@ For more information on this component configuration, visit [Radix UI](https://w
 ### Avatar Fallback
 
 <Api config={avatarFallbackCfg} />
-
-<br />
-<br />
-
-# Avatar Group
-
-A data display component that groups multiple avatars together with overlapping or stacked formatting.
-
-<Usage
-  components={{
-    usage: (
-      <AvatarGroup>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-0.webp' alt='avatar-0' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-1.webp' alt='avatar-1' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-2.webp' alt='avatar-2' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Fallback>+5</Avatar.Fallback>
-        </Avatar>
-      </AvatarGroup>
-    ),
-    wrapper: Wrapper,
-  }}
-/>
-
-## Vertical Orientation
-
-<Usage
-  components={{
-    usage: (
-      <AvatarGroup orientation='vertical'>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-0.webp' alt='avatar-0' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-1.webp' alt='avatar-1' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Image src='/images/assets/avatar-2.webp' alt='avatar-2' />
-        </Avatar>
-        <Avatar>
-          <Avatar.Fallback>+5</Avatar.Fallback>
-        </Avatar>
-      </AvatarGroup>
-    ),
-    wrapper: Wrapper,
-  }}
-  vertical
-/>
-
-## Customizing
-
-```sass filename="globals.css"
-:root {
-  --ex-avatar-group-gap-x: calc(var(--spacing) * -3);
-  --ex-avatar-group-gap-y: calc(var(--spacing) * -3);
-
-  --ex-avatar-group-ring-width: 3px;
-  --ex-avatar-group-ring-color: var(--ex-colors-background);
-}
-```
-
-## API
-
-### Avatar Group
-
-<Api config={avatarGroupCfg} />
