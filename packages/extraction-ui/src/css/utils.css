@@ -7,15 +7,89 @@
 }
 
 @utility text-fluid {
+  --ex-fluid-font-size: var(--ex-font-size);
+
   --ex-fluid-scale-floor: 0.5;
   --ex-fluid-anchor: 0.5;
   --ex-fluid-speed: 1.5vw;
 
-  --ex-fluid-min: calc(var(--ex-font-size) * var(--ex-fluid-scale-floor));
-  --ex-fluid-max: var(--ex-font-size);
-  --ex-fluid-engine: calc((var(--ex-font-size) * var(--ex-fluid-anchor)) + var(--ex-fluid-speed));
+  --ex-fluid-min: calc(var(--ex-fluid-font-size) * var(--ex-fluid-scale-floor));
+  --ex-fluid-max: var(--ex-fluid-font-size);
+  --ex-fluid-engine: calc(
+    (var(--ex-fluid-font-size) * var(--ex-fluid-anchor)) + var(--ex-fluid-speed)
+  );
 
   font-size: clamp(var(--ex-fluid-min), var(--ex-fluid-engine), var(--ex-fluid-max));
+}
+
+@utility text-fluid-2xs {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-2xs);
+}
+
+@utility text-fluid-xs {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-xs);
+}
+
+@utility text-fluid-sm {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-sm);
+}
+
+@utility text-fluid-base {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-base);
+}
+
+@utility text-fluid-lg {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-lg);
+}
+
+@utility text-fluid-xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-xl);
+}
+
+@utility text-fluid-2xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-2xl);
+}
+
+@utility text-fluid-3xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-3xl);
+}
+
+@utility text-fluid-4xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-4xl);
+}
+
+@utility text-fluid-5xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-5xl);
+}
+
+@utility text-fluid-6xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-6xl);
+}
+
+@utility text-fluid-7xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-7xl);
+}
+
+@utility text-fluid-8xl {
+  @apply text-fluid;
+  --ex-fluid-font-size: var(--text-8xl);
+}
+
+@utility text-fluid-9xl {
+  --ex-fluid-font-size: var(--text-9xl);
+  @apply text-fluid;
 }
 
 /**  Animation  */

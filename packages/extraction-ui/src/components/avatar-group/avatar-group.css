@@ -7,7 +7,6 @@
     --ex-gap-y: var(--ex-avatar-group-gap-y, calc(var(--spacing) * -3));
 
     --ex-ring-width: var(--ex-avatar-group-ring-width, 3px);
-    --ex-ring-color: var(--ex-avatar-group-ring-width, var(--ex-colors-body));
   }
 
   .ex-avatar-group {
@@ -31,7 +30,7 @@
     }
 
     > * {
-      border: var(--ex-ring-width) solid var(--ex-ring-color);
+      border: var(--ex-ring-width) solid var(--ex-colors-body);
     }
   }
 

@@ -15,6 +15,10 @@
     "category": "data-display",
     "description": "A data display component that renders a user or entity image with an optional fallback visual."
   },
+  "avatar-group": {
+    "category": "data-display",
+    "description": "A data display component that groups multiple avatars together with overlapping or formatting."
+  },
   "badge": {
     "category": "data-display",
     "description": "A data display component that presents a compact label, count, or status indicator."
