@@ -43,8 +43,8 @@ export const NativeSelectIcon = <T extends ElementType = 'div'>(
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-native-select-icon" {...rest}>
       {children ?? (
-        <svg className="ex-native-select-caret" viewBox="0 0 20 20">
-          <polyline points="6 10 10 14 14 10" />
+        <svg className="ex-native-select-icon-svg" viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6"></path>
         </svg>
       )}
     </Element>

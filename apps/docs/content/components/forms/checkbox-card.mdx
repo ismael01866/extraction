@@ -2,12 +2,12 @@ import { CheckboxCard } from 'extraction-ui';
 
 import data from '../data.json';
 import {
-    cfg,
-    checkboxCardCfg,
-    checkboxCardContentCfg,
-    checkboxCardDescriptionCfg,
-    checkboxCardIndicatorCfg,
-    checkboxCardLabelCfg,
+  cfg,
+  checkboxCardCfg,
+  checkboxCardContentCfg,
+  checkboxCardDescriptionCfg,
+  checkboxCardIndicatorCfg,
+  checkboxCardLabelCfg,
 } from './checkbox-card';
 
 export const Component = (
@@ -89,10 +89,6 @@ export const Wrapper = ({ children }) => children;
 :root {
   --ex-checkbox-card-cursor: default;
 
-  --ex-checkbox-card-font-size-sm: var(--text-xs);
-  --ex-checkbox-card-font-size-md: var(--text-sm);
-  --ex-checkbox-card-font-size-lg: var(--text-base);
-
   --ex-checkbox-card-gap-x-sm: calc(var(--spacing * 2));
   --ex-checkbox-card-gap-x-md: calc(var(--spacing * 2.5));
   --ex-checkbox-card-gap-x-lg: calc(var(--spacing * 3));
@@ -118,11 +114,15 @@ export const Wrapper = ({ children }) => children;
   --ex-checkbox-card-content-gap-y-lg: calc(var(--spacing * 1));
 
   --ex-checkbox-card-label-font-family: var(--font-sans);
-  --ex-checkbox-card-label-font-weight: var(--font-weight-semibold);
+  --ex-checkbox-card-label-font-weight: var(--font-weight-medium);
 
   --ex-checkbox-card-label-font-size-sm: var(--text-xs);
   --ex-checkbox-card-label-font-size-md: var(--text-sm);
   --ex-checkbox-card-label-font-size-lg: var(--text-base);
+
+  --ex-checkbox-card-label-line-height-sm: var(--text-xs--line-height);
+  --ex-checkbox-card-label-line-height-md: var(--text-sm--line-height);
+  --ex-checkbox-card-label-line-height-lg: var(--text-base--line-height);
 
   --ex-checkbox-card-description-font-family: var(--font-sans);
   --ex-checkbox-card-description-font-weight: var(--font-weight-normal);
@@ -132,9 +132,13 @@ export const Wrapper = ({ children }) => children;
   --ex-checkbox-card-description-font-size-md: var(--text-sm);
   --ex-checkbox-card-description-font-size-lg: var(--text-base);
 
-  --ex-checkbox-card-indicator-font-size-sm: var(--text-lg);
-  --ex-checkbox-card-indicator-font-size-md: var(--text-xl);
-  --ex-checkbox-card-indicator-font-size-lg: var(--text-2xl);
+  --ex-checkbox-card-description-line-height-sm: var(--text-xs--line-height);
+  --ex-checkbox-card-description-line-height-md: var(--text-sm--line-height);
+  --ex-checkbox-card-description-line-height-lg: var(--text-base--line-height);
+
+  --ex-checkbox-card-indicator-font-size-sm: var(--text-base);
+  --ex-checkbox-card-indicator-font-size-md: var(--text-lg);
+  --ex-checkbox-card-indicator-font-size-lg: var(--text-xl);
 
   --ex-checkbox-card-indicator-radius-sm: var(--radius-sm);
   --ex-checkbox-card-indicator-radius-md: var(--radius-sm);

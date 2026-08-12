@@ -67,7 +67,7 @@ export const cardTitleCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h4',
+      default: 'div',
     },
     asChild: {
       type: 'boolean',

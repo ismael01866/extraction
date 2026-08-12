@@ -69,8 +69,8 @@ export const SelectIcon = <T extends ElementType = 'div'>(props: SelectIconProps
     <Select.Icon asChild {...rest}>
       <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-select-icon">
         {children ?? (
-          <svg className="ex-select-icon-caret" viewBox="0 0 20 20">
-            <polyline points="6 10 10 14 14 10" />
+          <svg className="ex-select-icon-svg" viewBox="0 0 24 24">
+            <path d="m6 9 6 6 6-6"></path>
           </svg>
         )}
       </Element>
@@ -183,8 +183,8 @@ export const SelectItemIndicator = <T extends ElementType = 'div'>(
         cssClassName="ex-select-item-indicator"
       >
         {children ?? (
-          <svg className="ex-select-item-indicator-check" viewBox="0 0 20 20">
-            <path d="M5 13l4 4L19 7" />
+          <svg className="ex-select-item-indicator-svg" viewBox="0 0 24 24">
+            <path d="M20 6 9 17l-5-5"></path>
           </svg>
         )}
       </Element>
@@ -244,8 +244,8 @@ export const SelectScrollUpButton = <T extends ElementType = 'div'>(
   return (
     <Select.ScrollUpButton className="ex-select-scroll-up-button" {...rest}>
       {children ?? (
-        <svg className="ex-select-scroll-up-caret" viewBox="0 0 20 20">
-          <polyline points="6 12 10 8 14 12" />
+        <svg className="ex-select-scroll-up-button-svg" viewBox="0 0 24 24">
+          <path d="m12.354 8.854 5.792 5.792a.5.5 0 0 1-.353.854H6.207a.5.5 0 0 1-.353-.854l5.792-5.792a.5.5 0 0 1 .708 0Z"></path>
         </svg>
       )}
     </Select.ScrollUpButton>
@@ -262,8 +262,8 @@ export const SelectScrollDownButton = <T extends ElementType = 'div'>(
   return (
     <Select.ScrollDownButton className="ex-select-scroll-down-button" {...rest}>
       {children ?? (
-        <svg className="ex-select-scroll-down-caret" viewBox="0 0 20 20">
-          <polyline points="6 10 10 14 14 10" />
+        <svg className="ex-select-scroll-down-button-svg" viewBox="0 0 24 24">
+          <path d="M11.646 15.146 5.854 9.354a.5.5 0 0 1 .353-.854h11.586a.5.5 0 0 1 .353.854l-5.793 5.792a.5.5 0 0 1-.707 0Z"></path>
         </svg>
       )}
     </Select.ScrollDownButton>

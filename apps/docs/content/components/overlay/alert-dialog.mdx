@@ -2,16 +2,16 @@ import { AlertDialog, Button } from 'extraction-ui';
 
 import data from '../data.json';
 import {
-    alertDialogActionCfg,
-    alertDialogCancelCfg,
-    alertDialogCfg,
-    alertDialogContentCfg,
-    alertDialogDescriptionCfg,
-    alertDialogOverlayCfg,
-    alertDialogSectionCfg,
-    alertDialogTitleCfg,
-    alertDialogTriggerCfg,
-    cfg,
+  alertDialogActionCfg,
+  alertDialogCancelCfg,
+  alertDialogCfg,
+  alertDialogContentCfg,
+  alertDialogDescriptionCfg,
+  alertDialogOverlayCfg,
+  alertDialogSectionCfg,
+  alertDialogTitleCfg,
+  alertDialogTriggerCfg,
+  cfg,
 } from './alert-dialog.ts';
 
 export const Component = (
@@ -97,11 +97,6 @@ export const Wrapper = ({ children }) => children;
   --ex-alert-dialog-z-index: 50;
   --ex-alert-dialog-overlay-z-index: 45;
 
-  --ex-alert-dialog-font-size-sm: var(--text-sm);
-  --ex-alert-dialog-font-size-md: var(--text-sm);
-  --ex-alert-dialog-font-size-lg: var(--text-sm);
-  --ex-alert-dialog-font-size-xl: var(--text-sm);
-
   --ex-alert-dialog-radius-sm: var(--radius-sm);
   --ex-alert-dialog-radius-md: var(--radius-sm);
   --ex-alert-dialog-radius-lg: var(--radius-sm);
@@ -112,10 +107,10 @@ export const Wrapper = ({ children }) => children;
   --ex-alert-dialog-shadow-lg: var(--shadow-xl);
   --ex-alert-dialog-shadow-xl: var(--shadow-xl);
 
-  --ex-alert-dialog-w-sm: var(--container-sm);
-  --ex-alert-dialog-w-md: var(--container-md);
-  --ex-alert-dialog-w-lg: var(--container-lg);
-  --ex-alert-dialog-w-xl: var(--container-xl);
+  --ex-alert-dialog-width-sm: var(--container-sm);
+  --ex-alert-dialog-width-md: var(--container-md);
+  --ex-alert-dialog-width-lg: var(--container-lg);
+  --ex-alert-dialog-width-xl: var(--container-xl);
 
   --ex-alert-dialog-section-gap-x-sm: calc(var(--spacing) * 2.5);
   --ex-alert-dialog-section-gap-x-md: calc(var(--spacing) * 2.5);
@@ -139,14 +134,25 @@ export const Wrapper = ({ children }) => children;
   --ex-alert-dialog-title-font-size-md: var(--text-base);
   --ex-alert-dialog-title-font-size-lg: var(--text-base);
   --ex-alert-dialog-title-font-size-xl: var(--text-base);
+
+  --ex-alert-dialog-title-line-height-sm: var(--text-base--line-height);
+  --ex-alert-dialog-title-line-height-md: var(--text-base--line-height);
+  --ex-alert-dialog-title-line-height-lg: var(--text-base--line-height);
+  --ex-alert-dialog-title-line-height-xl: var(--text-base--line-height);
+
   --ex-alert-dialog-title-font-weight: var(--font-weight-semibold);
 
   --ex-alert-dialog-description-font-size-sm: var(--text-sm);
   --ex-alert-dialog-description-font-size-md: var(--text-sm);
   --ex-alert-dialog-description-font-size-lg: var(--text-sm);
   --ex-alert-dialog-description-font-size-xl: var(--text-sm);
-  --ex-alert-dialog-description-font-weight: var(--font-weight-normal);
 
+  --ex-alert-dialog-description-line-height-sm: var(--text-sm--line-height);
+  --ex-alert-dialog-description-line-height-md: var(--text-sm--line-height);
+  --ex-alert-dialog-description-line-height-lg: var(--text-sm--line-height);
+  --ex-alert-dialog-description-line-height-xl: var(--text-sm--line-height);
+
+  --ex-alert-dialog-description-font-weight: var(--font-weight-normal);
   --ex-alert-dialog-description-opacity: var(--ex-options-opacity-muted);
 }
 ```

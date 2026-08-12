@@ -26,6 +26,7 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  isText
 />
 
 ## Palette
@@ -43,6 +44,11 @@ export const Wrapper = ({ children }) => children;
 ```sass filename="globals.css"
 :root {
   --ex-loader-duration: 500ms;
+
+  --ex-loader-font-size-sm: var(--text-sm);
+  --ex-loader-font-size-md: var(--text-base);
+  --ex-loader-font-size-lg: var(--text-lg);
+  --ex-loader-font-size-xl: var(--text-xl);
 }
 ```
 

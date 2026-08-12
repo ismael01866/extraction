@@ -63,10 +63,10 @@ describe('CardSection', () => {
 });
 
 describe('CardTitle', () => {
-  it('renders default h4 and class', () => {
+  it('renders default div and class', () => {
     render(<CardTitle>Title</CardTitle>);
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H4');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-card-title');
   });
 });

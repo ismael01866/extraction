@@ -5,11 +5,11 @@ import { Title } from './index';
 import { render, screen } from '@testing-library/react';
 
 describe('Title', () => {
-  it('renders with an h4 by default', () => {
+  it('renders with an h3 by default', () => {
     render(<Title>Title</Title>);
 
     const element = screen.getByRole('heading', { name: /title/i });
-    expect(element.tagName).toBe('H4');
+    expect(element.tagName).toBe('H3');
   });
 
   it('applies the default class name', () => {

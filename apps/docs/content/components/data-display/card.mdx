@@ -91,10 +91,6 @@ export const Wrapper = ({ children }) => children;
 
 ```sass filename="globals.css"
 :root {
-  --ex-card-font-size-sm: var(--text-xs);
-  --ex-card-font-size-md: var(--text-sm);
-  --ex-card-font-size-lg: var(--text-base);
-
   --ex-card-radius-sm: var(--radius-sm);
   --ex-card-radius-md: var(--radius-sm);
   --ex-card-radius-lg: var(--radius-sm);
@@ -119,11 +115,19 @@ export const Wrapper = ({ children }) => children;
   --ex-card-title-font-size-md: var(--text-base);
   --ex-card-title-font-size-lg: var(--text-lg);
 
+  --ex-card-title-line-height-sm: var(--text-sm--line-height);
+  --ex-card-title-line-height-md: var(--text-base--line-height);
+  --ex-card-title-line-height-lg: var(--text-lg--line-height);
+
   --ex-card-title-font-weight: var(--font-weight-semibold);
 
   --ex-card-description-font-size-sm: var(--text-xs);
   --ex-card-description-font-size-md: var(--text-sm);
   --ex-card-description-font-size-lg: var(--text-base);
+
+  --ex-card-description-line-height-sm: var(--text-xs--line-height);
+  --ex-card-description-line-height-md: var(--text-sm--line-height);
+  --ex-card-description-line-height-lg: var(--text-base--line-height);
 
   --ex-card-description-font-weight: var(--font-weight-normal);
   --ex-card-description-opacity: var(--ex-options-opacity-muted);

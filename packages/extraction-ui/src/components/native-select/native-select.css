@@ -44,10 +44,14 @@
   .ex-native-select-icon {
     @apply pointer-events-none absolute end-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-native-select-caret {
-    @apply size-[1em] fill-none stroke-current stroke-1 [stroke-linecap:round] [stroke-linejoin:round];
+  .ex-native-select-icon-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 }
 

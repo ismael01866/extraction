@@ -329,7 +329,7 @@ p + .x-container {
 .shiki {
   --shiki-dark-bg: #000 !important;
 
-  @apply overflow-x-auto py-4 text-sm leading-5;
+  @apply overflow-x-auto p-4 text-sm leading-5;
 
   &:not(:first-of-type) {
     @apply border border-neutral-200;

@@ -1,6 +1,7 @@
 export * from './base-container';
 export * from './code';
 export * from './code-container';
+export * from './code-copy-button';
 export * from './color-mode-button';
 export * from './decorative-box';
 export * from './lenis-provider';

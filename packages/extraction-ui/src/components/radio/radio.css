@@ -26,22 +26,22 @@
     @apply inline-flex items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
 
+    > svg {
+      @apply relative size-[1em];
+    }
+
     &:where([data-state='unchecked']) > * {
       @apply invisible;
     }
   }
 
-  .ex-radio-check {
-    @apply size-[0.625em] align-middle;
-
-    circle {
-      @apply fill-current;
-    }
+  .ex-radio-indicator-svg {
+    @apply fill-current stroke-current stroke-0;
   }
 
   .ex-radio-label {
     --ex-font-family: var(--ex-radio-label-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-radio-label-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-radio-label-font-weight, var(--font-weight-medium));
 
     @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

@@ -31,6 +31,9 @@ export * from './box/box.types';
 export { Breadcrumbs } from './breadcrumbs';
 export * from './breadcrumbs/breadcrumbs.types';
 
+export { BrowserFrame } from './browser-frame';
+export * from './browser-frame/browser-frame.types';
+
 export { Button } from './button';
 export * from './button/button.types';
 

@@ -3,12 +3,12 @@ import { LuMail } from 'react-icons/lu';
 
 import data from '../data.json';
 import {
-    cfg,
-    emptyStateCfg,
-    emptyStateContentCfg,
-    emptyStateDescriptionCfg,
-    emptyStateIndicatorCfg,
-    emptyStateTitleCfg,
+  cfg,
+  emptyStateCfg,
+  emptyStateContentCfg,
+  emptyStateDescriptionCfg,
+  emptyStateIndicatorCfg,
+  emptyStateTitleCfg,
 } from './empty-state';
 
 export const Component = (
@@ -52,10 +52,6 @@ export const Wrapper = ({ children }) => children;
 
 ```sass filename="globals.css"
 :root {
-  --ex-empty-state-font-size-sm: var(--text-xs);
-  --ex-empty-state-font-size-md: var(--text-sm);
-  --ex-empty-state-font-size-lg: var(--text-base);
-
   --ex-empty-state-section-gap-x-sm: calc(var(--spacing) * 2);
   --ex-empty-state-section-gap-x-md: calc(var(--spacing) * 2.5);
   --ex-empty-state-section-gap-x-lg: calc(var(--spacing) * 3);
@@ -83,11 +79,19 @@ export const Wrapper = ({ children }) => children;
   --ex-empty-state-title-font-size-md: var(--text-base);
   --ex-empty-state-title-font-size-lg: var(--text-lg);
 
+  --ex-empty-state-title-line-height-sm: var(--text-sm--line-height);
+  --ex-empty-state-title-line-height-md: var(--text-base--line-height);
+  --ex-empty-state-title-line-height-lg: var(--text-lg--line-height);
+
   --ex-empty-state-title-font-weight: var(--font-weight-semibold);
 
   --ex-empty-state-description-font-size-sm: var(--text-xs);
   --ex-empty-state-description-font-size-md: var(--text-sm);
   --ex-empty-state-description-font-size-lg: var(--text-base);
+
+  --ex-empty-state-description-line-height-sm: var(--text-xs--line-height);
+  --ex-empty-state-description-line-height-md: var(--text-sm--line-height);
+  --ex-empty-state-description-line-height-lg: var(--text-base--line-height);
 
   --ex-empty-state-description-font-weight: var(--font-weight-normal);
   --ex-empty-state-description-opacity: var(--ex-options-opacity-muted);

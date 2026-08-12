@@ -14,7 +14,7 @@
     --ex-z-index: var(--ex-hover-card-z-index, var(--ex-options-z-hover-card));
 
     @apply flex flex-1 flex-col will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+    @apply z-[var(--ex-z-index)] max-w-[var(--ex-max-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -53,7 +53,8 @@
   .ex-hover-card-title {
     --ex-font-family: var(--ex-hover-card-title-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-hover-card-title-font-weight, var(--font-weight-semibold));
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-hover-card-description {
@@ -61,7 +62,7 @@
     --ex-font-weight: var(--ex-hover-card-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-hover-card-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

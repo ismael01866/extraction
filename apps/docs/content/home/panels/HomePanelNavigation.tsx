@@ -12,38 +12,18 @@ export function HomePanelNavigation() {
           <NavigationMenu className="navigation-menu-sm">
             <NavigationMenu.List>
               <NavigationMenu.Item>
-                <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
-                <NavigationMenu.Content>
-                  <NavigationMenu.Section>Account overview page</NavigationMenu.Section>
-                </NavigationMenu.Content>
-              </NavigationMenu.Item>
-              <NavigationMenu.Item>
-                <NavigationMenu.Trigger>Settings</NavigationMenu.Trigger>
-                <NavigationMenu.Content>
-                  <NavigationMenu.Sub defaultValue="sub1">
-                    <NavigationMenu.List>
-                      <NavigationMenu.Item value="sub1">
-                        <NavigationMenu.Trigger>Sub 1</NavigationMenu.Trigger>
-                        <NavigationMenu.Content>
-                          <NavigationMenu.Section>Account overview page</NavigationMenu.Section>
-                        </NavigationMenu.Content>
-                      </NavigationMenu.Item>
-                      <NavigationMenu.Item value="sub2">
-                        <NavigationMenu.Trigger>Sub 2</NavigationMenu.Trigger>
-                        <NavigationMenu.Content>
-                          <NavigationMenu.Section>
-                            Pending reviews are slowing delivery
-                          </NavigationMenu.Section>
-                        </NavigationMenu.Content>
-                      </NavigationMenu.Item>
-                    </NavigationMenu.List>
-                    <NavigationMenu.Viewport />
-                  </NavigationMenu.Sub>
-                </NavigationMenu.Content>
+                <NavigationMenu.Link href="https://www.google.com" target="_blank">
+                  Home
+                </NavigationMenu.Link>
               </NavigationMenu.Item>
               <NavigationMenu.Item>
                 <NavigationMenu.Link href="https://www.google.com" target="_blank">
-                  Google
+                  Profile
+                </NavigationMenu.Link>
+              </NavigationMenu.Item>
+              <NavigationMenu.Item>
+                <NavigationMenu.Link href="https://www.google.com" target="_blank">
+                  Settings
                 </NavigationMenu.Link>
               </NavigationMenu.Item>
             </NavigationMenu.List>

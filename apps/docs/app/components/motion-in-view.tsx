@@ -16,7 +16,7 @@ export function MotionInView(props: MotionInViewProps) {
       asChild
       className={classes}
       inactiveClassName={`translate-y-8 opacity-0 ${animationClassName ?? ''}`}
-      threshold={0.4}
+      threshold={0.2}
       once
       {...rest}
     >

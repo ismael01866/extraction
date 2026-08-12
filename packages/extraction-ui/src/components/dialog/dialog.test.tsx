@@ -97,7 +97,7 @@ describe('DialogSection', () => {
 });
 
 describe('DialogTitle', () => {
-  it('renders default h4 and class when within dialog', () => {
+  it('renders default div and class when within dialog', () => {
     render(
       <DialogRoot>
         <DialogTitle>Title</DialogTitle>
@@ -105,7 +105,7 @@ describe('DialogTitle', () => {
     );
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H4');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-dialog-title');
   });
 });

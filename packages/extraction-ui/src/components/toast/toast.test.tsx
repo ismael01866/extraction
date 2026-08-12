@@ -63,11 +63,11 @@ describe('ToastIndicator', () => {
 });
 
 describe('ToastTitle', () => {
-  it('renders default h4 and class', () => {
+  it('renders default div and class', () => {
     render(<ToastTitle>Title</ToastTitle>);
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H4');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-toast-title');
   });
 });

@@ -1,0 +1,83 @@
+import { BrowserFrame } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  browserFrameActionsCfg,
+  browserFrameAddressCfg,
+  browserFrameCfg,
+  browserFrameContentCfg,
+  browserFrameControlsCfg,
+  browserFrameToolbarCfg,
+} from './browser-frame';
+
+export const Component = (
+  <BrowserFrame>
+    <BrowserFrame.Toolbar>
+      <BrowserFrame.Controls />
+      <BrowserFrame.Address>example.com</BrowserFrame.Address>
+      <BrowserFrame.Actions />
+    </BrowserFrame.Toolbar>
+    <BrowserFrame.Content />
+  </BrowserFrame>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Browser Frame
+
+{data['browser-frame'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-browser-frame-radius: var(--radius-sm);
+
+  --ex-browser-frame-toolbar-px: calc(var(--spacing) * 4);
+  --ex-browser-frame-toolbar-height: calc(var(--spacing) * 16);
+
+  --ex-browser-frame-address-font-size: var(--text-sm);
+  --ex-browser-frame-address-font-weight: var(--font-weight-normal);
+
+  --ex-browser-frame-address-px: calc(var(--spacing) * 3);
+  --ex-browser-frame-address-height: calc(var(--spacing) * 8);
+
+  --ex-browser-frame-address-radius: 9999px;
+
+  --ex-browser-frame-content-px: calc(var(--spacing) * 4);
+  --ex-browser-frame-content-py: calc(var(--spacing) * 4);
+}
+```
+
+## API
+
+### Browser Frame
+
+<Api config={browserFrameCfg} />
+
+### Browser Frame Toolbar
+
+<Api config={browserFrameToolbarCfg} />
+
+### Browser Frame Controls
+
+<Api config={browserFrameControlsCfg} />
+
+### Browser Frame Actions
+
+<Api config={browserFrameActionsCfg} />
+
+### Browser Frame Address
+
+<Api config={browserFrameAddressCfg} />
+
+### Browser Frame Content
+
+<Api config={browserFrameContentCfg} />

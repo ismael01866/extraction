@@ -39,6 +39,7 @@ pnpm lint:css  # lint CSS files
 - `next.config.mjs` configures `nextra` and the docs theme.
 - `app/layout.tsx` defines the docs navigation, footer, and page layout.
 - This package is part of a pnpm workspace and relies on shared local packages.
+- Run `$env:ANALYZE="true"; pnpm build`(on Windows) or `ANALYZE=true pnpm build` to analyze the build.
 
 ## Deploy
 

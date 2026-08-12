@@ -82,8 +82,8 @@ export const BreadcrumbsSeparator = <T extends ElementType = 'div'>(
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-breadcrumbs-separator" {...rest}>
       {children ?? (
-        <svg className="ex-breadcrumbs-caret" viewBox="0 0 20 20">
-          <polyline points="7 4.5 13 10 7 15.5" />
+        <svg className="ex-breadcrumbs-separator-svg" viewBox="0 0 24 24">
+          <path d="m9 18 6-6-6-6"></path>
         </svg>
       )}
     </Element>

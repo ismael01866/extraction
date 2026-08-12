@@ -58,7 +58,7 @@ export function HomeSectionCSS() {
                 </IconBox>
 
                 <Stack>
-                  <Title className="title-lg text-fluid font-semibold leading-none">
+                  <Title as={'div'} className="title-lg text-fluid font-semibold leading-none">
                     {feature.title}
                   </Title>
                   <Description className="opacity-muted text-fluid">

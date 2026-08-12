@@ -2,15 +2,15 @@ import { Button, Dialog } from 'extraction-ui';
 
 import data from '../data.json';
 import {
-    cfg,
-    dialogCfg,
-    dialogCloseCfg,
-    dialogContentCfg,
-    dialogDescriptionCfg,
-    dialogOverlayCfg,
-    dialogSectionCfg,
-    dialogTitleCfg,
-    dialogTriggerCfg,
+  cfg,
+  dialogCfg,
+  dialogCloseCfg,
+  dialogContentCfg,
+  dialogDescriptionCfg,
+  dialogOverlayCfg,
+  dialogSectionCfg,
+  dialogTitleCfg,
+  dialogTriggerCfg,
 } from './dialog';
 
 export const Component = (
@@ -85,11 +85,6 @@ export const Wrapper = ({ children }) => children;
   --ex-dialog-z-index: 50;
   --ex-dialog-overlay-z-index: 45;
 
-  --ex-dialog-font-size-sm: var(--text-sm);
-  --ex-dialog-font-size-md: var(--text-sm);
-  --ex-dialog-font-size-lg: var(--text-sm);
-  --ex-dialog-font-size-xl: var(--text-sm);
-
   --ex-dialog-radius-sm: var(--radius-sm);
   --ex-dialog-radius-md: var(--radius-sm);
   --ex-dialog-radius-lg: var(--radius-sm);
@@ -100,10 +95,10 @@ export const Wrapper = ({ children }) => children;
   --ex-dialog-shadow-lg: var(--shadow-xl);
   --ex-dialog-shadow-xl: var(--shadow-xl);
 
-  --ex-dialog-w-sm: var(--container-sm);
-  --ex-dialog-w-md: var(--container-md);
-  --ex-dialog-w-lg: var(--container-lg);
-  --ex-dialog-w-xl: var(--container-xl);
+  --ex-dialog-width-sm: var(--container-sm);
+  --ex-dialog-width-md: var(--container-md);
+  --ex-dialog-width-lg: var(--container-lg);
+  --ex-dialog-width-xl: var(--container-xl);
 
   --ex-dialog-section-gap-x-sm: calc(var(--spacing) * 2.5);
   --ex-dialog-section-gap-x-md: calc(var(--spacing) * 2.5);
@@ -130,12 +125,22 @@ export const Wrapper = ({ children }) => children;
   --ex-dialog-title-font-size-lg: var(--text-base);
   --ex-dialog-title-font-size-xl: var(--text-base);
 
+  --ex-dialog-title-line-height-sm: var(--text-base--line-height);
+  --ex-dialog-title-line-height-md: var(--text-base--line-height);
+  --ex-dialog-title-line-height-lg: var(--text-base--line-height);
+  --ex-dialog-title-line-height-xl: var(--text-base--line-height);
+
   --ex-dialog-title-font-weight: var(--font-weight-semibold);
 
   --ex-dialog-description-font-size-sm: var(--text-sm);
   --ex-dialog-description-font-size-md: var(--text-sm);
   --ex-dialog-description-font-size-lg: var(--text-sm);
   --ex-dialog-description-font-size-xl: var(--text-sm);
+
+  --ex-dialog-description-line-height-sm: var(--text-sm--line-height);
+  --ex-dialog-description-line-height-md: var(--text-sm--line-height);
+  --ex-dialog-description-line-height-lg: var(--text-sm--line-height);
+  --ex-dialog-description-line-height-xl: var(--text-sm--line-height);
 
   --ex-dialog-description-font-weight: var(--font-weight-normal);
   --ex-dialog-description-opacity: var(--ex-options-opacity-muted);

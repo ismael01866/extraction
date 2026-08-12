@@ -15,7 +15,7 @@
 
   .ex-blockquote {
     @apply relative flex flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -27,12 +27,16 @@
   }
 
   .ex-blockquote-icon {
-    @apply inline-flex h-[1em] w-[1em];
+    @apply inline-flex;
     @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-blockquote-quotes {
-    @apply size-[1em] fill-current;
+  .ex-blockquote-icon-svg {
+    @apply fill-current stroke-current stroke-0;
   }
 
   .ex-blockquote-cite {
@@ -40,6 +44,6 @@
   }
 
   .ex-blockquote-cite {
-    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }

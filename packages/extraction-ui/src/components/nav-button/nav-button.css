@@ -19,7 +19,7 @@
     @apply w-(--ex-width) cursor-(--ex-cursor) gap-y-(--ex-gap-y) rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
 
     > svg {
-      @apply relative h-[1em] w-[1em];
+      @apply relative size-[1em];
     }
   }
 }

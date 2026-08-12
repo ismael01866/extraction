@@ -7,7 +7,7 @@ export const cfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h4',
+      default: 'h3',
     },
     asChild: {
       type: 'boolean',

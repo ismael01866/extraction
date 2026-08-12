@@ -42,8 +42,8 @@ export const CheckboxCardIndicator = <T extends ElementType = 'div'>(
         cssClassName="ex-checkbox-card-indicator"
       >
         {children ?? (
-          <svg className="ex-checkbox-card-check" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7" />
+          <svg className="ex-checkbox-card-indicator-svg" viewBox="0 0 24 24">
+            <path d="M20 6 9 17l-5-5"></path>
           </svg>
         )}
       </Element>

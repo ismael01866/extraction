@@ -31,18 +31,22 @@
     @apply inline-flex items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
 
+    > svg {
+      @apply relative size-[1em];
+    }
+
     &:where([data-state='unchecked']) > * {
       @apply invisible;
     }
   }
 
-  .ex-checkbox-check {
-    @apply size-[0.875em] fill-none stroke-current stroke-2;
+  .ex-checkbox-indicator-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 
   .ex-checkbox-label {
     --ex-font-family: var(--ex-checkbox-label-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-checkbox-label-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-checkbox-label-font-weight, var(--font-weight-medium));
 
     @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }

@@ -70,10 +70,10 @@ describe('EmptyStateSection', () => {
 });
 
 describe('EmptyStateTitle', () => {
-  it('renders default h4 and class', () => {
+  it('div and class', () => {
     render(<EmptyStateTitle>Title</EmptyStateTitle>);
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H4');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-empty-state-title');
   });
 });

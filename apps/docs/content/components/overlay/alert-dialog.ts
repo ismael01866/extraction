@@ -55,42 +55,6 @@ export const alertDialogContentCfg = {
   },
 };
 
-export const alertDialogTitleCfg = {
-  api: {
-    as: {
-      type: 'ElementType',
-      default: 'h4',
-    },
-    asChild: {
-      type: 'boolean',
-      default: 'false',
-    },
-  },
-  selectors: {
-    'AlertDialog.Title': {
-      default: 'ex-alert-dialog-title',
-    },
-  },
-};
-
-export const alertDialogDescriptionCfg = {
-  api: {
-    as: {
-      type: 'ElementType',
-      default: 'p',
-    },
-    asChild: {
-      type: 'boolean',
-      default: 'false',
-    },
-  },
-  selectors: {
-    'AlertDialog.Description': {
-      default: 'ex-alert-dialog-description',
-    },
-  },
-};
-
 export const alertDialogActionCfg = {
   api: {
     as: {
@@ -159,6 +123,42 @@ export const alertDialogOverlayCfg = {
   selectors: {
     'AlertDialog.Overlay': {
       default: 'ex-alert-dialog-overlay',
+    },
+  },
+};
+
+export const alertDialogTitleCfg = {
+  api: {
+    as: {
+      type: 'ElementType',
+      default: 'div',
+    },
+    asChild: {
+      type: 'boolean',
+      default: 'false',
+    },
+  },
+  selectors: {
+    'AlertDialog.Title': {
+      default: 'ex-alert-dialog-title',
+    },
+  },
+};
+
+export const alertDialogDescriptionCfg = {
+  api: {
+    as: {
+      type: 'ElementType',
+      default: 'p',
+    },
+    asChild: {
+      type: 'boolean',
+      default: 'false',
+    },
+  },
+  selectors: {
+    'AlertDialog.Description': {
+      default: 'ex-alert-dialog-description',
     },
   },
 };

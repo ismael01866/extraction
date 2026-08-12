@@ -36,8 +36,8 @@ export const RadioCardIndicator = <T extends ElementType = 'div'>(
     <RadioGroup.Indicator forceMount={forceMount} asChild {...rest}>
       <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-radio-card-indicator">
         {children ?? (
-          <svg className="ex-radio-card-check" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="8" fill="currentColor" />
+          <svg className="ex-radio-card-indicator-svg" viewBox="0 0 24 24">
+            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
           </svg>
         )}
       </Element>

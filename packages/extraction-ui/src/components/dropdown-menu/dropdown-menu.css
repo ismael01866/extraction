@@ -15,7 +15,7 @@
   .ex-dropdown-menu-content,
   .ex-dropdown-menu-sub-content {
     @apply flex will-change-[transform,opacity];
-    @apply max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+    @apply max-w-[var(--ex-max-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where([data-side='top']) {
       @apply animate-in slide-from-top-1 fade-in;

@@ -13,7 +13,7 @@ const FAQ = [
     id: 'option-2',
     title: 'How is the customization done?',
     description:
-      'Most of the customization can done through CSS variables and Tailwind class utilities. Extraction UI also comes with a set of pre-defined tokens that can be used to customize the theme further.',
+      'Most of the customization is done through CSS variables and Tailwind class utilities. Extraction UI also comes with a set of pre-defined tokens that can be used to customize the theme further.',
   },
   {
     id: 'option-3',

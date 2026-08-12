@@ -95,7 +95,7 @@ export const dialogTitleCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h4',
+      default: 'div',
     },
     asChild: {
       type: 'boolean',

@@ -48,7 +48,8 @@
   }
 
   .ex-app-layout-section {
-    @apply flex flex-1 flex-col px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply flex flex-1 flex-col;
+    @apply px-[var(--ex-px)] py-[var(--ex-py)];
   }
 
   .ex-app-layout-aside {
