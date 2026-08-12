@@ -97,7 +97,7 @@ describe('DrawerSection', () => {
 });
 
 describe('DrawerTitle', () => {
-  it('renders default h4 and class when within drawer', () => {
+  it('div and class when within drawer', () => {
     render(
       <DrawerRoot>
         <DrawerTitle>Title</DrawerTitle>
@@ -105,7 +105,7 @@ describe('DrawerTitle', () => {
     );
 
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H4');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-drawer-title');
   });
 });

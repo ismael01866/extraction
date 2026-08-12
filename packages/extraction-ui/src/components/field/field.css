@@ -13,7 +13,7 @@
 
   .ex-field-label {
     --ex-font-family: var(--ex-field-label-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-field-label-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-field-label-font-weight, var(--font-weight-medium));
   }
 
   .ex-field-label {

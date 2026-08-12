@@ -43,10 +43,10 @@ export const CalloutIndicator = <T extends ElementType = 'div'>(
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-callout-indicator" {...rest}>
       {children ?? (
-        <svg className="ex-callout-indicator-icon" viewBox="0 0 20 20">
-          <circle cx="10" cy="10" r="7.5" />
-          <line x1="10" y1="9" x2="10" y2="14" />
-          <circle cx="10" cy="6.5" r="0.75" fill="currentColor" stroke="none" />
+        <svg className="ex-callout-indicator-svg" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 16v-4"></path>
+          <path d="M12 8h.01"></path>
         </svg>
       )}
     </Element>
@@ -55,8 +55,8 @@ export const CalloutIndicator = <T extends ElementType = 'div'>(
 
 CalloutIndicator.displayName = 'Callout.Indicator';
 
-export const CalloutTitle = <T extends ElementType = 'h3'>(props: CalloutTitleProps<T>) => {
-  const { as = 'h3', children, ...rest } = props;
+export const CalloutTitle = <T extends ElementType = 'div'>(props: CalloutTitleProps<T>) => {
+  const { as = 'div', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-callout-title" {...rest}>

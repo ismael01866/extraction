@@ -29,7 +29,7 @@
     --ex-z-index: var(--ex-drawer-z-index, var(--ex-options-z-drawer));
 
     @apply fixed flex flex-1 flex-col border-transparent shadow-lg will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -101,14 +101,14 @@
   .ex-drawer-title {
     --ex-font-weight: var(--ex-drawer-title-font-weight, var(--font-weight-semibold));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-drawer-description {
     --ex-font-weight: var(--ex-drawer-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

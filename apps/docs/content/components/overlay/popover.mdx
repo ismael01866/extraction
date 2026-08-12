@@ -124,12 +124,8 @@ Use the `side` prop on the `Popover.Content` to set the placement of the compone
 :root {
   --ex-popover-z-index: 40;
 
-  --ex-popover-font-size-sm: var(--text-xs);
-  --ex-popover-font-size-md: var(--text-sm);
-  --ex-popover-font-size-lg: var(--text-base);
-
-  --ex-popover-max-w-sm: var(--container-3xs);
-  --ex-popover-max-w-md: var(--container-2xs);
+  --ex-popover-max-width-sm: var(--container-3xs);
+  --ex-popover-max-width-md: var(--container-2xs);
 
   --ex-popover-radius-sm: var(--radius-sm);
   --ex-popover-radius-md: var(--radius-sm);
@@ -157,12 +153,19 @@ Use the `side` prop on the `Popover.Content` to set the placement of the compone
   --ex-popover-title-font-size-sm: var(--text-sm);
   --ex-popover-title-font-size-md: var(--text-base);
 
+  --ex-popover-title-line-height-sm: var(--text-sm--line-height);
+  --ex-popover-title-line-height-md: var(--text-base--line-height);
+
   --ex-popover-description-font-family: var(--font-sans);
   --ex-popover-description-font-weight: var(--font-weight-normal);
-  --ex-popover-description-opacity: var(--ex-options-opacity-muted);
 
   --ex-popover-description-font-size-sm: var(--text-xs);
   --ex-popover-description-font-size-md: var(--text-sm);
+
+  --ex-popover-description-line-height-sm: var(--text-xs--line-height);
+  --ex-popover-description-line-height-md: var(--text-sm--line-height);
+
+  --ex-popover-description-opacity: var(--ex-options-opacity-muted);
 
   --ex-popover-arrow-height-sm: calc(var(--spacing) * 1.75);
   --ex-popover-arrow-height-md: calc(var(--spacing) * 1.75);

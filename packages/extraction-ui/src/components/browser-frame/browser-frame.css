@@ -1,0 +1,91 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-browser-frame {
+    @apply variant-outline palette-neutral;
+  }
+
+  .ex-browser-frame {
+    --ex-radius: var(--ex-browser-frame-radius, var(--radius-sm));
+
+    @apply flex min-w-full flex-col overflow-hidden;
+    @apply rounded-[var(--ex-radius)];
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+    }
+  }
+
+  .ex-browser-frame-toolbar {
+    --ex-px: var(--ex-browser-frame-toolbar-px, calc(var(--spacing) * 4));
+    --ex-min-height: var(--ex-browser-frame-toolbar-height, calc(var(--spacing) * 16));
+
+    @apply variant-surface;
+  }
+
+  .ex-browser-frame-toolbar {
+    @apply flex items-center gap-4 border-0 border-b;
+    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+  }
+
+  .ex-browser-frame-controls {
+    @apply flex shrink-0 items-center gap-2;
+
+    > svg {
+      @apply relative size-[1em];
+    }
+  }
+
+  .ex-browser-frame-controls-svg {
+    @apply opacity-muted fill-none stroke-current [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:2];
+  }
+
+  .ex-browser-frame-actions {
+    @apply flex shrink-0 items-center gap-2;
+
+    > svg {
+      @apply relative size-[1em];
+    }
+  }
+
+  .ex-browser-frame-actions-svg {
+    @apply opacity-muted fill-none stroke-current [stroke-linecap:round] [stroke-linejoin:round] [stroke-width:2];
+  }
+
+  .ex-browser-frame-address {
+    --ex-font-size: var(--ex-browser-frame-address-font-size, var(--text-sm));
+    --ex-font-weight: var(--ex-browser-frame-address-font-weight, var(--font-weight-normal));
+
+    --ex-px: var(--ex-browser-frame-address-px, calc(var(--spacing) * 3));
+    --ex-radius: var(--ex-browser-frame-address-radius, 9999px);
+    --ex-min-height: var(--ex-browser-frame-address-height, calc(var(--spacing) * 8));
+
+    @apply variant-solid tonal-white;
+  }
+
+  .ex-browser-frame-address {
+    @apply opacity-muted flex flex-1 items-center;
+    @apply min-h-[var(--ex-min-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+  }
+
+  .ex-browser-frame-content {
+    --ex-px: var(--ex-browser-frame-content-px, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-browser-frame-content-py, calc(var(--spacing) * 4));
+  }
+
+  .ex-browser-frame-content {
+    @apply flex min-h-0 flex-1 overflow-hidden;
+    @apply px-[var(--ex-px)] py-[var(--ex-py)];
+  }
+}
+
+@layer utilities {
+  .ex-browser-frame {
+    &:where(:not([class*='variant-'])),
+    &:where([class*='variant-outline']) {
+      --background: var(--ex-options-panel-body-color);
+      --background-dark: var(--ex-options-panel-body-color-dark);
+    }
+  }
+}

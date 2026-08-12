@@ -15,10 +15,14 @@
   .ex-close-button {
     @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
     @apply h-[var(--ex-size)] w-[var(--ex-size)] rounded-[var(--ex-radius)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-close-icon {
-    @apply opacity-muted size-[1em] fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
+  .ex-close-button-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 }
 

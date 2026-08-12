@@ -75,7 +75,7 @@ export function HomeSectionMetrics() {
                   </InView>
 
                   <Stack className="gap-4">
-                    <Title className="title-xl text-fluid font-semibold leading-none">
+                    <Title as={'div'} className="title-xl text-fluid font-semibold leading-none">
                       {metric.title}
                     </Title>
                     <Description className="text-fluid description-lg">

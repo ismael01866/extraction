@@ -111,8 +111,8 @@ export const AccordionIcon = <T extends ElementType = 'div'>(props: AccordionIco
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-accordion-icon" {...rest}>
       {children ?? (
-        <svg className="ex-accordion-caret" viewBox="0 0 20 20">
-          <polyline points="6 10 10 14 14 10" />
+        <svg className="ex-accordion-icon-svg" viewBox="0 0 24 24">
+          <path d="m6 9 6 6 6-6"></path>
         </svg>
       )}
     </Element>
@@ -121,8 +121,8 @@ export const AccordionIcon = <T extends ElementType = 'div'>(props: AccordionIco
 
 AccordionIcon.displayName = 'Accordion.Icon';
 
-export const AccordionTitle = <T extends ElementType = 'h4'>(props: AccordionTitleProps<T>) => {
-  const { as = 'h4', children, ...rest } = props;
+export const AccordionTitle = <T extends ElementType = 'div'>(props: AccordionTitleProps<T>) => {
+  const { as = 'div', children, ...rest } = props;
 
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-accordion-title" {...rest}>

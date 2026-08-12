@@ -11,13 +11,7 @@ import markdown from '@eslint/markdown';
 
 export default defineConfig([
   {
-    ignores: [
-      'node_modules/**',
-      '.next/**',
-      'dist/**',
-      'public/**',
-      '**/next-env.d.ts',
-    ],
+    ignores: ['node_modules/**', '.next/**', 'dist/**', 'public/**', '**/next-env.d.ts'],
   },
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
@@ -73,10 +67,7 @@ export default defineConfig([
       react: pluginReact,
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        { varsIgnorePattern: '^React$' },
-      ],
+      '@typescript-eslint/no-unused-vars': ['error', { varsIgnorePattern: '^React$' }],
       '@typescript-eslint/no-unused-expressions': 'off',
       'react/jsx-uses-vars': 'error',
       'react/react-in-jsx-scope': 'off',

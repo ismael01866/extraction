@@ -61,8 +61,8 @@
   --active-border: var(--shade-strong);
   --active-border-dark: var(--shade-strong-dark);
 
-  --text: contrast-color(var(--shade-background));
-  --text-dark: contrast-color(var(--shade-background-dark));
+  --text: contrast-color(var(--shade-soft));
+  --text-dark: contrast-color(var(--shade-soft-dark));
 
   --hover-text: contrast-color(var(--shade-soft));
   --hover-text-dark: contrast-color(var(--shade-soft-dark));
@@ -169,8 +169,8 @@
   --active-border: transparent;
   --active-border-dark: transparent;
 
-  --text: contrast-color(var(--shade-background));
-  --text-dark: contrast-color(var(--shade-background-dark));
+  --text: contrast-color(var(--shade-soft));
+  --text-dark: contrast-color(var(--shade-soft-dark));
 
   --hover-text: contrast-color(var(--shade-soft));
   --hover-text-dark: contrast-color(var(--shade-soft-dark));

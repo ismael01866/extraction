@@ -12,7 +12,7 @@
 
   .ex-card {
     @apply flex leading-normal;
-    @apply rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+    @apply rounded-[var(--ex-radius)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -31,14 +31,14 @@
   .ex-card-title {
     --ex-font-weight: var(--ex-card-title-font-weight, var(--font-weight-semibold));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-card-description {
     --ex-font-weight: var(--ex-card-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-card-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

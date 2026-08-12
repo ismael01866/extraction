@@ -172,7 +172,7 @@ export const popoverTitleCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h4',
+      default: 'p',
     },
     asChild: {
       type: 'boolean',

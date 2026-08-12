@@ -12,7 +12,6 @@
 
   .ex-empty-state-content {
     @apply flex flex-1 flex-col;
-    @apply [font-size:var(--ex-font-size)];
   }
 
   .ex-empty-state-section {
@@ -31,13 +30,13 @@
   .ex-empty-state-title {
     --ex-font-weight: var(--ex-empty-state-title-font-weight, var(--font-weight-semibold));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-empty-state-description {
     --ex-font-weight: var(--ex-empty-state-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-empty-state-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }

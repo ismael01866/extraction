@@ -63,18 +63,19 @@ export const PasswordIcon = <T extends ElementType = 'span'>(props: PasswordIcon
   const { as = 'span', asChild = false, children, visible, hidden, ...rest } = props;
 
   const hiddenIcon = (
-    <svg className="ex-password-toggle-icon" viewBox="0 0 20 20">
-      <path d="M3 9.8Q10 13.2 17 9.8" />
-      <path d="M6.2 11.5 5.4 12.9" />
-      <path d="M10 12.1v1.8" />
-      <path d="m13.8 11.5.8 1.4" />
+    <svg className="ex-password-toggle-svg" viewBox="0 0 24 24">
+      <path d="m15 18-.722-3.25"></path>
+      <path d="M2 8a10.645 10.645 0 0 0 20 0"></path>
+      <path d="m20 15-1.726-2.05"></path>
+      <path d="m4 15 1.726-2.05"></path>
+      <path d="m9 18 .722-3.25"></path>
     </svg>
   );
 
   const visibleIcon = (
-    <svg className="ex-password-toggle-icon" viewBox="0 0 20 20">
-      <path d="M1.5 10C3.4 6.8 6.4 5 10 5s6.6 1.8 8.5 5c-1.9 3.2-4.9 5-8.5 5s-6.6-1.8-8.5-5Z" />
-      <circle cx="10" cy="10" r="2.25" />
+    <svg className="ex-password-toggle-svg" viewBox="0 0 24 24">
+      <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path>
+      <circle cx="12" cy="12" r="3"></circle>
     </svg>
   );
 
@@ -82,7 +83,7 @@ export const PasswordIcon = <T extends ElementType = 'span'>(props: PasswordIcon
     if (React.isValidElement(content)) return content;
 
     return (
-      <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-password-icon">
+      <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-password-toggle">
         {content}
       </Element>
     );

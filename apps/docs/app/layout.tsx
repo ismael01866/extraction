@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Geist } from 'next/font/google';
 
 import {
   Description,
@@ -20,16 +20,11 @@ import { LuGithub } from 'react-icons/lu';
 import './globals.css';
 
 import { ColorModeButton } from './components';
-import { LenisProvider } from './components/lenis-provider';
+import { LazyLenisProvider } from './components/lazy-lenis';
 import { NavigationEvents } from './components/navigation-events';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
@@ -114,7 +109,7 @@ const footer = (
 
       <Flex className="mb-8 hidden gap-20 sm:ms-auto sm:flex">
         <Stack className="gap-4">
-          <Title>Documentation</Title>
+          <Title as={'div'}>Documentation</Title>
           <List className="list-none gap-3">
             {DOCUMENTATION.map(({ label, href }, i) => (
               <List.Item key={i}>
@@ -125,7 +120,7 @@ const footer = (
         </Stack>
 
         <Stack className="gap-4">
-          <Title>About</Title>
+          <Title as={'div'}>About</Title>
           <List className="list-none gap-3">
             {ABOUT.map(({ label, href }, i) => (
               <List.Item key={i}>
@@ -143,12 +138,7 @@ export default async function RootLayout({ children }) {
   const pageMap = await getPageMap();
 
   return (
-    <html
-      lang="en"
-      dir="ltr"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" dir="ltr" className={`${geistSans.variable}`} suppressHydrationWarning>
       <Head>
         {/* <Script
           src="//unpkg.com/react-scan/dist/auto.global.js"
@@ -168,7 +158,7 @@ export default async function RootLayout({ children }) {
           }}
         >
           {children}
-          <LenisProvider />
+          <LazyLenisProvider />
           <NavigationEvents />
         </Layout>
       </body>

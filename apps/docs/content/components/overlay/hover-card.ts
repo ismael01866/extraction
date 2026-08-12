@@ -158,7 +158,7 @@ export const hoverCardTitleCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'h4',
+      default: 'p',
     },
     asChild: {
       type: 'boolean',

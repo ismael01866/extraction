@@ -42,7 +42,7 @@ export default defineConfig({
     },
     rollupOptions: {
       plugins: [preserveDirectives()],
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', /^@radix-ui\//],
       output: {
         globals: {
           react: 'React',

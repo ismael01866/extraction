@@ -81,10 +81,6 @@ export const Wrapper = ({ children }) => children;
 
 ```sass filename="globals.css"
 :root {
-  --ex-callout-font-size-sm: var(--text-xs);
-  --ex-callout-font-size-md: var(--text-sm);
-  --ex-callout-font-size-lg: var(--text-base);
-
   --ex-callout-gap-x-sm: calc(var(--spacing) * 2);
   --ex-callout-gap-x-md: calc(var(--spacing) * 2.5);
   --ex-callout-gap-x-lg: calc(var(--spacing) * 3);
@@ -117,11 +113,19 @@ export const Wrapper = ({ children }) => children;
   --ex-callout-title-font-size-md: var(--text-base);
   --ex-callout-title-font-size-lg: var(--text-lg);
 
+  --ex-callout-title-line-height-sm: var(--text-sm--line-height);
+  --ex-callout-title-line-height-md: var(--text-base--line-height);
+  --ex-callout-title-line-height-lg: var(--text-lg--line-height);
+
   --ex-callout-title-font-weight: var(--font-weight-semibold);
 
   --ex-callout-description-font-size-sm: var(--text-xs);
   --ex-callout-description-font-size-md: var(--text-sm);
   --ex-callout-description-font-size-lg: var(--text-base);
+
+  --ex-callout-description-line-height-sm: var(--text-xs--line-height);
+  --ex-callout-description-line-height-md: var(--text-sm--line-height);
+  --ex-callout-description-line-height-lg: var(--text-base--line-height);
 
   --ex-callout-description-font-weight: var(--font-weight-normal);
   --ex-callout-description-opacity: var(--ex-options-opacity-muted);

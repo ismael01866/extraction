@@ -83,7 +83,7 @@
     @apply h-[var(--ex-height)] cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     > svg {
-      @apply h-[1em] w-[1em];
+      @apply relative size-[1em];
     }
   }
 }

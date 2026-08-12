@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-
 import {
   BreadcrumbsCurrentLink,
   BreadcrumbsItem,
@@ -11,6 +8,9 @@ import {
   BreadcrumbsRoot,
   BreadcrumbsSeparator,
 } from './breadcrumbs';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('BreadcrumbsRoot', () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -119,6 +119,6 @@ describe('BreadcrumbsSeparator', () => {
     const el = container.querySelector('.ex-breadcrumbs-separator');
     expect(el?.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-breadcrumbs-separator');
-    expect(container.querySelector('.ex-breadcrumbs-caret')).toBeInTheDocument();
+    expect(container.querySelector('.ex-breadcrumbs-separator-svg')).toBeInTheDocument();
   });
 });

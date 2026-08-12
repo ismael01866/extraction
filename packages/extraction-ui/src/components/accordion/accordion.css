@@ -12,7 +12,7 @@
 
   .ex-accordion {
     @apply flex flex-col;
-    @apply rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+    @apply rounded-[var(--ex-radius)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -53,10 +53,14 @@
   .ex-accordion-icon {
     @apply pointer-events-none absolute end-4 top-1/2 inline-flex h-[1em] w-[1em] flex-shrink-0 -translate-y-1/2 items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-accordion-caret {
-    @apply size-[1em] fill-none stroke-current stroke-1 [stroke-linecap:round] [stroke-linejoin:round];
+  .ex-accordion-icon-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 
   .ex-accordion-content {
@@ -85,14 +89,14 @@
   .ex-accordion-title {
     --ex-font-weight: var(--ex-accordion-title-font-weight, var(--font-weight-semibold));
 
-    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-accordion-description {
     --ex-font-weight: var(--ex-accordion-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-accordion-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

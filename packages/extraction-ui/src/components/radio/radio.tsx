@@ -45,8 +45,8 @@ export const RadioIndicator = <T extends ElementType = 'div'>(props: RadioIndica
     <RadioGroup.Indicator asChild {...rest}>
       <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-radio-indicator">
         {children ?? (
-          <svg className="ex-radio-check" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="8" fill="currentColor" />
+          <svg className="ex-radio-indicator-svg" viewBox="0 0 24 24">
+            <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z"></path>
           </svg>
         )}
       </Element>

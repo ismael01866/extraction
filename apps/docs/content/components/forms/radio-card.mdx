@@ -2,13 +2,13 @@ import { RadioCard, RadioGroup } from 'extraction-ui';
 
 import data from '../data.json';
 import {
-    cfg,
-    radioCardCfg,
-    radioCardContentCfg,
-    radioCardDescriptionCfg,
-    radioCardIndicatorCfg,
-    radioCardLabelCfg,
-    radioGroupCfg,
+  cfg,
+  radioCardCfg,
+  radioCardContentCfg,
+  radioCardDescriptionCfg,
+  radioCardIndicatorCfg,
+  radioCardLabelCfg,
+  radioGroupCfg,
 } from './radio-card';
 
 export const Component = (
@@ -122,10 +122,6 @@ export const Wrapper = ({ children }) => children;
 :root {
   --ex-radio-card-cursor: default;
 
-  --ex-radio-card-font-size-sm: var(--text-xs);
-  --ex-radio-card-font-size-md: var(--text-sm);
-  --ex-radio-card-font-size-lg: var(--text-base);
-
   --ex-radio-card-gap-x-sm: calc(var(--spacing * 2));
   --ex-radio-card-gap-x-md: calc(var(--spacing * 2.5));
   --ex-radio-card-gap-x-lg: calc(var(--spacing * 3));
@@ -151,11 +147,15 @@ export const Wrapper = ({ children }) => children;
   --ex-radio-card-content-gap-y-lg: calc(var(--spacing * 1));
 
   --ex-radio-card-label-font-family: var(--font-sans);
-  --ex-radio-card-label-font-weight: var(--font-weight-semibold);
+  --ex-radio-card-label-font-weight: var(--font-weight-medium);
 
   --ex-radio-card-label-font-size-sm: var(--text-xs);
   --ex-radio-card-label-font-size-md: var(--text-sm);
   --ex-radio-card-label-font-size-lg: var(--text-base);
+
+  --ex-radio-card-label-line-height-sm: var(--text-xs--line-height);
+  --ex-radio-card-label-line-height-md: var(--text-sm--line-height);
+  --ex-radio-card-label-line-height-lg: var(--text-base--line-height);
 
   --ex-radio-card-description-font-family: var(--font-sans);
   --ex-radio-card-description-font-weight: var(--font-weight-normal);
@@ -165,9 +165,13 @@ export const Wrapper = ({ children }) => children;
   --ex-radio-card-description-font-size-md: var(--text-sm);
   --ex-radio-card-description-font-size-lg: var(--text-base);
 
-  --ex-radio-card-indicator-font-size-sm: var(--text-lg);
-  --ex-radio-card-indicator-font-size-md: var(--text-xl);
-  --ex-radio-card-indicator-font-size-lg: var(--text-2xl);
+  --ex-radio-card-description-line-height-sm: var(--text-xs--line-height);
+  --ex-radio-card-description-line-height-md: var(--text-sm--line-height);
+  --ex-radio-card-description-line-height-lg: var(--text-base--line-height);
+
+  --ex-radio-card-indicator-font-size-sm: var(--text-base);
+  --ex-radio-card-indicator-font-size-md: var(--text-lg);
+  --ex-radio-card-indicator-font-size-lg: var(--text-xl);
 }
 ```
 

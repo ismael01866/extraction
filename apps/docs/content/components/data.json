@@ -39,6 +39,10 @@
     "category": "navigation",
     "description": "A navigation component that displays a linear path of links showing the user's current location in a hierarchy."
   },
+  "browser-frame": {
+    "category": "layout",
+    "description": "A layout component that mimics the appearance of a web browser window."
+  },
   "button": {
     "category": "buttons",
     "description": "An interactive component that triggers an action, event, or operation when clicked or tapped."

@@ -33,10 +33,15 @@
 
   .ex-select-icon {
     @apply pointer-events-none absolute end-2 top-1/2 inline-flex -translate-y-1/2 items-center justify-center leading-none;
+    @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-select-icon {
-    @apply size-[1em] fill-none stroke-current stroke-1 [font-size:var(--ex-font-size)] [stroke-linecap:round] [stroke-linejoin:round];
+  .ex-select-icon-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 
   .ex-select-content {
@@ -49,7 +54,7 @@
 
   .ex-select-content {
     @apply flex hidden min-w-fit;
-    @apply max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-w)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+    @apply max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:has(.ex-select-item-indicator) {
       .ex-select-item {
@@ -91,11 +96,15 @@
 
   .ex-select-item-indicator {
     @apply absolute left-[0.375rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
-    @apply size-[var(--ex-icon-size)];
+    @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-select-item-indicator-check {
-    @apply size-[1em] fill-none stroke-current stroke-2;
+  .ex-select-item-indicator-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 
   .ex-select-label {
@@ -110,7 +119,17 @@
 
   .ex-select-scroll-up-button,
   .ex-select-scroll-down-button {
-    @apply size-[1em] self-center fill-current [font-size:var(--ex-font-size)];
+    @apply self-center;
+    @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
+  }
+
+  .ex-select-scroll-up-button-svg,
+  .ex-select-scroll-down-button-svg {
+    @apply fill-current stroke-current stroke-0;
   }
 
   [data-radix-popper-content-wrapper] {

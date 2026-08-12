@@ -1,5 +1,11 @@
 import nextra from 'nextra';
 
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === 'true',
+});
+
 const withNextra = nextra({
   defaultShowCopyCode: true,
   search: { codeblocks: false },
@@ -13,4 +19,10 @@ const withNextra = nextra({
   },
 });
 
-export default withNextra({});
+export default withBundleAnalyzer(
+  withNextra({
+    experimental: {
+      inlineCss: true,
+    },
+  }),
+);

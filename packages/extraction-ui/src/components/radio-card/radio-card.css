@@ -14,7 +14,7 @@
     --ex-cursor: var(--ex-radio-card-cursor, default);
 
     @apply flex select-none leading-normal [transform:translateZ(0)];
-    @apply cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-size:var(--ex-font-size)];
+    @apply cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -32,32 +32,37 @@
 
   .ex-radio-card-indicator {
     @apply variant-outline;
+    @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+
+    &::before {
+      @apply variant absolute size-[1em] rounded-full content-[''];
+    }
   }
 
   .ex-radio-card-indicator {
-    @apply inline-flex size-[1em] flex-shrink-0 items-center justify-center;
-    @apply rounded-full [font-size:var(--ex-font-size)];
+    @apply relative inline-flex flex-shrink-0 items-center justify-center;
+    @apply h-[var(--ex-first-line-height)] [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
 
     &:where([data-state='unchecked']) > * {
       @apply invisible;
     }
   }
 
-  .ex-radio-card-check {
-    @apply size-[0.75em] align-middle;
-
-    circle {
-      @apply fill-current;
-    }
+  .ex-radio-card-indicator-svg {
+    @apply fill-current stroke-current stroke-0;
   }
 
   .ex-radio-card-label {
     --ex-font-family: var(--ex-radio-card-label-font-family, var(--font-sans));
-    --ex-font-weight: var(--ex-radio-card-label-font-weight, var(--font-weight-semibold));
+    --ex-font-weight: var(--ex-radio-card-label-font-weight, var(--font-weight-medium));
   }
 
   .ex-radio-card-label {
-    @apply cursor-[inherit] self-start [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply cursor-[inherit] self-start [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-radio-card-description {
@@ -67,7 +72,7 @@
   }
 
   .ex-radio-card-description {
-    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

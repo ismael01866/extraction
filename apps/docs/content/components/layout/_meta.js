@@ -5,6 +5,9 @@ export default {
   box: {
     title: 'Box',
   },
+  'browser-frame': {
+    title: 'Browser Frame',
+  },
   center: {
     title: 'Center',
   },

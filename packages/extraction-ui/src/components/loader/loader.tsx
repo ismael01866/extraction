@@ -11,8 +11,8 @@ export const Loader = <T extends ElementType = 'span'>(props: LoaderProps<T>) =>
   return (
     <Element as={as as ElementType<any>} cssClassName="ex-loader" {...rest}>
       {children ?? (
-        <svg className="ex-loader-icon" viewBox="0 0 20 20">
-          <circle cx="10" cy="10" r="7" />
+        <svg className="ex-loader-svg" viewBox="0 0 24 24">
+          <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
         </svg>
       )}
     </Element>

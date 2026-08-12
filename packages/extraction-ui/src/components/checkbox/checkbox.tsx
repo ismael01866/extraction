@@ -49,8 +49,8 @@ export const CheckboxIndicator = <T extends ElementType = 'div'>(
     <Checkbox.Indicator asChild {...rest}>
       <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-checkbox-indicator">
         {children ?? (
-          <svg className="ex-checkbox-check" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7" />
+          <svg className="ex-checkbox-indicator-svg" viewBox="0 0 24 24">
+            <path d="M20 6 9 17l-5-5"></path>
           </svg>
         )}
       </Element>

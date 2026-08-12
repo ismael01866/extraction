@@ -12,7 +12,7 @@
 
   .ex-toast {
     @apply flex flex-1 will-change-[transform,opacity];
-    @apply max-w-[var(--ex-max-w)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+    @apply max-w-[var(--ex-max-width)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -158,19 +158,23 @@
   }
 
   .ex-toast-indicator {
-    @apply relative inline-flex h-[1em] w-[1em] flex-shrink-0 items-center justify-center;
-    @apply [font-size:var(--ex-font-size)];
+    @apply relative inline-flex flex-shrink-0 items-center justify-center;
+    @apply h-[var(--ex-first-line-height)] [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
   }
 
-  .ex-toast-indicator-icon {
-    @apply size-[1em] fill-none stroke-current stroke-[1.5] [stroke-linecap:round] [stroke-linejoin:round];
+  .ex-toast-indicator-svg {
+    @apply fill-none stroke-current stroke-2 [stroke-linecap:round] [stroke-linejoin:round];
   }
 
   .ex-toast-title {
     --ex-font-family: var(--ex-toast-title-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-toast-title-font-weight, var(--font-weight-semibold));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-toast-description {
@@ -178,7 +182,7 @@
     --ex-font-weight: var(--ex-toast-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-toast-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [opacity:var(--ex-opacity)];
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)] [opacity:var(--ex-opacity)];
   }
 }
 

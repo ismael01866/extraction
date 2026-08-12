@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-
 import {
   CalloutContent,
   CalloutDescription,
@@ -10,6 +7,9 @@ import {
   CalloutRoot,
   CalloutTitle,
 } from './callout';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('CalloutRoot', () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -64,15 +64,15 @@ describe('CalloutIndicator', () => {
     const { container } = render(<CalloutIndicator />);
     const el = container.querySelector('.ex-callout-indicator');
     expect(el?.tagName).toBe('DIV');
-    expect(container.querySelector('.ex-callout-indicator-icon')).toBeInTheDocument();
+    expect(container.querySelector('.ex-callout-indicator-svg')).toBeInTheDocument();
   });
 });
 
 describe('CalloutTitle', () => {
-  it('renders default h3 and class', () => {
+  it('renders default div and class', () => {
     render(<CalloutTitle>Title</CalloutTitle>);
     const el = screen.getByText(/title/i);
-    expect(el.tagName).toBe('H3');
+    expect(el.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-callout-title');
   });
 });
