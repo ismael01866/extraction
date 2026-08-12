@@ -64,7 +64,7 @@ describe('CalloutIndicator', () => {
     const { container } = render(<CalloutIndicator />);
     const el = container.querySelector('.ex-callout-indicator');
     expect(el?.tagName).toBe('DIV');
-    expect(container.querySelector('.ex-callout-indicator-icon')).toBeInTheDocument();
+    expect(container.querySelector('.ex-callout-indicator-svg')).toBeInTheDocument();
   });
 });
 

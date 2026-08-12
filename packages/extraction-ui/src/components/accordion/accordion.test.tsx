@@ -1,8 +1,5 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-
 import {
   AccordionContent,
   AccordionHeader,
@@ -12,6 +9,9 @@ import {
   AccordionSection,
   AccordionTrigger,
 } from './accordion';
+
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 describe('AccordionRoot', () => {
   let user: ReturnType<typeof userEvent.setup>;
@@ -140,6 +140,6 @@ describe('AccordionIcon', () => {
     const el = container.querySelector('.ex-accordion-icon');
     expect(el?.tagName).toBe('DIV');
     expect(el).toHaveClass('ex-accordion-icon');
-    expect(container.querySelector('.ex-accordion-caret')).toBeInTheDocument();
+    expect(container.querySelector('.ex-accordion-icon-svg')).toBeInTheDocument();
   });
 });

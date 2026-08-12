@@ -116,7 +116,7 @@ describe('BrowserFrameControls', () => {
   it('renders default browser control icons when no children are provided', () => {
     render(<BrowserFrameControls />);
 
-    expect(document.querySelectorAll('.ex-browser-frame-controls-icon')).toHaveLength(3);
+    expect(document.querySelectorAll('.ex-browser-frame-controls-svg')).toHaveLength(3);
   });
 
   it('renders custom children instead of default controls', () => {
@@ -127,7 +127,7 @@ describe('BrowserFrameControls', () => {
     );
 
     expect(screen.getByText(/custom controls/i)).toBeInTheDocument();
-    expect(document.querySelectorAll('.ex-browser-frame-controls-icon')).toHaveLength(0);
+    expect(document.querySelectorAll('.ex-browser-frame-controls-svg')).toHaveLength(0);
   });
 
   it('preserves display name for debugging', () => {
@@ -145,7 +145,7 @@ describe('BrowserFrameActions', () => {
   it('renders default action icon when no children are provided', () => {
     render(<BrowserFrameActions />);
 
-    expect(document.querySelectorAll('.ex-browser-frame-actions-icon')).toHaveLength(1);
+    expect(document.querySelectorAll('.ex-browser-frame-actions-svg')).toHaveLength(1);
   });
 
   it('renders custom children instead of the default action icon', () => {
@@ -156,7 +156,7 @@ describe('BrowserFrameActions', () => {
     );
 
     expect(screen.getByText(/custom actions/i)).toBeInTheDocument();
-    expect(document.querySelectorAll('.ex-browser-frame-actions-icon')).toHaveLength(0);
+    expect(document.querySelectorAll('.ex-browser-frame-actions-svg')).toHaveLength(0);
   });
 
   it('preserves display name for debugging', () => {
