@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.3
+
+### Patch Changes
+
+- Line height fixes. Minor accesibily improvements on the typography components. Added new browser frame component.
+
 ## 0.8.2
 
 ### Patch Changes

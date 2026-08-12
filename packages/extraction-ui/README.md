@@ -87,3 +87,19 @@ Extraction UI Copyright (c) 2026 Ismael Mariscal
 ## Release & Publishing
 
 Releases and npm publishing are fully automated using [Changesets](https://github.com/changesets/changesets) and GitHub Actions.
+
+## Manual Release & Publishing
+
+Create a new branch containing only the changeset. Navigate to the extraction-ui directory and run:
+
+```bash
+pnpm changeset
+pnpm changeset version
+```
+
+Commit the changeset files, then push to GitHub.
+
+```bash
+pnpm build
+pnpm changeset publish
+```
