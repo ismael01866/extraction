@@ -205,6 +205,9 @@ export * from './radio-card/radio-card.types';
 export { RadioGroup } from './radio-group';
 export * from './radio-group/radio-group.types';
 
+export { Rating } from './rating';
+export * from './rating/rating.types';
+
 export { ScrollArea } from './scroll-area';
 export * from './scroll-area/scroll-area.types';
 

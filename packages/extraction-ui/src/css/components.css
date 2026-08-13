@@ -17,7 +17,7 @@
   }
 
   .ex-accordion-icon {
-    --ex-font-size: var(--ex-accordion-icon-font-size-sm, var(--text-lg));
+    --ex-font-size: var(--ex-accordion-icon-font-size-sm, var(--text-base));
   }
 
   .ex-accordion-title {
@@ -48,7 +48,7 @@
   }
 
   .ex-accordion-icon {
-    --ex-font-size: var(--ex-accordion-icon-font-size-md, var(--text-xl));
+    --ex-font-size: var(--ex-accordion-icon-font-size-md, var(--text-lg));
   }
 
   .ex-accordion-title {
@@ -79,7 +79,7 @@
   }
 
   .ex-accordion-icon {
-    --ex-font-size: var(--ex-accordion-icon-font-size-lg, var(--text-2xl));
+    --ex-font-size: var(--ex-accordion-icon-font-size-lg, var(--text-xl));
   }
 
   .ex-accordion-title {
@@ -2489,6 +2489,21 @@
   .ex-radio-card {
     @apply radio-card-lg;
   }
+}
+
+@utility rating-sm {
+  --ex-gap-x: var(--ex-rating-gap-x-sm, calc(var(--spacing) * 0.5));
+  --ex-font-size: var(--ex-rating-font-size-sm, var(--text-base));
+}
+
+@utility rating-md {
+  --ex-gap-x: var(--ex-rating-gap-x-md, calc(var(--spacing) * 0.5));
+  --ex-font-size: var(--ex-rating-font-size-md, var(--text-lg));
+}
+
+@utility rating-lg {
+  --ex-gap-x: var(--ex-rating-gap-x-lg, calc(var(--spacing) * 0.5));
+  --ex-font-size: var(--ex-rating-font-size-lg, var(--text-xl));
 }
 
 @utility scroll-area-xs {

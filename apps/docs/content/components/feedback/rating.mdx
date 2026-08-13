@@ -1,0 +1,114 @@
+import { Rating } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg, ratingCfg, ratingIconCfg, ratingItemCfg } from './rating';
+
+export const Component = (
+  <Rating defaultValue={3} className='text-yellow-500'>
+    {[1, 2, 3, 4, 5].map((value) => (
+      <Rating.Item key={value} value={value} aria-label={`${value} star`}>
+        <Rating.Icon />
+      </Rating.Item>
+    ))}
+  </Rating>
+);
+
+export const SizeComponent = (
+  <Rating defaultValue={3} className='text-yellow-500'>
+    {[1, 2, 3, 4, 5].map((value) => (
+      <Rating.Item key={value} value={value} aria-label={`${value} star`}>
+        <Rating.Icon />
+      </Rating.Item>
+    ))}
+  </Rating>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Rating
+
+{data.rating.description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<Rating defaultValue={3} className='text-yellow-500'>
+    {[1, 2, 3, 4, 5].map((value) => (
+      <Rating.Item key={value} value={value} aria-label={\`\${value} star\`\}>
+        <Rating.Icon />
+      </Rating.Item>
+    ))}
+  </Rating>`}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: SizeComponent,
+    wrapper: Wrapper,
+  }}
+  serializedCode={({ size }) => {
+    return `
+    <Rating defaultValue={3} className='rating-${size}'>
+      {[1, 2, 3, 4, 5].map((value) => (
+        <Rating.Item key={value} value={value} aria-label={\`\${value} star\`\}>
+          <Rating.Icon />
+        </Rating.Item>
+      ))}
+    </Rating>`;
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  serializedCode={({ color }) => {
+    return `
+    <Rating defaultValue={3} className='text-${color}'>
+      {[1, 2, 3, 4, 5].map((value) => (
+        <Rating.Item key={value} value={value} aria-label={\`\${value} star\`\}>
+          <Rating.Icon />
+        </Rating.Item>
+      ))}
+    </Rating>`;
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-rating-cursor: default;
+
+  --ex-rating-gap-x-sm: calc(var(--spacing) * 0.5);
+  --ex-rating-gap-x-md: calc(var(--spacing) * 0.5);
+  --ex-rating-gap-x-lg: calc(var(--spacing) * 0.5);
+
+  --ex-rating-icon-font-size-sm: var(--text-base);
+  --ex-rating-icon-font-size-md: var(--text-lg);
+  --ex-rating-icon-font-size-lg: var(--text-xl);
+}
+```
+
+## API
+
+### Rating
+
+<Api config={ratingCfg} />
+
+### Rating Item
+
+<Api config={ratingItemCfg} />
+
+### Rating Icon
+
+<Api config={ratingIconCfg} />

@@ -1,0 +1,39 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-rating {
+    --ex-cursor: var(--ex-rating-cursor, default);
+
+    @apply rating-md;
+  }
+
+  .ex-rating {
+    @apply inline-flex items-center;
+    @apply gap-x-[var(--ex-gap-x)];
+  }
+
+  .ex-rating-item {
+    @apply data-[filled=false]:text-neutral inline-flex data-[filled=false]:opacity-40;
+    @apply [cursor:var(--ex-cursor)];
+
+    &:where([data-readonly='true']) {
+      --ex-cursor: default;
+
+      @apply pointer-events-none;
+    }
+  }
+
+  .ex-rating-icon {
+    @apply inline-flex size-[1em] shrink-0 select-none items-center justify-center font-normal text-inherit;
+    @apply [font-size:var(--ex-font-size)];
+
+    > svg {
+      @apply relative size-[1em];
+    }
+  }
+
+  .ex-rating-icon-svg {
+    @apply fill-current stroke-current stroke-0;
+  }
+}

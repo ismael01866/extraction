@@ -8,6 +8,9 @@ export default {
   loader: {
     title: 'Loader',
   },
+  rating: {
+    title: 'Rating',
+  },
   skeleton: {
     title: 'Skeleton',
   },
