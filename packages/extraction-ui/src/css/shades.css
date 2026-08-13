@@ -2,8 +2,8 @@
   --shade-color: var(--palette-50);
   --shade-color-dark: var(--palette-950);
 
-  --shade-soft: var(--palette-50);
-  --shade-soft-dark: var(--palette-950);
+  --shade-soft: color-mix(in oklch, var(--palette-50) 80%, white);
+  --shade-soft-dark: color-mix(in oklch, var(--palette-950) 80%, black);
 
   --shade-raised: var(--palette-100);
   --shade-raised-dark: var(--palette-900);
@@ -202,8 +202,8 @@
   --shade-color: var(--palette-950);
   --shade-color-dark: var(--palette-50);
 
-  --shade-soft: var(--palette-950);
-  --shade-soft-dark: var(--palette-50);
+  --shade-soft: color-mix(in oklch, var(--palette-950) 80%, black);
+  --shade-soft-dark: color-mix(in oklch, var(--palette-50) 80%, white);
 
   --shade-raised: var(--palette-900);
   --shade-raised-dark: var(--palette-100);

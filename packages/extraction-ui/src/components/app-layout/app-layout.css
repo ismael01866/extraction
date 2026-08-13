@@ -3,14 +3,8 @@
 
 @layer components {
   .ex-app-layout {
-    @apply variant-outline palette-neutral;
-  }
-
-  .ex-app-layout {
     --ex-px: var(--ex-app-layout-px, calc(var(--spacing) * 5));
     --ex-py: var(--ex-app-layout-py, calc(var(--spacing) * 5));
-
-    @apply border-0 text-current outline-0;
   }
 
   .ex-app-layout {
@@ -20,7 +14,7 @@
   .ex-app-layout-header {
     --ex-min-height: var(--ex-app-layout-header-height, calc(var(--spacing) * 16));
 
-    @apply variant;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-app-layout-header {
@@ -35,7 +29,7 @@
   .ex-app-layout-sidenav {
     --ex-width: var(--ex-app-layout-sidenav-width, calc(var(--spacing) * 64));
 
-    @apply variant;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-app-layout-sidenav {
@@ -55,7 +49,7 @@
   .ex-app-layout-aside {
     --ex-width: var(--ex-app-layout-aside-width, calc(var(--spacing) * 64));
 
-    @apply variant;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-app-layout-aside {
@@ -66,7 +60,7 @@
   .ex-app-layout-footer {
     --ex-min-height: var(--ex-app-layout-footer-height, calc(var(--spacing) * 16));
 
-    @apply variant;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-app-layout-footer {
