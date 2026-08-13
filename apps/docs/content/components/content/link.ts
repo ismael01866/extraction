@@ -3,7 +3,7 @@ import { colorPaletteValues } from 'extraction-ui';
 export const cfg = {
   class: 'link',
   colorPalette: colorPaletteValues,
-  colorPaletteClass: 'text',
+  colorPaletteClass: 'palette',
   api: {
     as: {
       type: 'ElementType',

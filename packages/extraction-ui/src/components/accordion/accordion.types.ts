@@ -6,7 +6,12 @@ import { ElementProps } from '../element';
 import * as Accordion from '@radix-ui/react-accordion';
 
 export type AccordionProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Accordion.Root>, 'as' | 'asChild' | 'className' | 'children'>;
+  Omit<
+    ComponentProps<typeof Accordion.Root>,
+    'as' | 'asChild' | 'className' | 'children' | 'type'
+  > & {
+    type?: 'single' | 'multiple';
+  };
 
 export type AccordionItemProps<T extends ElementType> = ElementProps<T> &
   Omit<ComponentProps<typeof Accordion.Item>, 'as' | 'asChild' | 'className' | 'children'> & {

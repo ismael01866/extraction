@@ -21,7 +21,7 @@
   }
 
   .ex-marquee {
-    @apply flex overflow-hidden;
+    @apply flex max-w-full overflow-hidden;
   }
 
   .ex-marquee-item {
