@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.4
+
+### Patch Changes
+
+- Fix marquee initial width. Fix app layout initial variant and palette scopes. Improved Link styling.
+
 ## 0.8.3
 
 ### Patch Changes
