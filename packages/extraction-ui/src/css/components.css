@@ -2493,17 +2493,17 @@
 
 @utility rating-sm {
   --ex-gap-x: var(--ex-rating-gap-x-sm, calc(var(--spacing) * 0.5));
-  --ex-font-size: var(--ex-rating-font-size-sm, var(--text-base));
+  --ex-font-size: var(--ex-rating-indicator-font-size-sm, var(--text-base));
 }
 
 @utility rating-md {
   --ex-gap-x: var(--ex-rating-gap-x-md, calc(var(--spacing) * 0.5));
-  --ex-font-size: var(--ex-rating-font-size-md, var(--text-lg));
+  --ex-font-size: var(--ex-rating-indicator-font-size-md, var(--text-lg));
 }
 
 @utility rating-lg {
   --ex-gap-x: var(--ex-rating-gap-x-lg, calc(var(--spacing) * 0.5));
-  --ex-font-size: var(--ex-rating-font-size-lg, var(--text-xl));
+  --ex-font-size: var(--ex-rating-indicator-font-size-lg, var(--text-xl));
 }
 
 @utility scroll-area-xs {

@@ -19,11 +19,6 @@ export const radioGroupCfg = {
       type: 'boolean',
       default: 'false',
     },
-    checked: {
-      type: 'boolean',
-      default: 'false',
-    },
-
     defaultValue: {
       type: 'string',
       default: '',
@@ -50,7 +45,7 @@ export const radioGroupCfg = {
     },
     onValueChange: {
       type: 'function',
-      default: 'false',
+      default: '',
     },
   },
   selectors: {

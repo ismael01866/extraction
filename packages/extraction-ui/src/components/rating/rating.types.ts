@@ -5,29 +5,22 @@ import { ElementProps } from '../element';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 
 export type RatingProps<T extends ElementType> = ElementProps<T> &
-  Omit<
-    ComponentProps<typeof RadioGroup.Root>,
-    'as' | 'asChild' | 'className' | 'children' | 'value' | 'defaultValue' | 'onValueChange'
-  > & {
+  Omit<ComponentProps<typeof RadioGroup.Root>, 'as' | 'asChild' | 'className' | 'children'> & {
+    count?: number;
     readOnly?: boolean;
-    defaultValue?: number;
-    value?: number;
-    onValueChange?: (value: number) => void;
+    single?: boolean;
   };
 
-export type RatingItemProps<T extends ElementType> = ElementProps<T> &
-  Omit<
-    ComponentProps<typeof RadioGroup.Item>,
-    'as' | 'asChild' | 'className' | 'children' | 'value'
-  > & {
-    value: number;
-  };
+export type RatingControlProps<T extends ElementType> = ElementProps<T> &
+  Omit<ComponentProps<typeof RadioGroup.Item>, 'as' | 'asChild' | 'className' | 'children'>;
 
-export type RatingIconProps<T extends ElementType> = ElementProps<T>;
+export type RatingIndicatorProps<T extends ElementType> = ElementProps<T> &
+  Omit<ComponentProps<typeof RadioGroup.Indicator>, 'as' | 'asChild' | 'className' | 'children'>;
 
 export type RatingContextValue = {
+  activeValue?: string | null;
+  hoveredValue?: string | null;
   readOnly: boolean;
-  activeValue: number;
-  hoveredValue: number | null;
-  setHoveredValue: (value: number | null) => void;
+  single: boolean;
+  setHoveredValue: (value?: string | null) => void;
 };

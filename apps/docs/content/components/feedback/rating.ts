@@ -18,6 +18,46 @@ export const ratingCfg = {
       type: 'boolean',
       default: 'false',
     },
+    count: {
+      type: 'number',
+      default: '',
+    },
+    defaultValue: {
+      type: 'string',
+      default: '',
+    },
+    disabled: {
+      type: 'boolean',
+      default: 'false',
+    },
+    loop: {
+      type: 'boolean',
+      default: 'true',
+    },
+    name: {
+      type: 'string',
+      default: '',
+    },
+    readOnly: {
+      type: 'boolean',
+      default: 'false',
+    },
+    required: {
+      type: 'boolean',
+      default: 'false',
+    },
+    single: {
+      type: 'boolean',
+      default: 'false',
+    },
+    value: {
+      type: 'string',
+      default: '',
+    },
+    onValueChange: {
+      type: 'function',
+      default: '',
+    },
   },
   selectors: {
     Rating: {
@@ -26,25 +66,37 @@ export const ratingCfg = {
   },
 };
 
-export const ratingItemCfg = {
+export const ratingControlCfg = {
   api: {
     as: {
       type: 'ElementType',
-      default: 'div',
+      default: 'button',
     },
     asChild: {
       type: 'boolean',
       default: 'false',
     },
+    disabled: {
+      type: 'boolean',
+      default: 'false',
+    },
+    required: {
+      type: 'boolean',
+      default: 'false',
+    },
+    value: {
+      type: 'string',
+      default: '',
+    },
   },
   selectors: {
-    'Rating.Indicator': {
-      default: 'ex-rating-item',
+    'Rating.Control': {
+      default: 'ex-rating-control',
     },
   },
 };
 
-export const ratingIconCfg = {
+export const ratingIndicatorCfg = {
   api: {
     as: {
       type: 'ElementType',
@@ -54,10 +106,14 @@ export const ratingIconCfg = {
       type: 'boolean',
       default: 'false',
     },
+    forceMount: {
+      type: 'boolean',
+      default: 'true',
+    },
   },
   selectors: {
-    'Rating.Icon': {
-      default: 'ex-rating-icon',
+    'Rating.Indicator': {
+      default: 'ex-rating-indicator',
     },
   },
 };

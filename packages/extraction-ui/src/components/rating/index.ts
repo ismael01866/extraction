@@ -1,13 +1,13 @@
-import { RatingIcon, RatingItem, RatingRoot } from './rating';
+import { RatingControl, RatingIndicator, RatingRoot } from './rating';
 
 export type {
   RatingContextValue,
-  RatingIconProps,
-  RatingItemProps,
+  RatingControlProps,
+  RatingIndicatorProps,
   RatingProps,
 } from './rating.types';
 
 export const Rating = Object.assign(RatingRoot, {
-  Item: RatingItem,
-  Icon: RatingIcon,
+  Control: RatingControl,
+  Indicator: RatingIndicator,
 });
