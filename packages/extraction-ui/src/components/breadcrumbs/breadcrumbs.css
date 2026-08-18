@@ -27,7 +27,7 @@
     @apply inline-flex items-center justify-center;
     @apply gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
 
-    > svg {
+    :where(svg) {
       @apply h-[1em] w-[1em];
     }
   }
@@ -43,7 +43,7 @@
 
     @apply inline-flex size-[1.5em] items-center justify-center opacity-[var(--ex-opacity)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }

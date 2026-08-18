@@ -62,7 +62,7 @@ export const applyToChildren = ({ children, className }) => {
 }
 
 
-{props.config?.sizes?.map((size, index) => {
+{(props.showSamples !== false) && props.config?.sizes?.map((size, index) => {
   const usage = props.components.usage;
   const rendered = typeof usage === 'function' ? usage({ size }) : usage;
   const unwrapped = unwrap(rendered);

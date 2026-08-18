@@ -17,7 +17,7 @@
       }
     }
 
-    &:where(:has(.ex-text-slide-item > svg)) {
+    &:where(:has(.ex-text-slide-item :where(svg))) {
       @apply h-[1em];
     }
   }

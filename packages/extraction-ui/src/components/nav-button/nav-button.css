@@ -18,7 +18,7 @@
     @apply inline-flex shrink-0 select-none flex-col items-center justify-center leading-none;
     @apply w-(--ex-width) cursor-(--ex-cursor) gap-y-(--ex-gap-y) rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }

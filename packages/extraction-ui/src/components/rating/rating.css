@@ -9,13 +9,24 @@
   }
 
   .ex-rating {
+    @apply text-yellow-500;
+  }
+
+  .ex-rating {
     @apply inline-flex items-center;
     @apply gap-x-[var(--ex-gap-x)];
   }
 
   .ex-rating-control {
-    @apply data-[filled=false]:text-neutral inline-flex data-[filled=false]:opacity-40;
+    @apply inline-flex;
     @apply [cursor:var(--ex-cursor)];
+
+    /* &:where([data-filled='false'][data-hovered='false']) { */
+    &:where([data-filled='false']) {
+      :where(.ex-rating-indicator-fg) {
+        @apply invisible;
+      }
+    }
 
     &:where([data-readonly='true']) {
       --ex-cursor: default;
@@ -25,11 +36,20 @@
   }
 
   .ex-rating-indicator {
-    @apply inline-flex size-[1em] shrink-0 select-none items-center justify-center font-normal text-inherit;
+    @apply relative inline-flex shrink-0 select-none items-center justify-center font-normal text-inherit;
     @apply [font-size:var(--ex-font-size)];
 
-    > svg {
-      @apply relative size-[1em];
+    :where(svg) {
+      @apply size-[1em];
+    }
+
+    :where(.ex-rating-indicator-bg) {
+      @apply absolute inset-0 text-neutral-200 dark:text-neutral-800;
+    }
+
+    :where(.ex-rating-indicator-fg) {
+      @apply z-1 relative inset-0;
+      clip-path: inset(0 calc(100% - var(--ex-fill, 1) * 100%) 0 0);
     }
   }
 

@@ -30,6 +30,10 @@ export const ratingCfg = {
       type: 'boolean',
       default: 'false',
     },
+    fractions: {
+      type: 'number',
+      default: '',
+    },
     loop: {
       type: 'boolean',
       default: 'true',

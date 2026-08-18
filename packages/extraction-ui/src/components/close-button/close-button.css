@@ -16,7 +16,7 @@
     @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
     @apply h-[var(--ex-size)] w-[var(--ex-size)] rounded-[var(--ex-radius)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }

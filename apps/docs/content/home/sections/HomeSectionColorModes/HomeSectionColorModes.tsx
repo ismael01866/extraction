@@ -88,7 +88,7 @@ export function HomeSectionColorModes() {
             <div>
               <Stack className="gap-4">
                 <Display className="text-fluid">Consistent UI</Display>
-                <Description className="text-fluid description-2xl">
+                <Description className="text-fluid-xl">
                   Define your color tokens once and let every component adapt seamlessly across
                   modes.
                 </Description>

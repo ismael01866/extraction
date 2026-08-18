@@ -965,14 +965,6 @@
   }
 }
 
-@utility description-xs {
-  --ex-font-size: var(--ex-description-font-size-xs, var(--text-2xs));
-  --ex-line-height: var(--ex-description-line-height-xs, var(--text-2xs--line-height));
-
-  --ex-font-family: var(--ex-description-font-family-xs, var(--font-sans));
-  --ex-font-weight: var(--ex-description-font-weight-xs, var(--font-weight-normal));
-}
-
 @utility description-sm {
   --ex-font-size: var(--ex-description-font-size-sm, var(--text-xs));
   --ex-line-height: var(--ex-description-line-height-sm, var(--text-xs--line-height));
@@ -1003,14 +995,6 @@
 
   --ex-font-family: var(--ex-description-font-family-xl, var(--font-sans));
   --ex-font-weight: var(--ex-description-font-weight-xl, var(--font-weight-normal));
-}
-
-@utility description-2xl {
-  --ex-font-size: var(--ex-description-font-size-2xl, var(--text-xl));
-  --ex-line-height: var(--ex-description-line-height-2xl, var(--text-xl--line-height));
-
-  --ex-font-family: var(--ex-description-font-family-2xl, var(--font-sans));
-  --ex-font-weight: var(--ex-description-font-weight-2xl, var(--font-weight-normal));
 }
 
 @utility dialog-content-sm {
@@ -2983,14 +2967,6 @@
   --ex-font-size: var(--ex-textarea-font-size-lg, var(--text-base));
 }
 
-@utility title-xs {
-  --ex-font-size: var(--ex-title-font-size-xs, var(--text-xs));
-  --ex-line-height: var(--ex-title-line-height-xs, var(--text-xs--line-height));
-
-  --ex-font-family: var(--ex-title-font-family-xs, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-xs, var(--font-weight-semibold));
-}
-
 @utility title-sm {
   --ex-font-size: var(--ex-title-font-size-sm, var(--text-sm));
   --ex-line-height: var(--ex-title-line-height-sm, var(--text-sm--line-height));
@@ -3021,14 +2997,6 @@
 
   --ex-font-family: var(--ex-title-font-family-xl, var(--font-sans));
   --ex-font-weight: var(--ex-title-font-weight-xl, var(--font-weight-semibold));
-}
-
-@utility title-2xl {
-  --ex-font-size: var(--ex-title-font-size-2xl, var(--text-2xl));
-  --ex-line-height: var(--ex-title-line-height-2xl, var(--text-2xl--line-height));
-
-  --ex-font-family: var(--ex-title-font-family-2xl, var(--font-sans));
-  --ex-font-weight: var(--ex-title-font-weight-2xl, var(--font-weight-semibold));
 }
 
 @utility toast-sm {

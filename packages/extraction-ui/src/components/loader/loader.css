@@ -12,7 +12,7 @@
     @apply inline-flex size-[1em] shrink-0 animate-spin select-none items-center justify-center self-center font-normal text-inherit;
     @apply [animation-duration:var(--ex-duration)] [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }

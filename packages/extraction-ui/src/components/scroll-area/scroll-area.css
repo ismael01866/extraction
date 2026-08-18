@@ -24,7 +24,7 @@
 
 @layer components {
   .ex-scroll-area-scrollbar {
-    @apply variant bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)];
+    @apply variant bg-neutral-100 dark:bg-neutral-900;
   }
 
   .ex-scroll-area-scrollbar {

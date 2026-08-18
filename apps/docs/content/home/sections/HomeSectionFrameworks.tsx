@@ -43,7 +43,7 @@ export function HomeSectionFrameworks() {
                 </span>
               </Mark>
             </Display>
-            <Description className="text-fluid description-2xl">
+            <Description className="text-fluid-xl">
               Same components, same tokens — any framework
             </Description>
           </Stack>

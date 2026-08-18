@@ -45,7 +45,7 @@
     @apply pointer-events-none absolute end-3 top-1/2 inline-flex -translate-y-1/2 items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }
@@ -58,12 +58,6 @@
 @layer utilities {
   .ex-native-select {
     @apply valid invalid;
-
-    &:where(:disabled, [disabled], [data-disabled], .disabled) {
-      .ex-native-select-field {
-        @apply text-[color-mix(in_srgb,_var(--text)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)] dark:text-[color-mix(in_srgb,_var(--text-dark)_calc(var(--ex-options-opacity-disabled)*100%),_transparent)];
-      }
-    }
   }
 
   .ex-native-select-field {

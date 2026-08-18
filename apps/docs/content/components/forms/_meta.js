@@ -26,6 +26,9 @@ export default {
   'radio-card': {
     title: 'Radio Card',
   },
+  rating: {
+    title: 'Rating',
+  },
   select: {
     title: 'Select',
   },

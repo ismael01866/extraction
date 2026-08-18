@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType } from 'react';
+import React, { ComponentProps, ElementType } from 'react';
 
 import { ElementProps } from '../element';
 
@@ -7,20 +7,25 @@ import * as RadioGroup from '@radix-ui/react-radio-group';
 export type RatingProps<T extends ElementType> = ElementProps<T> &
   Omit<ComponentProps<typeof RadioGroup.Root>, 'as' | 'asChild' | 'className' | 'children'> & {
     count?: number;
-    readOnly?: boolean;
     single?: boolean;
+    fractions?: number;
+    readOnly?: boolean;
   };
 
-export type RatingControlProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof RadioGroup.Item>, 'as' | 'asChild' | 'className' | 'children'>;
+export type RatingControlProps<T extends React.ElementType = 'button'> = ElementProps<T> &
+  Omit<RadioGroup.RadioGroupItemProps, 'as' | 'asChild' | 'value'> & {
+    value?: string;
+  };
 
 export type RatingIndicatorProps<T extends ElementType> = ElementProps<T> &
   Omit<ComponentProps<typeof RadioGroup.Indicator>, 'as' | 'asChild' | 'className' | 'children'>;
 
 export type RatingContextValue = {
   activeValue?: string | null;
+  setActiveValue: (value?: string) => void;
   hoveredValue?: string | null;
-  readOnly: boolean;
+  setHoveredValue: React.Dispatch<React.SetStateAction<string | null>>;
   single: boolean;
-  setHoveredValue: (value?: string | null) => void;
+  fractions?: number;
+  readOnly: boolean;
 };
