@@ -14,11 +14,7 @@
     @apply data-[state=checked]:palette-primary data-[state=unchecked]:palette-neutral;
 
     &:where([data-state='unchecked']) {
-      @apply bg-[color-mix(in_srgb,_var(--background)_40%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_40%,_transparent)];
-    }
-
-    &:where(:disabled, [disabled], [data-disabled], .disabled) {
-      @apply bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
+      @apply bg-neutral-200 dark:bg-neutral-800;
     }
   }
 

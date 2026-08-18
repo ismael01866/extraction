@@ -4,10 +4,6 @@
 @layer components {
   .ex-slider {
     @apply slider-md;
-
-    &:where(:disabled, [disabled], [data-disabled], .disabled) {
-      @apply dark:opacity-70;
-    }
   }
 
   .ex-slider {
@@ -33,7 +29,7 @@
 
   .ex-slider-track {
     @apply relative flex-1 overflow-hidden rounded-[var(--ex-radius)];
-    @apply bg-[color-mix(in_srgb,_var(--background)_20%,_transparent)] dark:bg-[color-mix(in_srgb,_var(--background-dark)_20%,_transparent)];
+    @apply bg-neutral-100 dark:bg-neutral-900;
 
     &:where([data-orientation='horizontal']) {
       @apply h-[var(--ex-size)] w-full;

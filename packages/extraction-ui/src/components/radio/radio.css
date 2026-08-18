@@ -26,7 +26,7 @@
     @apply inline-flex items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
 

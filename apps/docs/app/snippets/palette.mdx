@@ -23,18 +23,19 @@ For more information on all available color utilities, visit [Tailwind](https://
     </BaseContainer>
     <CodeContainer>
       <Code>
-        {reactElementToJSXString(
-          props.components.wrapper({
-            children: cloneWithClass(
-              props.components.usage,
-              `${props.config.colorPaletteClass}-${color}`,
-            ),
-          }),
-          {
-            displayName: (element) =>
-              getDisplayName(element) || props.displayName,
-          },
-        )}
+        { props.serializedCode?.({ color }) ||
+          reactElementToJSXString(
+            props.components.wrapper({
+              children: cloneWithClass(
+                props.components.usage,
+                `${props.config.colorPaletteClass}-${color}`,
+              ),
+            }),
+            {
+              displayName: (element) =>
+                getDisplayName(element) || props.displayName,
+            },
+          )}
       </Code>
     </CodeContainer>
   </section>

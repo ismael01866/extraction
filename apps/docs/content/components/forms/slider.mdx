@@ -4,12 +4,14 @@ import data from '../data.json';
 import { cfg, sliderCfg, sliderRangeCfg, sliderThumbCfg, sliderTrackCfg } from './slider';
 
 export const Component = (
-  <Slider className='max-w-40' defaultValue={[50]}>
-    <Slider.Track>
-      <Slider.Range />
-    </Slider.Track>
-    <Slider.Thumb aria-label='slider thumb' />
-  </Slider>
+  <form>
+    <Slider className='w-40' defaultValue={[50]}>
+      <Slider.Track>
+        <Slider.Range />
+      </Slider.Track>
+      <Slider.Thumb aria-label='slider thumb' />
+    </Slider>
+  </form>
 );
 
 export const ComponentVertical = (
@@ -22,7 +24,7 @@ export const ComponentVertical = (
 );
 
 export const ComponentDisabled = (
-  <Slider className='max-w-40' defaultValue={[50]} disabled>
+  <Slider className='w-40' defaultValue={[50]} disabled>
     <Slider.Track>
       <Slider.Range />
     </Slider.Track>
@@ -31,7 +33,7 @@ export const ComponentDisabled = (
 );
 
 export const VariantComponent = (
-  <Slider className='max-w-40' defaultValue={[50]}>
+  <Slider className='w-40' defaultValue={[50]}>
     <Slider.Track>
       <Slider.Range />
     </Slider.Track>

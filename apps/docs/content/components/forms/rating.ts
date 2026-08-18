@@ -1,15 +1,14 @@
-import { colorPaletteValues, sizeValues, variantsValues } from 'extraction-ui';
+import { colorPaletteValues, sizeValues } from 'extraction-ui';
 
 export const cfg = {
-  class: 'radio',
+  class: 'rating',
   colorPalette: colorPaletteValues,
-  colorPaletteClass: 'palette',
+  colorPaletteClass: 'text',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
-  sizeClass: 'radio-group',
-  variants: variantsValues.filter((variant) => !['ghost', 'plain'].includes(variant)),
+  sizeClass: 'rating',
 };
 
-export const radioGroupCfg = {
+export const ratingCfg = {
   api: {
     as: {
       type: 'ElementType',
@@ -19,6 +18,10 @@ export const radioGroupCfg = {
       type: 'boolean',
       default: 'false',
     },
+    count: {
+      type: 'number',
+      default: '',
+    },
     defaultValue: {
       type: 'string',
       default: '',
@@ -26,6 +29,10 @@ export const radioGroupCfg = {
     disabled: {
       type: 'boolean',
       default: 'false',
+    },
+    fractions: {
+      type: 'number',
+      default: '',
     },
     loop: {
       type: 'boolean',
@@ -35,7 +42,15 @@ export const radioGroupCfg = {
       type: 'string',
       default: '',
     },
+    readOnly: {
+      type: 'boolean',
+      default: 'false',
+    },
     required: {
+      type: 'boolean',
+      default: 'false',
+    },
+    single: {
       type: 'boolean',
       default: 'false',
     },
@@ -49,31 +64,13 @@ export const radioGroupCfg = {
     },
   },
   selectors: {
-    RadioGroup: {
-      default: 'ex-radio-group',
+    Rating: {
+      default: 'ex-rating',
     },
   },
 };
 
-export const radioCfg = {
-  api: {
-    as: {
-      type: 'ElementType',
-      default: 'div',
-    },
-    asChild: {
-      type: 'boolean',
-      default: 'false',
-    },
-  },
-  selectors: {
-    Checkbox: {
-      default: 'ex-radio',
-    },
-  },
-};
-
-export const radioControlCfg = {
+export const ratingControlCfg = {
   api: {
     as: {
       type: 'ElementType',
@@ -97,13 +94,13 @@ export const radioControlCfg = {
     },
   },
   selectors: {
-    Checkbox: {
-      default: 'ex-radio-control',
+    'Rating.Control': {
+      default: 'ex-rating-control',
     },
   },
 };
 
-export const radioIndicatorCfg = {
+export const ratingIndicatorCfg = {
   api: {
     as: {
       type: 'ElementType',
@@ -115,30 +112,12 @@ export const radioIndicatorCfg = {
     },
     forceMount: {
       type: 'boolean',
-      default: 'false',
+      default: 'true',
     },
   },
   selectors: {
-    Checkbox: {
-      default: 'ex-radio-indicator',
-    },
-  },
-};
-
-export const radioLabelCfg = {
-  api: {
-    as: {
-      type: 'ElementType',
-      default: 'label',
-    },
-    asChild: {
-      type: 'boolean',
-      default: 'false',
-    },
-  },
-  selectors: {
-    Checkbox: {
-      default: 'ex-radio-label',
+    'Rating.Indicator': {
+      default: 'ex-rating-indicator',
     },
   },
 };

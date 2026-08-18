@@ -40,7 +40,7 @@ export function HomeSectionFaq() {
       <Grid className="grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-8">
         <Stack className="gap-4 lg:col-span-2">
           <Display className="text-fluid">FAQ</Display>
-          <Description className="text-fluid description-xl">
+          <Description className="text-fluid-xl">
             Learn more about the library, its features, and how it works.
           </Description>
         </Stack>

@@ -9,7 +9,7 @@ export function HomeSectionOpenSource() {
       <MotionInView>
         <VStack className="gap-4">
           <Display className="text-fluid">Open Source</Display>
-          <Description className="text-fluid description-2xl">
+          <Description className="text-fluid-xl">
             Extraction UI is an open source project licensed under MIT
           </Description>
         </VStack>

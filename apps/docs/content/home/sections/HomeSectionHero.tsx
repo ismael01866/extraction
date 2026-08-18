@@ -30,7 +30,7 @@ export function HomeSectionHero() {
 
         <MotionInView className="delay-100">
           <Center>
-            <Description className="text-fluid description-2xl">
+            <Description className="text-fluid-xl">
               Customizable design system and component library to help you ship your UI faster
             </Description>
           </Center>

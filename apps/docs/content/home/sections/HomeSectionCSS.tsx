@@ -38,7 +38,7 @@ export function HomeSectionCSS() {
         <MotionInView>
           <Stack className="gap-4">
             <Display className="text-fluid">Set your design from CSS</Display>
-            <Description className="text-fluid description-2xl">
+            <Description className="text-fluid-xl">
               Tune colors, spacing, measures, and more with CSS variables
             </Description>
           </Stack>
@@ -61,7 +61,7 @@ export function HomeSectionCSS() {
                   <Title as={'div'} className="title-lg text-fluid font-semibold leading-none">
                     {feature.title}
                   </Title>
-                  <Description className="opacity-muted text-fluid">
+                  <Description className="description-lg opacity-muted text-fluid">
                     {feature.description}
                   </Description>
                 </Stack>

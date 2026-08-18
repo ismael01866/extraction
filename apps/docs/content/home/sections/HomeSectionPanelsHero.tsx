@@ -11,7 +11,7 @@ export function HomeSectionPanelsHero() {
           <Icon as={LuFileBox} className="mbe-8 size-24" />
           <VStack className="gap-8">
             <Display className="text-fluid">80+ customizable components</Display>
-            <Description className="text-fluid description-2xl">
+            <Description className="text-fluid-xl">
               Production-ready components designed for speed, aesthetic, functionality, and
               flexibility
             </Description>

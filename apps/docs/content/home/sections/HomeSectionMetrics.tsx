@@ -44,7 +44,7 @@ export function HomeSectionMetrics() {
               <br />
               <span className="text-primary">Use everywhere.</span>
             </Display>
-            <Description className="text-fluid description-2xl">
+            <Description className="text-fluid-xl">
               Components and utilities designed to work together.
             </Description>
           </Stack>

@@ -54,7 +54,7 @@
     @apply pointer-events-none absolute end-4 top-1/2 inline-flex h-[1em] w-[1em] flex-shrink-0 -translate-y-1/2 items-center justify-center leading-none;
     @apply [font-size:var(--ex-font-size)];
 
-    > svg {
+    :where(svg) {
       @apply relative size-[1em];
     }
   }

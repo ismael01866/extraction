@@ -259,6 +259,10 @@
     "category": "forms",
     "description": "A form component that adapts exclusive radio selection mechanisms into larger, data-rich card layouts."
   },
+  "rating": {
+    "category": "forms",
+    "description": "A feedback component that allows users to provide ratings from a visual scale."
+  },
   "scroll-area": {
     "category": "layout",
     "description": "A layout component that replaces browser defaults with sleek, custom-designed viewport scrollbars."
