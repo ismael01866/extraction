@@ -19,11 +19,7 @@ export const RatingUncontrolledExample = () => {
         console.log(formData.get('rating'));
       }}
     >
-      <Rating name="rating" defaultValue="3" count={5} fractions={2}>
-        <Rating.Control>
-          <Rating.Indicator />
-        </Rating.Control>
-      </Rating>
+      <Rating name="rating" defaultValue="3" count={5} fractions={2} />
 
       <br />
       <Button type="submit" className="palette-neutral variant-surface button-sm mt-3 w-full">

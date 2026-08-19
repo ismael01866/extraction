@@ -32,8 +32,6 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
     ...rest
   } = props;
 
-  const [isInForm, setIsInForm] = React.useState(false);
-
   const [internalValue, setInternalValue] = React.useState(defaultValue);
   const [hoveredValue, setHoveredValue] = React.useState<string | null>(null);
 
@@ -42,21 +40,14 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
   const isControlled = value !== undefined;
   const activeValue = isControlled ? value : internalValue;
 
-  React.useEffect(() => {
-    const element = rootRef.current;
-    if (!element) return;
-
-    setIsInForm(element.closest('form') !== null);
-  }, []);
-
   const setActiveValue = React.useCallback(
-    (next: string = '') => {
+    (value: string = '') => {
       if (!isControlled) {
-        setInternalValue(next);
+        setInternalValue(value);
       }
 
       setHoveredValue(null);
-      onValueChange?.(next);
+      onValueChange?.(value);
     },
     [isControlled, onValueChange],
   );
@@ -64,14 +55,14 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
   const context: RatingContextValue = React.useMemo(
     () => ({
       activeValue,
-      fractions,
-      readOnly,
-      single,
+      setActiveValue,
       hoveredValue,
       setHoveredValue,
-      setActiveValue,
+      single,
+      readOnly,
+      fractions,
     }),
-    [activeValue, fractions, readOnly, single, hoveredValue, setActiveValue],
+    [activeValue, hoveredValue, readOnly, single, fractions, setActiveValue],
   );
 
   const items = React.useMemo(() => {
@@ -112,26 +103,25 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
     });
   }, [children, count]);
 
-  const rating = (
-    <RadioGroup.Root
-      value={String(activeValue ?? '')}
-      onValueChange={setActiveValue}
-      onMouseLeave={() => setHoveredValue(null)}
-      asChild
-      {...rest}
-    >
-      <Element as={as as React.ElementType<any>} asChild={asChild} cssClassName="ex-rating">
-        {items}
-      </Element>
-    </RadioGroup.Root>
-  );
-
   return (
     <RatingContext.Provider value={context}>
-      <div ref={rootRef} style={{ display: 'contents' }}>
-        {rating}
-        {isInForm ? <input type="hidden" name={name} value={String(activeValue ?? '')} /> : null}
-      </div>
+      <RadioGroup.Root
+        value={String(activeValue ?? '')}
+        onValueChange={setActiveValue}
+        onMouseLeave={() => setHoveredValue(null)}
+        asChild
+        {...rest}
+      >
+        <Element
+          as={as as React.ElementType<any>}
+          ref={rootRef}
+          asChild={asChild}
+          cssClassName="ex-rating"
+        >
+          {items}
+        </Element>
+      </RadioGroup.Root>
+      {name ? <input type="hidden" name={name} value={String(activeValue ?? '')} /> : null}
     </RatingContext.Provider>
   );
 };

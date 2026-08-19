@@ -3,6 +3,11 @@ import { Field, NativeSelect } from 'extraction-ui';
 import data from '../data.json';
 import { cfg, nativeSelectCfg, nativeSelectFieldCfg, nativeSelectIconCfg } from './native-select';
 
+import {
+  NativeSelectControlledExample,
+  NativeSelectUncontrolledExample,
+} from './native-select-example';
+
 export const Component = (
   <NativeSelect className='w-64'>
     <NativeSelect.Field defaultValue='' aria-label='select field'>
@@ -103,6 +108,61 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   invalid
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <NativeSelectControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const RatingExample = () => {
+    const [value, setValue] = useState('');
+    return (
+      <NativeSelect className="w-64">
+        <NativeSelect.Field
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        >
+          <option>option 1</option>
+          <option>option 2</option>
+        </NativeSelect.Field>
+        <NativeSelect.Icon />
+      </NativeSelect>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <NativeSelectUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('input'));
+  }}>
+    <NativeSelect className="w-64">
+      <NativeSelect.Field name="native-select">
+        <option>option 1</option>
+        <option>option 2</option>
+      </NativeSelect.Field>
+      <NativeSelect.Icon />
+    </NativeSelect>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes

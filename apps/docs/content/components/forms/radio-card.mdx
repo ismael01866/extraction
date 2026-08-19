@@ -11,15 +11,17 @@ import {
   radioGroupCfg,
 } from './radio-card';
 
+import { RadioCardControlledExample, RadioCardUncontrolledExample } from './radio-card-example';
+
 export const Component = (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id='r1'>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id='r2'>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -30,7 +32,7 @@ export const Component = (
 
 export const ComponentDisabled = (
   <RadioGroup className='disabled' defaultValue='option-1'>
-    <RadioCard value='option-1' id='r1-d'>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
@@ -39,15 +41,15 @@ export const ComponentDisabled = (
   </RadioGroup>
 );
 
-export const SizeComponent = ({ size }) => (
+export const SizeComponent = () => (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id={`r1-${size}`}>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id={`r2-${size}`}>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -56,15 +58,15 @@ export const SizeComponent = ({ size }) => (
   </RadioGroup>
 );
 
-export const VariantComponent = ({ color, variant }) => (
+export const VariantComponent = () => (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id={`r1-${color}-${variant}`}>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id={`r2-${color}-${variant}`}>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -94,6 +96,74 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabled
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <RadioCardControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const RatingExample = () => {
+    const [value, setValue] = useState('option-1');
+    return (
+      <RadioGroup value={value} onValueChange={(value) => setValue(value)}>
+        <RadioCard value="option-1">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 1</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+        <RadioCard value="option-2">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 2</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+      </RadioGroup>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <RadioCardUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('radio'));
+  }}>
+    <RadioGroup name="radio" defaultValue="option-1">
+      <RadioGroup name="radio-card" defaultValue="option-1">
+        <RadioCard value="option-1">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 1</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+        <RadioCard value="option-2">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 2</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+      </RadioGroup>
+    </RadioGroup>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes

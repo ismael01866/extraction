@@ -10,6 +10,8 @@ import {
   radioLabelCfg,
 } from './radio';
 
+import { RadioControlledExample, RadioUncontrolledExample } from './radio-example';
+
 export const Component = (
   <RadioGroup defaultValue='option-1'>
     <Radio>
@@ -93,6 +95,72 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabled
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <RadioControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const RatingExample = () => {
+    const [value, setValue] = useState('option-1');
+    return (
+      <RadioGroup value={value} onValueChange={(value) => setValue(value)}>
+        <Radio>
+          <Radio.Control value="option-1" id="r1-c">
+            <Radio.Indicator />
+          </Radio.Control>
+          <Radio.Label htmlFor="r1-c">Option 1</Radio.Label>
+        </Radio>
+        <Radio>
+          <Radio.Control value="option-2" id="r2-c">
+            <Radio.Indicator />
+          </Radio.Control>
+          <Radio.Label htmlFor="r2-c">Option 2</Radio.Label>
+        </Radio>
+      </RadioGroup>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <RadioUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('radio'));
+  }}>
+    <RadioGroup name="radio" defaultValue="option-1">
+      <Radio>
+        <Radio.Control value="option-1" id="r1-u">
+          <Radio.Indicator />
+        </Radio.Control>
+        <Radio.Label htmlFor="r1-u">Option 1</Radio.Label>
+      </Radio>
+      <Radio>
+        <Radio.Control value="option-2" id="r2-u">
+          <Radio.Indicator />
+        </Radio.Control>
+        <Radio.Label htmlFor="r2-u">Option 2</Radio.Label>
+      </Radio>
+    </RadioGroup>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes

@@ -9,6 +9,8 @@ import {
   checkboxLabelCfg,
 } from './checkbox';
 
+import { CheckboxControlledExample, CheckboxUncontrolledExample } from './checkbox-example';
+
 export const Component = (
   <Checkbox>
     <Checkbox.Control id='ch1' aria-label='Accept terms' defaultChecked>
@@ -67,14 +69,9 @@ export const SizeComponent = ({ size }) => (
 
 export const VariantComponent = ({ color, variant }) => (
   <Checkbox>
-    <Checkbox.Control
-      id={`ch1-${color}-${variant}`}
-      aria-label='Accept terms'
-      defaultChecked
-    >
+    <Checkbox.Control id={`ch1-${color}-${variant}`} aria-label='Accept terms' defaultChecked>
       <Checkbox.Indicator />
     </Checkbox.Control>
-
   </Checkbox>
 );
 
@@ -119,6 +116,61 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   invalid
+/>
+
+## Controlled
+
+Use the `checked` and `onCheckedChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <CheckboxControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const RatingExample = () => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <Checkbox>
+        <Checkbox.Control
+          id="ch-c"
+          aria-label="Accept terms"
+          checked={checked}
+          onCheckedChange={(value) => setChecked(value === true)}
+        >
+          <Checkbox.Indicator />
+        </Checkbox.Control>
+        <Checkbox.Label htmlFor="ch-c">Accept terms</Checkbox.Label>
+      </Checkbox>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <CheckboxUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('checkbox'));
+  }}>
+    <Checkbox>
+      <Checkbox.Control id="ch-u" name="checkbox">
+        <Checkbox.Indicator />
+      </Checkbox.Control>
+      <Checkbox.Label htmlFor="ch-u">Accept terms</Checkbox.Label>
+    </Checkbox>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes
