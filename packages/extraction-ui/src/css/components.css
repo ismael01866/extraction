@@ -896,7 +896,7 @@
     --ex-px: var(--ex-context-menu-section-px-sm, calc(var(--spacing) * 1.5));
     --ex-py: var(--ex-context-menu-section-py-sm, calc(var(--spacing) * 1.5));
 
-    --ex-gap-y: var(--ex-context-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-context-menu-section-gap-y-sm, calc(var(--spacing) * 0.75));
   }
 
   .ex-context-menu-item,
@@ -931,7 +931,7 @@
     --ex-px: var(--ex-context-menu-section-px-md, calc(var(--spacing) * 2));
     --ex-py: var(--ex-context-menu-section-py-md, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-context-menu-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-context-menu-section-gap-y-md, calc(var(--spacing) * 1));
   }
 
   .ex-context-menu-item,
@@ -1222,7 +1222,7 @@
     --ex-px: var(--ex-dropdown-menu-section-px-sm, calc(var(--spacing) * 1.5));
     --ex-py: var(--ex-dropdown-menu-section-py-sm, calc(var(--spacing) * 1.5));
 
-    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-sm, calc(var(--spacing) * 0.75));
   }
 
   .ex-dropdown-menu-item,
@@ -1262,7 +1262,7 @@
     --ex-px: var(--ex-dropdown-menu-section-px-md, calc(var(--spacing) * 2));
     --ex-py: var(--ex-dropdown-menu-section-py-md, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-md, calc(var(--spacing) * 1));
   }
 
   .ex-dropdown-menu-item,
@@ -1840,7 +1840,7 @@
     --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 2));
     --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 1));
   }
 
   .ex-menubar-item,
@@ -1897,7 +1897,7 @@
     --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2.5));
     --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2.5));
 
-    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 1.25));
   }
 
   .ex-menubar-item,

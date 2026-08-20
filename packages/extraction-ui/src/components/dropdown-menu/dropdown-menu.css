@@ -85,7 +85,7 @@
   }
 
   .ex-dropdown-menu-separator {
-    @apply h-[1px] w-full [transform:translateZ(0)];
+    @apply my-[var(--ex-gap-y)] h-[1px] w-full [transform:translateZ(0)];
   }
 
   .ex-dropdown-menu-radio-group {
@@ -111,7 +111,7 @@
   .ex-dropdown-menu-radio-item,
   .ex-dropdown-menu-checkbox-item {
     @apply relative flex min-w-0 select-none items-center;
-    @apply my-[-0.25rem] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
       @apply variant-subtle border-0!;
