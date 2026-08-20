@@ -9,10 +9,7 @@ export type ScrollAreaProps<T extends ElementType> = MergeElementProps<
   Omit<ComponentProps<typeof ScrollArea.Root>, 'as' | 'asChild' | 'className' | 'children'>
 >;
 
-export type ScrollAreaViewportProps<T extends ElementType> = MergeElementProps<
-  ElementProps<T>,
-  Omit<ComponentProps<typeof ScrollArea.Viewport>, 'as' | 'asChild' | 'className' | 'children'>
->;
+export type ScrollAreaViewportProps = ComponentProps<typeof ScrollArea.Viewport>;
 
 export type ScrollAreaScrollbarProps<T extends ElementType> = MergeElementProps<
   ElementProps<T>,

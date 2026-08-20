@@ -18,7 +18,7 @@
   }
 
   .ex-browser-frame-toolbar {
-    --ex-px: var(--ex-browser-frame-toolbar-px, calc(var(--spacing) * 4));
+    --ex-px: var(--ex-browser-frame-toolbar-px, calc(var(--spacing) * 5));
     --ex-min-height: var(--ex-browser-frame-toolbar-height, calc(var(--spacing) * 16));
 
     @apply variant-surface;
@@ -70,8 +70,8 @@
   }
 
   .ex-browser-frame-content {
-    --ex-px: var(--ex-browser-frame-content-px, calc(var(--spacing) * 4));
-    --ex-py: var(--ex-browser-frame-content-py, calc(var(--spacing) * 4));
+    --ex-px: var(--ex-browser-frame-content-px, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-browser-frame-content-py, calc(var(--spacing) * 5));
   }
 
   .ex-browser-frame-content {

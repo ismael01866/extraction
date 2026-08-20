@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
-
 import { ScrollAreaContent, ScrollAreaRoot, ScrollAreaViewport } from './scroll-area';
+
+import { render } from '@testing-library/react';
 
 describe('ScrollAreaRoot', () => {
   it('renders default div and class', () => {

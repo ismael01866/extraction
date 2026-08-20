@@ -258,11 +258,11 @@
 }
 
 @utility blockquote-sm {
-  --ex-px: var(--ex-blockquote-px-sm, calc(var(--spacing) * 3.5));
-  --ex-py: var(--ex-blockquote-py-sm, calc(var(--spacing) * 3.5));
+  --ex-px: var(--ex-blockquote-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-blockquote-py-sm, calc(var(--spacing) * 4));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-sm, calc(var(--spacing) * 1.5));
-  --ex-gap-y: var(--ex-blockquote-gap-y-sm, calc(var(--spacing) * 1.5));
+  --ex-gap-x: var(--ex-blockquote-gap-x-sm, calc(var(--spacing) * 2));
+  --ex-gap-y: var(--ex-blockquote-gap-y-sm, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-blockquote-radius-sm, var(--radius-sm));
 
@@ -286,11 +286,11 @@
 }
 
 @utility blockquote-md {
-  --ex-px: var(--ex-blockquote-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-blockquote-py-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-blockquote-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-blockquote-py-md, calc(var(--spacing) * 5));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-md, calc(var(--spacing) * 2));
-  --ex-gap-y: var(--ex-blockquote-gap-y-md, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-blockquote-gap-x-md, calc(var(--spacing) * 2.5));
+  --ex-gap-y: var(--ex-blockquote-gap-y-md, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-blockquote-radius-md, var(--radius-sm));
 
@@ -314,11 +314,11 @@
 }
 
 @utility blockquote-lg {
-  --ex-px: var(--ex-blockquote-px-lg, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-blockquote-py-lg, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-blockquote-px-lg, calc(var(--spacing) * 6));
+  --ex-py: var(--ex-blockquote-py-lg, calc(var(--spacing) * 6));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-lg, calc(var(--spacing) * 2.5));
-  --ex-gap-y: var(--ex-blockquote-gap-y-lg, calc(var(--spacing) * 2.5));
+  --ex-gap-x: var(--ex-blockquote-gap-x-lg, calc(var(--spacing) * 3));
+  --ex-gap-y: var(--ex-blockquote-gap-y-lg, calc(var(--spacing) * 3));
 
   --ex-radius: var(--ex-blockquote-radius-lg, var(--radius-sm));
 
@@ -656,8 +656,8 @@
 }
 
 @utility checkbox-card-sm {
-  --ex-px: var(--ex-checkbox-card-px-sm, calc(var(--spacing) * 3.5));
-  --ex-py: var(--ex-checkbox-card-py-sm, calc(var(--spacing) * 3.5));
+  --ex-px: var(--ex-checkbox-card-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-checkbox-card-py-sm, calc(var(--spacing) * 4));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-checkbox-card-radius-sm, var(--radius-sm));
@@ -699,8 +699,8 @@
 }
 
 @utility checkbox-card-md {
-  --ex-px: var(--ex-checkbox-card-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-checkbox-card-py-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-checkbox-card-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-checkbox-card-py-md, calc(var(--spacing) * 5));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-checkbox-card-radius-md, var(--radius-sm));
@@ -742,8 +742,8 @@
 }
 
 @utility checkbox-card-lg {
-  --ex-px: var(--ex-checkbox-card-px-lg, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-checkbox-card-py-lg, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-checkbox-card-px-lg, calc(var(--spacing) * 6));
+  --ex-py: var(--ex-checkbox-card-py-lg, calc(var(--spacing) * 6));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-checkbox-card-radius-lg, var(--radius-sm));
@@ -2302,8 +2302,8 @@
 }
 
 @utility radio-card-sm {
-  --ex-px: var(--ex-radio-card-px-sm, calc(var(--spacing) * 3.5));
-  --ex-py: var(--ex-radio-card-py-sm, calc(var(--spacing) * 3.5));
+  --ex-px: var(--ex-radio-card-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-radio-card-py-sm, calc(var(--spacing) * 4));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-radio-card-radius-sm, var(--radius-sm));
@@ -2339,8 +2339,8 @@
 }
 
 @utility radio-card-md {
-  --ex-px: var(--ex-radio-card-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-radio-card-py-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-radio-card-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-radio-card-py-md, calc(var(--spacing) * 5));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-radio-card-radius-md, var(--radius-sm));
@@ -2376,8 +2376,8 @@
 }
 
 @utility radio-card-lg {
-  --ex-px: var(--ex-radio-card-px-lg, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-radio-card-py-lg, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-radio-card-px-lg, calc(var(--spacing) * 6));
+  --ex-py: var(--ex-radio-card-py-lg, calc(var(--spacing) * 6));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-radio-card-radius-lg, var(--radius-sm));

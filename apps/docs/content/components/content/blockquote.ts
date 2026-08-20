@@ -6,7 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'blockquote',
-  variants: variantsValues.filter((v) => v !== 'ghost'),
+  variants: variantsValues.filter((variant) => !['plain', 'ghost', 'link'].includes(variant)),
 };
 
 export const blockquoteCfg = {

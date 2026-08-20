@@ -5,7 +5,7 @@ export const cfg = {
   colorPalette: colorPaletteValues,
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
-  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
+  variants: variantsValues.filter((variant) => !['plain', 'ghost', 'link'].includes(variant)),
 };
 
 export const selectCfg = {
