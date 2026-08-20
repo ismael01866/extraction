@@ -1824,7 +1824,7 @@
     --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
 
     --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1));
 
     --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
@@ -1881,7 +1881,7 @@
     --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
 
     --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
 
     --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
@@ -1968,7 +1968,7 @@
   --ex-px: var(--ex-nav-button-px-sm, calc(var(--spacing) * 2.5));
   --ex-py: var(--ex-nav-button-py-sm, calc(var(--spacing) * 2.5));
 
-  --ex-gap-y: var(--ex-nav-button-gap-y-sm, calc(var(--spacing) * 1.5));
+  --ex-gap-y: var(--ex-nav-button-gap-y-sm, calc(var(--spacing) * 1.25));
 
   --ex-radius: var(--ex-nav-button-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-nav-button-font-size-sm, var(--text-xs));
@@ -1978,7 +1978,7 @@
   --ex-px: var(--ex-nav-button-px-md, calc(var(--spacing) * 3));
   --ex-py: var(--ex-nav-button-py-md, calc(var(--spacing) * 3));
 
-  --ex-gap-y: var(--ex-nav-button-gap-y-md, calc(var(--spacing) * 2));
+  --ex-gap-y: var(--ex-nav-button-gap-y-md, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-nav-button-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-nav-button-font-size-md, var(--text-sm));
@@ -2040,7 +2040,7 @@
     --ex-height: var(--ex-navigation-menu-item-height-sm, var(--ex-size-md));
 
     --ex-px: var(--ex-navigation-menu-item-px-sm, calc(var(--spacing) * 2));
-    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-sm, calc(var(--spacing) * 1));
 
     --ex-radius: var(--ex-navigation-menu-item-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-navigation-menu-item-font-size-sm, var(--text-xs));
@@ -2082,7 +2082,7 @@
     --ex-height: var(--ex-navigation-menu-item-height-md, var(--ex-size-lg));
 
     --ex-px: var(--ex-navigation-menu-item-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 1.25));
 
     --ex-radius: var(--ex-navigation-menu-item-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-navigation-menu-item-font-size-md, var(--text-sm));
