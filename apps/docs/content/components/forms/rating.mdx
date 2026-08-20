@@ -3,7 +3,7 @@ import { Rating } from 'extraction-ui';
 import data from '../data.json';
 import { cfg, ratingCfg, ratingControlCfg, ratingIndicatorCfg } from './rating';
 
-import { RatingControlledExample, RatingUncontrolledExample } from './rating-example';
+import { RatingControlledExample, RatingUncontrolledExample } from './examples/rating-example';
 
 export const Component = <Rating defaultValue={'3'} count={5} />;
 
@@ -16,7 +16,7 @@ export const ComponentCompound = (
 );
 
 export const ComponentCompoundFull = (
-  <Rating defaultValue={'🍋'} className='gap-4' single>
+  <Rating defaultValue={'🍋'} className='gap-2' single>
     {['🍋', '🍊', '🍎', '🍓', '🍉'].map((emoji) => (
       <Rating.Control
         key={emoji}
@@ -103,7 +103,7 @@ Use the `value` and `onValueChange` props when you need to control the value ext
     usage: <RatingControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('3');
     return <Rating value={value} onValueChange={setValue} count={5}  />;
   };`}
@@ -162,9 +162,9 @@ Use the `name` prop to include the value in the form submission.
   --ex-rating-gap-x-md: calc(var(--spacing) * 0.5);
   --ex-rating-gap-x-lg: calc(var(--spacing) * 0.5);
 
-  --ex-rating-icon-font-size-sm: var(--text-base);
-  --ex-rating-icon-font-size-md: var(--text-lg);
-  --ex-rating-icon-font-size-lg: var(--text-xl);
+  --ex-rating-indicator-font-size-sm: var(--text-base);
+  --ex-rating-indicator-font-size-md: var(--text-lg);
+  --ex-rating-indicator-font-size-lg: var(--text-xl);
 }
 ```
 

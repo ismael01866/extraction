@@ -3,15 +3,15 @@ import { Slider } from 'extraction-ui';
 import data from '../data.json';
 import { cfg, sliderCfg, sliderRangeCfg, sliderThumbCfg, sliderTrackCfg } from './slider';
 
+import { SliderControlledExample, SliderUncontrolledExample } from './examples/slider-example';
+
 export const Component = (
-  <form>
-    <Slider className='w-40' defaultValue={[50]}>
-      <Slider.Track>
-        <Slider.Range />
-      </Slider.Track>
-      <Slider.Thumb aria-label='slider thumb' />
-    </Slider>
-  </form>
+  <Slider className='w-40' defaultValue={[50]}>
+    <Slider.Track>
+      <Slider.Range />
+    </Slider.Track>
+    <Slider.Thumb aria-label='slider thumb' />
+  </Slider>
 );
 
 export const ComponentVertical = (
@@ -74,6 +74,56 @@ export const Wrapper = ({ children }) => children;
   disabledNative
 />
 
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <SliderControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState([50]);
+    return (
+        <Slider className="w-40" value={value} onValueChange={setValue}>
+        <Slider.Track>
+          <Slider.Range />
+        </Slider.Track>
+        <Slider.Thumb aria-label="slider thumb" />
+      </Slider>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <SliderUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('checkbox'));
+  }}>
+    <Checkbox>
+      <Checkbox.Control id="ch-u" name="checkbox">
+        <Checkbox.Indicator />
+      </Checkbox.Control>
+      <Checkbox.Label htmlFor="ch-u">Accept terms</Checkbox.Label>
+    </Checkbox>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
 ## Sizes
 
 <Size
@@ -101,27 +151,22 @@ export const Wrapper = ({ children }) => children;
   --ex-slider-size-sm: calc(var(--spacing) * 0.5);
   --ex-slider-size-md: calc(var(--spacing) * 1);
   --ex-slider-size-lg: calc(var(--spacing) * 1.5);
-  --ex-slider-size-xl: calc(var(--spacing) * 2);
 
   --ex-slider-radius-sm: 9999px;
   --ex-slider-radius-md: 9999px;
   --ex-slider-radius-lg: 9999px;
-  --ex-slider-radius-xl: 9999px;
 
   --ex-slider-thumb-size-sm: calc(var(--spacing) * 3);
   --ex-slider-thumb-size-md: calc(var(--spacing) * 4);
   --ex-slider-thumb-size-lg: calc(var(--spacing) * 5);
-  --ex-slider-thumb-size-xl: calc(var(--spacing) * 6);
 
   --ex-slider-thumb-radius-sm: 9999px;
   --ex-slider-thumb-radius-md: 9999px;
   --ex-slider-thumb-radius-lg: 9999px;
-  --ex-slider-thumb-radius-xl: 9999px;
 
   --ex-slider-thumb-shadow-sm: var(--shadow-sm);
   --ex-slider-thumb-shadow-md: var(--shadow-sm);
   --ex-slider-thumb-shadow-lg: var(--shadow-sm);
-  --ex-slider-thumb-shadow-xl: var(--shadow-sm);
 }
 ```
 

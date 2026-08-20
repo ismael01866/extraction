@@ -9,7 +9,10 @@ import {
   checkboxLabelCfg,
 } from './checkbox';
 
-import { CheckboxControlledExample, CheckboxUncontrolledExample } from './checkbox-example';
+import {
+  CheckboxControlledExample,
+  CheckboxUncontrolledExample,
+} from './examples/checkbox-example';
 
 export const Component = (
   <Checkbox>
@@ -127,7 +130,7 @@ Use the `checked` and `onCheckedChange` props when you need to control the value
     usage: <CheckboxControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [checked, setChecked] = useState(false);
     return (
       <Checkbox>

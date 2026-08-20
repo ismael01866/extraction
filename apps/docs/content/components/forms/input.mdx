@@ -3,7 +3,7 @@ import { Field, Input } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './input';
 
-import { InputControlledExample, InputUncontrolledExample } from './input-example';
+import { InputControlledExample, InputUncontrolledExample } from './examples/input-example';
 
 export const Component = <Input className='w-64' placeholder='Enter your name' />;
 
@@ -75,7 +75,7 @@ Use the `value` and `onChange` props when you need to control the value external
     usage: <InputControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('');
     return (
       <Field className="w-64">

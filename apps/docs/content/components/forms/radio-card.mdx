@@ -11,7 +11,10 @@ import {
   radioGroupCfg,
 } from './radio-card';
 
-import { RadioCardControlledExample, RadioCardUncontrolledExample } from './radio-card-example';
+import {
+  RadioCardControlledExample,
+  RadioCardUncontrolledExample,
+} from './examples/radio-card-example';
 
 export const Component = (
   <RadioGroup defaultValue='option-1'>
@@ -107,7 +110,7 @@ Use the `value` and `onValueChange` props when you need to control the value ext
     usage: <RadioCardControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('option-1');
     return (
       <RadioGroup value={value} onValueChange={(value) => setValue(value)}>
@@ -192,29 +195,29 @@ Use the `name` prop to include the value in the form submission.
 :root {
   --ex-radio-card-cursor: default;
 
-  --ex-radio-card-gap-x-sm: calc(var(--spacing * 2));
-  --ex-radio-card-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-radio-card-gap-x-lg: calc(var(--spacing * 3));
+  --ex-radio-card-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-radio-card-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-radio-card-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-radio-card-px-sm: --spacing(4);
-  --ex-radio-card-px-md: --spacing(5);
-  --ex-radio-card-px-lg: --spacing(6);
+  --ex-radio-card-px-sm: calc(var(--spacing) * 3.5);
+  --ex-radio-card-px-md: calc(var(--spacing) * 4);
+  --ex-radio-card-px-lg: calc(var(--spacing) * 5);
 
-  --ex-radio-card-py-sm: --spacing(4);
-  --ex-radio-card-py-md: --spacing(5);
-  --ex-radio-card-py-lg: --spacing(6);
+  --ex-radio-card-py-sm: calc(var(--spacing) * 3.5);
+  --ex-radio-card-py-md: calc(var(--spacing) * 4);
+  --ex-radio-card-py-lg: calc(var(--spacing) * 5);
 
   --ex-radio-card-radius-sm: var(--radius-sm);
   --ex-radio-card-radius-md: var(--radius-sm);
   --ex-radio-card-radius-lg: var(--radius-sm);
 
-  --ex-radio-card-content-gap-x-sm: calc(var(--spacing * 2));
-  --ex-radio-card-content-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-radio-card-content-gap-x-lg: calc(var(--spacing * 3));
+  --ex-radio-card-content-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-radio-card-content-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-radio-card-content-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-radio-card-content-gap-y-sm: calc(var(--spacing * 1));
-  --ex-radio-card-content-gap-y-md: calc(var(--spacing * 1));
-  --ex-radio-card-content-gap-y-lg: calc(var(--spacing * 1));
+  --ex-radio-card-content-gap-y-sm: calc(var(--spacing) * 1);
+  --ex-radio-card-content-gap-y-md: calc(var(--spacing) * 1.25);
+  --ex-radio-card-content-gap-y-lg: calc(var(--spacing) * 1.5);
 
   --ex-radio-card-label-font-family: var(--font-sans);
   --ex-radio-card-label-font-weight: var(--font-weight-medium);

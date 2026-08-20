@@ -4,7 +4,7 @@ import { LuMail } from 'react-icons/lu';
 import data from '../data.json';
 import { toggleCfg } from './toggle';
 
-import { ToggleControlledExample, ToggleUncontrolledExample } from './toggle-example';
+import { ToggleControlledExample, ToggleUncontrolledExample } from './examples/toggle-example';
 
 export const Component = (
   <Toggle asChild>
@@ -60,7 +60,7 @@ Use the `pressed` and `onPressedChange` props when you need to control the value
     usage: <ToggleControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [pressed, setPressed] = useState(false);
     return (
       <Toggle pressed={pressed} onPressedChange={(value) => setPressed(value)} asChild>

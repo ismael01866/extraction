@@ -10,7 +10,7 @@ import {
   radioLabelCfg,
 } from './radio';
 
-import { RadioControlledExample, RadioUncontrolledExample } from './radio-example';
+import { RadioControlledExample, RadioUncontrolledExample } from './examples/radio-example';
 
 export const Component = (
   <RadioGroup defaultValue='option-1'>
@@ -106,7 +106,7 @@ Use the `value` and `onValueChange` props when you need to control the value ext
     usage: <RadioControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('option-1');
     return (
       <RadioGroup value={value} onValueChange={(value) => setValue(value)}>

@@ -6,7 +6,7 @@ import { cfg, nativeSelectCfg, nativeSelectFieldCfg, nativeSelectIconCfg } from 
 import {
   NativeSelectControlledExample,
   NativeSelectUncontrolledExample,
-} from './native-select-example';
+} from './examples/native-select-example';
 
 export const Component = (
   <NativeSelect className='w-64'>
@@ -119,7 +119,7 @@ Use the `value` and `onChange` props when you need to control the value external
     usage: <NativeSelectControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('');
     return (
       <NativeSelect className="w-64">

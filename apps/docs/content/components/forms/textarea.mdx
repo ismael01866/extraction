@@ -3,7 +3,10 @@ import { Field, Textarea } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './textarea';
 
-import { TextareaControlledExample, TextareaUncontrolledExample } from './textarea-example';
+import {
+  TextareaControlledExample,
+  TextareaUncontrolledExample,
+} from './examples/textarea-example';
 
 export const Component = <Textarea className='w-64' placeholder='Enter your name' />;
 
@@ -87,7 +90,7 @@ Use the `value` and `onChange` props when you need to control the value external
     usage: <TextareaControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState('');
     return (
       <Field className="w-64">

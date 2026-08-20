@@ -2,7 +2,6 @@ import React, { ElementType } from 'react';
 
 import './scroll-area.css';
 
-import { cn } from '../../utils';
 import { Element } from '../element';
 import {
   ScrollAreaContentProps,
@@ -29,14 +28,16 @@ export const ScrollAreaRoot = <T extends ElementType = 'div'>(props: ScrollAreaP
 
 ScrollAreaRoot.displayName = 'ScrollArea';
 
-export const ScrollAreaViewport = (props: ScrollAreaViewportProps) => {
-  const { children, className, ...rest } = props;
-
-  const classes = cn('ex-scroll-area-viewport', className);
+export const ScrollAreaViewport = <T extends ElementType = 'div'>(
+  props: ScrollAreaViewportProps<T>,
+) => {
+  const { as = 'div', asChild = false, children, ...rest } = props;
 
   return (
-    <ScrollArea.Viewport className={classes} {...rest}>
-      {children}
+    <ScrollArea.Viewport asChild {...rest}>
+      <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-scroll-area-viewport">
+        {children}
+      </Element>
     </ScrollArea.Viewport>
   );
 };

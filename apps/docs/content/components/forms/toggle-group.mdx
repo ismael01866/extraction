@@ -7,7 +7,7 @@ import { toggleGroupCfg, toggleGroupItemCfg } from './toggle-group';
 import {
   ToggleGroupControlledExample,
   ToggleGroupUncontrolledExample,
-} from './toggle-group-example';
+} from './examples/toggle-group-example';
 
 export const Component = (
   <ToggleGroup type='single'>
@@ -185,7 +185,7 @@ Use the `value` and `onValueChange` props when you need to control the value ext
     usage: <ToggleGroupControlledExample />,
     wrapper: Wrapper,
   }}
-  serializedCode={`const RatingExample = () => {
+  serializedCode={`const Example = () => {
     const [value, setValue] = useState<string | string[]>('');
     return (
       <ToggleGroup

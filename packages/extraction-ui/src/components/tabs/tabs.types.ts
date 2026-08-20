@@ -1,16 +1,25 @@
 import { ComponentProps, ElementType } from 'react';
 
-import { ElementProps } from '../element';
+import { ElementProps, MergeElementProps } from '../element';
 
 import * as Tabs from '@radix-ui/react-tabs';
 
-export type TabsProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Tabs.Root>, 'as' | 'asChild' | 'className' | 'children'>;
+export type TabsProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Tabs.Root>, 'as' | 'asChild' | 'className' | 'children'>
+>;
 
-export type TabsListProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Tabs.List>, 'as' | 'asChild' | 'className' | 'children'>;
+export type TabsListProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Tabs.List>, 'as' | 'asChild' | 'className' | 'children'>
+>;
 
-export type TabsTriggerProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Tabs.Trigger>, 'as' | 'asChild' | 'className' | 'children'>;
-export type TabsContentProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Tabs.Content>, 'as' | 'asChild' | 'className' | 'children'>;
+export type TabsTriggerProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Tabs.Trigger>, 'as' | 'asChild' | 'className' | 'children'>
+>;
+
+export type TabsContentProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Tabs.Content>, 'as' | 'asChild' | 'className' | 'children'>
+>;

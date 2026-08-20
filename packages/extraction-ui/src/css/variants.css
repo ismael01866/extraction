@@ -307,6 +307,7 @@
       @apply [color:inherit];
     }
 
+    [class*='ex-'][class*='-svg'],
     [class*='ex-'][class*='-icon'],
     [class*='ex-'][class*='-item'],
     [class*='ex-'][class*='-trigger'],

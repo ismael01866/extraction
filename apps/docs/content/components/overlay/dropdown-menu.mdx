@@ -1,33 +1,33 @@
 import { DropdownMenu, IconButton } from 'extraction-ui';
 import {
-    LuCheck,
-    LuChevronRight,
-    LuDot,
-    LuMenu,
-    LuScreenShare,
-    LuTextSelect,
+  LuCheck,
+  LuChevronRight,
+  LuDot,
+  LuMenu,
+  LuScreenShare,
+  LuTextSelect,
 } from 'react-icons/lu';
 
 import data from '../data.json';
 import {
-    cfg,
-    dropdownMenuArrowCfg,
-    dropdownMenuCfg,
-    dropdownMenuCheckboxItemCfg,
-    dropdownMenuCommandCfg,
-    dropdownMenuContentCfg,
-    dropdownMenuItemCfg,
-    dropdownMenuItemIndicatorCfg,
-    dropdownMenuLabelCfg,
-    dropdownMenuPortalCfg,
-    dropdownMenuRadioGroupCfg,
-    dropdownMenuRadioItemCfg,
-    dropdownMenuSectionCfg,
-    dropdownMenuSeparatorCfg,
-    dropdownMenuSubCfg,
-    dropdownMenuSubContentCfg,
-    dropdownMenuSubTriggerCfg,
-    dropdownMenuTriggerCfg,
+  cfg,
+  dropdownMenuArrowCfg,
+  dropdownMenuCfg,
+  dropdownMenuCheckboxItemCfg,
+  dropdownMenuCommandCfg,
+  dropdownMenuContentCfg,
+  dropdownMenuItemCfg,
+  dropdownMenuItemIndicatorCfg,
+  dropdownMenuLabelCfg,
+  dropdownMenuPortalCfg,
+  dropdownMenuRadioGroupCfg,
+  dropdownMenuRadioItemCfg,
+  dropdownMenuSectionCfg,
+  dropdownMenuSeparatorCfg,
+  dropdownMenuSubCfg,
+  dropdownMenuSubContentCfg,
+  dropdownMenuSubTriggerCfg,
+  dropdownMenuTriggerCfg,
 } from './dropdown-menu';
 
 export const Component = (
@@ -250,20 +250,20 @@ export const Wrapper = ({ children }) => children;
   --ex-dropdown-menu-shadow-sm: var(--shadow-sm);
   --ex-dropdown-menu-shadow-md: var(--shadow-sm);
 
-  --ex-dropdown-menu-section-gap-x-sm: calc(var(--spacing) * 1.5);
-  --ex-dropdown-menu-section-gap-x-md: calc(var(--spacing) * 2);
+  --ex-dropdown-menu-section-gap-y-sm: calc(var(--spacing) * 1.5);
+  --ex-dropdown-menu-section-gap-y-md: calc(var(--spacing) * 2);
 
   --ex-dropdown-menu-section-px-sm: calc(var(--spacing) * 1.5);
   --ex-dropdown-menu-section-px-md: calc(var(--spacing) * 2);
 
-  --ex-dropdown-menu-section-py-sm: calc(var(--spacing) * 2);
-  --ex-dropdown-menu-section-py-md: calc(var(--spacing) * 2.5);
+  --ex-dropdown-menu-section-py-sm: calc(var(--spacing) * 1.5);
+  --ex-dropdown-menu-section-py-md: calc(var(--spacing) * 2);
 
-  --ex-dropdown-menu-item-px-sm: calc(var(--spacing) * 2);
+  --ex-dropdown-menu-item-px-sm: calc(var(--spacing) * 1.5);
   --ex-dropdown-menu-item-px-md: calc(var(--spacing) * 2);
 
-  --ex-dropdown-menu-item-py-sm: var(--spacing);
-  --ex-dropdown-menu-item-py-md: var(--spacing);
+  --ex-dropdown-menu-item-py-sm: calc(var(--spacing) * 0.75);
+  --ex-dropdown-menu-item-py-md: calc(var(--spacing) * 1);
 
   --ex-dropdown-menu-item-font-family: var(--font-sans);
   --ex-dropdown-menu-item-font-weight: var(--font-weight-normal);

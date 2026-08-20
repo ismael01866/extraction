@@ -7,3 +7,5 @@ export type ElementProps<T extends ElementType> = {
   className?: string;
   cssClassName?: string;
 } & Omit<ComponentProps<T>, 'as' | 'asChild' | 'className' | 'children' | 'cssClassName'>;
+
+export type MergeElementProps<A, B> = Omit<A, keyof B> & B;

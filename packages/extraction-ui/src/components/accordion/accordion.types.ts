@@ -1,31 +1,41 @@
 import { ComponentProps, ElementType } from 'react';
 
 import { ButtonProps } from '../button';
-import { ElementProps } from '../element';
+import { ElementProps, MergeElementProps } from '../element';
 
 import * as Accordion from '@radix-ui/react-accordion';
 
-export type AccordionProps<T extends ElementType> = ElementProps<T> &
+export type AccordionProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
   Omit<
     ComponentProps<typeof Accordion.Root>,
     'as' | 'asChild' | 'className' | 'children' | 'type'
   > & {
     type?: 'single' | 'multiple';
-  };
+  }
+>;
 
-export type AccordionItemProps<T extends ElementType> = ElementProps<T> &
+export type AccordionItemProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
   Omit<ComponentProps<typeof Accordion.Item>, 'as' | 'asChild' | 'className' | 'children'> & {
     value: string;
-  };
+  }
+>;
 
-export type AccordionHeaderProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Accordion.Header>, 'as' | 'asChild' | 'className' | 'children'>;
+export type AccordionHeaderProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Accordion.Header>, 'as' | 'asChild' | 'className' | 'children'>
+>;
 
-export type AccordionTriggerProps<T extends ElementType> = ButtonProps<T> &
-  Omit<ComponentProps<typeof Accordion.Trigger>, 'as' | 'asChild' | 'className' | 'children'>;
+export type AccordionTriggerProps<T extends ElementType> = MergeElementProps<
+  ButtonProps<T>,
+  Omit<ComponentProps<typeof Accordion.Trigger>, 'as' | 'asChild' | 'className' | 'children'>
+>;
 
-export type AccordionContentProps<T extends ElementType> = ElementProps<T> &
-  Omit<ComponentProps<typeof Accordion.Content>, 'as' | 'asChild' | 'className' | 'children'>;
+export type AccordionContentProps<T extends ElementType> = MergeElementProps<
+  ElementProps<T>,
+  Omit<ComponentProps<typeof Accordion.Content>, 'as' | 'asChild' | 'className' | 'children'>
+>;
 
 export type AccordionSectionProps<T extends ElementType> = ElementProps<T>;
 export type AccordionIconProps<T extends ElementType> = ElementProps<T>;

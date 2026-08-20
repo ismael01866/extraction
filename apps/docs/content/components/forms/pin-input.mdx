@@ -3,6 +3,8 @@ import { PinInput } from 'extraction-ui';
 import data from '../data.json';
 import { cfg, pinInputCfg, pinInputFieldCfg, pinInputHiddenCfg } from './pin-input';
 
+import { PinControlledExample, PinUncontrolledExample } from './examples/pin-example';
+
 export const Component = (
   <PinInput placeholder={'○○○'}>
     <PinInput.Field />
@@ -31,7 +33,9 @@ export const ComponentInvalid = (
 );
 
 export const ComponentDisabled = (
-  <PinInput className='disabled' placeholder={'○'}>
+  <PinInput className='disabled' placeholder={'○○○'}>
+    <PinInput.Field />
+    <PinInput.Field />
     <PinInput.Field />
     <PinInput.Hidden />
   </PinInput>
@@ -107,6 +111,56 @@ Use the `type='password'` prop to mask the component input.
   invalid
 />
 
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <PinControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState('');
+    return (
+      <PinInput placeholder={'○○○'} value={value} onValueChange={setValue}>
+        <PinInput.Field />
+        <PinInput.Field />
+        <PinInput.Field />
+        <PinInput.Hidden />
+      </PinInput>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <PinUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('pin-input'));
+  }}>
+    <PinInput placeholder={'○○○'} name="pin-input">
+      <PinInput.Field />
+      <PinInput.Field />
+      <PinInput.Field />
+      <PinInput.Hidden />
+    </PinInput>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
 ## Sizes
 
 <Size
@@ -142,17 +196,17 @@ Use the `type='password'` prop to mask the component input.
   --ex-pin-input-size-md: calc(var(--spacing) * 10);
   --ex-pin-input-size-lg: calc(var(--spacing) * 12);
 
-  --ex-pin-input-gap-x-sm: calc(var(--spacing) * 1);
-  --ex-pin-input-gap-x-md: calc(var(--spacing) * 1.25);
-  --ex-pin-input-gap-x-lg: calc(var(--spacing) * 1.5);
+  --ex-pin-input-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-pin-input-gap-x-md: calc(var(--spacing) * 2);
+  --ex-pin-input-gap-x-lg: calc(var(--spacing) * 2.5);
 
   --ex-pin-input-radius-sm: var(--radius-sm);
   --ex-pin-input-radius-md: var(--radius-sm);
   --ex-pin-input-radius-lg: var(--radius-sm);
 
-  --ex-pin-input-placeholder-font-size-sm: var(--text-2xs);
-  --ex-pin-input-placeholder-font-size-md: var(--text-xs);
-  --ex-pin-input-placeholder-font-size-lg: var(--text-sm);
+  --ex-pin-input-placeholder-font-size-sm: var(--text-xs);
+  --ex-pin-input-placeholder-font-size-md: var(--text-sm);
+  --ex-pin-input-placeholder-font-size-lg: var(--text-base);
 }
 ```
 
