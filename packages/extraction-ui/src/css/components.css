@@ -362,13 +362,6 @@
   --ex-radius: var(--ex-box-radius-lg, var(--radius-sm));
 }
 
-@utility box-xl {
-  --ex-px: var(--ex-box-px-xl, calc(var(--spacing) * 7));
-  --ex-py: var(--ex-box-py-xl, calc(var(--spacing) * 7));
-
-  --ex-radius: var(--ex-box-radius-xl, var(--radius-sm));
-}
-
 @utility breadcrumbs-sm {
   --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 1));
   --ex-font-size: var(--ex-breadcrumbs-font-size-sm, var(--text-xs));
