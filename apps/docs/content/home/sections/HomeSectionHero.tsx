@@ -41,7 +41,7 @@ export function HomeSectionHero() {
             <Button
               as="a"
               href="get-started/overview/installation"
-              className="button-xl text-fluid-base w-full justify-self-end px-8 sm:w-fit"
+              className="text-fluid-base h-14 w-full justify-self-end px-8 sm:w-fit"
             >
               <Icon>
                 <LuRocket />
@@ -51,7 +51,7 @@ export function HomeSectionHero() {
             <Button
               as="a"
               href="/components/overview/introduction"
-              className="button-xl text-fluid-base tonal-black w-full px-8 sm:w-fit"
+              className="text-fluid-base tonal-black h-14 w-full px-8 sm:w-fit"
             >
               Explore Components
             </Button>

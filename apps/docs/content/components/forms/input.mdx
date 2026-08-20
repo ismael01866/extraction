@@ -3,11 +3,13 @@ import { Field, Input } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './input';
 
+import { InputControlledExample, InputUncontrolledExample } from './examples/input-example';
+
 export const Component = <Input className='w-64' placeholder='Enter your name' />;
 
 export const ComponentValid = (
   <Field className='w-64'>
-    <Input id='name' placeholder='Enter your name' className='valid' readOnly value='John' />
+    <Input id='name' placeholder='Enter your name' className='valid' value='John' readOnly />
   </Field>
 );
 
@@ -62,6 +64,54 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   invalid
+/>
+
+## Controlled
+
+Use the `value` and `onChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <InputControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState('');
+    return (
+      <Field className="w-64">
+        <Input
+          placeholder="Enter your name"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+      </Field>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <InputUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('input'));
+  }}>
+    <Field className="w-64">
+      <Input placeholder="Enter your name" name="input" />
+    </Field>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes

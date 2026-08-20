@@ -21,7 +21,6 @@
     @apply inline-flex;
     @apply [cursor:var(--ex-cursor)];
 
-    /* &:where([data-filled='false'][data-hovered='false']) { */
     &:where([data-filled='false']) {
       :where(.ex-rating-indicator-fg) {
         @apply invisible;

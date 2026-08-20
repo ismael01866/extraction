@@ -44,7 +44,7 @@
     --ex-py: var(--ex-accordion-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-accordion-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-accordion-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-accordion-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-accordion-icon {
@@ -75,7 +75,7 @@
     --ex-py: var(--ex-accordion-section-py-lg, calc(var(--spacing) * 6));
 
     --ex-gap-x: var(--ex-accordion-section-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-accordion-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-accordion-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-accordion-icon {
@@ -101,7 +101,7 @@
     --ex-py: var(--ex-alert-dialog-section-py-sm, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-alert-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-sm, calc(var(--spacing) * 2.5));
   }
 
   .ex-alert-dialog-title {
@@ -128,7 +128,7 @@
     --ex-py: var(--ex-alert-dialog-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-alert-dialog-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-alert-dialog-title {
@@ -155,7 +155,7 @@
     --ex-py: var(--ex-alert-dialog-section-py-lg, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-alert-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-lg, calc(var(--spacing) * 2.5));
   }
 
   .ex-alert-dialog-title {
@@ -181,8 +181,8 @@
     --ex-px: var(--ex-alert-dialog-section-px-xl, calc(var(--spacing) * 5));
     --ex-py: var(--ex-alert-dialog-section-py-xl, calc(var(--spacing) * 5));
 
-    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-xl, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-xl, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-xl, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-xl, calc(var(--spacing) * 2.5));
   }
 
   .ex-alert-dialog-title {
@@ -231,7 +231,7 @@
   --ex-height: var(--ex-badge-height-sm, var(--ex-size-2xs));
 
   --ex-px: var(--ex-badge-px-sm, calc(var(--spacing) * 1));
-  --ex-gap-x: var(--ex-badge-gap-x-sm, calc(var(--spacing) * 0.75));
+  --ex-gap-x: var(--ex-badge-gap-x-sm, calc(var(--spacing) * 1));
 
   --ex-radius: var(--ex-badge-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-badge-font-size-sm, var(--text-2xs));
@@ -241,7 +241,7 @@
   --ex-height: var(--ex-badge-height-md, var(--ex-size-xs));
 
   --ex-px: var(--ex-badge-px-md, calc(var(--spacing) * 1.5));
-  --ex-gap-x: var(--ex-badge-gap-x-md, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-badge-gap-x-md, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-badge-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-badge-font-size-md, var(--text-xs));
@@ -251,18 +251,18 @@
   --ex-height: var(--ex-badge-height-lg, var(--ex-size-sm));
 
   --ex-px: var(--ex-badge-px-lg, calc(var(--spacing) * 2));
-  --ex-gap-x: var(--ex-badge-gap-x-lg, calc(var(--spacing) * 1.25));
+  --ex-gap-x: var(--ex-badge-gap-x-lg, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-badge-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-badge-font-size-lg, var(--text-sm));
 }
 
 @utility blockquote-sm {
-  --ex-px: var(--ex-blockquote-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-blockquote-py-sm, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-blockquote-px-sm, calc(var(--spacing) * 3.5));
+  --ex-py: var(--ex-blockquote-py-sm, calc(var(--spacing) * 3.5));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-sm, calc(var(--spacing) * 2));
-  --ex-gap-y: var(--ex-blockquote-gap-y-sm, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-blockquote-gap-x-sm, calc(var(--spacing) * 1.5));
+  --ex-gap-y: var(--ex-blockquote-gap-y-sm, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-blockquote-radius-sm, var(--radius-sm));
 
@@ -286,10 +286,10 @@
 }
 
 @utility blockquote-md {
-  --ex-px: var(--ex-blockquote-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-blockquote-py-md, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-blockquote-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-blockquote-py-md, calc(var(--spacing) * 4));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-md, calc(var(--spacing) * 2.5));
+  --ex-gap-x: var(--ex-blockquote-gap-x-md, calc(var(--spacing) * 2));
   --ex-gap-y: var(--ex-blockquote-gap-y-md, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-blockquote-radius-md, var(--radius-sm));
@@ -314,11 +314,11 @@
 }
 
 @utility blockquote-lg {
-  --ex-px: var(--ex-blockquote-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-blockquote-py-lg, calc(var(--spacing) * 6));
+  --ex-px: var(--ex-blockquote-px-lg, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-blockquote-py-lg, calc(var(--spacing) * 5));
 
-  --ex-gap-x: var(--ex-blockquote-gap-x-lg, calc(var(--spacing) * 3));
-  --ex-gap-y: var(--ex-blockquote-gap-y-lg, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-blockquote-gap-x-lg, calc(var(--spacing) * 2.5));
+  --ex-gap-y: var(--ex-blockquote-gap-y-lg, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-blockquote-radius-lg, var(--radius-sm));
 
@@ -342,35 +342,28 @@
 }
 
 @utility box-sm {
-  --ex-px: var(--ex-box-px-sm, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-box-py-sm, calc(var(--spacing) * 3));
+  --ex-px: var(--ex-box-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-box-py-sm, calc(var(--spacing) * 4));
 
   --ex-radius: var(--ex-box-radius-sm, var(--radius-sm));
 }
 
 @utility box-md {
-  --ex-px: var(--ex-box-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-box-py-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-box-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-box-py-md, calc(var(--spacing) * 5));
 
   --ex-radius: var(--ex-box-radius-md, var(--radius-sm));
 }
 
 @utility box-lg {
-  --ex-px: var(--ex-box-px-lg, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-box-py-lg, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-box-px-lg, calc(var(--spacing) * 6));
+  --ex-py: var(--ex-box-py-lg, calc(var(--spacing) * 6));
 
   --ex-radius: var(--ex-box-radius-lg, var(--radius-sm));
 }
 
-@utility box-xl {
-  --ex-px: var(--ex-box-px-xl, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-box-py-xl, calc(var(--spacing) * 6));
-
-  --ex-radius: var(--ex-box-radius-xl, var(--radius-sm));
-}
-
 @utility breadcrumbs-sm {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 0.25));
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 1));
   --ex-font-size: var(--ex-breadcrumbs-font-size-sm, var(--text-xs));
 
   .ex-breadcrumbs-link {
@@ -379,7 +372,7 @@
 }
 
 @utility breadcrumbs-md {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 0.5));
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 1.5));
   --ex-font-size: var(--ex-breadcrumbs-font-size-md, var(--text-sm));
 
   .ex-breadcrumbs-link {
@@ -391,7 +384,7 @@
   --ex-height: var(--ex-button-height-sm, var(--ex-size-xl));
 
   --ex-px: var(--ex-button-px-sm, calc(var(--spacing) * 3.5));
-  --ex-gap-x: var(--ex-button-gap-x-sm, calc(var(--spacing) * 1.75));
+  --ex-gap-x: var(--ex-button-gap-x-sm, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-button-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-button-font-size-sm, var(--text-xs));
@@ -452,7 +445,7 @@
 
   .ex-callout-content {
     --ex-gap-x: var(--ex-callout-content-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-callout-content-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-callout-content-gap-y-sm, calc(var(--spacing) * 1));
   }
 
   .ex-callout-title {
@@ -491,7 +484,7 @@
 
   .ex-callout-content {
     --ex-gap-x: var(--ex-callout-content-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-callout-content-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-callout-content-gap-y-md, calc(var(--spacing) * 1.25));
   }
 
   .ex-callout-title {
@@ -531,7 +524,7 @@
 
   .ex-callout-content {
     --ex-gap-x: var(--ex-callout-content-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-callout-content-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-callout-content-gap-y-lg, calc(var(--spacing) * 1.5));
   }
 
   .ex-callout-title {
@@ -575,7 +568,7 @@
     --ex-py: var(--ex-card-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-card-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-card-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-card-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-card-title {
@@ -597,7 +590,7 @@
     --ex-py: var(--ex-card-section-py-lg, calc(var(--spacing) * 6));
 
     --ex-gap-x: var(--ex-card-section-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-card-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-card-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-card-title {
@@ -663,8 +656,8 @@
 }
 
 @utility checkbox-card-sm {
-  --ex-px: var(--ex-checkbox-card-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-checkbox-card-py-sm, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-checkbox-card-px-sm, calc(var(--spacing) * 3.5));
+  --ex-py: var(--ex-checkbox-card-py-sm, calc(var(--spacing) * 3.5));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-checkbox-card-radius-sm, var(--radius-sm));
@@ -706,8 +699,8 @@
 }
 
 @utility checkbox-card-md {
-  --ex-px: var(--ex-checkbox-card-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-checkbox-card-py-md, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-checkbox-card-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-checkbox-card-py-md, calc(var(--spacing) * 4));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-checkbox-card-radius-md, var(--radius-sm));
@@ -731,7 +724,7 @@
 
   .ex-checkbox-card-content {
     --ex-gap-x: var(--ex-checkbox-card-content-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-md, calc(var(--spacing) * 1));
+    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-md, calc(var(--spacing) * 1.25));
   }
 
   .ex-checkbox-card-label {
@@ -749,8 +742,8 @@
 }
 
 @utility checkbox-card-lg {
-  --ex-px: var(--ex-checkbox-card-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-checkbox-card-py-lg, calc(var(--spacing) * 6));
+  --ex-px: var(--ex-checkbox-card-px-lg, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-checkbox-card-py-lg, calc(var(--spacing) * 5));
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-checkbox-card-radius-lg, var(--radius-sm));
@@ -774,7 +767,7 @@
 
   .ex-checkbox-card-content {
     --ex-gap-x: var(--ex-checkbox-card-content-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-lg, calc(var(--spacing) * 1));
+    --ex-gap-y: var(--ex-checkbox-card-content-gap-y-lg, calc(var(--spacing) * 1.5));
   }
 
   .ex-checkbox-card-label {
@@ -825,7 +818,7 @@
 
   --ex-px: var(--ex-code-px-sm, calc(var(--spacing) * 1));
 
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
+  --ex-radius: var(--ex-code-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-code-font-size-sm, var(--text-2xs));
 }
 
@@ -835,7 +828,7 @@
 
   --ex-px: var(--ex-code-px-md, calc(var(--spacing) * 1));
 
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
+  --ex-radius: var(--ex-code-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-code-font-size-md, var(--text-xs));
 }
 
@@ -845,7 +838,7 @@
 
   --ex-px: var(--ex-code-px-lg, calc(var(--spacing) * 1));
 
-  --ex-radius: var(--ex-code-radius, var(--radius-sm));
+  --ex-radius: var(--ex-code-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-code-font-size-lg, var(--text-sm));
 }
 
@@ -901,7 +894,7 @@
 
   .ex-context-menu-section {
     --ex-px: var(--ex-context-menu-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-context-menu-section-py-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-context-menu-section-py-sm, calc(var(--spacing) * 1.5));
 
     --ex-gap-y: var(--ex-context-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
   }
@@ -911,8 +904,8 @@
   .ex-context-menu-sub-trigger,
   .ex-context-menu-radio-item,
   .ex-context-menu-checkbox-item {
-    --ex-px: var(--ex-context-menu-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-context-menu-item-py-sm, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-context-menu-item-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-context-menu-item-py-sm, calc(var(--spacing) * 0.75));
     --ex-font-size: var(--ex-context-menu-item-font-size-sm, var(--text-xs));
   }
 
@@ -936,7 +929,7 @@
 
   .ex-context-menu-section {
     --ex-px: var(--ex-context-menu-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-context-menu-section-py-md, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-context-menu-section-py-md, calc(var(--spacing) * 2));
 
     --ex-gap-y: var(--ex-context-menu-section-gap-y-md, calc(var(--spacing) * 2));
   }
@@ -960,7 +953,6 @@
   }
 
   .ex-context-menu-item-indicator {
-    /* prettier-ignore */
     --ex-font-size: var(--ex-context-menu-item-indicator-font-size-md, var(--text-sm));
   }
 }
@@ -1007,7 +999,7 @@
     --ex-py: var(--ex-dialog-section-py-sm, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-sm, calc(var(--spacing) * 2.5));
   }
 
   .ex-dialog-title {
@@ -1031,7 +1023,7 @@
     --ex-py: var(--ex-dialog-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-dialog-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-dialog-title {
@@ -1055,7 +1047,7 @@
     --ex-py: var(--ex-dialog-section-py-lg, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-lg, calc(var(--spacing) * 2.5));
   }
 
   .ex-dialog-title {
@@ -1079,7 +1071,7 @@
     --ex-py: var(--ex-dialog-section-py-xl, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-dialog-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-xl, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-xl, calc(var(--spacing) * 2.5));
   }
 
   .ex-dialog-title {
@@ -1135,7 +1127,7 @@
     --ex-py: var(--ex-drawer-section-py-sm, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-drawer-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 2.5));
   }
 
   .ex-drawer-title {
@@ -1159,7 +1151,7 @@
     --ex-py: var(--ex-drawer-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-drawer-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-drawer-title {
@@ -1183,7 +1175,7 @@
     --ex-py: var(--ex-drawer-section-py-lg, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-drawer-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 2.5));
   }
 
   .ex-drawer-title {
@@ -1207,7 +1199,7 @@
     --ex-py: var(--ex-drawer-section-py-xl, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-drawer-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-xl, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-xl, calc(var(--spacing) * 2.5));
   }
 
   .ex-drawer-title {
@@ -1228,7 +1220,7 @@
 
   .ex-dropdown-menu-section {
     --ex-px: var(--ex-dropdown-menu-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-dropdown-menu-section-py-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-dropdown-menu-section-py-sm, calc(var(--spacing) * 1.5));
 
     --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
   }
@@ -1238,8 +1230,8 @@
   .ex-dropdown-menu-sub-trigger,
   .ex-dropdown-menu-radio-item,
   .ex-dropdown-menu-checkbox-item {
-    --ex-px: var(--ex-dropdown-menu-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-dropdown-menu-item-py-sm, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-dropdown-menu-item-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-dropdown-menu-item-py-sm, calc(var(--spacing) * 0.75));
     --ex-font-size: var(--ex-dropdown-menu-item-font-size-sm, var(--text-xs));
   }
 
@@ -1268,7 +1260,7 @@
 
   .ex-dropdown-menu-section {
     --ex-px: var(--ex-dropdown-menu-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-dropdown-menu-section-py-md, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-dropdown-menu-section-py-md, calc(var(--spacing) * 2));
 
     --ex-gap-y: var(--ex-dropdown-menu-section-gap-y-md, calc(var(--spacing) * 2));
   }
@@ -1331,7 +1323,7 @@
     --ex-py: var(--ex-empty-state-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-empty-state-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-empty-state-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-empty-state-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-empty-state-indicator {
@@ -1355,7 +1347,7 @@
     --ex-py: var(--ex-empty-state-section-py-lg, calc(var(--spacing) * 6));
 
     --ex-gap-x: var(--ex-empty-state-section-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-empty-state-section-gap-y-lg, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-empty-state-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-empty-state-indicator {
@@ -1377,7 +1369,7 @@
 }
 
 @utility field-sm {
-  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2.5));
+  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2));
 
   .ex-field-label {
     --ex-font-size: var(--ex-field-label-font-size-sm, var(--text-xs));
@@ -1481,7 +1473,7 @@
 }
 
 @utility field-lg {
-  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 2.5));
+  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 3));
 
   .ex-field-label {
     --ex-font-size: var(--ex-field-label-font-size-lg, var(--text-base));
@@ -1603,7 +1595,7 @@
     --ex-py: var(--ex-hover-card-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-hover-card-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-hover-card-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-hover-card-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-hover-card-title {
@@ -1782,7 +1774,7 @@
   --ex-font-family: var(--ex-list-font-family-sm, var(--font-sans));
   --ex-font-weight: var(--ex-list-font-weight-sm, var(--font-weight-normal));
 
-  --ex-gap-x: var(--ex-list-gap-x-sm, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-list-gap-x-sm, calc(var(--spacing) * 1.5));
   --ex-gap-y: var(--ex-list-gap-y-sm, calc(var(--spacing) * 1));
 }
 
@@ -1792,7 +1784,7 @@
   --ex-font-family: var(--ex-list-font-family-md, var(--font-sans));
   --ex-font-weight: var(--ex-list-font-weight-md, var(--font-weight-normal));
 
-  --ex-gap-x: var(--ex-list-gap-x-md, calc(var(--spacing) * 2.5));
+  --ex-gap-x: var(--ex-list-gap-x-md, calc(var(--spacing) * 2));
   --ex-gap-y: var(--ex-list-gap-y-md, calc(var(--spacing) * 1));
 }
 
@@ -1802,7 +1794,7 @@
   --ex-font-family: var(--ex-list-font-family-lg, var(--font-sans));
   --ex-font-weight: var(--ex-list-font-weight-lg, var(--font-weight-normal));
 
-  --ex-gap-x: var(--ex-list-gap-x-lg, calc(var(--spacing) * 3));
+  --ex-gap-x: var(--ex-list-gap-x-lg, calc(var(--spacing) * 2.5));
   --ex-gap-y: var(--ex-list-gap-y-lg, calc(var(--spacing) * 1));
 }
 
@@ -1825,14 +1817,14 @@
 @utility menubar-sm {
   --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
 
-  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 1.5));
+  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
 
-    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 2));
 
     --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
@@ -1845,10 +1837,10 @@
   --ex-shadow: var(--ex-menubar-content-shadow-sm, var(--shadow-sm));
 
   .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 2));
     --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 2));
   }
 
   .ex-menubar-item,
@@ -1882,14 +1874,14 @@
 @utility menubar-md {
   --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2));
+  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 3));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.5));
+    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 2.5));
 
     --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
@@ -1902,7 +1894,7 @@
   --ex-shadow: var(--ex-menubar-content-shadow-md, var(--shadow-sm));
 
   .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2));
+    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2.5));
     --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2.5));
 
     --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 2.5));
@@ -1913,8 +1905,8 @@
   .ex-menubar-sub-trigger,
   .ex-menubar-radio-item,
   .ex-menubar-checkbox-item {
-    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1.25));
     --ex-font-size: var(--ex-menubar-item-font-size-md, var(--text-sm));
   }
 
@@ -1973,46 +1965,30 @@
 }
 
 @utility nav-button-sm {
-  --ex-px: var(--ex-nav-button-px-sm, calc(var(--spacing) * 3.5));
+  --ex-px: var(--ex-nav-button-px-sm, calc(var(--spacing) * 2.5));
   --ex-py: var(--ex-nav-button-py-sm, calc(var(--spacing) * 2.5));
-  --ex-gap-y: var(--ex-nav-button-gap-x-sm, calc(var(--spacing) * 1.75));
+
+  --ex-gap-y: var(--ex-nav-button-gap-y-sm, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-nav-button-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-nav-button-font-size-sm, var(--text-xs));
 }
 
 @utility nav-button-md {
-  --ex-px: var(--ex-nav-button-px-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-nav-button-px-md, calc(var(--spacing) * 3));
   --ex-py: var(--ex-nav-button-py-md, calc(var(--spacing) * 3));
-  --ex-gap-y: var(--ex-nav-button-gap-x-md, calc(var(--spacing) * 2));
+
+  --ex-gap-y: var(--ex-nav-button-gap-y-md, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-nav-button-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-nav-button-font-size-md, var(--text-sm));
-}
-
-@utility nav-button-lg {
-  --ex-px: var(--ex-nav-button-px-lg, calc(var(--spacing) * 4.5));
-  --ex-py: var(--ex-nav-button-py-lg, calc(var(--spacing) * 3.5));
-  --ex-gap-y: var(--ex-nav-button-gap-x-lg, calc(var(--spacing) * 2.25));
-
-  --ex-radius: var(--ex-nav-button-radius-lg, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-button-font-size-lg, var(--text-base));
-}
-
-@utility nav-button-xl {
-  --ex-px: var(--ex-nav-button-px-xl, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-nav-button-py-xl, calc(var(--spacing) * 4));
-  --ex-gap-y: var(--ex-nav-button-gap-x-xl, calc(var(--spacing) * 2.5));
-
-  --ex-radius: var(--ex-nav-button-radius-xl, var(--radius-sm));
-  --ex-font-size: var(--ex-nav-button-font-size-xl, var(--text-lg));
 }
 
 @utility nav-link-sm {
   --ex-height: var(--ex-nav-link-height-sm, var(--ex-size-xl));
 
   --ex-px: var(--ex-nav-link-px-sm, calc(var(--spacing) * 3.5));
-  --ex-gap-x: var(--ex-nav-link-gap-x-sm, calc(var(--spacing) * 1.75));
+  --ex-gap-x: var(--ex-nav-link-gap-x-sm, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-nav-link-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-nav-link-font-size-sm, var(--text-xs));
@@ -2052,8 +2028,8 @@
   --ex-spacer: var(--ex-navigation-menu-spacer-sm, calc(var(--spacing) * 2));
   --ex-height: var(--ex-navigation-menu-height-sm, var(--ex-size-2xl));
 
-  --ex-px: var(--ex-navigation-menu-px-sm, calc(var(--spacing) * 1.5));
-  --ex-py: var(--ex-navigation-menu-py-sm, calc(var(--spacing) * 1.5));
+  --ex-px: var(--ex-navigation-menu-px-sm, calc(var(--spacing) * 2));
+  --ex-py: var(--ex-navigation-menu-py-sm, calc(var(--spacing) * 2));
 
   --ex-gap-x: var(--ex-navigation-menu-gap-x-sm, calc(var(--spacing) * 1));
   --ex-gap-y: var(--ex-navigation-menu-gap-y-sm, calc(var(--spacing) * 1));
@@ -2063,8 +2039,8 @@
   .ex-navigation-menu-item {
     --ex-height: var(--ex-navigation-menu-item-height-sm, var(--ex-size-md));
 
-    --ex-px: var(--ex-navigation-menu-item-px-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-sm, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-navigation-menu-item-px-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-sm, calc(var(--spacing) * 2));
 
     --ex-radius: var(--ex-navigation-menu-item-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-navigation-menu-item-font-size-sm, var(--text-xs));
@@ -2078,10 +2054,10 @@
   }
 
   .ex-navigation-menu-section {
-    --ex-px: var(--ex-navigation-menu-section-px-sm, calc(var(--spacing) * 3));
-    --ex-py: var(--ex-navigation-menu-section-py-sm, calc(var(--spacing) * 3));
+    --ex-px: var(--ex-navigation-menu-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-navigation-menu-section-py-sm, calc(var(--spacing) * 4));
 
-    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-sm, calc(var(--spacing) * 2));
     --ex-gap-y: var(--ex-navigation-menu-section-gap-y-sm, calc(var(--spacing) * 2));
   }
 
@@ -2091,22 +2067,22 @@
 }
 
 @utility navigation-menu-md {
-  --ex-spacer: var(--ex-navigation-menu-spacer-md, calc(var(--spacing) * 3));
+  --ex-spacer: var(--ex-navigation-menu-spacer-md, calc(var(--spacing) * 2.5));
   --ex-height: var(--ex-navigation-menu-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-navigation-menu-px-md, calc(var(--spacing) * 2));
-  --ex-py: var(--ex-navigation-menu-py-md, calc(var(--spacing) * 2));
+  --ex-px: var(--ex-navigation-menu-px-md, calc(var(--spacing) * 2.5));
+  --ex-py: var(--ex-navigation-menu-py-md, calc(var(--spacing) * 2.5));
 
-  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 2));
-  --ex-gap-y: var(--ex-navigation-menu-gap-y-md, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 1.25));
+  --ex-gap-y: var(--ex-navigation-menu-gap-y-md, calc(var(--spacing) * 1.25));
 
   --ex-radius: var(--ex-navigation-menu-radius-md, var(--radius-sm));
 
   .ex-navigation-menu-item {
     --ex-height: var(--ex-navigation-menu-item-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-navigation-menu-item-px-md, calc(var(--spacing) * 3));
-    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 1.5));
+    --ex-px: var(--ex-navigation-menu-item-px-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 2.5));
 
     --ex-radius: var(--ex-navigation-menu-item-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-navigation-menu-item-font-size-md, var(--text-sm));
@@ -2120,11 +2096,11 @@
   }
 
   .ex-navigation-menu-section {
-    --ex-px: var(--ex-navigation-menu-section-px-md, calc(var(--spacing) * 4));
-    --ex-py: var(--ex-navigation-menu-section-py-md, calc(var(--spacing) * 4));
+    --ex-px: var(--ex-navigation-menu-section-px-md, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-navigation-menu-section-py-md, calc(var(--spacing) * 5));
 
-    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-md, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-navigation-menu-indicator {
@@ -2171,29 +2147,29 @@
 @utility pin-input-sm {
   --ex-size: var(--ex-pin-input-size-sm, var(--ex-size-xl));
 
-  --ex-gap-x: var(--ex-pin-input-gap-x-sm, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-pin-input-gap-x-sm, calc(var(--spacing) * 1.5));
 
   --ex-font-size: var(--ex-pin-input-font-size-sm, var(--text-xs));
   --ex-radius: var(--ex-pin-input-radius-sm, var(--radius-sm));
 
-  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-sm, var(--text-2xs));
+  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-sm, var(--text-xs));
 }
 
 @utility pin-input-md {
   --ex-size: var(--ex-pin-input-size-md, var(--ex-size-2xl));
 
-  --ex-gap-x: var(--ex-pin-input-gap-x-md, calc(var(--spacing) * 1.25));
+  --ex-gap-x: var(--ex-pin-input-gap-x-md, calc(var(--spacing) * 2));
 
   --ex-radius: var(--ex-pin-input-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-pin-input-font-size-md, var(--text-sm));
 
-  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-md, var(--text-xs));
+  --ex-placeholder-font-size: var(--ex-pin-input-placeholder-font-size-md, var(--text-sm));
 }
 
 @utility pin-input-lg {
   --ex-size: var(--ex-pin-input-size-lg, var(--ex-size-3xl));
 
-  --ex-gap-x: var(--ex-pin-input-gap-x-lg, calc(var(--spacing) * 1.5));
+  --ex-gap-x: var(--ex-pin-input-gap-x-lg, calc(var(--spacing) * 2.5));
 
   --ex-radius: var(--ex-pin-input-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-pin-input-font-size-lg, var(--text-base));
@@ -2240,7 +2216,7 @@
     --ex-py: var(--ex-popover-section-py-md, calc(var(--spacing) * 5));
 
     --ex-gap-x: var(--ex-popover-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-popover-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-popover-section-gap-y-md, calc(var(--spacing) * 2.5));
   }
 
   .ex-popover-title {
@@ -2326,8 +2302,8 @@
 }
 
 @utility radio-card-sm {
-  --ex-px: var(--ex-radio-card-px-sm, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-radio-card-py-sm, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-radio-card-px-sm, calc(var(--spacing) * 3.5));
+  --ex-py: var(--ex-radio-card-py-sm, calc(var(--spacing) * 3.5));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-radio-card-radius-sm, var(--radius-sm));
@@ -2363,8 +2339,8 @@
 }
 
 @utility radio-card-md {
-  --ex-px: var(--ex-radio-card-px-md, calc(var(--spacing) * 5));
-  --ex-py: var(--ex-radio-card-py-md, calc(var(--spacing) * 5));
+  --ex-px: var(--ex-radio-card-px-md, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-radio-card-py-md, calc(var(--spacing) * 4));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-radio-card-radius-md, var(--radius-sm));
@@ -2387,7 +2363,7 @@
 
   .ex-radio-card-content {
     --ex-gap-x: var(--ex-radio-card-content-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-radio-card-content-gap-y-md, calc(var(--spacing) * 1));
+    --ex-gap-y: var(--ex-radio-card-content-gap-y-md, calc(var(--spacing) * 1.25));
   }
 
   .ex-radio-card-label {
@@ -2400,8 +2376,8 @@
 }
 
 @utility radio-card-lg {
-  --ex-px: var(--ex-radio-card-px-lg, calc(var(--spacing) * 6));
-  --ex-py: var(--ex-radio-card-py-lg, calc(var(--spacing) * 6));
+  --ex-px: var(--ex-radio-card-px-lg, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-radio-card-py-lg, calc(var(--spacing) * 5));
 
   --ex-gap-x: var(--ex-radio-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-radio-card-radius-lg, var(--radius-sm));
@@ -2424,7 +2400,7 @@
 
   .ex-radio-card-content {
     --ex-gap-x: var(--ex-radio-card-content-gap-x-lg, calc(var(--spacing) * 3));
-    --ex-gap-y: var(--ex-radio-card-content-gap-y-lg, calc(var(--spacing) * 1));
+    --ex-gap-y: var(--ex-radio-card-content-gap-y-lg, calc(var(--spacing) * 1.5));
   }
 
   .ex-radio-card-label {
@@ -2437,7 +2413,7 @@
 }
 
 @utility radio-group-sm {
-  --ex-gap-y: var(--ex-field-gap-y-sm, calc(var(--spacing) * 2));
+  --ex-gap-y: var(--ex-radio-group-gap-y-sm, calc(var(--spacing) * 1.5));
 
   .ex-radio,
   .ex-radio-card-indicator {
@@ -2450,7 +2426,7 @@
 }
 
 @utility radio-group-md {
-  --ex-gap-y: var(--ex-field-gap-y-md, calc(var(--spacing) * 2));
+  --ex-gap-y: var(--ex-radio-group-gap-y-md, calc(var(--spacing) * 2));
 
   .ex-radio,
   .ex-radio-card-indicator {
@@ -2463,7 +2439,7 @@
 }
 
 @utility radio-group-lg {
-  --ex-gap-y: var(--ex-field-gap-y-lg, calc(var(--spacing) * 2));
+  --ex-gap-y: var(--ex-radio-group-gap-y-lg, calc(var(--spacing) * 2.5));
 
   .ex-radio,
   .ex-radio-card-indicator {
@@ -2588,15 +2564,15 @@
 
   .ex-select-section {
     --ex-px: var(--ex-select-content-section-px-sm, calc(var(--spacing) * 1.5));
-    --ex-py: var(--ex-select-content-section-py-sm, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-select-content-section-py-sm, calc(var(--spacing) * 1.5));
 
-    --ex-gap-y: var(--ex-select-section-gap-y-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-select-content-section-gap-y-sm, calc(var(--spacing) * 1.5));
   }
 
   .ex-select-item,
   .ex-select-label {
-    --ex-px: var(--ex-select-content-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-select-content-item-py-sm, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-select-content-item-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-select-content-item-py-sm, calc(var(--spacing) * 0.75));
     --ex-font-size: var(--ex-select-content-item-font-size-sm, var(--text-xs));
   }
 
@@ -2624,9 +2600,9 @@
 
   .ex-select-section {
     --ex-px: var(--ex-select-content-section-px-md, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-select-content-section-py-md, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-select-content-section-py-md, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-select-section-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-select-content-section-gap-y-md, calc(var(--spacing) * 2));
   }
 
   .ex-select-item,
@@ -2660,15 +2636,15 @@
 
   .ex-select-section {
     --ex-px: var(--ex-select-content-section-px-lg, calc(var(--spacing) * 2.5));
-    --ex-py: var(--ex-select-content-section-py-lg, calc(var(--spacing) * 3));
+    --ex-py: var(--ex-select-content-section-py-lg, calc(var(--spacing) * 2.5));
 
-    --ex-gap-y: var(--ex-select-section-gap-y-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-select-content-section-gap-y-lg, calc(var(--spacing) * 2.5));
   }
 
   .ex-select-item,
   .ex-select-label {
-    --ex-px: var(--ex-select-content-item-px-lg, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-select-content-item-py-lg, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-select-content-item-px-lg, calc(var(--spacing) * 2.5));
+    --ex-py: var(--ex-select-content-item-py-lg, calc(var(--spacing) * 1.25));
     --ex-font-size: var(--ex-select-content-item-font-size-lg, var(--text-base));
   }
 
@@ -2831,8 +2807,8 @@
 
   .ex-table-cell,
   .ex-table-header {
-    --ex-px: var(--ex-table-cell-px-sm, calc(var(--spacing) * 3));
-    --ex-py: var(--ex-table-cell-py-sm, calc(var(--spacing) * 3));
+    --ex-px: var(--ex-table-cell-px-sm, calc(var(--spacing) * 3.5));
+    --ex-py: var(--ex-table-cell-py-sm, calc(var(--spacing) * 3.5));
   }
 
   .ex-table-caption {
@@ -2922,7 +2898,7 @@
   .ex-tabs-trigger {
     --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-2xl));
 
-    --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3));
+    --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3.5));
     --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.5));
 
     --ex-radius: var(--ex-tabs-trigger-radius-sm, var(--radius-sm));
@@ -3002,8 +2978,8 @@
 @utility toast-sm {
   --ex-max-width: var(--ex-toast-max-width-sm, var(--container-3xs));
 
-  --ex-px: var(--ex-toast-px-sm, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-toast-py-sm, calc(var(--spacing) * 3));
+  --ex-px: var(--ex-toast-px-sm, calc(var(--spacing) * 4));
+  --ex-py: var(--ex-toast-py-sm, calc(var(--spacing) * 4));
 
   --ex-gap-x: var(--ex-toast-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-toast-radius-sm, var(--radius-sm));
@@ -3026,8 +3002,8 @@
   }
 
   .ex-toast-content {
-    --ex-gap-x: var(--ex-toast-content-gap-x-sm, calc(var(--spacing) * 1.5));
-    --ex-gap-y: var(--ex-toast-content-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-toast-content-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-toast-content-gap-y-sm, calc(var(--spacing) * 1));
   }
 
   .ex-toast-title {
@@ -3044,8 +3020,8 @@
 @utility toast-md {
   --ex-max-width: var(--ex-toast-max-width-md, var(--container-2xs));
 
-  --ex-px: var(--ex-toast-px-md, calc(var(--spacing) * 4));
-  --ex-py: var(--ex-toast-py-md, calc(var(--spacing) * 4));
+  --ex-px: var(--ex-toast-px-md, calc(var(--spacing) * 5));
+  --ex-py: var(--ex-toast-py-md, calc(var(--spacing) * 5));
 
   --ex-gap-x: var(--ex-toast-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-toast-radius-md, var(--radius-sm));
@@ -3068,8 +3044,8 @@
   }
 
   .ex-toast-content {
-    --ex-gap-x: var(--ex-toast-content-gap-x-md, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-toast-content-gap-y-md, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-toast-content-gap-x-md, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-toast-content-gap-y-md, calc(var(--spacing) * 1.25));
   }
 
   .ex-toast-title {
@@ -3085,7 +3061,7 @@
 
 @utility tooltip-content-sm {
   --ex-max-width: var(--ex-tooltip-max-width-sm, var(--container-3xs));
-  --ex-gap-x: var(--ex-tooltip-gap-x-sm, calc(var(--spacing) * 0.75));
+  --ex-gap-x: var(--ex-tooltip-gap-x-sm, calc(var(--spacing) * 1));
 
   --ex-px: var(--ex-tooltip-px-sm, calc(var(--spacing) * 1.5));
   --ex-py: var(--ex-tooltip-py-sm, calc(var(--spacing) * 0.5));
@@ -3102,7 +3078,7 @@
 
 @utility tooltip-content-md {
   --ex-max-width: var(--ex-tooltip-max-width-md, var(--container-xs));
-  --ex-gap-x: var(--ex-tooltip-gap-x-md, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-tooltip-gap-x-md, calc(var(--spacing) * 1.5));
 
   --ex-px: var(--ex-tooltip-px-md, calc(var(--spacing) * 2));
   --ex-py: var(--ex-tooltip-py-md, calc(var(--spacing) * 1));

@@ -10,9 +10,14 @@ import {
   checkboxCardLabelCfg,
 } from './checkbox-card';
 
+import {
+  CheckboxCardControlledExample,
+  CheckboxCardUncontrolledExample,
+} from './examples/checkbox-card-example';
+
 export const Component = (
   <CheckboxCard>
-    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Indicator />
     <CheckboxCard.Content>
       <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
       <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
@@ -22,7 +27,7 @@ export const Component = (
 
 export const ComponentDisabled = (
   <CheckboxCard className='disabled'>
-    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Indicator />
     <CheckboxCard.Content>
       <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
       <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
@@ -32,7 +37,7 @@ export const ComponentDisabled = (
 
 export const VariantComponent = (
   <CheckboxCard className='flex-1'>
-    <CheckboxCard.Indicator aria-label='Accept terms' />
+    <CheckboxCard.Indicator />
     <CheckboxCard.Content>
       <CheckboxCard.Label>Accept</CheckboxCard.Label>
       <CheckboxCard.Description>Agree terms</CheckboxCard.Description>
@@ -63,6 +68,61 @@ export const Wrapper = ({ children }) => children;
   disabled
 />
 
+## Controlled
+
+Use the `checked` and `onCheckedChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <CheckboxCardControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <CheckboxCard
+        checked={checked}
+        onCheckedChange={(value) => setChecked(value === true)}
+      >
+        <CheckboxCard.Indicator />
+        <CheckboxCard.Content>
+          <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+          <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
+        </CheckboxCard.Content>
+      </CheckboxCard>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <CheckboxCardUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('checkbox-card'));
+  }}>
+    <CheckboxCard name="checkbox-card">
+      <CheckboxCard.Indicator />
+      <CheckboxCard.Content>
+        <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+        <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
+      </CheckboxCard.Content>
+    </CheckboxCard>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
 ## Sizes
 
 <Size
@@ -89,29 +149,24 @@ export const Wrapper = ({ children }) => children;
 :root {
   --ex-checkbox-card-cursor: default;
 
-  --ex-checkbox-card-gap-x-sm: calc(var(--spacing * 2));
-  --ex-checkbox-card-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-checkbox-card-gap-x-lg: calc(var(--spacing * 3));
+  --ex-checkbox-card-gap-x-sm: calc(var(--spacing) * 2);  --ex-checkbox-card-gap-x-md: calc(var(--spacing) * 2.);
+  --ex-checkbox-card-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-checkbox-card-px-sm: calc(var(--spacing * 4));
-  --ex-checkbox-card-px-md: calc(var(--spacing * 5));
-  --ex-checkbox-card-px-lg: calc(var(--spacing * 6));
+  --ex-checkbox-card-px-sm: calc(var(--spacing) * 3.);
+  --ex-checkbox-card-px-md: calc(var(--spacing) * 4);  --ex-checkbox-card-px-lg: calc(var(--spacing) * 5);
 
-  --ex-checkbox-card-py-sm: calc(var(--spacing * 4));
-  --ex-checkbox-card-py-md: calc(var(--spacing * 5));
-  --ex-checkbox-card-py-lg: calc(var(--spacing * 6));
+  --ex-checkbox-card-py-sm: calc(var(--spacing) * 3.);
+  --ex-checkbox-card-py-md: calc(var(--spacing) * 4);  --ex-checkbox-card-py-lg: calc(var(--spacing) * 5);
 
   --ex-checkbox-card-radius-sm: var(--radius-sm);
   --ex-checkbox-card-radius-md: var(--radius-sm);
   --ex-checkbox-card-radius-lg: var(--radius-sm);
 
-  --ex-checkbox-card-content-gap-x-sm: calc(var(--spacing * 2));
-  --ex-checkbox-card-content-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-checkbox-card-content-gap-x-lg: calc(var(--spacing * 3));
+  --ex-checkbox-card-content-gap-x-sm: calc(var(--spacing) * 2);  --ex-checkbox-card-content-gap-x-md: calc(var(--spacing) * 2.);
+  --ex-checkbox-card-content-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-checkbox-card-content-gap-y-sm: calc(var(--spacing * 1));
-  --ex-checkbox-card-content-gap-y-md: calc(var(--spacing * 1));
-  --ex-checkbox-card-content-gap-y-lg: calc(var(--spacing * 1));
+  --ex-checkbox-card-content-gap-y-sm: calc(var(--spacing) * 1);  --ex-checkbox-card-content-gap-y-md: calc(var(--spacing) * 1.5);
+  --ex-checkbox-card-content-gap-y-lg: calc(var(--spacing) * 1.);
 
   --ex-checkbox-card-label-font-family: var(--font-sans);
   --ex-checkbox-card-label-font-weight: var(--font-weight-medium);

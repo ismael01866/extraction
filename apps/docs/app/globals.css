@@ -252,8 +252,6 @@ p + .x-container {
 /** ──────────────────────────── */
 
 .nextra-sidebar {
-  @apply w-48;
-
   ul:first-of-type > li {
     @apply mbs-4;
 

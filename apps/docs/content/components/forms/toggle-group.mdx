@@ -4,6 +4,11 @@ import { LuAlignCenter, LuAlignLeft, LuAlignRight } from 'react-icons/lu';
 import data from '../data.json';
 import { toggleGroupCfg, toggleGroupItemCfg } from './toggle-group';
 
+import {
+  ToggleGroupControlledExample,
+  ToggleGroupUncontrolledExample,
+} from './examples/toggle-group-example';
+
 export const Component = (
   <ToggleGroup type='single'>
     <Group>
@@ -169,6 +174,106 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <ToggleGroupControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState<string | string[]>('');
+    return (
+      <ToggleGroup
+        type="single"
+        value={value}
+        onValueChange={(value: string | string[]) => setValue(value)}
+      >
+        <Group>
+          <ToggleGroup.Item value={'item-1'} asChild>
+            <IconButton
+              className={\`variant-outline data-[state='on']:variant-solid\`}
+              aria-label="align left"
+            >
+              <LuAlignLeft />
+            </IconButton>
+          </ToggleGroup.Item>
+          <ToggleGroup.Item value={'item-2'} asChild>
+            <IconButton
+              className={\`variant-outline data-[state='on']:variant-solid\`}
+              aria-label="align center"
+            >
+              <LuAlignCenter />
+            </IconButton>
+          </ToggleGroup.Item>
+          <ToggleGroup.Item value={'item-3'} asChild>
+            <IconButton
+              className={\`variant-outline data-[state='on']:variant-solid\`}
+              aria-label="align right"
+            >
+              <LuAlignRight />
+            </IconButton>
+          </ToggleGroup.Item>
+        </Group>
+      </ToggleGroup>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <ToggleGroupUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('toggle-group'));
+  }}>
+    <ToggleGroup type="single" name="toggle-group">
+      <Group>
+        <ToggleGroup.Item value={'item-1'} asChild>
+          <IconButton
+            className={\`variant-outline data-[state='on']:variant-solid\`}
+            aria-label="align left"
+          >
+            <LuAlignLeft />
+          </IconButton>
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value={'item-2'} asChild>
+          <IconButton
+            className={\`variant-outline data-[state='on']:variant-solid\`}
+            aria-label="align center"
+          >
+            <LuAlignCenter />
+          </IconButton>
+        </ToggleGroup.Item>
+        <ToggleGroup.Item value={'item-3'} asChild>
+          <IconButton
+            className={\`variant-outline data-[state='on']:variant-solid\`}
+            aria-label="align right"
+          >
+            <LuAlignRight />
+          </IconButton>
+        </ToggleGroup.Item>
+      </Group>
+    </ToggleGroup>
+
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+
+  </form>`}
 />
 
 ## API

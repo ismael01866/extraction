@@ -22,6 +22,8 @@ import {
   selectViewportCfg,
 } from './select';
 
+import { SelectControlledExample, SelectUncontrolledExample } from './examples/select-example';
+
 export const Component = (
   <Select>
     <Select.Trigger className='w-64' aria-label='Select an option'>
@@ -35,11 +37,11 @@ export const Component = (
           <Select.Section>
             <Select.Group>
               <Select.Label>Group 1</Select.Label>
-              <Select.Item value='op1'>
+              <Select.Item value='opt-1'>
                 <Select.ItemText>Option 1</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
-              <Select.Item value='op2'>
+              <Select.Item value='opt-2'>
                 <Select.ItemText>Option 2</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
@@ -47,11 +49,11 @@ export const Component = (
             <Select.Separator />
             <Select.Group>
               <Select.Label>Group 2</Select.Label>
-              <Select.Item value='op3'>
+              <Select.Item value='opt-3'>
                 <Select.ItemText>Option 1</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
-              <Select.Item value='op4'>
+              <Select.Item value='opt-4'>
                 <Select.ItemText>Option 2</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
@@ -65,7 +67,7 @@ export const Component = (
 );
 
 export const ComponentValid = (
-  <Select value='op1'>
+  <Select value='opt-1'>
     <Select.Trigger className='valid w-64' aria-label='Select an option'>
       <Select.Value placeholder='Select an option' />
       <Select.Icon />
@@ -74,7 +76,7 @@ export const ComponentValid = (
       <Select.Content>
         <Select.Viewport>
           <Select.Section>
-            <Select.Item value='op1'>
+            <Select.Item value='opt-1'>
               <Select.ItemText>Option 1</Select.ItemText>
             </Select.Item>
           </Select.Section>
@@ -94,7 +96,7 @@ export const ComponentInvalid = (
       <Select.Content>
         <Select.Viewport>
           <Select.Section>
-            <Select.Item value='op1'>
+            <Select.Item value='opt-1'>
               <Select.ItemText>Option 1</Select.ItemText>
             </Select.Item>
           </Select.Section>
@@ -114,7 +116,7 @@ export const ComponentDisabled = (
       <Select.Content>
         <Select.Viewport>
           <Select.Section>
-            <Select.Item value='op1'>
+            <Select.Item value='opt-1'>
               <Select.ItemText>Option 1</Select.ItemText>
               <Select.ItemIndicator />
             </Select.Item>
@@ -135,11 +137,11 @@ export const ComponentDisabledItem = (
       <Select.Content>
         <Select.Viewport>
           <Select.Section>
-            <Select.Item value='op1' disabled>
+            <Select.Item value='opt-1' disabled>
               <Select.ItemText>Option 1</Select.ItemText>
               <Select.ItemIndicator />
             </Select.Item>
-            <Select.Item value='op2'>
+            <Select.Item value='opt-2'>
               <Select.ItemText>Option 2</Select.ItemText>
               <Select.ItemIndicator />
             </Select.Item>
@@ -162,11 +164,11 @@ export const SizeComponent = ({ size }) => (
           <Select.Section>
             <Select.Group>
               <Select.Label>Group 1</Select.Label>
-              <Select.Item value='op1'>
+              <Select.Item value='opt-1'>
                 <Select.ItemText>Option 1</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
-              <Select.Item value='op2'>
+              <Select.Item value='opt-2'>
                 <Select.ItemText>Option 2</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
@@ -193,11 +195,11 @@ export const VariantComponent = ({ color, variant }) => (
           <Select.Section>
             <Select.Group>
               <Select.Label>Group 1</Select.Label>
-              <Select.Item value='op1'>
+              <Select.Item value='opt-1'>
                 <Select.ItemText>Option 1</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
-              <Select.Item value='op2'>
+              <Select.Item value='opt-2'>
                 <Select.ItemText>Option 2</Select.ItemText>
                 <Select.ItemIndicator />
               </Select.Item>
@@ -260,6 +262,88 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   invalid
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <SelectControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState('');
+    return (
+      <Select value={value} onValueChange={setValue}>
+        <Select.Trigger className="w-64" aria-label="Select an option">
+          <Select.Value placeholder="Select an option" />
+          <Select.Icon />
+        </Select.Trigger>
+        <Select.Portal>
+          <Select.Content>
+            <Select.Viewport>
+              <Select.Section>
+                <Select.Item value="opt-1">
+                  <Select.ItemText>Option 1</Select.ItemText>
+                  <Select.ItemIndicator />
+                </Select.Item>
+                <Select.Item value="opt-2">
+                  <Select.ItemText>Option 2</Select.ItemText>
+                  <Select.ItemIndicator />
+                </Select.Item>
+              </Select.Section>
+            </Select.Viewport>
+          </Select.Content>
+        </Select.Portal>
+      </Select>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <SelectUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('select'));
+  }}>
+    <Select name="select">
+      <Select.Trigger className="w-64" aria-label="Select an option">
+        <Select.Value placeholder="Select an option" />
+        <Select.Icon />
+      </Select.Trigger>
+      <Select.Portal>
+        <Select.Content>
+          <Select.Viewport>
+            <Select.Section>
+              <Select.Item value="opt-1">
+                <Select.ItemText>Option 1</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+              <Select.Item value="opt-2">
+                <Select.ItemText>Option 2</Select.ItemText>
+                <Select.ItemIndicator />
+              </Select.Item>
+            </Select.Section>
+          </Select.Viewport>
+        </Select.Content>
+      </Select.Portal>
+    </Select>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes
@@ -325,15 +409,15 @@ Use the <code className='nextra-code'>`select-{slot}-{size}`</code> class to con
   --ex-select-content-shadow-md: var(--shadow-sm);
   --ex-select-content-shadow-lg: var(--shadow-sm);
 
-  --ex-select-content-section-gap-x-sm: calc(var(--spacing) * 1.5);
-  --ex-select-content-section-gap-x-md: calc(var(--spacing) * 2);
-  --ex-select-content-section-gap-x-lg: calc(var(--spacing) * 2.5);
+  --ex-select-content-section-gap-y-sm: calc(var(--spacing) * 1.5);
+  --ex-select-content-section-gap-y-md: calc(var(--spacing) * 2);
+  --ex-select-content-section-gap-y-lg: calc(var(--spacing) * 2.5);
 
   --ex-select-content-section-px-sm: calc(var(--spacing) * 1.5);
   --ex-select-content-section-px-md: calc(var(--spacing) * 2);
   --ex-select-content-section-px-lg: calc(var(--spacing) * 2.5);
 
-  --ex-select-content-section-py-sm: calc(var(--spacing) * 2);
+  --ex-select-content-section-py-sm: calc(var(--spacing) * 1.5);
   --ex-select-content-section-py-md: calc(var(--spacing) * 2.5);
   --ex-select-content-section-py-lg: calc(var(--spacing) * 3);
 
@@ -344,13 +428,13 @@ Use the <code className='nextra-code'>`select-{slot}-{size}`</code> class to con
   --ex-select-content-item-font-size-md: var(--text-sm);
   --ex-select-content-item-font-size-lg: var(--text-sm);
 
-  --ex-select-content-item-px-sm: calc(var(--spacing) * 2);
+  --ex-select-content-item-px-sm: calc(var(--spacing) * 1.5);
   --ex-select-content-item-px-md: calc(var(--spacing) * 2);
-  --ex-select-content-item-px-lg: calc(var(--spacing) * 2);
+  --ex-select-content-item-px-lg: calc(var(--spacing) * 2.5);
 
-  --ex-select-content-item-py-sm: calc(var(--spacing) * 1);
+  --ex-select-content-item-py-sm: calc(var(--spacing) * 0.75);
   --ex-select-content-item-py-md: calc(var(--spacing) * 1);
-  --ex-select-content-item-py-lg: calc(var(--spacing) * 1);
+  --ex-select-content-item-py-lg: calc(var(--spacing) * 1.25);
 
   --ex-select-content-item-indicator-font-size-sm: var(--text-xs);
   --ex-select-content-item-indicator-font-size-md: var(--text-base);

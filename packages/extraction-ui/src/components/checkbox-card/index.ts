@@ -7,16 +7,16 @@ import {
 } from './checkbox-card';
 
 export type {
-  CheckboxCardRootProps,
   CheckboxCardContentProps,
+  CheckboxCardDescriptionProps,
   CheckboxCardIndicatorProps,
   CheckboxCardLabelProps,
-  CheckboxCardDescriptionProps,
+  CheckboxCardRootProps,
 } from './checkbox-card.types';
 
 export const CheckboxCard = Object.assign(CheckboxCardRoot, {
   Content: CheckboxCardContent,
-  Description: CheckboxCardDescription,
   Indicator: CheckboxCardIndicator,
   Label: CheckboxCardLabel,
+  Description: CheckboxCardDescription,
 });

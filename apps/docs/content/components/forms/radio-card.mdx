@@ -11,15 +11,20 @@ import {
   radioGroupCfg,
 } from './radio-card';
 
+import {
+  RadioCardControlledExample,
+  RadioCardUncontrolledExample,
+} from './examples/radio-card-example';
+
 export const Component = (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id='r1'>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id='r2'>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -30,7 +35,7 @@ export const Component = (
 
 export const ComponentDisabled = (
   <RadioGroup className='disabled' defaultValue='option-1'>
-    <RadioCard value='option-1' id='r1-d'>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
@@ -39,15 +44,15 @@ export const ComponentDisabled = (
   </RadioGroup>
 );
 
-export const SizeComponent = ({ size }) => (
+export const SizeComponent = () => (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id={`r1-${size}`}>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id={`r2-${size}`}>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -56,15 +61,15 @@ export const SizeComponent = ({ size }) => (
   </RadioGroup>
 );
 
-export const VariantComponent = ({ color, variant }) => (
+export const VariantComponent = () => (
   <RadioGroup defaultValue='option-1'>
-    <RadioCard value='option-1' id={`r1-${color}-${variant}`}>
+    <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 1</RadioCard.Label>
       </RadioCard.Content>
     </RadioCard>
-    <RadioCard value='option-2' id={`r2-${color}-${variant}`}>
+    <RadioCard value='option-2'>
       <RadioCard.Indicator />
       <RadioCard.Content>
         <RadioCard.Label>Option 2</RadioCard.Label>
@@ -96,6 +101,74 @@ export const Wrapper = ({ children }) => children;
   disabled
 />
 
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <RadioCardControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState('option-1');
+    return (
+      <RadioGroup value={value} onValueChange={(value) => setValue(value)}>
+        <RadioCard value="option-1">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 1</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+        <RadioCard value="option-2">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 2</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+      </RadioGroup>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <RadioCardUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('radio'));
+  }}>
+    <RadioGroup name="radio" defaultValue="option-1">
+      <RadioGroup name="radio-card" defaultValue="option-1">
+        <RadioCard value="option-1">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 1</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+        <RadioCard value="option-2">
+          <RadioCard.Indicator />
+          <RadioCard.Content>
+            <RadioCard.Label>Option 2</RadioCard.Label>
+          </RadioCard.Content>
+        </RadioCard>
+      </RadioGroup>
+    </RadioGroup>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
 ## Sizes
 
 <Size
@@ -122,29 +195,29 @@ export const Wrapper = ({ children }) => children;
 :root {
   --ex-radio-card-cursor: default;
 
-  --ex-radio-card-gap-x-sm: calc(var(--spacing * 2));
-  --ex-radio-card-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-radio-card-gap-x-lg: calc(var(--spacing * 3));
+  --ex-radio-card-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-radio-card-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-radio-card-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-radio-card-px-sm: --spacing(4);
-  --ex-radio-card-px-md: --spacing(5);
-  --ex-radio-card-px-lg: --spacing(6);
+  --ex-radio-card-px-sm: calc(var(--spacing) * 3.5);
+  --ex-radio-card-px-md: calc(var(--spacing) * 4);
+  --ex-radio-card-px-lg: calc(var(--spacing) * 5);
 
-  --ex-radio-card-py-sm: --spacing(4);
-  --ex-radio-card-py-md: --spacing(5);
-  --ex-radio-card-py-lg: --spacing(6);
+  --ex-radio-card-py-sm: calc(var(--spacing) * 3.5);
+  --ex-radio-card-py-md: calc(var(--spacing) * 4);
+  --ex-radio-card-py-lg: calc(var(--spacing) * 5);
 
   --ex-radio-card-radius-sm: var(--radius-sm);
   --ex-radio-card-radius-md: var(--radius-sm);
   --ex-radio-card-radius-lg: var(--radius-sm);
 
-  --ex-radio-card-content-gap-x-sm: calc(var(--spacing * 2));
-  --ex-radio-card-content-gap-x-md: calc(var(--spacing * 2.5));
-  --ex-radio-card-content-gap-x-lg: calc(var(--spacing * 3));
+  --ex-radio-card-content-gap-x-sm: calc(var(--spacing) * 2);
+  --ex-radio-card-content-gap-x-md: calc(var(--spacing) * 2.5);
+  --ex-radio-card-content-gap-x-lg: calc(var(--spacing) * 3);
 
-  --ex-radio-card-content-gap-y-sm: calc(var(--spacing * 1));
-  --ex-radio-card-content-gap-y-md: calc(var(--spacing * 1));
-  --ex-radio-card-content-gap-y-lg: calc(var(--spacing * 1));
+  --ex-radio-card-content-gap-y-sm: calc(var(--spacing) * 1);
+  --ex-radio-card-content-gap-y-md: calc(var(--spacing) * 1.25);
+  --ex-radio-card-content-gap-y-lg: calc(var(--spacing) * 1.5);
 
   --ex-radio-card-label-font-family: var(--font-sans);
   --ex-radio-card-label-font-weight: var(--font-weight-medium);

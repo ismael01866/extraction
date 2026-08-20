@@ -3,6 +3,8 @@ import { Switch } from 'extraction-ui';
 import data from '../data.json';
 import { cfg, switchCfg, switchThumbCfg } from './switch';
 
+import { SwitchControlledExample, SwitchUncontrolledExample } from './examples/switch-example';
+
 export const Component = (
   <Switch>
     <Switch.Thumb aria-label='switch thumb' />
@@ -48,6 +50,50 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+/>
+
+## Controlled
+
+Use the `checked` and `onCheckedChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <SwitchControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [checked, setChecked] = useState(false);
+    return (
+      <Switch checked={checked} onCheckedChange={(value) => setChecked(value === true)}>
+        <Switch.Thumb aria-label="switch thumb" />
+      </Switch>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <SwitchUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('switch'));
+  }}>
+    <Switch name="switch">
+      <Switch.Thumb aria-label="switch thumb" />
+    </Switch>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## Sizes

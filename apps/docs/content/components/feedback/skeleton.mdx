@@ -1,8 +1,8 @@
 import { HStack, Skeleton, VStack } from 'extraction-ui';
 
 import data from '../data.json';
+import { SkeletonExample } from './examples/skeleton-example';
 import { cfg } from './loader';
-import { SkeletonExample } from './skeleton-example';
 
 export const Component = (
   <VStack className='w-80'>
@@ -38,7 +38,7 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   serializedCode={`
-    const SkeletonExample = () => {
+    const Example = () => {
       const [loading, setLoading] = React.useState(true);
       return (
         <VStack className="w-80">

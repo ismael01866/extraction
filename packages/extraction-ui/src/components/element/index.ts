@@ -1,3 +1,3 @@
 export { Element } from './element';
 
-export type { ElementProps } from './element.types';
+export type { ElementProps, MergeElementProps } from './element.types';

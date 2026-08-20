@@ -4,6 +4,8 @@ import { LuMail } from 'react-icons/lu';
 import data from '../data.json';
 import { toggleCfg } from './toggle';
 
+import { ToggleControlledExample, ToggleUncontrolledExample } from './examples/toggle-example';
+
 export const Component = (
   <Toggle asChild>
     <IconButton
@@ -47,6 +49,60 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+/>
+
+## Controlled
+
+Use the `pressed` and `onPressedChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <ToggleControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [pressed, setPressed] = useState(false);
+    return (
+      <Toggle pressed={pressed} onPressedChange={(value) => setPressed(value)} asChild>
+        <IconButton
+          className={\`variant-outline data-[state='on']:variant-solid\`}
+          aria-label="toggle button"
+        >
+          <LuMail />
+        </IconButton>
+      </Toggle>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <ToggleUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('toggle'));
+  }}>
+    <Toggle name="toggle" asChild>
+      <IconButton
+        className={\`variant-outline data-[state='on']:variant-solid\`}
+        aria-label="toggle button"
+      >
+        <LuMail />
+      </IconButton>
+    </Toggle>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
 />
 
 ## API
