@@ -1817,14 +1817,14 @@
 @utility menubar-sm {
   --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
 
-  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 2));
+  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 1.5));
   --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
 
-    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 0.75));
 
     --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
@@ -1837,10 +1837,10 @@
   --ex-shadow: var(--ex-menubar-content-shadow-sm, var(--shadow-sm));
 
   .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 2));
+    --ex-px: var(--ex-menubar-section-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-menubar-section-py-sm, calc(var(--spacing) * 1.5));
 
-    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 1));
+    --ex-gap-y: var(--ex-menubar-section-gap-y-sm, calc(var(--spacing) * 0.75));
   }
 
   .ex-menubar-item,
@@ -1848,8 +1848,8 @@
   .ex-menubar-sub-trigger,
   .ex-menubar-radio-item,
   .ex-menubar-checkbox-item {
-    --ex-px: var(--ex-menubar-item-px-sm, calc(var(--spacing) * 2));
-    --ex-py: var(--ex-menubar-item-py-sm, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-menubar-item-px-sm, calc(var(--spacing) * 1.5));
+    --ex-py: var(--ex-menubar-item-py-sm, calc(var(--spacing) * 0.75));
     --ex-font-size: var(--ex-menubar-item-font-size-sm, var(--text-xs));
   }
 
@@ -1874,14 +1874,14 @@
 @utility menubar-md {
   --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2.5));
+  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1));
 
     --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
@@ -1894,10 +1894,10 @@
   --ex-shadow: var(--ex-menubar-content-shadow-md, var(--shadow-sm));
 
   .ex-menubar-section {
-    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2.5));
-    --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2.5));
+    --ex-px: var(--ex-menubar-section-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-menubar-section-py-md, calc(var(--spacing) * 2));
 
-    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 1.25));
+    --ex-gap-y: var(--ex-menubar-section-gap-y-md, calc(var(--spacing) * 1));
   }
 
   .ex-menubar-item,
@@ -1905,8 +1905,8 @@
   .ex-menubar-sub-trigger,
   .ex-menubar-radio-item,
   .ex-menubar-checkbox-item {
-    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2.5));
-    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-menubar-item-px-md, calc(var(--spacing) * 2));
+    --ex-py: var(--ex-menubar-item-py-md, calc(var(--spacing) * 1));
     --ex-font-size: var(--ex-menubar-item-font-size-md, var(--text-sm));
   }
 
