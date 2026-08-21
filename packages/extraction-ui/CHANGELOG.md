@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.5
+
+### Patch Changes
+
+- Added Rating component. Standarized padding and gap values across several components.
+
 ## 0.8.4
 
 ### Patch Changes
