@@ -7,3 +7,4 @@ export * from './HomeSectionMetrics';
 export * from './HomeSectionOpenSource';
 export * from './HomeSectionPanels';
 export * from './HomeSectionPanelsHero';
+export * from './HomeSectionStyling';

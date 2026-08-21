@@ -21,7 +21,7 @@ export function HomeSectionOpenSource() {
             href="https://github.com/ismael01866/extraction"
             target="_blank"
             rel="noopener noreferrer"
-            className="tonal-black text-fluid-base mbs-8 h-14 px-8"
+            className="tonal-black palette-neutral hover:shade-900 text-fluid-base mbs-8 h-14 px-8"
           >
             <Icon as={SiGithub} aria-label="github" />
             View on Github

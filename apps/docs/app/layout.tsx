@@ -48,6 +48,17 @@ const DOCUMENTATION = [
   },
 ];
 
+const DEVELOPERS = [
+  {
+    label: 'Installation',
+    href: '/get-started/overview/installation',
+  },
+  {
+    label: 'Frameworks',
+    href: '/get-started/frameworks/astro',
+  },
+];
+
 const ABOUT = [
   {
     label: 'Changelog',
@@ -109,7 +120,9 @@ const footer = (
 
       <Flex className="mb-8 hidden gap-20 sm:ms-auto sm:flex">
         <Stack className="gap-4">
-          <Title as={'div'}>Documentation</Title>
+          <Title as={'div'} className="title-sm">
+            Documentation
+          </Title>
           <List className="list-none gap-3">
             {DOCUMENTATION.map(({ label, href }, i) => (
               <List.Item key={i}>
@@ -120,7 +133,22 @@ const footer = (
         </Stack>
 
         <Stack className="gap-4">
-          <Title as={'div'}>About</Title>
+          <Title as={'div'} className="title-sm">
+            Developers
+          </Title>
+          <List className="list-none gap-3">
+            {DEVELOPERS.map(({ label, href }, i) => (
+              <List.Item key={i}>
+                <a href={href}>{label}</a>
+              </List.Item>
+            ))}
+          </List>
+        </Stack>
+
+        <Stack className="gap-4">
+          <Title as={'div'} className="title-sm">
+            About
+          </Title>
           <List className="list-none gap-3">
             {ABOUT.map(({ label, href }, i) => (
               <List.Item key={i}>

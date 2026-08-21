@@ -369,47 +369,9 @@
 /** ──────────────────────────── */
 
 @utility tonal-black {
-  --shade-soft: var(--color-black);
-  --shade-soft-dark: var(--color-white);
-
-  --shade-color: var(--color-black);
-  --shade-color-dark: var(--color-white);
-
-  --shade-foreground: var(--color-white);
-  --shade-foreground-dark: var(--color-black);
-
-  --shade-raised: color-mix(in oklch, var(--color-black) 75%, white);
-  --shade-raised-dark: color-mix(in oklch, var(--color-white) 85%, black);
-
-  --shade-deep: color-mix(in oklch, var(--color-black) 50%, white);
-  --shade-deep-dark: color-mix(in oklch, var(--color-white) 70%, black);
-
-  --shade-strong: color-mix(in oklch, var(--color-black) 35%, white);
-  --shade-strong-dark: color-mix(in oklch, var(--color-white) 55%, black);
-
-  --shade-bold: color-mix(in oklch, var(--color-black) 20%, white);
-  --shade-bold-dark: color-mix(in oklch, var(--color-white) 40%, black);
+  @apply bg-black text-white dark:bg-white dark:text-black;
 }
 
 @utility tonal-white {
-  --shade-soft: var(--color-white);
-  --shade-soft-dark: var(--color-black);
-
-  --shade-color: var(--color-white);
-  --shade-color-dark: var(--color-black);
-
-  --shade-foreground: var(--color-black);
-  --shade-foreground-dark: var(--color-white);
-
-  --shade-raised: color-mix(in oklch, var(--color-white) 85%, black);
-  --shade-raised-dark: color-mix(in oklch, var(--color-black) 75%, white);
-
-  --shade-deep: color-mix(in oklch, var(--color-white) 70%, black);
-  --shade-deep-dark: color-mix(in oklch, var(--color-black) 50%, white);
-
-  --shade-strong: color-mix(in oklch, var(--color-white) 55%, black);
-  --shade-strong-dark: color-mix(in oklch, var(--color-black) 35%, white);
-
-  --shade-bold: color-mix(in oklch, var(--color-white) 40%, black);
-  --shade-bold-dark: color-mix(in oklch, var(--color-black) 20%, white);
+  @apply bg-white text-black dark:bg-black dark:text-white;
 }

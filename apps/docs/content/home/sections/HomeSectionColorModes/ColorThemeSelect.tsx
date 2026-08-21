@@ -20,7 +20,7 @@ export const ColorThemeSelect = () => {
     <Select value={value} onValueChange={setValue}>
       <Select.Trigger
         aria-label="select-theme"
-        className="select-trigger-lg text-fluid-base variant-surface tonal-white hover:shade-50 h-14 px-8"
+        className="select-trigger-lg text-fluid-base variant-outline tonal-white h-14 px-8"
       >
         <HStack className="me-2 gap-0 -space-x-1.5">
           {selectedTheme?.colors.map((color, index) => (
