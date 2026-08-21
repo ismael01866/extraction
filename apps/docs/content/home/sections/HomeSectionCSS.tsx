@@ -39,7 +39,7 @@ export function HomeSectionCSS() {
           <Stack className="gap-4">
             <Display className="text-fluid">Set your design from CSS</Display>
             <Description className="text-fluid-xl">
-              Tune colors, spacing, measures, and more with CSS variables
+              Tune colors, spacing, measures, and more with CSS variables.
             </Description>
           </Stack>
         </MotionInView>

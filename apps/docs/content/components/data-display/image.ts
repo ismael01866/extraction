@@ -4,7 +4,7 @@ export const cfg = {
   class: 'image',
   sizes: sizeValues.filter((size) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'image',
-  variants: variantsValues,
+  variants: variantsValues.filter((variant) => !['plain'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

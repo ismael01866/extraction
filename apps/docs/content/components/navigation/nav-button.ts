@@ -6,7 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md'].includes(size as string)),
   sizeClass: 'nav-button',
-  variants: variantsValues,
+  variants: variantsValues.filter((variant) => !['plain'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

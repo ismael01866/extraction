@@ -1,4 +1,4 @@
-import { colorPaletteValues, sizeValues, variantsValues } from 'extraction-ui';
+import { colorPaletteValues, sizeValues } from 'extraction-ui';
 
 export const cfg = {
   class: 'tabs',
@@ -6,7 +6,6 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md'].includes(size as string)),
   sizeClass: 'tabs',
-  variants: variantsValues.filter((variant) => !['link'].includes(variant)),
 };
 
 export const tabsCfg = {

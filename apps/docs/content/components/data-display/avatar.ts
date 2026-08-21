@@ -6,7 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'avatar',
-  variants: variantsValues.filter((variant) => !['ghost', 'link'].includes(variant)),
+  variants: variantsValues.filter((variant) => !['plain', 'ghost', 'link'].includes(variant)),
 };
 
 export const avatarCfg = {

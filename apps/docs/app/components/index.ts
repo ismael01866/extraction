@@ -1,4 +1,5 @@
 export * from './base-container';
+export * from './client-code';
 export * from './code';
 export * from './code-container';
 export * from './code-copy-button';

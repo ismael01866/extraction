@@ -20,7 +20,7 @@ export function HomeSectionPanelsHero() {
       </MotionInView>
 
       <MotionInView className="delay-50">
-        <Button className="button-lg tonal-black text-fluid mbs-12 h-14 px-8">
+        <Button className="button-lg tonal-black hover:shade-900 palette-neutral text-fluid mbs-12 h-14 px-8">
           View all components
         </Button>
       </MotionInView>

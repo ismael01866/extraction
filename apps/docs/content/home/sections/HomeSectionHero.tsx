@@ -51,7 +51,7 @@ export function HomeSectionHero() {
             <Button
               as="a"
               href="/components/overview/introduction"
-              className="text-fluid-base tonal-black h-14 w-full px-8 sm:w-fit"
+              className="text-fluid-base tonal-black hover:shade-900 palette-neutral h-14 w-full px-8 sm:w-fit"
             >
               Explore Components
             </Button>

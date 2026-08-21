@@ -37,15 +37,13 @@ const FAQ = [
 export function HomeSectionFaq() {
   return (
     <Section>
-      <Grid className="grid-cols-1 gap-x-20 gap-y-8 lg:grid-cols-8">
-        <Stack className="gap-4 lg:col-span-2">
+      <Grid className="grid-cols-1 gap-x-40 gap-y-8 lg:grid-cols-8">
+        <Stack className="gap-4 lg:col-span-3">
           <Display className="text-fluid">FAQ</Display>
           <Description className="text-fluid-xl">
             Learn more about the library, its features, and how it works.
           </Description>
         </Stack>
-
-        <div></div>
 
         <div className="lg:col-span-5">
           <MotionInView>

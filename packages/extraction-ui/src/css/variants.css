@@ -64,11 +64,11 @@
   --text: contrast-color(var(--shade-soft));
   --text-dark: contrast-color(var(--shade-soft-dark));
 
-  --hover-text: contrast-color(var(--shade-soft));
-  --hover-text-dark: contrast-color(var(--shade-soft-dark));
+  --hover-text: contrast-color(var(--shade-color));
+  --hover-text-dark: contrast-color(var(--shade-color-dark));
 
-  --active-text: contrast-color(var(--shade-color));
-  --active-text-dark: contrast-color(var(--shade-color-dark));
+  --active-text: contrast-color(var(--shade-raised));
+  --active-text-dark: contrast-color(var(--shade-raised-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
@@ -172,11 +172,11 @@
   --text: contrast-color(var(--shade-soft));
   --text-dark: contrast-color(var(--shade-soft-dark));
 
-  --hover-text: contrast-color(var(--shade-soft));
-  --hover-text-dark: contrast-color(var(--shade-soft-dark));
+  --hover-text: contrast-color(var(--shade-color));
+  --hover-text-dark: contrast-color(var(--shade-color-dark));
 
-  --active-text: contrast-color(var(--shade-color));
-  --active-text-dark: contrast-color(var(--shade-color-dark));
+  --active-text: contrast-color(var(--shade-raised));
+  --active-text-dark: contrast-color(var(--shade-raised-dark));
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);

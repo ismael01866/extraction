@@ -60,7 +60,7 @@ export function HomeSectionFrameworks() {
               <div>
                 <IconButton
                   as={'a'}
-                  className="variant-surface tonal-white palette-neutral hover:shade-50 size-14 text-4xl sm:size-20"
+                  className="variant-outline tonal-white palette-neutral size-14 text-4xl sm:size-20"
                   onMouseEnter={() => setFramework(label)}
                   href={`/get-started/frameworks/${label.toLowerCase()}`}
                   aria-label={`icon-${label}`}

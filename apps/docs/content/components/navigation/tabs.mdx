@@ -100,15 +100,6 @@ export const ComponentDisabledItem = (
   </Tabs>
 );
 
-export const VariantComponent = (
-  <Tabs>
-    <Tabs.List>
-      <Tabs.Trigger value='tab1'>One</Tabs.Trigger>
-      <Tabs.Trigger value='tab2'>Two</Tabs.Trigger>
-    </Tabs.List>
-  </Tabs>
-);
-
 export const Wrapper = ({ children }) => children;
 
 # Tabs
@@ -148,16 +139,6 @@ export const Wrapper = ({ children }) => children;
   config={cfg}
   components={{
     usage: Component,
-    wrapper: Wrapper,
-  }}
-/>
-
-## Variants
-
-<Variants
-  config={cfg}
-  components={{
-    usage: VariantComponent,
     wrapper: Wrapper,
   }}
 />
