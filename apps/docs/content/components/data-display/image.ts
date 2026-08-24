@@ -1,10 +1,9 @@
-import { sizeValues, variantsValues } from 'extraction-ui';
+import { sizeValues } from 'extraction-ui';
 
 export const cfg = {
   class: 'image',
   sizes: sizeValues.filter((size) => ['xs', 'sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'image',
-  variants: variantsValues.filter((variant) => !['plain'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

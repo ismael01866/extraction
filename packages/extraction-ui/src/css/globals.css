@@ -14,6 +14,7 @@
   :root {
     --ex-colors-body: var(--ex-options-body-color);
     --ex-colors-foreground: var(--ex-options-foreground-color);
+
     --ex-colors-panel-body: var(--ex-options-panel-body-color);
   }
 
@@ -21,6 +22,7 @@
     :root {
       --ex-colors-body: var(--ex-options-body-color-dark);
       --ex-colors-foreground: var(--ex-options-foreground-color-dark);
+
       --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
     }
   }
@@ -28,6 +30,7 @@
   .dark {
     --ex-colors-body: var(--ex-options-body-color-dark);
     --ex-colors-foreground: var(--ex-options-foreground-color-dark);
+
     --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
   }
 

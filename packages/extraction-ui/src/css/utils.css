@@ -369,9 +369,53 @@
 /** ──────────────────────────── */
 
 @utility tonal-black {
-  @apply bg-black text-white dark:bg-white dark:text-black;
+  --background: var(--color-black);
+  --background-dark: var(--color-white);
+
+  --text: var(--color-white);
+  --text-dark: var(--color-black);
+
+  &:where(
+    :not(.disabled, :disabled, [disabled], [data-disabled], [aria-disabled='true'], [data-loading])
+  ) {
+    &:where(:not([class*='hover:shade-'])) {
+      --hover-background: color-mix(in oklch, var(--color-black) 70%, white);
+      --hover-background-dark: color-mix(in oklch, var(--color-white) 85%, black);
+
+      --active-background: color-mix(in oklch, var(--color-black) 60%, white);
+      --active-background-dark: color-mix(in oklch, var(--color-white) 70%, black);
+
+      --hover-text: var(--color-white);
+      --hover-text-dark: var(--color-black);
+
+      --active-text: var(--color-white);
+      --active-text-dark: var(--color-black);
+    }
+  }
 }
 
 @utility tonal-white {
-  @apply bg-white text-black dark:bg-black dark:text-white;
+  --background: var(--color-white);
+  --background-dark: var(--color-black);
+
+  --text: var(--color-black);
+  --text-dark: var(--color-white);
+
+  &:where(
+    :not(.disabled, :disabled, [disabled], [data-disabled], [aria-disabled='true'], [data-loading])
+  ) {
+    &:where(:not([class*='hover:shade-'])) {
+      --hover-background: color-mix(in oklch, var(--color-white) 95%, black);
+      --hover-background-dark: color-mix(in oklch, var(--color-black) 80%, white);
+
+      --active-background: color-mix(in oklch, var(--color-white) 90%, black);
+      --active-background-dark: color-mix(in oklch, var(--color-black) 70%, white);
+
+      --hover-text: var(--color-black);
+      --hover-text-dark: var(--color-white);
+
+      --active-text: var(--color-black);
+      --active-text-dark: var(--color-white);
+    }
+  }
 }

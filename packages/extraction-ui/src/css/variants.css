@@ -61,8 +61,8 @@
   --active-border: var(--shade-strong);
   --active-border-dark: var(--shade-strong-dark);
 
-  --text: contrast-color(var(--shade-soft));
-  --text-dark: contrast-color(var(--shade-soft-dark));
+  --text: currentColor;
+  --text-dark: currentColor;
 
   --hover-text: contrast-color(var(--shade-color));
   --hover-text-dark: contrast-color(var(--shade-color-dark));
@@ -169,8 +169,8 @@
   --active-border: transparent;
   --active-border-dark: transparent;
 
-  --text: contrast-color(var(--shade-soft));
-  --text-dark: contrast-color(var(--shade-soft-dark));
+  --text: currentColor;
+  --text-dark: currentColor;
 
   --hover-text: contrast-color(var(--shade-color));
   --hover-text-dark: contrast-color(var(--shade-color-dark));
@@ -182,7 +182,7 @@
   --outline-dark: var(--shade-bold-dark);
 }
 
-@utility variant-link {
+/* @utility variant-link {
   :where(&) {
     @apply variant shade-500;
   }
@@ -208,15 +208,15 @@
   --text: var(--shade-color);
   --text-dark: var(--shade-color-dark);
 
-  --hover-text: var(--shade-deep);
-  --hover-text-dark: var(--shade-deep-dark);
+  --hover-text: var(--shade-color);
+  --hover-text-dark: var(--shade-color-dark);
 
-  --active-text: var(--shade-bold);
-  --active-text-dark: var(--shade-bold-dark);
+  --active-text: var(--shade-color);
+  --active-text-dark: var(--shade-color-dark);
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
-}
+} */
 
 @utility variant-plain {
   :where(&) {

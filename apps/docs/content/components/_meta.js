@@ -2,23 +2,26 @@ export default {
   overview: {
     title: 'Overview',
   },
-  typography: {
-    title: 'Typography',
-  },
   layout: {
     title: 'Layout',
   },
+  typography: {
+    title: 'Typography',
+  },
   content: {
     title: 'Content',
-  },
-  'data-display': {
-    title: 'Data Display',
   },
   buttons: {
     title: 'Buttons',
   },
   forms: {
     title: 'Forms',
+  },
+  'data-display': {
+    title: 'Data Display',
+  },
+  feedback: {
+    title: 'Feedback',
   },
   navigation: {
     title: 'Navigation',
@@ -28,9 +31,6 @@ export default {
   },
   overlay: {
     title: 'Overlay',
-  },
-  feedback: {
-    title: 'Feedback',
   },
   fx: {
     title: 'Fx',
