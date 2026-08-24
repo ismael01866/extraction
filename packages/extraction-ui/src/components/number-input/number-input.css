@@ -1,0 +1,53 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-number-input {
+    --ex-font-family: var(--ex-input-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-input-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-options-opacity-placeholder);
+
+    @apply input-md;
+    @apply inline-flex items-stretch;
+  }
+
+  *:not(.ex-input-group) {
+    > .ex-number-input {
+      @apply variant-outline palette-neutral;
+      @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+    }
+  }
+
+  .ex-number-input-field {
+    @apply variant;
+    @apply w-full min-w-0 bg-transparent text-inherit outline-none [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &::placeholder {
+      @apply opacity-(--ex-opacity) text-inherit;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      @apply m-0 appearance-none;
+    }
+  }
+
+  .ex-number-input-trigger {
+    @apply inline-flex shrink-0 items-center justify-center;
+
+    /* &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      @apply disabled;
+    } */
+    /* @apply disabled:pointer-events-none disabled:opacity-[var(--ex-options-opacity-disabled)]; */
+  }
+}
+
+@layer utilities {
+  .ex-number-input {
+    @apply valid invalid;
+  }
+
+  .ex-number-input-field {
+    @apply interactive;
+  }
+}

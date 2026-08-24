@@ -8,11 +8,13 @@ export const TextareaControlledExample = () => {
   const [value, setValue] = useState('');
   return (
     <Field className="w-64">
-      <Textarea
-        placeholder="Enter your name"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
+      <Textarea>
+        <Textarea.Field
+          placeholder="Enter your name"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+      </Textarea>
     </Field>
   );
 };
@@ -29,7 +31,9 @@ export const TextareaUncontrolledExample = () => {
       className="w-64"
     >
       <Field>
-        <Textarea placeholder="Enter your name" name="textarea" />
+        <Textarea>
+          <Textarea.Field placeholder="Enter your name" name="textarea" />
+        </Textarea>
       </Field>
 
       <Button type="submit" className="palette-neutral variant-surface button-sm mt-3 w-full">

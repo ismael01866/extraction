@@ -11,7 +11,7 @@
   }
 
   .ex-nav-button {
-    @apply variant-solid palette-primary;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-nav-button {

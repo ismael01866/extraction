@@ -9,7 +9,7 @@
   }
 
   .ex-icon-button {
-    @apply variant-solid palette-primary;
+    @apply variant-outline palette-neutral;
   }
 
   .ex-icon-button {

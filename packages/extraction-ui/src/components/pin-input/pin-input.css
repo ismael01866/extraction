@@ -37,7 +37,7 @@
     @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &::placeholder {
-      @apply text-[inherit] [font-size:var(--ex-placeholder-font-size)] [opacity:var(--ex-opacity)];
+      @apply opacity-(--ex-opacity) text-inherit [font-size:var(--ex-placeholder-font-size)];
     }
 
     &:where(:focus-within) {

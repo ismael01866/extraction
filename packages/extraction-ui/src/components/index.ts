@@ -181,6 +181,9 @@ export * from './navigation-menu/navigation-menu.types';
 export { NativeSelect } from './native-select';
 export * from './native-select/native-select.types';
 
+export { NumberInput } from './number-input';
+export * from './number-input/number-input.types';
+
 export { Overlay } from './overlay';
 export * from './overlay/overlay.types';
 

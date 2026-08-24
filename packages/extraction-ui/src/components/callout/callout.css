@@ -7,7 +7,7 @@
   }
 
   .ex-callout {
-    @apply variant-surface palette-primary;
+    @apply variant-surface palette-neutral;
   }
 
   .ex-callout {

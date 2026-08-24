@@ -75,14 +75,14 @@ In order to make non-standard components interactive, use the `interactive` clas
 <br />
 <section>
   <BaseContainer>
-     <Box className={`cursor-pointer text-sm palette-primary variant-solid interactive`}>
+     <Box className={`cursor-pointer text-sm variant-outline interactive box-md`}>
       {`Interactive Box`}
     </Box>
   </BaseContainer>
 
   <CodeContainer key={2}>
     <Code>
-      {`<Box className='cursor-pointer text-sm palette-primary variant-solid interactive' />`}
+      {`<Box className='cursor-pointer text-sm variant-outline interactive box-md' />`}
     </Code>
   </CodeContainer>
 </section>
@@ -94,10 +94,10 @@ If you only need specific states, you can use the `interactive-hover`, `interact
 <br />
 <section>
   <BaseContainer>
-     <Box className={`cursor-pointer text-sm palette-primary variant-solid hover:interactive-hover`}>
+     <Box className={`cursor-pointer text-sm variant-outline hover:interactive-hover box-md`}>
       {`Hover only`}
     </Box>
-    <Box className={`cursor-pointer text-sm palette-primary variant-solid active:interactive-active`}>
+    <Box className={`cursor-pointer text-sm variant-outline active:interactive-active box-md`}>
       {`Active only`}
     </Box>
   </BaseContainer>
@@ -105,8 +105,8 @@ If you only need specific states, you can use the `interactive-hover`, `interact
   <CodeContainer key={3}>
     <Code>
      {[
-        `<Box className='cursor-pointer text-sm palette-primary variant-solid hover:interactive-hover' /> `,
-        `<Box className='cursor-pointer text-sm palette-primary variant-solid active:interactive-active' /> `,
+        `<Box className='cursor-pointer text-sm variant-outline hover:interactive-hover box-md' /> `,
+        `<Box className='cursor-pointer text-sm variant-outline active:interactive-active box-md' /> `,
       ].join('\n')}
     </Code>
   </CodeContainer>

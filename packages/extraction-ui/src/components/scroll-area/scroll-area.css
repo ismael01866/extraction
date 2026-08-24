@@ -52,7 +52,7 @@
 
 @layer components {
   .ex-scroll-area-thumb {
-    @apply variant-solid;
+    @apply variant;
     @apply relative flex-1 rounded-full;
 
     &:where(::before) {

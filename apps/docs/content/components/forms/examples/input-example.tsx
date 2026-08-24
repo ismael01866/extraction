@@ -8,11 +8,13 @@ export const InputControlledExample = () => {
   const [value, setValue] = useState('');
   return (
     <Field className="w-64">
-      <Input
-        placeholder="Enter your name"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
+      <Input>
+        <Input.Field
+          placeholder="Enter your name"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+      </Input>
     </Field>
   );
 };
@@ -29,7 +31,9 @@ export const InputUncontrolledExample = () => {
       className="w-64"
     >
       <Field>
-        <Input placeholder="Enter your name" name="input" />
+        <Input>
+          <Input.Field placeholder="Enter your name" name="textarea" />
+        </Input>
       </Field>
 
       <Button type="submit" className="palette-neutral variant-surface button-sm mt-3 w-full">

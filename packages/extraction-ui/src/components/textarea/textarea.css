@@ -12,14 +12,19 @@
 
   .ex-textarea {
     @apply variant-outline palette-neutral;
+    @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
   }
 
-  .ex-textarea {
+  .ex-textarea-field {
+    @apply variant;
+  }
+
+  .ex-textarea-field {
     @apply inline-flex w-full;
     @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &::placeholder {
-      @apply text-[inherit] [opacity:var(--ex-opacity)];
+      @apply opacity-(--ex-opacity) text-inherit;
     }
 
     &:where(.variant-solid) {
@@ -32,6 +37,10 @@
 
 @layer utilities {
   .ex-textarea {
-    @apply interactive valid invalid;
+    @apply valid invalid;
+  }
+
+  .ex-textarea-field {
+    @apply interactive;
   }
 }

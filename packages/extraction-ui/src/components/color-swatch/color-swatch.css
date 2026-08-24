@@ -7,7 +7,7 @@
   }
 
   .ex-color-swatch {
-    @apply variant-solid palette-primary;
+    @apply variant-surface palette-neutral;
   }
 
   .ex-color-swatch {

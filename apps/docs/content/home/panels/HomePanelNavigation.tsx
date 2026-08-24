@@ -34,7 +34,7 @@ export function HomePanelNavigation() {
         </Box>
       </Tabs.Content>
       <Tabs.Content value="tab2">
-        <Box>
+        <Box className="box-sm">
           <Breadcrumbs className="breadcrumbs-sm">
             <Breadcrumbs.List>
               <Breadcrumbs.Item>

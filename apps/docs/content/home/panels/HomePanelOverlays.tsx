@@ -6,7 +6,7 @@ export function HomePanelOverlays() {
       <HStack className="w-full">
         <Dialog>
           <Dialog.Trigger asChild>
-            <Button className="button-sm flex-1">Dialog</Button>
+            <Button className="button-sm palette-primary flex-1">Dialog</Button>
           </Dialog.Trigger>
           <Dialog.Portal>
             <Dialog.Overlay />

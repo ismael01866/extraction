@@ -11,7 +11,7 @@
   }
 
   .ex-switch {
-    @apply data-[state=checked]:palette-primary data-[state=unchecked]:palette-neutral;
+    @apply data-[state=checked]:palette-neutral data-[state=unchecked]:palette-neutral;
 
     &:where([data-state='unchecked']) {
       @apply bg-neutral-200 dark:bg-neutral-800;

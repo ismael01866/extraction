@@ -10,7 +10,7 @@
   }
 
   .ex-badge {
-    @apply variant-solid palette-primary;
+    @apply variant-subtle palette-neutral;
   }
 
   .ex-badge {
