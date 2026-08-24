@@ -8,25 +8,38 @@
   }
 
   .ex-link {
-    @apply variant-link palette-primary;
+    @apply text-primary;
   }
 
   .ex-link {
     @apply inline;
     @apply font-(--ex-font-weight) [font-family:var(--ex-font-family)];
+
+    @variant dark {
+      @apply brightness-150;
+    }
   }
 }
 
 @layer utilities {
   .ex-link {
-    @apply interactive;
+    &:where(
+      :not(
+        .disabled,
+        :disabled,
+        [disabled],
+        [data-disabled],
+        [aria-disabled='true'],
+        [data-loading]
+      )
+    ) {
+      &:where(:hover) {
+        @apply underline;
+      }
 
-    &:where(:hover) {
-      @apply underline;
-    }
-
-    &:where(:focus-visible) {
-      @apply interactive-focus;
+      &:where(:focus-visible) {
+        @apply interactive-focus;
+      }
     }
   }
 }

@@ -97,23 +97,23 @@
   --ex-shadow: var(--ex-alert-dialog-shadow-sm, var(--shadow-xl));
 
   .ex-alert-dialog-section {
-    --ex-px: var(--ex-alert-dialog-section-px-sm, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-alert-dialog-section-py-sm, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-alert-dialog-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-alert-dialog-section-py-sm, calc(var(--spacing) * 4));
 
-    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-sm, calc(var(--spacing) * 2));
   }
 
   .ex-alert-dialog-title {
-    --ex-font-size: var(--ex-alert-dialog-title-font-size-sm, var(--text-base));
-    --ex-line-height: var(--ex-alert-dialog-title-line-height-sm, var(--text-base--line-height));
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-sm, var(--text-sm));
+    --ex-line-height: var(--ex-alert-dialog-title-line-height-sm, var(--text-sm--line-height));
   }
 
   .ex-alert-dialog-description {
-    --ex-font-size: var(--ex-alert-dialog-description-font-size-sm, var(--text-sm));
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-sm, var(--text-xs));
     --ex-line-height: var(
       --ex-alert-dialog-description-line-height-sm,
-      var(--text-sm--line-height)
+      var(--text-xs--line-height)
     );
   }
 }
@@ -151,50 +151,23 @@
   --ex-shadow: var(--ex-alert-dialog-shadow-lg, var(--shadow-xl));
 
   .ex-alert-dialog-section {
-    --ex-px: var(--ex-alert-dialog-section-px-lg, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-alert-dialog-section-py-lg, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-alert-dialog-section-px-lg, calc(var(--spacing) * 6));
+    --ex-py: var(--ex-alert-dialog-section-py-lg, calc(var(--spacing) * 6));
 
-    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-lg, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-alert-dialog-title {
-    --ex-font-size: var(--ex-alert-dialog-title-font-size-lg, var(--text-base));
-    --ex-line-height: var(--ex-alert-dialog-title-line-height-lg, var(--text-base--line-height));
+    --ex-font-size: var(--ex-alert-dialog-title-font-size-lg, var(--text-lg));
+    --ex-line-height: var(--ex-alert-dialog-title-line-height-lg, var(--text-lg--line-height));
   }
 
   .ex-alert-dialog-description {
-    --ex-font-size: var(--ex-alert-dialog-description-font-size-lg, var(--text-sm));
+    --ex-font-size: var(--ex-alert-dialog-description-font-size-lg, var(--text-base));
     --ex-line-height: var(
       --ex-alert-dialog-description-line-height-lg,
-      var(--text-sm--line-height)
-    );
-  }
-}
-
-@utility alert-dialog-content-xl {
-  --ex-width: var(--ex-alert-dialog-width-xl, var(--container-xl));
-  --ex-radius: var(--ex-alert-dialog-radius-xl, var(--radius-sm));
-  --ex-shadow: var(--ex-alert-dialog-shadow-xl, var(--shadow-xl));
-
-  .ex-alert-dialog-section {
-    --ex-px: var(--ex-alert-dialog-section-px-xl, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-alert-dialog-section-py-xl, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-alert-dialog-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-alert-dialog-section-gap-y-xl, calc(var(--spacing) * 2.5));
-  }
-
-  .ex-alert-dialog-title {
-    --ex-font-size: var(--ex-alert-dialog-title-font-size-xl, var(--text-base));
-    --ex-line-height: var(--ex-alert-dialog-title-line-height-xl, var(--text-base--line-height));
-  }
-
-  .ex-alert-dialog-description {
-    --ex-font-size: var(--ex-alert-dialog-description-font-size-xl, var(--text-sm));
-    --ex-line-height: var(
-      --ex-alert-dialog-description-line-height-xl,
-      var(--text-sm--line-height)
+      var(--text-base--line-height)
     );
   }
 }
@@ -995,21 +968,21 @@
   --ex-shadow: var(--ex-dialog-shadow-sm, var(--shadow-xl));
 
   .ex-dialog-section {
-    --ex-px: var(--ex-dialog-section-px-sm, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-dialog-section-py-sm, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-dialog-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-dialog-section-py-sm, calc(var(--spacing) * 4));
 
-    --ex-gap-x: var(--ex-dialog-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-dialog-section-gap-x-sm, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-sm, calc(var(--spacing) * 2));
   }
 
   .ex-dialog-title {
-    --ex-font-size: var(--ex-dialog-title-font-size-sm, var(--text-base));
-    --ex-line-height: var(--ex-dialog-title-line-height-sm, var(--text-base--line-height));
+    --ex-font-size: var(--ex-dialog-title-font-size-sm, var(--text-sm));
+    --ex-line-height: var(--ex-dialog-title-line-height-sm, var(--text-sm--line-height));
   }
 
   .ex-dialog-description {
-    --ex-font-size: var(--ex-dialog-description-font-size-sm, var(--text-sm));
-    --ex-line-height: var(--ex-dialog-description-line-height-sm, var(--text-sm--line-height));
+    --ex-font-size: var(--ex-dialog-description-font-size-sm, var(--text-xs));
+    --ex-line-height: var(--ex-dialog-description-line-height-sm, var(--text-xs--line-height));
   }
 }
 
@@ -1043,45 +1016,21 @@
   --ex-shadow: var(--ex-dialog-shadow-lg, var(--shadow-xl));
 
   .ex-dialog-section {
-    --ex-px: var(--ex-dialog-section-px-lg, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-dialog-section-py-lg, calc(var(--spacing) * 5));
+    --ex-py: var(--ex-dialog-section-py-lg, calc(var(--spacing) * 6));
+    --ex-px: var(--ex-dialog-section-px-lg, calc(var(--spacing) * 6));
 
-    --ex-gap-x: var(--ex-dialog-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-dialog-section-gap-x-lg, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-dialog-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-dialog-title {
-    --ex-font-size: var(--ex-dialog-title-font-size-lg, var(--text-base));
-    --ex-line-height: var(--ex-dialog-title-line-height-lg, var(--text-base--line-height));
+    --ex-font-size: var(--ex-dialog-title-font-size-lg, var(--text-lg));
+    --ex-line-height: var(--ex-dialog-title-line-height-lg, var(--text-lg--line-height));
   }
 
   .ex-dialog-description {
-    --ex-font-size: var(--ex-dialog-description-font-size-lg, var(--text-sm));
-    --ex-line-height: var(--ex-dialog-description-line-height-lg, var(--text-sm--line-height));
-  }
-}
-
-@utility dialog-content-xl {
-  --ex-width: var(--ex-dialog-width-xl, var(--container-xl));
-  --ex-radius: var(--ex-dialog-radius-xl, var(--radius-sm));
-  --ex-shadow: var(--ex-dialog-shadow-xl, var(--shadow-xl));
-
-  .ex-dialog-section {
-    --ex-px: var(--ex-dialog-section-px-xl, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-dialog-section-py-xl, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-dialog-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-dialog-section-gap-y-xl, calc(var(--spacing) * 2.5));
-  }
-
-  .ex-dialog-title {
-    --ex-font-size: var(--ex-dialog-title-font-size-xl, var(--text-base));
-    --ex-line-height: var(--ex-dialog-title-line-height-xl, var(--text-base--line-height));
-  }
-
-  .ex-dialog-description {
-    --ex-font-size: var(--ex-dialog-description-font-size-xl, var(--text-sm));
-    --ex-line-height: var(--ex-dialog-description-line-height-xl, var(--text-sm--line-height));
+    --ex-font-size: var(--ex-dialog-description-font-size-lg, var(--text-base));
+    --ex-line-height: var(--ex-dialog-description-line-height-lg, var(--text-base--line-height));
   }
 }
 
@@ -1123,21 +1072,21 @@
   --ex-shadow: var(--ex-drawer-shadow-sm, var(--shadow-xl));
 
   .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-sm, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-sm, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-drawer-section-px-sm, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-drawer-section-py-sm, calc(var(--spacing) * 4));
 
-    --ex-gap-x: var(--ex-drawer-section-gap-x-sm, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-drawer-section-gap-x-sm, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-sm, calc(var(--spacing) * 3));
   }
 
   .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-sm, var(--text-base));
-    --ex-line-height: var(--ex-drawer-title-line-height-sm, var(--text-base--line-height));
+    --ex-font-size: var(--ex-drawer-title-font-size-sm, var(--text-sm));
+    --ex-line-height: var(--ex-drawer-title-line-height-sm, var(--text-sm--line-height));
   }
 
   .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-sm, var(--text-sm));
-    --ex-line-height: var(--ex-drawer-description-line-height-sm, var(--text-sm--line-height));
+    --ex-font-size: var(--ex-drawer-description-font-size-sm, var(--text-xs));
+    --ex-line-height: var(--ex-drawer-description-line-height-sm, var(--text-xs--line-height));
   }
 }
 
@@ -1171,45 +1120,21 @@
   --ex-shadow: var(--ex-drawer-shadow-lg, var(--shadow-xl));
 
   .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-lg, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-lg, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-drawer-section-px-lg, calc(var(--spacing) * 6));
+    --ex-py: var(--ex-drawer-section-py-lg, calc(var(--spacing) * 6));
 
-    --ex-gap-x: var(--ex-drawer-section-gap-x-lg, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-drawer-section-gap-x-lg, calc(var(--spacing) * 3));
+    --ex-gap-y: var(--ex-drawer-section-gap-y-lg, calc(var(--spacing) * 3));
   }
 
   .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-lg, var(--text-base));
-    --ex-line-height: var(--ex-drawer-title-line-height-lg, var(--text-base--line-height));
+    --ex-font-size: var(--ex-drawer-title-font-size-lg, var(--text-lg));
+    --ex-line-height: var(--ex-drawer-title-line-height-lg, var(--text-lg--line-height));
   }
 
   .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-lg, var(--text-sm));
-    --ex-line-height: var(--ex-drawer-description-line-height-lg, var(--text-sm--line-height));
-  }
-}
-
-@utility drawer-content-xl {
-  --ex-size: var(--ex-drawer-size-xl, var(--container-md));
-  --ex-radius: var(--ex-drawer-radius-xl, 0);
-  --ex-shadow: var(--ex-drawer-shadow-xl, var(--shadow-xl));
-
-  .ex-drawer-section {
-    --ex-px: var(--ex-drawer-section-px-xl, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-drawer-section-py-xl, calc(var(--spacing) * 5));
-
-    --ex-gap-x: var(--ex-drawer-section-gap-x-xl, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-drawer-section-gap-y-xl, calc(var(--spacing) * 2.5));
-  }
-
-  .ex-drawer-title {
-    --ex-font-size: var(--ex-drawer-title-font-size-xl, var(--text-base));
-    --ex-line-height: var(--ex-drawer-title-line-height-xl, var(--text-base--line-height));
-  }
-
-  .ex-drawer-description {
-    --ex-font-size: var(--ex-drawer-description-font-size-xl, var(--text-sm));
-    --ex-line-height: var(--ex-drawer-description-line-height-xl, var(--text-sm--line-height));
+    --ex-font-size: var(--ex-drawer-description-font-size-lg, var(--text-base));
+    --ex-line-height: var(--ex-drawer-description-line-height-lg, var(--text-base--line-height));
   }
 }
 

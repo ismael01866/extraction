@@ -103,19 +103,19 @@
   --shade-color-dark: var(--palette-500);
 
   --shade-soft: var(--palette-400);
-  --shade-soft-dark: var(--palette-600);
+  --shade-soft-dark: var(--palette-400);
 
   --shade-raised: var(--palette-600);
-  --shade-raised-dark: var(--palette-400);
+  --shade-raised-dark: var(--palette-600);
 
   --shade-deep: var(--palette-700);
-  --shade-deep-dark: var(--palette-300);
+  --shade-deep-dark: var(--palette-700);
 
   --shade-strong: var(--palette-800);
-  --shade-strong-dark: var(--palette-200);
+  --shade-strong-dark: var(--palette-800);
 
   --shade-bold: var(--palette-900);
-  --shade-bold-dark: var(--palette-100);
+  --shade-bold-dark: var(--palette-900);
 }
 
 @utility shade-600 {

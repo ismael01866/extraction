@@ -38,7 +38,4 @@ export default {
   progress: {
     title: 'Progress',
   },
-  table: {
-    title: 'Table',
-  },
 };

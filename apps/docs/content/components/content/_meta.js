@@ -20,4 +20,10 @@ export default {
   mark: {
     title: 'Mark',
   },
+  table: {
+    title: 'Table',
+  },
+  text: {
+    title: 'Text',
+  },
 };

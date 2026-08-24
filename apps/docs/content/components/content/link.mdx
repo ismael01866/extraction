@@ -3,7 +3,7 @@ import { Link } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './link';
 
-export const Component = <Link href='#'>{`Link`}</Link>;
+export const Component = <Link href='#'>brown fox</Link>;
 
 export const Wrapper = ({ children }) => children;
 
@@ -30,7 +30,9 @@ For more information on how to customize text decorations visit Tailwind's [Text
   config={cfg}
   components={{
     usage: Component,
-    wrapper: Wrapper,
+    wrapper: ({ children }) => {
+      return <div>The quick {children} jumps over the lazy dog</div>;
+    },
   }}
 />
 

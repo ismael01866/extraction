@@ -9,10 +9,7 @@ export function ColorModeButton() {
   const { toggleColorMode } = useColorMode({ onChange: setTheme });
 
   return (
-    <Button
-      className="tonal-black palette-neutral hover:shade-900 text-fluid-base h-14 px-8"
-      onClick={toggleColorMode}
-    >
+    <Button className="tonal-black text-fluid-base h-14 px-8" onClick={toggleColorMode}>
       <Icon as={LuSunMoon} />
       Toggle Color Mode
     </Button>

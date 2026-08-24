@@ -10,7 +10,7 @@ import { LuArrowRight } from 'react-icons/lu';
 
 const EXAMPLES = [
   {
-    className: 'tonal-black palette-neutral',
+    className: 'hover:variant-outline',
   },
 ];
 

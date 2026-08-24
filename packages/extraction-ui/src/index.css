@@ -1,20 +1,18 @@
 @import 'tailwindcss';
 
-@import './css/palette.css';
-
-@import './css/shades.css';
-@import './css/variants.css';
-
-@import './css/utils.css';
+@import './css/variables.css';
 
 @import './css/options.css';
 @import './css/globals.css';
 
-@import './css/animation.css';
+@import './css/theme.css';
+@import './css/palette.css';
+@import './css/shades.css';
+@import './css/variants.css';
 @import './css/interaction.css';
 
-@import './css/theme.css';
-@import './css/variables.css';
+@import './css/utils.css';
+@import './css/animation.css';
 
 @import './css/components.css';
 
