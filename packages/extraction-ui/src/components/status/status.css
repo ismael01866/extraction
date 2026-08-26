@@ -7,11 +7,11 @@
   }
 
   .ex-status {
-    @apply variant-solid palette-neutral;
+    @apply variant-solid palette-primary;
   }
 
   .ex-status {
     @apply inline-flex shrink-0;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)];
   }
 }

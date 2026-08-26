@@ -7,7 +7,7 @@
     --ex-radius: var(--ex-highlight-radius-sm, var(--radius-sm));
 
     @apply relative inline whitespace-nowrap bg-transparent;
-    @apply px-[var(--ex-px)];
+    @apply px-(--ex-px);
   }
 
   .ex-highlight {
@@ -22,7 +22,7 @@
   .ex-highlight {
     &::before {
       @apply variant -z-1 absolute inset-0 content-[''];
-      @apply rounded-[var(--ex-radius)];
+      @apply rounded-(--ex-radius);
     }
   }
 }

@@ -10,12 +10,12 @@
   }
 
   .ex-nav-link {
-    @apply variant-outline palette-neutral;
+    @apply variant-ghost palette-neutral;
   }
 
   .ex-nav-link {
     @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-start;
-    @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

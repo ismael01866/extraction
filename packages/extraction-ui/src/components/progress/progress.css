@@ -7,7 +7,7 @@
   }
 
   .ex-progress {
-    @apply variant-solid palette-neutral;
+    @apply variant-solid palette-primary;
   }
 
   .ex-progress {
@@ -16,7 +16,7 @@
 
   .ex-progress {
     @apply w-full shrink-0 overflow-hidden [transform:translateZ(0)];
-    @apply h-[var(--ex-size)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) h-[var(--ex-size)];
   }
 
   .ex-progress-indicator {

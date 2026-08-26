@@ -12,7 +12,7 @@
 
   .ex-toast {
     @apply flex flex-1 will-change-[transform,opacity];
-    @apply max-w-[var(--ex-max-width)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] shadow-[var(--ex-shadow)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) max-w-[var(--ex-max-width)] gap-x-[var(--ex-gap-x)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -98,7 +98,7 @@
 
   .ex-toast-viewport {
     @apply fixed m-0 flex w-auto max-w-full list-none outline-none;
-    @apply z-[var(--ex-z-index)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) z-[var(--ex-z-index)];
 
     &:where(:has(.ex-toast:not([data-placement]))) {
       @apply bottom-0 end-0;

@@ -1,26 +1,32 @@
 'use client';
 
-import React, { ChangeEvent, ElementType, FocusEvent, KeyboardEvent } from 'react';
+import React, {
+  ChangeEvent,
+  ElementType,
+  FocusEvent,
+  KeyboardEvent,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
+} from 'react';
 
 import './number-input.css';
 
 import { Element } from '../element';
 import { NumberInputContext } from './number-input.context';
 import {
+  NumberInputButtonProps,
   NumberInputContextValue,
+  NumberInputControlProps,
   NumberInputFieldProps,
   NumberInputProps,
-  NumberInputTriggerProps,
 } from './number-input.types';
+import { add, clamp, subtract } from './number-input.utils';
 
-// import { useControllableState } from '@radix-ui/react-use-controllable-state';
+import { useControllableState } from '@radix-ui/react-use-controllable-state';
 
-const clamp = (value: number, min?: number, max?: number) => {
-  let next = value;
-  if (min !== undefined) next = Math.max(min, next);
-  if (max !== undefined) next = Math.min(max, next);
-  return next;
-};
+const NUMBER_PATTERN = /^-?(?:\d+(?:\.\d*)?|\.\d*)$/;
 
 export const NumberInputRoot = <T extends ElementType = 'div'>(props: NumberInputProps<T>) => {
   const {
@@ -35,30 +41,42 @@ export const NumberInputRoot = <T extends ElementType = 'div'>(props: NumberInpu
     ...rest
   } = props;
 
-  const [value, setValue] = useControllableState<number | undefined>({
+  const [value, setValue] = useControllableState({
     prop: valueProp,
     defaultProp: defaultValue,
     onChange: onValueChange,
   });
 
-  const commit = (next?: number) => {
-    setValue(next === undefined ? undefined : clamp(next, min, max));
-  };
+  const commit = useCallback(
+    (next?: number) => {
+      setValue(next === undefined ? undefined : clamp(next, min, max));
+    },
+    [setValue, min, max],
+  );
 
-  const increment = () => commit((value ?? min ?? 0) + step);
-  const decrement = () => commit((value ?? min ?? 0) - step);
+  const increment = useCallback(() => {
+    const current = value ?? min ?? 0;
 
-  const context: NumberInputContextValue = React.useMemo(
+    commit(add(current, step));
+  }, [commit, value, min, step]);
+
+  const decrement = useCallback(() => {
+    const current = value ?? min ?? 0;
+
+    commit(subtract(current, step));
+  }, [commit, value, min, step]);
+
+  const context = useMemo<NumberInputContextValue>(
     () => ({
+      decrement,
+      increment,
       min,
       max,
       step,
-      increment,
-      decrement,
       value,
       setValue: commit,
     }),
-    [min, max, step, increment, decrement, value, setValue],
+    [min, max, step, value, increment, decrement, commit],
   );
 
   return (
@@ -77,7 +95,7 @@ export const NumberInputField = <T extends ElementType = 'input'>(
 ) => {
   const { as = 'input', onKeyDown, onBlur, onChange, ...rest } = props;
 
-  const context = React.useContext(NumberInputContext);
+  const context = useContext(NumberInputContext);
 
   if (!context) {
     throw new Error('NumberInput.Field must be used within NumberInput');
@@ -85,46 +103,58 @@ export const NumberInputField = <T extends ElementType = 'input'>(
 
   const { value, setValue, min, max, increment, decrement } = context;
 
+  const [inputValue, setInputValue] = useState<string | null>(null);
+
+  const displayValue = inputValue ?? value ?? '';
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const raw = event.target.value;
-    if (raw === '') {
+
+    if (raw === '' || raw === '-') {
+      setInputValue(raw);
       setValue(undefined);
-    } else if (/^-?\d*\.?\d*$/.test(raw)) {
-      const parsed = Number(raw);
-      if (!Number.isNaN(parsed)) setValue(parsed);
+    } else if (NUMBER_PATTERN.test(raw)) {
+      setInputValue(raw);
+      setValue(Number(raw));
     }
+
     onChange?.(event);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'ArrowUp') {
       event.preventDefault();
+      setInputValue(null);
       increment();
     } else if (event.key === 'ArrowDown') {
       event.preventDefault();
+      setInputValue(null);
       decrement();
     }
+
     onKeyDown?.(event);
   };
 
   const handleBlur = (event: FocusEvent<HTMLInputElement>) => {
+    setInputValue(null);
     if (value !== undefined) setValue(value);
+
     onBlur?.(event);
   };
 
   return (
     <Element
+      aria-valuemin={min}
+      aria-valuemax={max}
+      aria-valuenow={value}
       as={as as ElementType<any>}
       cssClassName="ex-number-input-field"
       inputMode="decimal"
-      // aria-valuenow={value}
-      // aria-valuemin={min}
-      // aria-valuemax={max}
       role="spinbutton"
-      value={value ?? ''}
+      value={displayValue}
+      onBlur={handleBlur}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
-      onBlur={handleBlur}
       {...rest}
     />
   );
@@ -132,67 +162,104 @@ export const NumberInputField = <T extends ElementType = 'input'>(
 
 NumberInputField.displayName = 'NumberInput.Field';
 
-export const NumberInputIncrementTrigger = <T extends ElementType = 'button'>(
-  props: NumberInputTriggerProps<T>,
+export const NumberInputControl = <T extends ElementType = 'div'>(
+  props: NumberInputControlProps<T>,
 ) => {
-  const { as = 'button', onClick, ...rest } = props as any;
+  const { as = 'div', children, ...rest } = props;
 
-  const context = React.useContext(NumberInputContext);
+  return (
+    <Element as={as as ElementType<any>} cssClassName="ex-number-input-control" {...rest}>
+      {children}
+    </Element>
+  );
+};
+
+NumberInputControl.displayName = 'NumberInput.Control';
+
+export const NumberInputIncrementButton = <T extends ElementType = 'button'>(
+  props: NumberInputButtonProps<T>,
+) => {
+  const { as = 'button', children, onClick, ...rest } = props as any;
+
+  const context = useContext(NumberInputContext);
 
   if (!context) {
-    throw new Error('NumberInput.IncrementTrigger must be used within NumberInput');
+    throw new Error('NumberInput.IncrementButton must be used within NumberInput');
   }
 
   const { increment, max, value } = context;
 
+  const disabled = max !== undefined && value !== undefined && value >= max;
+
   return (
     <Element
       as={as as ElementType<any>}
-      cssClassName="ex-number-input-button"
+      aria-label="increment"
+      cssClassName="ex-number-input-increment-button"
+      disabled={disabled}
       tabIndex={-1}
       type="button"
-      // aria-label="Increment"
-      disabled={max !== undefined && value !== undefined && value >= max}
       onClick={(event) => {
         increment();
         onClick?.(event);
       }}
       {...rest}
-    />
+    >
+      {children ?? (
+        <svg
+          className="ex-number-input-increment-button-svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="m12.354 8.854 5.792 5.792a.5.5 0 0 1-.353.854H6.207a.5.5 0 0 1-.353-.854l5.792-5.792a.5.5 0 0 1 .708 0Z" />
+        </svg>
+      )}
+    </Element>
   );
 };
 
-NumberInputIncrementTrigger.displayName = 'NumberInput.IncrementTrigger';
+NumberInputIncrementButton.displayName = 'NumberInput.IncrementButton';
 
-export const NumberInputDecrementTrigger = <T extends ElementType = 'button'>(
-  props: NumberInputTriggerProps<T>,
+export const NumberInputDecrementButton = <T extends ElementType = 'button'>(
+  props: NumberInputButtonProps<T>,
 ) => {
-  const { as = 'button', onClick, ...rest } = props as any;
-  // const { decrement, disabled, value, min } = useNumberInputContext();
+  const { as = 'button', children, onClick, ...rest } = props as any;
 
-  const context = React.useContext(NumberInputContext);
+  const context = useContext(NumberInputContext);
 
   if (!context) {
-    throw new Error('NumberInput.DecrementTrigger must be used within NumberInput');
+    throw new Error('NumberInput.DecrementButton must be used within NumberInput');
   }
 
   const { decrement, min, value } = context;
 
+  const disabled = min !== undefined && value !== undefined && value <= min;
+
   return (
     <Element
       as={as as ElementType<any>}
-      cssClassName="ex-number-input-button"
+      aria-label="decrement"
+      cssClassName="ex-number-input-decrement-button"
+      disabled={disabled}
       tabIndex={-1}
       type="button"
-      // aria-label="Decrement"
-      disabled={min !== undefined && value !== undefined && value <= min}
       onClick={(event) => {
         decrement();
         onClick?.(event);
       }}
       {...rest}
-    />
+    >
+      {children ?? (
+        <svg
+          className="ex-number-input-decrement-button-svg"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path d="M11.646 15.146 5.854 9.354a.5.5 0 0 1 .353-.854h11.586a.5.5 0 0 1 .353.854l-5.793 5.792a.5.5 0 0 1-.707 0Z" />
+        </svg>
+      )}
+    </Element>
   );
 };
 
-NumberInputDecrementTrigger.displayName = 'NumberInput.DecrementTrigger';
+NumberInputDecrementButton.displayName = 'NumberInput.DecrementButton';

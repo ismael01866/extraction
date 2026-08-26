@@ -12,7 +12,7 @@
 
   .ex-accordion {
     @apply flex flex-col;
-    @apply rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius);
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -43,7 +43,7 @@
     --ex-cursor: var(--ex-accordion-trigger-cursor, default);
 
     @apply relative inline-block flex-1 cursor-pointer text-start;
-    @apply gap-x-[var(--ex-gap-x)] px-[var(--ex-px)] py-[var(--ex-py)] pe-[calc(var(--ex-px)*2)] [cursor:var(--ex-cursor)];
+    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] pe-[calc(var(--ex-px)*2)] [cursor:var(--ex-cursor)];
 
     &:where([data-state='open']) .ex-accordion-icon > .ex-accordion-icon {
       transform: rotate(180deg);
@@ -83,7 +83,7 @@
 
   .ex-accordion-section {
     @apply flex flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
   }
 
   .ex-accordion-title {
@@ -96,7 +96,7 @@
     --ex-font-weight: var(--ex-accordion-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-accordion-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

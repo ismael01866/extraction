@@ -29,7 +29,7 @@
     --ex-z-index: var(--ex-dialog-z-index, var(--ex-options-z-dialog));
 
     @apply fixed left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 border-transparent will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] w-[var(--ex-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+    @apply rounded-(--ex-radius) z-[var(--ex-z-index)] w-[var(--ex-width)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open']) {
       @apply animate-in fade-in scale-in-75;
@@ -50,7 +50,7 @@
 
   .ex-dialog-section {
     @apply flex flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
   }
 
   .ex-dialog-close-native {
@@ -72,7 +72,7 @@
     --ex-font-weight: var(--ex-dialog-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-dialog-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

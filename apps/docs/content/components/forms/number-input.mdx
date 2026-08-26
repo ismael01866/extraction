@@ -1,0 +1,233 @@
+import { Field, NumberInput } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  numberInputCfg,
+  numberInputDecrementButtonCfg,
+  numberInputFieldCfg,
+  numberInputIncrementButtonCfg,
+} from './number-input';
+
+import {
+  NumberInputControlledExample,
+  NumberInputUncontrolledExample,
+} from './examples/number-input-example';
+
+export const Component = (
+  <NumberInput className='w-64'>
+    <NumberInput.Field placeholder='Enter your age' />
+    <NumberInput.Control>
+      <NumberInput.IncrementButton />
+      <NumberInput.DecrementButton />
+    </NumberInput.Control>
+  </NumberInput>
+);
+
+export const ComponentValid = (
+  <Field className='w-64'>
+    <NumberInput>
+      <NumberInput.Field
+        id='age'
+        placeholder='Enter your age'
+        className='valid'
+        value={20}
+        readOnly
+      />
+      <NumberInput.Control>
+        <NumberInput.IncrementButton />
+        <NumberInput.DecrementButton />
+      </NumberInput.Control>
+    </NumberInput>
+  </Field>
+);
+
+export const ComponentInvalid = (
+  <Field className='w-64'>
+    <NumberInput>
+      <NumberInput.Field id='age' placeholder='Enter your age' className='invalid' />
+      <NumberInput.Control>
+        <NumberInput.IncrementButton />
+        <NumberInput.DecrementButton />
+      </NumberInput.Control>
+    </NumberInput>
+  </Field>
+);
+
+export const ComponentDisabled = (
+  <Field className='w-64'>
+    <NumberInput className='disabled variant-surface w-64'>
+      <NumberInput.Field placeholder='Enter your age' />
+      <NumberInput.Control>
+        <NumberInput.IncrementButton />
+        <NumberInput.DecrementButton />
+      </NumberInput.Control>
+    </NumberInput>
+  </Field>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Number Input
+
+{data['number-input'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Valid
+
+<Usage
+  components={{
+    usage: ComponentValid,
+    wrapper: Wrapper,
+  }}
+  valid
+/>
+
+## Invalid
+
+<Usage
+  components={{
+    usage: ComponentInvalid,
+    wrapper: Wrapper,
+  }}
+  invalid
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <NumberInputControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState(0);
+    return (
+      <Field className="w-64">
+        <NumberInput value={value} onValueChange={setValue}>
+          <NumberInput.Field placeholder="Enter your age" />
+          <NumberInput.Control>
+            <NumberInput.IncrementButton />
+            <NumberInput.DecrementButton />
+          </NumberInput.Control>
+        </NumberInput>
+      </Field>
+    );
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <NumberInputUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('number-input'));
+  }}>
+    <Field className="w-64">
+      <NumberInput>
+        <NumberInput.Field placeholder="Enter your age" name="number-input" />
+        <NumberInput.Control>
+          <NumberInput.IncrementButton />
+          <NumberInput.DecrementButton />
+        </NumberInput.Control>
+      </NumberInput>
+    </Field>
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Variants
+
+<Variants
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-number-input-font-family: var(--font-sans);
+  --ex-number-input-font-weight: var(--font-weight-normal);
+
+  --ex-number-input-font-size-sm: var(--text-xs);
+  --ex-number-input-font-size-md: var(--text-sm);
+  --ex-number-input-font-size-lg: var(--text-base);
+
+  --ex-number-input-height-sm: calc(var(--spacing) * 9);
+  --ex-number-input-height-md: calc(var(--spacing) * 10);
+  --ex-number-input-height-lg: calc(var(--spacing) * 12);
+
+  --ex-number-input-px-sm: calc(var(--spacing) * 3.5);
+  --ex-number-input-px-md: calc(var(--spacing) * 4);
+  --ex-number-input-px-lg: calc(var(--spacing) * 5);
+
+  --ex-number-input-radius-sm: var(--radius-sm);
+  --ex-number-input-radius-md: var(--radius-sm);
+  --ex-number-input-radius-lg: var(--radius-sm);
+
+  --ex-number-input-control-width-sm:  calc(var(--spacing) * 4));
+  --ex-number-input-control-width-md:  calc(var(--spacing) * 5));
+  --ex-number-input-control-width-lg:  calc(var(--spacing) * 6));
+}
+```
+
+## API
+
+### Number Input
+
+<Api config={numberInputCfg} />
+
+### Number Input Field
+
+<Api config={numberInputFieldCfg} />
+
+### Number Input Increment Button
+
+<Api config={numberInputIncrementButtonCfg} />
+
+### Number Input Decrement Button
+
+<Api config={numberInputDecrementButtonCfg} />

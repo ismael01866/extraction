@@ -9,12 +9,12 @@
   }
 
   .ex-icon-button {
-    @apply variant-outline palette-neutral;
+    @apply variant-solid palette-primary;
   }
 
   .ex-icon-button {
     @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
-    @apply h-[var(--ex-size)] w-[var(--ex-size)] rounded-[var(--ex-radius)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
+    @apply rounded-(--ex-radius) h-[var(--ex-size)] w-[var(--ex-size)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
   }
 }
 

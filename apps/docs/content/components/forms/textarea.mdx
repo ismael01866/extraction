@@ -1,7 +1,7 @@
 import { Field, Textarea } from 'extraction-ui';
 
 import data from '../data.json';
-import { cfg } from './textarea';
+import { cfg, textareaCfg, textareaFieldCfg } from './textarea';
 
 import {
   TextareaControlledExample,
@@ -190,4 +190,10 @@ Use the `name` prop to include the value in the form submission.
 
 ## API
 
-<Api config={cfg} />
+### Textarea
+
+<Api config={textareaCfg} />
+
+### Textarea Field
+
+<Api config={textareaFieldCfg} />

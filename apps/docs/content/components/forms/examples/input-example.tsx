@@ -32,7 +32,7 @@ export const InputUncontrolledExample = () => {
     >
       <Field>
         <Input>
-          <Input.Field placeholder="Enter your name" name="textarea" />
+          <Input.Field placeholder="Enter your name" name="input" />
         </Input>
       </Field>
 

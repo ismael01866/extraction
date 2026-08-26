@@ -2051,6 +2051,10 @@
   --ex-px: var(--ex-number-input-px-sm, calc(var(--spacing) * 3.5));
   --ex-radius: var(--ex-number-input-radius-sm, var(--radius-sm));
   --ex-font-size: var(--ex-number-input-font-size-sm, var(--text-xs));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-sm, calc(var(--spacing) * 4));
+  }
 }
 
 @utility number-input-md {
@@ -2059,6 +2063,10 @@
   --ex-px: var(--ex-number-input-px-md, calc(var(--spacing) * 4));
   --ex-radius: var(--ex-number-input-radius-md, var(--radius-sm));
   --ex-font-size: var(--ex-number-input-font-size-md, var(--text-sm));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-md, calc(var(--spacing) * 5));
+  }
 }
 
 @utility number-input-lg {
@@ -2067,6 +2075,10 @@
   --ex-px: var(--ex-number-input-px-lg, calc(var(--spacing) * 5));
   --ex-radius: var(--ex-number-input-radius-lg, var(--radius-sm));
   --ex-font-size: var(--ex-number-input-font-size-lg, var(--text-base));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-lg, calc(var(--spacing) * 6));
+  }
 }
 
 @utility password-sm {

@@ -23,18 +23,12 @@
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
-
-      .ex-pin-input-field {
-        &::placeholder {
-          @apply opacity-[calc(var(--ex-options-opacity-disabled)+0.15)];
-        }
-      }
     }
   }
 
   .ex-pin-input-field {
     @apply variant inline-flex items-center justify-center text-center leading-none;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &::placeholder {
       @apply opacity-(--ex-opacity) text-inherit [font-size:var(--ex-placeholder-font-size)];

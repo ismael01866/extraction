@@ -16,7 +16,7 @@
   .ex-skeleton {
     &:where(.ex-skeleton-loading) {
       @apply pointer-events-none w-full flex-shrink-0 cursor-default select-none border-0;
-      @apply animate-pulse rounded-[var(--ex-radius)] [animation-duration:var(--ex-duration)];
+      @apply rounded-(--ex-radius) animate-pulse [animation-duration:var(--ex-duration)];
 
       *,
       &::after,

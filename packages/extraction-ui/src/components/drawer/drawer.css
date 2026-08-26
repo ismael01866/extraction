@@ -29,7 +29,7 @@
     --ex-z-index: var(--ex-drawer-z-index, var(--ex-options-z-drawer));
 
     @apply fixed flex flex-1 flex-col border-transparent shadow-lg will-change-[transform,opacity];
-    @apply z-[var(--ex-z-index)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+    @apply rounded-(--ex-radius) z-[var(--ex-z-index)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {
       @apply outline-none;
@@ -86,7 +86,7 @@
 
   .ex-drawer-section {
     @apply flex flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
   }
 
   .ex-drawer-close-native {
@@ -108,7 +108,7 @@
     --ex-font-weight: var(--ex-drawer-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-drawer-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

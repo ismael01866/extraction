@@ -11,7 +11,7 @@
   }
 
   .ex-switch {
-    @apply data-[state=checked]:palette-neutral data-[state=unchecked]:palette-neutral;
+    @apply data-[state=checked]:palette-primary data-[state=unchecked]:palette-neutral;
 
     &:where([data-state='unchecked']) {
       @apply bg-neutral-200 dark:bg-neutral-800;
@@ -22,7 +22,7 @@
     --ex-cursor: var(--ex-switch-cursor, default);
 
     @apply inline-flex shrink-0 select-none items-center [transform:translateZ(0)];
-    @apply h-[var(--ex-height)] w-[var(--ex-width)] cursor-[var(--ex-cursor)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) h-[var(--ex-height)] w-[var(--ex-width)] cursor-[var(--ex-cursor)];
   }
 }
 
@@ -34,7 +34,7 @@
 
   .ex-switch-thumb {
     @apply inline-block bg-white align-middle [transform:translateZ(0)] dark:bg-black;
-    @apply mx-[var(--ex-mx)] size-[var(--ex-size)] rounded-[var(--ex-radius)] transition-transform;
+    @apply rounded-(--ex-radius) mx-[var(--ex-mx)] size-[var(--ex-size)] transition-transform;
 
     &:where([data-state='checked']) {
       transform: translateX(var(--ex-translate-x));

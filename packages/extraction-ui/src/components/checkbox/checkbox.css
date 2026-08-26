@@ -24,7 +24,7 @@
     --ex-cursor: var(--ex-checkbox-cursor, default);
 
     @apply flex select-none items-center justify-center [transform:translateZ(0)];
-    @apply size-[var(--ex-size)] cursor-[var(--ex-cursor)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)] cursor-[var(--ex-cursor)];
   }
 
   .ex-checkbox-indicator {

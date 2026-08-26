@@ -1,7 +1,7 @@
 import { Field, Input } from 'extraction-ui';
 
 import data from '../data.json';
-import { cfg } from './input';
+import { cfg, inputCfg, inputFieldCfg } from './input';
 
 import { InputControlledExample, InputUncontrolledExample } from './examples/input-example';
 
@@ -13,7 +13,7 @@ export const Component = (
 
 export const ComponentValid = (
   <Field className='w-64'>
-    <Input className='w-64'>
+    <Input>
       <Input.Field
         id='name'
         placeholder='Enter your name'
@@ -27,7 +27,7 @@ export const ComponentValid = (
 
 export const ComponentInvalid = (
   <Field className='w-64'>
-    <Input className='w-64'>
+    <Input>
       <Input.Field id='name' placeholder='Enter your name' className='invalid' />
     </Input>
   </Field>
@@ -124,7 +124,7 @@ Use the `name` prop to include the value in the form submission.
   }}>
     <Field className="w-64">
       <Input>
-        <Input.Field placeholder="Enter your name" name="textarea" />
+        <Input.Field placeholder="Enter your name" name="input" />
       </Input>
     </Field>
     <br />
@@ -181,4 +181,10 @@ Use the `name` prop to include the value in the form submission.
 
 ## API
 
-<Api config={cfg} />
+### Input
+
+<Api config={inputCfg} />
+
+### Input Field
+
+<Api config={inputFieldCfg} />

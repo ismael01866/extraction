@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
 
-import { ElementProps } from '../element';
+import { ElementProps, MergeElementProps } from '../element';
 
 export type NumberInputProps<T extends ElementType> = ElementProps<T> & {
   defaultValue?: number;
@@ -11,14 +11,13 @@ export type NumberInputProps<T extends ElementType> = ElementProps<T> & {
   onValueChange?: (value?: number) => void;
 };
 
-export type NumberInputFieldProps<T extends ElementType> = Omit<
+export type NumberInputFieldProps<T extends ElementType> = MergeElementProps<
   ElementProps<T>,
-  'onChange' | 'value' | 'defaultValue'
+  Omit<ElementProps<T>, 'defaultValue' | 'onChange' | 'value'>
 >;
 
-// c: why are this values ommited
-
-export type NumberInputTriggerProps<T extends ElementType> = ElementProps<T>;
+export type NumberInputControlProps<T extends ElementType> = ElementProps<T>;
+export type NumberInputButtonProps<T extends ElementType> = ElementProps<T>;
 
 export type NumberInputContextValue = {
   value?: number;

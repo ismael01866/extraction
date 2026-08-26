@@ -12,6 +12,6 @@
 
   .ex-kbd {
     @apply inline-flex select-none items-center justify-center;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] shadow-[var(--ex-shadow)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] shadow-[var(--ex-shadow)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }

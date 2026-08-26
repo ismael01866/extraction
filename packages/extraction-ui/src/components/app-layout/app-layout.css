@@ -19,7 +19,7 @@
 
   .ex-app-layout-header {
     @apply flex items-center border-0 border-b;
-    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+    @apply px-(--ex-px) min-h-[var(--ex-min-height)];
   }
 
   .ex-app-layout-body {
@@ -34,7 +34,7 @@
 
   .ex-app-layout-sidenav {
     @apply flex flex-col border-0 border-e;
-    @apply w-[var(--ex-width)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) w-[var(--ex-width)];
   }
 
   .ex-app-layout-main {
@@ -43,7 +43,7 @@
 
   .ex-app-layout-section {
     @apply flex flex-1 flex-col;
-    @apply px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py);
   }
 
   .ex-app-layout-aside {
@@ -54,7 +54,7 @@
 
   .ex-app-layout-aside {
     @apply flex flex-col border-0 border-s;
-    @apply w-[var(--ex-width)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) w-[var(--ex-width)];
   }
 
   .ex-app-layout-footer {
@@ -65,6 +65,6 @@
 
   .ex-app-layout-footer {
     @apply flex items-center border-0 border-t;
-    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+    @apply px-(--ex-px) min-h-[var(--ex-min-height)];
   }
 }

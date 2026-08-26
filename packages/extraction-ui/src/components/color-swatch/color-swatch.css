@@ -7,11 +7,11 @@
   }
 
   .ex-color-swatch {
-    @apply variant-surface palette-neutral;
+    @apply variant-solid palette-primary;
   }
 
   .ex-color-swatch {
     @apply inline-flex shrink-0;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)];
   }
 }

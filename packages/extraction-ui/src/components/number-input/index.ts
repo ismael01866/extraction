@@ -1,18 +1,21 @@
 import {
-  NumberInputDecrementTrigger,
+  NumberInputControl,
+  NumberInputDecrementButton,
   NumberInputField,
-  NumberInputIncrementTrigger,
+  NumberInputIncrementButton,
   NumberInputRoot,
 } from './number-input';
 
 export type {
+  NumberInputButtonProps,
+  NumberInputControlProps,
   NumberInputFieldProps,
   NumberInputProps,
-  NumberInputTriggerProps,
 } from './number-input.types';
 
 export const NumberInput = Object.assign(NumberInputRoot, {
   Field: NumberInputField,
-  IncrementTrigger: NumberInputIncrementTrigger,
-  DecrementTrigger: NumberInputDecrementTrigger,
+  Control: NumberInputControl,
+  IncrementButton: NumberInputIncrementButton,
+  DecrementButton: NumberInputDecrementButton,
 });

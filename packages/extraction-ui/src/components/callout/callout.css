@@ -7,12 +7,12 @@
   }
 
   .ex-callout {
-    @apply variant-surface palette-neutral;
+    @apply variant-surface palette-primary;
   }
 
   .ex-callout {
     @apply flex items-start;
-    @apply gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -47,6 +47,6 @@
     --ex-font-weight: var(--ex-callout-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-callout-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }

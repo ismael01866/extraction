@@ -7,11 +7,11 @@
   }
 
   .ex-icon-box {
-    @apply variant-outline palette-neutral;
+    @apply variant-solid palette-primary;
   }
 
   .ex-icon-box {
     @apply inline-flex shrink-0 select-none items-center justify-center;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)] [font-size:var(--ex-font-size)];
   }
 }
