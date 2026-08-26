@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.6
+
+### Patch Changes
+
+- Added NumberInput. Tonal utilities improvements. Update layout structure on native input and textarea components.
+
 ## 0.8.5
 
 ### Patch Changes
