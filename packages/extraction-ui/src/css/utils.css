@@ -335,6 +335,10 @@
 
 @utility disabled {
   @apply palette-neutral opacity-(--ex-options-opacity-disabled) pointer-events-none select-none grayscale;
+
+  &::before {
+    @apply pointer-events-auto absolute inset-y-0 size-full cursor-not-allowed bg-transparent content-[''];
+  }
 }
 
 @utility valid {

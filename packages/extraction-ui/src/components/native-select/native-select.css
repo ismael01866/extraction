@@ -30,7 +30,7 @@
 
   .ex-native-select-field {
     @apply w-full appearance-none truncate;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-size:var(--ex-font-size)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] [font-size:var(--ex-font-size)];
 
     option:not(:disabled) {
       @apply variant;

@@ -1,0 +1,107 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-number-input {
+    --ex-font-family: var(--ex-input-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-input-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-options-opacity-placeholder);
+
+    @apply number-input-md;
+  }
+
+  *:not(.ex-input-group) {
+    > .ex-number-input {
+      @apply variant-outline palette-neutral;
+      @apply border-transparent! bg-transparent! text-inherit! outline-transparent!;
+    }
+  }
+
+  .ex-number-input {
+    @apply relative inline-flex w-full flex-nowrap items-center justify-center;
+
+    &:where(.variant-solid) {
+      @apply component-variant-solid-contrast;
+
+      .ex-number-input-control,
+      .ex-number-input-control > :not(:first-child) {
+        @apply border-[var(--shade-soft)] dark:border-[var(--shade-soft-dark)];
+      }
+    }
+
+    &:where(.variant-subtle) {
+      .ex-number-input-control {
+        @apply border-[var(--shade-raised)] dark:border-[var(--shade-raised-dark)];
+      }
+    }
+  }
+
+  .ex-number-input-field {
+    @apply variant inline-flex w-full;
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+
+    &::placeholder {
+      @apply opacity-(--ex-opacity) text-inherit;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      @apply m-0 appearance-none;
+    }
+  }
+
+  .ex-number-input-control {
+    @apply variant;
+  }
+
+  .ex-number-input-control {
+    --ex-cursor: var(--ex-number-input-control-cursor, pointer);
+
+    @apply border-s-1 z-1 absolute end-0 top-0 m-px flex h-[calc(100%_-_2px)] flex-col border-0;
+    @apply w-[var(--ex-width)];
+  }
+
+  .ex-number-input-control > :not(:first-child) {
+    @apply border-t-1 border-[var(--shade-raised)] dark:border-[var(--shade-raised-dark)];
+  }
+
+  .ex-number-input-control {
+    > :where(:first-child) {
+      @apply rounded-se-(--ex-radius);
+    }
+
+    > :where(:last-child) {
+      @apply rounded-ee-(--ex-radius);
+    }
+  }
+
+  .ex-number-input-decrement-button,
+  .ex-number-input-increment-button {
+    @apply interactive;
+  }
+
+  .ex-number-input-decrement-button,
+  .ex-number-input-increment-button {
+    @apply flex flex-1 items-center justify-center;
+    @apply cursor-(--ex-cursor) [font-size:var(--ex-font-size)];
+
+    :where(svg) {
+      @apply relative size-[1em];
+    }
+  }
+
+  .ex-number-input-decrement-button-svg,
+  .ex-number-input-increment-button-svg {
+    @apply fill-current stroke-current stroke-0;
+  }
+}
+
+@layer utilities {
+  .ex-number-input {
+    @apply valid invalid;
+  }
+
+  .ex-number-input-field {
+    @apply interactive;
+  }
+}

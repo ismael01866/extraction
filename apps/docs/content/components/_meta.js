@@ -17,14 +17,14 @@ export default {
   forms: {
     title: 'Forms',
   },
+  navigation: {
+    title: 'Navigation',
+  },
   'data-display': {
     title: 'Data Display',
   },
   feedback: {
     title: 'Feedback',
-  },
-  navigation: {
-    title: 'Navigation',
   },
   disclosure: {
     title: 'Disclosure',

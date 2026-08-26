@@ -6,7 +6,9 @@ export function HomePanelForms() {
     <VStack>
       <HStack className="w-full">
         <Field className="field-sm w-full">
-          <Input id="name" placeholder="Name" />
+          <Input>
+            <Input.Field id="name" placeholder="Name" />
+          </Input>
         </Field>
         <Select>
           <Select.Trigger aria-label="select-trigger" className="select-trigger-sm">

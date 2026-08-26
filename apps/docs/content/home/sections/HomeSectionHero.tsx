@@ -41,7 +41,7 @@ export function HomeSectionHero() {
             <Button
               as="a"
               href="get-started/overview/installation"
-              className="text-fluid-base h-14 w-full justify-self-end px-8 sm:w-fit"
+              className="palette-primary text-fluid-base h-14 w-full justify-self-end px-8 sm:w-fit"
             >
               <Icon>
                 <LuRocket />

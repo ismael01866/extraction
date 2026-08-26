@@ -53,7 +53,7 @@ export function HomeSectionCSS() {
               }}
             >
               <HStack className="items-start gap-4">
-                <IconBox className="icon-box-lg">
+                <IconBox className="icon-box-lg palette-primary variant-solid">
                   <Icon as={feature.icon} />
                 </IconBox>
 

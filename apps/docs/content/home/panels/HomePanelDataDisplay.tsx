@@ -16,7 +16,7 @@ export function HomePanelDataDisplay() {
           </HStack>
         </Card.Section>
         <Card.Section className="pt-1">
-          <Progress aria-label="progress">
+          <Progress aria-label="progress" className="palette-primary">
             <Progress.Indicator className="max-w-[50%]" />
           </Progress>
         </Card.Section>

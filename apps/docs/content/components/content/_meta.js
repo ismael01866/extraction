@@ -8,6 +8,9 @@ export default {
   highlight: {
     title: 'Highlight',
   },
+  icon: {
+    title: 'Icon',
+  },
   kbd: {
     title: 'Kbd',
   },

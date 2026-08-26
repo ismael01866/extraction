@@ -11,12 +11,12 @@
   }
 
   .ex-progress {
-    @apply bg-[--alpha(var(--background)/20%)] dark:bg-[--alpha(var(--background-dark)/20%)];
+    @apply variant bg-neutral-100 dark:bg-neutral-900;
   }
 
   .ex-progress {
     @apply w-full shrink-0 overflow-hidden [transform:translateZ(0)];
-    @apply h-[var(--ex-size)] rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) h-[var(--ex-size)];
   }
 
   .ex-progress-indicator {

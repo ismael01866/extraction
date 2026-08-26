@@ -3,7 +3,8 @@ import { Box } from 'extraction-ui';
 import data from '../data.json';
 import { cfg } from './box';
 
-export const Component = <Box className='palette-primary variant-solid'>Box</Box>;
+export const Component = <Box className='palette-neutral variant-outline box-md'>Box</Box>;
+export const SizeComponent = <Box className='palette-neutral variant-outline'>Box</Box>;
 
 export const Wrapper = ({ children }) => children;
 
@@ -23,7 +24,7 @@ export const Wrapper = ({ children }) => children;
 <Size
   config={cfg}
   components={{
-    usage: Component,
+    usage: SizeComponent,
     wrapper: Wrapper,
   }}
 />

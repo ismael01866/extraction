@@ -7,11 +7,11 @@
     --ex-radius: var(--ex-highlight-radius-sm, var(--radius-sm));
 
     @apply relative inline whitespace-nowrap bg-transparent;
-    @apply px-[var(--ex-px)];
+    @apply px-(--ex-px);
   }
 
   .ex-highlight {
-    @apply variant-subtle palette-neutral;
+    @apply variant-subtle palette-primary;
     @apply border-transparent! bg-transparent! outline-transparent!;
 
     &:where(.variant-solid) {
@@ -21,9 +21,8 @@
 
   .ex-highlight {
     &::before {
-      content: '';
-      @apply variant -z-1 absolute inset-0;
-      @apply rounded-[var(--ex-radius)];
+      @apply variant -z-1 absolute inset-0 content-[''];
+      @apply rounded-(--ex-radius);
     }
   }
 }

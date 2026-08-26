@@ -1,3 +1,7 @@
-export { Input } from './input';
+import { InputField, InputRoot } from './input';
 
-export type { InputProps } from './input.types';
+export type { InputFieldProps, InputProps } from './input.types';
+
+export const Input = Object.assign(InputRoot, {
+  Field: InputField,
+});

@@ -12,7 +12,7 @@
 
   .ex-card {
     @apply flex leading-normal;
-    @apply rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius);
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -25,7 +25,7 @@
 
   .ex-card-section {
     @apply flex flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
   }
 
   .ex-card-title {
@@ -38,7 +38,7 @@
     --ex-font-weight: var(--ex-card-description-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-card-description-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }
 

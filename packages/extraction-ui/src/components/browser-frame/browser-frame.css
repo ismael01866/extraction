@@ -10,7 +10,7 @@
     --ex-radius: var(--ex-browser-frame-radius, var(--radius-sm));
 
     @apply flex min-w-full flex-col overflow-hidden;
-    @apply rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius);
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -26,7 +26,7 @@
 
   .ex-browser-frame-toolbar {
     @apply flex items-center gap-4 border-0 border-b;
-    @apply min-h-[var(--ex-min-height)] px-[var(--ex-px)];
+    @apply px-(--ex-px) min-h-[var(--ex-min-height)];
   }
 
   .ex-browser-frame-controls {
@@ -66,7 +66,7 @@
 
   .ex-browser-frame-address {
     @apply opacity-muted flex flex-1 items-center;
-    @apply min-h-[var(--ex-min-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) min-h-[var(--ex-min-height)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-browser-frame-content {
@@ -76,7 +76,7 @@
 
   .ex-browser-frame-content {
     @apply flex min-h-0 flex-1 overflow-hidden;
-    @apply px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py);
   }
 }
 

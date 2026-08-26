@@ -34,7 +34,7 @@ export function Variants({ color }: { color?: string }) {
       <BaseContainer className="flex-col items-start">
         <Grid className="mbs-2 grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
           {variantsValues
-            .filter((variant) => !['solid', 'plain'].includes(variant))
+            .filter((variant) => !['solid', 'plain', 'link'].includes(variant))
             .map((variant, index) => (
               <VStack key={index} className="items-stretch">
                 <Button key={index} className={`palette-${color} variant-${variant}`}>
@@ -47,7 +47,7 @@ export function Variants({ color }: { color?: string }) {
       <CodeContainer>
         <Code>
           {variantsValues
-            .filter((variant) => !['solid', 'plain'].includes(variant))
+            .filter((variant) => !['solid', 'plain', 'link'].includes(variant))
             .map((variant) => {
               return `${reactElementToJSXString(
                 <Button className={`palette-${color} variant-${variant}`} />,

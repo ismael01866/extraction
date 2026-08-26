@@ -12,7 +12,7 @@
 
   .ex-menubar {
     @apply z-1 relative flex items-center justify-center;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] px-[var(--ex-px)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)];
 
     > div:is(:first-child) {
       @apply z-1;
@@ -26,7 +26,7 @@
 
   .ex-menubar-trigger {
     @apply inline-flex select-none items-center justify-center leading-none outline-none;
-    @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-menubar-content,
@@ -42,7 +42,7 @@
   .ex-menubar-content,
   .ex-menubar-sub-content {
     @apply flex will-change-[transform,opacity];
-    @apply max-w-[var(--ex-max-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)];
+    @apply rounded-(--ex-radius) max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open'][data-side='top']) {
       @apply animate-in slide-from-top-1 fade-in;
@@ -92,7 +92,7 @@
 
   .ex-menubar-section {
     @apply flex flex-col;
-    @apply gap-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-[var(--ex-gap-y)];
   }
 
   .ex-menubar-arrow {
@@ -134,7 +134,7 @@
   .ex-menubar-radio-item,
   .ex-menubar-checkbox-item {
     @apply relative flex min-w-0 select-none items-center;
-    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
       @apply variant-subtle border-0!;
@@ -164,7 +164,7 @@
   }
 
   .ex-menubar-label {
-    @apply px-[var(--ex-px)] opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply px-(--ex-px) opacity-(--ex-opacity) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-menubar-command {
@@ -175,7 +175,7 @@
 
   .ex-menubar-command {
     @apply absolute right-[0.5rem] inline-flex flex-shrink-0 items-center justify-center leading-none;
-    @apply opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-(--ex-opacity) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 }
 

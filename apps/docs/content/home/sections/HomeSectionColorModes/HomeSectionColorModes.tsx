@@ -68,16 +68,16 @@ export function HomeSectionColorModes() {
                   </div>
 
                   <Stack className="items-end">
-                    <Badge className="variant-surface">
+                    <Badge className="variant-surface palette-primary">
                       <Icon as={BiSolidStar} className="text-primary" />
-                      4.92
+                      4.9
                     </Badge>
                     <Text className="opacity-subtle text-sm">(58 reviews)</Text>
                   </Stack>
                 </HStack>
               </Card.Section>
               <Card.Section className="mbs-auto pt-0">
-                <Button className="button-lg rounded-full">Reserve</Button>
+                <Button className="button-lg palette-primary rounded-full">Reserve</Button>
               </Card.Section>
             </Card.Content>
           </Card>

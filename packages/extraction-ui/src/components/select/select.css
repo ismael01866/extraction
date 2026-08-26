@@ -6,6 +6,7 @@
     --ex-cursor: var(--ex-select-trigger-cursor, default);
     --ex-font-family: var(--ex-select-trigger-font-family, var(--font-sans));
     --ex-font-weight: var(--ex-select-trigger-font-weight, var(--font-weight-normal));
+    --ex-opacity: var(--ex-options-opacity-placeholder);
 
     @apply select-trigger-md;
   }
@@ -18,7 +19,7 @@
 
   .ex-select-trigger {
     @apply relative inline-flex w-full;
-    @apply h-[var(--ex-height)] items-center rounded-[var(--ex-radius)] px-[var(--ex-px)] [cursor:var(--ex-cursor)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] items-center [cursor:var(--ex-cursor)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     padding-inline-end: calc(var(--ex-px) * 2.25);
 
@@ -27,6 +28,12 @@
 
       .ex-select-icon {
         @apply component-variant-solid-contrast;
+      }
+    }
+
+    &:where(:not(:has(.ex-select-item-text))) {
+      > * {
+        @apply opacity-(--ex-opacity);
       }
     }
   }
@@ -54,7 +61,7 @@
 
   .ex-select-content {
     @apply flex hidden min-w-fit;
-    @apply max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-width)] rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+    @apply rounded-(--ex-radius) max-h-[var(--radix-select-content-available-height)] w-[var(--radix-select-trigger-width)] max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
 
     &:has(.ex-select-item-indicator) {
       .ex-select-item {
@@ -69,7 +76,7 @@
 
   .ex-select-section {
     @apply flex flex-col;
-    @apply gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-[var(--ex-gap-y)];
   }
 
   .ex-select-separator {
@@ -87,7 +94,7 @@
 
   .ex-select-item {
     @apply relative flex min-w-0 select-none items-center;
-    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where([data-highlighted]) {
       @apply variant-subtle border-0!;
@@ -114,7 +121,7 @@
   }
 
   .ex-select-label {
-    @apply px-[var(--ex-px)] py-[var(--ex-py)] opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply px-(--ex-px) py-(--ex-py) opacity-(--ex-opacity) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-select-scroll-up-button,

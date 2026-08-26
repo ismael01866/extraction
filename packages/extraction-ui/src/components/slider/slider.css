@@ -7,7 +7,7 @@
   }
 
   .ex-slider {
-    @apply variant-solid palette-primary;
+    @apply variant-solid palette-neutral;
     @apply border-transparent! bg-transparent! outline-transparent!;
   }
 
@@ -24,11 +24,11 @@
   }
 
   .ex-slider-track {
-    @apply variant-solid;
+    @apply variant;
   }
 
   .ex-slider-track {
-    @apply relative flex-1 overflow-hidden rounded-[var(--ex-radius)];
+    @apply rounded-(--ex-radius) relative flex-1 overflow-hidden;
     @apply bg-neutral-100 dark:bg-neutral-900;
 
     &:where([data-orientation='horizontal']) {
@@ -41,7 +41,8 @@
   }
 
   .ex-slider-range {
-    @apply variant-solid rounded-[var(--ex-radius)];
+    @apply variant;
+    @apply rounded-(--ex-radius);
   }
 
   .ex-slider-range {
@@ -58,7 +59,7 @@
 
   .ex-slider-thumb {
     @apply block bg-white dark:bg-black;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] border-2 border-[var(--shade-color)] shadow-[var(--ex-shadow)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)] border-2 border-[var(--shade-color)] shadow-[var(--ex-shadow)];
 
     &:where(:disabled, [disabled], [data-disabled], .disabled) {
       @apply border-[var(--shade-soft)] bg-[var(--shade-soft)] opacity-[unset] shadow-none dark:border-[var(--shade-soft-dark)] dark:bg-[var(--shade-soft-dark)];

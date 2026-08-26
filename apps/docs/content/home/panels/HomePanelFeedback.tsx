@@ -13,7 +13,7 @@ export function HomePanelFeedback() {
         </VStack>
       </HStack>
       <HStack className="w-full">
-        <Callout className="callout-sm w-full">
+        <Callout className="callout-sm palette-primary w-full">
           <Callout.Indicator />
           <Callout.Title>Service update completed</Callout.Title>
         </Callout>

@@ -14,6 +14,9 @@ export default {
   'native-select': {
     title: 'Select (Native)',
   },
+  'number-input': {
+    title: 'Number Input',
+  },
   password: {
     title: 'Password',
   },

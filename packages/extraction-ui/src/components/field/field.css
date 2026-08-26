@@ -27,7 +27,7 @@
   }
 
   .ex-field-helper {
-    @apply leading-none opacity-[var(--ex-opacity)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-(--ex-opacity) leading-none [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-field-error {

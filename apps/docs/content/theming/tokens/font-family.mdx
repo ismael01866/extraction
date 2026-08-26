@@ -38,7 +38,7 @@ Font family tokens control the default typeface. For more information on the def
     ].map(({ name, family }) => (
       <HStack key={name} className='items-baseline'>
         <span className='w-16 shrink-0 font-normal'>{name}</span>
-        <Box className='variant-outline palette-neutral flex-1'>
+        <Box className='box-sm variant-outline palette-neutral flex-1'>
           <p style={{ fontFamily: family }} className='flex-1'>
             {`The quick brown fox jumps over the lazy dog.`}
           </p>

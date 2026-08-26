@@ -38,7 +38,7 @@
     --ex-font-weight: var(--ex-table-caption-font-weight, var(--font-weight-normal));
     --ex-opacity: var(--ex-table-caption-opacity, var(--ex-options-opacity-muted));
 
-    @apply opacity-[var(--ex-opacity)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply opacity-(--ex-opacity) [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-table-head {
@@ -72,11 +72,11 @@
     --ex-font-weight: var(--ex-table-header-font-weight, var(--font-weight-normal));
 
     @apply text-start align-middle;
-    @apply px-[var(--ex-px)] py-[var(--ex-py)] [font-weight:var(--ex-font-weight)];
+    @apply px-(--ex-px) py-(--ex-py) [font-weight:var(--ex-font-weight)];
   }
 
   .ex-table-cell {
     @apply align-middle;
-    @apply px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py);
   }
 }

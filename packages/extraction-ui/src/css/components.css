@@ -1328,6 +1328,10 @@
     @apply native-select-sm;
   }
 
+  .ex-number-input {
+    @apply number-input-sm;
+  }
+
   .ex-password {
     @apply password-sm;
   }
@@ -1366,6 +1370,10 @@
 
   .ex-input {
     @apply input-md;
+  }
+
+  .ex-number-input {
+    @apply number-input-md;
   }
 
   .ex-select-trigger {
@@ -1418,6 +1426,10 @@
 
   .ex-input {
     @apply input-lg;
+  }
+
+  .ex-number-input {
+    @apply number-input-lg;
   }
 
   .ex-select-trigger {
@@ -2030,6 +2042,42 @@
 
   .ex-navigation-menu-indicator {
     --ex-font-size: var(--ex-navigation-menu-indicator-font-size-md, var(--text-base));
+  }
+}
+
+@utility number-input-sm {
+  --ex-height: var(--ex-number-input-height-sm, var(--ex-size-xl));
+
+  --ex-px: var(--ex-number-input-px-sm, calc(var(--spacing) * 3.5));
+  --ex-radius: var(--ex-number-input-radius-sm, var(--radius-sm));
+  --ex-font-size: var(--ex-number-input-font-size-sm, var(--text-xs));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-sm, calc(var(--spacing) * 4));
+  }
+}
+
+@utility number-input-md {
+  --ex-height: var(--ex-number-input-height-md, var(--ex-size-2xl));
+
+  --ex-px: var(--ex-number-input-px-md, calc(var(--spacing) * 4));
+  --ex-radius: var(--ex-number-input-radius-md, var(--radius-sm));
+  --ex-font-size: var(--ex-number-input-font-size-md, var(--text-sm));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-md, calc(var(--spacing) * 5));
+  }
+}
+
+@utility number-input-lg {
+  --ex-height: var(--ex-number-input-height-lg, var(--ex-size-3xl));
+
+  --ex-px: var(--ex-number-input-px-lg, calc(var(--spacing) * 5));
+  --ex-radius: var(--ex-number-input-radius-lg, var(--radius-sm));
+  --ex-font-size: var(--ex-number-input-font-size-lg, var(--text-base));
+
+  .ex-number-input-control {
+    --ex-width: var(--ex-number-input-control-width-lg, calc(var(--spacing) * 6));
   }
 }
 

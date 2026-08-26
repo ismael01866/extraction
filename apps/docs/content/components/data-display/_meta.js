@@ -20,9 +20,6 @@ export default {
   counter: {
     title: 'Counter',
   },
-  icon: {
-    title: 'Icon',
-  },
   'icon-box': {
     title: 'Icon Box',
   },

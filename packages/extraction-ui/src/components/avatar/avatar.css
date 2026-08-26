@@ -15,7 +15,7 @@
 
   .ex-avatar {
     @apply shrink-0 select-none overflow-hidden;
-    @apply size-[var(--ex-size)] rounded-[var(--ex-radius)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [transform:translateZ(0)];
+    @apply rounded-(--ex-radius) size-[var(--ex-size)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [transform:translateZ(0)];
 
     &:has(.ex-avatar-image) {
       mask-image: radial-gradient(white 99%, transparent 100%);

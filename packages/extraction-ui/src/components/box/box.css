@@ -3,10 +3,11 @@
 
 @layer components {
   .ex-box {
-    @apply box-md;
+    --ex-px: 0;
+    --ex-py: 0;
   }
 
   .ex-box {
-    @apply rounded-[var(--ex-radius)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py);
   }
 }

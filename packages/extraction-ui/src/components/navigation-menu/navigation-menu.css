@@ -58,7 +58,7 @@
 
   .ex-navigation-menu {
     @apply z-1 relative flex justify-center;
-    @apply h-[var(--ex-height)] rounded-[var(--ex-radius)] [font-size:var(--ex-font-size)];
+    @apply rounded-(--ex-radius) h-[var(--ex-height)] [font-size:var(--ex-font-size)];
 
     > div:is(:first-child) {
       @apply z-1;
@@ -84,7 +84,7 @@
 
   .ex-navigation-menu,
   .ex-navigation-menu-sub {
-    @apply flex px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) flex;
 
     &:where(:not([data-orientation])),
     &:where([data-orientation='horizontal']) {
@@ -126,7 +126,7 @@
   .ex-navigation-menu-link,
   .ex-navigation-menu-trigger {
     @apply inline-flex select-none items-center justify-center leading-none outline-none;
-    @apply h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] rounded-[var(--ex-radius)] px-[var(--ex-px)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-navigation-menu-content {
@@ -155,7 +155,7 @@
 
   .ex-navigation-menu-section {
     @apply flex flex-col;
-    @apply gap-y-[var(--ex-gap-y)] px-[var(--ex-px)] py-[var(--ex-py)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-[var(--ex-gap-y)];
   }
 
   .ex-navigation-menu-viewport-anchor {
@@ -166,7 +166,7 @@
     }
 
     > .ex-navigation-menu-viewport {
-      @apply rounded-[var(--ex-radius)] shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
+      @apply rounded-(--ex-radius) shadow-[var(--ex-shadow)] [font-size:var(--ex-font-size)];
     }
   }
 
