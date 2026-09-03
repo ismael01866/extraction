@@ -22,6 +22,10 @@ export const progressCfg = {
       type: 'number',
       default: '',
     },
+    orientation: {
+      type: 'enum of ["horizontal", "vertical"]',
+      default: 'horizontal',
+    },
     value: {
       type: 'number|null',
       default: '',

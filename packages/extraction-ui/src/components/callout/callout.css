@@ -12,7 +12,7 @@
 
   .ex-callout {
     @apply flex items-start;
-    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-(--ex-gap-x);
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -21,12 +21,12 @@
 
   .ex-callout-content {
     @apply flex flex-1 flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+    @apply gap-y-(--ex-gap-y) gap-x-(--ex-gap-x);
   }
 
   .ex-callout-indicator {
     @apply relative inline-flex flex-shrink-0 items-center justify-center;
-    @apply h-[var(--ex-first-line-height)] [font-size:var(--ex-font-size)];
+    @apply [font-size:var(--ex-font-size)];
 
     :where(svg) {
       @apply relative size-[1em];
@@ -40,6 +40,7 @@
   .ex-callout-title {
     --ex-font-weight: var(--ex-callout-title-font-weight, var(--font-weight-semibold));
 
+    @apply [text-box:trim-start];
     @apply [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 

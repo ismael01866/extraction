@@ -15,7 +15,7 @@
 
   .ex-badge {
     @apply inline-flex shrink-0 select-none items-center justify-center;
-    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) gap-x-(--ex-gap-x) h-[var(--ex-height)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     :where(svg) {
       @apply relative h-[1em] w-[1em];

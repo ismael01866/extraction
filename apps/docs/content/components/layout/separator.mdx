@@ -46,6 +46,31 @@ export const Wrapper = ({ children }) => children;
   vertical
 />
 
+## With Content
+
+<Usage
+  components={{
+    usage: <Separator>Center</Separator>,
+    wrapper: Wrapper,
+  }}
+/>
+
+<br />
+<Usage
+  components={{
+    usage: <Separator align='start'>Start</Separator>,
+    wrapper: Wrapper,
+  }}
+/>
+
+<br />
+<Usage
+  components={{
+    usage: <Separator align='end'>End</Separator>,
+    wrapper: Wrapper,
+  }}
+/>
+
 ## Sizes
 
 <Size
@@ -74,6 +99,11 @@ export const Wrapper = ({ children }) => children;
   --ex-separator-size-sm: 2px;
   --ex-separator-size-md: 3px;
   --ex-separator-size-lg: 4px;
+
+  --ex-separator-label-spacer-xs: calc(var(--spacing) * 2);
+  --ex-separator-label-spacer-sm: calc(var(--spacing) * 2);
+  --ex-separator-label-spacer-md: calc(var(--spacing) * 2);
+  --ex-separator-label-spacer-lg: calc(var(--spacing) * 2);
 }
 ```
 

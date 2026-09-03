@@ -11,7 +11,7 @@
   }
 
   .ex-card {
-    @apply flex leading-normal;
+    @apply flex min-w-0 leading-normal;
     @apply rounded-(--ex-radius);
 
     &:where(.variant-solid) {
@@ -25,7 +25,7 @@
 
   .ex-card-section {
     @apply flex flex-col;
-    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-(--ex-gap-y) gap-x-(--ex-gap-x);
   }
 
   .ex-card-title {

@@ -15,7 +15,7 @@
   }
 
   .ex-breadcrumbs-list {
-    @apply flex list-none items-center justify-center gap-x-[var(--ex-gap-x)] break-all;
+    @apply gap-x-(--ex-gap-x) flex list-none items-center justify-center break-all;
   }
 
   .ex-breadcrumbs-item {
@@ -25,7 +25,7 @@
   .ex-breadcrumbs-link,
   .ex-breadcrumbs-current-link {
     @apply inline-flex items-center justify-center;
-    @apply gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
+    @apply gap-x-(--ex-gap-x) [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
 
     :where(svg) {
       @apply h-[1em] w-[1em];

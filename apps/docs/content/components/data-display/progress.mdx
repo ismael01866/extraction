@@ -4,8 +4,14 @@ import data from '../data.json';
 import { cfg, progressCfg, progressIndicatorCfg } from './progress';
 
 export const Component = (
-  <Progress className='max-w-80' aria-label='progress'>
+  <Progress className='w-80' aria-label='progress'>
     <Progress.Indicator className='max-w-[50%]' />
+  </Progress>
+);
+
+export const ComponentVertical = (
+  <Progress className='h-40' aria-label='progress' orientation='vertical'>
+    <Progress.Indicator className='max-h-[50%]' />
   </Progress>
 );
 
@@ -26,6 +32,16 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
 />
 
 ## Sizes

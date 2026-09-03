@@ -7,6 +7,8 @@
   }
 
   .ex-description {
-    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    --ex-opacity: var(--ex-description-opacity, var(--ex-options-opacity-muted));
+
+    @apply opacity-(--ex-opacity) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 }

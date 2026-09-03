@@ -1,0 +1,15 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-simple-grid {
+    --ex-fit: var(--ex-simple-grid-fit, auto-fit);
+    --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-xs));
+
+    @apply grid w-full grid-cols-[repeat(var(--ex-fit),minmax(min(100%,var(--ex-min-child-width)),1fr))];
+  }
+
+  .ex-simple-grid {
+    @apply simple-grid-md;
+  }
+}

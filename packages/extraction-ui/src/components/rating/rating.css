@@ -14,7 +14,7 @@
 
   .ex-rating {
     @apply inline-flex items-center;
-    @apply gap-x-[var(--ex-gap-x)];
+    @apply gap-x-(--ex-gap-x);
   }
 
   .ex-rating-control {

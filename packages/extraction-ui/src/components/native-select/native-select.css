@@ -12,12 +12,13 @@
   *:not(.ex-input-group) {
     > .ex-native-select {
       @apply variant-outline palette-neutral;
+      @apply border-transparent! bg-transparent! outline-transparent!;
     }
   }
 
   .ex-native-select {
-    @apply relative inline-flex w-full [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
-    @apply border-transparent! bg-transparent! outline-transparent!;
+    @apply relative inline-flex w-full min-w-0;
+    @apply [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;

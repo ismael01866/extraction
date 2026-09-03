@@ -18,8 +18,8 @@
   }
 
   .ex-pin-input {
-    @apply relative flex flex-nowrap;
-    @apply gap-x-[var(--ex-gap-x)];
+    @apply relative isolate flex min-w-0 flex-nowrap;
+    @apply gap-x-(--ex-gap-x);
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;

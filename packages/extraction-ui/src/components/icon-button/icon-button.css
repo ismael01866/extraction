@@ -13,7 +13,7 @@
   }
 
   .ex-icon-button {
-    @apply inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
+    @apply isolate inline-flex shrink-0 cursor-pointer select-none items-center justify-center;
     @apply rounded-(--ex-radius) h-[var(--ex-size)] w-[var(--ex-size)] [cursor:var(--ex-cursor)] [font-size:var(--ex-font-size)];
   }
 }

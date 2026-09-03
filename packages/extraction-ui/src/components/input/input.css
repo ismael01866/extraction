@@ -22,7 +22,7 @@
   }
 
   .ex-input-field {
-    @apply inline-flex w-full;
+    @apply inline-flex w-full min-w-0;
     @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &::placeholder {

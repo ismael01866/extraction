@@ -147,64 +147,157 @@ Always verify compatibility in `package.json`.
 ## Accordion
 
 ```tsx
-
+<Accordion type="single" defaultValue="option-1">
+  <Accordion.Item value="option-1">
+    <Accordion.Header>
+      <Accordion.Trigger>
+        <Accordion.Title>Option 1</Accordion.Title>
+        <Accordion.Icon />
+      </Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Content>
+      <Accordion.Section>
+        <Accordion.Description>The quick brown fox jumps over the lazy dog</Accordion.Description>
+      </Accordion.Section>
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="option-2">
+    <Accordion.Header>
+      <Accordion.Trigger>
+        <Accordion.Title>Option 2</Accordion.Title>
+        <Accordion.Icon />
+      </Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Content>
+      <Accordion.Section>
+        <Accordion.Description>The quick brown fox jumps over the lazy dog</Accordion.Description>
+      </Accordion.Section>
+    </Accordion.Content>
+  </Accordion.Item>
+</Accordion>
 ```
+
+Use the compound accordion API with `Accordion.Item`, `Accordion.Header`, `Accordion.Trigger`, `Accordion.Content`, `Accordion.Section`, `Accordion.Title`, `Accordion.Icon`, and `Accordion.Description`. `Accordion.Item` requires a `value`, and the root supports `type` (`single` or `multiple`) plus Radix-style controlled/uncontrolled state props like `defaultValue`.
 
 ---
 
 ## Alert Dialog
 
 ```tsx
-
+<AlertDialog>
+  <AlertDialog.Trigger asChild>
+    <Button>Trigger</Button>
+  </AlertDialog.Trigger>
+  <AlertDialog.Portal>
+    <AlertDialog.Overlay />
+    <AlertDialog.Content>
+      <AlertDialog.Section>
+        <AlertDialog.Title>The quick brown fox</AlertDialog.Title>
+        <AlertDialog.Description>
+          Alice was beginning to get very tired of sitting by her sister on the bank.
+        </AlertDialog.Description>
+      </AlertDialog.Section>
+      <AlertDialog.Section className="flex-row justify-end">
+        <AlertDialog.Cancel>
+          <Button className="variant-outline palette-neutral">Cancel</Button>
+        </AlertDialog.Cancel>
+        <AlertDialog.Action asChild>
+          <Button>Confirm</Button>
+        </AlertDialog.Action>
+      </AlertDialog.Section>
+    </AlertDialog.Content>
+  </AlertDialog.Portal>
+</AlertDialog>
 ```
+
+Use the compound alert dialog API with `AlertDialog.Trigger`, `AlertDialog.Portal`, `AlertDialog.Overlay`, `AlertDialog.Content`, `AlertDialog.Section`, `AlertDialog.Title`, `AlertDialog.Description`, `AlertDialog.Cancel`, and `AlertDialog.Action`. `AlertDialog.Trigger` typically renders as a button via `asChild`, and `AlertDialog.Action`/`Cancel` are used for destructive or secondary actions inside the dialog.
 
 ---
 
 ## App Layout
 
 ```tsx
-
+<AppLayout className="min-h-80 text-sm">
+  <AppLayout.Header>Header</AppLayout.Header>
+  <AppLayout.Body>
+    <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+    <AppLayout.Main>
+      <AppLayout.Section>Main</AppLayout.Section>
+    </AppLayout.Main>
+    <AppLayout.Aside>Aside</AppLayout.Aside>
+  </AppLayout.Body>
+  <AppLayout.Footer>Footer</AppLayout.Footer>
+</AppLayout>
 ```
+
+Use `AppLayout` as a semantic page shell composed of `Header`, `Body`, `Sidenav`, `Main`, `Aside`, `Footer`, and optional `Section` blocks. It is primarily used for dashboard and document-style layouts rather than ordinary page containers.
 
 ---
 
 ## Avatar
 
 ```tsx
-
+<Avatar>
+  <Avatar.Image src="/images/assets/avatar-0.webp" alt="avatar" />
+</Avatar>
 ```
+
+Use the compound avatar API with `Avatar.Image` and `Avatar.Fallback`. The image is the primary visual, and `Avatar.Fallback` is used as a text fallback when the image is unavailable or still loading. Keep `alt` text meaningful and concise.
 
 ---
 
 ## Badge
 
 ```tsx
-
+<Badge>Badge</Badge>
 ```
+
+Use `Badge` for compact status, labels, or metadata. It accepts normal children and can contain inline icon content. Prefer concise text and reuse the library’s sizing/variant utilities rather than custom styling.
 
 ---
 
 ## Bg Image
 
 ```tsx
-
+<Box className="relative overflow-hidden">
+  <BgImage src="/images/assets/espresso.webp" className="brightness-50" />
+  <Center>
+    <Description className="text-xl text-white drop-shadow-md">
+      The quick brown fox jumps over the lazy dog
+    </Description>
+  </Center>
+</Box>
 ```
+
+Use `BgImage` as a background media layer with a `src` prop, typically paired with `Overlay` and text content inside a containing layout. It is meant for decorative hero or panel backgrounds, not for standard image rendering.
 
 ---
 
 ## Blockquote
 
 ```tsx
-
+<Blockquote>
+  <Blockquote.Icon />
+  <Blockquote.Content>
+    <Blockquote.Description>Good design is as little design as possible.</Blockquote.Description>
+    <Blockquote.Caption>
+      <Blockquote.Cite>— Dieter Rams</Blockquote.Cite>
+    </Blockquote.Caption>
+  </Blockquote.Content>
+</Blockquote>
 ```
+
+Use the compound blockquote API with `Blockquote.Icon`, `Blockquote.Content`, `Blockquote.Description`, `Blockquote.Caption`, and `Blockquote.Cite`. It is intended for quoted editorial or testimonial content, typically paired with a leading accent or icon treatment.
 
 ---
 
 ## Box
 
 ```tsx
-<Box>Children</Box>
+<Box>Box</Box>
 ```
+
+`Box` is the base layout primitive for generic wrapping content. Use it for spacing, borders, backgrounds, and simple structural containers without introducing custom styling when a utility class or variant already covers the need.
 
 ---
 
@@ -214,23 +307,31 @@ Always verify compatibility in `package.json`.
 <Breadcrumbs>
   <Breadcrumbs.List>
     <Breadcrumbs.Item>
-      <Breadcrumbs.Link href="/">Home</Breadcrumbs.Link>
+      <Breadcrumbs.Link href="#">Home</Breadcrumbs.Link>
     </Breadcrumbs.Item>
     <Breadcrumbs.Separator />
     <Breadcrumbs.Item>
-      <Breadcrumbs.Link href="/profile">Profile</Breadcrumbs.Link>
+      <Breadcrumbs.Link href="#">Profile</Breadcrumbs.Link>
+    </Breadcrumbs.Item>
+    <Breadcrumbs.Separator />
+    <Breadcrumbs.Item>
+      <Breadcrumbs.CurrentLink href="#">Settings</Breadcrumbs.CurrentLink>
     </Breadcrumbs.Item>
   </Breadcrumbs.List>
 </Breadcrumbs>
 ```
+
+Use `Breadcrumbs` for hierarchical navigation with `List`, `Item`, `Link`, `CurrentLink`, and `Separator`. Keep labels short and maintain semantic navigation structure for accessibility.
 
 ---
 
 ## Button
 
 ```tsx
-<Button>Children</Button>
+<Button>Button</Button>
 ```
+
+`Button` is the primary action component. Use the library’s sizing and variant utilities (`size-*`, `variant-*`, `palette-*`) for consistent styling, and include icons only when they add clear meaning to the action.
 
 ---
 
@@ -240,60 +341,85 @@ Always verify compatibility in `package.json`.
 <Card>
   <Card.Content>
     <Card.Section>
-      <Card.Title>Title</Card.Title>
-      <Card.Description>Description</Card.Description>
+      <Card.Title>Header</Card.Title>
+      <Card.Description>
+        Alice was beginning to get very tired of sitting by her sister on the bank.
+      </Card.Description>
     </Card.Section>
   </Card.Content>
 </Card>
 ```
+
+Use `Card` for grouped content blocks with `Card.Content`, `Card.Section`, `Card.Title`, and `Card.Description`. It is ideal for media-rich panels, summaries, and action surfaces that should remain visually cohesive.
 
 ---
 
 ## Center
 
 ```tsx
-
+<Center>The quick brown fox jumps over the lazy dog</Center>
 ```
+
+````tsx
+<Box className="relative">
+  <AbsoluteCenter>
+    The quick brown fox jumps over the lazy dog
+  </AbsoluteCenter>
+</Box>
+```
+
+Use `Center` to horizontally and vertically center a single child within its parent. For positioning inside a relative container, prefer `AbsoluteCenter` when you want the item centered by absolute positioning rather than normal layout flow.
 
 ---
 
 ## Checkbox
 
 ```tsx
-<Checkbox id="option" checked>
-  Description
+<Checkbox>
+  <Checkbox.Control id="ch1" aria-label="Accept terms" defaultChecked>
+    <Checkbox.Indicator />
+  </Checkbox.Control>
+  <Checkbox.Label htmlFor="ch1">Accept terms</Checkbox.Label>
 </Checkbox>
-```
+````
+
+Use the compound checkbox API with `Checkbox.Control`, `Checkbox.Indicator`, and `Checkbox.Label`. For a controlled checkbox, pass `checked` and `onCheckedChange`; for an uncontrolled checkbox, use `defaultChecked` or a form `name` value.
 
 ---
 
 ## CheckboxCard
 
 ```tsx
-<CheckboxCard id="option" checked>
-  <CheckboxCard.Indicator aria-label="Description" />
+<CheckboxCard>
+  <CheckboxCard.Indicator />
   <CheckboxCard.Content>
-    <CheckboxCard.Label>Label</CheckboxCard.Label>
-    <CheckboxCard.Description>Description</CheckboxCard.Description>
+    <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+    <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
   </CheckboxCard.Content>
 </CheckboxCard>
 ```
+
+Use `CheckboxCard` for selectable list items or form choices that need a larger, card-style interaction surface. Keep the label and description concise and pair it with `CheckboxCard.Indicator` and a single `CheckboxCard.Content` block.
 
 ---
 
 ## CloseButton
 
 ```tsx
-<CloseButton aria-label="Description" />
+<CloseButton aria-label="Close" />
 ```
+
+`CloseButton` is a compact dismiss control for dialogs, drawers, or notification surfaces. Always provide an accessible `aria-label` because it is an icon-only control.
 
 ---
 
 ## Code
 
 ```tsx
-
+<Code>console.log()</Code>
 ```
+
+Use `Code` for inline or block-level code snippets. Prefer the library’s text sizing and mono styling utilities to maintain consistency across examples, command lines, and small code fragments.
 
 ---
 

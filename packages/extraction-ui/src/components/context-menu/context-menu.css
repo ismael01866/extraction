@@ -14,7 +14,7 @@
 
   .ex-context-menu-content,
   .ex-context-menu-sub-content {
-    @apply flex will-change-[transform,opacity];
+    @apply isolate flex will-change-[transform,opacity];
     @apply rounded-(--ex-radius) max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)];
 
     &:where([data-side='top']) {
@@ -69,7 +69,7 @@
 
   .ex-context-menu-section {
     @apply flex flex-col;
-    @apply px-(--ex-px) py-(--ex-py) gap-y-[var(--ex-gap-y)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-(--ex-gap-y);
   }
 
   .ex-context-menu-separator {
@@ -81,7 +81,7 @@
   }
 
   .ex-context-menu-radio-group {
-    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+    @apply gap-y-(--ex-gap-y) flex flex-col;
   }
 
   .ex-context-menu-sub-trigger {
