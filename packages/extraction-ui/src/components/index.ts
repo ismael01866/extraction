@@ -22,6 +22,9 @@ export * from './badge/badge.types';
 export { BgImage } from './bg-image';
 export * from './bg-image/bg-image.types';
 
+export { BentoGrid } from './bento-grid';
+export * from './bento-grid/bento-grid.types';
+
 export { Blockquote } from './blockquote';
 export * from './blockquote/blockquote.types';
 

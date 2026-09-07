@@ -5,6 +5,9 @@ export default {
   box: {
     title: 'Box',
   },
+  'bento-grid': {
+    title: 'Bento Grid',
+  },
   'browser-frame': {
     title: 'Browser Frame',
   },
@@ -37,6 +40,9 @@ export default {
   },
   separator: {
     title: 'Separator',
+  },
+  'simple-grid': {
+    title: 'Simple Grid',
   },
   stack: {
     title: 'Stack',

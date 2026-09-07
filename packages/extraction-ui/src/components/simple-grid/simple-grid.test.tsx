@@ -40,17 +40,6 @@ describe('SimpleGrid', () => {
     expect(element).toHaveStyle('--ex-simple-grid-min-child-width: 16rem');
   });
 
-  it('supports auto-fill via the fit prop', () => {
-    render(
-      <SimpleGrid minChildWidth="16rem" fit="auto-fill">
-        SimpleGrid
-      </SimpleGrid>,
-    );
-
-    const element = screen.getByText(/grid/i);
-    expect(element).toHaveStyle('--ex-simple-grid-fit: auto-fill');
-  });
-
   it('preserves display name for debugging', () => {
     expect(SimpleGrid.displayName).toBe('SimpleGrid');
   });

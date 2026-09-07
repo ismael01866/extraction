@@ -23,6 +23,8 @@ import { ColorModeButton } from './components';
 import { LazyLenisProvider } from './components/lazy-lenis';
 import { NavigationEvents } from './components/navigation-events';
 
+import { Analytics } from '@vercel/analytics/next';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -188,6 +190,7 @@ export default async function RootLayout({ children }) {
           {children}
           <LazyLenisProvider />
           <NavigationEvents />
+          <Analytics />
         </Layout>
       </body>
     </html>
