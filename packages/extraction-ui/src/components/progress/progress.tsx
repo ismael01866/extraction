@@ -8,11 +8,16 @@ import { ProgressIndicatorProps, ProgressProps } from './progress.types';
 import * as Progress from '@radix-ui/react-progress';
 
 export const ProgressRoot = <T extends ElementType = 'div'>(props: ProgressProps<T>) => {
-  const { as = 'div', asChild = false, children, ...rest } = props;
+  const { as = 'div', asChild = false, children, orientation = 'horizontal', ...rest } = props;
 
   return (
     <Progress.Root asChild {...rest}>
-      <Element as={as as ElementType<any>} asChild={asChild} cssClassName="ex-progress">
+      <Element
+        as={as as ElementType<any>}
+        asChild={asChild}
+        cssClassName="ex-progress"
+        data-orientation={orientation}
+      >
         {children}
       </Element>
     </Progress.Root>

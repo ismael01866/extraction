@@ -14,7 +14,7 @@
 
   .ex-dropdown-menu-content,
   .ex-dropdown-menu-sub-content {
-    @apply flex will-change-[transform,opacity];
+    @apply isolate flex will-change-[transform,opacity];
     @apply rounded-(--ex-radius) max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)];
 
     &:where([data-side='top']) {
@@ -69,7 +69,7 @@
 
   .ex-dropdown-menu-section {
     @apply flex flex-col;
-    @apply px-(--ex-px) py-(--ex-py) gap-y-[var(--ex-gap-y)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-(--ex-gap-y);
   }
 
   .ex-dropdown-menu-arrow {
@@ -89,7 +89,7 @@
   }
 
   .ex-dropdown-menu-radio-group {
-    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+    @apply gap-y-(--ex-gap-y) flex flex-col;
   }
 
   .ex-dropdown-menu-sub-trigger {

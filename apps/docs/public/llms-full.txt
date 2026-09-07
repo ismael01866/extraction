@@ -1,0 +1,1232 @@
+# Component Reference
+
+## Accordion
+
+```tsx
+<Accordion type="single" defaultValue="option-1">
+  <Accordion.Item value="option-1">
+    <Accordion.Header>
+      <Accordion.Trigger>
+        <Accordion.Title>Option 1</Accordion.Title>
+        <Accordion.Icon />
+      </Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Content>
+      <Accordion.Section>
+        <Accordion.Description>The quick brown fox jumps over the lazy dog</Accordion.Description>
+      </Accordion.Section>
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="option-2">
+    <Accordion.Header>
+      <Accordion.Trigger>
+        <Accordion.Title>Option 2</Accordion.Title>
+        <Accordion.Icon />
+      </Accordion.Trigger>
+    </Accordion.Header>
+    <Accordion.Content>
+      <Accordion.Section>
+        <Accordion.Description>The quick brown fox jumps over the lazy dog</Accordion.Description>
+      </Accordion.Section>
+    </Accordion.Content>
+  </Accordion.Item>
+</Accordion>
+```
+
+Use the compound accordion API with `Accordion.Item`, `Accordion.Header`, `Accordion.Trigger`, `Accordion.Content`, `Accordion.Section`, `Accordion.Title`, `Accordion.Icon`, and `Accordion.Description`. `Accordion.Item` requires a `value`, and the root supports `type` (`single` or `multiple`) plus Radix-style controlled/uncontrolled state props like `defaultValue`.
+
+---
+
+## Alert Dialog
+
+```tsx
+<AlertDialog>
+  <AlertDialog.Trigger asChild>
+    <Button>Trigger</Button>
+  </AlertDialog.Trigger>
+  <AlertDialog.Portal>
+    <AlertDialog.Overlay />
+    <AlertDialog.Content>
+      <AlertDialog.Section>
+        <AlertDialog.Title>The quick brown fox</AlertDialog.Title>
+        <AlertDialog.Description>
+          Alice was beginning to get very tired of sitting by her sister on the bank.
+        </AlertDialog.Description>
+      </AlertDialog.Section>
+      <AlertDialog.Section className="flex-row justify-end">
+        <AlertDialog.Cancel>
+          <Button className="variant-outline palette-neutral">Cancel</Button>
+        </AlertDialog.Cancel>
+        <AlertDialog.Action asChild>
+          <Button>Confirm</Button>
+        </AlertDialog.Action>
+      </AlertDialog.Section>
+    </AlertDialog.Content>
+  </AlertDialog.Portal>
+</AlertDialog>
+```
+
+Use the compound alert dialog API with `AlertDialog.Trigger`, `AlertDialog.Portal`, `AlertDialog.Overlay`, `AlertDialog.Content`, `AlertDialog.Section`, `AlertDialog.Title`, `AlertDialog.Description`, `AlertDialog.Cancel`, and `AlertDialog.Action`. `AlertDialog.Trigger` typically renders as a button via `asChild`, and `AlertDialog.Action`/`Cancel` are used for destructive or secondary actions inside the dialog.
+
+---
+
+## App Layout
+
+```tsx
+<AppLayout className="min-h-80 text-sm">
+  <AppLayout.Header>Header</AppLayout.Header>
+  <AppLayout.Body>
+    <AppLayout.Sidenav>Sidenav</AppLayout.Sidenav>
+    <AppLayout.Main>
+      <AppLayout.Section>Main</AppLayout.Section>
+    </AppLayout.Main>
+    <AppLayout.Aside>Aside</AppLayout.Aside>
+  </AppLayout.Body>
+  <AppLayout.Footer>Footer</AppLayout.Footer>
+</AppLayout>
+```
+
+Use `AppLayout` as a semantic page shell composed of `Header`, `Body`, `Sidenav`, `Main`, `Aside`, `Footer`, and optional `Section` blocks. It is primarily used for dashboard and document-style layouts rather than ordinary page containers.
+
+---
+
+## Avatar
+
+```tsx
+<Avatar>
+  <Avatar.Image src="/images/assets/avatar-0.webp" alt="avatar" />
+</Avatar>
+```
+
+Use the compound avatar API with `Avatar.Image` and `Avatar.Fallback`. The image is the primary visual, and `Avatar.Fallback` is used as a text fallback when the image is unavailable or still loading. Keep `alt` text meaningful and concise.
+
+---
+
+## Badge
+
+```tsx
+<Badge>Badge</Badge>
+```
+
+Use `Badge` for compact status, labels, or metadata. It accepts normal children and can contain inline icon content. Prefer concise text and reuse the library’s sizing/variant utilities rather than custom styling.
+
+---
+
+## Bg Image
+
+```tsx
+<Box className="relative overflow-hidden">
+  <BgImage src="/images/assets/espresso.webp" className="brightness-50" />
+  <Center>
+    <Description className="text-xl text-white drop-shadow-md">
+      The quick brown fox jumps over the lazy dog
+    </Description>
+  </Center>
+</Box>
+```
+
+Use `BgImage` as a background media layer with a `src` prop, typically paired with `Overlay` and text content inside a containing layout. It is meant for decorative hero or panel backgrounds, not for standard image rendering.
+
+---
+
+## Blockquote
+
+```tsx
+<Blockquote>
+  <Blockquote.Icon />
+  <Blockquote.Content>
+    <Blockquote.Description>Good design is as little design as possible.</Blockquote.Description>
+    <Blockquote.Caption>
+      <Blockquote.Cite>— Dieter Rams</Blockquote.Cite>
+    </Blockquote.Caption>
+  </Blockquote.Content>
+</Blockquote>
+```
+
+Use the compound blockquote API with `Blockquote.Icon`, `Blockquote.Content`, `Blockquote.Description`, `Blockquote.Caption`, and `Blockquote.Cite`. It is intended for quoted editorial or testimonial content, typically paired with a leading accent or icon treatment.
+
+---
+
+## Box
+
+```tsx
+<Box>Box</Box>
+```
+
+`Box` is the base layout primitive for generic wrapping content. Use it for spacing, borders, backgrounds, and simple structural containers without introducing custom styling when a utility class or variant already covers the need.
+
+---
+
+## Breadcrumbs
+
+```tsx
+<Breadcrumbs>
+  <Breadcrumbs.List>
+    <Breadcrumbs.Item>
+      <Breadcrumbs.Link href="#">Home</Breadcrumbs.Link>
+    </Breadcrumbs.Item>
+    <Breadcrumbs.Separator />
+    <Breadcrumbs.Item>
+      <Breadcrumbs.Link href="#">Profile</Breadcrumbs.Link>
+    </Breadcrumbs.Item>
+    <Breadcrumbs.Separator />
+    <Breadcrumbs.Item>
+      <Breadcrumbs.CurrentLink href="#">Settings</Breadcrumbs.CurrentLink>
+    </Breadcrumbs.Item>
+  </Breadcrumbs.List>
+</Breadcrumbs>
+```
+
+Use `Breadcrumbs` for hierarchical navigation with `List`, `Item`, `Link`, `CurrentLink`, and `Separator`. Keep labels short and maintain semantic navigation structure for accessibility.
+
+---
+
+## Button
+
+```tsx
+<Button>Button</Button>
+```
+
+`Button` is the primary action component. Use the library’s sizing and variant utilities (`size-*`, `variant-*`, `palette-*`) for consistent styling, and include icons only when they add clear meaning to the action.
+
+---
+
+## Card
+
+```tsx
+<Card>
+  <Card.Content>
+    <Card.Section>
+      <Card.Title>Header</Card.Title>
+      <Card.Description>
+        Alice was beginning to get very tired of sitting by her sister on the bank.
+      </Card.Description>
+    </Card.Section>
+  </Card.Content>
+</Card>
+```
+
+Use `Card` for grouped content blocks with `Card.Content`, `Card.Section`, `Card.Title`, and `Card.Description`. It is ideal for media-rich panels, summaries, and action surfaces that should remain visually cohesive.
+
+---
+
+## Center
+
+```tsx
+<Center>The quick brown fox jumps over the lazy dog</Center>
+```
+
+```tsx
+<Box className="relative">
+  <AbsoluteCenter>The quick brown fox jumps over the lazy dog</AbsoluteCenter>
+</Box>
+```
+
+Use `Center` to horizontally and vertically center a single child within its parent. For positioning inside a relative container, prefer `AbsoluteCenter` when you want the item centered by absolute positioning rather than normal layout flow.
+
+---
+
+## Checkbox
+
+```tsx
+<Checkbox>
+  <Checkbox.Control id="ch1" aria-label="Accept terms" defaultChecked>
+    <Checkbox.Indicator />
+  </Checkbox.Control>
+  <Checkbox.Label htmlFor="ch1">Accept terms</Checkbox.Label>
+</Checkbox>
+```
+
+Use the compound checkbox API with `Checkbox.Control`, `Checkbox.Indicator`, and `Checkbox.Label`. For a controlled checkbox, pass `checked` and `onCheckedChange`; for an uncontrolled checkbox, use `defaultChecked` or a form `name` value.
+
+---
+
+## CheckboxCard
+
+```tsx
+<CheckboxCard>
+  <CheckboxCard.Indicator />
+  <CheckboxCard.Content>
+    <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
+    <CheckboxCard.Description>Agree to all terms and conditions</CheckboxCard.Description>
+  </CheckboxCard.Content>
+</CheckboxCard>
+```
+
+Use `CheckboxCard` for selectable list items or form choices that need a larger, card-style interaction surface. Keep the label and description concise and pair it with `CheckboxCard.Indicator` and a single `CheckboxCard.Content` block.
+
+---
+
+## CloseButton
+
+```tsx
+<CloseButton aria-label="Close" />
+```
+
+`CloseButton` is a compact dismiss control for dialogs, drawers, or notification surfaces. Always provide an accessible `aria-label` because it is an icon-only control.
+
+---
+
+## Code
+
+```tsx
+<Code>console.log()</Code>
+```
+
+Use `Code` for inline or block-level code snippets. Prefer the library’s text sizing and mono styling utilities to maintain consistency across examples, command lines, and small code fragments.
+
+---
+
+## Collapsible
+
+```tsx
+<Collapsible>
+  <Collapsible.Trigger asChild>
+    <Button>Trigger</Button>
+  </Collapsible.Trigger>
+  <Collapsible.Content>The quick brown fox jumps over the lazy dog</Collapsible.Content>
+</Collapsible>
+```
+
+Use `Collapsible.Trigger` to toggle `Collapsible.Content`. When the trigger is a library button or another existing interactive element, use `asChild` so the component preserves the intended accessible control.
+
+---
+
+## Color Swatch
+
+```tsx
+<ColorSwatch />
+```
+
+Use `ColorSwatch` for a compact color indicator. Apply the documented size and variant utilities when the swatch needs to match a particular control or palette.
+
+---
+
+## Container
+
+```tsx
+<Container>Content</Container>
+```
+
+Use `Container` to constrain content to the component's responsive maximum width.
+
+---
+
+## Context Menu
+
+```tsx
+<ContextMenu>
+  <ContextMenu.Trigger asChild>
+    <IconButton aria-label="Open context menu">
+      <LuMenu />
+    </IconButton>
+  </ContextMenu.Trigger>
+  <ContextMenu.Portal>
+    <ContextMenu.Content>
+      <ContextMenu.Section>
+        <ContextMenu.Item>
+          <ContextMenu.Indicator>
+            <LuTextSelect />
+          </ContextMenu.Indicator>
+          Select All
+          <ContextMenu.Command>Ctrl+A</ContextMenu.Command>
+        </ContextMenu.Item>
+        <ContextMenu.Separator />
+        <ContextMenu.Label>Actions</ContextMenu.Label>
+        <ContextMenu.Item>New Tab</ContextMenu.Item>
+      </ContextMenu.Section>
+    </ContextMenu.Content>
+  </ContextMenu.Portal>
+</ContextMenu>
+```
+
+Use the compound context menu API with `Trigger`, `Portal`, `Content`, `Section`, `Item`, `Indicator`, `Command`, `Separator`, and `Label`. Keep the trigger keyboard accessible and use `CheckboxItem`, `RadioGroup`, or `Sub` for the corresponding menu behaviors.
+
+---
+
+## Design Grid
+
+```tsx
+<Box className="palette-neutral variant-subtle relative h-40 w-full">
+  <DesignGrid className="absolute grid-cols-8 grid-rows-4" />
+</Box>
+```
+
+`DesignGrid` is a visual layout aid. It uses a fixed position by default, so specify `grid-cols-*` and/or `grid-rows-*` and place it inside a positioned parent when that parent should contain the grid.
+
+---
+
+## Dialog
+
+```tsx
+<Dialog>
+  <Dialog.Trigger asChild>
+    <Button>Open</Button>
+  </Dialog.Trigger>
+  <Dialog.Portal>
+    <Dialog.Overlay />
+    <Dialog.Content>
+      <Dialog.Section>
+        <Dialog.Title>Title</Dialog.Title>
+        <Dialog.Description>Description</Dialog.Description>
+      </Dialog.Section>
+      <Dialog.Close aria-label="Close" />
+    </Dialog.Content>
+  </Dialog.Portal>
+</Dialog>
+```
+
+Use the compound dialog API with `Trigger`, `Portal`, `Overlay`, `Content`, `Section`, `Title`, `Description`, and `Close`. Put the overlay and content inside the portal, and give icon-only close controls an accessible label.
+
+---
+
+## Drawer
+
+```tsx
+<Drawer>
+  <Drawer.Trigger asChild>
+    <Button>Open</Button>
+  </Drawer.Trigger>
+  <Drawer.Portal>
+    <Drawer.Overlay />
+    <Drawer.Content>
+      <Drawer.Section>
+        <Drawer.Title>Title</Drawer.Title>
+        <Drawer.Description>Description</Drawer.Description>
+      </Drawer.Section>
+      <Drawer.Close aria-label="Close" />
+    </Drawer.Content>
+  </Drawer.Portal>
+</Drawer>
+```
+
+Use the compound drawer API with `Trigger`, `Portal`, `Overlay`, `Content`, `Section`, `Title`, `Description`, and `Close`. Set `placement` on `Drawer.Content` when the panel should open from `start`, `end`, `top`, or `bottom`.
+
+---
+
+## Dropdown Menu
+
+```tsx
+<DropdownMenu>
+  <DropdownMenu.Trigger asChild>
+    <IconButton aria-label="Open dropdown menu">
+      <LuMenu />
+    </IconButton>
+  </DropdownMenu.Trigger>
+  <DropdownMenu.Portal>
+    <DropdownMenu.Content>
+      <DropdownMenu.Section>
+        <DropdownMenu.Item>
+          <DropdownMenu.Indicator>
+            <LuTextSelect />
+          </DropdownMenu.Indicator>
+          Select All
+          <DropdownMenu.Command>Ctrl+A</DropdownMenu.Command>
+        </DropdownMenu.Item>
+        <DropdownMenu.Separator />
+        <DropdownMenu.Label>Actions</DropdownMenu.Label>
+        <DropdownMenu.Item>New Tab</DropdownMenu.Item>
+      </DropdownMenu.Section>
+      <DropdownMenu.Arrow />
+    </DropdownMenu.Content>
+  </DropdownMenu.Portal>
+</DropdownMenu>
+```
+
+Use the compound dropdown menu API with `Trigger`, `Portal`, `Content`, `Section`, `Item`, `Indicator`, `Command`, `Separator`, `Label`, and optional `Arrow`. Use `CheckboxItem`, `RadioGroup`, and `Sub` for menus that contain selection state or nested actions.
+
+---
+
+## Element
+
+```tsx
+<Element as="section" className="p-4">
+  Content
+</Element>
+```
+
+Use `Element` as the low-level polymorphic primitive when a semantic tag must change without adding a wrapper. Use `asChild` only when the child should provide the rendered element, and prefer higher-level extraction-ui components when one already expresses the intended behavior.
+
+---
+
+## Empty State
+
+```tsx
+<EmptyState>
+  <EmptyState.Content>
+    <EmptyState.Section>
+      <EmptyState.Indicator>
+        <LuMail />
+      </EmptyState.Indicator>
+      <EmptyState.Title>Header</EmptyState.Title>
+      <EmptyState.Description>Alice was beginning to get very tired</EmptyState.Description>
+    </EmptyState.Section>
+  </EmptyState.Content>
+</EmptyState>
+```
+
+Use the compound empty state API with `EmptyState.Content`, `EmptyState.Section`, `EmptyState.Indicator`, `EmptyState.Title`, and `EmptyState.Description`. Keep the message specific to the missing content or unavailable result, and use the indicator for a meaningful visual cue.
+
+---
+
+## Field
+
+```tsx
+<Field>
+  <Field.Label htmlFor="name">
+    Name
+    <Field.RequiredIndicator />
+  </Field.Label>
+  <Input>
+    <Input.Field id="name" placeholder="Enter your name" />
+  </Input>
+  <Field.Helper>The quick brown fox jumps over</Field.Helper>
+</Field>
+```
+
+Use the compound field API with `Field.Label`, `Field.RequiredIndicator`, and helper or validation messaging such as `Field.Helper`, `Field.Success`, and `Field.Error`. Associate the label with the input through `htmlFor` and the input `id`.
+
+---
+
+## Flex
+
+```tsx
+<Flex>
+  <Box>Item 1</Box>
+  <Box>Item 2</Box>
+  <Box>Item 3</Box>
+</Flex>
+```
+
+Use `Flex` for one-dimensional layouts. Its default layout is intended for horizontally arranged children, with spacing controlled by the component styles and utility classes.
+
+---
+
+## Float
+
+```tsx
+<Box className="relative">
+  <Float>
+    <Box />
+  </Float>
+</Box>
+```
+
+Use `Float` to position a child relative to its containing surface. Apply the documented position utilities when the floating element needs a specific corner or edge placement.
+
+---
+
+## Grid
+
+```tsx
+<Grid>
+  <Box>Item 1</Box>
+  <Box>Item 2</Box>
+  <Box>Item 3</Box>
+</Grid>
+```
+
+Use `Grid` for two-dimensional layouts and combine it with grid utility classes for columns, rows, and gaps. Prefer responsive grid utilities when the layout changes at different viewport sizes.
+
+---
+
+## Group
+
+```tsx
+<Group>
+  <Button>Item 1</Button>
+  <Button>Item 2</Button>
+  <Button>Item 3</Button>
+</Group>
+```
+
+Use `Group` to keep related controls visually connected. Pass `orientation="vertical"` when the group should arrange its children vertically.
+
+---
+
+## Highlight
+
+```tsx
+<Text>
+  The quick brown fox <Highlight>jumps over</Highlight> the lazy dog
+</Text>
+```
+
+Use `Highlight` to emphasize a short portion of surrounding text. Keep the highlighted content brief and use the component's variants for the visual treatment rather than recreating the highlight with custom markup.
+
+---
+
+## Hover Card
+
+```tsx
+<HoverCard>
+  <HoverCard.Trigger asChild>
+    <Button>Hover me</Button>
+  </HoverCard.Trigger>
+  <HoverCard.Portal>
+    <HoverCard.Content>
+      <HoverCard.Section>
+        <HoverCard.Title>The quick brown fox</HoverCard.Title>
+        <HoverCard.Description>
+          Alice was beginning to get very tired of sitting by her sister on the bank.
+        </HoverCard.Description>
+      </HoverCard.Section>
+      <HoverCard.Arrow />
+    </HoverCard.Content>
+  </HoverCard.Portal>
+</HoverCard>
+```
+
+Use the compound hover card API with `Trigger`, `Portal`, `Content`, `Section`, `Title`, `Description`, and optional `Arrow`. Set `side` on `HoverCard.Content` to choose `top`, `right`, `bottom`, or `left` placement.
+
+---
+
+## Icon
+
+```tsx
+<Icon>
+  <LuMail />
+</Icon>
+```
+
+`Icon` is a styling wrapper and does not provide icons itself. Use an icon from the project's chosen icon library or a custom SVG, and keep icon-only interactive controls labelled with `aria-label`.
+
+---
+
+## Icon Box
+
+```tsx
+<IconBox>
+  <LuMail />
+</IconBox>
+```
+
+Use `IconBox` for an icon inside a consistently sized, styled container. Apply the documented sizes and variants when the icon box is used as a visual marker or compact feature indicator.
+
+---
+
+## IconButton
+
+```tsx
+<IconButton aria-label="Icon button">
+  <LuMail />
+</IconButton>
+```
+
+Use `IconButton` for actions represented by an icon without visible text. Every icon-only button must have a meaningful `aria-label`, and it supports the documented button sizes and variants.
+
+---
+
+## Image
+
+```tsx
+<Image src="/image.jpg" alt="image" />
+```
+
+Use `Image` for rendered image content and always provide descriptive `alt` text. Use aspect-ratio utilities such as `aspect-square`, `aspect-video`, or `aspect-auto` when the media needs a stable ratio.
+
+---
+
+## Input
+
+```tsx
+<Input>
+  <Input.Field placeholder="Enter your name" />
+</Input>
+```
+
+Use the compound input API with `Input.Field`. For controlled inputs, pass `value` and `onChange` to `Input.Field`; for uncontrolled form fields, provide a `name`. Use `Field` when the input needs an associated label or validation messaging.
+
+---
+
+## KBD
+
+```tsx
+<HStack>
+  <Kbd>Cmd</Kbd>+<Kbd>Shift</Kbd>+<Kbd>K</Kbd>
+</HStack>
+```
+
+Use `Kbd` to display keyboard keys or shortcuts. Combine multiple `Kbd` elements with `HStack` when showing a sequence, and use the documented text sizes and variants for presentation.
+
+---
+
+## Link
+
+```tsx
+<div>
+  The quick <Link href="#">brown fox</Link> jumps over the lazy dog
+</div>
+```
+
+Use `Link` for navigational text and provide a valid `href`. Keep link text descriptive, and use the documented text-decoration and interaction utilities for its visual states.
+
+---
+
+## List
+
+```tsx
+<List>
+  <List.Item>First item of the list</List.Item>
+  <List.Item>Second item of the list</List.Item>
+</List>
+```
+
+Use the compound list API with `List.Item`. Add `List.Indicator` when items need custom markers, such as an icon, and use list-style utilities when the native marker treatment is appropriate.
+
+---
+
+## Loader
+
+```tsx
+<Loader />
+```
+
+Use `Loader` to communicate an in-progress operation. Apply the documented size and palette utilities to match the surrounding interface while preserving the component's loading semantics.
+
+---
+
+## Logo
+
+```tsx
+<Logo src="/logo.svg" alt="Logo" />
+```
+
+Use `Logo` for brand artwork and always provide meaningful `alt` text. Use the component's sizing utilities or semantic rendering props when the logo needs to fit a different layout context.
+
+---
+
+## Mark
+
+```tsx
+<Text>
+  The quick brown fox <Mark>jumps over</Mark> the lazy dog
+</Text>
+```
+
+Use `Mark` to emphasize a short inline text fragment. Keep the marked content concise and use the documented variants for the emphasis style.
+
+---
+
+## Menubar
+
+```tsx
+<Menubar>
+  <Menubar.Menu>
+    <Menubar.Trigger>File</Menubar.Trigger>
+    <Menubar.Portal>
+      <Menubar.Content>
+        <Menubar.Section>
+          <Menubar.Item>New Tab</Menubar.Item>
+          <Menubar.Separator />
+          <Menubar.Label>Actions</Menubar.Label>
+          <Menubar.Item>
+            Select All
+            <Menubar.Command>Cmd+A</Menubar.Command>
+          </Menubar.Item>
+        </Menubar.Section>
+        <Menubar.Arrow />
+      </Menubar.Content>
+    </Menubar.Portal>
+  </Menubar.Menu>
+</Menubar>
+```
+
+Use the compound menubar API with `Menu`, `Trigger`, `Portal`, `Content`, `Section`, `Item`, `Separator`, `Label`, `Command`, and optional `Arrow`. Use `Sub`, `CheckboxItem`, and `RadioGroup` for nested actions and selection state.
+
+---
+
+## Native Select
+
+```tsx
+<NativeSelect>
+  <NativeSelect.Field aria-label="Select field">
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </NativeSelect.Field>
+  <NativeSelect.Icon />
+</NativeSelect>
+```
+
+Use the compound native select API with `NativeSelect.Field` and `NativeSelect.Icon`. For controlled usage, pass `value` and `onChange`; for an uncontrolled form field, provide a `name` on `NativeSelect.Field`.
+
+---
+
+## Nav Button
+
+```tsx
+<NavButton>
+  <LuMail />
+  Button
+</NavButton>
+```
+
+Use `NavButton` for button-like controls within navigation surfaces. It supports the documented sizes and variants and can contain an icon alongside its label.
+
+---
+
+## Nav Link
+
+```tsx
+<NavLink>
+  <LuMail />
+  Nav Link
+</NavLink>
+```
+
+Use `NavLink` for navigation controls styled as links. Keep the visible label descriptive, and use its documented sizes, variants, and disabled state consistently with the surrounding navigation.
+
+---
+
+## NavigationMenu
+
+```tsx
+<NavigationMenu>
+  <NavigationMenu.List>
+    <NavigationMenu.Item>
+      <NavigationMenu.Trigger>Home</NavigationMenu.Trigger>
+      <NavigationMenu.Content>
+        <NavigationMenu.Section>The quick brown fox</NavigationMenu.Section>
+      </NavigationMenu.Content>
+    </NavigationMenu.Item>
+    <NavigationMenu.Item>
+      <NavigationMenu.Link href="/google">Google</NavigationMenu.Link>
+    </NavigationMenu.Item>
+  </NavigationMenu.List>
+  <NavigationMenu.ViewportAnchor>
+    <NavigationMenu.Viewport />
+  </NavigationMenu.ViewportAnchor>
+</NavigationMenu>
+```
+
+Use the compound navigation menu API with `List`, `Item`, `Trigger`, `Content`, `Section`, `Link`, `ViewportAnchor`, and `Viewport`. Use `Sub` with a nested `List` and `Viewport` for multi-level navigation, and set `orientation="vertical"` when needed.
+
+## Overlay
+
+```tsx
+<Box className="relative">
+  <Overlay />
+</Box>
+```
+
+Use `Overlay` as a visual layer over positioned content. Place it inside a `relative` container and preserve sufficient contrast for any content layered above it.
+
+---
+
+## Password
+
+```tsx
+<Password>
+  <Password.Input placeholder="Enter your password" />
+  <Password.Toggle>
+    <Password.Icon />
+  </Password.Toggle>
+</Password>
+```
+
+Use the compound password API with `Password.Input`, `Password.Toggle`, and `Password.Icon`. For controlled usage, pass `value` and `onChange` to `Password.Input`; for an uncontrolled form field, provide its `name`.
+
+---
+
+## Pin Input
+
+```tsx
+<PinInput placeholder="○○○">
+  <PinInput.Field />
+  <PinInput.Field />
+  <PinInput.Field />
+  <PinInput.Hidden />
+</PinInput>
+```
+
+Use `PinInput.Field` for each visible character cell and include `PinInput.Hidden` for the aggregate form value. Use `value` and `onValueChange` for controlled usage, `name` for uncontrolled form submission, and `type="password"` to mask the entered PIN.
+
+---
+
+## Popover
+
+```tsx
+<Popover>
+  <Popover.Trigger asChild>
+    <Button>Click me</Button>
+  </Popover.Trigger>
+  <Popover.Portal>
+    <Popover.Content>
+      <Popover.Section>
+        <Popover.Title>The quick brown fox</Popover.Title>
+        <Popover.Description>
+          Alice was beginning to get very tired of sitting by her sister on the bank.
+        </Popover.Description>
+      </Popover.Section>
+      <Popover.Close aria-label="Close" />
+      <Popover.Arrow />
+    </Popover.Content>
+  </Popover.Portal>
+</Popover>
+```
+
+Use the compound popover API with `Trigger`, `Portal`, `Content`, `Section`, `Title`, `Description`, `Close`, and optional `Arrow`. Set `side` on `Popover.Content` to choose `top`, `right`, `bottom`, or `left` placement.
+
+---
+
+## Progress
+
+```tsx
+<Progress aria-label="Progress">
+  <Progress.Indicator className="max-w-[50%]" />
+</Progress>
+```
+
+Use `Progress.Indicator` to show the current progress within `Progress`. Provide an accessible label and set `orientation="vertical"` with a corresponding height-constrained indicator when the progress bar is vertical.
+
+---
+
+## Radio
+
+```tsx
+<RadioGroup defaultValue="option-1">
+  <Radio>
+    <Radio.Control value="option-1" id="r1">
+      <Radio.Indicator />
+    </Radio.Control>
+    <Radio.Label htmlFor="r1">Option 1</Radio.Label>
+  </Radio>
+  <Radio>
+    <Radio.Control value="option-2" id="r2">
+      <Radio.Indicator />
+    </Radio.Control>
+    <Radio.Label htmlFor="r2">Option 2</Radio.Label>
+  </Radio>
+</RadioGroup>
+```
+
+Use the compound radio API with `RadioGroup`, `Radio.Control`, `Radio.Indicator`, and `Radio.Label`. Associate each label with its control through `htmlFor` and `id`; use `value` and `onValueChange` for controlled groups.
+
+---
+
+## Radio Card
+
+```tsx
+<RadioGroup defaultValue="option-1">
+  <RadioCard value="option-1">
+    <RadioCard.Indicator />
+    <RadioCard.Content>
+      <RadioCard.Label>Option 1</RadioCard.Label>
+    </RadioCard.Content>
+  </RadioCard>
+  <RadioCard value="option-2">
+    <RadioCard.Indicator />
+    <RadioCard.Content>
+      <RadioCard.Label>Option 2</RadioCard.Label>
+    </RadioCard.Content>
+  </RadioCard>
+</RadioGroup>
+```
+
+Use `RadioCard` inside `RadioGroup` for larger selectable options. Each card requires a unique `value` and is composed from `Indicator`, `Content`, and `Label`.
+
+---
+
+## Radio Group
+
+```tsx
+<RadioGroup defaultValue="option-1" name="radio">
+  <Radio>...</Radio>
+  <Radio>...</Radio>
+</RadioGroup>
+```
+
+Use `RadioGroup` to manage a mutually exclusive set of `Radio` or `RadioCard` choices. Use `defaultValue` for uncontrolled state, `value` with `onValueChange` for controlled state, and `name` when the group participates in form submission.
+
+---
+
+## Scroll Area
+
+```tsx
+<ScrollArea className="h-80">
+  <ScrollArea.Viewport tabIndex={0}>
+    <ScrollArea.Content>
+      <Description>Scrollable content</Description>
+    </ScrollArea.Content>
+  </ScrollArea.Viewport>
+  <ScrollArea.Scrollbar orientation="vertical">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Scrollbar orientation="horizontal">
+    <ScrollArea.Thumb />
+  </ScrollArea.Scrollbar>
+  <ScrollArea.Corner />
+</ScrollArea>
+```
+
+Use the compound scroll area API with `Viewport`, `Content`, `Scrollbar`, `Thumb`, and optional `Corner`. Add a horizontal scrollbar when needed, and make the viewport keyboard accessible when it is the scrolling surface.
+
+---
+
+## Section
+
+```tsx
+<Section>Content</Section>
+```
+
+Use `Section` as a semantic page or content band with the library's responsive vertical spacing. Prefer it over a generic wrapper when the content represents a distinct section of a layout.
+
+---
+
+## Select
+
+```tsx
+<Select>
+  <Select.Trigger aria-label="Select an option">
+    <Select.Value placeholder="Select an option" />
+    <Select.Icon />
+  </Select.Trigger>
+  <Select.Portal>
+    <Select.Content>
+      <Select.Viewport>
+        <Select.Section>
+          <Select.Item value="opt-1">
+            <Select.ItemText>Option 1</Select.ItemText>
+            <Select.ItemIndicator />
+          </Select.Item>
+          <Select.Item value="opt-2">
+            <Select.ItemText>Option 2</Select.ItemText>
+            <Select.ItemIndicator />
+          </Select.Item>
+        </Select.Section>
+      </Select.Viewport>
+    </Select.Content>
+  </Select.Portal>
+</Select>
+```
+
+Use the compound select API with `Trigger`, `Value`, `Icon`, `Portal`, `Content`, `Viewport`, `Section`, `Item`, `ItemText`, and `ItemIndicator`. Give the trigger an accessible label and use `value`/`onValueChange` for controlled selection.
+
+---
+
+## Separator
+
+```tsx
+<Stack>
+  <Box>Above</Box>
+  <Separator />
+  <Box>Below</Box>
+</Stack>
+```
+
+Use `Separator` to divide related content. Set `orientation="vertical"` when separating horizontally arranged items, and use its optional content and alignment props when the divider includes a label.
+
+---
+
+## Skeleton
+
+```tsx
+<Skeleton className="h-20" />
+```
+
+Use `Skeleton` for loading placeholders that preserve the shape of the eventual content. Pass `loading` with children when the component should switch between the placeholder and real content.
+
+---
+
+## Slider
+
+```tsx
+<Slider defaultValue={[50]}>
+  <Slider.Track>
+    <Slider.Range />
+  </Slider.Track>
+  <Slider.Thumb aria-label="Slider thumb" />
+</Slider>
+```
+
+Use the compound slider API with `Track`, `Range`, and one or more accessible `Thumb` elements. Use `value` and `onValueChange` for controlled state, `defaultValue` for uncontrolled state, and `orientation="vertical"` for vertical sliders.
+
+---
+
+## Stack
+
+```tsx
+<Stack>
+  <Box>Item 1</Box>
+  <Box>Item 2</Box>
+</Stack>
+```
+
+Use `Stack` for vertically arranged content and pass a component through `separator` when items need visual separation. Use `HStack` for horizontal arrangements and `VStack` for an explicit vertical stack.
+
+---
+
+## Status
+
+```tsx
+<Status />
+```
+
+Use `Status` as a compact status indicator. Apply the documented sizes and variants to communicate state consistently without replacing the component with an arbitrary decorative element.
+
+---
+
+## Switch
+
+```tsx
+<Switch>
+  <Switch.Thumb aria-label="Switch" />
+</Switch>
+```
+
+Use the compound switch API with `Switch.Thumb`. The thumb needs an accessible label when it is the only control text; use `checked` and `onCheckedChange` for controlled state or `name` for uncontrolled form submission.
+
+---
+
+## Table
+
+```tsx
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.Header>#</Table.Header>
+      <Table.Header>Header</Table.Header>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Header>1</Table.Header>
+      <Table.Cell>Cell 1</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>
+```
+
+Use the compound table API with `Head`, `Body`, `Row`, `Header`, `Cell`, `Foot`, and optional `Caption`. Keep header cells associated with their columns and use the documented table utilities for striped, bordered, or interactive rows.
+
+---
+
+## Tabs
+
+```tsx
+<Tabs defaultValue="tab1">
+  <Tabs.List>
+    <Tabs.Trigger value="tab1">One</Tabs.Trigger>
+    <Tabs.Trigger value="tab2">Two</Tabs.Trigger>
+  </Tabs.List>
+  <Tabs.Content value="tab1">
+    <Box className="box-md">Tab one content</Box>
+  </Tabs.Content>
+  <Tabs.Content value="tab2">
+    <Box className="box-md">Tab two content</Box>
+  </Tabs.Content>
+</Tabs>
+```
+
+Use the compound tabs API with `List`, `Trigger`, and matching `Content` values. Use `value` and `onValueChange` for controlled tabs, and set `orientation="vertical"` when the tab list should run vertically.
+
+---
+
+## Text
+
+```tsx
+<Text>The quick brown fox jumps over the lazy dog</Text>
+```
+
+Use `Text` for body and inline copy. Keep semantic structure in mind and use the component's text sizing utilities rather than applying arbitrary typography values.
+
+---
+
+## Textarea
+
+```tsx
+<Textarea>
+  <Textarea.Field placeholder="Enter your name" />
+</Textarea>
+```
+
+Use the compound textarea API with `Textarea.Field`. For controlled usage, pass `value` and `onChange` to the field; for uncontrolled form submission, provide a `name`. Wrap it with `Field` when it needs a label or validation message.
+
+---
+
+## Toast
+
+```tsx
+const Example = () => {
+  const [open, setOpen] = React.useState(false);
+
+  return (
+    <Toast.Provider>
+      <Button onClick={() => setOpen(true)}>Trigger</Button>
+      <Toast open={open} onOpenChange={setOpen}>
+        <Toast.Indicator />
+        <Toast.Content>
+          <Toast.Title>The quick brown fox</Toast.Title>
+          <Toast.Description>
+            Alice was beginning to get very tired of sitting by her sister on the bank.
+          </Toast.Description>
+        </Toast.Content>
+        <Toast.Close aria-label="Close" />
+      </Toast>
+      <Toast.Viewport />
+    </Toast.Provider>;
+  );
+};
+
+```
+
+Use the compound toast API with `Provider`, `Toast`, `Indicator`, `Content`, `Title`, `Description`, `Close`, and `Viewport`. Control visibility with `open` and `onOpenChange`, and give the icon-only close control an accessible label.
+
+---
+
+## Toggle
+
+```tsx
+<Toggle asChild>
+  <IconButton aria-label="Toggle mail">
+    <LuMail />
+  </IconButton>
+</Toggle>
+```
+
+Use `Toggle` for a two-state pressed/unpressed action. Use `asChild` when composing it with `IconButton`, provide an accessible label, and use `pressed`/`onPressedChange` for controlled state.
+
+---
+
+## Toggle Group
+
+```tsx
+<ToggleGroup type="single">
+  <Group>
+    <ToggleGroup.Item value="item-1" asChild>
+      <IconButton aria-label="Align left">
+        <LuAlignLeft />
+      </IconButton>
+    </ToggleGroup.Item>
+    <ToggleGroup.Item value="item-2" asChild>
+      <IconButton aria-label="Align center">
+        <LuAlignCenter />
+      </IconButton>
+    </ToggleGroup.Item>
+  </Group>
+</ToggleGroup>
+```
+
+Use `ToggleGroup` with `ToggleGroup.Item` for related toggle controls. Set `type="single"` for one selected item or `type="multiple"` for independent selections, and use `value`/`onValueChange` for controlled state.
+
+---
+
+## Tooltip
+
+```tsx
+<Tooltip.Provider>
+  <Tooltip>
+    <Tooltip.Trigger>
+      <Button>Hover me</Button>
+    </Tooltip.Trigger>
+    <Tooltip.Portal>
+      <Tooltip.Content>
+        The quick brown fox.
+        <Tooltip.Arrow />
+      </Tooltip.Content>
+    </Tooltip.Portal>
+  </Tooltip>
+</Tooltip.Provider>
+```
+
+Use the compound tooltip API with `Tooltip.Provider`, `Tooltip.Trigger`, `Tooltip.Portal`, `Tooltip.Content`, and optional `Tooltip.Arrow`. Set `side` on `Tooltip.Content` to place the tooltip on the `top`, `right`, `bottom`, or `left` side of its trigger.

@@ -13,6 +13,7 @@
   .ex-separator {
     @apply shrink-0 border-0;
 
+    &:where(:not([data-orientation])),
     &:where([data-orientation='horizontal']) {
       @apply [border-block-start-width:var(--ex-size)];
     }
@@ -20,5 +21,75 @@
     &:where([data-orientation='vertical']) {
       @apply [border-inline-start-width:var(--ex-size)];
     }
+  }
+
+  .ex-separator {
+    &:where([data-has-content='true']) {
+      @apply grid grid-cols-[1fr_auto_1fr] items-center border-0;
+
+      &:where([data-orientation='vertical']) {
+        @apply grid-cols-1 grid-rows-[1fr_auto_1fr] items-stretch justify-items-center;
+      }
+    }
+
+    &:where([data-has-content='true'][data-align='start']) {
+      &:where([data-orientation='horizontal']),
+      &:where(:not([data-orientation])) {
+        @apply grid-cols-[auto_auto_1fr];
+      }
+
+      &:where([data-orientation='vertical']) {
+        @apply grid-rows-[auto_auto_1fr];
+      }
+    }
+
+    &:where([data-has-content='true'][data-align='end']) {
+      &:where([data-orientation='horizontal']),
+      &:where(:not([data-orientation])) {
+        @apply grid-cols-[1fr_auto_auto];
+      }
+
+      &:where([data-orientation='vertical']) {
+        @apply grid-rows-[1fr_auto_auto];
+      }
+    }
+
+    &:where([data-align='center']) .ex-separator-content {
+      @apply px-(--ex-spacer);
+    }
+    &:where([data-align='center'][data-orientation='vertical']) .ex-separator-content {
+      @apply py-(--ex-spacer) px-0;
+    }
+
+    &:where([data-align='start']) .ex-separator-content {
+      @apply pe-(--ex-spacer);
+    }
+    &:where([data-align='start'][data-orientation='vertical']) .ex-separator-content {
+      @apply pb-(--ex-py) pe-0;
+    }
+
+    &:where([data-align='end']) .ex-separator-content {
+      @apply ps-(--ex-spacer);
+    }
+    &:where([data-align='end'][data-orientation='vertical']) .ex-separator-content {
+      @apply pt-(--ex-spacer) ps-0;
+    }
+  }
+
+  .ex-separator-line {
+    @apply border-solid border-inherit;
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply [border-block-start-width:var(--ex-size)];
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply justify-self-center [border-inline-start-width:var(--ex-size)];
+    }
+  }
+
+  .ex-separator-content {
+    @apply whitespace-nowrap;
   }
 }

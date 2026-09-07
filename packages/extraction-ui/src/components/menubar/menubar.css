@@ -7,12 +7,12 @@
   }
 
   .ex-menubar {
-    @apply variant-outline palette-neutral;
+    @apply variant-ghost palette-neutral;
   }
 
   .ex-menubar {
     @apply z-1 relative flex items-center justify-center;
-    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)];
+    @apply rounded-(--ex-radius) px-(--ex-px) gap-x-(--ex-gap-x) h-[var(--ex-height)];
 
     > div:is(:first-child) {
       @apply z-1;
@@ -26,7 +26,7 @@
 
   .ex-menubar-trigger {
     @apply inline-flex select-none items-center justify-center leading-none outline-none;
-    @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] gap-x-[var(--ex-gap-x)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply rounded-(--ex-radius) px-(--ex-px) gap-x-(--ex-gap-x) h-[var(--ex-height)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-menubar-content,
@@ -41,7 +41,7 @@
 
   .ex-menubar-content,
   .ex-menubar-sub-content {
-    @apply flex will-change-[transform,opacity];
+    @apply isolate flex will-change-[transform,opacity];
     @apply rounded-(--ex-radius) max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)];
 
     &:where([data-state='open'][data-side='top']) {
@@ -112,7 +112,7 @@
   }
 
   .ex-menubar-radio-group {
-    @apply flex flex-col gap-y-[var(--ex-gap-y)];
+    @apply gap-y-(--ex-gap-y) flex flex-col;
   }
 
   .ex-menubar-sub-trigger {

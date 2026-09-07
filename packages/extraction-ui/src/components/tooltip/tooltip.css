@@ -16,8 +16,8 @@
   .ex-tooltip-content {
     --ex-z-index: var(--ex-tooltip-z-index, var(--ex-options-z-tooltip));
 
-    @apply flex will-change-[transform,opacity];
-    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) z-[var(--ex-z-index)] max-w-[var(--ex-max-width)] gap-x-[var(--ex-gap-x)] shadow-[var(--shadow)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply isolate flex will-change-[transform,opacity];
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-(--ex-gap-x) z-[var(--ex-z-index)] max-w-[var(--ex-max-width)] shadow-[var(--shadow)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     &:where(:focus) {
       @apply outline-none;

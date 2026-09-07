@@ -12,7 +12,7 @@
   }
 
   .ex-slider {
-    @apply relative flex shrink-0 touch-none select-none items-center justify-center;
+    @apply relative isolate flex shrink-0 touch-none select-none items-center justify-center;
 
     &:where([data-orientation='horizontal']) {
       @apply w-full;

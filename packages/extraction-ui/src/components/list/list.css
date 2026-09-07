@@ -8,7 +8,7 @@
 
   .ex-list {
     @apply flex list-inside list-disc flex-col;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
+    @apply gap-y-(--ex-gap-y) gap-x-(--ex-gap-x) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
   }
 
   .ex-list-item {
@@ -16,7 +16,7 @@
   }
 
   .ex-list-item:has(.ex-list-indicator) {
-    @apply inline-flex list-none gap-x-[var(--ex-gap-x)];
+    @apply gap-x-(--ex-gap-x) inline-flex list-none;
   }
 
   .ex-list-indicator {

@@ -8,7 +8,7 @@ describe('useInView', () => {
   let observe: ReturnType<typeof vi.fn>;
   let unobserve: ReturnType<typeof vi.fn>;
   let disconnect: ReturnType<typeof vi.fn>;
-  let callback: (entries: { isIntersecting: boolean; target: Element }[]) => void;
+  let callback: (entries: Partial<IntersectionObserverEntry>[]) => void;
 
   beforeEach(() => {
     observe = vi.fn();
@@ -32,6 +32,12 @@ describe('useInView', () => {
     const { result } = renderHook(() => useInView({ initialInView: true }));
 
     expect(result.current.isInView).toBe(true);
+  });
+
+  it('returns null entry before any observation fires', () => {
+    const { result } = renderHook(() => useInView({}));
+
+    expect(result.current.entry).toBeNull();
   });
 
   it('updates isInView when the element enters the viewport', () => {
@@ -62,6 +68,44 @@ describe('useInView', () => {
     });
 
     expect(result.current.isInView).toBe(false);
+  });
+
+  it('exposes the raw entry returned by the observer', () => {
+    const target = document.createElement('div');
+    const entry = {
+      isIntersecting: false,
+      target,
+      boundingClientRect: { top: -10 } as DOMRectReadOnly,
+    };
+
+    const { result } = renderHook(() => useInView({}));
+
+    act(() => {
+      callback([entry]);
+    });
+
+    expect(result.current.entry).toEqual(entry);
+  });
+
+  it('updates entry across multiple intersection changes', () => {
+    const target = document.createElement('div');
+    const { result } = renderHook(() => useInView({}));
+
+    act(() => {
+      callback([
+        { isIntersecting: false, target, boundingClientRect: { top: 200 } as DOMRectReadOnly },
+      ]);
+    });
+
+    expect(result.current.entry?.boundingClientRect.top).toBe(200);
+
+    act(() => {
+      callback([
+        { isIntersecting: false, target, boundingClientRect: { top: -5 } as DOMRectReadOnly },
+      ]);
+    });
+
+    expect(result.current.entry?.boundingClientRect.top).toBe(-5);
   });
 
   it('unobserves the element after it enters the viewport when once is enabled', () => {

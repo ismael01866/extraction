@@ -50,7 +50,7 @@
 
   .ex-alert-dialog-section {
     @apply flex flex-col;
-    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-(--ex-gap-y) gap-x-(--ex-gap-x);
   }
 
   .ex-alert-dialog-title {

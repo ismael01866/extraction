@@ -15,8 +15,17 @@
   }
 
   .ex-progress {
-    @apply w-full shrink-0 overflow-hidden [transform:translateZ(0)];
-    @apply rounded-(--ex-radius) h-[var(--ex-size)];
+    @apply shrink-0 overflow-hidden [transform:translateZ(0)];
+    @apply rounded-(--ex-radius);
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply h-[var(--ex-size)] w-full;
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex h-full w-[var(--ex-size)] items-end;
+    }
   }
 
   .ex-progress-indicator {

@@ -38,11 +38,11 @@
   }
 
   .ex-app-layout-main {
-    @apply flex flex-1 flex-col;
+    @apply flex min-w-0 flex-1 flex-col;
   }
 
   .ex-app-layout-section {
-    @apply flex flex-1 flex-col;
+    @apply flex min-w-0 flex-1 flex-col;
     @apply px-(--ex-px) py-(--ex-py);
   }
 

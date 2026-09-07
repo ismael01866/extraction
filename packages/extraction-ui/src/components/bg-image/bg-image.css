@@ -3,10 +3,6 @@
 
 @layer components {
   .ex-bg-image {
-    @apply h-auto w-full object-cover;
-  }
-
-  .ex-bg-image {
-    @apply absolute inset-0 bg-cover bg-center;
+    @apply absolute inset-0 h-auto w-full bg-cover bg-center bg-no-repeat object-cover;
   }
 }

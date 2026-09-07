@@ -336,16 +336,16 @@
 }
 
 @utility breadcrumbs-sm {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-sm, calc(var(--spacing) * 0.5));
   --ex-font-size: var(--ex-breadcrumbs-font-size-sm, var(--text-xs));
 
   .ex-breadcrumbs-link {
-    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-x: var(--ex-breadcrumbs-link-gap-x-sm, calc(var(--spacing) * 1));
   }
 }
 
 @utility breadcrumbs-md {
-  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 1.5));
+  --ex-gap-x: var(--ex-breadcrumbs-gap-x-md, calc(var(--spacing) * 1));
   --ex-font-size: var(--ex-breadcrumbs-font-size-md, var(--text-sm));
 
   .ex-breadcrumbs-link {
@@ -400,18 +400,6 @@
   --ex-gap-x: var(--ex-callout-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-callout-radius-sm, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-callout-description-line-height-sm, var(--text-xs--line-height)) *
-      var(--ex-callout-description-font-size-sm, var(--text-xs))
-  );
-
-  &:has(.ex-callout-content > .ex-callout-title:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-callout-title-line-height-sm, var(--text-sm--line-height)) *
-        var(--ex-callout-title-font-size-sm, var(--text-sm))
-    );
-  }
-
   .ex-callout-indicator {
     --ex-font-size: var(--ex-callout-indicator-font-size-sm, var(--text-lg));
   }
@@ -439,18 +427,6 @@
   --ex-gap-x: var(--ex-callout-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-callout-radius-md, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-callout-description-line-height-md, var(--text-sm--line-height)) *
-      var(--ex-callout-description-font-size-md, var(--text-sm))
-  );
-
-  &:has(.ex-callout-content > .ex-callout-title:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-callout-title-line-height-md, var(--text-base--line-height)) *
-        var(--ex-callout-title-font-size-md, var(--text-base))
-    );
-  }
-
   .ex-callout-indicator {
     --ex-font-size: var(--ex-callout-indicator-font-size-md, var(--text-xl));
   }
@@ -477,18 +453,6 @@
 
   --ex-gap-x: var(--ex-callout-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-callout-radius-lg, var(--radius-sm));
-
-  --ex-first-line-height: calc(
-    var(--ex-callout-description-line-height-lg, var(--text-base--line-height)) *
-      var(--ex-callout-description-font-size-lg, var(--text-base))
-  );
-
-  &:has(.ex-callout-content > .ex-callout-title:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-callout-title-line-height-lg, var(--text-lg--line-height)) *
-        var(--ex-callout-title-font-size-lg, var(--text-lg))
-    );
-  }
 
   .ex-callout-indicator {
     --ex-font-size: var(--ex-callout-indicator-font-size-lg, var(--text-2xl));
@@ -635,18 +599,6 @@
   --ex-gap-x: var(--ex-checkbox-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-checkbox-card-radius-sm, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-checkbox-card-description-line-height-sm, var(--text-xs--line-height)) *
-      var(--ex-checkbox-card-description-font-size-sm, var(--text-xs))
-  );
-
-  &:has(.ex-checkbox-card-content > .ex-checkbox-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-checkbox-card-label-line-height-sm, var(--text-xs--line-height)) *
-        var(--ex-checkbox-card-label-font-size-sm, var(--text-xs))
-    );
-  }
-
   .ex-checkbox-card-indicator {
     --ex-font-size: var(--ex-checkbox-card-indicator-font-size-sm, var(--text-base));
     --ex-radius: var(--ex-checkbox-card-indicator-radius-sm, var(--radius-sm));
@@ -678,18 +630,6 @@
   --ex-gap-x: var(--ex-checkbox-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-checkbox-card-radius-md, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-checkbox-card-description-line-height-md, var(--text-sm--line-height)) *
-      var(--ex-checkbox-card-description-font-size-md, var(--text-sm))
-  );
-
-  &:has(.ex-checkbox-card-content > .ex-checkbox-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-checkbox-card-label-line-height-md, var(--text-sm--line-height)) *
-        var(--ex-checkbox-card-label-font-size-md, var(--text-sm))
-    );
-  }
-
   .ex-checkbox-card-indicator {
     --ex-font-size: var(--ex-checkbox-card-indicator-font-size-md, var(--text-lg));
     --ex-radius: var(--ex-checkbox-card-indicator-radius-md, var(--radius-sm));
@@ -720,18 +660,6 @@
 
   --ex-gap-x: var(--ex-checkbox-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-checkbox-card-radius-lg, var(--radius-sm));
-
-  --ex-first-line-height: calc(
-    var(--ex-checkbox-card-description-line-height-lg, var(--text-base--line-height)) *
-      var(--ex-checkbox-card-description-font-size-lg, var(--text-base))
-  );
-
-  &:has(.ex-checkbox-card-content > .ex-checkbox-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-checkbox-card-label-line-height-lg, var(--text-base--line-height)) *
-        var(--ex-checkbox-card-label-font-size-lg, var(--text-base))
-    );
-  }
 
   .ex-checkbox-card-indicator {
     --ex-font-size: var(--ex-checkbox-card-indicator-font-size-lg, var(--text-xl));
@@ -1754,14 +1682,16 @@
 @utility menubar-sm {
   --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
 
-  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 1.5));
+  --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 2));
+  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 0.5));
+
   --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-sm, var(--ex-size-md));
 
-    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 1.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 0.75));
+    --ex-px: var(--ex-menubar-trigger-px-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-sm, calc(var(--spacing) * 1));
 
     --ex-radius: var(--ex-menubar-trigger-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-sm, var(--text-xs));
@@ -1811,14 +1741,16 @@
 @utility menubar-md {
   --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2));
+  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2.5));
+  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 1));
+
   --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1));
+    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
 
     --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
@@ -1968,9 +1900,7 @@
   --ex-px: var(--ex-navigation-menu-px-sm, calc(var(--spacing) * 2));
   --ex-py: var(--ex-navigation-menu-py-sm, calc(var(--spacing) * 2));
 
-  --ex-gap-x: var(--ex-navigation-menu-gap-x-sm, calc(var(--spacing) * 1));
-  --ex-gap-y: var(--ex-navigation-menu-gap-y-sm, calc(var(--spacing) * 1));
-
+  --ex-gap-x: var(--ex-navigation-menu-gap-x-sm, calc(var(--spacing) * 0.5));
   --ex-radius: var(--ex-navigation-menu-radius-sm, var(--radius-sm));
 
   .ex-navigation-menu-item {
@@ -2010,9 +1940,7 @@
   --ex-px: var(--ex-navigation-menu-px-md, calc(var(--spacing) * 2.5));
   --ex-py: var(--ex-navigation-menu-py-md, calc(var(--spacing) * 2.5));
 
-  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 1.25));
-  --ex-gap-y: var(--ex-navigation-menu-gap-y-md, calc(var(--spacing) * 1.25));
-
+  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 1));
   --ex-radius: var(--ex-navigation-menu-radius-md, var(--radius-sm));
 
   .ex-navigation-menu-item {
@@ -2281,18 +2209,6 @@
   --ex-gap-x: var(--ex-radio-card-gap-x-sm, calc(var(--spacing) * 2));
   --ex-radius: var(--ex-radio-card-radius-sm, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-radio-card-description-line-height-sm, var(--text-xs--line-height)) *
-      var(--ex-radio-card-description-font-size-sm, var(--text-xs))
-  );
-
-  &:has(.ex-radio-card-content > .ex-radio-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-radio-card-label-line-height-sm, var(--text-xs--line-height)) *
-        var(--ex-radio-card-label-font-size-sm, var(--text-xs))
-    );
-  }
-
   .ex-radio-card-indicator {
     --ex-font-size: var(--ex-radio-card-indicator-font-size-sm, var(--text-base));
   }
@@ -2318,18 +2234,6 @@
   --ex-gap-x: var(--ex-radio-card-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-radio-card-radius-md, var(--radius-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-radio-card-description-line-height-md, var(--text-sm--line-height)) *
-      var(--ex-radio-card-description-font-size-md, var(--text-sm))
-  );
-
-  &:has(.ex-radio-card-content > .ex-radio-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-radio-card-label-line-height-md, var(--text-sm--line-height)) *
-        var(--ex-radio-card-label-font-size-md, var(--text-sm))
-    );
-  }
-
   .ex-radio-card-indicator {
     --ex-font-size: var(--ex-radio-card-indicator-font-size-md, var(--text-lg));
   }
@@ -2354,18 +2258,6 @@
 
   --ex-gap-x: var(--ex-radio-card-gap-x-lg, calc(var(--spacing) * 3));
   --ex-radius: var(--ex-radio-card-radius-lg, var(--radius-sm));
-
-  --ex-first-line-height: calc(
-    var(--ex-radio-card-description-line-height-lg, var(--text-base--line-height)) *
-      var(--ex-radio-card-description-font-size-lg, var(--text-base))
-  );
-
-  &:has(.ex-radio-card-content > .ex-radio-card-label:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-radio-card-label-line-height-lg, var(--text-base--line-height)) *
-        var(--ex-radio-card-label-font-size-lg, var(--text-base))
-    );
-  }
 
   .ex-radio-card-indicator {
     --ex-font-size: var(--ex-radio-card-indicator-font-size-lg, var(--text-xl));
@@ -2437,6 +2329,26 @@
 @utility rating-lg {
   --ex-gap-x: var(--ex-rating-gap-x-lg, calc(var(--spacing) * 0.5));
   --ex-font-size: var(--ex-rating-indicator-font-size-lg, var(--text-xl));
+}
+
+@utility simple-grid-xs {
+  --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-xs));
+}
+
+@utility simple-grid-sm {
+  --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-sm));
+}
+
+@utility simple-grid-md {
+  --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-md));
+}
+
+@utility simple-grid-lg {
+  --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-lg));
+}
+
+@utility simple-grid-xl {
+  --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-xl));
 }
 
 @utility scroll-area-xs {
@@ -2642,11 +2554,15 @@
   --ex-size: var(--ex-separator-size-xs, 1px);
 
   &:where([data-orientation='horizontal']) {
-    width: 100%;
+    @apply w-full;
   }
 
   &:where([data-orientation='vertical']) {
-    height: 100%;
+    @apply h-full;
+  }
+
+  .ex-separator-content {
+    --ex-spacer: var(--ex-separator-label-spacer-xs, calc(var(--spacing) * 2));
   }
 }
 
@@ -2654,11 +2570,15 @@
   --ex-size: var(--ex-separator-size-sm, 2px);
 
   &:where([data-orientation='horizontal']) {
-    width: 100%;
+    @apply w-full;
   }
 
   &:where([data-orientation='vertical']) {
-    height: 100%;
+    @apply h-full;
+  }
+
+  .ex-separator-content {
+    --ex-spacer: var(--ex-separator-label-spacer-sm, calc(var(--spacing) * 2));
   }
 }
 
@@ -2666,11 +2586,15 @@
   --ex-size: var(--ex-separator-size-md, 3px);
 
   &:where([data-orientation='horizontal']) {
-    width: 100%;
+    @apply w-full;
   }
 
   &:where([data-orientation='vertical']) {
-    height: 100%;
+    @apply h-full;
+  }
+
+  .ex-separator-content {
+    --ex-spacer: var(--ex-separator-label-spacer-md, calc(var(--spacing) * 2));
   }
 }
 
@@ -2678,11 +2602,15 @@
   --ex-size: var(--ex-separator-size-lg, 4px);
 
   &:where([data-orientation='horizontal']) {
-    width: 100%;
+    @apply w-full;
   }
 
   &:where([data-orientation='vertical']) {
-    height: 100%;
+    @apply h-full;
+  }
+
+  .ex-separator-content {
+    --ex-spacer: var(--ex-separator-label-spacer-lg, calc(var(--spacing) * 2));
   }
 }
 
@@ -2866,13 +2794,14 @@
 @utility tabs-sm {
   --ex-px: var(--ex-tabs-px-sm, calc(var(--spacing) * 2));
   --ex-py: var(--ex-tabs-py-sm, calc(var(--spacing) * 2));
+
   --ex-radius: var(--ex-tabs-radius-sm, var(--radius-sm));
 
   .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-2xl));
+    --ex-height: var(--ex-tabs-trigger-height-sm, var(--ex-size-xl));
 
     --ex-px: var(--ex-tabs-trigger-px-sm, calc(var(--spacing) * 3.5));
-    --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-x: var(--ex-tabs-trigger-gap-x-sm, calc(var(--spacing) * 1.75));
 
     --ex-radius: var(--ex-tabs-trigger-radius-sm, var(--radius-sm));
     --ex-font-size: var(--ex-tabs-trigger-font-size-sm, var(--text-xs));
@@ -2880,12 +2809,13 @@
 }
 
 @utility tabs-md {
-  --ex-px: var(--ex-tabs-px-md, calc(var(--spacing) * 3));
-  --ex-py: var(--ex-tabs-py-md, calc(var(--spacing) * 3));
+  --ex-px: var(--ex-tabs-px-md, calc(var(--spacing) * 2.5));
+  --ex-py: var(--ex-tabs-py-md, calc(var(--spacing) * 2.5));
+
   --ex-radius: var(--ex-tabs-radius-md, var(--radius-sm));
 
   .ex-tabs-trigger {
-    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-3xl));
+    --ex-height: var(--ex-tabs-trigger-height-md, var(--ex-size-2xl));
 
     --ex-px: var(--ex-tabs-trigger-px-md, calc(var(--spacing) * 4));
     --ex-gap-x: var(--ex-tabs-trigger-gap-x-md, calc(var(--spacing) * 2));
@@ -2958,18 +2888,6 @@
   --ex-radius: var(--ex-toast-radius-sm, var(--radius-sm));
   --ex-shadow: var(--ex-toast-shadow-sm, var(--shadow-sm));
 
-  --ex-first-line-height: calc(
-    var(--ex-toast-description-line-height-sm, var(--text-xs--line-height)) *
-      var(--ex-toast-description-font-size-sm, var(--text-xs))
-  );
-
-  &:has(.ex-toast-content > .ex-toast-title:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-toast-title-line-height-sm, var(--text-sm--line-height)) *
-        var(--ex-toast-title-font-size-sm, var(--text-sm))
-    );
-  }
-
   .ex-toast-indicator {
     --ex-font-size: var(--ex-toast-indicator-font-size-sm, var(--text-lg));
   }
@@ -2999,18 +2917,6 @@
   --ex-gap-x: var(--ex-toast-gap-x-md, calc(var(--spacing) * 2.5));
   --ex-radius: var(--ex-toast-radius-md, var(--radius-sm));
   --ex-shadow: var(--ex-toast-shadow-md, var(--shadow-sm));
-
-  --ex-first-line-height: calc(
-    var(--ex-toast-description-line-height-md, var(--text-sm--line-height)) *
-      var(--ex-toast-description-font-size-md, var(--text-sm))
-  );
-
-  &:has(.ex-toast-content > .ex-toast-title:first-child) {
-    --ex-first-line-height: calc(
-      var(--ex-toast-title-line-height-md, var(--text-base--line-height)) *
-        var(--ex-toast-title-font-size-md, var(--text-base))
-    );
-  }
 
   .ex-toast-indicator {
     --ex-font-size: var(--ex-toast-indicator-font-size-md, var(--text-xl));

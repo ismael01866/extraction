@@ -1,0 +1,12 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-sticky {
+    @apply z-1 sticky top-0;
+  }
+
+  .ex-sticky-sentinel {
+    @apply h-px;
+  }
+}

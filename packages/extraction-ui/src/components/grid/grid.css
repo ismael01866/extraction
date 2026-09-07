@@ -3,6 +3,10 @@
 
 @layer components {
   .ex-grid {
+    --ex-gap-x: var(--ex-grid-gap-x, 0);
+    --ex-gap-y: var(--ex-grid-gap-y, 0);
+
     @apply grid w-full grid-cols-[repeat(auto-fit,minmax(0,1fr))];
+    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
   }
 }

@@ -8,7 +8,7 @@
 
   .ex-field {
     @apply relative flex flex-col items-start;
-    @apply gap-y-[var(--ex-gap-y)] [font-size:var(--ex-font-size)];
+    @apply gap-y-(--ex-gap-y) [font-size:var(--ex-font-size)];
   }
 
   .ex-field-label {

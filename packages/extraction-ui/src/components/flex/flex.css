@@ -3,8 +3,9 @@
 
 @layer components {
   .ex-flex {
-    --ex-gap-x: var(--ex-flex-gap-x, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-flex-gap-x, 0);
 
-    @apply gap-x-(--ex-gap-x) flex;
+    @apply flex;
+    @apply gap-x-(--ex-gap-x);
   }
 }

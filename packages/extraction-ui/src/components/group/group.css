@@ -3,7 +3,7 @@
 
 @layer components {
   .ex-group {
-    @apply flex justify-start;
+    @apply isolate flex justify-start;
 
     &:where(:not([data-orientation])),
     &:where([data-orientation='horizontal']) {

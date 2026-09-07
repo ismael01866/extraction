@@ -13,8 +13,8 @@
   .ex-checkbox-card {
     --ex-cursor: var(--ex-checkbox-card-cursor, default);
 
-    @apply flex select-none leading-normal;
-    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) cursor-[var(--ex-cursor)] gap-x-[var(--ex-gap-x)];
+    @apply flex min-w-0 select-none leading-normal;
+    @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-(--ex-gap-x) cursor-[var(--ex-cursor)];
 
     &:where(.variant-solid) {
       @apply component-variant-solid-contrast;
@@ -27,7 +27,7 @@
 
   .ex-checkbox-card-content {
     @apply flex flex-1 flex-col items-start text-start;
-    @apply gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+    @apply gap-y-(--ex-gap-y) gap-x-(--ex-gap-x);
   }
 
   .ex-checkbox-card-indicator {
@@ -41,7 +41,7 @@
 
   .ex-checkbox-card-indicator {
     @apply relative inline-flex flex-shrink-0 items-center justify-center;
-    @apply h-[var(--ex-first-line-height)] [font-size:var(--ex-font-size)];
+    @apply [font-size:var(--ex-font-size)];
 
     :where(svg) {
       @apply relative size-[1em];
@@ -62,7 +62,8 @@
   }
 
   .ex-checkbox-card-label {
-    @apply cursor-[inherit] self-start [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
+    @apply cursor-[inherit] self-start [text-box:trim-start];
+    @apply [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)] [line-height:var(--ex-line-height)];
   }
 
   .ex-checkbox-card-description {

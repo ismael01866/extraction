@@ -100,8 +100,8 @@ export * from './empty-state/empty-state.types';
 export { Field } from './field';
 export * from './field/field.types';
 
-export { FitText } from './fit-text';
-export * from './fit-text/fit-text.types';
+// export { FitText } from './fit-text';
+// export * from './fit-text/fit-text.types';
 
 export { Flex } from './flex';
 export * from './flex/flex.types';
@@ -223,6 +223,9 @@ export * from './select/select.types';
 export { Separator } from './separator';
 export * from './separator/separator.types';
 
+export { SimpleGrid } from './simple-grid';
+export * from './simple-grid/simple-grid.types';
+
 export { Slider } from './slider';
 export * from './slider/slider.types';
 
@@ -231,6 +234,9 @@ export * from './skeleton/skeleton.types';
 
 export { Status } from './status';
 export * from './status/status.types';
+
+export { Sticky } from './sticky';
+export * from './sticky/sticky.types';
 
 export { Switch } from './switch';
 export * from './switch/switch.types';

@@ -15,6 +15,10 @@ export const cfg = {
       type: 'boolean',
       default: 'false',
     },
+    align: {
+      type: 'enum of ["start", "center", "end"]',
+      default: 'center',
+    },
     decorative: {
       type: 'boolean',
       default: 'false',

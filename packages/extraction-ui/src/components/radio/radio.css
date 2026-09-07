@@ -8,7 +8,7 @@
 
   .ex-radio {
     @apply flex items-center justify-center;
-    @apply gap-x-[var(--ex-gap-x)];
+    @apply gap-x-(--ex-gap-x);
   }
 
   .ex-radio-control {

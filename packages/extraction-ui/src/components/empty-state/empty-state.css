@@ -16,7 +16,7 @@
 
   .ex-empty-state-section {
     @apply flex flex-col items-center justify-center text-center;
-    @apply px-(--ex-px) py-(--ex-py) gap-x-[var(--ex-gap-x)] gap-y-[var(--ex-gap-y)];
+    @apply px-(--ex-px) py-(--ex-py) gap-y-(--ex-gap-y) gap-x-(--ex-gap-x);
   }
 
   .ex-empty-state-indicator {

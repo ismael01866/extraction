@@ -7,7 +7,9 @@ import * as Progress from '@radix-ui/react-progress';
 export type ProgressProps<T extends ElementType> = MergeElementProps<
   ElementProps<T>,
   Omit<ComponentProps<typeof Progress.Root>, 'as' | 'asChild' | 'className' | 'children'>
->;
+> & {
+  orientation?: 'horizontal' | 'vertical';
+};
 
 export type ProgressIndicatorProps<T extends ElementType> = MergeElementProps<
   ElementProps<T>,
