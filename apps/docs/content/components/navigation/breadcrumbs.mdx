@@ -92,6 +92,24 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Breadcrumbs>
+    <Breadcrumbs.List>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href="#">
+          <LuHouse />
+          Home
+        </Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.Link href="#">Profile</Breadcrumbs.Link>
+      </Breadcrumbs.Item>
+      <Breadcrumbs.Separator>/</Breadcrumbs.Separator>
+      <Breadcrumbs.Item>
+        <Breadcrumbs.CurrentLink href="#">Settings</Breadcrumbs.CurrentLink>
+      </Breadcrumbs.Item>
+    </Breadcrumbs.List>
+  </Breadcrumbs>`}
 />
 
 ## With Separator

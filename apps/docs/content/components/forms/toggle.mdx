@@ -39,6 +39,14 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Toggle asChild>
+    <IconButton
+      className="variant-outline data-[state='on']:variant-solid"
+      aria-label="toggle button"
+    >
+      <LuMail />
+    </IconButton>
+  </Toggle>`}
 />
 
 ## Disabled
@@ -49,6 +57,14 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<Toggle asChild disabled>
+    <IconButton
+      className="variant-outline data-[state='on']:variant-solid"
+      aria-label="toggle button"
+    >
+      <LuMail />
+    </IconButton>
+  </Toggle>`}
 />
 
 ## Controlled
@@ -85,6 +101,7 @@ Use the `name` prop to include the value in the form submission.
     wrapper: Wrapper,
   }}
   serializedCode={`<form
+    className="w-20"
     onSubmit={(event) => {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
@@ -98,8 +115,7 @@ Use the `name` prop to include the value in the form submission.
         <LuMail />
       </IconButton>
     </Toggle>
-    <br />
-    <Button type="submit" className="palette-neutral variant-surface">
+    <Button type="submit" className="button-sm mt-3 w-full">
       Submit
     </Button>
   </form>`}

@@ -35,6 +35,10 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Badge>
+    <LuMail />
+    Badge
+  </Badge>`}
 />
 
 ## Sizes
@@ -45,6 +49,10 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<Badge className="badge-${size}">
+    <LuMail />
+    Badge
+  </Badge>`}
 />
 
 ## Variants

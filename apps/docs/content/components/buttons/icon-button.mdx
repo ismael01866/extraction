@@ -29,6 +29,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<IconButton aria-label="icon button">
+    <LuMail />
+  </IconButton>`}
 />
 
 ## Disabled
@@ -39,6 +42,9 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabled
+  serializedCode={`<IconButton className="disabled" aria-label="icon button">
+    <LuMail />
+  </IconButton>`}
 />
 
 ## Sizes
@@ -49,6 +55,11 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({
+    size,
+  }) => `<IconButton className="icon-button-${size}" aria-label="icon button">
+    <LuMail />
+  </IconButton>`}
 />
 
 ## Variants
@@ -59,6 +70,12 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({
+    color,
+    variant,
+  }) => `<IconButton className="palette-${color} variant-${variant}" aria-label="icon button">
+    <LuMail />
+</IconButton>`}
 />
 
 ## Customizing

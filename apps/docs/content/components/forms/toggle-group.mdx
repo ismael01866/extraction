@@ -41,7 +41,7 @@ export const Component = (
 );
 
 export const ComponentVertical = (
-  <ToggleGroup type='single' orientation='vertical'>
+  <ToggleGroup type='single'>
     <Group orientation='vertical'>
       <ToggleGroup.Item value={'item-1'} asChild>
         <IconButton
@@ -144,6 +144,25 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<ToggleGroup type="single">
+    <Group>
+      <ToggleGroup.Item value="item-1" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align left">
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-2" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align center">
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-3" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align right">
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>`}
 />
 
 ## Vertical Orientation
@@ -154,6 +173,25 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   vertical
+  serializedCode={`<ToggleGroup type="single">
+    <Group orientation='vertical'>
+      <ToggleGroup.Item value="item-1" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align left">
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-2" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align center">
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-3" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align right">
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>`}
 />
 
 ## Disabled
@@ -164,6 +202,25 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<ToggleGroup type="single" disabled>
+    <Group>
+      <ToggleGroup.Item value="item-1" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align left">
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-2" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align center">
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-3" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align right">
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>`}
 />
 
 ## Disabled Item
@@ -174,6 +231,25 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<ToggleGroup type="single">
+    <Group>
+      <ToggleGroup.Item value="item-1" asChild disabled>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align left">
+          <LuAlignLeft />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-2" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align center">
+          <LuAlignCenter />
+        </IconButton>
+      </ToggleGroup.Item>
+      <ToggleGroup.Item value="item-3" asChild>
+        <IconButton className="variant-outline data-[state='on']:variant-solid" aria-label="align right">
+          <LuAlignRight />
+        </IconButton>
+      </ToggleGroup.Item>
+    </Group>
+  </ToggleGroup>`}
 />
 
 ## Controlled

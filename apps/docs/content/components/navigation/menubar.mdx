@@ -246,6 +246,54 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuScreenShare />
+              </Menubar.Indicator>
+              Take Screenshot
+              <Menubar.Command>⌘S</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Label>Actions</Menubar.Label>
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Sub>
+              <Menubar.SubTrigger>
+                More Actions
+                <Menubar.Indicator>
+                  <LuChevronRight />
+                </Menubar.Indicator>
+              </Menubar.SubTrigger>
+              <Menubar.Portal>
+                <Menubar.SubContent>
+                  <Menubar.Section>
+                    <Menubar.Item>Print</Menubar.Item>
+                    <Menubar.Item>Save Page As...</Menubar.Item>
+                  </Menubar.Section>
+                </Menubar.SubContent>
+              </Menubar.Portal>
+            </Menubar.Sub>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>`}
 />
 
 ## Disabled
@@ -256,6 +304,11 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabled
+  serializedCode={`<Menubar className="disabled">
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+    </Menubar.Menu>
+  </Menubar>`}
 />
 
 ## Disabled Item
@@ -266,6 +319,30 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content>
+          <Menubar.Section>
+            <Menubar.Item disabled>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>`}
 />
 
 ## Sizes
@@ -276,6 +353,53 @@ export const Wrapper = ({ children }) => children;
     usage: SizeComponent,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<Menubar>
+    <Menubar.Menu>
+      <Menubar.Trigger>File</Menubar.Trigger>
+      <Menubar.Portal>
+        <Menubar.Content className="menubar-content-${size}">
+          <Menubar.Section>
+            <Menubar.Item>
+              <Menubar.Indicator>
+                <LuTextSelect />
+              </Menubar.Indicator>
+              Select All
+              <Menubar.Command>⌘A</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Separator />
+            <Menubar.Label>Actions</Menubar.Label>
+            <Menubar.Item>
+              New Tab
+              <Menubar.Command>⌘T</Menubar.Command>
+            </Menubar.Item>
+            <Menubar.Sub>
+              <Menubar.SubTrigger>
+                More Actions
+                <Menubar.Indicator>
+                  <LuChevronRight />
+                </Menubar.Indicator>
+              </Menubar.SubTrigger>
+              <Menubar.Portal>
+                <Menubar.SubContent className="menubar-content-${size}">
+                  <Menubar.Section>
+                    <Menubar.Item>Print</Menubar.Item>
+                    <Menubar.Item>Save Page As...</Menubar.Item>
+                  </Menubar.Section>
+                </Menubar.SubContent>
+              </Menubar.Portal>
+            </Menubar.Sub>
+            <Menubar.CheckboxItem checked>
+              <Menubar.Indicator>
+                <LuCheck />
+              </Menubar.Indicator>
+              Show Bookmarks Bar
+            </Menubar.CheckboxItem>
+          </Menubar.Section>
+          <Menubar.Arrow />
+        </Menubar.Content>
+      </Menubar.Portal>
+    </Menubar.Menu>
+  </Menubar>`}
 />
 
 ## Customizing

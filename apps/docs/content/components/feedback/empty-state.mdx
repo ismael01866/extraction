@@ -36,6 +36,17 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<EmptyState>
+    <EmptyState.Content>
+      <EmptyState.Section>
+        <EmptyState.Indicator>
+          <LuMail />
+        </EmptyState.Indicator>
+        <EmptyState.Title>Header</EmptyState.Title>
+        <EmptyState.Description>Alice was beginning to get very tired</EmptyState.Description>
+      </EmptyState.Section>
+    </EmptyState.Content>
+  </EmptyState>`}
 />
 
 ## Sizes
@@ -46,6 +57,17 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<EmptyState className="empty-state-${size}">
+    <EmptyState.Content>
+      <EmptyState.Section>
+        <EmptyState.Indicator>
+          <LuMail />
+        </EmptyState.Indicator>
+        <EmptyState.Title>Header</EmptyState.Title>
+        <EmptyState.Description>Alice was beginning to get very tired</EmptyState.Description>
+      </EmptyState.Section>
+    </EmptyState.Content>
+  </EmptyState>`}
 />
 
 ## Customizing

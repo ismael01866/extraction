@@ -21,6 +21,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<IconBox>
+    <LuMail />
+  </IconBox>`}
 />
 
 ## Sizes
@@ -31,6 +34,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<IconBox className="icon-box-${size}">
+    <LuMail />
+  </IconBox>`}
 />
 
 ## Variants
@@ -41,6 +47,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ color, variant }) => `<IconBox className="palette-${color} variant-${variant}">
+    <LuMail />
+  </IconBox>`}
 />
 
 ## Customizing

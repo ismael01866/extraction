@@ -10,13 +10,6 @@ export const Component = (
   </NavButton>
 );
 
-export const ComponentWithIcon = (
-  <NavButton>
-    <LuMail />
-    {`Button`}
-  </NavButton>
-);
-
 export const ComponentDisabled = (
   <NavButton className='disabled'>
     <LuMail /> {`Button`}
@@ -36,15 +29,10 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
-/>
-
-## With Icon
-
-<Usage
-  components={{
-    usage: ComponentWithIcon,
-    wrapper: Wrapper,
-  }}
+  serializedCode={`<NavButton>
+    <LuMail />
+    Button
+  </NavButton>`}
 />
 
 ## Disabled
@@ -55,6 +43,10 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabled
+  serializedCode={`<NavButton className="disabled">
+    <LuMail />
+    Button
+  </NavButton>`}
 />
 
 ## Sizes
@@ -62,9 +54,13 @@ export const Wrapper = ({ children }) => children;
 <Size
   config={cfg}
   components={{
-    usage: ComponentWithIcon,
+    usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<NavButton className="nav-button-${size}">
+    <LuMail />
+    Button
+  </NavButton>`}
 />
 
 ## Variants
@@ -75,6 +71,13 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({
+    color,
+    variant,
+  }) => `<NavButton className="palette-${color} variant-${variant}">
+    <LuMail />
+    Button
+  </NavButton>`}
 />
 
 ## Customizing

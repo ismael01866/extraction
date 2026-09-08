@@ -202,6 +202,79 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<ContextMenu>
+    <ContextMenu.Trigger asChild>
+      <IconButton aria-label="Open context menu">
+        <LuMenu />
+      </IconButton>
+    </ContextMenu.Trigger>
+    <ContextMenu.Portal>
+      <ContextMenu.Content>
+        <ContextMenu.Section>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuTextSelect />
+            </ContextMenu.Indicator>
+            Select All
+            <ContextMenu.Command>⌘A</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuScreenShare />
+            </ContextMenu.Indicator>
+            Take Screenshot
+            <ContextMenu.Command>⌘S</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Actions</ContextMenu.Label>
+          <ContextMenu.Item>
+            New Tab
+            <ContextMenu.Command>⌘T</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Sub>
+            <ContextMenu.SubTrigger>
+              More Actions
+              <ContextMenu.Indicator>
+                <LuChevronRight />
+              </ContextMenu.Indicator>
+            </ContextMenu.SubTrigger>
+            <ContextMenu.Portal>
+              <ContextMenu.SubContent>
+                <ContextMenu.Section>
+                  <ContextMenu.Item>Print</ContextMenu.Item>
+                  <ContextMenu.Item>Save Page As...</ContextMenu.Item>
+                </ContextMenu.Section>
+              </ContextMenu.SubContent>
+            </ContextMenu.Portal>
+          </ContextMenu.Sub>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Checkbox</ContextMenu.Label>
+          <ContextMenu.CheckboxItem checked>
+            <ContextMenu.Indicator>
+              <LuCheck />
+            </ContextMenu.Indicator>
+            Show Bookmarks Bar
+          </ContextMenu.CheckboxItem>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Radio</ContextMenu.Label>
+          <ContextMenu.RadioGroup value="asc">
+            <ContextMenu.RadioItem value="asc">
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Ascending
+            </ContextMenu.RadioItem>
+            <ContextMenu.RadioItem value="desc">
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Descending
+            </ContextMenu.RadioItem>
+          </ContextMenu.RadioGroup>
+        </ContextMenu.Section>
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  </ContextMenu>`}
 />
 
 ## Disabled Item
@@ -212,6 +285,33 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<ContextMenu>
+    <ContextMenu.Trigger asChild>
+      <IconButton aria-label="Open context menu">
+        <LuMenu />
+      </IconButton>
+    </ContextMenu.Trigger>
+    <ContextMenu.Portal>
+      <ContextMenu.Content>
+        <ContextMenu.Section>
+          <ContextMenu.Item disabled>
+            <ContextMenu.Indicator>
+              <LuTextSelect />
+            </ContextMenu.Indicator>
+            Select All
+            <ContextMenu.Command>⌘A</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuScreenShare />
+            </ContextMenu.Indicator>
+            Take Screenshot
+            <ContextMenu.Command>⌘S</ContextMenu.Command>
+          </ContextMenu.Item>
+        </ContextMenu.Section>
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  </ContextMenu>`}
 />
 
 ## Sizes
@@ -231,6 +331,68 @@ export const Wrapper = ({ children }) => children;
       </ContextMenu>
     ),
   }}
+  serializedCode={({ size }) => `<ContextMenu>
+    <ContextMenu.Trigger asChild>
+      <IconButton aria-label="Open context menu">
+        <LuMenu />
+      </IconButton>
+    </ContextMenu.Trigger>
+    <ContextMenu.Portal>
+      <ContextMenu.Content className="context-menu-content-${size}">
+        <ContextMenu.Section>
+          <ContextMenu.Item>
+            <ContextMenu.Indicator>
+              <LuTextSelect />
+            </ContextMenu.Indicator>
+            Select All
+            <ContextMenu.Command>⌘A</ContextMenu.Command>
+          </ContextMenu.Item>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Actions</ContextMenu.Label>
+          <ContextMenu.Sub>
+            <ContextMenu.SubTrigger>
+              More Actions
+              <ContextMenu.Indicator>
+                <LuChevronRight />
+              </ContextMenu.Indicator>
+            </ContextMenu.SubTrigger>
+            <ContextMenu.Portal>
+              <ContextMenu.SubContent className="context-menu-content-${size}">
+                <ContextMenu.Section>
+                  <ContextMenu.Item>Print</ContextMenu.Item>
+                  <ContextMenu.Item>Save Page As...</ContextMenu.Item>
+                </ContextMenu.Section>
+              </ContextMenu.SubContent>
+            </ContextMenu.Portal>
+          </ContextMenu.Sub>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Checkbox</ContextMenu.Label>
+          <ContextMenu.CheckboxItem checked>
+            <ContextMenu.Indicator>
+              <LuCheck />
+            </ContextMenu.Indicator>
+            Show Bookmarks Bar
+          </ContextMenu.CheckboxItem>
+          <ContextMenu.Separator />
+          <ContextMenu.Label>Radio</ContextMenu.Label>
+          <ContextMenu.RadioGroup value="asc">
+            <ContextMenu.RadioItem value="asc">
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Ascending
+            </ContextMenu.RadioItem>
+            <ContextMenu.RadioItem value="desc">
+              <ContextMenu.Indicator>
+                <LuDot />
+              </ContextMenu.Indicator>
+              Sort Descending
+            </ContextMenu.RadioItem>
+          </ContextMenu.RadioGroup>
+        </ContextMenu.Section>
+      </ContextMenu.Content>
+    </ContextMenu.Portal>
+  </ContextMenu>`}
 />
 
 ## Customizing

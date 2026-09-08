@@ -206,6 +206,80 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<DropdownMenu>
+    <DropdownMenu.Trigger asChild>
+      <IconButton aria-label="Open dropdown menu">
+        <LuMenu />
+      </IconButton>
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content>
+        <DropdownMenu.Section>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuTextSelect />
+            </DropdownMenu.Indicator>
+            Select All
+            <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuScreenShare />
+            </DropdownMenu.Indicator>
+            Take Screenshot
+            <DropdownMenu.Command>⌘S</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Actions</DropdownMenu.Label>
+          <DropdownMenu.Item>
+            New Tab
+            <DropdownMenu.Command>⌘T</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Sub>
+            <DropdownMenu.SubTrigger>
+              More Actions
+              <DropdownMenu.Indicator>
+                <LuChevronRight />
+              </DropdownMenu.Indicator>
+            </DropdownMenu.SubTrigger>
+            <DropdownMenu.Portal>
+              <DropdownMenu.SubContent>
+                <DropdownMenu.Section>
+                  <DropdownMenu.Item>Print</DropdownMenu.Item>
+                  <DropdownMenu.Item>Save Page As...</DropdownMenu.Item>
+                </DropdownMenu.Section>
+              </DropdownMenu.SubContent>
+            </DropdownMenu.Portal>
+          </DropdownMenu.Sub>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Checkbox</DropdownMenu.Label>
+          <DropdownMenu.CheckboxItem checked>
+            <DropdownMenu.Indicator>
+              <LuCheck />
+            </DropdownMenu.Indicator>
+            Show Bookmarks Bar
+          </DropdownMenu.CheckboxItem>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Radio</DropdownMenu.Label>
+          <DropdownMenu.RadioGroup value="asc">
+            <DropdownMenu.RadioItem value="asc">
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Ascending
+            </DropdownMenu.RadioItem>
+            <DropdownMenu.RadioItem value="desc">
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Descending
+            </DropdownMenu.RadioItem>
+          </DropdownMenu.RadioGroup>
+        </DropdownMenu.Section>
+        <DropdownMenu.Arrow />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu>`}
 />
 
 ## Disabled Item
@@ -216,6 +290,34 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<DropdownMenu>
+    <DropdownMenu.Trigger asChild>
+      <IconButton aria-label="Open dropdown menu">
+        <LuMenu />
+      </IconButton>
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content>
+        <DropdownMenu.Section>
+          <DropdownMenu.Item disabled>
+            <DropdownMenu.Indicator>
+              <LuTextSelect />
+            </DropdownMenu.Indicator>
+            Select All
+            <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuScreenShare />
+            </DropdownMenu.Indicator>
+            Take Screenshot
+            <DropdownMenu.Command>⌘S</DropdownMenu.Command>
+          </DropdownMenu.Item>
+        </DropdownMenu.Section>
+        <DropdownMenu.Arrow />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu>`}
 />
 
 ## Sizes
@@ -235,6 +337,69 @@ export const Wrapper = ({ children }) => children;
       </DropdownMenu>
     ),
   }}
+  serializedCode={({ size }) => `<DropdownMenu>
+    <DropdownMenu.Trigger asChild>
+      <IconButton aria-label="Open dropdown menu">
+        <LuMenu />
+      </IconButton>
+    </DropdownMenu.Trigger>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content className="dropdown-menu-content-${size}">
+        <DropdownMenu.Section>
+          <DropdownMenu.Item>
+            <DropdownMenu.Indicator>
+              <LuTextSelect />
+            </DropdownMenu.Indicator>
+            Select All
+            <DropdownMenu.Command>⌘A</DropdownMenu.Command>
+          </DropdownMenu.Item>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Actions</DropdownMenu.Label>
+          <DropdownMenu.Sub>
+            <DropdownMenu.SubTrigger>
+              More Actions
+              <DropdownMenu.Indicator>
+                <LuChevronRight />
+              </DropdownMenu.Indicator>
+            </DropdownMenu.SubTrigger>
+            <DropdownMenu.Portal>
+              <DropdownMenu.SubContent className="dropdown-menu-content-${size}">
+                <DropdownMenu.Section>
+                  <DropdownMenu.Item>Print</DropdownMenu.Item>
+                  <DropdownMenu.Item>Save Page As...</DropdownMenu.Item>
+                </DropdownMenu.Section>
+              </DropdownMenu.SubContent>
+            </DropdownMenu.Portal>
+          </DropdownMenu.Sub>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Checkbox</DropdownMenu.Label>
+          <DropdownMenu.CheckboxItem checked>
+            <DropdownMenu.Indicator>
+              <LuCheck />
+            </DropdownMenu.Indicator>
+            Show Bookmarks Bar
+          </DropdownMenu.CheckboxItem>
+          <DropdownMenu.Separator />
+          <DropdownMenu.Label>Radio</DropdownMenu.Label>
+          <DropdownMenu.RadioGroup value="asc">
+            <DropdownMenu.RadioItem value="asc">
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Ascending
+            </DropdownMenu.RadioItem>
+            <DropdownMenu.RadioItem value="desc">
+              <DropdownMenu.Indicator>
+                <LuDot />
+              </DropdownMenu.Indicator>
+              Sort Descending
+            </DropdownMenu.RadioItem>
+          </DropdownMenu.RadioGroup>
+        </DropdownMenu.Section>
+        <DropdownMenu.Arrow />
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
+  </DropdownMenu>`}
 />
 
 ## Customizing

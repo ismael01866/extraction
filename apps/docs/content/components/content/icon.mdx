@@ -29,6 +29,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Icon>
+    <LuMail />
+</Icon>`}
 />
 
 ## Sizes
@@ -41,6 +44,9 @@ export const Wrapper = ({ children }) => children;
   }}
   showSamples={false}
   isText
+  serializedCode={({ size }) => `<Icon className="text-${size}">
+    <LuMail />
+</Icon>`}
 />
 
 ## Palette
@@ -51,6 +57,9 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ color }) => `<Icon className="text-${color}">
+    <LuMail />
+  </Icon>`}
 />
 
 ## API

@@ -36,21 +36,15 @@ export const ComponentVertical = (
   <Tabs orientation='vertical' defaultValue={'tab1'}>
     <Tabs.List>
       <Tabs.Trigger value='tab1'>
-        <Icon>
-          <LuMail />
-        </Icon>
+        <LuMail />
         One
       </Tabs.Trigger>
       <Tabs.Trigger value='tab2'>
-        <Icon>
-          <LuUser />
-        </Icon>
+        <LuUser />
         Two
       </Tabs.Trigger>
       <Tabs.Trigger value='tab3'>
-        <Icon>
-          <LuSettings />
-        </Icon>
+        <LuSettings />
         Three
       </Tabs.Trigger>
     </Tabs.List>
@@ -70,21 +64,15 @@ export const ComponentDisabledItem = (
   <Tabs>
     <Tabs.List>
       <Tabs.Trigger value='tab1' disabled>
-        <Icon>
-          <LuMail />
-        </Icon>
+        <LuMail />
         One
       </Tabs.Trigger>
       <Tabs.Trigger value='tab2'>
-        <Icon>
-          <LuUser />
-        </Icon>
+        <LuUser />
         Two
       </Tabs.Trigger>
       <Tabs.Trigger value='tab3'>
-        <Icon>
-          <LuSettings />
-        </Icon>
+        <LuSettings />
         Three
       </Tabs.Trigger>
     </Tabs.List>
@@ -111,6 +99,28 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Tabs defaultValue="tab1">
+    <Tabs.List>
+      <Tabs.Trigger value="tab1">
+        <LuMail /> One
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab2">
+        <LuUser /> Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab3">
+        <LuSettings /> Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="tab1">
+      <Box className="box-md">Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab2">
+      <Box className="box-md">Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab3">
+      <Box className="box-md">Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>`}
 />
 
 ## Vertical Orientation
@@ -121,6 +131,28 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   vertical
+  serializedCode={`<Tabs defaultValue="tab1" orientation='vertical'>
+    <Tabs.List>
+      <Tabs.Trigger value="tab1">
+        <LuMail /> One
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab2">
+        <LuUser /> Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab3">
+        <LuSettings /> Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="tab1">
+      <Box className="box-md">Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab2">
+      <Box className="box-md">Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab3">
+      <Box className="box-md">Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>`}
 />
 
 ## Disabled Item
@@ -131,6 +163,28 @@ export const Wrapper = ({ children }) => children;
     wrapper: Wrapper,
   }}
   disabledNative
+  serializedCode={`<Tabs defaultValue="tab1">
+    <Tabs.List>
+      <Tabs.Trigger value="tab1" disabled>
+        <LuMail /> One
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab2">
+        <LuUser /> Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab3">
+        <LuSettings /> Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="tab1">
+      <Box className="box-md">Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab2">
+      <Box className="box-md">Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab3">
+      <Box className="box-md">Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>`}
 />
 
 ## Sizes
@@ -141,6 +195,28 @@ export const Wrapper = ({ children }) => children;
     usage: Component,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<Tabs className="tabs-${size}" defaultValue="tab1">
+    <Tabs.List>
+      <Tabs.Trigger value="tab1">
+        <LuMail /> One
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab2">
+        <LuUser /> Two
+      </Tabs.Trigger>
+      <Tabs.Trigger value="tab3">
+        <LuSettings /> Three
+      </Tabs.Trigger>
+    </Tabs.List>
+    <Tabs.Content value="tab1">
+      <Box className="box-md">Tab one content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab2">
+      <Box className="box-md">Tab two content</Box>
+    </Tabs.Content>
+    <Tabs.Content value="tab3">
+      <Box className="box-md">Tab three content</Box>
+    </Tabs.Content>
+  </Tabs>`}
 />
 
 ## Customizing

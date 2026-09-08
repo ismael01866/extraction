@@ -67,6 +67,20 @@ For more information on all available list style utilities, visit [Tailwind](htt
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={`<List>
+    <List.Item>
+      <List.Indicator>
+        <LuCircleCheck />
+      </List.Indicator>
+      First item of the list
+    </List.Item>
+    <List.Item>
+      <List.Indicator>
+        <LuCircleCheck />
+      </List.Indicator>
+      Second item of the list
+    </List.Item>
+  </List>`}
 />
 
 ## Sizes
@@ -78,6 +92,20 @@ For more information on all available list style utilities, visit [Tailwind](htt
     wrapper: Wrapper,
   }}
   isText
+  serializedCode={({ size }) => `<List className="list-${size}">
+    <List.Item>
+      <List.Indicator>
+        <LuCircleCheck />
+      </List.Indicator>
+      First item of the list
+    </List.Item>
+    <List.Item>
+      <List.Indicator>
+        <LuCircleCheck />
+      </List.Indicator>
+      Second item of the list
+    </List.Item>
+  </List>`}
 />
 
 ## Customizing

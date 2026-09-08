@@ -37,6 +37,10 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={`<NavLink>
+    <LuMail />
+    Nav Link
+  </NavLink>`}
 />
 
 ## Disabled
@@ -57,6 +61,10 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentWithIcon,
     wrapper: Wrapper,
   }}
+  serializedCode={({ size }) => `<NavLink className="nav-link-${size}">
+    <LuMail />
+    Nav Link
+  </NavLink>`}
 />
 
 ## Variants
