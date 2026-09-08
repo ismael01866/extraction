@@ -1,6 +1,5 @@
 export * from './base-container';
 export * from './client-code';
-export * from './code';
 export * from './code-container';
 export * from './code-copy-button';
 export * from './color-mode-button';
@@ -9,4 +8,3 @@ export * from './lenis-provider';
 export * from './motion-in-view';
 export * from './navigation-events';
 export * from './typography';
-export * from './variants';

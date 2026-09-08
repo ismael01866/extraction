@@ -22,8 +22,5 @@ const withNextra = nextra({
 export default withBundleAnalyzer(
   withNextra({
     output: 'export',
-    experimental: {
-      inlineCss: true,
-    },
   }),
 );

@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 
 import { Button, Collapsible, Text } from 'extraction-ui';
 
@@ -13,13 +15,19 @@ export function CodeContainer({
   defaultOpen?: boolean;
   showToggle?: boolean;
 }) {
+  const [open, setOpen] = useState(defaultOpen);
+
   return (
-    <Collapsible defaultOpen={defaultOpen}>
-      <Collapsible.Content>
-        <div className={`code-container x-container variant-outline palette-neutral ${className}`}>
-          {children}
-        </div>
-      </Collapsible.Content>
+    <Collapsible open={open} onOpenChange={setOpen}>
+      {open && (
+        <Collapsible.Content>
+          <div
+            className={`code-container x-container variant-outline palette-neutral ${className}`}
+          >
+            {children}
+          </div>
+        </Collapsible.Content>
+      )}
       {showToggle && (
         <Collapsible.Trigger asChild>
           <Button className="size-sm variant-surface palette-neutral border-t-0! w-full rounded-none rounded-b-md">

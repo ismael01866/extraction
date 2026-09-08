@@ -2,7 +2,8 @@ import { Button, Grid, VStack, shadesValues, variantsValues } from 'extraction-u
 import { capitalize } from 'lodash';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 
-import { BaseContainer, Code, CodeContainer } from '.';
+import { BaseContainer, CodeContainer } from '.';
+import { Code } from './code';
 
 export function Variants({ color }: { color?: string }) {
   return (

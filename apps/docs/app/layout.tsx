@@ -12,6 +12,7 @@ import {
   Title,
 } from 'extraction-ui';
 import { Metadata } from 'next';
+import type { PageMapItem } from 'nextra';
 import { Footer, Layout, Navbar } from 'nextra-theme-docs';
 import { Head } from 'nextra/components';
 import { getPageMap } from 'nextra/page-map';
@@ -106,7 +107,7 @@ const footer = (
   <Footer>
     <Flex className="w-full flex-col text-sm sm:flex-row">
       <Stack>
-        <Text>{new Date().getFullYear()} © Extraction UI</Text>
+        <Text>2026 © Extraction UI</Text>
         <Description>
           <Text className="opacity-muted">Built and mantained by </Text>
           <a
@@ -164,8 +165,37 @@ const footer = (
   </Footer>
 );
 
+const NAVIGATION_FRONT_MATTER_KEYS = ['title', 'display', 'theme'] as const;
+
+function getNavigationPageMap(pageMap: PageMapItem[]): PageMapItem[] {
+  return pageMap.map((item) => {
+    if ('data' in item) {
+      return {
+        data: item.data,
+      };
+    }
+
+    return {
+      ...item,
+      ...('children' in item && {
+        children: getNavigationPageMap(item.children),
+      }),
+
+      ...('frontMatter' in item &&
+        item.frontMatter && {
+          frontMatter: Object.fromEntries(
+            NAVIGATION_FRONT_MATTER_KEYS.filter((key) => key in item.frontMatter).map((key) => [
+              key,
+              item.frontMatter[key],
+            ]),
+          ),
+        }),
+    };
+  });
+}
+
 export default async function RootLayout({ children }) {
-  const pageMap = await getPageMap();
+  const pageMap = getNavigationPageMap(await getPageMap());
 
   return (
     <html lang="en" dir="ltr" className={`${geistSans.variable}`} suppressHydrationWarning>

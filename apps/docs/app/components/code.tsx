@@ -1,7 +1,5 @@
-import { codeToHtml } from 'shiki';
-
-import { highlightWords } from '../utils/shiki';
-import { CopyButton } from './code-copy-button';
+import { writeCodeSource } from '../utils/server-utils';
+import { CodeViewer } from './code-viewer';
 
 export async function Code({
   children = '',
@@ -19,20 +17,17 @@ export async function Code({
   words?: string[];
   enableCopy?: boolean;
 }) {
-  const html = await codeToHtml(children, {
-    lang,
-    themes: themes ?? {
-      dark: 'github-dark-default',
-      light: 'github-light-default',
-    },
-    transformers: words.length ? [highlightWords(words)] : undefined,
-  });
+  const sourceUrl = writeCodeSource(children);
+  const preview = children.length > 240 ? `${children.slice(0, 240)}\n...` : children;
 
   return (
-    <div className="relative">
-      {enableCopy && <CopyButton value={children} />}
-
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </div>
+    <CodeViewer
+      enableCopy={enableCopy}
+      lang={lang}
+      preview={preview}
+      sourceUrl={sourceUrl}
+      themes={themes}
+      words={words}
+    />
   );
 }

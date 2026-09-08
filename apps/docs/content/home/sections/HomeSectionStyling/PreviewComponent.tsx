@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { ClientCode } from '@/app/components';
+import { ClientCode } from '@/app/components/client-code';
 
 import { Button, Icon } from 'extraction-ui';
 import reactElementToJSXString from 'react-element-to-jsx-string';

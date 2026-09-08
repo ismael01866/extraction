@@ -2,12 +2,15 @@
 
 import { useState } from 'react';
 
-export function CopyButton({ value }: { value: string }) {
+export function CopyButton({ value, sourceUrl }: { value?: string; sourceUrl?: string }) {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
     try {
-      await navigator.clipboard.writeText(value);
+      const source = sourceUrl ? await fetch(sourceUrl).then((response) => response.text()) : value;
+
+      if (source === undefined) throw new Error('No code source available');
+      await navigator.clipboard.writeText(source);
 
       setCopied(true);
 
