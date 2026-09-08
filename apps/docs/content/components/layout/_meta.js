@@ -7,6 +7,7 @@ export default {
   },
   'bento-grid': {
     title: 'Bento Grid',
+    display: 'hidden',
   },
   'browser-frame': {
     title: 'Browser Frame',
@@ -43,6 +44,7 @@ export default {
   },
   'simple-grid': {
     title: 'Simple Grid',
+    display: 'hidden',
   },
   stack: {
     title: 'Stack',

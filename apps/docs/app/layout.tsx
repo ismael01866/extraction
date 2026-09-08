@@ -106,7 +106,7 @@ const footer = (
   <Footer>
     <Flex className="w-full flex-col text-sm sm:flex-row">
       <Stack>
-        <Text>MIT {new Date().getFullYear()} © Extraction UI</Text>
+        <Text>{new Date().getFullYear()} © Extraction UI</Text>
         <Description>
           <Text className="opacity-muted">Built and mantained by </Text>
           <a
