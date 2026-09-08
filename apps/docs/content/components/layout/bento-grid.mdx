@@ -1,0 +1,50 @@
+import { DecorativeBox } from '@/app/components';
+
+import { BentoGrid } from 'extraction-ui';
+
+import data from '../data.json';
+import { bentoGridCfg, bentoGridItemCfg } from './bento-grid';
+
+export const Component = (
+  <BentoGrid minChildWidth={'10rem'}>
+    <BentoGrid.Item className='flex-1'>
+      <DecorativeBox className='w-auto' />
+    </BentoGrid.Item>
+    <BentoGrid.Item className='flex-2'>
+      <DecorativeBox className='w-auto' />
+    </BentoGrid.Item>
+    <BentoGrid.Item className='flex-1'>
+      <DecorativeBox className='w-auto' />
+    </BentoGrid.Item>
+  </BentoGrid>
+);
+
+# Bento Grid
+
+{data['bento-grid'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+```sass filename="globals.css"
+:root {
+  --ex-bento-grid-gap-x: calc(var(--spacing) * 2);
+  --ex-bento-grid-gap-y: calc(var(--spacing) * 2);
+
+  --ex-bento-grid-min-child-width: var(--container-xs);
+}
+```
+
+## API
+
+### Bento Grid
+
+<Api config={bentoGridCfg} />
+
+### Bento Grid Item
+
+<Api config={bentoGridItemCfg} />

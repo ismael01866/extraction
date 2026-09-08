@@ -1,0 +1,20 @@
+@layer theme, base, components, utilities;
+
+@reference "../../styles.css";
+
+@layer components {
+  .ex-bento-grid {
+    --ex-gap-x: var(--ex-bento-grid-gap-x, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-bento-grid-gap-y, calc(var(--spacing) * 2));
+    --ex-min-child-width: var(--ex-bento-grid-min-child-width, var(--container-xs));
+  }
+
+  .ex-bento-grid {
+    @apply flex w-full flex-wrap;
+    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
+  }
+
+  .ex-bento-grid-item {
+    @apply min-w-(--ex-min-child-width) flex-[1_1_var(--ex-min-child-width)];
+  }
+}

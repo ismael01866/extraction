@@ -23,6 +23,10 @@
     "category": "data-display",
     "description": "A data display component that presents a compact label, count, or status indicator."
   },
+  "bento-grid": {
+    "category": "layout",
+    "description": "A layout primitive that arranges child elements into a responsive, masonry-style grid."
+  },
   "bg-image": {
     "category": "data-display",
     "description": "A data display component that applies an absolutely positioned background image to a container."
@@ -282,6 +286,10 @@
   "separator": {
     "category": "layout",
     "description": "A layout component that creates thin horizontal or vertical rule lines to divide layout zones."
+  },
+  "simple-grid": {
+    "category": "layout",
+    "description": "A layout component that creates responsive, flexible grid layouts with automatic column sizing."
   },
   "skeleton": {
     "category": "feedback",

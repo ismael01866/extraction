@@ -23,6 +23,8 @@ import { ColorModeButton } from './components';
 import { LazyLenisProvider } from './components/lazy-lenis';
 import { NavigationEvents } from './components/navigation-events';
 
+import { Analytics } from '@vercel/analytics/next';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -104,7 +106,7 @@ const footer = (
   <Footer>
     <Flex className="w-full flex-col text-sm sm:flex-row">
       <Stack>
-        <Text>MIT {new Date().getFullYear()} © Extraction UI</Text>
+        <Text>{new Date().getFullYear()} © Extraction UI</Text>
         <Description>
           <Text className="opacity-muted">Built and mantained by </Text>
           <a
@@ -188,6 +190,7 @@ export default async function RootLayout({ children }) {
           {children}
           <LazyLenisProvider />
           <NavigationEvents />
+          <Analytics />
         </Layout>
       </body>
     </html>
