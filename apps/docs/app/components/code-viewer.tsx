@@ -2,24 +2,23 @@
 
 import { useEffect, useState } from 'react';
 
+import { Skeleton } from 'extraction-ui';
+
 import { CopyButton } from './code-copy-button';
 
 export function CodeViewer({
-  preview,
   sourceUrl,
   lang = 'tsx',
   themes,
   words = [],
   enableCopy = true,
 }: {
-  preview: string;
   sourceUrl: string;
   lang?: 'tsx';
   themes?: { dark: string; light: string };
   words?: string[];
   enableCopy?: boolean;
 }) {
-  const [source, setSource] = useState<string | null>(null);
   const [html, setHtml] = useState<string | null>(null);
 
   useEffect(() => {
@@ -32,7 +31,6 @@ export function CodeViewer({
 
         const value = await response.text();
         if (cancelled) return;
-        setSource(value);
 
         const [{ codeToHtml }, { highlightWords }] = await Promise.all([
           import('shiki'),
@@ -69,9 +67,10 @@ export function CodeViewer({
       {html ? (
         <div dangerouslySetInnerHTML={{ __html: html }} />
       ) : (
-        <pre aria-busy="true" className="overflow-x-auto" style={{ visibility: 'hidden' }}>
-          <code>{source ?? preview}</code>
-        </pre>
+        <div aria-busy="true" aria-label="Loading code" className="space-y-2 p-4">
+          <Skeleton className="h-4 w-1/2" />
+          <Skeleton className="h-4 w-3/4" />
+        </div>
       )}
     </div>
   );

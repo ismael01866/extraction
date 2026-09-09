@@ -6,7 +6,7 @@ import data from '../data.json';
 import { cfg } from './grid';
 
 export const Component = (
-  <Grid className='gap-2'>
+  <Grid className='w-full gap-2'>
     <DecorativeBox className='w-auto' />
     <DecorativeBox className='w-auto' />
     <DecorativeBox className='w-auto' />
@@ -23,13 +23,6 @@ export const Component = (
     wrapper: ({ children }) => children,
   }}
 />
-
-```sass filename="globals.css"
-:root {
-  --ex-grid-gap-x: 0;
-  --ex-grid-gap-y: 0;
-}
-```
 
 ## API
 

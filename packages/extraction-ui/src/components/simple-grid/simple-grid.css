@@ -3,13 +3,11 @@
 
 @layer components {
   .ex-simple-grid {
-    --ex-gap-x: var(--ex-simple-grid-gap-x, 0);
-    --ex-gap-y: var(--ex-simple-grid-gap-y, 0);
-    --ex-min-child-width: var(--ex-simple-grid-min-child-width, var(--container-xs));
+    --ex-min-child-width: var(--ex-simple-grid-min-child-width, 0);
   }
 
   .ex-simple-grid {
     @apply grid w-full;
-    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y) grid-cols-[repeat(auto-fit,minmax(min(100%,var(--ex-min-child-width)),1fr))];
+    @apply grid-cols-[repeat(auto-fit,minmax(min(100%,var(--ex-min-child-width)),1fr))];
   }
 }

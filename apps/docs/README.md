@@ -41,6 +41,15 @@ pnpm lint:css  # lint CSS files
 - This package is part of a pnpm workspace and relies on shared local packages.
 - Run `$env:ANALYZE="true"; pnpm build`(on Windows) or `ANALYZE=true pnpm build` to analyze the build.
 
+## Diagnose
+
+Run vercel-doctor to diagnose potential performance issues.
+
+```bash
+npx -y vercel-doctor@latest .
+npx -y vercel-doctor@latest . --diff
+```
+
 ## Deploy
 
 Build the site and generate the search index:
