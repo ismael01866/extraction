@@ -12,66 +12,62 @@ import {
   LuUser,
 } from 'react-icons/lu';
 
-import {
-  HomePanelButtons,
-  HomePanelDataDisplay,
-  HomePanelFeedback,
-  HomePanelForms,
-  HomePanelLayout,
-  HomePanelNavigation,
-  HomePanelOverlays,
-  HomePanelTypography,
-} from '../panels';
+import { HomePanelLoader, PanelName } from '../components/HomePanelLoader';
 import { HomeFeatureCard } from './HomeFeatureCard';
 
-const PANELS = [
+const PANELS: Array<{
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  name: PanelName;
+}> = [
   {
     icon: <LuLayoutGrid />,
     title: 'Layout',
     description: 'Responsive layouts with spacing system',
-    Panel: HomePanelLayout,
+    name: 'layout',
   },
   {
     icon: <LuSquare />,
     title: 'Buttons',
     description: 'Clear actionable elements',
-    Panel: HomePanelButtons,
+    name: 'buttons',
   },
   {
     icon: <LuKeyboard />,
     title: 'Forms',
     description: 'Capture user input with ease',
-    Panel: HomePanelForms,
+    name: 'forms',
   },
   {
     icon: <LuLayers />,
     title: 'Overlays',
     description: 'Support for contextual tasks',
-    Panel: HomePanelOverlays,
+    name: 'overlays',
   },
   {
     icon: <LuHouse />,
     title: 'Navigation',
     description: 'Apply patterns for wayfinding',
-    Panel: HomePanelNavigation,
+    name: 'navigation',
   },
   {
     icon: <LuUser />,
     title: 'Data Display',
     description: 'Show details with clean visuals',
-    Panel: HomePanelDataDisplay,
+    name: 'data-display',
   },
   {
     icon: <LuMessageCircle />,
     title: 'Feedback',
     description: 'Communicate informative signals',
-    Panel: HomePanelFeedback,
+    name: 'feedback',
   },
   {
     icon: <LuText />,
     title: 'Typography',
     description: 'Apply readable text styles',
-    Panel: HomePanelTypography,
+    name: 'typography',
   },
 ];
 
@@ -79,17 +75,17 @@ export function HomeSectionPanels() {
   return (
     <Section>
       <Grid className="grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-4">
-        {PANELS.map(({ icon, title, description, Panel }, index) => (
+        {PANELS.map(({ icon, title, description, name }, index) => (
           <MotionInView
             key={title}
             animationClassName="scale-75"
-            className={`transition-[transform,opacity,filter]`}
+            className="transition-[transform,opacity,filter]"
             style={{
               transitionDelay: `${(index + 4) * 50}ms`,
             }}
           >
             <HomeFeatureCard icon={icon} title={title} description={description}>
-              <Panel />
+              <HomePanelLoader name={name} />
             </HomeFeatureCard>
           </MotionInView>
         ))}

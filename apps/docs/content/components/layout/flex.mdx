@@ -6,7 +6,7 @@ import data from '../data.json';
 import { cfg } from './flex';
 
 export const Component = (
-  <Flex>
+  <Flex className='gap-2'>
     <DecorativeBox />
     <DecorativeBox />
     <DecorativeBox />
@@ -23,14 +23,6 @@ export const Component = (
     wrapper: ({ children }) => children,
   }}
 />
-## Flex Customizing
-
-```sass filename="globals.css"
-:root {
-  --ex-flex-gap-x: 0;
-  --ex-flex-gap-y: 0;
-}
-```
 
 ## API
 

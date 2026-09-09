@@ -45,6 +45,74 @@ describe('BentoGrid', () => {
   });
 });
 
+describe('BentoGrid.Col', () => {
+  it('renders with a div by default', () => {
+    render(<BentoGrid.Col>BentoGrid Col</BentoGrid.Col>);
+
+    const element = screen.getByText(/col/i);
+    expect(element.tagName).toBe('DIV');
+  });
+
+  it('applies the default class name', () => {
+    render(<BentoGrid.Col>BentoGrid Col</BentoGrid.Col>);
+
+    const element = screen.getByText(/col/i);
+    expect(element).toHaveClass('ex-bento-grid-col');
+  });
+
+  it('supports a custom element via as prop', () => {
+    render(<BentoGrid.Col as="article">BentoGrid Col</BentoGrid.Col>);
+
+    const element = screen.getByText(/col/i);
+    expect(element.tagName).toBe('ARTICLE');
+  });
+
+  it('passes additional props through', () => {
+    render(<BentoGrid.Col id="col-id">BentoGrid Col</BentoGrid.Col>);
+
+    const element = screen.getByText(/col/i);
+    expect(element).toHaveAttribute('id', 'col-id');
+  });
+
+  it('preserves display name for debugging', () => {
+    expect(BentoGrid.Col.displayName).toBe('BentoGrid.Col');
+  });
+});
+
+describe('BentoGrid.Row', () => {
+  it('renders with a div by default', () => {
+    render(<BentoGrid.Row>BentoGrid Row</BentoGrid.Row>);
+
+    const element = screen.getByText(/row/i);
+    expect(element.tagName).toBe('DIV');
+  });
+
+  it('applies the default class name', () => {
+    render(<BentoGrid.Row>BentoGrid Row</BentoGrid.Row>);
+
+    const element = screen.getByText(/row/i);
+    expect(element).toHaveClass('ex-bento-grid-row');
+  });
+
+  it('supports a custom element via as prop', () => {
+    render(<BentoGrid.Row as="article">BentoGrid Row</BentoGrid.Row>);
+
+    const element = screen.getByText(/row/i);
+    expect(element.tagName).toBe('ARTICLE');
+  });
+
+  it('passes additional props through', () => {
+    render(<BentoGrid.Row id="row-id">BentoGrid Row</BentoGrid.Row>);
+
+    const element = screen.getByText(/row/i);
+    expect(element).toHaveAttribute('id', 'row-id');
+  });
+
+  it('preserves display name for debugging', () => {
+    expect(BentoGrid.Row.displayName).toBe('BentoGrid.Row');
+  });
+});
+
 describe('BentoGrid.Item', () => {
   it('renders with a div by default', () => {
     render(<BentoGrid.Item>BentoGrid Item</BentoGrid.Item>);

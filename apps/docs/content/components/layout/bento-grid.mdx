@@ -7,15 +7,77 @@ import { bentoGridCfg, bentoGridItemCfg } from './bento-grid';
 
 export const Component = (
   <BentoGrid minChildWidth={'10rem'}>
-    <BentoGrid.Item className='flex-1'>
-      <DecorativeBox className='w-auto' />
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
     </BentoGrid.Item>
-    <BentoGrid.Item className='flex-2'>
-      <DecorativeBox className='w-auto' />
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
     </BentoGrid.Item>
-    <BentoGrid.Item className='flex-1'>
-      <DecorativeBox className='w-auto' />
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
     </BentoGrid.Item>
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
+    </BentoGrid.Item>
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
+    </BentoGrid.Item>
+    <BentoGrid.Item>
+      <DecorativeBox className='w-full' />
+    </BentoGrid.Item>
+  </BentoGrid>
+);
+
+export const ComponentRows = (
+  <BentoGrid>
+    <BentoGrid.Row>
+      <BentoGrid.Item className='flex-1'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item className='flex-2'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item className='flex-1'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+    </BentoGrid.Row>
+    <BentoGrid.Row>
+      <BentoGrid.Item className='flex-2'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item className='flex-1'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item className='flex-2'>
+        <DecorativeBox className='w-full' />
+      </BentoGrid.Item>
+    </BentoGrid.Row>
+  </BentoGrid>
+);
+
+export const ComponentCols = (
+  <BentoGrid className='min-h-80' minChildWidth={'10rem'}>
+    <BentoGrid.Col>
+      <BentoGrid.Item>
+        <DecorativeBox className='size-full' />
+      </BentoGrid.Item>
+    </BentoGrid.Col>
+    <BentoGrid.Col>
+      <BentoGrid.Item>
+        <DecorativeBox className='size-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item>
+        <DecorativeBox className='size-full' />
+      </BentoGrid.Item>
+    </BentoGrid.Col>
+    <BentoGrid.Col>
+      <BentoGrid.Item className='flex-2'>
+        <DecorativeBox className='size-full' />
+      </BentoGrid.Item>
+      <BentoGrid.Item className='flex-1'>
+        <DecorativeBox className='size-full' />
+      </BentoGrid.Item>
+    </BentoGrid.Col>
   </BentoGrid>
 );
 
@@ -30,12 +92,32 @@ export const Component = (
   }}
 />
 
+## With specific rows
+
+<Usage
+  components={{
+    usage: ComponentRows,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## With specific columns
+
+<Usage
+  components={{
+    usage: ComponentCols,
+    wrapper: ({ children }) => children,
+  }}
+/>
+
+## Customizing
+
 ```sass filename="globals.css"
 :root {
   --ex-bento-grid-gap-x: calc(var(--spacing) * 2);
   --ex-bento-grid-gap-y: calc(var(--spacing) * 2);
 
-  --ex-bento-grid-min-child-width: var(--container-xs);
+  --ex-bento-grid-min-child-width: 0;
 }
 ```
 

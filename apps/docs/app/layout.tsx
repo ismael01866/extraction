@@ -20,11 +20,7 @@ import { LuGithub } from 'react-icons/lu';
 
 import './globals.css';
 
-import { ColorModeButton } from './components';
-import { LazyLenisProvider } from './components/lazy-lenis';
-import { NavigationEvents } from './components/navigation-events';
-
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics, ColorModeButton, LazyLenisProvider, NavigationEvents } from './components';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -218,9 +214,9 @@ export default async function RootLayout({ children }) {
           }}
         >
           {children}
-          <LazyLenisProvider />
-          <NavigationEvents />
           <Analytics />
+          <NavigationEvents />
+          <LazyLenisProvider />
         </Layout>
       </body>
     </html>

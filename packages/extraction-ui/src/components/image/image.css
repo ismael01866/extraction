@@ -3,6 +3,8 @@
 
 @layer components {
   .ex-image {
+    --ex-radius: var(--ex-image-radius, var(--radius-sm));
+
     @apply h-auto w-full object-cover;
   }
 
