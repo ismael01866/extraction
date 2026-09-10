@@ -10,7 +10,7 @@ export function Variants({ color }: { color?: string }) {
     <section>
       <BaseContainer className="flex-col items-start">
         Solid
-        <Grid className="mbs-2 grid-cols-2 gap-2 sm:grid-cols-3">
+        <Grid className="mbs-2 w-full grid-cols-2 gap-2 sm:grid-cols-3">
           {shadesValues.map((shade, index) => (
             <Button key={index} className={`palette-${color} shade-${shade} variant-solid`}>
               {shade}
