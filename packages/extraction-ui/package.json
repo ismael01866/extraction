@@ -2,7 +2,7 @@
   "name": "extraction-ui",
   "description": "Modern UI design system and component library",
   "license": "MIT",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "publishConfig": {
     "access": "public"
   },
