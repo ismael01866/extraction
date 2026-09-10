@@ -1,10 +1,10 @@
 import {
-    Box,
-    Grid,
-    VStack,
-    colorPaletteValues,
-    extraColorPaletteValues,
-    shadesValues,
+  Box,
+  Grid,
+  VStack,
+  colorPaletteValues,
+  extraColorPaletteValues,
+  shadesValues,
 } from 'extraction-ui';
 import { capitalize } from 'lodash';
 
@@ -49,7 +49,7 @@ Because these colors are defined under `@theme`, Tailwind also generates the mat
           <VStack key={index} className='gap-3 items-stretch text-sm text-center'>
             <Box
               key={index}
-              className={`variant-solid palette-${color} shade-${shade} h-15`}
+              className={`variant-solid palette-${color} shade-${shade} rounded-sm size-15`}
             ></Box>
             {shade}
           </VStack>
@@ -95,12 +95,12 @@ You now have access to the full suite of colors.
     <BaseContainer className="flex-col items-start">
       {capitalize(color)}
 
-      <Grid className='gap-2 mbs-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-11'>
+      <Grid className='gap-2 mbs-2 grid-cols-2 sm:grid-cols-3 lg:grid-cols-11 w-full'>
         {shadesValues.map((shade, index) => (
           <VStack key={index} className='gap-3 items-stretch text-sm text-center'>
             <Box
               key={index}
-              className={`variant-solid palette-${color} shade-${shade} h-15`}
+              className={`variant-solid palette-${color} shade-${shade} rounded-sm size-15`}
             ></Box>
             {shade}
           </VStack>
