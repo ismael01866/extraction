@@ -1,0 +1,34 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-noise-overlay {
+    --ex-opacity: var(--ex-noise-opacity, 0.125);
+
+    --ex-delay: var(--ex-noise-delay, 0s);
+    --ex-ease: var(--ex-noise-ease, steps(1, end));
+    --ex-duration: var(--ex-noise-duration, 0.65s);
+
+    --ex-fill: var(--ex-noise-fill, none);
+    --ex-direction: var(--ex-noise-direction, normal);
+
+    --ex-count: var(--ex-noise-count, infinite);
+    --ex-play: var(--ex-noise-play, running);
+  }
+
+  .ex-noise-overlay {
+    @apply pointer-events-none relative inset-0 z-0;
+
+    &::before {
+      @apply absolute inset-0 select-none bg-repeat will-change-[background-position] [content:''];
+      @apply opacity-(--ex-opacity);
+
+      background-image: var(--ex-bg-image-url);
+
+      animation: noise-shift var(--ex-duration) var(--ex-ease) var(--ex-delay) var(--ex-count)
+        var(--ex-direction) var(--ex-fill);
+
+      animation-play-state: var(--ex-play);
+    }
+  }
+}

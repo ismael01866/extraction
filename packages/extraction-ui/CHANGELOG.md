@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.8
+
+### Patch Changes
+
+- Added SegmentedControl component. Added NoiseOverlay component.
+
 ## 0.8.7
 
 ### Patch Changes

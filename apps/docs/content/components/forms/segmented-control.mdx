@@ -1,0 +1,202 @@
+import { SegmentedControl } from 'extraction-ui';
+
+import data from '../data.json';
+import {
+  cfg,
+  segmentedControlCfg,
+  segmentedControlIndicatorCfg,
+  segmentedControlItemCfg,
+} from './segmented-control';
+
+import {
+  SegmentedControlControlledExample,
+  SegmentedControlUncontrolledExample,
+} from './examples/segmented-control-example';
+
+export const Component = <SegmentedControl items={['Day', 'Week', 'Month']} />;
+
+export const ComponentVertical = (
+  <SegmentedControl items={['Day', 'Week', 'Month']} orientation='vertical' />
+);
+
+export const ComponentDisabled = (
+  <SegmentedControl items={['List', 'Board', 'Calendar']} defaultValue='List' disabled />
+);
+
+export const ComponentReadOnly = (
+  <SegmentedControl items={['List', 'Board', 'Calendar']} defaultValue='List' readOnly />
+);
+
+export const VariantComponent = <SegmentedControl items={['Day', 'Week', 'Month']} />;
+
+export const ComponentCompound = (
+  <SegmentedControl defaultValue='day'>
+    <SegmentedControl.Indicator />
+    <SegmentedControl.Item value='day'>Day</SegmentedControl.Item>
+    <SegmentedControl.Item value='week'>Week</SegmentedControl.Item>
+    <SegmentedControl.Item value='month'>Month</SegmentedControl.Item>
+  </SegmentedControl>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Segmented Control
+
+{data['segmented-control'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Vertical Orientation
+
+<Usage
+  components={{
+    usage: ComponentVertical,
+    wrapper: Wrapper,
+  }}
+  vertical
+/>
+
+## Disabled
+
+<Usage
+  components={{
+    usage: ComponentDisabled,
+    wrapper: Wrapper,
+  }}
+  disabledNative
+/>
+
+## Read Only
+
+<Usage
+  components={{
+    usage: ComponentReadOnly,
+    wrapper: Wrapper,
+  }}
+  readonly
+/>
+
+## Compound Version
+
+<Usage
+  components={{
+    usage: ComponentCompound,
+    wrapper: Wrapper,
+  }}
+  compound
+/>
+
+## Controlled
+
+Use the `value` and `onValueChange` props when you need to control the value externally.
+
+<Usage
+  components={{
+    usage: <SegmentedControlControlledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`const Example = () => {
+    const [value, setValue] = useState('Day');
+    return <SegmentedControl value={value} onValueChange={setValue} items={['Day', 'Week', 'Month']} />;
+  };`}
+/>
+
+## Uncontrolled
+
+Use the `name` prop to include the value in the form submission.
+
+<Usage
+  components={{
+    usage: <SegmentedControlUncontrolledExample />,
+    wrapper: Wrapper,
+  }}
+  serializedCode={`<form
+    onSubmit={(event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      console.log(formData.get('segmented-control'));
+  }}>
+    <SegmentedControl name="segmented-control" items={['Day', 'Week', 'Month']} />
+    <br />
+    <Button type="submit" className="palette-neutral variant-surface">
+      Submit
+    </Button>
+  </form>`}
+/>
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Palette
+
+<Palette
+  config={cfg}
+  components={{
+    usage: VariantComponent,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-segmented-control-cursor: default;
+  --ex-segmented-control-font-family: var(--font-sans);
+  --ex-segmented-control-font-weight: var(--font-weight-normal);
+
+  --ex-segmented-control-radius-sm: var(--radius-sm);
+  --ex-segmented-control-radius-md: var(--radius-sm);
+  --ex-segmented-control-radius-lg: var(--radius-sm);
+
+  --ex-segmented-control-item-font-size-sm: var(--text-xs);
+  --ex-segmented-control-item-font-size-md: var(--text-sm);
+  --ex-segmented-control-item-font-size-lg: var(--text-base);
+
+  --ex-segmented-control-item-height-sm: calc(var(--spacing) * 9);
+  --ex-segmented-control-item-height-md: calc(var(--spacing) * 10);
+  --ex-segmented-control-item-height-lg: calc(var(--spacing) * 12);
+
+  --ex-segmented-control-item-gap-x-sm: calc(var(--spacing) * 1.5);
+  --ex-segmented-control-item-gap-x-md: calc(var(--spacing) * 2);
+  --ex-segmented-control-item-gap-x-lg: calc(var(--spacing) * 2.5);
+
+  --ex-segmented-control-item-px-sm: calc(var(--spacing) * 3.5);
+  --ex-segmented-control-item-px-md: calc(var(--spacing) * 4);
+  --ex-segmented-control-item-px-lg: calc(var(--spacing) * 5);
+
+  --ex-segmented-control-item-radius-sm: var(--radius-sm);
+  --ex-segmented-control-item-radius-md: var(--radius-sm);
+  --ex-segmented-control-item-radius-lg: var(--radius-sm);
+
+  --ex-segmented-control-item-shadow-sm: var(--shadow-sm);
+  --ex-segmented-control-item-shadow-md: var(--shadow-sm);
+  --ex-segmented-control-item-shadow-lg: var(--shadow-sm);
+}
+```
+
+## API
+
+### Segmented Control
+
+<Api config={segmentedControlCfg} />
+
+### Segmented Control Item
+
+<Api config={segmentedControlItemCfg} />
+
+### Segmented Control Indicator
+
+<Api config={segmentedControlIndicatorCfg} />

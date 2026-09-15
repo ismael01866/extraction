@@ -26,7 +26,7 @@ export const Component = (
 );
 
 export const ComponentDisabled = (
-  <CheckboxCard className='disabled'>
+  <CheckboxCard disabled>
     <CheckboxCard.Indicator />
     <CheckboxCard.Content>
       <CheckboxCard.Label>Accept Terms</CheckboxCard.Label>
@@ -65,7 +65,7 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentDisabled,
     wrapper: Wrapper,
   }}
-  disabled
+  disabledNative
 />
 
 ## Controlled

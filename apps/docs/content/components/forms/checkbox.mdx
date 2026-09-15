@@ -48,7 +48,7 @@ export const ComponentInvalid = (
 );
 
 export const ComponentDisabled = (
-  <Checkbox className='disabled'>
+  <Checkbox disabled>
     <Checkbox.Control aria-label='Accept terms'>
       <Checkbox.Indicator />
     </Checkbox.Control>
@@ -98,7 +98,7 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentDisabled,
     wrapper: Wrapper,
   }}
-  disabled
+  disabledNative
 />
 
 ## Valid

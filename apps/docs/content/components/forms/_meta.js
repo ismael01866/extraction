@@ -32,6 +32,9 @@ export default {
   rating: {
     title: 'Rating',
   },
+  'segmented-control': {
+    title: 'Segmented Control',
+  },
   select: {
     title: 'Select',
   },

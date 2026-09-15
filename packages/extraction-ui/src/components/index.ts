@@ -184,6 +184,9 @@ export * from './navigation-menu/navigation-menu.types';
 export { NativeSelect } from './native-select';
 export * from './native-select/native-select.types';
 
+export { NoiseOverlay } from './noise-overlay';
+export * from './noise-overlay/noise-overlay.types';
+
 export { NumberInput } from './number-input';
 export * from './number-input/number-input.types';
 
@@ -237,6 +240,9 @@ export * from './skeleton/skeleton.types';
 
 export { Status } from './status';
 export * from './status/status.types';
+
+export { SegmentedControl } from './segmented-control';
+export * from './segmented-control/segmented-control.types';
 
 export { Sticky } from './sticky';
 export * from './sticky/sticky.types';

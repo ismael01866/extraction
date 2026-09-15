@@ -1,0 +1,41 @@
+import { NoiseOverlay } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './noise-overlay';
+
+export const Component = <NoiseOverlay className='h-80 w-full [--ex-noise-opacity:1]' />;
+
+export const Wrapper = ({ children }) => children;
+
+# Noise Overlay
+
+{data['noise-overlay'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-noise-opacity: 0.125;
+
+  --ex-noise-delay: 0s;
+  --ex-noise-ease: linear;
+  --ex-noise-duration: 20s;
+
+  --ex-noise-fill: forwards;
+  --ex-noise-direction: normal;
+
+  --ex-noise-count: infinite;
+  --ex-noise-play: running;
+}
+```
+
+## API
+
+<Api config={cfg} />

@@ -230,6 +230,11 @@
     var(--tw-transition-delay) var(--tw-transition-iteration-count) var(--tw-transition-direction)
     var(--tw-transition-fill-mode);
 
+  --animate-noise-shift: noise-shift var(--tw-transition-duration, 0.65s)
+    var(--tw-transition-ease, steps(1, end)) var(--tw-transition-delay, 0s)
+    var(--tw-transition-iteration-count, infinite) var(--tw-transition-direction, normal)
+    var(--tw-transition-fill-mode, none);
+
   @keyframes enter {
     from {
       opacity: var(--tw-enter-opacity, 1);
@@ -245,12 +250,6 @@
       transform: translate(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0))
         scale(var(--tw-exit-scale, 1));
       filter: blur(var(--tw-exit-blur, 0));
-    }
-  }
-
-  @keyframes border-beam-pulse {
-    100% {
-      offset-distance: 100%;
     }
   }
 
@@ -287,6 +286,42 @@
     }
     to {
       transform: translate(0, 0);
+    }
+  }
+
+  @keyframes noise-shift {
+    0% {
+      background-position: 0 0;
+    }
+    10% {
+      background-position: -5% -10%;
+    }
+    20% {
+      background-position: -15% 5%;
+    }
+    30% {
+      background-position: 7% -25%;
+    }
+    40% {
+      background-position: 20% 25%;
+    }
+    50% {
+      background-position: -25% 10%;
+    }
+    60% {
+      background-position: 15% 5%;
+    }
+    70% {
+      background-position: 0 15%;
+    }
+    80% {
+      background-position: 25% 35%;
+    }
+    90% {
+      background-position: -10% 10%;
+    }
+    100% {
+      background-position: 0 0;
     }
   }
 

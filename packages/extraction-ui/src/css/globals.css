@@ -6,36 +6,29 @@
   optgroup,
   textarea,
   ::file-selector-button {
-    &:is(:disabled, [disabled], [data-disabled]) {
+    &:is(:disabled, [disabled], [data-disabled]):not(
+        [role='radiogroup']:is([disabled], [data-disabled]) *
+      ) {
       @apply disabled;
     }
   }
 
   :root {
     --ex-colors-body: var(--ex-options-body-color);
-    --ex-colors-foreground: var(--ex-options-foreground-color);
-
     --ex-colors-panel-body: var(--ex-options-panel-body-color);
+    --ex-colors-foreground: var(--ex-options-foreground-color);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --ex-colors-body: var(--ex-options-body-color-dark);
-      --ex-colors-foreground: var(--ex-options-foreground-color-dark);
-
       --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
+      --ex-colors-foreground: var(--ex-options-foreground-color-dark);
     }
   }
 
-  .dark {
-    --ex-colors-body: var(--ex-options-body-color-dark);
-    --ex-colors-foreground: var(--ex-options-foreground-color-dark);
-
-    --ex-colors-panel-body: var(--ex-options-panel-body-color-dark);
-  }
-
   html {
-    @apply bg-(--ex-colors-body) text-(--ex-colors-foreground) outline-(--ex-colors-body);
+    @apply bg-body text-foreground outline-body;
   }
 
   html.ex-disable-transitions,
