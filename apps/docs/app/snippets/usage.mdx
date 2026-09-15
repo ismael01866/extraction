@@ -38,12 +38,29 @@ export const wrapUsageElement = ({ usage, wrapper }) => {
   )
 }
 
+
 {
   props.disabledNative && (
     <P>
       Use the <code className="nextra-code">disabled</code> attr or the{' '}
       <code className="nextra-code">disabled</code> class to disable a
       component.
+    </P>
+  )
+}
+
+{
+  props.readonly && (
+    <P>
+      Use the <code className="nextra-code">readOnly</code> attr to make the component read-only.
+    </P>
+  )
+}
+
+{
+  props.compound && (
+    <P>
+      If you need more control over the children, you can use the compound version of the component.
     </P>
   )
 }

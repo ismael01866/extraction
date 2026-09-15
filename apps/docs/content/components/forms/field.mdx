@@ -29,7 +29,7 @@ export const ComponentDisabled = (
       Name
       <Field.RequiredIndicator />
     </Field.Label>
-    <Input className='disabled'>
+    <Input disabled>
       <Input.Field id='name' className='variant-surface' placeholder='Enter your name' />
     </Input>
   </Field>
@@ -100,7 +100,7 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentDisabled,
     wrapper: Wrapper,
   }}
-  disabled
+  disabledNative
 />
 
 ## Valid

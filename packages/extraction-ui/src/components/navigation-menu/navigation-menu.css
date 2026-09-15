@@ -30,14 +30,13 @@
       @apply animate-out fade-out;
     }
 
-    transition: width, height, 200ms;
+    @apply transition-[width,height] duration-200;
   }
 
   .ex-navigation-menu-sub {
     .ex-navigation-menu-viewport {
       @apply -mx-[var(--ex-px)];
-
-      transition: width, height, 0ms;
+      @apply transition-[width,height] duration-0;
     }
 
     &:has(.ex-navigation-menu-section) {
@@ -191,7 +190,7 @@
       @apply animate-out fade-out;
     }
 
-    transition: width, transform, 200ms;
+    @apply transition-[width,height] duration-200;
   }
 }
 

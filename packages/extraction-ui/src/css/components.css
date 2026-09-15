@@ -2386,6 +2386,60 @@
   @apply py-(--ex-py);
 }
 
+@utility segmented-control-sm {
+  --ex-radius: var(--ex-segmented-control-radius-sm, var(--radius-sm));
+
+  .ex-segmented-control-item {
+    --ex-height: var(--ex-segmented-control-item-height-sm, var(--ex-size-xl));
+
+    --ex-px: var(--ex-segmented-control-item-px-sm, calc(var(--spacing) * 3.5));
+    --ex-gap-x: var(--ex-segmented-control-item-gap-x-sm, calc(var(--spacing) * 1.5));
+
+    --ex-font-size: var(--ex-segmented-control-item-font-size-sm, var(--text-xs));
+  }
+
+  .ex-segmented-control-indicator {
+    --ex-radius: var(--ex-segmented-control-indicator-radius-sm, var(--radius-sm));
+    --ex-shadow: var(--ex-segmented-control-indicator-shadow-sm, var(--shadow-sm));
+  }
+}
+
+@utility segmented-control-md {
+  --ex-radius: var(--ex-segmented-control-radius-md, var(--radius-sm));
+
+  .ex-segmented-control-item {
+    --ex-height: var(--ex-segmented-control-item-height-md, var(--ex-size-2xl));
+
+    --ex-px: var(--ex-segmented-control-item-px-md, calc(var(--spacing) * 4));
+    --ex-gap-x: var(--ex-segmented-control-item-gap-x-md, calc(var(--spacing) * 2));
+
+    --ex-font-size: var(--ex-segmented-control-item-font-size-md, var(--text-sm));
+  }
+
+  .ex-segmented-control-indicator {
+    --ex-radius: var(--ex-segmented-control-indicator-radius-md, var(--radius-sm));
+    --ex-shadow: var(--ex-segmented-control-indicator-shadow-md, var(--shadow-sm));
+  }
+}
+
+@utility segmented-control-lg {
+  --ex-radius: var(--ex-segmented-control-radius-lg, var(--radius-sm));
+
+  .ex-segmented-control-item {
+    --ex-height: var(--ex-segmented-control-item-height-lg, var(--ex-size-3xl));
+
+    --ex-px: var(--ex-segmented-control-item-px-lg, calc(var(--spacing) * 5));
+    --ex-gap-x: var(--ex-segmented-control-item-gap-x-lg, calc(var(--spacing) * 2.5));
+
+    --ex-font-size: var(--ex-segmented-control-item-font-size-lg, var(--text-base));
+  }
+
+  .ex-segmented-control-indicator {
+    --ex-radius: var(--ex-segmented-control-indicator-radius-lg, var(--radius-sm));
+    --ex-shadow: var(--ex-segmented-control-indicator-shadow-lg, var(--shadow-sm));
+  }
+}
+
 @utility select-trigger-sm {
   --ex-height: var(--ex-select-trigger-height-sm, var(--ex-size-xl));
 

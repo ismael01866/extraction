@@ -47,7 +47,7 @@ export function CodeContainer({
         <div className="code-container x-container variant-outline palette-neutral">{children}</div>
 
         {isOverflowing && !open && (
-          <div className="bg-linear-to-t pointer-events-none absolute bottom-0 left-0 right-0 isolate mx-0.5 h-20 from-white to-transparent" />
+          <div className="bg-linear-to-t pointer-events-none absolute bottom-0 left-0 right-0 isolate mx-0.5 h-20 from-white to-transparent dark:from-black" />
         )}
       </div>
 

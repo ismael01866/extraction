@@ -235,6 +235,10 @@
     "category": "navigation",
     "description": "A navigation component that presents structural site hierarchies via drop-down panels or links."
   },
+  "noise-overlay": {
+    "category": "fx",
+    "description": "An overlay component that creates a visual noise effect pattern."
+  },
   "number-input": {
     "category": "forms",
     "description": "A form component to input numerical values, with increment and decrement controls."
@@ -278,6 +282,10 @@
   "section": {
     "category": "layout",
     "description": "A structural component that groups layouts into isolated block regions separated by consistent padding rules."
+  },
+  "segmented-control": {
+    "category": "forms",
+    "description": "A single-select component with an animated sliding indicator."
   },
   "select": {
     "category": "forms",

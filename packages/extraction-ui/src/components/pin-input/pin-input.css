@@ -40,6 +40,16 @@
       }
     }
   }
+
+  .ex-pin-input {
+    &:where(:disabled, [disabled], [data-disabled], .disabled) {
+      .ex-pin-input-field {
+        &:where(:disabled, [disabled], [data-disabled], .disabled) {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 @layer utilities {

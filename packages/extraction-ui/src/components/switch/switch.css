@@ -33,7 +33,7 @@
   }
 
   .ex-switch-thumb {
-    @apply inline-block bg-white align-middle [transform:translateZ(0)] dark:bg-black;
+    @apply tonal-white variant-solid inline-block align-middle [transform:translateZ(0)];
     @apply rounded-(--ex-radius) mx-[var(--ex-mx)] size-[var(--ex-size)] transition-transform;
 
     &:where([data-state='checked']) {
@@ -41,7 +41,7 @@
     }
 
     &:where(:disabled, [disabled], [data-disabled], .disabled) {
-      @apply bg-white opacity-[unset] dark:bg-black;
+      @apply tonal-white variant-solid opacity-[unset];
     }
   }
 }

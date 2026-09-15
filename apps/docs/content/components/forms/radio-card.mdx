@@ -34,7 +34,7 @@ export const Component = (
 );
 
 export const ComponentDisabled = (
-  <RadioGroup className='disabled' defaultValue='option-1'>
+  <RadioGroup defaultValue='option-1' disabled>
     <RadioCard value='option-1'>
       <RadioCard.Indicator />
       <RadioCard.Content>
@@ -98,7 +98,7 @@ export const Wrapper = ({ children }) => children;
     usage: ComponentDisabled,
     wrapper: Wrapper,
   }}
-  disabled
+  disabledNative
 />
 
 ## Controlled

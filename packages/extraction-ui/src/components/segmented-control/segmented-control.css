@@ -1,0 +1,58 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-segmented-control {
+    --ex-cursor: var(--ex-segmented-control-cursor, default);
+    --ex-font-family: var(--ex-segmented-control-font-family, var(--font-sans));
+    --ex-font-weight: var(--ex-segmented-control-font-weight, var(--font-weight-normal));
+
+    @apply segmented-control-md;
+  }
+
+  .ex-segmented-control {
+    @apply variant-surface palette-neutral shade-50;
+  }
+
+  .ex-segmented-control {
+    @apply relative isolate inline-flex;
+    @apply rounded-(--ex-radius);
+
+    &:where(:not([data-orientation])),
+    &:where([data-orientation='horizontal']) {
+      @apply flex-row;
+    }
+
+    &:where([data-orientation='vertical']) {
+      @apply flex-col;
+    }
+  }
+
+  .ex-segmented-control-item {
+    @apply z-1 relative inline-flex select-none items-center justify-center;
+    @apply cursor-(--ex-cursor) h-(--ex-height) gap-x-(--ex-gap-x) px-(--ex-px) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
+
+    &:first-of-type::before {
+      @apply invisible;
+    }
+
+    &::before {
+      @apply pointer-events-none absolute content-[''] [transform:translateZ(0)];
+      @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+    }
+
+    &[data-orientation='horizontal']::before {
+      @apply w-px [inset-block:0] [inset-inline-start:0];
+    }
+
+    &[data-orientation='vertical']::before {
+      @apply h-px [inset-block-start:0] [inset-inline:0];
+    }
+  }
+
+  .ex-segmented-control-indicator {
+    @apply -z-1 variant-solid tonal-white pointer-events-none absolute left-0 top-0;
+    @apply rounded-(--ex-radius) shadow-[var(--ex-shadow)];
+    @apply transition-[transform,width,height] duration-200;
+  }
+}

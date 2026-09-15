@@ -30,7 +30,6 @@
 
   .ex-progress-indicator {
     @apply variant size-full;
-
-    transition: width, height, 200ms;
+    @apply transition-[width,height] duration-200;
   }
 }

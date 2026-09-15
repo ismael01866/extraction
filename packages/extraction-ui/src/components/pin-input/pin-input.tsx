@@ -8,12 +8,17 @@ import { PinInputFieldProps, PinInputHiddenProps, PinInputProps } from './pin-in
 import * as PinInput from '@radix-ui/react-one-time-password-field';
 
 export const PinInputRoot = <T extends ElementType = 'div'>(props: PinInputProps<T>) => {
-  const { children, className, ...rest } = props;
+  const { children, className, disabled, ...rest } = props;
 
   const classes = cn('ex-pin-input', className);
 
   return (
-    <PinInput.Root className={classes} {...rest}>
+    <PinInput.Root
+      className={classes}
+      disabled={disabled}
+      data-disabled={disabled ? '' : undefined}
+      {...rest}
+    >
       {children}
     </PinInput.Root>
   );
