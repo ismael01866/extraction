@@ -5,31 +5,31 @@ import { Title } from './index';
 import { render, screen } from '@testing-library/react';
 
 describe('Title', () => {
-  it('renders with an h3 by default', () => {
+  it('renders with a p by default', () => {
     render(<Title>Title</Title>);
 
-    const element = screen.getByRole('heading', { name: /title/i });
-    expect(element.tagName).toBe('H3');
+    const element = screen.getByText('Title');
+    expect(element.tagName).toBe('P');
   });
 
   it('applies the default class name', () => {
     render(<Title>Title</Title>);
 
-    const element = screen.getByRole('heading', { name: /title/i });
+    const element = screen.getByText('Title');
     expect(element).toHaveClass('ex-title');
   });
 
   it('supports a custom element via as prop', () => {
     render(<Title as="div">Title</Title>);
 
-    const element = screen.getByText(/title/i);
+    const element = screen.getByText('Title');
     expect(element.tagName).toBe('DIV');
   });
 
   it('passes additional props through', () => {
     render(<Title id="title-id">Title</Title>);
 
-    const element = screen.getByRole('heading', { name: /title/i });
+    const element = screen.getByText('Title');
     expect(element).toHaveAttribute('id', 'title-id');
   });
 

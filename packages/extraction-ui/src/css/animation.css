@@ -282,10 +282,11 @@
 
   @keyframes marquee-scroll-y {
     from {
-      transform: translate(0, var(--ex-marquee-transform-y, 0));
-    }
-    to {
       transform: translate(0, 0);
+    }
+
+    to {
+      transform: translate(0, var(--ex-marquee-transform-y, 0));
     }
   }
 

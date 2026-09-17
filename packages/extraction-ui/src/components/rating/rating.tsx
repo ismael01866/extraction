@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useCallback, useContext, useMemo, useRef, useState } from 'react';
 
 import './rating.css';
 
@@ -32,15 +32,15 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
     ...rest
   } = props;
 
-  const [internalValue, setInternalValue] = React.useState(defaultValue);
-  const [hoveredValue, setHoveredValue] = React.useState<string | null>(null);
+  const [internalValue, setInternalValue] = useState(defaultValue);
+  const [hoveredValue, setHoveredValue] = useState<string | null>(null);
 
-  const rootRef = React.useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   const isControlled = value !== undefined;
   const activeValue = isControlled ? value : internalValue;
 
-  const setActiveValue = React.useCallback(
+  const setActiveValue = useCallback(
     (value: string = '') => {
       if (!isControlled) {
         setInternalValue(value);
@@ -52,7 +52,7 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
     [isControlled, onValueChange],
   );
 
-  const context: RatingContextValue = React.useMemo(
+  const context: RatingContextValue = useMemo(
     () => ({
       activeValue,
       setActiveValue,
@@ -65,7 +65,7 @@ export const RatingRoot = <T extends React.ElementType = 'div'>(props: RatingPro
     [activeValue, hoveredValue, readOnly, single, fractions, setActiveValue],
   );
 
-  const items = React.useMemo(() => {
+  const items = useMemo(() => {
     if (!count) {
       if (!children) {
         throw new Error('Rating requires either a `count` prop or explicit children elements.');
@@ -133,7 +133,7 @@ export const RatingControl = <T extends React.ElementType = 'button'>(
 ) => {
   const { asChild = false, children, style, value, ...rest } = props;
 
-  const context = React.useContext(RatingContext);
+  const context = useContext(RatingContext);
 
   if (!context) {
     throw new Error('Rating.Control must be used within Rating');

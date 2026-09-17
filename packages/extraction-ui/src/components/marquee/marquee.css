@@ -60,4 +60,12 @@
   .ex-marquee:where([data-orientation='vertical']) .ex-marquee-track {
     @apply h-max flex-col items-start;
   }
+
+  .ex-marquee-track:where([data-draggable]) {
+    @apply cursor-grab touch-none select-none;
+
+    &:where(:active) {
+      @apply cursor-grabbing;
+    }
+  }
 }

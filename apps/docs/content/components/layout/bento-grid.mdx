@@ -6,7 +6,7 @@ import data from '../data.json';
 import { bentoGridCfg, bentoGridItemCfg } from './bento-grid';
 
 export const Component = (
-  <BentoGrid minChildWidth={'10rem'}>
+  <BentoGrid className='gap-2' minChildWidth={'10rem'}>
     <BentoGrid.Item>
       <DecorativeBox className='w-full' />
     </BentoGrid.Item>
@@ -29,8 +29,8 @@ export const Component = (
 );
 
 export const ComponentRows = (
-  <BentoGrid>
-    <BentoGrid.Row>
+  <BentoGrid className='gap-2'>
+    <BentoGrid.Row className='gap-2'>
       <BentoGrid.Item className='flex-1'>
         <DecorativeBox className='w-full' />
       </BentoGrid.Item>
@@ -41,7 +41,7 @@ export const ComponentRows = (
         <DecorativeBox className='w-full' />
       </BentoGrid.Item>
     </BentoGrid.Row>
-    <BentoGrid.Row>
+    <BentoGrid.Row className='gap-2'>
       <BentoGrid.Item className='flex-2'>
         <DecorativeBox className='w-full' />
       </BentoGrid.Item>
@@ -56,13 +56,13 @@ export const ComponentRows = (
 );
 
 export const ComponentCols = (
-  <BentoGrid className='min-h-80' minChildWidth={'10rem'}>
-    <BentoGrid.Col>
+  <BentoGrid className='min-h-80 gap-2' minChildWidth={'10rem'}>
+    <BentoGrid.Col className='gap-2'>
       <BentoGrid.Item>
         <DecorativeBox className='size-full' />
       </BentoGrid.Item>
     </BentoGrid.Col>
-    <BentoGrid.Col>
+    <BentoGrid.Col className='gap-2'>
       <BentoGrid.Item>
         <DecorativeBox className='size-full' />
       </BentoGrid.Item>
@@ -70,7 +70,7 @@ export const ComponentCols = (
         <DecorativeBox className='size-full' />
       </BentoGrid.Item>
     </BentoGrid.Col>
-    <BentoGrid.Col>
+    <BentoGrid.Col className='gap-2'>
       <BentoGrid.Item className='flex-2'>
         <DecorativeBox className='size-full' />
       </BentoGrid.Item>
@@ -109,17 +109,6 @@ export const ComponentCols = (
     wrapper: ({ children }) => children,
   }}
 />
-
-## Customizing
-
-```sass filename="globals.css"
-:root {
-  --ex-bento-grid-gap-x: calc(var(--spacing) * 2);
-  --ex-bento-grid-gap-y: calc(var(--spacing) * 2);
-
-  --ex-bento-grid-min-child-width: 0;
-}
-```
 
 ## API
 

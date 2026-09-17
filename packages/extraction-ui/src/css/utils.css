@@ -387,6 +387,14 @@
   @apply bg-body text-foreground outline-body;
 }
 
+@utility black {
+  --ex-colors-body: var(--color-black);
+  --ex-colors-panel-body: var(--color-black);
+  --ex-colors-foreground: var(--ex-options-foreground-color-dark);
+
+  @apply bg-body text-foreground outline-body;
+}
+
 @utility light {
   --ex-colors-body: var(--ex-options-body-color);
   --ex-colors-panel-body: var(--ex-options-panel-body-color);
