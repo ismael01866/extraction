@@ -263,6 +263,14 @@
     "category": "data-display",
     "description": "A data display component that maps numerical completeness percentages across a tracking bar."
   },
+  "progressive-blur": {
+    "category": "fx",
+    "description": "An overlay component that applies a progressive blur effect to an edge of an element."
+  },
+  "prose": {
+    "category": "content",
+    "description": "A typography component that renders rich text content in a structured and readable format."
+  },
   "radio": {
     "category": "forms",
     "description": "A form component that restricts users to selecting exactly one option from an associated button set."

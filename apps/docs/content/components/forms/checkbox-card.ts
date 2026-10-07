@@ -6,7 +6,9 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg'].includes(size as string)),
   sizeClass: 'checkbox-card',
-  variants: variantsValues.filter((variant) => !['plain', 'ghost', 'link'].includes(variant)),
+  variants: variantsValues.filter(
+    (variant) => !['plain', 'ghost', 'link', 'flushed'].includes(variant),
+  ),
 };
 
 export const checkboxCardCfg = {

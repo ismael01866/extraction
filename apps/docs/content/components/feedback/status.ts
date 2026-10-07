@@ -6,7 +6,9 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'status',
-  variants: variantsValues.filter((variant) => !['plain', 'ghost', 'link'].includes(variant)),
+  variants: variantsValues.filter(
+    (variant) => !['plain', 'ghost', 'link', 'flushed'].includes(variant),
+  ),
 };
 
 export const statusCfg = {
