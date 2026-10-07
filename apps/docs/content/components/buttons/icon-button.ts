@@ -6,7 +6,7 @@ export const cfg = {
   colorPaletteClass: 'palette',
   sizes: sizeValues.filter((size) => ['sm', 'md', 'lg', 'xl'].includes(size as string)),
   sizeClass: 'icon-button',
-  variants: variantsValues.filter((variant) => !['plain', 'link'].includes(variant)),
+  variants: variantsValues.filter((variant) => !['plain', 'link', 'flushed'].includes(variant)),
   api: {
     as: {
       type: 'ElementType',

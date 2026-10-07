@@ -10,7 +10,7 @@
   }
 
   .ex-avatar-group {
-    @apply isolate flex items-center justify-start;
+    @apply isolate flex;
 
     &:where(:not([data-orientation])),
     &:where([data-orientation='horizontal']) {

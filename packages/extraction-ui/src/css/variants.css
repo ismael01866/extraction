@@ -1,5 +1,7 @@
 @utility variant {
-  @apply border-(--border) bg-(--background) text-(--text) outline-(--outline) dark:border-(--border-dark) dark:bg-(--background-dark) dark:text-(--text-dark) dark:outline-(--outline-dark) border outline-0;
+  @apply bg-(--background) text-(--text) outline-(--outline) dark:bg-(--background-dark) dark:text-(--text-dark) dark:outline-(--outline-dark) border outline-0;
+
+  @apply border-b-(--border) dark:border-b-(--border-dark) border-x-(--edge,var(--border)) border-t-(--edge,var(--border)) dark:border-x-(--edge,var(--border-dark)) dark:border-t-(--edge,var(--border-dark));
 }
 
 @utility variant-solid {
@@ -180,6 +182,51 @@
 
   --outline: var(--shade-bold);
   --outline-dark: var(--shade-bold-dark);
+}
+
+@utility variant-flushed {
+  :where(&) {
+    @apply variant shade-100;
+  }
+
+  --ex-radius: 0 !important;
+  --edge: transparent;
+
+  --background: transparent;
+  --background-dark: transparent;
+
+  --hover-background: transparent;
+  --hover-background-dark: transparent;
+
+  --active-background: transparent;
+  --active-background-dark: transparent;
+
+  --border: var(--shade-raised);
+  --border-dark: var(--shade-raised-dark);
+
+  --hover-border: var(--shade-deep);
+  --hover-border-dark: var(--shade-deep-dark);
+
+  --active-border: var(--shade-strong);
+  --active-border-dark: var(--shade-strong-dark);
+
+  --text: currentColor;
+  --text-dark: currentColor;
+
+  --hover-text: currentColor;
+  --hover-text-dark: currentColor;
+
+  --active-text: currentColor;
+  --active-text-dark: currentColor;
+
+  --outline: transparent;
+  --outline-dark: transparent;
+
+  --focus-line: var(--shade-bold);
+  --focus-line-dark: var(--shade-bold-dark);
+
+  --focus-shadow: 0 1px 0 0 var(--shade-bold);
+  --focus-shadow-dark: 0 1px 0 0 var(--shade-bold-dark);
 }
 
 /* @utility variant-link {

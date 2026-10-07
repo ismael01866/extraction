@@ -9,13 +9,13 @@ Accents provide visual emphasis and can be applied to components to enhance thei
 
 ## Positioning
 
-Use the `decoration-accent-{position}` class to adjust the position of the border decoration. Values include `top`, `bottom`, `start` and `end`.
+Use the `decoration-border-{position}` class to adjust the position of the border decoration. Values include `top`, `bottom`, `start` and `end`.
 
 <br />
 <section>
   <BaseContainer>
     <Flex className='gap-4'>
-    {['decoration-accent-start', 'decoration-accent-end', 'decoration-accent-top', 'decoration-accent-bottom',].map((accent, index) => {
+    {['decoration-border-start', 'decoration-border-end', 'decoration-border-top', 'decoration-border-bottom',].map((accent, index) => {
       return (
         <Box key={index} className={`p-2 ${accent} variant-outline text-sm rounded-none`}>
           {accent}
@@ -28,10 +28,10 @@ Use the `decoration-accent-{position}` class to adjust the position of the borde
   <CodeContainer>
     <Code>
       {[
-        `<Box className='p-2 variant-outline decoration-accent-start' />`,
-        `<Box className='p-2 variant-outline decoration-accent-end' />`,
-        `<Box className='p-2 variant-outline decoration-accent-top' />`,
-        `<Box className='p-2 variant-outline decoration-accent-bottom' />`,
+        `<Box className='p-2 variant-outline decoration-border-start' />`,
+        `<Box className='p-2 variant-outline decoration-border-end' />`,
+        `<Box className='p-2 variant-outline decoration-border-top' />`,
+        `<Box className='p-2 variant-outline decoration-border-bottom' />`,
       ].join('\n')}
     </Code>
   </CodeContainer>
@@ -44,7 +44,7 @@ By default, accents will inherit the palette color of the parent component, but 
 <br />
 <section>
   <BaseContainer>
-    <Box className={`p-2 variant-outline w-48 decoration-accent-start border-s-success text-sm rounded-none`}>
+    <Box className={`p-2 variant-outline w-48 decoration-border-start border-s-success text-sm rounded-none`}>
       Neutral Box
     </Box>
   </BaseContainer>
@@ -52,7 +52,7 @@ By default, accents will inherit the palette color of the parent component, but 
   <CodeContainer>
     <Code>
       {[
-        `<Box className='p-2 variant-outline decoration-accent-start border-s-success' />`,
+        `<Box className='p-2 variant-outline decoration-border-start border-s-success' />`,
       ].join('\n')}
     </Code>
   </CodeContainer>
@@ -60,4 +60,4 @@ By default, accents will inherit the palette color of the parent component, but 
 
 ## Custom Width
 
-By default, decoration accents have a width of `3px`, but the utilities support custom widths. Value supports spacing scale steps, length, or percentage. Examples: `decoration-accent-start-4`, `decoration-accent-start-[4px]`, `decoration-accent-start-[4%]`.
+By default, decoration accents have a width of `3px`, but the utilities support custom widths. Value supports spacing scale steps, length, or percentage. Examples: `decoration-border-start-4`, `decoration-border-start-[4px]`, `decoration-border-start-[4%]`.

@@ -4,19 +4,15 @@
 
 @layer components {
   .ex-bento-grid {
-    --ex-gap-x: var(--ex-bento-grid-gap-x, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-bento-grid-gap-y, calc(var(--spacing) * 2));
     --ex-min-child-width: var(--ex-bento-grid-min-child-width, 0);
   }
 
   .ex-bento-grid {
     @apply flex w-full flex-wrap;
-    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
   }
 
   .ex-bento-grid-row {
     @apply flex w-full flex-row flex-wrap;
-    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
 
     > .ex-bento-grid-item {
       @apply min-h-0 flex-[1_1_0%];
@@ -25,7 +21,6 @@
 
   .ex-bento-grid-col {
     @apply min-w-(--ex-min-child-width) flex min-h-0 flex-1 flex-col;
-    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y);
 
     > .ex-bento-grid-item {
       @apply min-h-0 flex-[1_1_0%];
@@ -34,6 +29,6 @@
 
   .ex-bento-grid-item {
     @apply min-w-(--ex-min-child-width) flex;
-    @apply gap-x-(--ex-gap-x) gap-y-(--ex-gap-y) flex-[1_1_var(--ex-min-child-width)];
+    @apply flex-[1_1_var(--ex-min-child-width)];
   }
 }

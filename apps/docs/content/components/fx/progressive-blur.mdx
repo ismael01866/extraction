@@ -1,0 +1,56 @@
+import { ProgressiveBlur, Prose, ScrollArea } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './progressive-blur';
+
+export const Component = (
+  <ScrollArea className='h-40 max-h-80 w-full' type='always'>
+    <ScrollArea.Viewport>
+      <ScrollArea.Content>
+        <Prose className='mb-8'>
+          <h2>A quieter way to build digital products</h2>
+          <p>
+            Good design is rarely about adding more. It is about understanding what matters,
+            removing what does not, and creating enough space for the right ideas to stand out.
+          </p>
+          <blockquote>The best interfaces do not ask for attention. They earn it.</blockquote>
+          <h3>What we focus on</h3>
+          <ul>
+            <li>Interfaces that feel natural across every screen size.</li>
+          </ul>
+        </Prose>
+      </ScrollArea.Content>
+      <ProgressiveBlur className='absolute' />
+    </ScrollArea.Viewport>
+    <ScrollArea.Scrollbar>
+      <ScrollArea.Thumb />
+    </ScrollArea.Scrollbar>
+  </ScrollArea>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Progressive Blur
+
+{data['progressive-blur'].description} 
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-progressive-blur-max: 16px;
+  --ex-progressive-blur-size: 14dvh;
+  --ex-progressive-blur-spread: 30%;
+}
+```
+
+## API
+
+<Api config={cfg} />

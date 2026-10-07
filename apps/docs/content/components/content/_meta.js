@@ -23,6 +23,9 @@ export default {
   mark: {
     title: 'Mark',
   },
+  prose: {
+    title: 'Prose',
+  },
   table: {
     title: 'Table',
   },

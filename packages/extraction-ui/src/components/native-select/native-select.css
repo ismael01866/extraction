@@ -17,7 +17,7 @@
   }
 
   .ex-native-select {
-    @apply relative inline-flex w-full min-w-0;
+    @apply relative isolate inline-flex w-full min-w-0 flex-nowrap items-center;
     @apply [font-family:var(--ex-font-family)] [font-weight:var(--ex-font-weight)];
 
     &:where(.variant-solid) {

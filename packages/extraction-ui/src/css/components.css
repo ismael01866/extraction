@@ -1415,7 +1415,7 @@
 
 @utility headline-xl {
   --ex-font-size: var(--ex-headline-font-size-xl, var(--text-5xl));
-  --ex-line-height: var(--ex-headline-line-height-xl, var(--text-5xl--line-height));
+  --ex-line-height: var(--ex-headline-line-height-xl, var(--text-4xl--line-height));
 
   --ex-font-family: var(--ex-headline-font-family-xl, var(--font-sans));
   --ex-font-weight: var(--ex-headline-font-weight-xl, var(--font-weight-semibold));
@@ -1683,7 +1683,7 @@
   --ex-height: var(--ex-menubar-height-sm, var(--ex-size-2xl));
 
   --ex-px: var(--ex-menubar-px-sm, calc(var(--spacing) * 2));
-  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 0.5));
+  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 1));
 
   --ex-radius: var(--ex-menubar-radius-sm, var(--radius-sm));
 
@@ -1741,16 +1741,16 @@
 @utility menubar-md {
   --ex-height: var(--ex-menubar-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 2.5));
-  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 1));
+  --ex-px: var(--ex-menubar-px-md, calc(var(--spacing) * 3));
+  --ex-gap-x: var(--ex-menubar-gap-x-md, calc(var(--spacing) * 1.5));
 
   --ex-radius: var(--ex-menubar-radius-md, var(--radius-sm));
 
   .ex-menubar-trigger {
     --ex-height: var(--ex-menubar-trigger-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-menubar-trigger-px-md, calc(var(--spacing) * 3));
+    --ex-gap-x: var(--ex-menubar-trigger-gap-x-md, calc(var(--spacing) * 1.5));
 
     --ex-radius: var(--ex-menubar-trigger-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-menubar-trigger-font-size-md, var(--text-sm));
@@ -1900,7 +1900,7 @@
   --ex-px: var(--ex-navigation-menu-px-sm, calc(var(--spacing) * 2));
   --ex-py: var(--ex-navigation-menu-py-sm, calc(var(--spacing) * 2));
 
-  --ex-gap-x: var(--ex-navigation-menu-gap-x-sm, calc(var(--spacing) * 0.5));
+  --ex-gap-x: var(--ex-navigation-menu-gap-x-sm, calc(var(--spacing) * 1));
   --ex-radius: var(--ex-navigation-menu-radius-sm, var(--radius-sm));
 
   .ex-navigation-menu-item {
@@ -1921,11 +1921,11 @@
   }
 
   .ex-navigation-menu-section {
-    --ex-px: var(--ex-navigation-menu-section-px-sm, calc(var(--spacing) * 4));
-    --ex-py: var(--ex-navigation-menu-section-py-sm, calc(var(--spacing) * 4));
+    --ex-px: var(--ex-navigation-menu-section-px-sm, calc(var(--spacing) * 3));
+    --ex-py: var(--ex-navigation-menu-section-py-sm, calc(var(--spacing) * 3));
 
-    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-sm, calc(var(--spacing) * 2));
-    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-sm, calc(var(--spacing) * 2));
+    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-sm, calc(var(--spacing) * 1.5));
+    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-sm, calc(var(--spacing) * 1.5));
   }
 
   .ex-navigation-menu-indicator {
@@ -1934,20 +1934,20 @@
 }
 
 @utility navigation-menu-md {
-  --ex-spacer: var(--ex-navigation-menu-spacer-md, calc(var(--spacing) * 2.5));
+  --ex-spacer: var(--ex-navigation-menu-spacer-md, calc(var(--spacing) * 3));
   --ex-height: var(--ex-navigation-menu-height-md, var(--ex-size-4xl));
 
-  --ex-px: var(--ex-navigation-menu-px-md, calc(var(--spacing) * 2.5));
-  --ex-py: var(--ex-navigation-menu-py-md, calc(var(--spacing) * 2.5));
+  --ex-px: var(--ex-navigation-menu-px-md, calc(var(--spacing) * 3));
+  --ex-py: var(--ex-navigation-menu-py-md, calc(var(--spacing) * 3));
 
-  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 1));
+  --ex-gap-x: var(--ex-navigation-menu-gap-x-md, calc(var(--spacing) * 1.5));
   --ex-radius: var(--ex-navigation-menu-radius-md, var(--radius-sm));
 
   .ex-navigation-menu-item {
     --ex-height: var(--ex-navigation-menu-item-height-md, var(--ex-size-lg));
 
-    --ex-px: var(--ex-navigation-menu-item-px-md, calc(var(--spacing) * 2.5));
-    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 1.25));
+    --ex-px: var(--ex-navigation-menu-item-px-md, calc(var(--spacing) * 3));
+    --ex-gap-x: var(--ex-navigation-menu-item-gap-x-md, calc(var(--spacing) * 1.5));
 
     --ex-radius: var(--ex-navigation-menu-item-radius-md, var(--radius-sm));
     --ex-font-size: var(--ex-navigation-menu-item-font-size-md, var(--text-sm));
@@ -1961,11 +1961,11 @@
   }
 
   .ex-navigation-menu-section {
-    --ex-px: var(--ex-navigation-menu-section-px-md, calc(var(--spacing) * 5));
-    --ex-py: var(--ex-navigation-menu-section-py-md, calc(var(--spacing) * 5));
+    --ex-px: var(--ex-navigation-menu-section-px-md, calc(var(--spacing) * 4));
+    --ex-py: var(--ex-navigation-menu-section-py-md, calc(var(--spacing) * 4));
 
-    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-md, calc(var(--spacing) * 2.5));
-    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-md, calc(var(--spacing) * 2.5));
+    --ex-gap-x: var(--ex-navigation-menu-section-gap-x-md, calc(var(--spacing) * 2));
+    --ex-gap-y: var(--ex-navigation-menu-section-gap-y-md, calc(var(--spacing) * 2));
   }
 
   .ex-navigation-menu-indicator {
@@ -2399,7 +2399,6 @@
   }
 
   .ex-segmented-control-indicator {
-    --ex-radius: var(--ex-segmented-control-indicator-radius-sm, var(--radius-sm));
     --ex-shadow: var(--ex-segmented-control-indicator-shadow-sm, var(--shadow-sm));
   }
 }
@@ -2417,7 +2416,6 @@
   }
 
   .ex-segmented-control-indicator {
-    --ex-radius: var(--ex-segmented-control-indicator-radius-md, var(--radius-sm));
     --ex-shadow: var(--ex-segmented-control-indicator-shadow-md, var(--shadow-sm));
   }
 }
@@ -2435,7 +2433,6 @@
   }
 
   .ex-segmented-control-indicator {
-    --ex-radius: var(--ex-segmented-control-indicator-radius-lg, var(--radius-sm));
     --ex-shadow: var(--ex-segmented-control-indicator-shadow-lg, var(--shadow-sm));
   }
 }

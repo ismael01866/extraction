@@ -77,27 +77,29 @@ export const ToastVariantExample = ({ color, variant }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Toast.Provider>
-      <Button className={`palette-${color} variant-${variant}`} onClick={() => setOpen(true)}>
-        Trigger
-      </Button>
-      <Toast
-        className={`palette-${color} variant-${variant}`}
-        open={open}
-        onOpenChange={setOpen}
-        duration={999999999}
-      >
-        <Toast.Indicator />
-        <Toast.Content>
-          <Toast.Title>
-            {`The quick brown fox`}
-            <Toast.Close aria-label="Close" />
-          </Toast.Title>
-          <Toast.Description>{`Alice was beginning to get very tired.`}</Toast.Description>
-        </Toast.Content>
-      </Toast>
-      <Toast.Viewport />
-    </Toast.Provider>
+    <div>
+      <Toast.Provider>
+        <Button className={`palette-${color} variant-${variant}`} onClick={() => setOpen(true)}>
+          Trigger
+        </Button>
+        <Toast
+          className={`palette-${color} variant-${variant}`}
+          open={open}
+          onOpenChange={setOpen}
+          duration={999999999}
+        >
+          <Toast.Indicator />
+          <Toast.Content>
+            <Toast.Title>
+              {`The quick brown fox`}
+              <Toast.Close aria-label="Close" />
+            </Toast.Title>
+            <Toast.Description>{`Alice was beginning to get very tired.`}</Toast.Description>
+          </Toast.Content>
+        </Toast>
+        <Toast.Viewport />
+      </Toast.Provider>
+    </div>
   );
 };
 
@@ -107,7 +109,11 @@ export const ToastWithAccentExample = () => {
   return (
     <Toast.Provider>
       <Button onClick={() => setOpen(true)}>Trigger</Button>
-      <Toast className="decoration-accent-start" open={open} onOpenChange={setOpen}>
+      <Toast
+        className="decoration-border-start border-s-primary"
+        open={open}
+        onOpenChange={setOpen}
+      >
         <Toast.Indicator />
         <Toast.Content>
           <Toast.Title>{`The quick brown fox`}</Toast.Title>

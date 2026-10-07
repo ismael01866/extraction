@@ -282,10 +282,11 @@
 
   @keyframes marquee-scroll-y {
     from {
-      transform: translate(0, var(--ex-marquee-transform-y, 0));
-    }
-    to {
       transform: translate(0, 0);
+    }
+
+    to {
+      transform: translate(0, var(--ex-marquee-transform-y, 0));
     }
   }
 
@@ -322,6 +323,26 @@
     }
     100% {
       background-position: 0 0;
+    }
+  }
+
+  @keyframes page-transition-enter {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes page-transition-exit {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
     }
   }
 

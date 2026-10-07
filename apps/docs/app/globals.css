@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+
 @import 'extraction-ui/styles';
 @import 'extraction-ui/palettes';
 
@@ -161,11 +162,11 @@ h3[class*='x:'] {
   @apply text-base!;
 }
 
-h1 ~ p:not([class*='ex-']),
-h2 ~ p:not([class*='ex-']),
-h3 ~ p:not([class*='ex-']),
-h4 ~ p:not([class*='ex-']),
-h5 ~ p:not([class*='ex-']) {
+:not(.ex-prose) > h1 ~ p:not([class*='ex-']),
+:not(.ex-prose) > h2 ~ p:not([class*='ex-']),
+:not(.ex-prose) > h3 ~ p:not([class*='ex-']),
+:not(.ex-prose) > h4 ~ p:not([class*='ex-']),
+:not(.ex-prose) > h5 ~ p:not([class*='ex-']) {
   @apply text-sm!;
 }
 

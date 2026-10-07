@@ -18,7 +18,7 @@
   }
 
   .ex-select-trigger {
-    @apply relative inline-flex w-full;
+    @apply relative isolate inline-flex w-full min-w-0 flex-nowrap items-center;
     @apply rounded-(--ex-radius) px-(--ex-px) h-[var(--ex-height)] items-center [cursor:var(--ex-cursor)] [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)] [font-weight:var(--ex-font-weight)];
 
     padding-inline-end: calc(var(--ex-px) * 2.25);

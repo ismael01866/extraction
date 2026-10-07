@@ -1,17 +1,19 @@
 import { DecorativeBox } from '@/app/components';
 
-import { Flex } from 'extraction-ui';
+import { Flex, Separator } from 'extraction-ui';
 
 import data from '../data.json';
 import { cfg } from './flex';
 
 export const Component = (
-  <Flex className='gap-2'>
+  <Flex>
     <DecorativeBox />
     <DecorativeBox />
     <DecorativeBox />
   </Flex>
 );
+
+export const Wrapper = ({ children }) => children;
 
 # Flex
 
@@ -20,9 +22,34 @@ export const Component = (
 <Usage
   components={{
     usage: Component,
-    wrapper: ({ children }) => children,
+    wrapper: Wrapper,
   }}
 />
+
+## With Separators
+
+You can use any component as a separator.
+
+<Usage
+  components={{
+    usage: (
+      <Flex separator={<Separator className='mx-2' orientation='vertical' />}>
+        <DecorativeBox />
+        <DecorativeBox />
+        <DecorativeBox />
+      </Flex>
+    ),
+    wrapper: Wrapper,
+  }}
+/>
+
+## Flex Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-flex-gap-x: calc(var(--spacing) * 2);
+}
+```
 
 ## API
 

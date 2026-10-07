@@ -1,0 +1,40 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-progressive-blur {
+    --ex-size: var(--ex-progressive-blur-size, 14dvh);
+    --ex-max-blur: var(--ex-progressive-blur-max, 16px);
+    --ex-spread: var(--ex-progressive-blur-spread, 30%);
+  }
+
+  .ex-progressive-blur {
+    @apply pointer-events-none relative;
+
+    &[data-side='bottom'] {
+      @apply h-(--ex-size) inset-x-0 bottom-0 top-auto [--ex-to:to_bottom];
+    }
+    &[data-side='top'] {
+      @apply h-(--ex-size) inset-x-0 bottom-auto top-0 [--ex-to:to_top];
+    }
+    &[data-side='right'] {
+      @apply w-(--ex-size) inset-y-0 left-auto right-0 [--ex-to:to_right];
+    }
+    &[data-side='left'] {
+      @apply w-(--ex-size) inset-y-0 left-0 right-auto [--ex-to:to_left];
+    }
+
+    > div {
+      --ex-blur: calc(var(--ex-max-blur) * pow(2, var(--ex-i) - var(--ex-layers) + 1));
+      --ex-start: calc(var(--ex-i) * (100% - var(--ex-spread)) / (var(--ex-layers) - 1));
+
+      @apply backdrop-blur-(--ex-blur) absolute inset-0;
+
+      mask-image: linear-gradient(
+        var(--ex-to),
+        transparent var(--ex-start),
+        #000 calc(var(--ex-start) + var(--ex-spread))
+      );
+    }
+  }
+}

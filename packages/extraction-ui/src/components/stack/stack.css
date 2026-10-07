@@ -3,7 +3,9 @@
 
 @layer components {
   .ex-stack {
-    @apply flex flex-col;
+    --ex-gap-y: var(--ex-stack-gap-y, calc(var(--spacing) * 2));
+
+    @apply gap-y-(--ex-gap-y) flex flex-col;
   }
 
   .ex-vstack {

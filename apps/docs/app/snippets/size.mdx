@@ -47,7 +47,7 @@ export const applyToChildren = ({ children, className }) => {
 )}
 
 {
-  !props.isText && (
+  !props.isText && (!props.isNotText) && (
     <P>
       For more information on all available sizing utilities, visit <A href="https://tailwindcss.com/docs/width" target="_blank">Tailwind</A>
     </P>
@@ -55,13 +55,12 @@ export const applyToChildren = ({ children, className }) => {
 }
 
 {
-  props.isText && (
+  props.isText && (!props.isNotText) && (
     <P>
       For more information on all available font size utilities, visit <A href="https://tailwindcss.com/docs/font-size" target="_blank">Tailwind</A>
     </P>
   )
 }
-
 
 {(props.showSamples !== false) && props.config?.sizes?.map((size, index) => {
   const usage = props.components.usage;

@@ -142,7 +142,7 @@ Use the `placement` prop on the `Toast.Provider` to set the placement of the Toa
     return (
       <Toast.Provider>
         <Button onClick={() => setOpen(true)}>Trigger</Button>
-        <Toast className="decoration-accent-start"  open={open} onOpenChange={setOpen}>
+        <Toast className="decoration-border-start border-s-primary"  open={open} onOpenChange={setOpen}>
           <Toast.Indicator />
           <Toast.Content>
             <Toast.Title>

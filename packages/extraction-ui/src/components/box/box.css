@@ -5,6 +5,8 @@
   .ex-box {
     --ex-px: 0;
     --ex-py: 0;
+
+    --ex-radius: var(--ex-box-radius, var(--radius-sm));
   }
 
   .ex-box {

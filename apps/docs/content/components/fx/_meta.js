@@ -5,6 +5,9 @@ export default {
   'noise-overlay': {
     title: 'Noise Overlay',
   },
+  'progressive-blur': {
+    title: 'Progressive Blur',
+  },
   'text-slide': {
     title: 'Text Slide',
   },

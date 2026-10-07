@@ -18,7 +18,7 @@
   }
 
   .ex-pin-input {
-    @apply relative isolate flex min-w-0 flex-nowrap;
+    @apply relative isolate inline-flex min-w-0 flex-nowrap items-center;
     @apply gap-x-(--ex-gap-x);
 
     &:where(.variant-solid) {

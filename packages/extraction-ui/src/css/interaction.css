@@ -1,13 +1,17 @@
 @utility interactive-hover {
-  @apply border-(--hover-border) bg-(--hover-background) text-(--hover-text) dark:border-(--hover-border-dark) dark:bg-(--hover-background-dark) dark:text-(--hover-text-dark);
+  @apply bg-(--hover-background) text-(--hover-text) dark:bg-(--hover-background-dark) dark:text-(--hover-text-dark);
+  @apply border-b-(--hover-border) border-x-(--edge,var(--hover-border)) border-t-(--edge,var(--hover-border)) dark:border-b-(--hover-border-dark) dark:border-x-(--edge,var(--hover-border-dark)) dark:border-t-(--edge,var(--hover-border-dark));
 }
 
 @utility interactive-active {
-  @apply border-(--active-border) bg-(--active-background) text-(--active-text) dark:border-(--active-border-dark) dark:bg-(--active-background-dark) dark:text-(--active-text-dark);
+  @apply bg-(--active-background) text-(--active-text) dark:bg-(--active-background-dark) dark:text-(--active-text-dark);
+  @apply border-b-(--active-border) border-x-(--edge,var(--active-border)) border-t-(--edge,var(--active-border)) dark:border-b-(--active-border-dark) dark:border-x-(--edge,var(--active-border-dark)) dark:border-t-(--edge,var(--active-border-dark));
 }
 
 @utility interactive-focus {
   @apply outline-(--outline) outline-solid dark:outline-(--outline-dark) outline-2 -outline-offset-1;
+  @apply border-b-(--focus-line,var(--active-border)) dark:border-b-(--focus-line-dark,var(--active-border-dark));
+  @apply [box-shadow:var(--focus-shadow,none)] dark:[box-shadow:var(--focus-shadow-dark,none)];
 }
 
 @utility interactive {

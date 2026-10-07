@@ -5,31 +5,31 @@ import { Headline } from './index';
 import { render, screen } from '@testing-library/react';
 
 describe('Headline', () => {
-  it('renders with an h2 by default', () => {
+  it('renders with a p by default', () => {
     render(<Headline>Headline</Headline>);
 
-    const element = screen.getByRole('heading', { name: /headline/i });
-    expect(element.tagName).toBe('H2');
+    const element = screen.getByText('Headline');
+    expect(element.tagName).toBe('P');
   });
 
   it('applies the default class name', () => {
     render(<Headline>Headline</Headline>);
 
-    const element = screen.getByRole('heading', { name: /headline/i });
+    const element = screen.getByText('Headline');
     expect(element).toHaveClass('ex-headline');
   });
 
   it('supports a custom element via as prop', () => {
     render(<Headline as="div">Headline</Headline>);
 
-    const element = screen.getByText(/headline/i);
+    const element = screen.getByText('Headline');
     expect(element.tagName).toBe('DIV');
   });
 
   it('passes additional props through', () => {
     render(<Headline id="headline-id">Headline</Headline>);
 
-    const element = screen.getByRole('heading', { name: /headline/i });
+    const element = screen.getByText('Headline');
     expect(element).toHaveAttribute('id', 'headline-id');
   });
 

@@ -37,8 +37,25 @@ export const ComponentVertical = (
   </Marquee>
 );
 
+export const ComponentDrag = (
+  <Marquee className='h-12' draggable>
+    <Marquee.Track>
+      {['logo-0', 'logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5'].map((item, index) => (
+        <Marquee.Item key={index}>
+          <Logo
+            key={index}
+            alt={`logo-${index}`}
+            src={`/images/assets/${item}.png`}
+            className='min-w-24'
+          />
+        </Marquee.Item>
+      ))}
+    </Marquee.Track>
+  </Marquee>
+);
+
 export const ComponentCSS = (
-  <Marquee className='h-12 [--ex-marquee-duration:2s] [--ex-marquee-gap-x:8rem] hover:[--ex-marquee-play:paused]'>
+  <Marquee className='h-12 [--ex-marquee-direction:reverse] [--ex-marquee-duration:2s] [--ex-marquee-gap-x:5rem] hover:[--ex-marquee-play:paused]'>
     <Marquee.Track>
       {['logo-0', 'logo-1', 'logo-2', 'logo-3', 'logo-4', 'logo-5'].map((item, index) => (
         <Marquee.Item key={index}>
@@ -77,6 +94,17 @@ export const Wrapper = ({ children }) => children;
   vertical
 />
 
+## Draggable
+
+Use the `draggable` prop to activate the drag behavior.
+
+<Usage
+  components={{
+    usage: ComponentDrag,
+    wrapper: Wrapper,
+  }}
+/>
+
 ## Animation Classes
 
 You can set directly the CSS variables to control the animation behavior.
@@ -86,6 +114,59 @@ You can set directly the CSS variables to control the animation behavior.
     usage: ComponentCSS,
     wrapper: Wrapper,
   }}
+  serializedCode={`<Marquee
+    className="h-12
+      [--ex-marquee-gap-x:5rem]
+      [--ex-marquee-duration:2s]
+      [--ex-marquee-direction:reverse]
+      hover:[--ex-marquee-play:paused]"
+    >
+    <Marquee.Track>
+      <Marquee.Item>
+        <Logo
+          alt="logo-0"
+          className="min-w-24"
+          src="/images/assets/logo-0.png"
+        />
+      </Marquee.Item>
+      <Marquee.Item>
+        <Logo
+          alt="logo-1"
+          className="min-w-24"
+          src="/images/assets/logo-1.png"
+        />
+      </Marquee.Item>
+      <Marquee.Item>
+        <Logo
+          alt="logo-2"
+          className="min-w-24"
+          src="/images/assets/logo-2.png"
+        />
+      </Marquee.Item>
+      <Marquee.Item>
+        <Logo
+          alt="logo-3"
+          className="min-w-24"
+          src="/images/assets/logo-3.png"
+        />
+      </Marquee.Item>
+      <Marquee.Item>
+        <Logo
+          alt="logo-4"
+          className="min-w-24"
+          src="/images/assets/logo-4.png"
+        />
+      </Marquee.Item>
+      <Marquee.Item>
+        <Logo
+          alt="logo-5"
+          className="min-w-24"
+          src="/images/assets/logo-5.png"
+        />
+      </Marquee.Item>
+    </Marquee.Track>
+
+</Marquee>`}
 />
 
 ## Customizing

@@ -1,0 +1,91 @@
+import { Prose } from 'extraction-ui';
+
+import data from '../data.json';
+import { cfg } from './prose';
+
+export const Component = (
+  <Prose>
+    <h2>A quieter way to build digital products</h2>
+    <p>
+      Good design is rarely about adding more. It is about understanding what matters, removing what
+      does not, and creating enough space for the right ideas to stand out.
+    </p>
+    <blockquote>The best interfaces do not ask for attention. They earn it.</blockquote>
+    <h3>What we focus on</h3>
+    <ul>
+      <li>Interfaces that feel natural across every screen size.</li>
+    </ul>
+  </Prose>
+);
+
+export const Wrapper = ({ children }) => children;
+
+# Prose
+
+{data.prose.description} <br/>For more information on this component configuration, visit [Tailwind](https://github.com/tailwindlabs/tailwindcss-typography).
+
+<Usage
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+/>
+
+## Installation
+
+In order to use the Prose component, you need to install the Tailwind CSS Typography plugin:
+
+```bash
+pnpm add -D @tailwindcss/typography
+```
+
+Add the Tailwind Prose styles to your main CSS file:
+
+```css
+/** main.css */
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+```
+
+## Sizes
+
+<Size
+  config={cfg}
+  components={{
+    usage: Component,
+    wrapper: Wrapper,
+  }}
+  isNotText
+/>
+
+## Customizing
+
+```sass filename="globals.css"
+:root {
+  --ex-prose-opacity: var(--ex-options-opacity-muted);
+
+  --ex-prose-font-size-sm: var(--text-xs);
+  --ex-prose-font-size-md: var(--text-sm);
+  --ex-prose-font-size-lg: var(--text-base);
+  --ex-prose-font-size-xl: var(--text-lg);
+
+  --ex-prose-line-height-sm: var(--text-xs--line-height);
+  --ex-prose-line-height-md: var(--text-sm--line-height);
+  --ex-prose-line-height-lg: var(--text-base--line-height);
+  --ex-prose-line-height-xl: var(--text-lg--line-height);
+
+  --ex-prose-font-family-sm: var(--font-sans);
+  --ex-prose-font-family-md: var(--font-sans);
+  --ex-prose-font-family-lg: var(--font-sans);
+  --ex-prose-font-family-xl: var(--font-sans);
+
+  --ex-prose-font-weight-sm: var(--font-weight-normal);
+  --ex-prose-font-weight-md: var(--font-weight-normal);
+  --ex-prose-font-weight-lg: var(--font-weight-normal);
+  --ex-prose-font-weight-xl: var(--font-weight-normal);
+}
+```
+
+## API
+
+<Api config={cfg} />

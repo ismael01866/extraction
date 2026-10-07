@@ -22,7 +22,7 @@ Interact with this button to see the hover, focus, and active states. Some compo
 <br />
 <section>
   <BaseContainer>
-    {variantsValues.filter((variant) => !['plain', 'link'].includes(variant)).map((variant, index) => {
+    {variantsValues.filter((variant) => !['plain', 'link', 'flushed'].includes(variant)).map((variant, index) => {
       return (
         <Button key={index} className={`variant-${variant}`}>
           Button
