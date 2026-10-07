@@ -35,6 +35,15 @@
     }
   }
 
+  .ex-accordion-item {
+    @apply rounded-(--ex-radius);
+    @apply border-b border-inherit;
+
+    &:where(:last-child) {
+      @apply border-be-0;
+    }
+  }
+
   .ex-accordion-header {
     @apply flex items-center;
   }

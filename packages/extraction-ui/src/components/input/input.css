@@ -17,6 +17,10 @@
     }
   }
 
+  .ex-input {
+    @apply relative isolate inline-flex w-full min-w-0 flex-nowrap items-center;
+  }
+
   .ex-input-field {
     @apply variant;
   }

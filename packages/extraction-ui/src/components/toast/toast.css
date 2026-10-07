@@ -11,7 +11,7 @@
   }
 
   .ex-toast {
-    @apply flex flex-1 will-change-[transform,opacity];
+    @apply flex flex-1 items-start will-change-[transform,opacity];
     @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-(--ex-gap-x) max-w-[var(--ex-max-width)] shadow-[var(--ex-shadow)];
 
     &:where(:focus) {

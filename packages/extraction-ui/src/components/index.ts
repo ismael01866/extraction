@@ -205,6 +205,12 @@ export * from './popover/popover.types';
 export { Progress } from './progress';
 export * from './progress/progress.types';
 
+export { ProgressiveBlur } from './progressive-blur';
+export * from './progressive-blur/progressive-blur.types';
+
+export { Prose } from './prose';
+export * from './prose/prose.types';
+
 export { Radio } from './radio';
 export * from './radio/radio.types';
 

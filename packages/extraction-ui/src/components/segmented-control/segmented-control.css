@@ -33,12 +33,14 @@
     @apply cursor-(--ex-cursor) h-(--ex-height) gap-x-(--ex-gap-x) px-(--ex-px) font-(--ex-font-weight) [font-family:var(--ex-font-family)] [font-size:var(--ex-font-size)];
 
     &:first-of-type::before {
-      @apply invisible;
+      @apply opacity-0;
     }
 
     &::before {
       @apply pointer-events-none absolute content-[''] [transform:translateZ(0)];
       @apply bg-[var(--border)] dark:bg-[var(--border-dark)];
+
+      @apply transition-opacity duration-200;
     }
 
     &[data-orientation='horizontal']::before {
@@ -47,6 +49,14 @@
 
     &[data-orientation='vertical']::before {
       @apply h-px [inset-block-start:0] [inset-inline:0];
+    }
+
+    &[data-state='checked']::before {
+      @apply opacity-0;
+    }
+
+    [data-state='checked'] + &::before {
+      @apply opacity-0;
     }
   }
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { render, screen } from '@testing-library/react';
-
 import { Flex } from './index';
+
+import { render, screen } from '@testing-library/react';
 
 describe('Flex', () => {
   it('renders with a div by default', () => {
@@ -24,6 +24,19 @@ describe('Flex', () => {
 
     const element = screen.getByText(/flex/i);
     expect(element.tagName).toBe('SECTION');
+  });
+
+  it('renders separators when separator prop is provided', () => {
+    render(
+      <Flex separator={<span>·</span>}>
+        <span>One</span>
+        <span>Two</span>
+      </Flex>,
+    );
+
+    expect(screen.getByText(/one/i)).toBeInTheDocument();
+    expect(screen.getByText(/two/i)).toBeInTheDocument();
+    expect(screen.getByText('·')).toBeInTheDocument();
   });
 
   it('passes additional props through', () => {

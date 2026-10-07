@@ -1,0 +1,10 @@
+@layer theme, base, components, utilities;
+@reference "../../styles.css";
+
+@layer components {
+  .ex-prose {
+    --ex-opacity: var(--ex-prose-opacity, var(--ex-options-opacity-muted));
+
+    @apply opacity-(--ex-opacity);
+  }
+}

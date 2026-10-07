@@ -13,7 +13,7 @@
   .ex-radio-card {
     --ex-cursor: var(--ex-radio-card-cursor, default);
 
-    @apply flex min-w-0 select-none leading-normal [transform:translateZ(0)];
+    @apply flex min-w-0 select-none items-start leading-normal [transform:translateZ(0)];
     @apply rounded-(--ex-radius) px-(--ex-px) py-(--ex-py) gap-x-(--ex-gap-x) cursor-[var(--ex-cursor)];
 
     &:where(.variant-solid) {

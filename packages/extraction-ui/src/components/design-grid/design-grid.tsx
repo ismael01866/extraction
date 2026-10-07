@@ -11,11 +11,11 @@ export const DesignGrid = <T extends ElementType = 'div'>(props: DesignGridProps
   let cols = 12;
   let rows;
 
-  const colsMatch = className.match(/grid-cols-(\d+)/);
-  if (colsMatch) cols = parseInt(colsMatch[1], 10);
+  const colsMatch = /grid-cols-(\d+)/.exec(className);
+  if (colsMatch) cols = Number.parseInt(colsMatch[1], 10);
 
-  const rowsMatch = className.match(/grid-rows-(\d+)/);
-  if (rowsMatch) rows = parseInt(rowsMatch[1], 10);
+  const rowsMatch = /grid-rows-(\d+)/.exec(className);
+  if (rowsMatch) rows = Number.parseInt(rowsMatch[1], 10);
 
   const totalCells = cols * (rows || 1);
 
@@ -27,7 +27,11 @@ export const DesignGrid = <T extends ElementType = 'div'>(props: DesignGridProps
       {...rest}
     >
       {Array.from({ length: totalCells }).map((_, index) => (
-        <div key={index} className="ex-design-grid-cell" aria-hidden />
+        <div
+          key={`cell-${Math.floor(index / cols)}-${index % cols}`}
+          className="ex-design-grid-cell"
+          aria-hidden
+        />
       ))}
     </Element>
   );

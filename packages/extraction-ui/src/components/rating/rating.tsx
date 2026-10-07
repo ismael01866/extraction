@@ -221,8 +221,8 @@ export const RatingControl = <T extends React.ElementType = 'button'>(
         data-filled={filled}
         data-readonly={readOnly}
         style={{
+          ...(fractions && { '--ex-fill': fill }),
           ...style,
-          ...(fractions ? { '--ex-fill': fill } : {}),
         }}
       >
         {children}

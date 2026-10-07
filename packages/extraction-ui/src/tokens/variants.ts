@@ -4,6 +4,7 @@ export const variants = {
   surface: '',
   subtle: '',
   ghost: '',
+  flushed: '',
   link: '',
   plain: '',
 };
