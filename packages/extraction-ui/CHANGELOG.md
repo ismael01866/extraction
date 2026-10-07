@@ -1,5 +1,11 @@
 # extraction-ui
 
+## 0.8.9
+
+### Patch Changes
+
+- Added ProgressiveBlur component. Added Prose component.
+
 ## 0.8.8
 
 ### Patch Changes
